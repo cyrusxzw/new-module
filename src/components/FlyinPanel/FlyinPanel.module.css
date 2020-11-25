@@ -7,7 +7,7 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: auto;
+  width: 100%;
   justify-content: center;
   padding-top: calc(var(--layout-sm-spacing) * 4);
   padding-right: var(--layout-sm-spacing);
