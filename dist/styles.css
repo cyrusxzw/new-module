@@ -4697,7 +4697,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   top: 0;
   bottom: 0;
   left: 0;
-  width: auto;
+  width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
