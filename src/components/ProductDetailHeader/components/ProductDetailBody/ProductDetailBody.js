@@ -39,7 +39,6 @@ const ProductDetailBody = ({ className, copy, theme }) => {
     keyIngredient,
     productName,
     description,
-    cartDisclaimer,
     upSellProduct,
   } = productDetail;
 
