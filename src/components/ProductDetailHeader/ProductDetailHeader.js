@@ -31,7 +31,6 @@ const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
             copy={{
               addToCart: copy?.addToCart,
               size: copy?.size,
-              ingredients: copy?.ingredients,
               upSellProductLabel: copy?.upSellProductLabel,
             }}
             theme={currentTheme}
@@ -85,11 +84,6 @@ ProductDetailHeader.propTypes = {
       singular: PropTypes.string,
       plural: PropTypes.string,
     }),
-    ingredients: PropTypes.shape({
-      heading: PropTypes.string,
-      label: PropTypes.string,
-      title: PropTypes.string,
-    }),
     upSellProductLabel: PropTypes.string,
   }),
   theme: PropTypes.oneOf(['dark', 'light']),
@@ -108,7 +102,6 @@ ProductDetailHeader.defaultProps = {
       singular: undefined,
       plural: undefined,
     },
-    ingredients: undefined,
     upSellProductLabel: undefined,
   },
   theme: undefined,

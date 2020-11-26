@@ -23,8 +23,6 @@ describe('<ProductDetailBody />', () => {
             ...ProductDetailBodyFixture.copy,
           }}
           definitionList={ProductDetailBodyFixture.definitionList}
-          ingredients={ProductDetailBodyFixture.ingredients}
-          keyIngredient={ProductDetailBodyFixture.keyIngredient}
           productName={ProductDetailBodyFixture.productName}
           theme={ProductDetailBodyFixture.theme}
         />,

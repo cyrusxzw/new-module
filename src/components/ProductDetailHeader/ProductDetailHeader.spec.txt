@@ -31,7 +31,6 @@ describe('<ProductDetailHeader />', () => {
               copy={{
                 addToCart: AddToCartButtonFixture.copy,
                 size: ProductDetailBodyFixture.copy.size,
-                ingredients: ProductDetailBodyFixture.copy.ingredients,
               }}
               theme={ProductDetailHeaderFixture.theme}
             />
