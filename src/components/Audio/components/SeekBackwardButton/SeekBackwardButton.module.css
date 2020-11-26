@@ -1,0 +1,21 @@
+@import 'styles/index';
+
+.icon {
+  transition: fill 200ms var(--easing-ease-out-cubic);
+
+  &.disabled {
+    fill: var(--color-dark-disabled);
+  }
+
+  .orange:not([disabled]):hover & {
+    fill: var(--color-highlight-orange);
+  }
+
+  .green:not([disabled]):hover & {
+    fill: var(--color-highlight-green);
+  }
+
+  .blue:not([disabled]):hover & {
+    fill: var(--color-highlight-blue);
+  }
+}

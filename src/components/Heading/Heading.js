@@ -14,6 +14,8 @@ const Heading = ({
   size,
   theme,
 }) => {
+  if (!children) return null;
+
   const classSet = cx(
     styles.base,
     { [styles.flush]: isFlush },

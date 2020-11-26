@@ -1,0 +1,105 @@
+@import 'styles/index';
+
+.base {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 35px;
+  margin-top: 20px;
+
+  @media (--viewport-md) {
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+}
+
+.time {
+  margin: auto 0;
+  font-size: rem(15px);
+  transition: color 400ms var(--easing-ease-out-cubic);
+
+  &.disabled {
+    color: var(--color-dark-disabled);
+  }
+
+  @media (--viewport-sm-only) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: rem(14px);
+  }
+
+  @media (--viewport-md) {
+    width: calc(100% * 1 / 3);
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+
+  @media (--viewport-md) {
+    width: calc(100% * 1 / 3);
+  }
+}
+
+.download {
+  margin: auto 0;
+  text-align: right;
+
+  @media (--viewport-md) {
+    width: calc(100% * 1 / 3);
+  }
+
+  @media (--viewport-sm-only) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: rem(14px);
+  }
+}
+
+.downloadButton {
+  font-size: rem(15px);
+  transition: color 200ms var(--easing-ease-out-cubic);
+
+  @media (--viewport-sm-only) {
+    font-size: rem(14px);
+  }
+
+  .downloadButtonIcon {
+    transition: fill 200ms var(--easing-ease-out-cubic);
+  }
+
+  &:hover {
+    .orange & {
+      color: var(--color-highlight-orange);
+    }
+
+    .green & {
+      color: var(--color-highlight-green);
+    }
+
+    .blue & {
+      color: var(--color-highlight-blue);
+    }
+  }
+
+  &:hover .downloadButtonIcon {
+    .orange & {
+      fill: var(--color-highlight-orange);
+    }
+
+    .green & {
+      fill: var(--color-highlight-green);
+    }
+
+    .blue & {
+      fill: var(--color-highlight-blue);
+    }
+  }
+}
