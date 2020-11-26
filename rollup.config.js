@@ -17,13 +17,13 @@ export default {
   input: 'src/index.js',
   output: [
     {
-      file: 'dist/esm/index.js',
+      file: pkg.module,
       format: 'esm',
       sourcemap: true,
     },
     {
       exports: 'default',
-      file: 'dist/cjs/index.js',
+      file: pkg.main,
       format: 'cjs',
       sourcemap: true,
     },
