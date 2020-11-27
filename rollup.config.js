@@ -2,6 +2,7 @@ import alias from '@rollup/plugin-alias';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import copy from 'rollup-plugin-copy-assets';
+import del from 'rollup-plugin-delete';
 import json from '@rollup/plugin-json';
 import path from 'path';
 import postcss from 'rollup-plugin-postcss';
@@ -17,19 +18,23 @@ export default {
   input: 'src/index.js',
   output: [
     {
-      file: 'dist/esm/index.js',
+      file: pkg.module,
       format: 'esm',
       sourcemap: true,
     },
     {
       exports: 'default',
-      file: 'dist/cjs/index.js',
+      file: pkg.main,
       format: 'cjs',
       sourcemap: true,
     },
   ],
   external: [...Object.keys(pkg.peerDependencies || {})],
   plugins: [
+    del({
+      targets: 'dist/*',
+      verbose: false,
+    }),
     copy({
       assets: ['src/assets'],
     }),
