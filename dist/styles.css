@@ -8595,6 +8595,7 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
   }
 .ProductDetailImage-module_image__rdqnp img {
     width: auto;
+    max-width: 100%;
     max-height: 200px;
   }
 @media (min-width: 640px) {
@@ -8604,7 +8605,6 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
     }
 @media (min-width: 1025px) {
 .ProductDetailImage-module_image__rdqnp img {
-      max-width: 100%;
       max-height: 500px
   }
     }
