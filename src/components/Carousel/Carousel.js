@@ -233,7 +233,7 @@ Carousel.propTypes = {
       url: PropTypes.string,
       text: PropTypes.string,
     }),
-    description: PropTypes.string,
+    description: PropTypes.node,
     eyebrow: PropTypes.string,
     heading: PropTypes.string,
   }),
