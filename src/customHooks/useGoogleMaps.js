@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Loader from 'google-maps';
 
 const loadGoogleMapsAsync = loader =>
   new Promise(resolve => {
@@ -14,6 +13,9 @@ export const useGoogleMap = (apiKey, options = { libraries: ['places'] }) => {
 
   useEffect(() => {
     const loadGoogleMap = async () => {
+      const module = await import(/* webpackMode: "eager" */ 'google-maps');
+      const Loader = module.default || module;
+
       setIsLoading(true);
 
       const { languageCode, libraries, regionCode } = options;
