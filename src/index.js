@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import components from './components';
 import constants from './constants';
 import contexts from './contexts';

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import * as BREAKPOINTS from './breakpoints.js';
 import * as COLORS from './colors.js';
 import * as GOOGLE_MAPS from './google-maps.js';

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import useAddToCart from './useAddToCart';
 import useEscapeKeyListener from './useEscapeKeyListener';
 import useExecuteOnImpression from './useExecuteOnImpression/useExecuteOnImpression';

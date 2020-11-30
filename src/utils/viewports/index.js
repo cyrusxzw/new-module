@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import {
   CONSTRAINT_KEYS,
   constraints,

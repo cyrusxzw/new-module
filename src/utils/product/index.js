@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { getVariantRadioOptions } from './product';
 
 export { getVariantRadioOptions };

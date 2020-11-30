@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import Paragraph from './Paragraph';
 import { ParagraphSet } from './Paragraph';
 

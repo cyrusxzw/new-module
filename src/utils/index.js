@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import isInBrowser from './environment';
 import objects from './objects';
 import paragraphsFromDivs from './paragraphsFromDivs';
