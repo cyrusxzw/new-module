@@ -105,7 +105,7 @@
   }
 
   .variants {
-    justify-content: left;
+    justify-content: flex-start;
     margin-bottom: 24px;
   }
 }

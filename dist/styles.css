@@ -8434,9 +8434,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 }
   }
 .ProductDetailBody-module_purchase__3O5jE .ProductDetailBody-module_variants__2Htb0 {
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     margin-bottom: 24px;
   }
 .ProductDetailBody-module_cartDisclaimer__enCjD {
