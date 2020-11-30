@@ -30,7 +30,6 @@ const ProductDetailBody = ({ className, copy, theme }) => {
     onVariantChange,
     variants,
   } = useVariantSelectContext();
-  console.log('variants:', variants);
 
   if (!productDetail) return null;
 
@@ -43,7 +42,6 @@ const ProductDetailBody = ({ className, copy, theme }) => {
   } = productDetail;
 
   const variantRadioOptions = getVariantRadioOptions(variants);
-  console.log('variantRadioOptions:', variantRadioOptions);
   const handleOnVariantChange = e => onVariantChange(e, variants);
   const handleOnFlyinPanelTriggerClick = () => setIsFlyinPanelVisible(true);
   const handleOnCloseClick = () => setIsFlyinPanelVisible(false);
