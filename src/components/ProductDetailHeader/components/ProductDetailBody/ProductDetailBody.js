@@ -30,6 +30,7 @@ const ProductDetailBody = ({ className, copy, theme }) => {
     onVariantChange,
     variants,
   } = useVariantSelectContext();
+  console.log('variants:', variants);
 
   if (!productDetail) return null;
 
@@ -42,6 +43,7 @@ const ProductDetailBody = ({ className, copy, theme }) => {
   } = productDetail;
 
   const variantRadioOptions = getVariantRadioOptions(variants);
+  console.log('variantRadioOptions:', variantRadioOptions);
   const handleOnVariantChange = e => onVariantChange(e, variants);
   const handleOnFlyinPanelTriggerClick = () => setIsFlyinPanelVisible(true);
   const handleOnCloseClick = () => setIsFlyinPanelVisible(false);
@@ -122,20 +124,24 @@ const ProductDetailBody = ({ className, copy, theme }) => {
         )}
 
         <div className={styles.purchase}>
-          <Transition
-            isActiveOnMount={true}
-            type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
-          >
-            <Heading
-              hasMediumWeightFont={true}
-              isFlush={true}
-              level={HEADING.LEVEL.FOUR}
-              size={HEADING.SIZE.X_X_SMALL}
-              theme={currentTheme}
+          {!!variantRadioOptions.length && (
+            <Transition
+              isActiveOnMount={true}
+              type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
             >
-              {variants.length > 1 ? copy?.size?.plural : copy?.size?.singular}
-            </Heading>
-          </Transition>
+              <Heading
+                hasMediumWeightFont={true}
+                isFlush={true}
+                level={HEADING.LEVEL.FOUR}
+                size={HEADING.SIZE.X_X_SMALL}
+                theme={currentTheme}
+              >
+                {variants.length > 1
+                  ? copy?.size?.plural
+                  : copy?.size?.singular}
+              </Heading>
+            </Transition>
+          )}
           <Transition
             isActiveOnMount={true}
             type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
@@ -150,7 +156,6 @@ const ProductDetailBody = ({ className, copy, theme }) => {
               value={selectedVariant.sku}
             />
           </Transition>
-
           <AddToCartButton copy={copy?.addToCart} theme={currentTheme} />
         </div>
 
