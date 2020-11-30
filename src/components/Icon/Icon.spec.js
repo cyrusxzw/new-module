@@ -1,10 +1,7 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import Icon from './Icon';
-
-configure({ adapter: new Adapter() });
 
 jest.mock('uuid', () => {
   let value = 0;
@@ -35,7 +32,7 @@ describe('<Icon />', () => {
 
 describe('<Icon /> error handling.', () => {
   it('should return `null` if svg name is not found', () => {
-    const component = shallow(<Icon name="foo" />);
-    expect(component.type()).toEqual(null);
+    const { container } = render(<Icon name="foo" />);
+    expect(container.firstChild).toBeNull();
   });
 });

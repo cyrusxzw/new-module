@@ -3,6 +3,7 @@
 exports[`<DefinitionListWithProductExtract /> renders base component correctly 1`] = `
 <div
   className="base dark slideIn hasTopMargin item1"
+  data-testid="data-testid-ProductExtract"
 >
   <div
     className="flexContainer delayAnimation slideIn"

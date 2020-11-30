@@ -1,11 +1,7 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import Select from './Select';
 import SelectFixture from './Select.fixture';
-
-configure({ adapter: new Adapter() });
 
 describe('<Select />', () => {
   it('should be defined', () => {

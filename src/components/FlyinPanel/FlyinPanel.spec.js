@@ -1,10 +1,6 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import FlyinPanel from './FlyinPanel';
-
-configure({ adapter: new Adapter() });
 
 jest.mock('uuid', () => {
   let value = 0;

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   consentErrorMsg:
     'Please confirm your accept our Terms & Conditions before proceeding ',

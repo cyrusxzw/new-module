@@ -13,7 +13,7 @@ const Breadcrumbs = ({ className, items, theme }) => {
   const classSet = cx(styles.base, styles[theme], className);
 
   return (
-    <nav className={classSet}>
+    <nav className={classSet} data-testid="data-testid-Breadcrumbs">
       <ul className={styles.list}>
         {items.map(item => (
           <li className={styles.item} key={item.id}>

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   cta: {
     text: 'Lorem ipsum dolor',

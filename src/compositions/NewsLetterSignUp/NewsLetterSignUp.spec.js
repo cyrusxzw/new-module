@@ -1,11 +1,7 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import NewsLetterSignUp from './NewsLetterSignUp';
 import NewsLetterSignUpFixture from './NewsLetterSignUp.fixture';
-
-configure({ adapter: new Adapter() });
 
 describe('<NewsLetterSignUp />', () => {
   it('should be defined', () => {

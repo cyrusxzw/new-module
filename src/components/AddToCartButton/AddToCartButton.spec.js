@@ -1,4 +1,5 @@
 import React from 'react';
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import {
   AddToCartContextProvider,
@@ -55,6 +56,26 @@ describe('<AddToCartButton />', () => {
                 dataTestRef={AddToCartButtonFixture.dataTestRef}
                 isEnabled={AddToCartButtonFixture.isEnabled}
               />
+            </VariantSelectContextProvider>
+          </ProductDetailContextProvider>
+        </AddToCartContextProvider>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders alternate action button correctly', () => {
+    const tree = renderer
+      .create(
+        <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+          <ProductDetailContextProvider
+            product={ProductDetailHeaderFixture.product}
+          >
+            <VariantSelectContextProvider
+              variants={ProductDetailHeaderFixture.variantAlternateAction}
+            >
+              <AddToCartButton copy={AddToCartButtonFixture.copy} />
             </VariantSelectContextProvider>
           </ProductDetailContextProvider>
         </AddToCartContextProvider>,

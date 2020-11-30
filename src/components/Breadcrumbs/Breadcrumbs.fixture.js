@@ -1,4 +1,6 @@
+/* istanbul ignore file */
 export default {
+  classname: 'breadcrumbs',
   items: [
     {
       label: 'Suspendisse quis elit',

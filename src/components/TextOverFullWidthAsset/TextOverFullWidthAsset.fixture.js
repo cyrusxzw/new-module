@@ -1,6 +1,12 @@
+/* istanbul ignore file */
 export default {
+  className: 'TextOverFullWidthAsset-className',
+  copyHeight: 'Top',
+  copySide: 'Left',
+  mediaType: 'Image',
+  content: 'content',
   backgroundImage: {
-    altText: 'A look inside Aesop: the book',
+    altText: 'TextOverFullWidthAsset-backgroundImage-altText',
     caption: null,
     large:
       '//images.ctfassets.net/u1nb1km7t5q7/1Sw3Q1024SHFqrriGvx6y1/4c7e5243ac23747ab5f8e262af599624/Aesop_Book_Hybris_PDP_Secondary_Full_Bleed_4_Desktop_2880x1660px.jpg',

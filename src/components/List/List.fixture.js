@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   items: [
     { content: 'Lorem ipsum dolor sit amet', id: 'Lorem ipsum dolor sit amet' },

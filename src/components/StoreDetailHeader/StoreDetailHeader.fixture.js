@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   copy: {
     location: 'Location',

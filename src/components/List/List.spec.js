@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { select } from '@storybook/addon-knobs';
 import List from './List';
 
 describe('Component - Element - List', () => {
@@ -16,7 +15,7 @@ describe('Component - Element - List', () => {
             { content: 'Fragrance', id: 'fragrance' },
             { content: 'Gifts', id: 'gifts' },
           ]}
-          theme={select('theme', ['dark', 'light'], 'dark')}
+          theme="dark"
         />,
       )
       .toJSON();

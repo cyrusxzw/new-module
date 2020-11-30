@@ -7,16 +7,15 @@ module.exports = {
   collectCoverage: true,
   coverageThreshold: {
     global: {
-      branches: 50,
-      functions: 40,
-      lines: 65,
-      statements: 65,
+      branches: 55,
+      functions: 55,
+      lines: 70,
+      statements: 70,
     },
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   testPathIgnorePatterns: [
     `<rootDir>/(dist|docs|node_modules|.cache)/`,
-    `<rootDir>/src/components/ProductDetailHeader/`,
     `<rootDir>/src/compositions/ProductDetail/`,
   ],
   globals: {

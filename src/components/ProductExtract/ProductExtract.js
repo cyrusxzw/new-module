@@ -79,7 +79,11 @@ const ProductExtract = forwardRef(function ProductExtractRef(
   }
 
   return (
-    <div className={classSet} ref={ref}>
+    <div
+      className={classSet}
+      data-testid="data-testid-ProductExtract"
+      ref={ref}
+    >
       <ConditionalWrapper
         condition={!!product.url}
         wrapper={children => (

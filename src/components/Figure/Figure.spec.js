@@ -1,11 +1,7 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import Figure from './Figure';
 import Image from '~/components/Image';
-
-configure({ adapter: new Adapter() });
 
 describe('<Figure />', () => {
   it('should be defined', () => {

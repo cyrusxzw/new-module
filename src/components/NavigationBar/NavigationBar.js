@@ -27,6 +27,7 @@ const NavigationBar = ({ childLinks, className, parentLink, selectedUrl }) => {
     <div
       className={cx(styles.wrapper, className)}
       data-test-ref={testRefs.wrapper}
+      data-testid="data-testid-NavigationBar"
     >
       <ul className={cx(styles.list)}>
         {links.map(({ hasTargetInNewWindow, text, url }, index) => {

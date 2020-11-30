@@ -35,6 +35,7 @@ exports[`<Video /> renders base component correctly 1`] = `
     autoPlay={true}
     className="base"
     controls={false}
+    data-testid="data-testid-VideoPlayer"
     loop={true}
     muted={true}
     playsInline={true}

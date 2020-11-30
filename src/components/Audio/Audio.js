@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { HYPERLINK_STYLE_TYPES } from '~/constants';
-import Button from '~/components/Button';
-import Hyperlink from '~/components/Hyperlink';
-import Icon from '~/components/Icon';
 import Loading from '~/components/Loading';
 import { useWaveSurfer } from './Audio.customHooks';
 import Header from './components/Header';
@@ -47,12 +43,12 @@ const Audio = ({
   };
 
   return (
-    <div className={classSet} id={id}>
+    <article className={classSet} id={id}>
       <Header artistName={artistName} trackTitle={trackTitle} />
 
       <div className={styles.waveContainer}>
         <Loading className={styles.loading} isLoading={isLoading} />
-        <div className={styles.waveform} ref={waveformRef} />
+        <figure className={styles.waveform} ref={waveformRef} />
         <audio ref={trackRef} src={audioUrl} />
       </div>
 
@@ -76,7 +72,7 @@ const Audio = ({
         progress={progress}
         progressColor={progressColor}
       />
-    </div>
+    </article>
   );
 };
 

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   link: {
     text: 'Lorem ipsum',

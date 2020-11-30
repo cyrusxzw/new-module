@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   className: 'fixture-classname',
   id: 'image-id',

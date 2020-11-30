@@ -1,11 +1,8 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import DefinitionList from './DefinitionList';
 import DefinitionListFixture from './DefinitionList.fixture';
-
-configure({ adapter: new Adapter() });
 
 describe('<DefinitionList />', () => {
   it('should be defined', () => {
@@ -20,8 +17,8 @@ describe('<DefinitionList />', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('returns null items prop is not a populated array', () => {
-    const component = shallow(<DefinitionList items={[]} />);
-    expect(component.type()).toEqual(null);
+  it('should return `null` if the `items` prop is not a populated array', () => {
+    const { container } = render(<DefinitionList items={[]} />);
+    expect(container.firstChild).toBeNull();
   });
 });

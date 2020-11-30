@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   audioUrl: './assets/audio/Istros_Imagined.mp3',
   artistName: 'Jesse Paris Smith',

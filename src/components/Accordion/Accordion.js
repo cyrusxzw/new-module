@@ -14,7 +14,7 @@ import { isObjectPopulatedArray } from '~/utils/objects';
 import styles from './Accordion.module.css';
 
 const Accordion = forwardRef(
-  ({ className, items, theme, wrapperClass }, ref) => {
+  ({ className, id, items, theme, wrapperClass }, ref) => {
     const [activeNodes, setIsActiveNodes] = React.useState([]);
 
     if (!isObjectPopulatedArray(items)) {
@@ -26,7 +26,12 @@ const Accordion = forwardRef(
     const checkIsActive = id => activeNodes.includes(id);
 
     return (
-      <div className={cx(wrapperClass)} ref={ref}>
+      <div
+        className={cx(wrapperClass)}
+        data-testid="data-testid-Accordion"
+        id={id}
+        ref={ref}
+      >
         <AccessibleAccordion
           allowMultipleExpanded={true}
           allowZeroExpanded={true}
@@ -69,6 +74,7 @@ const Accordion = forwardRef(
 
 Accordion.propTypes = {
   className: PropTypes.string,
+  id: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       content: PropTypes.node.isRequired,
@@ -82,6 +88,7 @@ Accordion.propTypes = {
 
 Accordion.defaultProps = {
   className: undefined,
+  id: undefined,
   items: undefined,
   theme: 'dark',
   wrapperClass: undefined,

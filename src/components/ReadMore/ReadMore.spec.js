@@ -1,11 +1,7 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import ReadMore from './ReadMore';
 import ReadMoreFixture from './ReadMore.fixture';
-
-configure({ adapter: new Adapter() });
 
 describe('<ReadMore />', () => {
   it('should be defined', () => {

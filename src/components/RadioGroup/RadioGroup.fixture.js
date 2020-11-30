@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   className: '',
   dataTestRef: 'RADIO_GROUP_TEST_REF',

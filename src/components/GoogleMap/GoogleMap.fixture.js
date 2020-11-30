@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   initialZoom: 14,
   center: { lat: -37.8064, lng: 144.9826 },

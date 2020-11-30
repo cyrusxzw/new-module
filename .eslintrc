@@ -11,12 +11,15 @@
     "es6": true,
     "jest": true
   },
-  "plugins": ["react", "react-hooks", "jsx-a11y"],
+  "plugins": ["react", "react-hooks", "jsx-a11y", "testing-library", "jest-dom"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:testing-library/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
   ],
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -51,6 +54,7 @@
     "import/prefer-default-export": "off",
     "indent": [2, 2],
     "init-declarations": [2, "always"],
+    "jest-dom/prefer-empty": 2,
     "jsx-a11y/media-has-caption": 0,
     "jsx-a11y/label-has-associated-control": [
       2,

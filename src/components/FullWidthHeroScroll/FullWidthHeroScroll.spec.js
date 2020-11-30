@@ -1,11 +1,7 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import FullWidthHeroScroll from './FullWidthHeroScroll';
 import FullWidthHeroScrollFixture from './FullWidthHeroScroll.fixture';
-
-configure({ adapter: new Adapter() });
 
 describe('<FullWidthHeroScroll />', () => {
   it('should be defined', () => {

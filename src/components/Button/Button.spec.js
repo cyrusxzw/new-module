@@ -1,10 +1,7 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 import Button from './Button';
-
-configure({ adapter: new Adapter() });
 
 const mockFn = jest.fn();
 
@@ -22,5 +19,13 @@ describe('<Button />', () => {
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('should return `null` if no children are passed', () => {
+    render(<Button className="aesop" onClick={mockFn} title="Aēsop" />);
+
+    const child = screen.queryByTestId('data-testid-Breadcrumbs');
+
+    expect(child).not.toBeInTheDocument();
   });
 });

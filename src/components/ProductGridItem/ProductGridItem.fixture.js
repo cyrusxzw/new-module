@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   info: '4 Sizes / From $ 26.45',
   variantOptionsOneItem: [

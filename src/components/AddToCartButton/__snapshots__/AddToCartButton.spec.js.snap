@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<AddToCartButton /> renders alternate action button correctly 1`] = `
+<a
+  className="base blockStyle alternate left dark base fullWidth"
+  data-test-ref="ADD_TO_CART"
+  href="/"
+  target="_self"
+  title="Nunc sagittis ultrices dignissim"
+>
+  Nunc sagittis ultrices dignissim
+</a>
+`;
+
 exports[`<AddToCartButton /> renders base component correctly 1`] = `
 <button
   className="base alternate blockStyle dark base fullWidth"

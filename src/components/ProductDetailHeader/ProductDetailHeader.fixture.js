@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   breadcrumbs: {
     items: [
@@ -82,6 +83,27 @@ export default {
   },
   variantOutOfStock: [
     {
+      cartDisclaimer: 'Nunc sagittis ultrices dignissim',
+      size: '50 ml',
+      sku: 'ARD33',
+      price: '$26.45',
+      isInStock: false,
+      image: {
+        altText: 'alt-tag-ARD33',
+        sizes: {
+          large: './assets/images/Product/variant-one-large.png',
+          medium: './assets/images/Product/variant-one-medium.png',
+          small: './assets/images/Product/variant-one-small.png',
+        },
+      },
+    },
+  ],
+  variantAlternateAction: [
+    {
+      alternateAction: {
+        url: '/',
+        label: 'Nunc sagittis ultrices dignissim',
+      },
       cartDisclaimer: 'Nunc sagittis ultrices dignissim',
       size: '50 ml',
       sku: 'ARD33',

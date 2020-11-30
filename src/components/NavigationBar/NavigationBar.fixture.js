@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   parentLink: {
     text: 'All Body & Hand',

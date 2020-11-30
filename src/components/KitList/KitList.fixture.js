@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   items: [
     { content: 'Pellentesque vitae sapien leo', id: '1' },

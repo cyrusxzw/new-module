@@ -1,6 +1,8 @@
+/* istanbul ignore file */
 import React from 'react';
 
 export default {
+  id: 'testing-id',
   items: [
     {
       id: '1',

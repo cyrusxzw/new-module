@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   actionLabel: 'Learn More',
   block: {

@@ -140,6 +140,7 @@ exports[`<Audio.Footer /> renders base component correctly 1`] = `
     <a
       className="base left dark downloadButton"
       download={true}
+      href="/"
       target="_blank"
     >
       undefined 

@@ -43,7 +43,10 @@ const TextOverFullWidthAsset = ({
   }
 
   return (
-    <div className={cx(styles.base, className)}>
+    <div
+      className={cx(styles.base, className)}
+      data-testid="data-testid-TextOverFullWidthAsset"
+    >
       {Media && <Media {...mediaProps} className={cx(styles.media)} />}
       <div className={cx(styles.content, styles[copyHeight], styles[copySide])}>
         {content}

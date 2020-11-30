@@ -1,10 +1,6 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import TextInput from './TextInput';
-
-configure({ adapter: new Adapter() });
 
 describe('<TextInput />', () => {
   it('should be defined', () => {

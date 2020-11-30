@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export default {
   id: 'test_id',
   category: 'Product',

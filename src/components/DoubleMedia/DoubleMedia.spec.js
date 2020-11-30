@@ -1,11 +1,7 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import DoubleMedia from './DoubleMedia';
 import DoubleMediaFixture from './DoubleMedia.fixture';
-
-configure({ adapter: new Adapter() });
 
 describe('<DoubleMedia />', () => {
   it('should be defined', () => {

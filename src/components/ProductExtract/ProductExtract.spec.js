@@ -1,11 +1,8 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import ProductExtract from './ProductExtract';
 import ProductExtractFixture from './ProductExtract.fixture';
-
-configure({ adapter: new Adapter() });
 
 describe('<ProductExtract />', () => {
   it('should be defined', () => {
@@ -25,13 +22,16 @@ describe('<ProductExtract />', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('returns null product prop is not a populated object', () => {
-    const component = shallow(
+  it('should return null product prop is not a populated object', () => {
+    render(
       <ProductExtract
         dataTestRef={ProductExtractFixture.dataTestRef}
         product={{}}
       />,
     );
-    expect(component.type()).toEqual(null);
+
+    const child = screen.queryByTestId('data-testid-ProductExtract');
+
+    expect(child).not.toBeInTheDocument();
   });
 });

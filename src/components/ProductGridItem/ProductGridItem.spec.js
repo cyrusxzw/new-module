@@ -1,6 +1,4 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import {
   ProductDetailContextProvider,
@@ -10,8 +8,6 @@ import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/Product
 import AddToCartButtonFixture from '~/components/AddToCartButton/AddToCartButton.fixture';
 import ProductGridItem from './ProductGridItem';
 import ProductGridItemFixture from './ProductGridItem.fixture';
-
-configure({ adapter: new Adapter() });
 
 describe('<ProductGridItem />', () => {
   it('should be defined', () => {

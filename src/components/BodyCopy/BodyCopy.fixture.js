@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import React from 'react';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import Hyperlink from '~/components/Hyperlink';

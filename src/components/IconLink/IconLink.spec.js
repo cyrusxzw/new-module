@@ -1,11 +1,7 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import IconLink from './IconLink';
 import IconLinkFixture from './IconLink.fixture';
-
-configure({ adapter: new Adapter() });
 
 describe('<IconLink />', () => {
   it('should be defined', () => {
