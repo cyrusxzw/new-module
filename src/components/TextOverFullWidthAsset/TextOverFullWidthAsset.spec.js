@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
 import TextOverFullWidthAsset from './TextOverFullWidthAsset';
 import TextOverFullWidthAssetFixture from './TextOverFullWidthAsset.fixture';
 
@@ -10,21 +9,19 @@ describe('<TextOverFullWidthAsset />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <TextOverFullWidthAsset
-          backgroundImage={TextOverFullWidthAssetFixture.backgroundImage}
-          backgroundVideo={TextOverFullWidthAssetFixture.backgroundVideo}
-          className={TextOverFullWidthAssetFixture.className}
-          content={TextOverFullWidthAssetFixture.content}
-          copyHeight={TextOverFullWidthAssetFixture.copyHeight}
-          copySide={TextOverFullWidthAssetFixture.copySide}
-          mediaType={TextOverFullWidthAssetFixture.mediaType}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <TextOverFullWidthAsset
+        backgroundImage={TextOverFullWidthAssetFixture.backgroundImage}
+        backgroundVideo={TextOverFullWidthAssetFixture.backgroundVideo}
+        className={TextOverFullWidthAssetFixture.className}
+        content={TextOverFullWidthAssetFixture.content}
+        copyHeight={TextOverFullWidthAssetFixture.copyHeight}
+        copySide={TextOverFullWidthAssetFixture.copySide}
+        mediaType={TextOverFullWidthAssetFixture.mediaType}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('should not render anything if content and mediaType are not valid', () => {

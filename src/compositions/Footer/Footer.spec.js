@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Footer from './Footer';
 import FooterFixture from './Footer.fixture';
 import NewsLetterSignUpFixture from '../NewsLetterSignUp/NewsLetterSignUp.fixture';
@@ -11,21 +11,19 @@ describe('<Footer />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Footer
-          blocks={FooterFixture.blocks}
-          consentErrorMsg={NewsLetterSignUpFixture.consentErrorMsg}
-          errorMessage={NewsLetterSignUpFixture.errorMessage}
-          notificationMessage={NotificationModalFixture.notificationMessage}
-          showTermsConditionsTextBox={true}
-          subscriptionMessage={NewsLetterSignUpFixture.subscriptionMessage}
-          termsAndCondition={NewsLetterSignUpFixture.termsAndCondition}
-          termsMessage={NewsLetterSignUpFixture.termsMessage}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <Footer
+        blocks={FooterFixture.blocks}
+        consentErrorMsg={NewsLetterSignUpFixture.consentErrorMsg}
+        errorMessage={NewsLetterSignUpFixture.errorMessage}
+        notificationMessage={NotificationModalFixture.notificationMessage}
+        showTermsConditionsTextBox={true}
+        subscriptionMessage={NewsLetterSignUpFixture.subscriptionMessage}
+        termsAndCondition={NewsLetterSignUpFixture.termsAndCondition}
+        termsMessage={NewsLetterSignUpFixture.termsMessage}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

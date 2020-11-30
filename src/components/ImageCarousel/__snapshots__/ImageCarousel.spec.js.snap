@@ -1,410 +1,321 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ImageCarousel /> renders base component correctly 1`] = `
-<div
-  className="base fullWidthSlides dark"
->
+<div>
   <div
-    className="slick-slider carousel slick-initialized"
-    dir="ltr"
+    class="base fullWidthSlides dark"
   >
-    <button
-      className="base dark base"
-      disabled={false}
-      onClick={[Function]}
-      title="next slide"
-      type="button"
-    >
-      <svg
-        className="base chevron dark"
-        data-ref=""
-        focusable="false"
-        height={16}
-        role="img"
-        style={
-          Object {
-            "height": "16px",
-            "width": "16px",
-          }
-        }
-        tabIndex={-1}
-        viewBox="0 0 50 50"
-        width={16}
-      >
-        <g>
-          <polygon
-            className="chevron"
-            points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
-          />
-        </g>
-      </svg>
-    </button>
     <div
-      className="slick-list"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={null}
-      onMouseMove={null}
-      onMouseUp={[Function]}
-      onTouchCancel={null}
-      onTouchEnd={[Function]}
-      onTouchMove={null}
-      onTouchStart={[Function]}
-      style={Object {}}
+      class="slick-slider carousel slick-initialized"
+      dir="ltr"
     >
+      <button
+        class="base dark base"
+        title="next slide"
+        type="button"
+      >
+        <svg
+          class="base chevron dark"
+          data-ref=""
+          data-testid="data-testid-Icon"
+          focusable="false"
+          height="16"
+          role="img"
+          style="height: 16px; width: 16px;"
+          tabindex="-1"
+          viewBox="0 0 50 50"
+          width="16"
+        >
+          <g>
+            <polygon
+              class="chevron"
+              points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
+            />
+          </g>
+        </svg>
+      </button>
       <div
-        className="slick-track"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseOver={[Function]}
-        style={
-          Object {
-            "WebkitTransform": "translate3d(0px, 0px, 0px)",
-            "WebkitTransition": "",
-            "msTransform": "translateX(0px)",
-            "opacity": 1,
-            "transform": "translate3d(0px, 0px, 0px)",
-            "transition": "",
-          }
-        }
+        class="slick-list"
       >
         <div
-          aria-hidden={true}
-          className="slick-slide slick-cloned"
-          data-index={-1}
-          onClick={[Function]}
-          style={
-            Object {
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
+          class="slick-track"
+          style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
         >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
+          <div
+            aria-hidden="true"
+            class="slick-slide slick-cloned"
+            data-index="-1"
+            style="width: 0px;"
+            tabindex="-1"
+          >
+            <div>
               <div
-                className="item"
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
                 <div
-                  className="imageContainer"
+                  class="item"
                 >
-                  <picture
-                    className="base picture dark image fullWidthSlide"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="./assets/images/ImageCarousel/image-three-large.jpg"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="./assets/images/ImageCarousel/image-three-medium.jpg"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="./assets/images/ImageCarousel/image-three-small.jpg"
-                    />
-                    <img
-                      alt="Vivamus sollicitudin"
-                      loading="lazy"
-                    />
-                  </picture>
+                    <picture
+                      class="base picture dark image fullWidthSlide"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="./assets/images/ImageCarousel/image-three-large.jpg"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="./assets/images/ImageCarousel/image-three-medium.jpg"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="./assets/images/ImageCarousel/image-three-small.jpg"
+                      />
+                      <img
+                        alt="Vivamus sollicitudin"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          aria-hidden={false}
-          className="slick-slide slick-active slick-current"
-          data-index={0}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
-        >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active slick-current"
+            data-index="0"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
               <div
-                className="item"
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
                 <div
-                  className="imageContainer"
+                  class="item"
                 >
-                  <picture
-                    className="base picture dark image fullWidthSlide"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="./assets/images/ImageCarousel/image-two-large.jpg"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="./assets/images/ImageCarousel/image-two-medium.jpg"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="./assets/images/ImageCarousel/image-two-small.jpg"
-                    />
-                    <img
-                      alt="Nunc dignissim"
-                      loading="lazy"
-                    />
-                  </picture>
+                    <picture
+                      class="base picture dark image fullWidthSlide"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="./assets/images/ImageCarousel/image-two-large.jpg"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="./assets/images/ImageCarousel/image-two-medium.jpg"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="./assets/images/ImageCarousel/image-two-small.jpg"
+                      />
+                      <img
+                        alt="Nunc dignissim"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          aria-hidden={true}
-          className="slick-slide"
-          data-index={1}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
-        >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
+          <div
+            aria-hidden="true"
+            class="slick-slide"
+            data-index="1"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
               <div
-                className="item"
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
                 <div
-                  className="imageContainer"
+                  class="item"
                 >
-                  <picture
-                    className="base picture dark image fullWidthSlide"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="./assets/images/ImageCarousel/image-three-large.jpg"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="./assets/images/ImageCarousel/image-three-medium.jpg"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="./assets/images/ImageCarousel/image-three-small.jpg"
-                    />
-                    <img
-                      alt="Vivamus sollicitudin"
-                      loading="lazy"
-                    />
-                  </picture>
+                    <picture
+                      class="base picture dark image fullWidthSlide"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="./assets/images/ImageCarousel/image-three-large.jpg"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="./assets/images/ImageCarousel/image-three-medium.jpg"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="./assets/images/ImageCarousel/image-three-small.jpg"
+                      />
+                      <img
+                        alt="Vivamus sollicitudin"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          aria-hidden={true}
-          className="slick-slide slick-cloned"
-          data-index={2}
-          onClick={[Function]}
-          style={
-            Object {
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
-        >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
+          <div
+            aria-hidden="true"
+            class="slick-slide slick-cloned"
+            data-index="2"
+            style="width: 0px;"
+            tabindex="-1"
+          >
+            <div>
               <div
-                className="item"
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
                 <div
-                  className="imageContainer"
+                  class="item"
                 >
-                  <picture
-                    className="base picture dark image fullWidthSlide"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="./assets/images/ImageCarousel/image-two-large.jpg"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="./assets/images/ImageCarousel/image-two-medium.jpg"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="./assets/images/ImageCarousel/image-two-small.jpg"
-                    />
-                    <img
-                      alt="Nunc dignissim"
-                      loading="lazy"
-                    />
-                  </picture>
+                    <picture
+                      class="base picture dark image fullWidthSlide"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="./assets/images/ImageCarousel/image-two-large.jpg"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="./assets/images/ImageCarousel/image-two-medium.jpg"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="./assets/images/ImageCarousel/image-two-small.jpg"
+                      />
+                      <img
+                        alt="Nunc dignissim"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          aria-hidden={true}
-          className="slick-slide slick-cloned"
-          data-index={3}
-          onClick={[Function]}
-          style={
-            Object {
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
-        >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
+          <div
+            aria-hidden="true"
+            class="slick-slide slick-cloned"
+            data-index="3"
+            style="width: 0px;"
+            tabindex="-1"
+          >
+            <div>
               <div
-                className="item"
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
                 <div
-                  className="imageContainer"
+                  class="item"
                 >
-                  <picture
-                    className="base picture dark image fullWidthSlide"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="./assets/images/ImageCarousel/image-three-large.jpg"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="./assets/images/ImageCarousel/image-three-medium.jpg"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="./assets/images/ImageCarousel/image-three-small.jpg"
-                    />
-                    <img
-                      alt="Vivamus sollicitudin"
-                      loading="lazy"
-                    />
-                  </picture>
+                    <picture
+                      class="base picture dark image fullWidthSlide"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="./assets/images/ImageCarousel/image-three-large.jpg"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="./assets/images/ImageCarousel/image-three-medium.jpg"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="./assets/images/ImageCarousel/image-three-small.jpg"
+                      />
+                      <img
+                        alt="Vivamus sollicitudin"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <button
-      className="base dark base"
-      disabled={false}
-      onClick={[Function]}
-      title="next slide"
-      type="button"
-    >
-      <svg
-        className="base chevron dark"
-        data-ref=""
-        focusable="false"
-        height={16}
-        role="img"
-        style={
-          Object {
-            "height": "16px",
-            "width": "16px",
-          }
-        }
-        tabIndex={-1}
-        viewBox="0 0 50 50"
-        width={16}
+      <button
+        class="base dark base"
+        title="next slide"
+        type="button"
       >
-        <g>
-          <polygon
-            className="chevron"
-            points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
-          />
-        </g>
-      </svg>
-    </button>
-    <div
-      className="base"
-    >
+        <svg
+          class="base chevron dark"
+          data-ref=""
+          data-testid="data-testid-Icon"
+          focusable="false"
+          height="16"
+          role="img"
+          style="height: 16px; width: 16px;"
+          tabindex="-1"
+          viewBox="0 0 50 50"
+          width="16"
+        >
+          <g>
+            <polygon
+              class="chevron"
+              points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
+            />
+          </g>
+        </svg>
+      </button>
       <div
-        className="list dark"
+        class="base"
+        data-testid="data-testid-Carousel-Pagination"
       >
         <div
-          className="bar"
-          style={
-            Object {
-              "left": "0%",
-              "width": "50%",
-            }
-          }
-        />
+          class="list dark"
+        >
+          <div
+            class="bar"
+            style="width: 50%; left: 0%;"
+          />
+        </div>
       </div>
     </div>
+    <footer
+      class="footer"
+    >
+      <div
+        class="slideCounter"
+      >
+        1 / 2
+      </div>
+      <div
+        class="caption"
+      >
+        Nunc dignissim quis arcu a lobortis. Nullam auctor id nulla non sagittis. Quisque non enim efficitur quam mattis semper a nec arcu.
+      </div>
+    </footer>
   </div>
-  <footer
-    className="footer"
-  >
-    <div
-      className="slideCounter"
-    >
-      1 / 2
-    </div>
-    <div
-      className="caption"
-    >
-      Nunc dignissim quis arcu a lobortis. Nullam auctor id nulla non sagittis. Quisque non enim efficitur quam mattis semper a nec arcu.
-    </div>
-  </footer>
 </div>
 `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ReadMore from './ReadMore';
 import ReadMoreFixture from './ReadMore.fixture';
 
@@ -9,10 +9,10 @@ describe('<ReadMore />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<ReadMore articles={ReadMoreFixture.articles} />)
-      .toJSON();
+    const { container } = render(
+      <ReadMore articles={ReadMoreFixture.articles} />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

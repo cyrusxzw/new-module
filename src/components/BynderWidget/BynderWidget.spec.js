@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import BynderWidget from './BynderWidget';
 
 describe('<BynderWidget />', () => {
@@ -8,15 +8,13 @@ describe('<BynderWidget />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <BynderWidget
-          heading="Media Releases"
-          id="6E8E63F9-7A54-442B-861E291124E19D94"
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <BynderWidget
+        heading="Media Releases"
+        id="6E8E63F9-7A54-442B-861E291124E19D94"
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,218 +1,200 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AccordionProduct /> renders base component correctly 1`] = `
-<div
-  className="base"
-  id="Aganice"
-  role="button"
-  tabIndex={-1}
->
+<div>
   <div
-    className="accordionDefaultBackground"
-    style={
-      Object {
-        "backgroundColor": undefined,
-      }
-    }
+    class="base"
+    id="Aganice"
+    role="button"
+    tabindex="-1"
   >
-    <picture
-      className="base picture dark closedBackgroundImage"
-    >
-      <source
-        media="(min-width: 1025px)"
-        srcSet="https://images.ctfassets.net/u1nb1km7t5q7/79GVrsv9HLi2IptU2s9DuX/118ba7bc9beb0595f6d50dba55a7cf2c/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif"
-      />
-      <source
-        media="(min-width: 640px)"
-        srcSet="https://images.ctfassets.net/u1nb1km7t5q7/7co3QQhzvXkQNUpik7W6OG/e56006cda4bf43b623687de50e871300/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif"
-      />
-      <source
-        media="(min-width: 0px)"
-        srcSet="https://images.ctfassets.net/u1nb1km7t5q7/3qxE1emdFuU76KIucYGnKK/f7d3255816270000ab6a2c0754579f65/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif"
-      />
-      <img
-        loading="lazy"
-      />
-    </picture>
-  </div>
-  <div
-    className="accordionDefaultContent"
-  >
-    <div>
-      <h2
-        className="base xLarge light"
-      >
-        Ptolemy
-      </h2>
-      <h4
-        className="base mediumWeightFont xSmall light"
-      >
-        Cardamon Mimosa Tobacco
-      </h4>
-      <div
-        className="accordionClosedCopy light"
-      >
-        A beam to comfort those on the high seas
-      </div>
-      <button
-        className="openBtn light"
-        onClick={[Function]}
-      >
-        Learn more
-      </button>
-      <button
-        className="base dark closedStateForegroundImageWrap"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        <picture
-          className="base picture dark closedForegroundImage"
-        >
-          <source
-            media="(min-width: 1025px)"
-            srcSet="https://images.ctfassets.net/u1nb1km7t5q7/584i2txtM9Evx8gk8wXeQd/f7aa5dff18c538b5e377a8287c0a60cd/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_02_Aganice_Product_Desktop_835x962px.png"
-          />
-          <source
-            media="(min-width: 640px)"
-            srcSet="https://images.ctfassets.net/u1nb1km7t5q7/65hEQAyMqMXx7GQa6HbBIN/d014e96f3a284e8a14a5aa9e5e3c901d/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_02_Aganice_Product_Tablet_653x752px.png"
-          />
-          <source
-            media="(min-width: 0px)"
-            srcSet="https://images.ctfassets.net/u1nb1km7t5q7/5XlxK9vdyy9Bm56uVPFjTv/147183c3c92495d161eced89104ccafe/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_02_Aganice_Product_Mobile_455x524px.png"
-          />
-          <img
-            alt="Lorem ipsum dolor sit"
-            loading="lazy"
-          />
-        </picture>
-      </button>
-    </div>
-  </div>
-  <div
-    className="accordionExpanded"
-    style={
-      Object {
-        "backgroundColor": undefined,
-      }
-    }
-  >
-    <picture
-      className="base picture dark openBackgroundImage"
-    >
-      <img
-        loading="lazy"
-      />
-    </picture>
     <div
-      className="accordionExpandedContent"
+      class="accordionDefaultBackground"
     >
-      <div
-        className="expandedAccordionImage"
+      <picture
+        class="base picture dark closedBackgroundImage"
       >
-        <picture
-          className="base picture dark"
-        >
-          <source
-            media="(min-width: 1025px)"
-            srcSet="https://images.ctfassets.net/u1nb1km7t5q7/3jWHcEvyLuAd3JGTDyM6q6/e8047f01381756ed33cebb66adde78d4/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Menu_1400x1020px.gif"
-          />
-          <source
-            media="(min-width: 640px)"
-            srcSet="https://images.ctfassets.net/u1nb1km7t5q7/152Y4pHKQXh1rIugZcwpDA/1ff81742d4aec35ffb6b4f4c1ec7407f/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Menu_1400x1020px.gif"
-          />
-          <source
-            media="(min-width: 0px)"
-            srcSet="https://images.ctfassets.net/u1nb1km7t5q7/4hmTzb2vPAfvAur8D0M0PW/692b1fb975b97be14ced876cf4db71aa/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Menu_1400x1020px.gif"
-          />
-          <img
-            alt="Lorem ipsum dolor sit"
-            loading="lazy"
-          />
-        </picture>
-      </div>
-      <div
-        className="expandedAccordionText"
-      >
+        <source
+          media="(min-width: 1025px)"
+          srcset="https://images.ctfassets.net/u1nb1km7t5q7/79GVrsv9HLi2IptU2s9DuX/118ba7bc9beb0595f6d50dba55a7cf2c/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif"
+        />
+        <source
+          media="(min-width: 640px)"
+          srcset="https://images.ctfassets.net/u1nb1km7t5q7/7co3QQhzvXkQNUpik7W6OG/e56006cda4bf43b623687de50e871300/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif"
+        />
+        <source
+          media="(min-width: 0px)"
+          srcset="https://images.ctfassets.net/u1nb1km7t5q7/3qxE1emdFuU76KIucYGnKK/f7d3255816270000ab6a2c0754579f65/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif"
+        />
+        <img
+          loading="lazy"
+        />
+      </picture>
+    </div>
+    <div
+      class="accordionDefaultContent"
+    >
+      <div>
         <h2
-          className="base xLarge dark openStateHeading"
+          class="base xLarge light"
         >
-          Aganice
+          Ptolemy
         </h2>
         <h4
-          className="base mediumWeightFont xSmall dark openStateEyebrow"
+          class="base mediumWeightFont xSmall light"
         >
           Cardamon Mimosa Tobacco
         </h4>
         <div
-          className="accordionOpenCopy dark"
+          class="accordionClosedCopy light"
         >
           A beam to comfort those on the high seas
         </div>
-        <div
-          className="base"
+        <button
+          class="openBtn light"
         >
-          <button
-            className="base alternate blockStyle dark base fullWidth  link fullWidth center"
-            data-test-ref="ADD_TO_CART"
-            disabled={false}
-            onClick={[Function]}
-            title="undefined — $26.45"
-            type="button"
+          Learn more
+        </button>
+        <button
+          class="base dark closedStateForegroundImageWrap"
+          type="button"
+        >
+          <picture
+            class="base picture dark closedForegroundImage"
           >
-            <span
-              className="label"
-            >
-              <span />
-              <span>
-                undefined — $26.45
-              </span>
-            </span>
-          </button>
-          <a
-            className="base blockStyle hasIcon center dark  link fullWidth center"
-            href="/"
-            target="_self"
-          >
-            Lorem ipsum dolor
-             
-            <i
-              aria-hidden="true"
-              className="icon"
-            >
-              <svg
-                className="base rightArrow dark"
-                data-ref=""
-                focusable="false"
-                height={12}
-                role="img"
-                style={
-                  Object {
-                    "height": "12px",
-                    "width": "12px",
-                  }
-                }
-                tabIndex={-1}
-                viewBox="0 0 50 50"
-                width={12}
-              >
-                <g>
-                  <path
-                    d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
-                  />
-                </g>
-              </svg>
-            </i>
-          </a>
-        </div>
+            <source
+              media="(min-width: 1025px)"
+              srcset="https://images.ctfassets.net/u1nb1km7t5q7/584i2txtM9Evx8gk8wXeQd/f7aa5dff18c538b5e377a8287c0a60cd/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_02_Aganice_Product_Desktop_835x962px.png"
+            />
+            <source
+              media="(min-width: 640px)"
+              srcset="https://images.ctfassets.net/u1nb1km7t5q7/65hEQAyMqMXx7GQa6HbBIN/d014e96f3a284e8a14a5aa9e5e3c901d/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_02_Aganice_Product_Tablet_653x752px.png"
+            />
+            <source
+              media="(min-width: 0px)"
+              srcset="https://images.ctfassets.net/u1nb1km7t5q7/5XlxK9vdyy9Bm56uVPFjTv/147183c3c92495d161eced89104ccafe/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_02_Aganice_Product_Mobile_455x524px.png"
+            />
+            <img
+              alt="Lorem ipsum dolor sit"
+              loading="lazy"
+            />
+          </picture>
+        </button>
       </div>
     </div>
-    <button
-      className="closeBtn dark"
-      onClick={[Function]}
+    <div
+      class="accordionExpanded"
     >
-      Close
-    </button>
+      <picture
+        class="base picture dark openBackgroundImage"
+      >
+        <img
+          loading="lazy"
+        />
+      </picture>
+      <div
+        class="accordionExpandedContent"
+      >
+        <div
+          class="expandedAccordionImage"
+        >
+          <picture
+            class="base picture dark"
+          >
+            <source
+              media="(min-width: 1025px)"
+              srcset="https://images.ctfassets.net/u1nb1km7t5q7/3jWHcEvyLuAd3JGTDyM6q6/e8047f01381756ed33cebb66adde78d4/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Menu_1400x1020px.gif"
+            />
+            <source
+              media="(min-width: 640px)"
+              srcset="https://images.ctfassets.net/u1nb1km7t5q7/152Y4pHKQXh1rIugZcwpDA/1ff81742d4aec35ffb6b4f4c1ec7407f/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Menu_1400x1020px.gif"
+            />
+            <source
+              media="(min-width: 0px)"
+              srcset="https://images.ctfassets.net/u1nb1km7t5q7/4hmTzb2vPAfvAur8D0M0PW/692b1fb975b97be14ced876cf4db71aa/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Menu_1400x1020px.gif"
+            />
+            <img
+              alt="Lorem ipsum dolor sit"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+        <div
+          class="expandedAccordionText"
+        >
+          <h2
+            class="base xLarge dark openStateHeading"
+          >
+            Aganice
+          </h2>
+          <h4
+            class="base mediumWeightFont xSmall dark openStateEyebrow"
+          >
+            Cardamon Mimosa Tobacco
+          </h4>
+          <div
+            class="accordionOpenCopy dark"
+          >
+            A beam to comfort those on the high seas
+          </div>
+          <div
+            class="base"
+          >
+            <button
+              class="base alternate blockStyle dark base fullWidth  link fullWidth center"
+              data-test-ref="ADD_TO_CART"
+              title="undefined — $26.45"
+              type="button"
+            >
+              <span
+                class="label"
+              >
+                <span />
+                <span>
+                  undefined — $26.45
+                </span>
+              </span>
+            </button>
+            <a
+              class="base blockStyle hasIcon center dark  link fullWidth center"
+              href="/"
+              target="_self"
+            >
+              Lorem ipsum dolor
+               
+              <i
+                aria-hidden="true"
+                class="icon"
+              >
+                <svg
+                  class="base rightArrow dark"
+                  data-ref=""
+                  data-testid="data-testid-Icon"
+                  focusable="false"
+                  height="12"
+                  role="img"
+                  style="height: 12px; width: 12px;"
+                  tabindex="-1"
+                  viewBox="0 0 50 50"
+                  width="12"
+                >
+                  <g>
+                    <path
+                      d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
+                    />
+                  </g>
+                </svg>
+              </i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <button
+        class="closeBtn dark"
+      >
+        Close
+      </button>
+    </div>
   </div>
 </div>
 `;

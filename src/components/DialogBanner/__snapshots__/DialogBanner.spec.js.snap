@@ -1,35 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DialogBanner /> renders base component correctly 1`] = `
-Array [
+<div>
   <div
-    className="base isVisible"
-    onClick={[MockFunction]}
-    onKeyPress={[Function]}
+    class="base isVisible"
     role="button"
-    tabIndex={-1}
-  />,
+    tabindex="-1"
+  />
   <aside
-    className="base isVisible dark top"
+    class="base isVisible dark top"
   >
     <div
-      className="iconContainer"
+      class="iconContainer"
     >
       <svg
-        className="base warning light warningIcon"
+        class="base warning light warningIcon"
         data-ref=""
+        data-testid="data-testid-Icon"
         focusable="false"
-        height={22}
+        height="22"
         role="img"
-        style={
-          Object {
-            "height": "22px",
-            "width": "22px",
-          }
-        }
-        tabIndex={-1}
+        style="height: 22px; width: 22px;"
+        tabindex="-1"
         viewBox="0 0 50 50"
-        width={22}
+        width="22"
       >
         <g>
           <path
@@ -42,61 +36,55 @@ Array [
       </svg>
     </div>
     <div
-      className="contentContainer"
+      class="contentContainer"
     >
       <h1
-        className="base large dark heading"
+        class="base large dark heading"
       >
         Maximum allowed quantity exceeded.
       </h1>
       <p
-        className="base dark message"
+        class="base dark message"
       >
         Our apologies, You have exceeded the maximum allowed quantity of this item.
       </p>
     </div>
     <div
-      className="closeContainer"
+      class="closeContainer"
     >
       <button
-        className="base dark closeButton"
-        disabled={false}
-        onClick={[MockFunction]}
+        class="base dark closeButton"
         title="Close Dialog Banner"
         type="button"
       >
         <svg
-          className="base close light closeIcon"
+          class="base close light closeIcon"
           data-ref=""
+          data-testid="data-testid-Icon"
           focusable="false"
-          height={12}
+          height="12"
           role="img"
-          style={
-            Object {
-              "height": "12px",
-              "width": "12px",
-            }
-          }
-          tabIndex={-1}
+          style="height: 12px; width: 12px;"
+          tabindex="-1"
           viewBox="0 0 50 50"
-          width={12}
+          width="12"
         >
           <g>
             <polygon
-              className="close"
+              class="close"
               points="50,5 45,0 25,20 5,0 0,5 20,25 0,45 5,50 25,30 45,50 50,45 30,25"
             />
           </g>
         </svg>
       </button>
       <a
-        className="base left light ctaButton"
+        class="base left light ctaButton"
         href="/contact-us/"
         target="_self"
       >
         Need assistance?
       </a>
     </div>
-  </aside>,
-]
+  </aside>
+</div>
 `;

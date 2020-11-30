@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import {
   ProductDetailContextProvider,
   VariantSelectContextProvider,
@@ -17,20 +17,18 @@ describe('<ProductDetailImage />', () => {
     const product = ProductDetailHeaderFixture.product;
     const variants = ProductDetailHeaderFixture.product.variantOptions;
 
-    const tree = renderer
-      .create(
-        <ProductDetailContextProvider product={product}>
-          <VariantSelectContextProvider variants={variants}>
-            <ProductDetailImage
-              className={ProductDetailImageFixture.className}
-              id={ProductDetailImageFixture.id}
-              theme={ProductDetailImageFixture.theme}
-            />
-          </VariantSelectContextProvider>
-        </ProductDetailContextProvider>,
-      )
-      .toJSON();
+    const { container } = render(
+      <ProductDetailContextProvider product={product}>
+        <VariantSelectContextProvider variants={variants}>
+          <ProductDetailImage
+            className={ProductDetailImageFixture.className}
+            id={ProductDetailImageFixture.id}
+            theme={ProductDetailImageFixture.theme}
+          />
+        </VariantSelectContextProvider>
+      </ProductDetailContextProvider>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

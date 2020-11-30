@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Textarea from './Textarea';
 
 describe('<Textarea />', () => {
@@ -8,10 +8,10 @@ describe('<Textarea />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<Textarea dataTestRef="test-data-ref" id="test-textarea" />)
-      .toJSON();
+    const { container } = render(
+      <Textarea dataTestRef="test-data-ref" id="test-textarea" />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

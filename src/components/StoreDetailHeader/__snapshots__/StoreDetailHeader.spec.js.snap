@@ -1,263 +1,257 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<StoreDetailHeader /> renders base component correctly 1`] = `
-<div
-  className="base reverse contentOnly dark base dark"
->
+<div>
   <div
-    className="content fullWidth"
-    id="mainColumn"
+    class="base reverse contentOnly dark base dark"
   >
-    <h1
-      className="base large dark"
-    >
-      Lorem ipsum dolor
-    </h1>
     <div
-      className="detailBlock"
+      class="content fullWidth"
+      id="mainColumn"
     >
-      <div
-        className="detail"
+      <h1
+        class="base large dark"
       >
-        <h3
-          className="base xXSmall dark detailHeading"
-        >
-          Location
-        </h3>
+        Lorem ipsum dolor
+      </h1>
+      <div
+        class="detailBlock"
+      >
         <div
-          className="detailContent"
+          class="detail"
         >
-          <a
-            className="base hasIcon hasExternalIcon left dark hyperlink"
-            data-test-ref="STORE_DETAILS_DIRECTION_LINK"
-            href="https://www.google.com/maps?saddr=Current+Location&daddr=Duis in massa sed, Suspendisse hendrerit"
-            target="_blank"
-            title="Location: Duis in massa sed, Suspendisse hendrerit"
+          <h3
+            class="base xXSmall dark detailHeading"
           >
-            Duis in massa sed, Suspendisse hendrerit
-             
-            <i
-              aria-hidden="true"
-              className="icon"
-            >
-              <svg
-                className="base rightUpArrow dark"
-                data-ref=""
-                focusable="false"
-                height={12}
-                role="img"
-                style={
-                  Object {
-                    "height": "12px",
-                    "width": "12px",
-                  }
-                }
-                tabIndex={-1}
-                viewBox="0 0 50 50"
-                width={12}
-              >
-                <g>
-                  <path
-                    d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-                  />
-                </g>
-              </svg>
-            </i>
-          </a>
-        </div>
-      </div>
-      <div
-        className="detail"
-      >
-        <h3
-          className="base xXSmall dark detailHeading"
-        >
-          Email
-        </h3>
-        <div
-          className="detailContent"
-        >
-          <a
-            className="base hasIcon hasExternalIcon left dark hyperlink"
-            data-test-ref="STORE_DETAILS_DIRECTION_EMAIL"
-            href="mailto:consectetur.elit@aesop.com"
-            target="_blank"
-            title="consectetur.elit@aesop.com"
-          >
-            consectetur.elit@aesop.com
-             
-            <i
-              aria-hidden="true"
-              className="icon"
-            >
-              <svg
-                className="base rightUpArrow dark"
-                data-ref=""
-                focusable="false"
-                height={12}
-                role="img"
-                style={
-                  Object {
-                    "height": "12px",
-                    "width": "12px",
-                  }
-                }
-                tabIndex={-1}
-                viewBox="0 0 50 50"
-                width={12}
-              >
-                <g>
-                  <path
-                    d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-                  />
-                </g>
-              </svg>
-            </i>
-          </a>
-        </div>
-      </div>
-      <div
-        className="detail"
-      >
-        <h3
-          className="base xXSmall dark detailHeading"
-        >
-          Phone
-        </h3>
-        <div
-          className="detailContent"
-        >
-          <a
-            className="base left dark hyperlink"
-            data-test-ref="STORE_DETAILS_DIRECTION_PHONE"
-            href="tel:+61 5555 1234"
-            target="_self"
-            title="tel: +61 5555 1234"
-          >
-            +61 5555 1234
-          </a>
-        </div>
-      </div>
-      <div
-        className="detail"
-      >
-        <h3
-          className="base xXSmall dark detailHeading"
-        >
-          Opening hours
-        </h3>
-        <div
-          className="detailContent"
-        >
+            Location
+          </h3>
           <div
-            className="base dark"
+            class="detailContent"
           >
-            <ul
-              className="list"
+            <a
+              class="base hasIcon hasExternalIcon left dark hyperlink"
+              data-test-ref="STORE_DETAILS_DIRECTION_LINK"
+              href="https://www.google.com/maps?saddr=Current+Location&daddr=Duis in massa sed, Suspendisse hendrerit"
+              target="_blank"
+              title="Location: Duis in massa sed, Suspendisse hendrerit"
             >
-              <li
-                className="item"
+              Duis in massa sed, Suspendisse hendrerit
+               
+              <i
+                aria-hidden="true"
+                class="icon"
               >
-                <span
-                  className="dayName"
+                <svg
+                  class="base rightUpArrow dark"
+                  data-ref=""
+                  data-testid="data-testid-Icon"
+                  focusable="false"
+                  height="12"
+                  role="img"
+                  style="height: 12px; width: 12px;"
+                  tabindex="-1"
+                  viewBox="0 0 50 50"
+                  width="12"
                 >
-                  Monday
-                </span>
-                <span
-                  className="hours"
-                >
-                  11am - 4pm
-                </span>
-              </li>
-              <li
-                className="item"
+                  <g>
+                    <path
+                      d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                    />
+                  </g>
+                </svg>
+              </i>
+            </a>
+          </div>
+        </div>
+        <div
+          class="detail"
+        >
+          <h3
+            class="base xXSmall dark detailHeading"
+          >
+            Email
+          </h3>
+          <div
+            class="detailContent"
+          >
+            <a
+              class="base hasIcon hasExternalIcon left dark hyperlink"
+              data-test-ref="STORE_DETAILS_DIRECTION_EMAIL"
+              href="mailto:consectetur.elit@aesop.com"
+              target="_blank"
+              title="consectetur.elit@aesop.com"
+            >
+              consectetur.elit@aesop.com
+               
+              <i
+                aria-hidden="true"
+                class="icon"
               >
-                <span
-                  className="dayName"
+                <svg
+                  class="base rightUpArrow dark"
+                  data-ref=""
+                  data-testid="data-testid-Icon"
+                  focusable="false"
+                  height="12"
+                  role="img"
+                  style="height: 12px; width: 12px;"
+                  tabindex="-1"
+                  viewBox="0 0 50 50"
+                  width="12"
                 >
-                  Tuesday
-                </span>
-                <span
-                  className="hours alternateHours"
-                >
-                  10am - 3pm
-                </span>
-              </li>
-              <li
-                className="item"
-              >
-                <span
-                  className="dayName"
-                >
-                  Wednesday
-                </span>
-                <span
-                  className="hours"
-                >
-                  10am - 3pm
-                </span>
-              </li>
-              <li
-                className="item"
-              >
-                <span
-                  className="dayName"
-                >
-                  Thursday
-                </span>
-                <span
-                  className="hours"
-                >
-                  10am - 3pm
-                </span>
-              </li>
-              <li
-                className="item"
-              >
-                <span
-                  className="dayName"
-                >
-                  Friday
-                </span>
-                <span
-                  className="hours"
-                >
-                  10am - 3pm
-                </span>
-              </li>
-              <li
-                className="item"
-              >
-                <span
-                  className="dayName"
-                >
-                  Saturday
-                </span>
-                <span
-                  className="hours alternateHours"
-                >
-                  10am - 3pm
-                </span>
-              </li>
-              <li
-                className="item"
-              >
-                <span
-                  className="dayName"
-                >
-                  Sunday
-                </span>
-                <span
-                  className="hours"
-                >
-                  10am - 3pm
-                </span>
-              </li>
-            </ul>
+                  <g>
+                    <path
+                      d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                    />
+                  </g>
+                </svg>
+              </i>
+            </a>
+          </div>
+        </div>
+        <div
+          class="detail"
+        >
+          <h3
+            class="base xXSmall dark detailHeading"
+          >
+            Phone
+          </h3>
+          <div
+            class="detailContent"
+          >
+            <a
+              class="base left dark hyperlink"
+              data-test-ref="STORE_DETAILS_DIRECTION_PHONE"
+              href="tel:+61 5555 1234"
+              target="_self"
+              title="tel: +61 5555 1234"
+            >
+              +61 5555 1234
+            </a>
+          </div>
+        </div>
+        <div
+          class="detail"
+        >
+          <h3
+            class="base xXSmall dark detailHeading"
+          >
+            Opening hours
+          </h3>
+          <div
+            class="detailContent"
+          >
             <div
-              className="alternateHoursNote"
+              class="base dark"
             >
-              Special opening hours
+              <ul
+                class="list"
+              >
+                <li
+                  class="item"
+                >
+                  <span
+                    class="dayName"
+                  >
+                    Monday
+                  </span>
+                  <span
+                    class="hours"
+                  >
+                    11am - 4pm
+                  </span>
+                </li>
+                <li
+                  class="item"
+                >
+                  <span
+                    class="dayName"
+                  >
+                    Tuesday
+                  </span>
+                  <span
+                    class="hours alternateHours"
+                  >
+                    10am - 3pm
+                  </span>
+                </li>
+                <li
+                  class="item"
+                >
+                  <span
+                    class="dayName"
+                  >
+                    Wednesday
+                  </span>
+                  <span
+                    class="hours"
+                  >
+                    10am - 3pm
+                  </span>
+                </li>
+                <li
+                  class="item"
+                >
+                  <span
+                    class="dayName"
+                  >
+                    Thursday
+                  </span>
+                  <span
+                    class="hours"
+                  >
+                    10am - 3pm
+                  </span>
+                </li>
+                <li
+                  class="item"
+                >
+                  <span
+                    class="dayName"
+                  >
+                    Friday
+                  </span>
+                  <span
+                    class="hours"
+                  >
+                    10am - 3pm
+                  </span>
+                </li>
+                <li
+                  class="item"
+                >
+                  <span
+                    class="dayName"
+                  >
+                    Saturday
+                  </span>
+                  <span
+                    class="hours alternateHours"
+                  >
+                    10am - 3pm
+                  </span>
+                </li>
+                <li
+                  class="item"
+                >
+                  <span
+                    class="dayName"
+                  >
+                    Sunday
+                  </span>
+                  <span
+                    class="hours"
+                  >
+                    10am - 3pm
+                  </span>
+                </li>
+              </ul>
+              <div
+                class="alternateHoursNote"
+              >
+                Special opening hours
+              </div>
             </div>
           </div>
         </div>

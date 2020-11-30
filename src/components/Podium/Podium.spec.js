@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Podium from './Podium';
 import PodiumFixture from './Podium.fixture';
 
@@ -9,17 +9,15 @@ describe('<Podium />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Podium
-          paddingBottom={PodiumFixture.paddingBottom}
-          paddingTop={PodiumFixture.paddingTop}
-        >
-          Content
-        </Podium>,
-      )
-      .toJSON();
+    const { container } = render(
+      <Podium
+        paddingBottom={PodiumFixture.paddingBottom}
+        paddingTop={PodiumFixture.paddingTop}
+      >
+        Content
+      </Podium>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

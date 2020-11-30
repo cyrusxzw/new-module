@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Transition from './Transition';
 
 describe('<Transition />', () => {
@@ -8,14 +8,12 @@ describe('<Transition />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Transition isActive={true} type="fade">
-          <div>Content</div>
-        </Transition>,
-      )
-      .toJSON();
+    const { container } = render(
+      <Transition isActive={true} type="fade">
+        <div>Content</div>
+      </Transition>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import FullWidthHeroScroll from './FullWidthHeroScroll';
 import FullWidthHeroScrollFixture from './FullWidthHeroScroll.fixture';
 
@@ -9,20 +9,18 @@ describe('<FullWidthHeroScroll />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <FullWidthHeroScroll
-          backgroundMediaType={FullWidthHeroScrollFixture.backgroundMediaType}
-          backgroundVideo={FullWidthHeroScrollFixture.backgroundVideo}
-          cta={FullWidthHeroScrollFixture.cta}
-          hasSerifFontHeading={FullWidthHeroScrollFixture.hasSerifFontHeading}
-          heading={FullWidthHeroScrollFixture.heading}
-          textBlocks={FullWidthHeroScrollFixture.textBlocks}
-          theme={FullWidthHeroScrollFixture.theme}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <FullWidthHeroScroll
+        backgroundMediaType={FullWidthHeroScrollFixture.backgroundMediaType}
+        backgroundVideo={FullWidthHeroScrollFixture.backgroundVideo}
+        cta={FullWidthHeroScrollFixture.cta}
+        hasSerifFontHeading={FullWidthHeroScrollFixture.hasSerifFontHeading}
+        heading={FullWidthHeroScrollFixture.heading}
+        textBlocks={FullWidthHeroScrollFixture.textBlocks}
+        theme={FullWidthHeroScrollFixture.theme}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

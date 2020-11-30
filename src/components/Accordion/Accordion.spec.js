@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
 import AccordionFixture from './Accordion.fixture';
 import Accordion from './Accordion';
 
@@ -12,17 +11,15 @@ describe('<Accordion />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Accordion
-          id={AccordionFixture.id}
-          items={AccordionFixture.items}
-          theme={AccordionFixture.theme}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <Accordion
+        id={AccordionFixture.id}
+        items={AccordionFixture.items}
+        theme={AccordionFixture.theme}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it.todo('should render full Accordion with test data');

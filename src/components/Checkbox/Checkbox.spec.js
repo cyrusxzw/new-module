@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Checkbox from './Checkbox';
 
 describe('<Checkbox />', () => {
@@ -8,18 +8,16 @@ describe('<Checkbox />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Checkbox
-          content="Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest."
-          dataTestRef="test-data-ref"
-          id="test-checkbox"
-          isEnabled={false}
-          theme="dark"
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <Checkbox
+        content="Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest."
+        dataTestRef="test-data-ref"
+        id="test-checkbox"
+        isEnabled={false}
+        theme="dark"
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

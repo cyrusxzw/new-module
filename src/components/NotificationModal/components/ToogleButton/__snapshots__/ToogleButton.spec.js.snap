@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ToogleButton /> renders base component correctly 1`] = `
-<button
-  className="base blockStyle dark"
-  disabled={false}
-  onClick={[Function]}
-  title="Show Notification"
-  type="button"
->
-  Show Notification
-</button>
+<div>
+  <button
+    class="base blockStyle dark"
+    title="Show Notification"
+    type="button"
+  >
+    Show Notification
+  </button>
+</div>
 `;

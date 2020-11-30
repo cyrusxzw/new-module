@@ -1,7 +1,7 @@
 import React from 'react';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import CartViewFixture from '~/components/CartView/CartView.fixture';
 import CartCheckout from './CartCheckout';
 import CartCheckoutFixture from './CartCheckout.fixture';
@@ -14,7 +14,7 @@ describe('<CartCheckout />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
+    const { container } = render
       .create(
         <CartCheckout
           copy={CartCheckoutFixture.copy}
@@ -23,6 +23,6 @@ describe('<CartCheckout />', () => {
       )
       .toJSON();
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

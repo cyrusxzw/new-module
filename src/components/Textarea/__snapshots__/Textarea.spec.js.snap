@@ -1,18 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Textarea /> renders base component correctly 1`] = `
-<label
-  htmlFor="test-textarea"
->
-  <div
-    className="base dark"
+<div>
+  <label
+    for="test-textarea"
   >
-    <textarea
-      className="textarea dark"
-      data-test-ref="test-data-ref"
-      disabled={false}
-      id="test-textarea"
-    />
-  </div>
-</label>
+    <div
+      class="base dark"
+    >
+      <textarea
+        class="textarea dark"
+        data-test-ref="test-data-ref"
+        id="test-textarea"
+      />
+    </div>
+  </label>
+</div>
 `;

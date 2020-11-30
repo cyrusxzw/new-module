@@ -42,6 +42,7 @@ const Icon = ({
       aria-labelledby={title ? uuidariaLabellBy : undefined}
       className={classSet}
       data-ref={dataRef}
+      data-testid="data-testid-Icon"
       focusable="false"
       height={height}
       role="img"

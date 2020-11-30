@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import DialogBanner from './DialogBanner';
 
 const mockFn = jest.fn();
@@ -10,24 +10,22 @@ describe('<DialogBanner />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <DialogBanner
-          cta={{
-            text: 'Need assistance?',
-            url: '/contact-us/',
-          }}
-          hasCloseButton={true}
-          heading="Maximum allowed quantity exceeded."
-          isVisible={true}
-          message="Our apologies, You have exceeded the maximum allowed quantity of this item."
-          onClose={mockFn}
-          position="top"
-          theme="dark"
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <DialogBanner
+        cta={{
+          text: 'Need assistance?',
+          url: '/contact-us/',
+        }}
+        hasCloseButton={true}
+        heading="Maximum allowed quantity exceeded."
+        isVisible={true}
+        message="Our apologies, You have exceeded the maximum allowed quantity of this item."
+        onClose={mockFn}
+        position="top"
+        theme="dark"
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

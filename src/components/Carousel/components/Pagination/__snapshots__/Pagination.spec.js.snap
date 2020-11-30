@@ -1,21 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Carousel.Pagination /> renders base component correctly 1`] = `
-<div
-  className="base"
->
+<div>
   <div
-    className="list dark"
+    class="base"
+    data-testid="data-testid-Carousel-Pagination"
   >
     <div
-      className="bar"
-      style={
-        Object {
-          "left": "0%",
-          "width": "100%",
-        }
-      }
-    />
+      class="list dark"
+    >
+      <div
+        class="bar"
+        style="width: 100%; left: 0%;"
+      />
+    </div>
   </div>
 </div>
 `;

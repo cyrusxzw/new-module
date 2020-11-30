@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import TwoColumnList from './TwoColumnList';
 import TwoColumnListFixture from './TwoColumnList.fixture';
 
@@ -9,14 +9,13 @@ describe('<TwoColumnList />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <TwoColumnList
-          leftColumn={TwoColumnListFixture.leftColumn}
-          rightColumn={TwoColumnListFixture.rightColumn}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(
+      <TwoColumnList
+        leftColumn={TwoColumnListFixture.leftColumn}
+        rightColumn={TwoColumnListFixture.rightColumn}
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
   });
 });

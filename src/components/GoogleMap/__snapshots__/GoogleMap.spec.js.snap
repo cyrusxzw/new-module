@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GoogleMap /> renders base component correctly 1`] = `
+<div>
+  <div
+    class="base"
+  >
+    <div
+      class="wrapper"
+    >
+      <span
+        class="base isLoading medium dark loading"
+      >
+        <span
+          class="dot"
+        />
+        <span
+          class="dot"
+        />
+        <span
+          class="dot"
+        />
+      </span>
+      <div
+        class="map"
+        id="google-map"
+      />
+    </div>
+    <footer
+      class="footer"
+    >
+      <div
+        class="viewStoreLabel"
+      >
+        Visit our nearby stores.
+      </div>
+      <div
+        class="viewStoreLinkWrapper"
+      >
+        <a
+          class="base hasIcon left dark viewStoreLink"
+          href="/"
+          target="_self"
+          title="Open store locator link"
+        >
+          Store locator
+           
+          <i
+            aria-hidden="true"
+            class="icon"
+          >
+            <svg
+              class="base rightArrow dark"
+              data-ref=""
+              data-testid="data-testid-Icon"
+              focusable="false"
+              height="12"
+              role="img"
+              style="height: 12px; width: 12px;"
+              tabindex="-1"
+              viewBox="0 0 50 50"
+              width="12"
+            >
+              <g>
+                <path
+                  d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
+                />
+              </g>
+            </svg>
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+</div>
+`;

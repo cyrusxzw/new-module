@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Header from './Header';
 
 describe('<Audio.Header />', () => {
@@ -8,10 +8,8 @@ describe('<Audio.Header />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<Header artistName="foo" trackTitle="bar" />)
-      .toJSON();
+    const { container } = render(<Header artistName="foo" trackTitle="bar" />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

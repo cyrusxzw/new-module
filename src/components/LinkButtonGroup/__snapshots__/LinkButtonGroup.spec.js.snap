@@ -1,18 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LinkButtonGroup /> renders base component correctly 1`] = `null`;
+exports[`<LinkButtonGroup /> renders base component correctly 1`] = `<div />`;
 
 exports[`<LinkButtonGroup /> renders children correctly 1`] = `
-<div
-  className="base flush"
->
-  <a
-    className=" link flushLink center"
-    href="/au/r/about"
-    textAlign="center"
-    theme="light"
+<div>
+  <div
+    class="base flush"
   >
-    Link
-  </a>
+    <a
+      class=" link flushLink center"
+      href="/au/r/about"
+      textalign="center"
+      theme="light"
+    >
+      Link
+    </a>
+  </div>
 </div>
 `;

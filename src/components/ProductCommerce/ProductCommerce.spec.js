@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
@@ -20,31 +20,29 @@ describe('<ProductCommerce />', () => {
     const product = ProductDetailHeaderFixture.product;
     const variants = ProductDetailHeaderFixture.product.variantOptions;
 
-    const tree = renderer
-      .create(
-        <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-          <ProductDetailContextProvider product={product}>
-            <VariantSelectContextProvider variants={variants}>
-              <ProductCommerce
-                copy={{
-                  addToCart: AddToCartButtonFixture.copy,
-                  ...ProductCommerceFixture.copy,
-                }}
-                cta={ProductCommerceFixture.cta}
-                description={<p>ProductCommerceFixture.description</p>}
-                eyebrow={ProductCommerceFixture.eyebrow}
-                heading={ProductCommerceFixture.heading}
-                onAddToCartClick={mockAddToCartButtonOnClick}
-                productName={ProductCommerceFixture.productName}
-                theme="dark"
-                variants={ProductCommerceFixture.variantOptions}
-              />
-            </VariantSelectContextProvider>
-          </ProductDetailContextProvider>
-        </AddToCartContextProvider>,
-      )
-      .toJSON();
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <ProductDetailContextProvider product={product}>
+          <VariantSelectContextProvider variants={variants}>
+            <ProductCommerce
+              copy={{
+                addToCart: AddToCartButtonFixture.copy,
+                ...ProductCommerceFixture.copy,
+              }}
+              cta={ProductCommerceFixture.cta}
+              description={<p>ProductCommerceFixture.description</p>}
+              eyebrow={ProductCommerceFixture.eyebrow}
+              heading={ProductCommerceFixture.heading}
+              onAddToCartClick={mockAddToCartButtonOnClick}
+              productName={ProductCommerceFixture.productName}
+              theme="dark"
+              variants={ProductCommerceFixture.variantOptions}
+            />
+          </VariantSelectContextProvider>
+        </ProductDetailContextProvider>
+      </AddToCartContextProvider>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

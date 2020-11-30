@@ -1,104 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<MediaWithContent /> renders base component correctly 1`] = `
-<div
-  className="base"
-  style={
-    Object {
-      "backgroundColor": "#F6F5E8",
-    }
-  }
->
+<div>
   <div
-    className="media base undefined"
-  >
-    <figure
-      className="base dark figure"
-    >
-      <picture
-        className="base picture dark"
-      >
-        <source
-          media="(min-width: 1025px)"
-          srcSet="https://www.aesop.com/medias/Aesop-Skin-Classic-Purifying-Facial-Exfoliant-Paste-Texture-50-50-Mobile-640x640px.jpg?context=bWFzdGVyfGltYWdlc3wyNDg1OHxpbWFnZS9qcGVnfGltYWdlcy9oMjIvaDBkLzkxMTYyMjg1MTc5MTguanBnfDJjZDUzMjI4N2EzZDgyYzE1ZTk3MTM4OWFjODU5N2Q2NjQ4YTAxNzcwZmE4YjBlZDQ2YTJmYTRhOTI5ZWQyY2I"
-        />
-        <source
-          media="(min-width: 640px)"
-          srcSet="https://www.aesop.com/medias/Aesop-Skin-Classic-Purifying-Facial-Exfoliant-Paste-Texture-50-50-Mobile-640x640px.jpg?context=bWFzdGVyfGltYWdlc3wyNDg1OHxpbWFnZS9qcGVnfGltYWdlcy9oMjIvaDBkLzkxMTYyMjg1MTc5MTguanBnfDJjZDUzMjI4N2EzZDgyYzE1ZTk3MTM4OWFjODU5N2Q2NjQ4YTAxNzcwZmE4YjBlZDQ2YTJmYTRhOTI5ZWQyY2I"
-        />
-        <source
-          media="(min-width: 0px)"
-          srcSet="https://www.aesop.com/medias/Aesop-Skin-Classic-Purifying-Facial-Exfoliant-Paste-Texture-50-50-Mobile-640x640px.jpg?context=bWFzdGVyfGltYWdlc3wyNDg1OHxpbWFnZS9qcGVnfGltYWdlcy9oMjIvaDBkLzkxMTYyMjg1MTc5MTguanBnfDJjZDUzMjI4N2EzZDgyYzE1ZTk3MTM4OWFjODU5N2Q2NjQ4YTAxNzcwZmE4YjBlZDQ2YTJmYTRhOTI5ZWQyY2I"
-        />
-        <img
-          alt="alt image"
-          loading="lazy"
-        />
-      </picture>
-    </figure>
-  </div>
-  <div
-    className="base notHero hasHalfWidthImage dark"
+    class="base"
+    style="background-color: rgb(246, 245, 232);"
   >
     <div
-      className="innerWrapper"
+      class="media base undefined"
     >
-      <header
-        className="header base"
+      <figure
+        class="base dark figure"
       >
-        <h2
-          className="base flush serifFont xLarge dark heading"
+        <picture
+          class="base picture dark"
         >
-          Fusce et dui nisi
-        </h2>
-        <h3
-          className="base flush mediumWeightFont xXSmall dark eyebrow eyebrow"
-        >
-          Quisque blandit est erat
-        </h3>
-      </header>
+          <source
+            media="(min-width: 1025px)"
+            srcset="https://www.aesop.com/medias/Aesop-Skin-Classic-Purifying-Facial-Exfoliant-Paste-Texture-50-50-Mobile-640x640px.jpg?context=bWFzdGVyfGltYWdlc3wyNDg1OHxpbWFnZS9qcGVnfGltYWdlcy9oMjIvaDBkLzkxMTYyMjg1MTc5MTguanBnfDJjZDUzMjI4N2EzZDgyYzE1ZTk3MTM4OWFjODU5N2Q2NjQ4YTAxNzcwZmE4YjBlZDQ2YTJmYTRhOTI5ZWQyY2I"
+          />
+          <source
+            media="(min-width: 640px)"
+            srcset="https://www.aesop.com/medias/Aesop-Skin-Classic-Purifying-Facial-Exfoliant-Paste-Texture-50-50-Mobile-640x640px.jpg?context=bWFzdGVyfGltYWdlc3wyNDg1OHxpbWFnZS9qcGVnfGltYWdlcy9oMjIvaDBkLzkxMTYyMjg1MTc5MTguanBnfDJjZDUzMjI4N2EzZDgyYzE1ZTk3MTM4OWFjODU5N2Q2NjQ4YTAxNzcwZmE4YjBlZDQ2YTJmYTRhOTI5ZWQyY2I"
+          />
+          <source
+            media="(min-width: 0px)"
+            srcset="https://www.aesop.com/medias/Aesop-Skin-Classic-Purifying-Facial-Exfoliant-Paste-Texture-50-50-Mobile-640x640px.jpg?context=bWFzdGVyfGltYWdlc3wyNDg1OHxpbWFnZS9qcGVnfGltYWdlcy9oMjIvaDBkLzkxMTYyMjg1MTc5MTguanBnfDJjZDUzMjI4N2EzZDgyYzE1ZTk3MTM4OWFjODU5N2Q2NjQ4YTAxNzcwZmE4YjBlZDQ2YTJmYTRhOTI5ZWQyY2I"
+          />
+          <img
+            alt="alt image"
+            loading="lazy"
+          />
+        </picture>
+      </figure>
+    </div>
+    <div
+      class="base notHero hasHalfWidthImage dark"
+    >
       <div
-        className="content"
+        class="innerWrapper"
       >
+        <header
+          class="header base"
+        >
+          <h2
+            class="base flush serifFont xLarge dark heading"
+          >
+            Fusce et dui nisi
+          </h2>
+          <h3
+            class="base flush mediumWeightFont xXSmall dark eyebrow eyebrow"
+          >
+            Quisque blandit est erat
+          </h3>
+        </header>
         <div
-          className="set dark description"
+          class="content"
         >
-          Aliquam lectus purus, gravida id metus dignissim, efficitur tempus lacus. Maecenas a cursus diam. Vivamus ultrices nisi non ex placerat, vel elementum sapien condimentum.
+          <div
+            class="set dark description"
+          >
+            Aliquam lectus purus, gravida id metus dignissim, efficitur tempus lacus. Maecenas a cursus diam. Vivamus ultrices nisi non ex placerat, vel elementum sapien condimentum.
+          </div>
+          <dl
+            class="base dark"
+            data-testid="data-testid-DefinitionList"
+          >
+            <dt
+              class="term slideIn"
+            >
+              Aliquam
+            </dt>
+            <dd
+              class="description slideIn"
+            >
+              Proin vulputate eros quis lectus pretium gravida.
+            </dd>
+            <dt
+              class="term slideIn"
+            >
+              Etiam eu augue quam
+            </dt>
+            <dd
+              class="description slideIn"
+            >
+              Pulvinar nulla enim, eu elementum lacus vehicula sed.
+            </dd>
+            <dt
+              class="term slideIn"
+            >
+              Duis at elit
+            </dt>
+            <dd
+              class="description slideIn"
+            >
+              Sed ac ipsum vel risus aliquam rutrum.
+            </dd>
+          </dl>
         </div>
-        <dl
-          className="base dark"
-        >
-          <dt
-            className="term slideIn"
-          >
-            Aliquam
-          </dt>
-          <dd
-            className="description slideIn"
-          >
-            Proin vulputate eros quis lectus pretium gravida.
-          </dd>
-          <dt
-            className="term slideIn"
-          >
-            Etiam eu augue quam
-          </dt>
-          <dd
-            className="description slideIn"
-          >
-            Pulvinar nulla enim, eu elementum lacus vehicula sed.
-          </dd>
-          <dt
-            className="term slideIn"
-          >
-            Duis at elit
-          </dt>
-          <dd
-            className="description slideIn"
-          >
-            Sed ac ipsum vel risus aliquam rutrum.
-          </dd>
-        </dl>
       </div>
     </div>
   </div>

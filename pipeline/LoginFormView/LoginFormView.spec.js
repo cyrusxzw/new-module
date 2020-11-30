@@ -1,7 +1,7 @@
 import React from 'react';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import LoginFormView from './LoginFormView';
 
 configure({ adapter: new Adapter() });
@@ -12,7 +12,7 @@ describe('<LoginFormView />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
+    const { container } = render
       .create(
         // @TODO Figure out how we are injecting translated copy from graphQL into components
         // @ts-ignore
@@ -25,6 +25,6 @@ describe('<LoginFormView />', () => {
       )
       .toJSON();
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

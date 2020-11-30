@@ -1,28 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<KitList /> renders base component correctly 1`] = `
-<ul
-  className="base dark base dark"
->
-  <li
-    className="item item slideIn"
+<div>
+  <ul
+    class="base dark base dark"
   >
-    Pellentesque vitae sapien leo
-  </li>
-  <li
-    className="item item slideIn"
-  >
-    Nunc in euismod lectus
-  </li>
-  <li
-    className="item item slideIn"
-  >
-    Aenean magna lectus, gravida non mi et, varius mattis sapien
-  </li>
-  <li
-    className="item item slideIn"
-  >
-    Donec vel sapien accumsan, scelerisque lacus placerat, placerat est
-  </li>
-</ul>
+    <li
+      class="item item slideIn"
+    >
+      Pellentesque vitae sapien leo
+    </li>
+    <li
+      class="item item slideIn"
+    >
+      Nunc in euismod lectus
+    </li>
+    <li
+      class="item item slideIn"
+    >
+      Aenean magna lectus, gravida non mi et, varius mattis sapien
+    </li>
+    <li
+      class="item item slideIn"
+    >
+      Donec vel sapien accumsan, scelerisque lacus placerat, placerat est
+    </li>
+  </ul>
+</div>
 `;

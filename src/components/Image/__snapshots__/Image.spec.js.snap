@@ -1,76 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Image /> renders base component correctly 1`] = `
-<a
-  className="base left dark base"
-  href="https://www.aesop.com/au/r/philosophy-to-products"
-  target="_self"
->
+<div>
+  <a
+    class="base left dark base"
+    href="https://www.aesop.com/au/r/philosophy-to-products"
+    target="_self"
+  >
+    <picture
+      class="picture dark"
+    >
+      <source
+        media="(min-width: 1025px)"
+        srcset="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_large.png 2x"
+      />
+      <source
+        media="(min-width: 640px)"
+        srcset="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_medium.png 2x"
+      />
+      <source
+        media="(min-width: 0px)"
+        srcset="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_small.png 2x"
+      />
+      <img
+        alt="Image of Milk Cleansing Campaign Aesop 2019"
+        loading="lazy"
+      />
+    </picture>
+  </a>
+</div>
+`;
+
+exports[`<Image /> renders the picture tag without a Hyperlink if the \`cta\` prop was not passed 1`] = `
+<div>
   <picture
-    className="picture dark"
+    class="base picture dark"
   >
     <source
       media="(min-width: 1025px)"
-      srcSet="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_large.png 2x"
+      srcset="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_large.png 2x"
     />
     <source
       media="(min-width: 640px)"
-      srcSet="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_medium.png 2x"
+      srcset="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_medium.png 2x"
     />
     <source
       media="(min-width: 0px)"
-      srcSet="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_small.png 2x"
+      srcset="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_small.png 2x"
     />
     <img
       alt="Image of Milk Cleansing Campaign Aesop 2019"
       loading="lazy"
     />
   </picture>
-</a>
-`;
-
-exports[`<Image /> renders the picture tag without a Hyperlink if the \`cta\` prop was not passed 1`] = `
-<picture
-  className="base picture dark"
->
-  <source
-    media="(min-width: 1025px)"
-    srcSet="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_large.png 2x"
-  />
-  <source
-    media="(min-width: 640px)"
-    srcSet="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_medium.png 2x"
-  />
-  <source
-    media="(min-width: 0px)"
-    srcSet="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_small.png 2x"
-  />
-  <img
-    alt="Image of Milk Cleansing Campaign Aesop 2019"
-    loading="lazy"
-  />
-</picture>
+</div>
 `;
 
 exports[`<Image /> renders the picture without lazy loading 1`] = `
-<picture
-  className="base picture dark"
->
-  <source
-    media="(min-width: 1025px)"
-    srcSet="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_large.png 2x"
-  />
-  <source
-    media="(min-width: 640px)"
-    srcSet="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_medium.png 2x"
-  />
-  <source
-    media="(min-width: 0px)"
-    srcSet="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_small.png 2x"
-  />
-  <img
-    alt="Image of Milk Cleansing Campaign Aesop 2019"
-    loading="eager"
-  />
-</picture>
+<div>
+  <picture
+    class="base picture dark"
+  >
+    <source
+      media="(min-width: 1025px)"
+      srcset="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_large.png 2x"
+    />
+    <source
+      media="(min-width: 640px)"
+      srcset="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_medium.png 2x"
+    />
+    <source
+      media="(min-width: 0px)"
+      srcset="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_small.png 2x"
+    />
+    <img
+      alt="Image of Milk Cleansing Campaign Aesop 2019"
+      loading="eager"
+    />
+  </picture>
+</div>
 `;

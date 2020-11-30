@@ -1,17 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Loading /> renders base component correctly 1`] = `
-<span
-  className="base isLoading medium dark"
->
+<div>
   <span
-    className="dot"
-  />
-  <span
-    className="dot"
-  />
-  <span
-    className="dot"
-  />
-</span>
+    class="base isLoading medium dark"
+  >
+    <span
+      class="dot"
+    />
+    <span
+      class="dot"
+    />
+    <span
+      class="dot"
+    />
+  </span>
+</div>
 `;

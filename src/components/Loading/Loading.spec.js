@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Loading from './Loading';
 
 describe('<Loading />', () => {
@@ -8,8 +8,8 @@ describe('<Loading />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer.create(<Loading isLoading={true} />).toJSON();
+    const { container } = render(<Loading isLoading={true} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

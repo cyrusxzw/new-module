@@ -18,7 +18,7 @@ describe('<MainNavigation />', () => {
     await act(async () => {
       await waitForExpect(() => {
         const tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
       });
     });
   });

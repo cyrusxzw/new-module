@@ -1,22 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ProductDetailImage /> renders base component correctly 1`] = `
-<div
-  className="base dark fixture-classname shiftInLeftEnter"
->
-  <figure
-    className="base dark fadeEnter"
+<div>
+  <div
+    class="base dark fixture-classname shiftInLeftEnter shiftInLeftEnterActive"
   >
-    <picture
-      className="base picture dark image"
+    <figure
+      class="base dark fadeEnter"
     >
-      <img
-        loading="lazy"
+      <picture
+        class="base picture dark image"
+      >
+        <img
+          loading="lazy"
+        />
+      </picture>
+      <div
+        class="cartDisclaimer"
       />
-    </picture>
-    <div
-      className="cartDisclaimer"
-    />
-  </figure>
+    </figure>
+  </div>
 </div>
 `;

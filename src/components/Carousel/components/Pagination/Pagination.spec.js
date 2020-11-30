@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 import Pagination from './Pagination';
 
 describe('<Carousel.Pagination />', () => {
@@ -9,13 +8,16 @@ describe('<Carousel.Pagination />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer.create(<Pagination dots={[0]} />).toJSON();
+    const { container } = render(<Pagination dots={[0]} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('should return null if `dots` array is empty', () => {
-    const { container } = render(<Pagination />);
-    expect(container.firstChild).toBeNull();
+    render(<Pagination />);
+
+    const child = screen.queryByTestId('data-testid-Carousel-Pagination');
+
+    expect(child).not.toBeInTheDocument();
   });
 });

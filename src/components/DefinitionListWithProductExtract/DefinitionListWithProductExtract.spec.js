@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import DefinitionListWithProductExtract from './DefinitionListWithProductExtract';
 
 describe('<DefinitionListWithProductExtract />', () => {
@@ -8,10 +8,10 @@ describe('<DefinitionListWithProductExtract />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<DefinitionListWithProductExtract dataTestRef="test_id" />)
-      .toJSON();
+    const { container } = render(
+      <DefinitionListWithProductExtract dataTestRef="test_id" />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

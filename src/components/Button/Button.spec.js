@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 import Button from './Button';
 
@@ -11,14 +10,13 @@ describe('<Button />', () => {
   });
 
   it('renders base component correctly with `onClick` prop', () => {
-    const tree = renderer
-      .create(
-        <Button className="aesop" onClick={mockFn} title="Aēsop">
-          Button
-        </Button>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(
+      <Button className="aesop" onClick={mockFn} title="Aēsop">
+        Button
+      </Button>,
+    );
+
+    expect(container).toMatchSnapshot();
   });
 
   it('should return `null` if no children are passed', () => {

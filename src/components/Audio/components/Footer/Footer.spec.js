@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Footer from './Footer';
 
 describe('<Audio.Footer />', () => {
@@ -8,10 +8,10 @@ describe('<Audio.Footer />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<Footer artistName="foo" audioUrl="/" trackTitle="bar" />)
-      .toJSON();
+    const { container } = render(
+      <Footer artistName="foo" audioUrl="/" trackTitle="bar" />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

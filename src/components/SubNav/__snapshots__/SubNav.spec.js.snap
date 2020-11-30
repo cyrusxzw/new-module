@@ -1,72 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SubNav /> renders base component correctly 1`] = `
-<nav
-  className="base dark"
->
-  <h3
-    className="base small dark heading"
+<div>
+  <nav
+    class="base dark"
   >
-    Phasellus aliquet sem
-  </h3>
-  <ul
-    className="base dark"
-  >
-    <li
-      className="item item"
+    <h3
+      class="base small dark heading"
     >
-      <a
-        className="base left dark link"
-        href="https://aesop.com/"
-        target="_self"
-      >
-        Morbi id nulla
-      </a>
-    </li>
-    <li
-      className="item item"
+      Phasellus aliquet sem
+    </h3>
+    <ul
+      class="base dark"
     >
-      <a
-        className="base left dark link"
-        href="https://aesop.com/"
-        target="_self"
+      <li
+        class="item item"
       >
-        Nullam ultrices
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          class="base left dark link"
+          href="https://aesop.com/"
+          target="_self"
+        >
+          Morbi id nulla
+        </a>
+      </li>
+      <li
+        class="item item"
+      >
+        <a
+          class="base left dark link"
+          href="https://aesop.com/"
+          target="_self"
+        >
+          Nullam ultrices
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
 `;
 
-exports[`<SubNav /> renders without title if not \`title\` prop is passed 1`] = `
-<nav
-  className="base dark"
->
-  <ul
-    className="base dark"
+exports[`<SubNav /> renders without heading if no \`heading\` prop is passed 1`] = `
+<div>
+  <nav
+    class="base dark"
   >
-    <li
-      className="item item"
+    <ul
+      class="base dark"
     >
-      <a
-        className="base left dark link"
-        href="https://aesop.com/"
-        target="_self"
+      <li
+        class="item item"
       >
-        Morbi id nulla
-      </a>
-    </li>
-    <li
-      className="item item"
-    >
-      <a
-        className="base left dark link"
-        href="https://aesop.com/"
-        target="_self"
+        <a
+          class="base left dark link"
+          href="https://aesop.com/"
+          target="_self"
+        >
+          Morbi id nulla
+        </a>
+      </li>
+      <li
+        class="item item"
       >
-        Nullam ultrices
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          class="base left dark link"
+          href="https://aesop.com/"
+          target="_self"
+        >
+          Nullam ultrices
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
 `;

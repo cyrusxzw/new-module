@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Quote from './Quote';
 import QuoteFixture from './Quote.fixture';
 
@@ -9,12 +9,10 @@ describe('<Quote />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Quote author={QuoteFixture.author} content={QuoteFixture.content} />,
-      )
-      .toJSON();
+    const { container } = render(
+      <Quote author={QuoteFixture.author} content={QuoteFixture.content} />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

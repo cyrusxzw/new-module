@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import KitList from './KitList';
 import KitListFixture from './KitList.fixture';
 
@@ -9,10 +9,10 @@ describe('<KitList />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<KitList items={KitListFixture.items} />)
-      .toJSON();
+    const { container } = render(<KitList items={KitListFixture.items} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
+
+  it.todo('should have the correct number of items');
 });

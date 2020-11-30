@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import FlyinPanel from './FlyinPanel';
 
 jest.mock('uuid', () => {
@@ -17,14 +17,12 @@ describe('<FlyinPanel />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <FlyinPanel onClose={mockFn} title="title">
-          Content
-        </FlyinPanel>,
-      )
-      .toJSON();
+    const { container } = render(
+      <FlyinPanel onClose={mockFn} title="title">
+        Content
+      </FlyinPanel>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

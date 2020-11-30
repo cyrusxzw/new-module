@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
 import ProductExtract from './ProductExtract';
 import ProductExtractFixture from './ProductExtract.fixture';
 
@@ -10,16 +9,14 @@ describe('<ProductExtract />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <ProductExtract
-          dataTestRef={ProductExtractFixture.dataTestRef}
-          product={ProductExtractFixture.product}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <ProductExtract
+        dataTestRef={ProductExtractFixture.dataTestRef}
+        product={ProductExtractFixture.product}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('should return null product prop is not a populated object', () => {

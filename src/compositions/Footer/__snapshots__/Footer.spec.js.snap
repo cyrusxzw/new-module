@@ -1,717 +1,671 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Footer /> renders base component correctly 1`] = `
-<div
-  className="base"
->
+<div>
   <div
-    className="base isNotVisible"
-    style={
-      Object {
-        "backgroundColor": "#d5d5cc",
-      }
-    }
-  >
-    <span
-      className="notificationMessage"
-    >
-      Sincere thanks for subscribing. We are always pleased to share ourpassionate interests with like - minded individuals.
-    </span>
-    <button
-      className="closeButton"
-      data-ref="close"
-      onClick={[Function]}
-      tabIndex={-1}
-    >
-      <svg
-        className="base close dark"
-        data-ref=""
-        focusable="false"
-        height={15}
-        role="img"
-        style={
-          Object {
-            "height": "15px",
-            "width": "15px",
-          }
-        }
-        tabIndex={-1}
-        viewBox="0 0 50 50"
-        width={15}
-      >
-        <g>
-          <polygon
-            className="close"
-            points="50,5 45,0 25,20 5,0 0,5 20,25 0,45 5,50 25,30 45,50 50,45 30,25"
-          />
-        </g>
-      </svg>
-    </button>
-  </div>
-  <div
-    className="block"
+    class="base"
   >
     <div
-      className="signup"
+      class="base isNotVisible"
+      style="background-color: rgb(213, 213, 204);"
     >
-      <div
-        className="base"
+      <span
+        class="notificationMessage"
       >
-        <form
-          onSubmit={[Function]}
+        Sincere thanks for subscribing. We are always pleased to share ourpassionate interests with like - minded individuals.
+      </span>
+      <button
+        class="closeButton"
+        data-ref="close"
+        tabindex="-1"
+      >
+        <svg
+          class="base close dark"
+          data-ref=""
+          data-testid="data-testid-Icon"
+          focusable="false"
+          height="15"
+          role="img"
+          style="height: 15px; width: 15px;"
+          tabindex="-1"
+          viewBox="0 0 50 50"
+          width="15"
         >
-          <div
-            className="inputField light"
-          >
-            <div
-              className="footerNewsletterInputWrapper"
-            >
-              <div
-                className="formText"
-              >
-                <label
-                  htmlFor="newsletter-email"
-                >
-                  <input
-                    className="formTextInput light footerNewsLetter"
-                    data-test-ref="EMAIL_SIGN_UP_INPUT"
-                    disabled={false}
-                    id="newsletter-email"
-                    name="newsletter-email"
-                    noValidate={true}
-                    onChange={[Function]}
-                    placeholder=""
-                    type="text"
-                  />
-                  <span
-                    className="formTextLabel light"
-                  >
-                    Email Address
-                  </span>
-                </label>
-              </div>
-            </div>
-            <button
-              className="button light"
-              data-test-ref="EMAIL_SIGN_UP_BUTTON"
-              disabled={true}
-            >
-              <svg
-                className="base rightArrow light signUpIcon light"
-                data-ref=""
-                focusable="false"
-                height={12}
-                role="img"
-                style={
-                  Object {
-                    "height": "12px",
-                    "width": "12px",
-                  }
-                }
-                tabIndex={-1}
-                viewBox="0 0 50 50"
-                width={12}
-              >
-                <g>
-                  <path
-                    d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
-                  />
-                </g>
-              </svg>
-            </button>
-          </div>
-          <div
-            className="footerNewsletterErrorMessage"
-          />
-          <section>
-            <label
-              className="base"
-              htmlFor="subscription"
-            >
-              <input
-                className="checkBox light"
-                data-test-ref="EMAIL_SIGN_UP_SUBSCRIPTION_CHECKBOX"
-                disabled={false}
-                id="subscription"
-                onChange={[Function]}
-                type="checkbox"
-              />
-              <span
-                className="content light"
-              >
-                Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.
-              </span>
-            </label>
-            <label
-              className="base"
-              htmlFor="terms"
-            >
-              <input
-                className="checkBox light"
-                data-test-ref="EMAIL_SIGN_UP_TERMS_AND_CONDITIONS_CHECKBOX"
-                disabled={false}
-                id="terms"
-                onChange={[Function]}
-                type="checkbox"
-              />
-              <span
-                className="content light"
-              >
-                I accept the Terms & Conditions 
-              </span>
-            </label>
-            <div
-              className="termsAndConditionWrapper"
-            >
-              <div
-                className="termsAndCondition"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis sem quis sem bibendum aliquet non nec sapien. Suspendisse felis dui, gravida non ligula id, tempor pharetra sapien. Vestibulum porttitor felis vitae mollis porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis sem quis sem bibendum aliquet non nec sapien. Suspendisse felis dui, gravida non ligula id, tempor pharetra sapien. Vestibulum porttitor felis vitae mollis porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis sem quis sem bibendum aliquet non nec sapien. Suspendisse felis dui, gravida non ligula id, tempor pharetra sapien. Vestibulum porttitor felis vitae mollis porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis sem quis sem bibendum aliquet non nec sapien. Suspendisse felis dui, gravida non ligula id, tempor pharetra sapien. Vestibulum porttitor felis vitae mollis porta.
-              </div>
-            </div>
-          </section>
-        </form>
-      </div>
+          <g>
+            <polygon
+              class="close"
+              points="50,5 45,0 25,20 5,0 0,5 20,25 0,45 5,50 25,30 45,50 50,45 30,25"
+            />
+          </g>
+        </svg>
+      </button>
     </div>
-    <section
-      className="base light item"
+    <div
+      class="block"
     >
-      <h1
-        className="heading"
-      >
-        Orders & Support
-      </h1>
       <div
-        className="divider light"
-      />
-      <ul
-        className="list"
+        class="signup"
       >
-        <li>
-          <a
-            className="base hasIcon hasExternalIcon left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/contact-us"
-            target="_blank"
-            title="Contact us"
-          >
-            Contact us
-             
-            <i
-              aria-hidden="true"
-              className="icon"
+        <div
+          class="base"
+        >
+          <form>
+            <div
+              class="inputField light"
             >
-              <svg
-                className="base rightUpArrow light"
-                data-ref=""
-                focusable="false"
-                height={12}
-                role="img"
-                style={
-                  Object {
-                    "height": "12px",
-                    "width": "12px",
-                  }
-                }
-                tabIndex={-1}
-                viewBox="0 0 50 50"
-                width={12}
+              <div
+                class="footerNewsletterInputWrapper"
               >
-                <g>
-                  <path
-                    d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-                  />
-                </g>
-              </svg>
-            </i>
-          </a>
-        </li>
-        <li>
-          <a
-            className="base hasIcon hasExternalIcon left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/shipping/"
-            target="_blank"
-            title="Delivery and returns"
-          >
-            Delivery and returns
-             
-            <i
-              aria-hidden="true"
-              className="icon"
-            >
-              <svg
-                className="base rightUpArrow light"
-                data-ref=""
-                focusable="false"
-                height={12}
-                role="img"
-                style={
-                  Object {
-                    "height": "12px",
-                    "width": "12px",
-                  }
-                }
-                tabIndex={-1}
-                viewBox="0 0 50 50"
-                width={12}
+                <div
+                  class="formText"
+                >
+                  <label
+                    for="newsletter-email"
+                  >
+                    <input
+                      class="formTextInput light footerNewsLetter"
+                      data-test-ref="EMAIL_SIGN_UP_INPUT"
+                      id="newsletter-email"
+                      name="newsletter-email"
+                      novalidate=""
+                      placeholder=""
+                      type="text"
+                      value=""
+                    />
+                    <span
+                      class="formTextLabel light"
+                    >
+                      Email Address
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <button
+                class="button light"
+                data-test-ref="EMAIL_SIGN_UP_BUTTON"
+                disabled=""
               >
-                <g>
-                  <path
-                    d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-                  />
-                </g>
-              </svg>
-            </i>
-          </a>
-        </li>
-        <li>
-          <a
-            className="base hasIcon hasExternalIcon left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/contact-us"
-            target="_blank"
-            title="Click And Collect"
-          >
-            Click And Collect
-             
-            <i
-              aria-hidden="true"
-              className="icon"
-            >
-              <svg
-                className="base rightUpArrow light"
-                data-ref=""
-                focusable="false"
-                height={12}
-                role="img"
-                style={
-                  Object {
-                    "height": "12px",
-                    "width": "12px",
-                  }
-                }
-                tabIndex={-1}
-                viewBox="0 0 50 50"
-                width={12}
+                <svg
+                  class="base rightArrow light signUpIcon light"
+                  data-ref=""
+                  data-testid="data-testid-Icon"
+                  focusable="false"
+                  height="12"
+                  role="img"
+                  style="height: 12px; width: 12px;"
+                  tabindex="-1"
+                  viewBox="0 0 50 50"
+                  width="12"
+                >
+                  <g>
+                    <path
+                      d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
+                    />
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <div
+              class="footerNewsletterErrorMessage"
+            />
+            <section>
+              <label
+                class="base"
+                for="subscription"
               >
-                <g>
-                  <path
-                    d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-                  />
-                </g>
-              </svg>
-            </i>
-          </a>
-        </li>
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/shipping/"
-            target="_self"
-            title="Track Your Orders"
-          >
-            Track Your Orders
-          </a>
-        </li>
-      </ul>
-    </section>
-    <section
-      className="base light item"
-    >
-      <h1
-        className="heading"
-      >
-        Services
-      </h1>
-      <div
-        className="divider light"
-      />
-      <ul
-        className="list"
-      >
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/contact-us"
-            target="_self"
-            title="Video Consultation"
-          >
-            Video Consultation
-          </a>
-        </li>
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/shipping/"
-            target="_self"
-            title="Live Assistance"
-          >
-            Live Assistance
-          </a>
-        </li>
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/contact-us"
-            target="_self"
-            title="Call And Collect"
-          >
-            Call And Collect
-          </a>
-        </li>
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/shipping/"
-            target="_self"
-            title="Facial Appointment"
-          >
-            Facial Appointment
-          </a>
-        </li>
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/shipping/"
-            target="_self"
-            title="Corporate Gifts"
-          >
-            Corporate Gifts
-          </a>
-        </li>
-      </ul>
-    </section>
-    <section
-      className="base light item"
-    >
-      <h1
-        className="heading"
-      >
-        Shipping to
-      </h1>
-      <div
-        className="divider light"
-      />
-      <div
-        className="listItem copy"
-      >
-        TODO: Shipping To Component
+                <input
+                  class="checkBox light"
+                  data-test-ref="EMAIL_SIGN_UP_SUBSCRIPTION_CHECKBOX"
+                  id="subscription"
+                  type="checkbox"
+                />
+                <span
+                  class="content light"
+                >
+                  Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.
+                </span>
+              </label>
+              <label
+                class="base"
+                for="terms"
+              >
+                <input
+                  class="checkBox light"
+                  data-test-ref="EMAIL_SIGN_UP_TERMS_AND_CONDITIONS_CHECKBOX"
+                  id="terms"
+                  type="checkbox"
+                />
+                <span
+                  class="content light"
+                >
+                  I accept the Terms & Conditions 
+                </span>
+              </label>
+              <div
+                class="termsAndConditionWrapper"
+              >
+                <div
+                  class="termsAndCondition"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis sem quis sem bibendum aliquet non nec sapien. Suspendisse felis dui, gravida non ligula id, tempor pharetra sapien. Vestibulum porttitor felis vitae mollis porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis sem quis sem bibendum aliquet non nec sapien. Suspendisse felis dui, gravida non ligula id, tempor pharetra sapien. Vestibulum porttitor felis vitae mollis porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis sem quis sem bibendum aliquet non nec sapien. Suspendisse felis dui, gravida non ligula id, tempor pharetra sapien. Vestibulum porttitor felis vitae mollis porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis sem quis sem bibendum aliquet non nec sapien. Suspendisse felis dui, gravida non ligula id, tempor pharetra sapien. Vestibulum porttitor felis vitae mollis porta.
+                </div>
+              </div>
+            </section>
+          </form>
+        </div>
       </div>
-    </section>
-    <section
-      className="base light item"
-    >
-      <h1
-        className="heading"
+      <section
+        class="base light item"
       >
-        Acknowledgment of Country
-      </h1>
-      <div
-        className="divider light"
-      />
-      <div
-        className="listItem copy"
-      >
-        Aesop acknowledges the Traditional Owners of the lands on which we live and work, and pays deepest respects to Elders past, present and emerging. We also acknowledge that sovereignty of these lands has never been ceded.
-      </div>
-    </section>
-    <section
-      className="base light item"
-    >
-      <h1
-        className="heading"
-      >
-        Sustainability
-      </h1>
-      <div
-        className="divider light"
-      />
-      <div
-        className="listItem copy"
-      >
-        Our approach to sustainability is guided by where we can have the greatest social and environmental impact.
-      </div>
-    </section>
-    <section
-      className="base light item"
-    >
-      <h1
-        className="heading"
-      >
-        About
-      </h1>
-      <div
-        className="divider light"
-      />
-      <ul
-        className="list"
-      >
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/contact-us"
-            target="_self"
-            title="About Us"
-          >
-            About Us
-          </a>
-        </li>
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/shipping/"
-            target="_self"
-            title="Career"
-          >
-            Career
-          </a>
-        </li>
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/contact-us"
-            target="_self"
-            title="Press"
-          >
-            Press
-          </a>
-        </li>
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/shipping/"
-            target="_self"
-            title="Policy"
-          >
-            Policy
-          </a>
-        </li>
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/shipping/"
-            target="_self"
-            title="Privacy Policy"
-          >
-            Privacy Policy
-          </a>
-        </li>
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/shipping/"
-            target="_self"
-            title="Accessibility"
-          >
-            Accessibility
-          </a>
-        </li>
-        <li>
-          <a
-            className="base left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/shipping/"
-            target="_self"
-            title="Terms and Conditions"
-          >
-            Terms and Conditions
-          </a>
-        </li>
-      </ul>
-    </section>
-    <section
-      className="base light item"
-    >
-      <h1
-        className="heading"
-      >
-        Social Media
-      </h1>
-      <div
-        className="divider light"
-      />
-      <ul
-        className="list"
-      >
-        <li>
-          <a
-            className="base hasIcon hasExternalIcon left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/contact-us"
-            target="_blank"
-            title="Instagram"
-          >
-            Instagram
-             
-            <i
-              aria-hidden="true"
-              className="icon"
+        <h1
+          class="heading"
+        >
+          Orders & Support
+        </h1>
+        <div
+          class="divider light"
+        />
+        <ul
+          class="list"
+        >
+          <li>
+            <a
+              class="base hasIcon hasExternalIcon left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/contact-us"
+              target="_blank"
+              title="Contact us"
             >
-              <svg
-                className="base rightUpArrow light"
-                data-ref=""
-                focusable="false"
-                height={12}
-                role="img"
-                style={
-                  Object {
-                    "height": "12px",
-                    "width": "12px",
-                  }
-                }
-                tabIndex={-1}
-                viewBox="0 0 50 50"
-                width={12}
+              Contact us
+               
+              <i
+                aria-hidden="true"
+                class="icon"
               >
-                <g>
-                  <path
-                    d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-                  />
-                </g>
-              </svg>
-            </i>
-          </a>
-        </li>
-        <li>
-          <a
-            className="base hasIcon hasExternalIcon left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/contact-us"
-            target="_blank"
-            title="Twitter"
-          >
-            Twitter
-             
-            <i
-              aria-hidden="true"
-              className="icon"
+                <svg
+                  class="base rightUpArrow light"
+                  data-ref=""
+                  data-testid="data-testid-Icon"
+                  focusable="false"
+                  height="12"
+                  role="img"
+                  style="height: 12px; width: 12px;"
+                  tabindex="-1"
+                  viewBox="0 0 50 50"
+                  width="12"
+                >
+                  <g>
+                    <path
+                      d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                    />
+                  </g>
+                </svg>
+              </i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="base hasIcon hasExternalIcon left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/shipping/"
+              target="_blank"
+              title="Delivery and returns"
             >
-              <svg
-                className="base rightUpArrow light"
-                data-ref=""
-                focusable="false"
-                height={12}
-                role="img"
-                style={
-                  Object {
-                    "height": "12px",
-                    "width": "12px",
-                  }
-                }
-                tabIndex={-1}
-                viewBox="0 0 50 50"
-                width={12}
+              Delivery and returns
+               
+              <i
+                aria-hidden="true"
+                class="icon"
               >
-                <g>
-                  <path
-                    d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-                  />
-                </g>
-              </svg>
-            </i>
-          </a>
-        </li>
-        <li>
-          <a
-            className="base hasIcon hasExternalIcon left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/contact-us"
-            target="_blank"
-            title="KaKao Plus Friends"
-          >
-            KaKao Plus Friends
-             
-            <i
-              aria-hidden="true"
-              className="icon"
+                <svg
+                  class="base rightUpArrow light"
+                  data-ref=""
+                  data-testid="data-testid-Icon"
+                  focusable="false"
+                  height="12"
+                  role="img"
+                  style="height: 12px; width: 12px;"
+                  tabindex="-1"
+                  viewBox="0 0 50 50"
+                  width="12"
+                >
+                  <g>
+                    <path
+                      d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                    />
+                  </g>
+                </svg>
+              </i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="base hasIcon hasExternalIcon left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/contact-us"
+              target="_blank"
+              title="Click And Collect"
             >
-              <svg
-                className="base rightUpArrow light"
-                data-ref=""
-                focusable="false"
-                height={12}
-                role="img"
-                style={
-                  Object {
-                    "height": "12px",
-                    "width": "12px",
-                  }
-                }
-                tabIndex={-1}
-                viewBox="0 0 50 50"
-                width={12}
+              Click And Collect
+               
+              <i
+                aria-hidden="true"
+                class="icon"
               >
-                <g>
-                  <path
-                    d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-                  />
-                </g>
-              </svg>
-            </i>
-          </a>
-        </li>
-        <li>
-          <a
-            className="base hasIcon hasExternalIcon left light listItem"
-            data-test-ref="FOOTER_LINK"
-            href="https://www.aesop.com/au/r/contact-us"
-            target="_blank"
-            title="Naver Post"
-          >
-            Naver Post
-             
-            <i
-              aria-hidden="true"
-              className="icon"
+                <svg
+                  class="base rightUpArrow light"
+                  data-ref=""
+                  data-testid="data-testid-Icon"
+                  focusable="false"
+                  height="12"
+                  role="img"
+                  style="height: 12px; width: 12px;"
+                  tabindex="-1"
+                  viewBox="0 0 50 50"
+                  width="12"
+                >
+                  <g>
+                    <path
+                      d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                    />
+                  </g>
+                </svg>
+              </i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/shipping/"
+              target="_self"
+              title="Track Your Orders"
             >
-              <svg
-                className="base rightUpArrow light"
-                data-ref=""
-                focusable="false"
-                height={12}
-                role="img"
-                style={
-                  Object {
-                    "height": "12px",
-                    "width": "12px",
-                  }
-                }
-                tabIndex={-1}
-                viewBox="0 0 50 50"
-                width={12}
+              Track Your Orders
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section
+        class="base light item"
+      >
+        <h1
+          class="heading"
+        >
+          Services
+        </h1>
+        <div
+          class="divider light"
+        />
+        <ul
+          class="list"
+        >
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/contact-us"
+              target="_self"
+              title="Video Consultation"
+            >
+              Video Consultation
+            </a>
+          </li>
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/shipping/"
+              target="_self"
+              title="Live Assistance"
+            >
+              Live Assistance
+            </a>
+          </li>
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/contact-us"
+              target="_self"
+              title="Call And Collect"
+            >
+              Call And Collect
+            </a>
+          </li>
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/shipping/"
+              target="_self"
+              title="Facial Appointment"
+            >
+              Facial Appointment
+            </a>
+          </li>
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/shipping/"
+              target="_self"
+              title="Corporate Gifts"
+            >
+              Corporate Gifts
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section
+        class="base light item"
+      >
+        <h1
+          class="heading"
+        >
+          Shipping to
+        </h1>
+        <div
+          class="divider light"
+        />
+        <div
+          class="listItem copy"
+        >
+          TODO: Shipping To Component
+        </div>
+      </section>
+      <section
+        class="base light item"
+      >
+        <h1
+          class="heading"
+        >
+          Acknowledgment of Country
+        </h1>
+        <div
+          class="divider light"
+        />
+        <div
+          class="listItem copy"
+        >
+          Aesop acknowledges the Traditional Owners of the lands on which we live and work, and pays deepest respects to Elders past, present and emerging. We also acknowledge that sovereignty of these lands has never been ceded.
+        </div>
+      </section>
+      <section
+        class="base light item"
+      >
+        <h1
+          class="heading"
+        >
+          Sustainability
+        </h1>
+        <div
+          class="divider light"
+        />
+        <div
+          class="listItem copy"
+        >
+          Our approach to sustainability is guided by where we can have the greatest social and environmental impact.
+        </div>
+      </section>
+      <section
+        class="base light item"
+      >
+        <h1
+          class="heading"
+        >
+          About
+        </h1>
+        <div
+          class="divider light"
+        />
+        <ul
+          class="list"
+        >
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/contact-us"
+              target="_self"
+              title="About Us"
+            >
+              About Us
+            </a>
+          </li>
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/shipping/"
+              target="_self"
+              title="Career"
+            >
+              Career
+            </a>
+          </li>
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/contact-us"
+              target="_self"
+              title="Press"
+            >
+              Press
+            </a>
+          </li>
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/shipping/"
+              target="_self"
+              title="Policy"
+            >
+              Policy
+            </a>
+          </li>
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/shipping/"
+              target="_self"
+              title="Privacy Policy"
+            >
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/shipping/"
+              target="_self"
+              title="Accessibility"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li>
+            <a
+              class="base left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/shipping/"
+              target="_self"
+              title="Terms and Conditions"
+            >
+              Terms and Conditions
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section
+        class="base light item"
+      >
+        <h1
+          class="heading"
+        >
+          Social Media
+        </h1>
+        <div
+          class="divider light"
+        />
+        <ul
+          class="list"
+        >
+          <li>
+            <a
+              class="base hasIcon hasExternalIcon left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/contact-us"
+              target="_blank"
+              title="Instagram"
+            >
+              Instagram
+               
+              <i
+                aria-hidden="true"
+                class="icon"
               >
-                <g>
-                  <path
-                    d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-                  />
-                </g>
-              </svg>
-            </i>
-          </a>
-        </li>
-      </ul>
-    </section>
-  </div>
-  <div
-    className="bottom"
-  >
-    <span>
-      © Aesop
-    </span>
-    <div />
+                <svg
+                  class="base rightUpArrow light"
+                  data-ref=""
+                  data-testid="data-testid-Icon"
+                  focusable="false"
+                  height="12"
+                  role="img"
+                  style="height: 12px; width: 12px;"
+                  tabindex="-1"
+                  viewBox="0 0 50 50"
+                  width="12"
+                >
+                  <g>
+                    <path
+                      d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                    />
+                  </g>
+                </svg>
+              </i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="base hasIcon hasExternalIcon left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/contact-us"
+              target="_blank"
+              title="Twitter"
+            >
+              Twitter
+               
+              <i
+                aria-hidden="true"
+                class="icon"
+              >
+                <svg
+                  class="base rightUpArrow light"
+                  data-ref=""
+                  data-testid="data-testid-Icon"
+                  focusable="false"
+                  height="12"
+                  role="img"
+                  style="height: 12px; width: 12px;"
+                  tabindex="-1"
+                  viewBox="0 0 50 50"
+                  width="12"
+                >
+                  <g>
+                    <path
+                      d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                    />
+                  </g>
+                </svg>
+              </i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="base hasIcon hasExternalIcon left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/contact-us"
+              target="_blank"
+              title="KaKao Plus Friends"
+            >
+              KaKao Plus Friends
+               
+              <i
+                aria-hidden="true"
+                class="icon"
+              >
+                <svg
+                  class="base rightUpArrow light"
+                  data-ref=""
+                  data-testid="data-testid-Icon"
+                  focusable="false"
+                  height="12"
+                  role="img"
+                  style="height: 12px; width: 12px;"
+                  tabindex="-1"
+                  viewBox="0 0 50 50"
+                  width="12"
+                >
+                  <g>
+                    <path
+                      d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                    />
+                  </g>
+                </svg>
+              </i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="base hasIcon hasExternalIcon left light listItem"
+              data-test-ref="FOOTER_LINK"
+              href="https://www.aesop.com/au/r/contact-us"
+              target="_blank"
+              title="Naver Post"
+            >
+              Naver Post
+               
+              <i
+                aria-hidden="true"
+                class="icon"
+              >
+                <svg
+                  class="base rightUpArrow light"
+                  data-ref=""
+                  data-testid="data-testid-Icon"
+                  focusable="false"
+                  height="12"
+                  role="img"
+                  style="height: 12px; width: 12px;"
+                  tabindex="-1"
+                  viewBox="0 0 50 50"
+                  width="12"
+                >
+                  <g>
+                    <path
+                      d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                    />
+                  </g>
+                </svg>
+              </i>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div
+      class="bottom"
+    >
+      <span>
+        © Aesop
+      </span>
+      <div />
+    </div>
   </div>
 </div>
 `;

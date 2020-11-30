@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Hyperlink /> renders base component correctly 1`] = `
-<a
-  className="base left dark"
-  href="https://aesop.com"
-  target="_self"
->
-  Aesop
-</a>
+<div>
+  <a
+    class="base left dark"
+    href="https://aesop.com"
+    target="_self"
+  >
+    Aesop
+  </a>
+</div>
 `;

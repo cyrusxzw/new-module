@@ -1,7 +1,7 @@
 import React from 'react';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import QuantitySelect from './QuantitySelect';
 
 configure({ adapter: new Adapter() });
@@ -14,7 +14,7 @@ describe('<QuantitySelect />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
+    const { container } = render
       .create(
         <QuantitySelect
           name="selectName"
@@ -35,6 +35,6 @@ describe('<QuantitySelect />', () => {
       )
       .toJSON();
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

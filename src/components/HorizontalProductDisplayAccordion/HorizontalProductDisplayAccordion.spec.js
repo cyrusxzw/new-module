@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import HorizontalProductDisplayAccordionFixture from './HorizontalProductDisplayAccordion.fixture';
 import HorizontalProductDisplayAccordion from './HorizontalProductDisplayAccordion';
 
@@ -9,15 +9,13 @@ describe('<HorizontalProductDisplayAccordion />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <HorizontalProductDisplayAccordion
-          addToCartCopy={HorizontalProductDisplayAccordionFixture.addToCartCopy}
-          products={HorizontalProductDisplayAccordionFixture.products}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <HorizontalProductDisplayAccordion
+        addToCartCopy={HorizontalProductDisplayAccordionFixture.addToCartCopy}
+        products={HorizontalProductDisplayAccordionFixture.products}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

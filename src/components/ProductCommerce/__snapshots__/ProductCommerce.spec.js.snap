@@ -1,98 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ProductCommerce /> renders base component correctly 1`] = `
-<div
-  className="base"
->
-  <header
-    className="header base"
-  >
-    <h2
-      className="base flush xLarge dark heading"
-    >
-      Lorem ipsum dolor 
-    </h2>
-    <h3
-      className="base flush mediumWeightFont xXSmall dark eyebrow"
-    >
-      Vestibulum ante ipsum primis
-    </h3>
-  </header>
+<div>
   <div
-    className="description"
+    class="base"
   >
-    <p>
-      ProductCommerceFixture.description
-    </p>
-  </div>
-  <div
-    className="imageWrapper"
-  >
-    <picture
-      className="base picture dark image fadeEnter"
+    <header
+      class="header base"
     >
-      <img
-        loading="lazy"
-      />
-    </picture>
-  </div>
-  <div
-    className="base linkButtonGroup"
-  >
-    <button
-      className="base alternate blockStyle dark base addToCartButton link center"
-      data-test-ref="ADD_TO_CART"
-      disabled={false}
-      onClick={[Function]}
-      title="Add to your cart — $26.45"
-      type="button"
-    >
-      <span
-        className="label"
+      <h2
+        class="base flush xLarge dark heading"
       >
-        <span>
-          Added to your cart
-        </span>
-        <span>
-          Add to your cart — $26.45
-        </span>
-      </span>
-    </button>
-    <a
-      className="base blockStyle hasIcon center dark cta link center"
-      href="/"
-      target="_self"
-    >
-      Lorem ipsum dolor
-       
-      <i
-        aria-hidden="true"
-        className="icon"
+        Lorem ipsum dolor 
+      </h2>
+      <h3
+        class="base flush mediumWeightFont xXSmall dark eyebrow"
       >
-        <svg
-          className="base rightArrow dark"
-          data-ref=""
-          focusable="false"
-          height={12}
-          role="img"
-          style={
-            Object {
-              "height": "12px",
-              "width": "12px",
-            }
-          }
-          tabIndex={-1}
-          viewBox="0 0 50 50"
-          width={12}
+        Vestibulum ante ipsum primis
+      </h3>
+    </header>
+    <div
+      class="description"
+    >
+      <p>
+        ProductCommerceFixture.description
+      </p>
+    </div>
+    <div
+      class="imageWrapper"
+    >
+      <picture
+        class="base picture dark image fadeEnter"
+      >
+        <img
+          loading="lazy"
+        />
+      </picture>
+    </div>
+    <div
+      class="base linkButtonGroup"
+    >
+      <button
+        class="base alternate blockStyle dark base addToCartButton link center"
+        data-test-ref="ADD_TO_CART"
+        title="Add to your cart — $26.45"
+        type="button"
+      >
+        <span
+          class="label"
         >
-          <g>
-            <path
-              d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
-            />
-          </g>
-        </svg>
-      </i>
-    </a>
+          <span>
+            Added to your cart
+          </span>
+          <span>
+            Add to your cart — $26.45
+          </span>
+        </span>
+      </button>
+      <a
+        class="base blockStyle hasIcon center dark cta link center"
+        href="/"
+        target="_self"
+      >
+        Lorem ipsum dolor
+         
+        <i
+          aria-hidden="true"
+          class="icon"
+        >
+          <svg
+            class="base rightArrow dark"
+            data-ref=""
+            data-testid="data-testid-Icon"
+            focusable="false"
+            height="12"
+            role="img"
+            style="height: 12px; width: 12px;"
+            tabindex="-1"
+            viewBox="0 0 50 50"
+            width="12"
+          >
+            <g>
+              <path
+                d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
+              />
+            </g>
+          </svg>
+        </i>
+      </a>
+    </div>
   </div>
 </div>
 `;

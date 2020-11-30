@@ -1,38 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DefinitionList /> renders base component correctly 1`] = `
-<dl
-  className="base dark"
->
-  <dt
-    className="term slideIn"
+<div>
+  <dl
+    class="base dark"
+    data-testid="data-testid-DefinitionList"
   >
-    Aliquam
-  </dt>
-  <dd
-    className="description slideIn"
-  >
-    Proin vulputate eros quis lectus pretium gravida.
-  </dd>
-  <dt
-    className="term slideIn"
-  >
-    Etiam eu augue quam
-  </dt>
-  <dd
-    className="description slideIn"
-  >
-    Pulvinar nulla enim, eu elementum lacus vehicula sed.
-  </dd>
-  <dt
-    className="term slideIn"
-  >
-    Duis at elit
-  </dt>
-  <dd
-    className="description slideIn"
-  >
-    Sed ac ipsum vel risus aliquam rutrum.
-  </dd>
-</dl>
+    <dt
+      class="term slideIn"
+    >
+      Aliquam
+    </dt>
+    <dd
+      class="description slideIn"
+    >
+      Proin vulputate eros quis lectus pretium gravida.
+    </dd>
+    <dt
+      class="term slideIn"
+    >
+      Etiam eu augue quam
+    </dt>
+    <dd
+      class="description slideIn"
+    >
+      Pulvinar nulla enim, eu elementum lacus vehicula sed.
+    </dd>
+    <dt
+      class="term slideIn"
+    >
+      Duis at elit
+    </dt>
+    <dd
+      class="description slideIn"
+    >
+      Sed ac ipsum vel risus aliquam rutrum.
+    </dd>
+  </dl>
+</div>
 `;

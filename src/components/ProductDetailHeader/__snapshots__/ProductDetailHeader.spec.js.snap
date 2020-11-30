@@ -1,385 +1,376 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ProductDetailHeader /> renders base component correctly 1`] = `
-<div
-  className="base fixture-classname"
->
+<div>
   <div
-    className="wrapper"
+    class="base fixture-classname"
   >
     <div
-      className="content"
+      class="wrapper"
     >
-      <nav
-        className="base dark breadcrumbs"
-        data-testid="data-testid-Breadcrumbs"
-      >
-        <ul
-          className="list"
-        >
-          <li
-            className="item"
-          >
-            <a
-              className="base left dark link"
-              href="/"
-              target="_self"
-            >
-              Suspendisse
-            </a>
-          </li>
-          <li
-            className="item"
-          >
-            <a
-              className="base left dark link"
-              href="/"
-              target="_self"
-            >
-              Maecenas luctus
-            </a>
-          </li>
-        </ul>
-      </nav>
       <div
-        className="base dark"
+        class="content"
       >
-        <div
-          className="content"
+        <nav
+          class="base dark breadcrumbs"
+          data-testid="data-testid-Breadcrumbs"
         >
-          <header
-            className="header"
+          <ul
+            class="list"
           >
-            <h1
-              className="base flush xLarge dark productName fadeEnter"
-            >
-              Lorem ipsum dolor
-            </h1>
-          </header>
-          <div
-            className="description"
-          >
-            <p
-              className="base dark flush descriptionCopy fadeEnter"
-            >
-              Nunc sagittis ultrices dignissim. Nullam dignissim nisi nec dolor blandit convallis. Suspendisse quis facilisis arcu, nec feugiat ligula.
-            </p>
-          </div>
-          <div
-            className="purchase"
-          >
-            <h4
-              className="base flush mediumWeightFont xXSmall dark shiftInDownEnter"
-            >
-              Sizes
-            </h4>
-            <ul
-              className="base variants shiftInDownEnter"
-            >
-              <li
-                className="radio"
-              >
-                <label
-                  className="label"
-                  htmlFor="option-ARD33"
-                >
-                  <input
-                    aria-checked={true}
-                    checked={true}
-                    className="input"
-                    data-test-ref="PRODUCT_DETAIL_VARIANT_SELECT"
-                    id="option-ARD33"
-                    name="sku"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="ARD33"
-                  />
-                  <span
-                    className="pot dark"
-                  />
-                  <span
-                    className="labelContent dark"
-                  >
-                    50 mL - In stock
-                  </span>
-                </label>
-              </li>
-              <li
-                className="radio"
-              >
-                <label
-                  className="label"
-                  htmlFor="option-ARD32"
-                >
-                  <input
-                    aria-checked={false}
-                    checked={false}
-                    className="input"
-                    data-test-ref="PRODUCT_DETAIL_VARIANT_SELECT"
-                    id="option-ARD32"
-                    name="sku"
-                    onChange={[Function]}
-                    tabIndex={0}
-                    type="radio"
-                    value="ARD32"
-                  />
-                  <span
-                    className="pot dark"
-                  />
-                  <span
-                    className="labelContent dark"
-                  >
-                    100 mL - Not in stock
-                  </span>
-                </label>
-              </li>
-              <div
-                className="errorMessage"
-              >
-                
-              </div>
-            </ul>
-            <button
-              className="base alternate blockStyle dark base fullWidth"
-              data-test-ref="ADD_TO_CART"
-              disabled={false}
-              onClick={[Function]}
-              title="Add to your cart — $26.45"
-              type="button"
-            >
-              <span
-                className="label"
-              >
-                <span>
-                  Added to your cart
-                </span>
-                <span>
-                  Add to your cart — $26.45
-                </span>
-              </span>
-            </button>
-          </div>
-          <div
-            className="cartDisclaimer"
-          >
-            Quisque in felis id tellus condimentum scelerisque. Aliquam quis vestibulum felis, quis porta tellus
-          </div>
-          <div
-            className="details"
-          >
-            <dl
-              className="base dark hasBottomBorder definitionList shiftInDownEnter"
-            >
-              <dt
-                className="term slideIn"
-              >
-                Lorem ipsum dolor
-              </dt>
-              <dd
-                className="description slideIn"
-              >
-                Lorem ipsum dolort, consectetur adipiscing elit.
-              </dd>
-              <dt
-                className="term slideIn"
-              >
-                Ut consectetur mi
-              </dt>
-              <dd
-                className="description slideIn"
-              >
-                Ut consectetur, vitae libero imperdiet id.
-              </dd>
-              <dt
-                className="term slideIn"
-              >
-                <span>
-                  Pellentesque tristique
-                </span>
-                <button
-                  className="base dark ingredientsTrigger"
-                  disabled={false}
-                  onClick={[Function]}
-                  title="Pellentesque tristique iaculis ipsum"
-                  type="button"
-                >
-                  <svg
-                    className="base plusAndCloseWithCircle dark"
-                    data-ref=""
-                    focusable="false"
-                    height={22}
-                    role="img"
-                    style={
-                      Object {
-                        "height": "22px",
-                        "width": "22px",
-                      }
-                    }
-                    tabIndex={-1}
-                    viewBox="0 0 50 50"
-                    width={22}
-                  >
-                    <g>
-                      <circle
-                        className="circle"
-                        cx="25"
-                        cy="25"
-                        fill="none"
-                        r="22"
-                      />
-                      <polygon
-                        className="plus"
-                        points="26.2,15.2 23.8,15.2 23.8,23.9 15,23.9 15,26.4 23.8,26.4 23.8,35.1 26.2,35.1 26.2,26.4 35,26.4 35,23.9 26.2,23.9"
-                      />
-                      <polygon
-                        className="close"
-                        points="32.9,19 31.2,17.3 25,23.4 18.8,17.2 17,19 23.3,25.2 17.1,31.3 18.8,33 25,26.9 31.2,33.1 33,31.3 26.7,25.1"
-                      />
-                    </g>
-                  </svg>
-                </button>
-              </dt>
-              <dd
-                className="description slideIn"
-              >
-                Maecenas mattis, urna vel commodo vehicula
-              </dd>
-            </dl>
-          </div>
-          <div
-            className="upSell"
-          >
-            <div
-              className="base dark slideIn item1"
+            <li
+              class="item"
             >
               <a
-                className="base left dark link"
-                data-test-ref="PRODUCT_UP_SELL"
+                class="base left dark link"
                 href="/"
                 target="_self"
-                title="The Reveller Fragrant hand and body care"
               >
-                <div
-                  className="flexContainer delayAnimation slideIn"
-                >
-                  <div
-                    className="productDescription"
-                  >
-                    <h4
-                      className="base xXSmall dark heading delayAnimation slideIn"
-                    >
-                      <span>
-                        Discover the kit
-                      </span>
-                    </h4>
-                    <div
-                      className="productName delayAnimation slideIn"
-                    >
-                      <div>
-                        <span>
-                          The Reveller Fragrant hand and body care
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="productImage delayAnimation slideIn medium"
-                  >
-                    <picture
-                      className="base picture dark"
-                    >
-                      <source
-                        media="(min-width: 0px)"
-                        srcSet="https://www.aesop.com/medias/Aesop-Kits-Gift-Kits-2019-20-The-Reveller-with-Product-Small-781x524px.png?context=bWFzdGVyfGltYWdlc3wxMTMwMjN8aW1hZ2UvcG5nfGltYWdlcy9oZjgvaDI1LzkxNTAzNjg5NDAwNjIucG5nfDllZjNkMjBkNjZhZTI0OGRhZWZhOGJlMzA5NDM3OTg4ZGFlNjE1MWY1ZDg2ZmU4MjUwZmEwOWMwMmRkNzhmNDg"
-                      />
-                      <img
-                        alt="Product Extract"
-                        loading="lazy"
-                      />
-                    </picture>
-                  </div>
-                </div>
+                Suspendisse
               </a>
-            </div>
-          </div>
-        </div>
+            </li>
+            <li
+              class="item"
+            >
+              <a
+                class="base left dark link"
+                href="/"
+                target="_self"
+              >
+                Maecenas luctus
+              </a>
+            </li>
+          </ul>
+        </nav>
         <div
-          className="mediumSidebar"
+          class="base dark"
         >
-          <header
-            className="mediumHeader"
+          <div
+            class="content"
           >
-            <h1
-              className="base xLarge dark mediumProductName"
+            <header
+              class="header"
             >
-              Lorem ipsum dolor
-            </h1>
-            <p
-              className="base dark mediumDescriptionCopy"
-            >
-              Nunc sagittis ultrices dignissim. Nullam dignissim nisi nec dolor blandit convallis. Suspendisse quis facilisis arcu, nec feugiat ligula.
-            </p>
+              <h1
+                class="base flush xLarge dark productName fadeEnter fadeEnterActive"
+              >
+                Lorem ipsum dolor
+              </h1>
+            </header>
             <div
-              className="cartDisclaimer"
+              class="description"
+            >
+              <p
+                class="base dark flush descriptionCopy fadeEnter fadeEnterActive"
+              >
+                Nunc sagittis ultrices dignissim. Nullam dignissim nisi nec dolor blandit convallis. Suspendisse quis facilisis arcu, nec feugiat ligula.
+              </p>
+            </div>
+            <div
+              class="purchase"
+            >
+              <h4
+                class="base flush mediumWeightFont xXSmall dark shiftInDownEnter shiftInDownEnterActive"
+              >
+                Sizes
+              </h4>
+              <ul
+                class="base variants shiftInDownEnter shiftInDownEnterActive"
+              >
+                <li
+                  class="radio"
+                >
+                  <label
+                    class="label"
+                    for="option-ARD33"
+                  >
+                    <input
+                      aria-checked="true"
+                      checked=""
+                      class="input"
+                      data-test-ref="PRODUCT_DETAIL_VARIANT_SELECT"
+                      id="option-ARD33"
+                      name="sku"
+                      tabindex="0"
+                      type="radio"
+                      value="ARD33"
+                    />
+                    <span
+                      class="pot dark"
+                    />
+                    <span
+                      class="labelContent dark"
+                    >
+                      50 mL - In stock
+                    </span>
+                  </label>
+                </li>
+                <li
+                  class="radio"
+                >
+                  <label
+                    class="label"
+                    for="option-ARD32"
+                  >
+                    <input
+                      aria-checked="false"
+                      class="input"
+                      data-test-ref="PRODUCT_DETAIL_VARIANT_SELECT"
+                      id="option-ARD32"
+                      name="sku"
+                      tabindex="0"
+                      type="radio"
+                      value="ARD32"
+                    />
+                    <span
+                      class="pot dark"
+                    />
+                    <span
+                      class="labelContent dark"
+                    >
+                      100 mL - Not in stock
+                    </span>
+                  </label>
+                </li>
+                <div
+                  class="errorMessage"
+                />
+              </ul>
+              <button
+                class="base alternate blockStyle dark base fullWidth"
+                data-test-ref="ADD_TO_CART"
+                title="Add to your cart — $26.45"
+                type="button"
+              >
+                <span
+                  class="label"
+                >
+                  <span>
+                    Added to your cart
+                  </span>
+                  <span>
+                    Add to your cart — $26.45
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              class="cartDisclaimer"
             >
               Quisque in felis id tellus condimentum scelerisque. Aliquam quis vestibulum felis, quis porta tellus
             </div>
-          </header>
+            <div
+              class="details"
+            >
+              <dl
+                class="base dark hasBottomBorder definitionList shiftInDownEnter shiftInDownEnterActive"
+                data-testid="data-testid-DefinitionList"
+              >
+                <dt
+                  class="term slideIn"
+                >
+                  Lorem ipsum dolor
+                </dt>
+                <dd
+                  class="description slideIn"
+                >
+                  Lorem ipsum dolort, consectetur adipiscing elit.
+                </dd>
+                <dt
+                  class="term slideIn"
+                >
+                  Ut consectetur mi
+                </dt>
+                <dd
+                  class="description slideIn"
+                >
+                  Ut consectetur, vitae libero imperdiet id.
+                </dd>
+                <dt
+                  class="term slideIn"
+                >
+                  <span>
+                    Pellentesque tristique
+                  </span>
+                  <button
+                    class="base dark ingredientsTrigger"
+                    title="Pellentesque tristique iaculis ipsum"
+                    type="button"
+                  >
+                    <svg
+                      class="base plusAndCloseWithCircle dark"
+                      data-ref=""
+                      data-testid="data-testid-Icon"
+                      focusable="false"
+                      height="22"
+                      role="img"
+                      style="height: 22px; width: 22px;"
+                      tabindex="-1"
+                      viewBox="0 0 50 50"
+                      width="22"
+                    >
+                      <g>
+                        <circle
+                          class="circle"
+                          cx="25"
+                          cy="25"
+                          fill="none"
+                          r="22"
+                        />
+                        <polygon
+                          class="plus"
+                          points="26.2,15.2 23.8,15.2 23.8,23.9 15,23.9 15,26.4 23.8,26.4 23.8,35.1 26.2,35.1 26.2,26.4 35,26.4 35,23.9 26.2,23.9"
+                        />
+                        <polygon
+                          class="close"
+                          points="32.9,19 31.2,17.3 25,23.4 18.8,17.2 17,19 23.3,25.2 17.1,31.3 18.8,33 25,26.9 31.2,33.1 33,31.3 26.7,25.1"
+                        />
+                      </g>
+                    </svg>
+                  </button>
+                </dt>
+                <dd
+                  class="description slideIn"
+                >
+                  Maecenas mattis, urna vel commodo vehicula
+                </dd>
+              </dl>
+            </div>
+            <div
+              class="upSell"
+            >
+              <div
+                class="base dark slideIn item1"
+                data-testid="data-testid-ProductExtract"
+              >
+                <a
+                  class="base left dark link"
+                  data-test-ref="PRODUCT_UP_SELL"
+                  href="/"
+                  target="_self"
+                  title="The Reveller Fragrant hand and body care"
+                >
+                  <div
+                    class="flexContainer delayAnimation slideIn"
+                  >
+                    <div
+                      class="productDescription"
+                    >
+                      <h4
+                        class="base xXSmall dark heading delayAnimation slideIn"
+                      >
+                        <span>
+                          Discover the kit
+                        </span>
+                      </h4>
+                      <div
+                        class="productName delayAnimation slideIn"
+                      >
+                        <div>
+                          <span>
+                            The Reveller Fragrant hand and body care
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="productImage delayAnimation slideIn medium"
+                    >
+                      <picture
+                        class="base picture dark"
+                      >
+                        <source
+                          media="(min-width: 0px)"
+                          srcset="https://www.aesop.com/medias/Aesop-Kits-Gift-Kits-2019-20-The-Reveller-with-Product-Small-781x524px.png?context=bWFzdGVyfGltYWdlc3wxMTMwMjN8aW1hZ2UvcG5nfGltYWdlcy9oZjgvaDI1LzkxNTAzNjg5NDAwNjIucG5nfDllZjNkMjBkNjZhZTI0OGRhZWZhOGJlMzA5NDM3OTg4ZGFlNjE1MWY1ZDg2ZmU4MjUwZmEwOWMwMmRkNzhmNDg"
+                        />
+                        <img
+                          alt="Product Extract"
+                          loading="lazy"
+                        />
+                      </picture>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mediumSidebar"
+          >
+            <header
+              class="mediumHeader"
+            >
+              <h1
+                class="base xLarge dark mediumProductName"
+              >
+                Lorem ipsum dolor
+              </h1>
+              <p
+                class="base dark mediumDescriptionCopy"
+              >
+                Nunc sagittis ultrices dignissim. Nullam dignissim nisi nec dolor blandit convallis. Suspendisse quis facilisis arcu, nec feugiat ligula.
+              </p>
+              <div
+                class="cartDisclaimer"
+              >
+                Quisque in felis id tellus condimentum scelerisque. Aliquam quis vestibulum felis, quis porta tellus
+              </div>
+            </header>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      className="image"
-    >
-      <nav
-        className="base dark breadcrumbs"
-        data-testid="data-testid-Breadcrumbs"
-      >
-        <ul
-          className="list"
-        >
-          <li
-            className="item"
-          >
-            <a
-              className="base left dark link"
-              href="/"
-              target="_self"
-            >
-              Suspendisse
-            </a>
-          </li>
-          <li
-            className="item"
-          >
-            <a
-              className="base left dark link"
-              href="/"
-              target="_self"
-            >
-              Maecenas luctus
-            </a>
-          </li>
-        </ul>
-      </nav>
       <div
-        className="base dark shiftInLeftEnter"
+        class="image"
       >
-        <figure
-          className="base dark fadeEnter"
+        <nav
+          class="base dark breadcrumbs"
+          data-testid="data-testid-Breadcrumbs"
         >
-          <picture
-            className="base picture dark image"
+          <ul
+            class="list"
           >
-            <img
-              loading="lazy"
+            <li
+              class="item"
+            >
+              <a
+                class="base left dark link"
+                href="/"
+                target="_self"
+              >
+                Suspendisse
+              </a>
+            </li>
+            <li
+              class="item"
+            >
+              <a
+                class="base left dark link"
+                href="/"
+                target="_self"
+              >
+                Maecenas luctus
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="base dark shiftInLeftEnter shiftInLeftEnterActive"
+        >
+          <figure
+            class="base dark fadeEnter"
+          >
+            <picture
+              class="base picture dark image"
+            >
+              <img
+                loading="lazy"
+              />
+            </picture>
+            <div
+              class="cartDisclaimer"
             />
-          </picture>
-          <div
-            className="cartDisclaimer"
-          />
-        </figure>
+          </figure>
+        </div>
       </div>
     </div>
   </div>

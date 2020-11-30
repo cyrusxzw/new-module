@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 import Icon from './Icon';
 
 jest.mock('uuid', () => {
@@ -16,23 +15,24 @@ describe('<Icon />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer.create(<Icon name="rightArrow" />).toJSON();
+    const { container } = render(<Icon name="rightArrow" />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders SVG with provided title prop correctly', () => {
-    const tree = renderer
-      .create(<Icon name="rightArrow" title="aesop" />)
-      .toJSON();
+    const { container } = render(<Icon name="rightArrow" title="aesop" />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });
 
 describe('<Icon /> error handling.', () => {
   it('should return `null` if svg name is not found', () => {
-    const { container } = render(<Icon name="foo" />);
-    expect(container.firstChild).toBeNull();
+    render(<Icon name="foo" />);
+
+    const child = screen.queryByTestId('data-testid-Icon');
+
+    expect(child).not.toBeInTheDocument();
   });
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Select from './Select';
 import SelectFixture from './Select.fixture';
 
@@ -9,23 +9,21 @@ describe('<Select />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Select
-          className={SelectFixture.className}
-          errorMessage={SelectFixture.errorMessage}
-          label={SelectFixture.label}
-          name={SelectFixture.name}
-          onBlur={SelectFixture.onBlur}
-          onChange={SelectFixture.onChange}
-          onFocus={SelectFixture.onFocus}
-          options={SelectFixture.options}
-          testReference={SelectFixture.testReference}
-          value={SelectFixture.value}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <Select
+        className={SelectFixture.className}
+        errorMessage={SelectFixture.errorMessage}
+        label={SelectFixture.label}
+        name={SelectFixture.name}
+        onBlur={SelectFixture.onBlur}
+        onChange={SelectFixture.onChange}
+        onFocus={SelectFixture.onFocus}
+        options={SelectFixture.options}
+        testReference={SelectFixture.testReference}
+        value={SelectFixture.value}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

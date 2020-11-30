@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import LinkButtonGroup from './LinkButtonGroup';
 import LinkButtonGroupFixture from './LinkButtonGroup.fixture';
 
@@ -9,22 +9,20 @@ describe('<LinkButtonGroup />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<LinkButtonGroup link={LinkButtonGroupFixture.link} />)
-      .toJSON();
+    const { container } = render(
+      <LinkButtonGroup link={LinkButtonGroupFixture.link} />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders children correctly', () => {
-    const tree = renderer
-      .create(
-        <LinkButtonGroup theme="light">
-          <a href="/au/r/about">Link</a>
-        </LinkButtonGroup>,
-      )
-      .toJSON();
+    const { container } = render(
+      <LinkButtonGroup theme="light">
+        <a href="/au/r/about">Link</a>
+      </LinkButtonGroup>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

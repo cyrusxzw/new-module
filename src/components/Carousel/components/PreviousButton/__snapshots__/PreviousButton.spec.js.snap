@@ -1,35 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Carousel.PreviousButton /> renders base component correctly 1`] = `
-<button
-  className="base dark base"
-  disabled={false}
-  onClick={[Function]}
-  title="next slide"
-  type="button"
->
-  <svg
-    className="base chevron dark"
-    data-ref=""
-    focusable="false"
-    height={16}
-    role="img"
-    style={
-      Object {
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-    tabIndex={-1}
-    viewBox="0 0 50 50"
-    width={16}
+<div>
+  <button
+    class="base dark base"
+    title="next slide"
+    type="button"
   >
-    <g>
-      <polygon
-        className="chevron"
-        points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
-      />
-    </g>
-  </svg>
-</button>
+    <svg
+      class="base chevron dark"
+      data-ref=""
+      data-testid="data-testid-Icon"
+      focusable="false"
+      height="16"
+      role="img"
+      style="height: 16px; width: 16px;"
+      tabindex="-1"
+      viewBox="0 0 50 50"
+      width="16"
+    >
+      <g>
+        <polygon
+          class="chevron"
+          points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
+        />
+      </g>
+    </svg>
+  </button>
+</div>
 `;

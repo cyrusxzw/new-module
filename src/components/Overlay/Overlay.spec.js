@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Overlay from './Overlay';
 
 const mockFn = jest.fn();
@@ -10,10 +10,8 @@ describe('<Overlay />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<Overlay isVisible={true} onClose={mockFn} />)
-      .toJSON();
+    const { container } = render(<Overlay isVisible={true} onClose={mockFn} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

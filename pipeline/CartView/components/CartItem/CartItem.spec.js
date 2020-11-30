@@ -30,7 +30,7 @@ describe('<CartItem />', () => {
   });
 
   it('renders base component correctly', async () => {
-    const tree = renderer
+    const { container } = render
       .create(
         <MockedProvider>
           <CartItem
@@ -48,7 +48,7 @@ describe('<CartItem />', () => {
       .toJSON();
 
     await act(async () => {
-      expect(tree).toMatchSnapshot();
+      expect(container).toMatchSnapshot();
     });
   });
 

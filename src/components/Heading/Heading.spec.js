@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Heading from './Heading';
 
 describe('<Heading />', () => {
@@ -8,38 +8,32 @@ describe('<Heading />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Heading level="1" size="large">
-          Heading
-        </Heading>,
-      )
-      .toJSON();
+    const { container } = render(
+      <Heading level="1" size="large">
+        Heading
+      </Heading>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders level 2 size medium variation correctly', () => {
-    const tree = renderer
-      .create(
-        <Heading level="2" size="medium">
-          Heading
-        </Heading>,
-      )
-      .toJSON();
+    const { container } = render(
+      <Heading level="2" size="medium">
+        Heading
+      </Heading>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders level 4 size small variation correctly', () => {
-    const tree = renderer
-      .create(
-        <Heading level="4" size="small">
-          Heading
-        </Heading>,
-      )
-      .toJSON();
+    const { container } = render(
+      <Heading level="4" size="small">
+        Heading
+      </Heading>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

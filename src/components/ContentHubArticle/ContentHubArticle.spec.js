@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ContentHubArticle from './ContentHubArticle';
 import ContentHubArticleFixture from './ContentHubArticle.fixture';
 
@@ -9,26 +9,24 @@ describe('<ContentHubArticle />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <ContentHubArticle
-          category={ContentHubArticleFixture.category}
-          dataTestRef={ContentHubArticleFixture.dataTestRef}
-          horizontalThumbnail={ContentHubArticleFixture.horizontalThumbnail}
-          id={ContentHubArticleFixture.id}
-          isHorizontal={true}
-          isInFirstGroup={true}
-          isMenuItem={false}
-          isReadMore={false}
-          longTitle={ContentHubArticleFixture.longTitle}
-          onClick={ContentHubArticleFixture.onClick}
-          readingTime={ContentHubArticleFixture.readingTime}
-          uri={ContentHubArticleFixture.uri}
-          verticalThumbnail={ContentHubArticleFixture.verticalThumbnail}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <ContentHubArticle
+        category={ContentHubArticleFixture.category}
+        dataTestRef={ContentHubArticleFixture.dataTestRef}
+        horizontalThumbnail={ContentHubArticleFixture.horizontalThumbnail}
+        id={ContentHubArticleFixture.id}
+        isHorizontal={true}
+        isInFirstGroup={true}
+        isMenuItem={false}
+        isReadMore={false}
+        longTitle={ContentHubArticleFixture.longTitle}
+        onClick={ContentHubArticleFixture.onClick}
+        readingTime={ContentHubArticleFixture.readingTime}
+        uri={ContentHubArticleFixture.uri}
+        verticalThumbnail={ContentHubArticleFixture.verticalThumbnail}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

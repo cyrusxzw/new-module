@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
@@ -20,25 +20,23 @@ describe('<ProductDetailBody />', () => {
     const product = ProductDetailHeaderFixture.product;
     const variants = ProductDetailHeaderFixture.product.variantOptions;
 
-    const tree = renderer
-      .create(
-        <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-          <ProductDetailContextProvider product={product}>
-            <VariantSelectContextProvider variants={variants}>
-              <ProductDetailBody
-                className={ProductDetailBodyFixture.className}
-                copy={{
-                  addToCart: AddToCartButtonFixture.copy,
-                  ...ProductDetailBodyFixture.copy,
-                }}
-                theme={ProductDetailBodyFixture.theme}
-              />
-            </VariantSelectContextProvider>
-          </ProductDetailContextProvider>
-        </AddToCartContextProvider>,
-      )
-      .toJSON();
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <ProductDetailContextProvider product={product}>
+          <VariantSelectContextProvider variants={variants}>
+            <ProductDetailBody
+              className={ProductDetailBodyFixture.className}
+              copy={{
+                addToCart: AddToCartButtonFixture.copy,
+                ...ProductDetailBodyFixture.copy,
+              }}
+              theme={ProductDetailBodyFixture.theme}
+            />
+          </VariantSelectContextProvider>
+        </ProductDetailContextProvider>
+      </AddToCartContextProvider>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

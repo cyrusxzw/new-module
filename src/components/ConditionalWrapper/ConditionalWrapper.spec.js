@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ConditionalWrapper from './ConditionalWrapper';
 
 describe('<ConditionalWrapper />', () => {
@@ -8,50 +8,44 @@ describe('<ConditionalWrapper />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <ConditionalWrapper
-          condition={true}
-          wrapper={children => <div className="wrapper">{children}</div>}
-        >
-          <span className="children">children</span>
-        </ConditionalWrapper>,
-      )
-      .toJSON();
+    const { container } = render(
+      <ConditionalWrapper
+        condition={true}
+        wrapper={children => <div className="wrapper">{children}</div>}
+      >
+        <span className="children">children</span>
+      </ConditionalWrapper>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders children only is condition is false', () => {
-    const tree = renderer
-      .create(
-        <ConditionalWrapper
-          condition={false}
-          wrapper={children => <div className="wrapper">{children}</div>}
-        >
-          <span className="children">children</span>
-        </ConditionalWrapper>,
-      )
-      .toJSON();
+    const { container } = render(
+      <ConditionalWrapper
+        condition={false}
+        wrapper={children => <div className="wrapper">{children}</div>}
+      >
+        <span className="children">children</span>
+      </ConditionalWrapper>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders alternateWrapper correctly', () => {
-    const tree = renderer
-      .create(
-        <ConditionalWrapper
-          alternateWrapper={children => (
-            <div className="alternateWrapper">{children}</div>
-          )}
-          condition={false}
-          wrapper={children => <div className="wrapper">{children}</div>}
-        >
-          <span className="children">children</span>
-        </ConditionalWrapper>,
-      )
-      .toJSON();
+    const { container } = render(
+      <ConditionalWrapper
+        alternateWrapper={children => (
+          <div className="alternateWrapper">{children}</div>
+        )}
+        condition={false}
+        wrapper={children => <div className="wrapper">{children}</div>}
+      >
+        <span className="children">children</span>
+      </ConditionalWrapper>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

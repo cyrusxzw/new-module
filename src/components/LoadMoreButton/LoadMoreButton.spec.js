@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { LoadMoreContextProvider } from '~/contexts';
 import LoadMoreButton from './LoadMoreButton';
 import LoadMoreButtonFixture from './LoadMoreButton.fixture';
@@ -11,19 +11,17 @@ describe('<LoadMoreButton />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <LoadMoreContextProvider onClick={mockLoadMoreButtonOnClick}>
-          <LoadMoreButton
-            className={LoadMoreButtonFixture.className}
-            copy={LoadMoreButtonFixture.copy}
-            dataTestRef={LoadMoreButtonFixture.dataTestRef}
-            isEnabled={LoadMoreButtonFixture.isEnabled}
-          />
-        </LoadMoreContextProvider>,
-      )
-      .toJSON();
+    const { container } = render(
+      <LoadMoreContextProvider onClick={mockLoadMoreButtonOnClick}>
+        <LoadMoreButton
+          className={LoadMoreButtonFixture.className}
+          copy={LoadMoreButtonFixture.copy}
+          dataTestRef={LoadMoreButtonFixture.dataTestRef}
+          isEnabled={LoadMoreButtonFixture.isEnabled}
+        />
+      </LoadMoreContextProvider>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

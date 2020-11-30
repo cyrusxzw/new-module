@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import {
   ProductDetailContextProvider,
   VariantSelectContextProvider,
@@ -15,27 +15,25 @@ describe('<ProductGridItem />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <ProductDetailContextProvider
-          product={ProductDetailHeaderFixture.product}
+    const { container } = render(
+      <ProductDetailContextProvider
+        product={ProductDetailHeaderFixture.product}
+      >
+        <VariantSelectContextProvider
+          variants={ProductGridItemFixture.variantOptions}
         >
-          <VariantSelectContextProvider
-            variants={ProductGridItemFixture.variantOptions}
-          >
-            <ProductGridItem
-              copy={{
-                addToCart: AddToCartButtonFixture.copy,
-                ...ProductGridItemFixture.copy,
-              }}
-              info={ProductGridItemFixture.info}
-              url={ProductGridItemFixture.url}
-            />
-          </VariantSelectContextProvider>
-        </ProductDetailContextProvider>,
-      )
-      .toJSON();
+          <ProductGridItem
+            copy={{
+              addToCart: AddToCartButtonFixture.copy,
+              ...ProductGridItemFixture.copy,
+            }}
+            info={ProductGridItemFixture.info}
+            url={ProductGridItemFixture.url}
+          />
+        </VariantSelectContextProvider>
+      </ProductDetailContextProvider>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

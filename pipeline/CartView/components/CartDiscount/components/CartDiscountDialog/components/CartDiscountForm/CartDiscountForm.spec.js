@@ -32,7 +32,7 @@ describe('<CartDiscountForm />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
+    const { container } = render
       .create(
         <MockedProvider>
           <CartDiscountForm copy={copy} onCompleted={mockCompletedFn} />
@@ -40,7 +40,7 @@ describe('<CartDiscountForm />', () => {
       )
       .toJSON();
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   describe('when entering a promo code', () => {

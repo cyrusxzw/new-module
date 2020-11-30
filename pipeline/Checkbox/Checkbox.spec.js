@@ -1,7 +1,7 @@
 import React from 'react';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Checkbox from './Checkbox';
 
 configure({ adapter: new Adapter() });
@@ -14,7 +14,7 @@ describe('<Checkbox />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
+    const { container } = render
       .create(
         <Checkbox
           checked={false}
@@ -28,6 +28,6 @@ describe('<Checkbox />', () => {
       )
       .toJSON();
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

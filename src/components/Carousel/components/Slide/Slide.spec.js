@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import CarouselFixture from '../../Carousel.fixture';
 import Slide from './Slide';
 
@@ -9,42 +9,36 @@ describe('<Carousel.Slide />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Slide
-          description={CarouselFixture.slides[0].description}
-          heading={CarouselFixture.slides[0].heading}
-          image={CarouselFixture.slides[0].image}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <Slide
+        description={CarouselFixture.slides[0].description}
+        heading={CarouselFixture.slides[0].heading}
+        image={CarouselFixture.slides[0].image}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders a slide without a descritption correctly', () => {
-    const tree = renderer
-      .create(
-        <Slide
-          heading={CarouselFixture.slides[0].heading}
-          image={CarouselFixture.slides[0].image}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <Slide
+        heading={CarouselFixture.slides[0].heading}
+        image={CarouselFixture.slides[0].image}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders a slide without a heading correctly', () => {
-    const tree = renderer
-      .create(
-        <Slide
-          description={CarouselFixture.slides[0].description}
-          image={CarouselFixture.slides[0].image}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <Slide
+        description={CarouselFixture.slides[0].description}
+        image={CarouselFixture.slides[0].image}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

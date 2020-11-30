@@ -1,41 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ModalBody /> renders base component correctly 1`] = `
-<div
-  className="base isVisible dark"
->
-  Body Content
-  <button
-    className="base dark closeButton"
-    data-test-ref="MODAL_CLOSE_BUTTON"
-    disabled={false}
-    onClick={[MockFunction]}
-    title="Close Modal"
-    type="button"
+<div>
+  <div
+    class="base isVisible dark"
   >
-    <svg
-      className="base close dark closeIcon"
-      data-ref=""
-      focusable="false"
-      height={14}
-      role="img"
-      style={
-        Object {
-          "height": "14px",
-          "width": "14px",
-        }
-      }
-      tabIndex={-1}
-      viewBox="0 0 50 50"
-      width={14}
+    Body Content
+    <button
+      class="base dark closeButton"
+      data-test-ref="MODAL_CLOSE_BUTTON"
+      title="Close Modal"
+      type="button"
     >
-      <g>
-        <polygon
-          className="close"
-          points="50,5 45,0 25,20 5,0 0,5 20,25 0,45 5,50 25,30 45,50 50,45 30,25"
-        />
-      </g>
-    </svg>
-  </button>
+      <svg
+        class="base close dark closeIcon"
+        data-ref=""
+        data-testid="data-testid-Icon"
+        focusable="false"
+        height="14"
+        role="img"
+        style="height: 14px; width: 14px;"
+        tabindex="-1"
+        viewBox="0 0 50 50"
+        width="14"
+      >
+        <g>
+          <polygon
+            class="close"
+            points="50,5 45,0 25,20 5,0 0,5 20,25 0,45 5,50 25,30 45,50 50,45 30,25"
+          />
+        </g>
+      </svg>
+    </button>
+  </div>
 </div>
 `;

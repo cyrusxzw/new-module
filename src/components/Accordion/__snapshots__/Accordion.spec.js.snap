@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Accordion /> renders base component correctly 1`] = `
-<div
-  className=""
-  data-testid="data-testid-Accordion"
-  id="testing-id"
-/>
+<div>
+  <div
+    class=""
+    data-testid="data-testid-Accordion"
+    id="testing-id"
+  />
+</div>
 `;

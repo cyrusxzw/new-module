@@ -1,7 +1,7 @@
 import React from 'react';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import SubscriptionFormView from './SubscriptionFormView';
 
 configure({ adapter: new Adapter() });
@@ -12,7 +12,7 @@ describe('<SubscriptionFormView />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
+    const { container } = render
       .create(
         // @TODO Figure out how we are injecting translated copy from graphQL into components
         // @ts-ignore
@@ -27,6 +27,6 @@ describe('<SubscriptionFormView />', () => {
       )
       .toJSON();
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

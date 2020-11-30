@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import SecondaryMessage from './SecondaryMessage';
 import SecondaryMessageFixture from './SecondaryMessage.fixture';
 
@@ -9,10 +9,10 @@ describe('<SecondaryMessage />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<SecondaryMessage {...SecondaryMessageFixture} />)
-      .toJSON();
+    const { container } = render(
+      <SecondaryMessage {...SecondaryMessageFixture} />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

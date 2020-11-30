@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Hidden from './Hidden';
 
 describe('<Hidden />', () => {
@@ -8,14 +8,12 @@ describe('<Hidden />', () => {
   });
 
   it('renders returned component correctly', () => {
-    const tree = renderer
-      .create(
-        <Hidden isSmall={true}>
-          <span>Hidden content</span>
-        </Hidden>,
-      )
-      .toJSON();
+    const { container } = render(
+      <Hidden isSmall={true}>
+        <span>Hidden content</span>
+      </Hidden>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

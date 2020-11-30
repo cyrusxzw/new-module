@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
@@ -20,29 +20,27 @@ describe('<ProductDetailHeader />', () => {
     const product = ProductDetailHeaderFixture.product;
     const variants = ProductDetailHeaderFixture.product.variantOptions;
 
-    const tree = renderer
-      .create(
-        <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-          <ProductDetailContextProvider product={product}>
-            <VariantSelectContextProvider variants={variants}>
-              <ProductDetailHeader
-                breadcrumbs={ProductDetailHeaderFixture.breadcrumbs}
-                className={ProductDetailHeaderFixture.className}
-                copy={{
-                  addToCart: AddToCartButtonFixture.copy,
-                  size: ProductDetailBodyFixture.copy.size,
-                  ingredients: ProductDetailBodyFixture.copy.ingredients,
-                  upSellProductLabel:
-                    ProductDetailBodyFixture.copy.upSellProductLabel,
-                }}
-                theme={ProductDetailHeaderFixture.theme}
-              />
-            </VariantSelectContextProvider>
-          </ProductDetailContextProvider>
-        </AddToCartContextProvider>,
-      )
-      .toJSON();
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <ProductDetailContextProvider product={product}>
+          <VariantSelectContextProvider variants={variants}>
+            <ProductDetailHeader
+              breadcrumbs={ProductDetailHeaderFixture.breadcrumbs}
+              className={ProductDetailHeaderFixture.className}
+              copy={{
+                addToCart: AddToCartButtonFixture.copy,
+                size: ProductDetailBodyFixture.copy.size,
+                ingredients: ProductDetailBodyFixture.copy.ingredients,
+                upSellProductLabel:
+                  ProductDetailBodyFixture.copy.upSellProductLabel,
+              }}
+              theme={ProductDetailHeaderFixture.theme}
+            />
+          </VariantSelectContextProvider>
+        </ProductDetailContextProvider>
+      </AddToCartContextProvider>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

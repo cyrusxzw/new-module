@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ImageCarousel from './ImageCarousel';
 import ImageCarouselFixture from './ImageCarousel.fixture';
 
@@ -9,10 +9,10 @@ describe('<ImageCarousel />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<ImageCarousel slides={ImageCarouselFixture.slides} />)
-      .toJSON();
+    const { container } = render(
+      <ImageCarousel slides={ImageCarouselFixture.slides} />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

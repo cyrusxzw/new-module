@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import RadioGroup from './RadioGroup';
 import RadioGroupFixture from './RadioGroup.fixture';
 
@@ -9,20 +9,18 @@ describe('<RadioGroup />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <RadioGroup
-          className={RadioGroupFixture.className}
-          dataTestRef={RadioGroupFixture.dataTestRef}
-          errorMessage={RadioGroupFixture.errorMessage}
-          name={RadioGroupFixture.name}
-          onChange={RadioGroupFixture.onChange}
-          options={RadioGroupFixture.options}
-          value={RadioGroupFixture.value}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <RadioGroup
+        className={RadioGroupFixture.className}
+        dataTestRef={RadioGroupFixture.dataTestRef}
+        errorMessage={RadioGroupFixture.errorMessage}
+        name={RadioGroupFixture.name}
+        onChange={RadioGroupFixture.onChange}
+        options={RadioGroupFixture.options}
+        value={RadioGroupFixture.value}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

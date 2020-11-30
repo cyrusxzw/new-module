@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { getEyebrowLevel, getSubHeadingLevel } from './SectionHeading.utils';
 import SectionHeading from './SectionHeading';
 
@@ -9,61 +9,53 @@ describe('<SectionHeading />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <SectionHeading
-          heading="Title: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream."
-          id="Anti-Oxidant"
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <SectionHeading
+        heading="Title: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream."
+        id="Anti-Oxidant"
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders with subHeading variation correctly', () => {
-    const tree = renderer
-      .create(
-        <SectionHeading
-          heading="Heading: Fortification of the highest order."
-          id="Parsley"
-          subHeading="Subcopy: Parsley Seed Anti-Oxidant Facial Hydrating Cream 60mL"
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <SectionHeading
+        heading="Heading: Fortification of the highest order."
+        id="Parsley"
+        subHeading="Subcopy: Parsley Seed Anti-Oxidant Facial Hydrating Cream 60mL"
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders with subHeading and eyebrow variation correctly', () => {
-    const tree = renderer
-      .create(
-        <SectionHeading
-          eyebrow="Eyebrow: Offers fortification of the highest order against free radicals."
-          heading="Heading: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream."
-          id="Anti-Oxidant"
-          subHeading="SubHeading: Parsley Seed Cream. Intensely soothing, nourishing and hydrating, this elegant formulation contains a potent blend of botanicals that offer fortification of the highest order against free radicals."
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <SectionHeading
+        eyebrow="Eyebrow: Offers fortification of the highest order against free radicals."
+        heading="Heading: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream."
+        id="Anti-Oxidant"
+        subHeading="SubHeading: Parsley Seed Cream. Intensely soothing, nourishing and hydrating, this elegant formulation contains a potent blend of botanicals that offer fortification of the highest order against free radicals."
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders with subHeading, eyebrow variation, font family correctly', () => {
-    const tree = renderer
-      .create(
-        <SectionHeading
-          eyebrow="Eyebrow: Offers fortification of the highest order against free radicals."
-          heading="Heading: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream."
-          id="Anti-Oxidant"
-          subHeading="SubHeading: Parsley Seed Cream. Intensely soothing, nourishing and hydrating, this elegant formulation contains a potent blend of botanicals that offer fortification of the highest order against free radicals."
-          titleFont="Zapf"
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <SectionHeading
+        eyebrow="Eyebrow: Offers fortification of the highest order against free radicals."
+        heading="Heading: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream."
+        id="Anti-Oxidant"
+        subHeading="SubHeading: Parsley Seed Cream. Intensely soothing, nourishing and hydrating, this elegant formulation contains a potent blend of botanicals that offer fortification of the highest order against free radicals."
+        titleFont="Zapf"
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });
 

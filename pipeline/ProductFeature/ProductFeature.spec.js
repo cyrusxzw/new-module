@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ProductFeature from './ProductFeature';
 
 describe('<ProductFeature />', () => {
@@ -8,7 +8,7 @@ describe('<ProductFeature />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
+    const { container } = render
       .create(
         <ProductFeature
           image={{
@@ -23,11 +23,11 @@ describe('<ProductFeature />', () => {
         />,
       )
       .toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders with a wrapping hyperlink if the `hyperlink` prop is passed', () => {
-    const tree = renderer
+    const { container } = render
       .create(
         <ProductFeature
           hyperlink={{
@@ -45,6 +45,6 @@ describe('<ProductFeature />', () => {
         />,
       )
       .toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

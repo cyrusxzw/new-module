@@ -1,18 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Audio.Header /> renders base component correctly 1`] = `
-<header
-  className="base"
->
-  <h3
-    className="base flush xXSmall dark artistName"
+<div>
+  <header
+    class="base"
   >
-    foo
-  </h3>
-  <h4
-    className="base flush serifFont medium dark"
-  >
-    bar
-  </h4>
-</header>
+    <h3
+      class="base flush xXSmall dark artistName"
+    >
+      foo
+    </h3>
+    <h4
+      class="base flush serifFont medium dark"
+    >
+      bar
+    </h4>
+  </header>
+</div>
 `;

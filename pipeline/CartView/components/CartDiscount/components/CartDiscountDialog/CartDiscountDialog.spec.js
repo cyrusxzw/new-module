@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import CartDiscountDialog from './CartDiscountDialog';
 import CartDiscountDialogFixture from './CartDiscountDialog.fixture';
 
@@ -17,7 +17,7 @@ describe('<CartDiscountDialog />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
+    const { container } = render
       .create(
         <CartDiscountDialog
           copy={copy}
@@ -27,6 +27,6 @@ describe('<CartDiscountDialog />', () => {
       )
       .toJSON();
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

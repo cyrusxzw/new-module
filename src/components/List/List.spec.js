@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import List from './List';
 
 describe('Component - Element - List', () => {
@@ -8,17 +8,18 @@ describe('Component - Element - List', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <List
-          items={[
-            { content: 'Fragrance', id: 'fragrance' },
-            { content: 'Gifts', id: 'gifts' },
-          ]}
-          theme="dark"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(
+      <List
+        items={[
+          { content: 'Fragrance', id: 'fragrance' },
+          { content: 'Gifts', id: 'gifts' },
+        ]}
+        theme="dark"
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
   });
+
+  it.todo('should have the correct number of items');
 });

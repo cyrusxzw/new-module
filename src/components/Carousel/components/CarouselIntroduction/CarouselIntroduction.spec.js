@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import CarouselFixture from '../../Carousel.fixture';
 import CarouselIntroduction from './CarouselIntroduction';
 
@@ -9,15 +9,13 @@ describe('<Carousel.CarouselIntroduction />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <CarouselIntroduction
-          description={CarouselFixture.introduction.description}
-          heading={CarouselFixture.introduction.heading}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <CarouselIntroduction
+        description={CarouselFixture.introduction.description}
+        heading={CarouselFixture.introduction.heading}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

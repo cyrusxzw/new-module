@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import Hyperlink from './Hyperlink';
 import {
@@ -22,15 +22,13 @@ describe('<Hyperlink />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Hyperlink text="Aesop" url="https://aesop.com">
-          Aesop
-        </Hyperlink>,
-      )
-      .toJSON();
+    const { container } = render(
+      <Hyperlink text="Aesop" url="https://aesop.com">
+        Aesop
+      </Hyperlink>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });
 

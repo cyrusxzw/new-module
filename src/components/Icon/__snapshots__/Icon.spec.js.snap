@@ -1,57 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Icon /> renders SVG with provided title prop correctly 1`] = `
-<svg
-  aria-labelledby="rightArrow-1"
-  className="base rightArrow dark"
-  data-ref=""
-  focusable="false"
-  height={12}
-  role="img"
-  style={
-    Object {
-      "height": "12px",
-      "width": "12px",
-    }
-  }
-  tabIndex={-1}
-  viewBox="0 0 50 50"
-  width={12}
->
-  <title
-    id="rightArrow-1"
+<div>
+  <svg
+    aria-labelledby="rightArrow-1"
+    class="base rightArrow dark"
+    data-ref=""
+    data-testid="data-testid-Icon"
+    focusable="false"
+    height="12"
+    role="img"
+    style="height: 12px; width: 12px;"
+    tabindex="-1"
+    viewBox="0 0 50 50"
+    width="12"
   >
-    aesop
-  </title>
-  <g>
-    <path
-      d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
-    />
-  </g>
-</svg>
+    <title
+      id="rightArrow-1"
+    >
+      aesop
+    </title>
+    <g>
+      <path
+        d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
+      />
+    </g>
+  </svg>
+</div>
 `;
 
 exports[`<Icon /> renders base component correctly 1`] = `
-<svg
-  className="base rightArrow dark"
-  data-ref=""
-  focusable="false"
-  height={12}
-  role="img"
-  style={
-    Object {
-      "height": "12px",
-      "width": "12px",
-    }
-  }
-  tabIndex={-1}
-  viewBox="0 0 50 50"
-  width={12}
->
-  <g>
-    <path
-      d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
-    />
-  </g>
-</svg>
+<div>
+  <svg
+    class="base rightArrow dark"
+    data-ref=""
+    data-testid="data-testid-Icon"
+    focusable="false"
+    height="12"
+    role="img"
+    style="height: 12px; width: 12px;"
+    tabindex="-1"
+    viewBox="0 0 50 50"
+    width="12"
+  >
+    <g>
+      <path
+        d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
+      />
+    </g>
+  </svg>
+</div>
 `;

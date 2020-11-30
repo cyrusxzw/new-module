@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import NewsLetterSignUp from './NewsLetterSignUp';
 import NewsLetterSignUpFixture from './NewsLetterSignUp.fixture';
 
@@ -9,20 +9,18 @@ describe('<NewsLetterSignUp />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <NewsLetterSignUp
-          consentErrorMsg={NewsLetterSignUpFixture.consentErrorMsg}
-          errorMessage={NewsLetterSignUpFixture.errorMessage}
-          showTermsConditionsTextBox={true}
-          subscriptionMessage={NewsLetterSignUpFixture.subscriptionMessage}
-          termsAndCondition={NewsLetterSignUpFixture.termsAndCondition}
-          termsMessage={NewsLetterSignUpFixture.termsMessage}
-          theme="light"
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <NewsLetterSignUp
+        consentErrorMsg={NewsLetterSignUpFixture.consentErrorMsg}
+        errorMessage={NewsLetterSignUpFixture.errorMessage}
+        showTermsConditionsTextBox={true}
+        subscriptionMessage={NewsLetterSignUpFixture.subscriptionMessage}
+        termsAndCondition={NewsLetterSignUpFixture.termsAndCondition}
+        termsMessage={NewsLetterSignUpFixture.termsMessage}
+        theme="light"
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

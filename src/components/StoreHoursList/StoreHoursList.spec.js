@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import StoreHoursList from './StoreHoursList';
 import StoreHoursListFixture from './StoreHoursList.fixture';
 
@@ -9,16 +9,14 @@ describe('<StoreHoursList />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <StoreHoursList
-          alternateHoursNote={StoreHoursListFixture.alternateHoursNote}
-          heading={StoreHoursListFixture.heading}
-          hoursList={StoreHoursListFixture.hoursList}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <StoreHoursList
+        alternateHoursNote={StoreHoursListFixture.alternateHoursNote}
+        heading={StoreHoursListFixture.heading}
+        hoursList={StoreHoursListFixture.hoursList}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

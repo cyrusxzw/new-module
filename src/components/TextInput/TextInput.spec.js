@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import TextInput from './TextInput';
 
 describe('<TextInput />', () => {
@@ -8,10 +8,10 @@ describe('<TextInput />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<TextInput data-test-ref="test-data-ref" id="test-textinput" />)
-      .toJSON();
+    const { container } = render(
+      <TextInput data-test-ref="test-data-ref" id="test-textinput" />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

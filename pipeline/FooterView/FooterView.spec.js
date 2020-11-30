@@ -1,7 +1,7 @@
 import React from 'react';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import FooterView from './FooterView';
 import FooterViewFixture from './FooterView.fixture';
 
@@ -13,7 +13,7 @@ describe('<FooterView />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
+    const { container } = render
       .create(
         <FooterView
           siteNavigationPrimary={{
@@ -53,6 +53,6 @@ describe('<FooterView />', () => {
       )
       .toJSON();
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

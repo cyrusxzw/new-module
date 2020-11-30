@@ -1,218 +1,196 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ReadMore /> renders base component correctly 1`] = `
-<section
-  className="base fadeEnter"
->
-  <div
-    className="base readMoreArticle readMoreArticle fadeEnter"
-    id="test_1"
+<div>
+  <section
+    class="base fadeEnter fadeEnterActive"
   >
-    <a
-      className="base left dark image"
-      data-test-ref="test_1_READMORE_THUMBNAIL"
-      href="https://www.aesop.com/au/r/careers?contentful=true"
-      onClick={[Function]}
-      target="_self"
-      title="1. Senorial consectetur adipiscing elit."
-    >
-      <div
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <picture
-          className="base picture dark"
-        >
-          <source
-            media="(min-width: 1025px)"
-            srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-          />
-          <source
-            media="(min-width: 640px)"
-            srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-          />
-          <source
-            media="(min-width: 0px)"
-            srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-          />
-          <img
-            alt="horizontal_hub"
-            loading="lazy"
-          />
-        </picture>
-      </div>
-    </a>
     <div
-      className="category readMoreCategory"
-    >
-      Product
-    </div>
-    <div
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="base readMoreArticle fadeEnter fadeEnterActive"
+      id="test_1"
     >
       <a
-        className="base left dark title readMoreTitle"
-        data-test-ref="test_1_TITLE"
+        class="base left dark image"
+        data-test-ref="test_1_READMORE_THUMBNAIL"
         href="https://www.aesop.com/au/r/careers?contentful=true"
-        onClick={[Function]}
         target="_self"
         title="1. Senorial consectetur adipiscing elit."
       >
-        <h1>
-          <span>
-            1. Senorial consectetur adipiscing elit.
-          </span>
-        </h1>
+        <div>
+          <picture
+            class="base picture dark"
+          >
+            <source
+              media="(min-width: 1025px)"
+              srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+            />
+            <source
+              media="(min-width: 640px)"
+              srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+            />
+            <source
+              media="(min-width: 0px)"
+              srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+            />
+            <img
+              alt="horizontal_hub"
+              loading="lazy"
+            />
+          </picture>
+        </div>
       </a>
-    </div>
-    <div
-      className="note readMoreNote"
-    >
-      <span>
-        5 minute read
-      </span>
-    </div>
-  </div>
-  <div
-    className="base readMoreArticle readMoreArticle fadeEnter"
-    id="test_2"
-  >
-    <a
-      className="base left dark image"
-      data-test-ref="test_2_READMORE_THUMBNAIL"
-      href="https://www.aesop.com/au/r/careers?contentful=true"
-      onClick={[Function]}
-      target="_self"
-      title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-    >
       <div
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+        class="category readMoreCategory"
       >
-        <picture
-          className="base picture dark"
-        >
-          <source
-            media="(min-width: 1025px)"
-            srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-          />
-          <source
-            media="(min-width: 640px)"
-            srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-          />
-          <source
-            media="(min-width: 0px)"
-            srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-          />
-          <img
-            alt="horizontal_hub"
-            loading="lazy"
-          />
-        </picture>
+        Product
       </div>
-    </a>
-    <div
-      className="category readMoreCategory"
-    >
-      Product
+      <div>
+        <a
+          class="base left dark title readMoreTitle"
+          data-test-ref="test_1_TITLE"
+          href="https://www.aesop.com/au/r/careers?contentful=true"
+          target="_self"
+          title="1. Senorial consectetur adipiscing elit."
+        >
+          <h1>
+            <span>
+              1. Senorial consectetur adipiscing elit.
+            </span>
+          </h1>
+        </a>
+      </div>
+      <div
+        class="note readMoreNote"
+      >
+        <span>
+          5 minute read
+        </span>
+      </div>
     </div>
     <div
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="base readMoreArticle fadeEnter fadeEnterActive"
+      id="test_2"
     >
       <a
-        className="base left dark title readMoreTitle"
-        data-test-ref="test_2_TITLE"
+        class="base left dark image"
+        data-test-ref="test_2_READMORE_THUMBNAIL"
         href="https://www.aesop.com/au/r/careers?contentful=true"
-        onClick={[Function]}
         target="_self"
         title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
       >
-        <h1>
-          <span>
-            2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
-          </span>
-        </h1>
+        <div>
+          <picture
+            class="base picture dark"
+          >
+            <source
+              media="(min-width: 1025px)"
+              srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+            />
+            <source
+              media="(min-width: 640px)"
+              srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+            />
+            <source
+              media="(min-width: 0px)"
+              srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+            />
+            <img
+              alt="horizontal_hub"
+              loading="lazy"
+            />
+          </picture>
+        </div>
       </a>
-    </div>
-    <div
-      className="note readMoreNote"
-    >
-      <span>
-        5 minute read
-      </span>
-    </div>
-  </div>
-  <div
-    className="base readMoreArticle readMoreArticle fadeEnter"
-    id="test_3"
-  >
-    <a
-      className="base left dark image"
-      data-test-ref="test_3_READMORE_THUMBNAIL"
-      href="https://www.aesop.com/au/r/careers?contentful=true"
-      onClick={[Function]}
-      target="_self"
-      title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-    >
       <div
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+        class="category readMoreCategory"
       >
-        <picture
-          className="base picture dark"
-        >
-          <source
-            media="(min-width: 1025px)"
-            srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-          />
-          <source
-            media="(min-width: 640px)"
-            srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-          />
-          <source
-            media="(min-width: 0px)"
-            srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-          />
-          <img
-            alt="horizontal_hub"
-            loading="lazy"
-          />
-        </picture>
+        Product
       </div>
-    </a>
-    <div
-      className="category readMoreCategory"
-    >
-      Culture
+      <div>
+        <a
+          class="base left dark title readMoreTitle"
+          data-test-ref="test_2_TITLE"
+          href="https://www.aesop.com/au/r/careers?contentful=true"
+          target="_self"
+          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+        >
+          <h1>
+            <span>
+              2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+            </span>
+          </h1>
+        </a>
+      </div>
+      <div
+        class="note readMoreNote"
+      >
+        <span>
+          5 minute read
+        </span>
+      </div>
     </div>
     <div
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="base readMoreArticle fadeEnter fadeEnterActive"
+      id="test_3"
     >
       <a
-        className="base left dark title readMoreTitle"
-        data-test-ref="test_3_TITLE"
+        class="base left dark image"
+        data-test-ref="test_3_READMORE_THUMBNAIL"
         href="https://www.aesop.com/au/r/careers?contentful=true"
-        onClick={[Function]}
         target="_self"
         title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
       >
-        <h1>
-          <span>
-            3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
-          </span>
-        </h1>
+        <div>
+          <picture
+            class="base picture dark"
+          >
+            <source
+              media="(min-width: 1025px)"
+              srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+            />
+            <source
+              media="(min-width: 640px)"
+              srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+            />
+            <source
+              media="(min-width: 0px)"
+              srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+            />
+            <img
+              alt="horizontal_hub"
+              loading="lazy"
+            />
+          </picture>
+        </div>
       </a>
+      <div
+        class="category readMoreCategory"
+      >
+        Culture
+      </div>
+      <div>
+        <a
+          class="base left dark title readMoreTitle"
+          data-test-ref="test_3_TITLE"
+          href="https://www.aesop.com/au/r/careers?contentful=true"
+          target="_self"
+          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+        >
+          <h1>
+            <span>
+              3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+            </span>
+          </h1>
+        </a>
+      </div>
+      <div
+        class="note readMoreNote"
+      >
+        <span>
+          5 minute read
+        </span>
+      </div>
     </div>
-    <div
-      className="note readMoreNote"
-    >
-      <span>
-        5 minute read
-      </span>
-    </div>
-  </div>
-</section>
+  </section>
+</div>
 `;

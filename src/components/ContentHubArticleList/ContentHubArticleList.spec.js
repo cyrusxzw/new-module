@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ContentHubArticleList from './ContentHubArticleList';
 import ContentHubArticleListFixture from './ContentHubArticleList.fixture';
 
@@ -9,29 +9,25 @@ describe('<ContentHubArticleList />', () => {
   });
 
   it('renders base component correctly with pattern 1', () => {
-    const tree = renderer
-      .create(
-        <ContentHubArticleList
-          articles={ContentHubArticleListFixture.articles}
-          pattern={1}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <ContentHubArticleList
+        articles={ContentHubArticleListFixture.articles}
+        pattern={1}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders base component correctly with pattern 0', () => {
-    const tree = renderer
-      .create(
-        <ContentHubArticleList
-          articles={ContentHubArticleListFixture.articles}
-          isFirstGroup={true}
-          pattern={0}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <ContentHubArticleList
+        articles={ContentHubArticleListFixture.articles}
+        isFirstGroup={true}
+        pattern={0}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

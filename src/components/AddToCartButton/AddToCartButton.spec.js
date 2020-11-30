@@ -1,6 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
@@ -17,71 +16,65 @@ describe('<AddToCartButton />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-          <ProductDetailContextProvider
-            product={ProductDetailHeaderFixture.product}
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <ProductDetailContextProvider
+          product={ProductDetailHeaderFixture.product}
+        >
+          <VariantSelectContextProvider
+            variants={ProductDetailHeaderFixture.product.variantOptions}
           >
-            <VariantSelectContextProvider
-              variants={ProductDetailHeaderFixture.product.variantOptions}
-            >
-              <AddToCartButton
-                className={AddToCartButtonFixture.className}
-                copy={AddToCartButtonFixture.copy}
-                isEnabled={AddToCartButtonFixture.isEnabled}
-              />
-            </VariantSelectContextProvider>
-          </ProductDetailContextProvider>
-        </AddToCartContextProvider>,
-      )
-      .toJSON();
+            <AddToCartButton
+              className={AddToCartButtonFixture.className}
+              copy={AddToCartButtonFixture.copy}
+              isEnabled={AddToCartButtonFixture.isEnabled}
+            />
+          </VariantSelectContextProvider>
+        </ProductDetailContextProvider>
+      </AddToCartContextProvider>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders out of stock button correctly', () => {
-    const tree = renderer
-      .create(
-        <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-          <ProductDetailContextProvider
-            product={ProductDetailHeaderFixture.product}
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <ProductDetailContextProvider
+          product={ProductDetailHeaderFixture.product}
+        >
+          <VariantSelectContextProvider
+            variants={ProductDetailHeaderFixture.variantOutOfStock}
           >
-            <VariantSelectContextProvider
-              variants={ProductDetailHeaderFixture.variantOutOfStock}
-            >
-              <AddToCartButton
-                className={AddToCartButtonFixture.className}
-                copy={AddToCartButtonFixture.copy}
-                dataTestRef={AddToCartButtonFixture.dataTestRef}
-                isEnabled={AddToCartButtonFixture.isEnabled}
-              />
-            </VariantSelectContextProvider>
-          </ProductDetailContextProvider>
-        </AddToCartContextProvider>,
-      )
-      .toJSON();
+            <AddToCartButton
+              className={AddToCartButtonFixture.className}
+              copy={AddToCartButtonFixture.copy}
+              dataTestRef={AddToCartButtonFixture.dataTestRef}
+              isEnabled={AddToCartButtonFixture.isEnabled}
+            />
+          </VariantSelectContextProvider>
+        </ProductDetailContextProvider>
+      </AddToCartContextProvider>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders alternate action button correctly', () => {
-    const tree = renderer
-      .create(
-        <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-          <ProductDetailContextProvider
-            product={ProductDetailHeaderFixture.product}
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <ProductDetailContextProvider
+          product={ProductDetailHeaderFixture.product}
+        >
+          <VariantSelectContextProvider
+            variants={ProductDetailHeaderFixture.variantAlternateAction}
           >
-            <VariantSelectContextProvider
-              variants={ProductDetailHeaderFixture.variantAlternateAction}
-            >
-              <AddToCartButton copy={AddToCartButtonFixture.copy} />
-            </VariantSelectContextProvider>
-          </ProductDetailContextProvider>
-        </AddToCartContextProvider>,
-      )
-      .toJSON();
+            <AddToCartButton copy={AddToCartButtonFixture.copy} />
+          </VariantSelectContextProvider>
+        </ProductDetailContextProvider>
+      </AddToCartContextProvider>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

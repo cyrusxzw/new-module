@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import PreviousButton from './PreviousButton';
 
 describe('<Carousel.PreviousButton />', () => {
@@ -8,10 +8,8 @@ describe('<Carousel.PreviousButton />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<PreviousButton onClick={() => {}} />)
-      .toJSON();
+    const { container } = render(<PreviousButton onClick={() => {}} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Paragraph, { ParagraphSet } from './Paragraph';
 
 describe('<Paragraph />', () => {
@@ -8,34 +8,30 @@ describe('<Paragraph />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Paragraph>
-          A lightweight, vitamin C-rich layering serum that soothes, replenishes
-          and balances skin with its complex blend of anti-oxidant, hydrating
-          and conditioning ingredients.
-        </Paragraph>,
-      )
-      .toJSON();
+    const { container } = render(
+      <Paragraph>
+        A lightweight, vitamin C-rich layering serum that soothes, replenishes
+        and balances skin with its complex blend of anti-oxidant, hydrating
+        conditioning ingredients.
+      </Paragraph>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });
 
 describe('<ParagraphSet />', () => {
   it('renders a given collection of `p` tags', () => {
-    const tree = renderer
-      .create(
-        <ParagraphSet>
-          <p>A lightweight, vitamin C-rich layering serum that soothes</p>
-          <p>
-            Replenishes and balances skin with its complex blend of
-            anti-oxidant, hydrating and conditioning ingredients.
-          </p>
-        </ParagraphSet>,
-      )
-      .toJSON();
+    const { container } = render(
+      <ParagraphSet>
+        <p>A lightweight, vitamin C-rich layering serum that soothes</p>
+        <p>
+          Replenishes and balances skin with its complex blend of anti-oxidant,
+          hydrating and conditioning ingredients.
+        </p>
+      </ParagraphSet>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,140 +1,142 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TwoColumnList /> renders base component correctly 1`] = `
-<div
-  className="base dark"
->
+<div>
   <div
-    className="column"
+    class="base dark"
   >
     <div
-      className="wrapper"
+      class="column"
     >
-      <h2
-        className="base large dark heading"
+      <div
+        class="wrapper"
       >
-        Suspendisse rhoncus
-      </h2>
-      <h3
-        className="base mediumWeightFont xSmall dark"
-      >
-        Sagittis diam
-      </h3>
-      <ul
-        className="base dark list"
-      >
-        <li
-          className="item item"
+        <h2
+          class="base large dark heading"
         >
-          <a
-            className="base left dark link"
-            href="/"
-            target="_self"
-          >
-            Quisque venenatis dictum
-          </a>
-        </li>
-        <li
-          className="item item"
+          Suspendisse rhoncus
+        </h2>
+        <h3
+          class="base mediumWeightFont xSmall dark"
         >
-          <a
-            className="base left dark link"
-            href="/"
-            target="_self"
+          Sagittis diam
+        </h3>
+        <ul
+          class="base dark list"
+        >
+          <li
+            class="item item"
           >
-            Aliquam ullamcorper
-          </a>
-        </li>
-      </ul>
+            <a
+              class="base left dark link"
+              href="/"
+              target="_self"
+            >
+              Quisque venenatis dictum
+            </a>
+          </li>
+          <li
+            class="item item"
+          >
+            <a
+              class="base left dark link"
+              href="/"
+              target="_self"
+            >
+              Aliquam ullamcorper
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="wrapper"
+      >
+        <h2
+          class="base large dark heading"
+        >
+          Vestibulum ipsum
+        </h2>
+        <h3
+          class="base mediumWeightFont xSmall dark"
+        >
+          Nullam sed libero
+        </h3>
+        <ul
+          class="base dark list"
+        >
+          <li
+            class="item item"
+          >
+            <a
+              class="base left dark link"
+              href="/"
+              target="_self"
+            >
+              Donec non venenatis massa
+            </a>
+          </li>
+          <li
+            class="item item"
+          >
+            <a
+              class="base left dark link"
+              href="/"
+              target="_self"
+            >
+              Donec non venenatis
+            </a>
+          </li>
+          <li
+            class="item item"
+          >
+            <a
+              class="base left dark link"
+              href="/"
+              target="_self"
+            >
+              Venenatis donec non massa
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
     <div
-      className="wrapper"
+      class="column"
     >
-      <h2
-        className="base large dark heading"
+      <div
+        class="wrapper"
       >
-        Vestibulum ipsum
-      </h2>
-      <h3
-        className="base mediumWeightFont xSmall dark"
-      >
-        Nullam sed libero
-      </h3>
-      <ul
-        className="base dark list"
-      >
-        <li
-          className="item item"
+        <h2
+          class="base large dark heading"
         >
-          <a
-            className="base left dark link"
-            href="/"
-            target="_self"
+          Interdum et malesuada fames
+        </h2>
+        <h3
+          class="base mediumWeightFont xSmall dark"
+        >
+          Fusce venenatis
+        </h3>
+        <ul
+          class="base dark list"
+        >
+          <li
+            class="item item"
           >
-            Donec non venenatis massa
-          </a>
-        </li>
-        <li
-          className="item item"
-        >
-          <a
-            className="base left dark link"
-            href="/"
-            target="_self"
+            Pellentesque luctus
+          </li>
+          <li
+            class="item item"
           >
-            Donec non venenatis
-          </a>
-        </li>
-        <li
-          className="item item"
-        >
-          <a
-            className="base left dark link"
-            href="/"
-            target="_self"
-          >
-            Venenatis donec non massa
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div
-    className="column"
-  >
-    <div
-      className="wrapper"
-    >
-      <h2
-        className="base large dark heading"
-      >
-        Interdum et malesuada fames
-      </h2>
-      <h3
-        className="base mediumWeightFont xSmall dark"
-      >
-        Fusce venenatis
-      </h3>
-      <ul
-        className="base dark list"
-      >
-        <li
-          className="item item"
-        >
-          Pellentesque luctus
-        </li>
-        <li
-          className="item item"
-        >
-          <a
-            className="base left dark link"
-            href="/"
-            target="_self"
-          >
-            Maecenas a libero
-          </a>
-        </li>
-      </ul>
+            <a
+              class="base left dark link"
+              href="/"
+              target="_self"
+            >
+              Maecenas a libero
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

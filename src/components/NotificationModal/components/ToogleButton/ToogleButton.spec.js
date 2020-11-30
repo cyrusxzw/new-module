@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ToogleButton from './ToogleButton';
 
 describe('<ToogleButton />', () => {
@@ -8,8 +8,8 @@ describe('<ToogleButton />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer.create(<ToogleButton />).toJSON();
+    const { container } = render(<ToogleButton />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

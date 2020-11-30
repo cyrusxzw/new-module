@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Message from './Message';
 import MessageFixture from './Message.fixture';
 
@@ -9,8 +9,8 @@ describe('<Message />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer.create(<Message {...MessageFixture} />).toJSON();
+    const { container } = render(<Message {...MessageFixture} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

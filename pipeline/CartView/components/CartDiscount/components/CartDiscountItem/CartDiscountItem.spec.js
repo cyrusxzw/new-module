@@ -26,7 +26,7 @@ describe('<CartDiscountItem />', () => {
   });
 
   it('renders base component correctly', () => {
-    const tree = renderer
+    const { container } = render
       .create(
         <LocaleContext.Provider value={locale}>
           <MockedProvider>
@@ -39,7 +39,7 @@ describe('<CartDiscountItem />', () => {
       )
       .toJSON();
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   describe('when the remove button is clicked', () => {

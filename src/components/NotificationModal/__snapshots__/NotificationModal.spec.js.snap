@@ -1,48 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NotificationModal /> renders base component correctly 1`] = `
-<div
-  className="base isNotVisible"
-  style={
-    Object {
-      "backgroundColor": "#d5d5cc",
-    }
-  }
->
-  <span
-    className="notificationMessage"
+<div>
+  <div
+    class="base isNotVisible"
+    style="background-color: rgb(213, 213, 204);"
   >
-    Sincere thanks for subscribing. We are always pleased to share ourpassionate interests with like - minded individuals.
-  </span>
-  <button
-    className="closeButton"
-    data-ref="close"
-    onClick={[Function]}
-    tabIndex={-1}
-  >
-    <svg
-      className="base close dark"
-      data-ref=""
-      focusable="false"
-      height={15}
-      role="img"
-      style={
-        Object {
-          "height": "15px",
-          "width": "15px",
-        }
-      }
-      tabIndex={-1}
-      viewBox="0 0 50 50"
-      width={15}
+    <span
+      class="notificationMessage"
     >
-      <g>
-        <polygon
-          className="close"
-          points="50,5 45,0 25,20 5,0 0,5 20,25 0,45 5,50 25,30 45,50 50,45 30,25"
-        />
-      </g>
-    </svg>
-  </button>
+      Sincere thanks for subscribing. We are always pleased to share ourpassionate interests with like - minded individuals.
+    </span>
+    <button
+      class="closeButton"
+      data-ref="close"
+      tabindex="-1"
+    >
+      <svg
+        class="base close dark"
+        data-ref=""
+        data-testid="data-testid-Icon"
+        focusable="false"
+        height="15"
+        role="img"
+        style="height: 15px; width: 15px;"
+        tabindex="-1"
+        viewBox="0 0 50 50"
+        width="15"
+      >
+        <g>
+          <polygon
+            class="close"
+            points="50,5 45,0 25,20 5,0 0,5 20,25 0,45 5,50 25,30 45,50 50,45 30,25"
+          />
+        </g>
+      </svg>
+    </button>
+  </div>
 </div>
 `;
