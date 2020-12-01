@@ -53,21 +53,22 @@
 }
 
 .image {
-  max-width: 880px;
-
-  @media (--viewport-lg) {
-    width: calc(100% * 7 / 12);
-    align-self: flex-end;
-  }
-}
-
-.smallImage {
   @media (--viewport-lg) {
     max-width: 440px;
   }
   @media (--viewport-lg-only) {
     margin-right: auto;
     margin-left: auto;
+  }
+  @media (--viewport-lg) {
+    width: calc(100% * 7 / 12);
+    align-self: flex-end;
+  }
+}
+
+.largeImage {
+  @media (--viewport-lg) {
+    max-width: 880px;
   }
 }
 

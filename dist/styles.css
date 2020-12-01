@@ -8726,9 +8726,17 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
     margin-right: 2.5%
 }
   }
+@media (min-width: 1025px) {
 .ProductDetailHeader-module_image__32mQI {
-  max-width: 880px;
+    max-width: 440px
 }
+  }
+@media (min-width: 1025px) and (max-width: 1219px) {
+.ProductDetailHeader-module_image__32mQI {
+    margin-right: auto;
+    margin-left: auto
+}
+  }
 @media (min-width: 1025px) {
 .ProductDetailHeader-module_image__32mQI {
     width: calc(100% * 7 / 12);
@@ -8737,14 +8745,8 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
 }
   }
 @media (min-width: 1025px) {
-.ProductDetailHeader-module_smallImage__1VFqn {
-    max-width: 440px
-}
-  }
-@media (min-width: 1025px) and (max-width: 1219px) {
-.ProductDetailHeader-module_smallImage__1VFqn {
-    margin-right: auto;
-    margin-left: auto
+.ProductDetailHeader-module_largeImage__gi0t6 {
+    max-width: 880px
 }
   }
 @media (min-width: 640px) and (max-width: 1024px) {

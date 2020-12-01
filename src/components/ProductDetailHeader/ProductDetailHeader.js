@@ -13,7 +13,7 @@ const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
   const { productDetail } = useProductDetailContext();
   const classSet = cx(styles.base, className);
   const imageClass = cx(styles.image, {
-    [styles.smallImage]: productDetail.imageSize === 'Small',
+    [styles.largeImage]: productDetail.imageSize === 'Large',
   });
 
   return (
