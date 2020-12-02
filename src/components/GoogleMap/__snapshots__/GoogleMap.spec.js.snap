@@ -8,19 +8,6 @@ exports[`<GoogleMap /> renders base component correctly 1`] = `
     <div
       class="wrapper"
     >
-      <span
-        class="base isLoading medium dark loading"
-      >
-        <span
-          class="dot"
-        />
-        <span
-          class="dot"
-        />
-        <span
-          class="dot"
-        />
-      </span>
       <div
         class="map"
         id="google-map"
