@@ -25,7 +25,7 @@ const Icon = ({
   }
 
   const uuidKey = uuidv4();
-  const uuidariaLabellBy = `${name}-${uuidKey}`;
+  const uuidAriaLabellBy = `${name}-${uuidKey}`;
   const svgBlueprint = generateSvgBlueprint(svg, uuidKey);
   const classSet = cx(
     styles.base,
@@ -39,7 +39,7 @@ const Icon = ({
 
   return (
     <svg
-      aria-labelledby={title ? uuidariaLabellBy : undefined}
+      aria-labelledby={title ? uuidAriaLabellBy : undefined}
       className={classSet}
       data-ref={dataRef}
       data-testid="data-testid-Icon"
@@ -51,7 +51,7 @@ const Icon = ({
       viewBox={svg.viewBox}
       width={width}
     >
-      {title && <title id={uuidariaLabellBy}>{title}</title>}
+      {title && <title id={uuidAriaLabellBy}>{title}</title>}
       <g>{svgBlueprint}</g>
     </svg>
   );

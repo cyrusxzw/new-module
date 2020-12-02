@@ -10,20 +10,6 @@ describe('<Modal />', () => {
     expect(Modal).toBeDefined();
   });
 
-  it('should render component correctly and match html snapshot', () => {
-    const { container } = render(
-      <Modal
-        copy={{ close: copyClose }}
-        isVisible={true}
-        onClose={handleOnClose}
-      >
-        test
-      </Modal>,
-    );
-
-    expect(container).toMatchSnapshot();
-  });
-
   it('renders component correctly and fires the close button on click', () => {
     const { getByText, getByTitle } = render(
       <Modal

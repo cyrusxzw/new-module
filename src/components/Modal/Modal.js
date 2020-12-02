@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useEscapeKeyListener } from '~/customHooks/useEscapeKeyListener';
@@ -22,7 +22,7 @@ const Modal = ({ children, className, copy, isVisible, onClose, theme }) => {
 
   return (
     <>
-      {ReactDOM.createPortal(
+      {createPortal(
         <>
           <Overlay isVisible={isVisible} onClose={onClose} />
           <Transition

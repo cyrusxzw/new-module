@@ -1,28 +1,32 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import FlyinPanel from './FlyinPanel';
 
-jest.mock('uuid', () => {
-  let value = 0;
-  return {
-    v4: () => value++,
-  };
-});
-
-const mockFn = jest.fn();
-
 describe('<FlyinPanel />', () => {
+  const handleOnClose = jest.fn();
+  const copyClose = 'close';
+
   it('should be defined', () => {
     expect(FlyinPanel).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const { container } = render(
-      <FlyinPanel onClose={mockFn} title="title">
-        Content
+  it('renders component correctly and fires the close button on click', () => {
+    const { getByText, getByTitle, getByRole } = render(
+      <FlyinPanel
+        copy={{ close: copyClose }}
+        isVisible={true}
+        onClose={handleOnClose}
+      >
+        test
       </FlyinPanel>,
     );
 
-    expect(container).toMatchSnapshot();
+    expect(getByText('test')).toBeTruthy();
+
+    expect(getByRole('note')).toBeTruthy();
+
+    fireEvent.click(getByTitle(copyClose));
+
+    expect(handleOnClose).toHaveBeenCalledTimes(1);
   });
 });
