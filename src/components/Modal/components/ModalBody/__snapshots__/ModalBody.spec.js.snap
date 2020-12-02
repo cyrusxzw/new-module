@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ModalBody /> renders base component correctly 1`] = `
+exports[`<ModalBody /> should render component correctly and match html snapshot 1`] = `
 <div>
   <div
     class="base isVisible dark"

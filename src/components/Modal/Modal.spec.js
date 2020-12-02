@@ -1,24 +1,44 @@
-// import React from 'react';
-// import { render } from '@testing-library/react';
-// import ModalBodyFixture from './components/ModalBody/ModalBody.fixture';
+import React from 'react';
+import { fireEvent, render } from '@testing-library/react';
 import Modal from './Modal';
 
-jest.mock('react-dom');
-// const mockFn = jest.fn();
-
 describe('<Modal />', () => {
-  // let modalRoot = null;
+  const handleOnClose = jest.fn();
+  const copyClose = 'close';
 
   it('should be defined', () => {
     expect(Modal).toBeDefined();
   });
 
-  // beforeEach(() => {
-  //   modalRoot = document.createElement('div');
-  //   modalRoot.setAttribute('id', 'aesopModal');
-  //
-  //   document.body.append(modalRoot);
-  // });
+  it('should render component correctly and match html snapshot', () => {
+    const { container } = render(
+      <Modal
+        copy={{ close: copyClose }}
+        isVisible={true}
+        onClose={handleOnClose}
+      >
+        test
+      </Modal>,
+    );
 
-  it.todo('renders base component correctly');
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders component correctly and fires the close button on click', () => {
+    const { getByText, getByTitle } = render(
+      <Modal
+        copy={{ close: copyClose }}
+        isVisible={true}
+        onClose={handleOnClose}
+      >
+        test
+      </Modal>,
+    );
+
+    expect(getByText('test')).toBeTruthy();
+
+    fireEvent.click(getByTitle(copyClose));
+
+    expect(handleOnClose).toHaveBeenCalledTimes(1);
+  });
 });

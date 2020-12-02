@@ -57,7 +57,9 @@ ModalBody.propTypes = {
 ModalBody.defaultProps = {
   children: undefined,
   className: undefined,
-  copy: undefined,
+  copy: {
+    close: undefined,
+  },
   onClose: undefined,
   isVisible: undefined,
   theme: 'dark',

@@ -9,29 +9,21 @@ import Overlay from '~/components/Overlay';
 import Transition from '~/components/Transition';
 import styles from './Modal.module.css';
 
-const Modal = ({
-  children,
-  className,
-  copy,
-  isVisible,
-  onClose,
-  portalId,
-  theme,
-}) => {
+/** Set up the Modal component's anchor point for ReactDOM.createPortal */
+const modalRoot = document.createElement('div');
+modalRoot.setAttribute('id', 'aesop-gel-modal-root');
+document.body.appendChild(modalRoot);
+
+const Modal = ({ children, className, copy, isVisible, onClose, theme }) => {
   useEscapeKeyListener(onClose);
   useOverflowHidden(isVisible);
 
   const classSet = cx(styles.base, styles[theme], className);
-  const modalRootElement = document.getElementById(portalId);
-
-  if (!modalRootElement) {
-    return null;
-  }
 
   return (
     <>
       {ReactDOM.createPortal(
-        <aside aria-hidden={!isVisible} className={classSet}>
+        <>
           <Overlay isVisible={isVisible} onClose={onClose} />
           <Transition
             hasCSSTransitionMountOnEnter={true}
@@ -39,19 +31,25 @@ const Modal = ({
             isActive={isVisible}
             type="zoom"
           >
-            <div className={styles.inner}>
-              <ModalBody
-                copy={copy}
-                isVisible={isVisible}
-                onClose={onClose}
-                theme={theme}
-              >
-                {children}
-              </ModalBody>
-            </div>
+            <aside
+              aria-hidden={!isVisible}
+              className={classSet}
+              data-testid="data-testid-Modal"
+            >
+              <div className={styles.inner}>
+                <ModalBody
+                  copy={copy}
+                  isVisible={isVisible}
+                  onClose={onClose}
+                  theme={theme}
+                >
+                  {children}
+                </ModalBody>
+              </div>
+            </aside>
           </Transition>
-        </aside>,
-        modalRootElement,
+        </>,
+        modalRoot,
       )}
     </>
   );
@@ -65,7 +63,6 @@ Modal.propTypes = {
   }),
   isVisible: PropTypes.bool,
   onClose: PropTypes.func,
-  portalId: PropTypes.string,
   theme: PropTypes.oneOf(['dark', 'light']),
 };
 
@@ -73,11 +70,10 @@ Modal.defaultProps = {
   children: undefined,
   className: undefined,
   copy: {
-    copy: '',
+    close: undefined,
   },
   isVisible: undefined,
   onClose: undefined,
-  portalId: 'aesopModal',
   theme: 'dark',
 };
 export default Modal;

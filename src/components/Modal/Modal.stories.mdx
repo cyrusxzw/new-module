@@ -13,8 +13,6 @@ import ModalBodyFixture from './components/ModalBody/ModalBody.fixture';
 
 # Modal
 
-A basic modal component that requires a DOM anchor point that makes use of [React Portal]() to mount the modal once open.
-
 ```
 <Modal portalId="uniqueID" ... />
 
@@ -35,7 +33,6 @@ A basic modal component that requires a DOM anchor point that makes use of [Reac
               onClose={() => {
                 setState(() => ({ ...state, isVisible: false }));
               }}
-              portalId="modalPortal"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id mauris
               lacinia, sollicitudin dolor quis, pellentesque nibh. Integer pharetra
@@ -49,7 +46,6 @@ A basic modal component that requires a DOM anchor point that makes use of [Reac
             >
               Open Modal
             </Button>
-            <div id="modalPortal" />
           </React.Fragment>
         )
       }}
