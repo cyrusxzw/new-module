@@ -56,7 +56,7 @@ CarouselIntroduction.propTypes = {
     url: PropTypes.string,
     text: PropTypes.string,
   }),
-  description: PropTypes.string,
+  description: PropTypes.node,
   heading: PropTypes.string,
   theme: PropTypes.oneOf(['dark', 'light']),
   eyebrow: PropTypes.string,
