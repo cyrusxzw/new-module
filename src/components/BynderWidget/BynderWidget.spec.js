@@ -17,4 +17,12 @@ describe('<BynderWidget />', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it('renders null if there is an error', () => {
+    const { container } = render(
+      <BynderWidget heading="Media Releases" id="" />,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
 });

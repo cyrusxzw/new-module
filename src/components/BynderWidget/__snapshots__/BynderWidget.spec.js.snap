@@ -32,3 +32,36 @@ exports[`<BynderWidget /> renders base component correctly 1`] = `
   </article>
 </div>
 `;
+
+exports[`<BynderWidget /> renders null if there is an error 1`] = `
+<div>
+  <article
+    class="base dark"
+    id=""
+  >
+    <h3
+      class="heading"
+    >
+      Media Releases
+    </h3>
+    <span
+      class="base isLoading medium dark"
+    >
+      <span
+        class="dot"
+      />
+      <span
+        class="dot"
+      />
+      <span
+        class="dot"
+      />
+    </span>
+    <div
+      data-bynder-widget="media-list"
+      data-collection-id=""
+      data-rows="3"
+    />
+  </article>
+</div>
+`;

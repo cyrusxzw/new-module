@@ -1,25 +1,27 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { isInBrowser } from '~/utils/environment';
 
 const useScript = ({
-  src,
-  id,
-  dataSet,
   async = true,
+  dataSet,
   defer = false,
+  id,
   onLoad,
-  checkForExisting = true,
+  shouldCheckForExisting = true,
+  src,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const count = useRef(0);
-  count.current += 1;
-
   useEffect(() => {
+    if (!src) {
+      setIsLoading(false);
+      return;
+    }
+
     if (!isInBrowser()) return;
 
-    if (checkForExisting) {
+    if (shouldCheckForExisting) {
       const existing = document.querySelectorAll(`script[src="${src}"]`);
       if (existing.length > 0) {
         setIsLoading(false);
@@ -31,22 +33,17 @@ const useScript = ({
 
     script.src = src;
     script.async = async;
-    script.id = id;
     script.defer = defer;
+
+    if (id) {
+      script.id = id;
+    }
 
     if (dataSet) {
       Object.keys(dataSet).forEach(attr => {
         script.dataset[attr] = dataSet[attr];
       });
     }
-
-    // Object.keys(attributes).forEach(key => {
-    //   if (script[key] === undefined) {
-    //     script.setAttribute(key, attributes[key]);
-    //   } else {
-    //     script[key] = attributes[key];
-    //   }
-    // });
 
     const handleLoad = () => {
       setIsLoading(false);
@@ -55,8 +52,10 @@ const useScript = ({
         onLoad();
       }
     };
+
     const handleError = error => {
       setError(error);
+      setIsLoading(false);
     };
 
     script.addEventListener('load', handleLoad);
