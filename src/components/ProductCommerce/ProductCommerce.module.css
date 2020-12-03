@@ -42,10 +42,10 @@
 
 .image {
   display: flex;
+  align-items: flex-end;
   justify-content: center;
 
   @media (--viewport-md) {
-    align-items: flex-end;
     justify-content: flex-end;
   }
 
