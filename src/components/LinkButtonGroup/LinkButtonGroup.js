@@ -46,21 +46,17 @@ const LinkButtonGroup = ({
 
   if (childComponents === undefined) return null;
 
-  const filteredChildComponents = React.Children.map(childComponents, child => {
-    if (child === null || child.props?.children === undefined) return null;
-
-    return React.cloneElement(child, {
-      className: `${child.props?.className || ''} ${childrenClassSet}`,
-      textAlign,
-      theme: currentTheme,
-    });
-  });
-
-  if (filteredChildComponents.length === 0) return null;
-
   return (
     <div className={classSet} data-testid="data-testid-LinkButtonGroup">
-      {filteredChildComponents}
+      <>
+        {React.Children.map(childComponents, child => {
+          return React.cloneElement(child, {
+            className: `${child.props?.className || ''} ${childrenClassSet}`,
+            textAlign,
+            theme: currentTheme,
+          });
+        })}
+      </>
     </div>
   );
 };

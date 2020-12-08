@@ -44,19 +44,6 @@ describe('<LinkButtonGroup />', () => {
     expect(child).not.toBeInTheDocument();
   });
 
-  it('should return `null` if the only children resolve as null', () => {
-    render(
-      <LinkButtonGroup>
-        <Button />
-        <></>
-      </LinkButtonGroup>,
-    );
-
-    const child = screen.queryByTestId('data-testid-LinkButtonGroup');
-
-    expect(child).not.toBeInTheDocument();
-  });
-
   it('should render correctly if first direct descendant is a fragment', () => {
     render(
       <LinkButtonGroup textAlign="right" theme="light">
