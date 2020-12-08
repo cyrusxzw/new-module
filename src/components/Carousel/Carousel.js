@@ -4,7 +4,7 @@ import cx from 'classnames';
 import get from 'lodash/get';
 import Slider from 'react-slick';
 import { useThemeContext } from '~/contexts';
-import useWindowHasResized from '~/customHooks/useWindowHasResized';
+import { useWindowHasResized } from '~/customHooks';
 import {
   ascertainIsSmallOnlyViewport,
   ascertainIsMediumOnlyViewport,

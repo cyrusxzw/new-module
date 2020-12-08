@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import { isInBrowser } from '~/utils/environment';
 
 const hasIntersectionObserver =
@@ -9,7 +8,7 @@ const hasIntersectionObserver =
     ('IntersectionObserverEntry' in window &&
       'intersectionRatio' in window.IntersectionObserverEntry.prototype));
 
-export const useOnScreen = (
+const useOnScreen = (
   ref,
   threshold = 0,
   rootMargin = '0px',
@@ -51,9 +50,9 @@ export const useOnScreen = (
         observer.unobserve(currentRef);
       }
     };
-  }, [ref, rootMargin, threshold]);
+  }, [ref, rootMargin, shouldNotifyOnLeavingScreen, threshold]);
 
   return isOnScreen;
 };
 
-export default useOnScreen;
+export { useOnScreen };

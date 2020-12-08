@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import Loading from './Loading';
 import LoadingFixture from './Loading.fixture';
@@ -7,7 +7,7 @@ import LoadingFixture from './Loading.fixture';
 
 # Loading
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Loading
       isLoading={knobs.boolean('isLoading', true, 'Presentation')}
@@ -15,8 +15,8 @@ import LoadingFixture from './Loading.fixture';
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Loading} />
+<ArgsTable of={Loading} />

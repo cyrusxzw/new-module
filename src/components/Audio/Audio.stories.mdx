@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import Audio from './Audio';
 import AudioFixture from './Audio.fixture';
@@ -7,7 +7,7 @@ import AudioFixture from './Audio.fixture';
 
 # Audio
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Audio
       artistName={knobs.text('artistName', AudioFixture.artistName, 'Content')}
@@ -28,8 +28,8 @@ import AudioFixture from './Audio.fixture';
       trackTitle={knobs.text('trackTitle', AudioFixture.trackTitle, 'Content')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Audio} />
+<ArgsTable of={Audio} />

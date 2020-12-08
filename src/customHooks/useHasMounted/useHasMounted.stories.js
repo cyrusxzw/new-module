@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { P } from '~/components/Paragraph';
-import { useHasMounted } from '~/customHooks/useHasMounted';
+import { useHasMounted } from '~/customHooks';
 
 storiesOf('Hooks/useHasMounted', module).add('Base hook', () => {
   const hasMounted = useHasMounted();

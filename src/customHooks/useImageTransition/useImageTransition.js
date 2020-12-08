@@ -41,4 +41,4 @@ const useImageTransition = (image, ref, duration = 600, attributes = {}) => {
   return [currentImage, isImageActive];
 };
 
-export default useImageTransition;
+export { useImageTransition };

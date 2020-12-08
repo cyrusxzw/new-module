@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react-hooks';
-import useScript from './useScript';
+import { useScript } from './useScript';
 
 describe('useScript', () => {
   beforeEach(() => {

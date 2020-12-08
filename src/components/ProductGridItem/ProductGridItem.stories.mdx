@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import {
   AddToCartContextProvider,
@@ -18,7 +18,7 @@ import styles from './ProductGridItemStorybook.module.css';
 
 Requires `AddToCartContextProvider`, `ProductDetailContextProvider` and `VariantSelectContextProvider`.
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <div className={styles.holder}>
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
@@ -41,13 +41,13 @@ Requires `AddToCartContextProvider`, `ProductDetailContextProvider` and `Variant
       </AddToCartContextProvider>
     </div>
   </Story>
-</Preview>
+</Canvas>
 
 ## Variations
 
 ### Single variant
 
-<Preview>
+<Canvas>
   <Story name="Single variant">
     <div className={styles.holder}>
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
@@ -70,9 +70,9 @@ Requires `AddToCartContextProvider`, `ProductDetailContextProvider` and `Variant
       </AddToCartContextProvider>
     </div>
   </Story>
-</Preview>
+</Canvas>
 
 
 ## API
 
-<Props of={ProductGridItem} />
+<ArgsTable of={ProductGridItem} />

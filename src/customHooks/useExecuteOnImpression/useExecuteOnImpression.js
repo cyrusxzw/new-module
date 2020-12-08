@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useOnScreen } from '~/customHooks/useOnScreen';
+import { useOnScreen } from '~/customHooks';
 
 /**
  * A hook to execute a callback when the element enters the fold
@@ -15,7 +15,7 @@ import { useOnScreen } from '~/customHooks/useOnScreen';
  *
  * useExecuteOnImpression(ref, myFunction, options)
  */
-export const useExecuteOnImpression = (ref, callback, options = {}) => {
+const useExecuteOnImpression = (ref, callback, options = {}) => {
   const { threshold = 0.2, isExecutableOnReEntry = true } = options;
   const isOnScreen = useOnScreen(
     ref,
@@ -31,4 +31,4 @@ export const useExecuteOnImpression = (ref, callback, options = {}) => {
   }, [callback, isOnScreen]);
 };
 
-export default useExecuteOnImpression;
+export { useExecuteOnImpression };

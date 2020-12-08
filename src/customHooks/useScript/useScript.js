@@ -74,4 +74,4 @@ const useScript = ({
   return [isLoading, error];
 };
 
-export default useScript;
+export { useScript };

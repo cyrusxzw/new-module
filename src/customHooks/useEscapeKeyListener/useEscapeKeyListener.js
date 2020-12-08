@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { KEYBOARD_CODES } from '~/constants';
 
-export const useEscapeKeyListener = onKeyPress => {
+const useEscapeKeyListener = onKeyPress => {
   useEffect(() => {
     const detectEscapeKey = event => {
       if (event.keyCode === KEYBOARD_CODES.ESCAPE) {
@@ -23,4 +23,4 @@ export const useEscapeKeyListener = onKeyPress => {
   }, [onKeyPress]);
 };
 
-export default useEscapeKeyListener;
+export { useEscapeKeyListener };

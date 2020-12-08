@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import Podium from '~/components/Podium';
 import ContentHubArticle from './ContentHubArticle';
@@ -8,7 +8,7 @@ import ContentHubArticleFixture from './ContentHubArticle.fixture';
 
 # ContentHubArticle
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Podium horizontalPadding="small" verticalPadding="small">
       <ContentHubArticle
@@ -27,8 +27,8 @@ import ContentHubArticleFixture from './ContentHubArticle.fixture';
       />
     </Podium>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ContentHubArticle} />
+<ArgsTable of={ContentHubArticle} />

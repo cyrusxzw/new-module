@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import GridOverlay from '~.storybook/GridOverlay.js';
 import {
@@ -18,7 +18,7 @@ import SecondaryMessageFixture from '~/components/SecondaryMessage/SecondaryMess
 
 # ProductDetailHeader
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     {(() => {
       const gridOverlayActive = knobs.boolean('isActive', false, 'Grid overlay');
@@ -55,8 +55,8 @@ import SecondaryMessageFixture from '~/components/SecondaryMessage/SecondaryMess
       )
     })()}
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ProductDetailHeader} />
+<ArgsTable of={ProductDetailHeader} />

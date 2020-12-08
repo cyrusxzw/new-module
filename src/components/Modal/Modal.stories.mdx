@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import { State } from '~.storybook/State';
 import Button from '~/components/Button';
@@ -21,7 +21,7 @@ import ModalBodyFixture from './components/ModalBody/ModalBody.fixture';
 <div id="uniqueID" />
 ```
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <State initialState={{ isVisible: false }}>
       {(state, setState) => {
@@ -51,8 +51,8 @@ import ModalBodyFixture from './components/ModalBody/ModalBody.fixture';
       }}
     </State>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Modal} />
+<ArgsTable of={Modal} />

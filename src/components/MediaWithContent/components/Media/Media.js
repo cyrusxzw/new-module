@@ -49,7 +49,7 @@ Media.propTypes = {
   foregroundImage: PropTypes.element,
   foregroundImageLink: PropTypes.shape({
     url: PropTypes.string,
-    title: PropTypes,
+    title: PropTypes.string,
   }),
   hasFullWidthImage: PropTypes.bool,
   isHero: PropTypes.bool,

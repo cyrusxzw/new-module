@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import SubNav from './SubNav';
 import SubNavFixture from './SubNav.fixture';
@@ -7,7 +7,7 @@ import SubNavFixture from './SubNav.fixture';
 
 # SubNav
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <SubNav
       heading={SubNavFixture.heading}
@@ -17,16 +17,16 @@ import SubNavFixture from './SubNav.fixture';
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={SubNav} />
+<ArgsTable of={SubNav} />
 
 ## Navigation block on Mobile and Tablet
 
-<Preview>
+<Canvas>
   <Story name="Navigation block">
     <SubNav id="Navigation block" isSelect={true} links={SubNavFixture.links} />
   </Story>
-</Preview>
+</Canvas>

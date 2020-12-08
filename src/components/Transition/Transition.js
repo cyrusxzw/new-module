@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import get from 'lodash/get';
 import { CSSTransition } from 'react-transition-group-npm';
-import useHasMounted from '~/customHooks/useHasMounted';
+import { useHasMounted } from '~/customHooks';
 import data from './Transition.data';
 
 const Transition = ({

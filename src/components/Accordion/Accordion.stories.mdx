@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import Accordion from './Accordion';
 import AccordionFixture from './Accordion.fixture';
@@ -7,7 +7,7 @@ import AccordionFixture from './Accordion.fixture';
 
 # Accordion
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Accordion
       id={AccordionFixture.id}
@@ -15,8 +15,8 @@ import AccordionFixture from './Accordion.fixture';
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Accordion} />
+<ArgsTable of={Accordion} />

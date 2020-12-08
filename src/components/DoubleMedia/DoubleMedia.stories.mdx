@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import DoubleMedia from './DoubleMedia';
 import DoubleMediaFixture from './DoubleMedia.fixture';
@@ -7,7 +7,7 @@ import DoubleMediaFixture from './DoubleMedia.fixture';
 
 # DoubleMedia
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <DoubleMedia
       mediaOne={{
@@ -33,13 +33,13 @@ import DoubleMediaFixture from './DoubleMedia.fixture';
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Variations
 
 ### Video in slots
 
-<Preview>
+<Canvas>
   <Story name="Contains videos">
     <DoubleMedia
       mediaOne={{
@@ -67,8 +67,8 @@ import DoubleMediaFixture from './DoubleMedia.fixture';
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={DoubleMedia} />
+<ArgsTable of={DoubleMedia} />

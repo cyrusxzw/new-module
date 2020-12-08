@@ -2,9 +2,11 @@ import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import VideoScroller from 'video-scroller';
-import { useEscapeKeyListener } from '~/customHooks/useEscapeKeyListener';
-import { useOverflowHidden } from '~/customHooks/useOverflowHidden';
-import useWindowHasResized from '~/customHooks/useWindowHasResized';
+import {
+  useEscapeKeyListener,
+  useOverflowHidden,
+  useWindowHasResized,
+} from '~/customHooks';
 import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
 import Image from '~/components/Image';
 import Controls from './components/Controls';

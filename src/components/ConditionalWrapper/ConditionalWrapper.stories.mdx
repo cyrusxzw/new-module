@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import ConditionalWrapper from './ConditionalWrapper';
 import ConditionalWrapperFixture from './ConditionalWrapper.fixture';
@@ -7,7 +7,7 @@ import ConditionalWrapperFixture from './ConditionalWrapper.fixture';
 
 # ConditionalWrapper
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <ConditionalWrapper
       condition={true}
@@ -16,8 +16,8 @@ import ConditionalWrapperFixture from './ConditionalWrapper.fixture';
       <span>Conditionally wrapped content</span>
     </ConditionalWrapper>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ConditionalWrapper} />
+<ArgsTable of={ConditionalWrapper} />

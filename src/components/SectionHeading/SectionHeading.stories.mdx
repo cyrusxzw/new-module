@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import SectionHeading from './SectionHeading';
 
@@ -6,7 +6,7 @@ import SectionHeading from './SectionHeading';
 
 # SectionHeading
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <SectionHeading
       eyebrow={knobs.text(
@@ -32,17 +32,17 @@ import SectionHeading from './SectionHeading';
       titleFont={knobs.select('titleFont', ['Suisse', 'Zapf'], 'Zapf', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={SectionHeading} />
+<ArgsTable of={SectionHeading} />
 
 ## Variations
 
 ### Page Heading
 
-<Preview>
+<Canvas>
   <Story name="Page Heading">
     <SectionHeading
       heading="Page Heading: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream."
@@ -50,4 +50,4 @@ import SectionHeading from './SectionHeading';
       isPageHeading={true}
     />
   </Story>
-</Preview>
+</Canvas>

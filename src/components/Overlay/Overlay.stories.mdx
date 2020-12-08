@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import { State } from '~.storybook/State';
 import Button from '~/components/Button';
@@ -11,7 +11,7 @@ import Overlay from './Overlay';
 
 # Overlay
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <State initialState={{ isVisible: false }}>
       {(state, setState) => {
@@ -36,8 +36,8 @@ import Overlay from './Overlay';
       }}
     </State>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Overlay} />
+<ArgsTable of={Overlay} />

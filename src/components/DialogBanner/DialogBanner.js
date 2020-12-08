@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useEscapeKeyListener } from '~/customHooks/useEscapeKeyListener';
-import { useOverflowHidden } from '~/customHooks/useOverflowHidden';
+import { useEscapeKeyListener, useOverflowHidden } from '~/customHooks';
 import Button from '~/components/Button';
 import Heading from '~/components/Heading';
 import Hyperlink from '~/components/Hyperlink';

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { P } from '~/components/Paragraph';
-import { useEscapeKeyListener } from '~/customHooks/useEscapeKeyListener';
+import { useEscapeKeyListener } from '~/customHooks';
 
 storiesOf('Hooks/useEscapeKeyListener', module).add('Base hook', () => {
   const [count, setCount] = useState(0);

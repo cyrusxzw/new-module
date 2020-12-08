@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import GridOverlay from '~.storybook/GridOverlay.js';
 import {
@@ -20,7 +20,7 @@ import ProductDetailFixture from './ProductDetail.fixture';
 
 # ProductDetail
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     {(() => {
       const gridOverlayActive = knobs.boolean('isActive', false, 'Grid overlay');
@@ -72,8 +72,8 @@ import ProductDetailFixture from './ProductDetail.fixture';
       )
     })()}
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ProductDetail} />
+<ArgsTable of={ProductDetail} />

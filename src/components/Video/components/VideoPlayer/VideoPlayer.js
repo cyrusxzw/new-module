@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import useWindowHasResized from '~/customHooks/useWindowHasResized';
+import { useWindowHasResized } from '~/customHooks';
 import {
   ascertainIsSmallOnlyViewport,
   ascertainIsMediumOnlyViewport,

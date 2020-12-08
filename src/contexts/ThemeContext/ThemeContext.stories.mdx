@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { ThemeContextProvider, useThemeContext } from './ThemeContext';
 
 <Meta title="Contexts/ThemeContext" component="ThemeContextProvider" />
@@ -9,7 +9,7 @@ The `ThemeContextProvider` component takes a prop of `theme`, a string of either
 
 The `useThemeContext` consumer hook takes two arguments, the current components `theme` prop and a fallback theme, and returns a 'dark' or 'light' string as state.
 
-<Preview>
+<Canvas>
   <>
     {(() => {
       const LevelOne = () => {
@@ -47,8 +47,8 @@ The `useThemeContext` consumer hook takes two arguments, the current components 
       )
     })()}
   </>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ThemeContextProvider} />
+<ArgsTable of={ThemeContextProvider} />

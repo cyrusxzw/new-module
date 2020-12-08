@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import debounce from 'lodash/debounce';
-
 import { isInBrowser } from '~/utils/environment';
 
-export const useWindowHasResized = callback => {
+const useWindowHasResized = callback => {
   const [windowSize, setWindowSize] = useState({
     height: 0,
     width: 0,
@@ -33,4 +32,4 @@ export const useWindowHasResized = callback => {
   return windowSize;
 };
 
-export default useWindowHasResized;
+export { useWindowHasResized };

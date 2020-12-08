@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { KEYBOARD_CODES } from '~/constants';
-import { useEscapeKeyListener } from '~/customHooks/useEscapeKeyListener';
+import { useEscapeKeyListener } from '~/customHooks';
 import Transition from '~/components/Transition';
 import styles from './Overlay.module.css';
 

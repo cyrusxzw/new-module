@@ -10,8 +10,8 @@ import {
   STORES,
   TRANSITIONS,
 } from '~/constants';
-import { useGoogleMapsContext } from '~/contexts/GoogleMapsContext';
-import useWindowHasResized from '~/customHooks/useWindowHasResized';
+import { useGoogleMapsContext } from '~/contexts';
+import { useWindowHasResized } from '~/customHooks';
 import {
   ascertainIsSmallOnlyViewport,
   ascertainIsMediumViewport,

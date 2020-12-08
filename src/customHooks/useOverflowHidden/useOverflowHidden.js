@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-export const useOverflowHidden = isVisible => {
+const useOverflowHidden = isVisible => {
   const [isOverflowHidden, setIsOverflowHidden] = useState(false);
 
   const hidden = useCallback(() => {
@@ -31,4 +31,4 @@ export const useOverflowHidden = isVisible => {
   }, [hidden, isVisible, reset]);
 };
 
-export default useOverflowHidden;
+export { useOverflowHidden };

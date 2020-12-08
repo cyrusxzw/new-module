@@ -1,4 +1,2 @@
 /* istanbul ignore file */
-import useScript from './useScript';
-
-export default useScript;
+export { useScript } from './useScript';

@@ -41,6 +41,23 @@ exports[`<ProductCommerce /> renders base component correctly 1`] = `
       class="base linkButtonGroup"
       data-testid="data-testid-LinkButtonGroup"
     >
+      <button
+        class="base alternate blockStyle dark base addToCartButton link center"
+        data-test-ref="ADD_TO_CART"
+        title="Add to your cart — $26.45"
+        type="button"
+      >
+        <span
+          class="label"
+        >
+          <span>
+            Added to your cart
+          </span>
+          <span>
+            Add to your cart — $26.45
+          </span>
+        </span>
+      </button>
       <a
         class="base blockStyle hasIcon center dark cta link center"
         href="/"

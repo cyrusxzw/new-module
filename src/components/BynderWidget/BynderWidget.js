@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import useScript from '~/customHooks/useScript';
+import { useScript } from '~/customHooks';
 import Loading from '~/components/Loading';
 import styles from './BynderWidget.module.css';
 
@@ -15,8 +15,6 @@ const BynderWidget = ({ className, heading, id, theme }) => {
       language: 'en',
     },
   });
-
-  console.log('isLoading, error', isLoading, error);
 
   if (error) return null; /** @TODO failed script load error */
 
