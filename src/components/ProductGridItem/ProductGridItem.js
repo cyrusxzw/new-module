@@ -1,12 +1,10 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-
 import { HEADING } from '~/constants';
 import { useProductDetailContext, useVariantSelectContext } from '~/contexts';
 import { useImageTransition } from '~/customHooks';
 import { getVariantRadioOptions } from '~/utils/product';
-
 import AddToCartButton from '~/components/AddToCartButton';
 import DefinitionList from '~/components/DefinitionList';
 import Heading from '~/components/Heading';
@@ -15,7 +13,6 @@ import Image from '~/components/Image';
 import RadioGroup from '~/components/RadioGroup';
 import Transition from '~/components/Transition';
 import { P } from '~/components/Paragraph';
-
 import styles from './ProductGridItem.module.css';
 
 const ProductGridItem = React.forwardRef(

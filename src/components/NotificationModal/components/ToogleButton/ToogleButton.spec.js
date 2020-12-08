@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { NotificationContextProvider } from '~/contexts';
 import ToogleButton from './ToogleButton';
 
 describe('<ToogleButton />', () => {
@@ -8,7 +9,11 @@ describe('<ToogleButton />', () => {
   });
 
   it('renders base component correctly', () => {
-    const { container } = render(<ToogleButton />);
+    const { container } = render(
+      <NotificationContextProvider>
+        <ToogleButton />
+      </NotificationContextProvider>,
+    );
 
     expect(container).toMatchSnapshot();
   });

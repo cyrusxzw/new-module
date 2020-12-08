@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { NotificationContextProvider } from '~/contexts';
 import NotificationModal from './NotificationModal';
 import NotificationModalFixture from './NotificationModal.fixture';
 
@@ -10,10 +11,12 @@ describe('<NotificationModal />', () => {
 
   it('renders base component correctly', () => {
     const { container } = render(
-      <NotificationModal
-        backgroundColor="#d5d5cc"
-        notificationMessage={NotificationModalFixture.notificationMessage}
-      />,
+      <NotificationContextProvider>
+        <NotificationModal
+          backgroundColor="#d5d5cc"
+          notificationMessage={NotificationModalFixture.notificationMessage}
+        />
+      </NotificationContextProvider>,
     );
 
     expect(container).toMatchSnapshot();

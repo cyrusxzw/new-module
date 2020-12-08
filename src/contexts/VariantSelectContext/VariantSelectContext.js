@@ -1,19 +1,11 @@
-import React from 'react';
+import React, { createContext, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { createContext, useContext } from 'react';
-import useVariantSelect from '~/customHooks/useVariantSelect';
+import { useVariantSelectStore } from './VariantSelectStore';
 
-const defaultValues = {
-  onVariantChange: () => {},
-  selectedVariant: null,
-  setSelectedVariant: () => {},
-  variantOptions: [],
-};
+const VariantSelectContext = createContext();
 
-const VariantSelectContext = createContext(defaultValues);
-
-export const VariantSelectContextProvider = ({ children, variants }) => (
-  <VariantSelectContext.Provider value={useVariantSelect(variants)}>
+const VariantSelectContextProvider = ({ children, variants }) => (
+  <VariantSelectContext.Provider value={useVariantSelectStore(variants)}>
     {children}
   </VariantSelectContext.Provider>
 );
@@ -47,9 +39,16 @@ VariantSelectContextProvider.propTypes = {
   ),
 };
 
-export const useVariantSelectContext = () => useContext(VariantSelectContext);
+const useVariantSelectContext = () => {
+  const context = useContext(VariantSelectContext);
 
-export default {
-  VariantSelectContextProvider,
-  useVariantSelectContext,
+  if (context === undefined) {
+    throw new Error(
+      'useVariantSelectContext must be used within a VariantSelectContextProvider',
+    );
+  }
+
+  return context;
 };
+
+export { VariantSelectContextProvider, useVariantSelectContext };

@@ -1,13 +1,18 @@
 import { useState } from 'react';
-import { defaultValues } from '~/contexts/NavBarTheme.context';
 
-const useNavBarTheme = ({
+const defaultValues = {
+  loginAndCartTheme: 'dark',
+  navigationAndLogoTheme: 'dark',
+};
+
+const useNavBarThemeStore = ({
   navigationAndLogoTheme: navigationAndLogo,
   loginAndCartTheme: loginAndCart,
 }) => {
   const [loginAndCartTheme, setLoginAndCartTheme] = useState(
     loginAndCart || defaultValues.loginAndCartTheme,
   );
+
   const [navigationAndLogoTheme, setNavigationAndLogoTheme] = useState(
     navigationAndLogo || defaultValues.navigationAndLogoTheme,
   );
@@ -20,4 +25,4 @@ const useNavBarTheme = ({
   };
 };
 
-export default useNavBarTheme;
+export { useNavBarThemeStore };

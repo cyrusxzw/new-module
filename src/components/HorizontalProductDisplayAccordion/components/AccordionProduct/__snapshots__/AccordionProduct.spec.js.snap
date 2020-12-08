@@ -139,22 +139,8 @@ exports[`<AccordionProduct /> renders base component correctly 1`] = `
           </div>
           <div
             class="base"
+            data-testid="data-testid-LinkButtonGroup"
           >
-            <button
-              class="base alternate blockStyle dark base fullWidth  link fullWidth center"
-              data-test-ref="ADD_TO_CART"
-              title="undefined — $26.45"
-              type="button"
-            >
-              <span
-                class="label"
-              >
-                <span />
-                <span>
-                  undefined — $26.45
-                </span>
-              </span>
-            </button>
             <a
               class="base blockStyle hasIcon center dark  link fullWidth center"
               href="/"

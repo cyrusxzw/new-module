@@ -1,28 +1,76 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import LinkButtonGroup from './LinkButtonGroup';
-import LinkButtonGroupFixture from './LinkButtonGroup.fixture';
+import Button from '~/components/Button';
 
 describe('<LinkButtonGroup />', () => {
   it('should be defined', () => {
     expect(LinkButtonGroup).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const { container } = render(
-      <LinkButtonGroup link={LinkButtonGroupFixture.link} />,
-    );
-
-    expect(container).toMatchSnapshot();
-  });
-
   it('renders children correctly', () => {
     const { container } = render(
       <LinkButtonGroup theme="light">
-        <a href="/au/r/about">Link</a>
+        <Button onClick={() => {}} title="test-button">
+          Test
+        </Button>
       </LinkButtonGroup>,
     );
 
+    const child = screen.queryByTestId('data-testid-LinkButtonGroup');
+
     expect(container).toMatchSnapshot();
+    expect(child).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'test-button' })).toBeTruthy();
+  });
+
+  it('should return `null` if no children were passed', () => {
+    render(<LinkButtonGroup />);
+
+    const child = screen.queryByTestId('data-testid-LinkButtonGroup');
+
+    expect(child).not.toBeInTheDocument();
+  });
+
+  it('should return `null` if only a fragment was passed', () => {
+    render(
+      <LinkButtonGroup>
+        <></>
+      </LinkButtonGroup>,
+    );
+
+    const child = screen.queryByTestId('data-testid-LinkButtonGroup');
+
+    expect(child).not.toBeInTheDocument();
+  });
+
+  it('should return `null` if the only children resolve as null', () => {
+    render(
+      <LinkButtonGroup>
+        <Button />
+        <></>
+      </LinkButtonGroup>,
+    );
+
+    const child = screen.queryByTestId('data-testid-LinkButtonGroup');
+
+    expect(child).not.toBeInTheDocument();
+  });
+
+  it('should render correctly if first direct descendant is a fragment', () => {
+    render(
+      <LinkButtonGroup textAlign="right" theme="light">
+        <>
+          <Button onClick={() => {}} title="test-button">
+            Test
+          </Button>
+        </>
+      </LinkButtonGroup>,
+    );
+
+    const child = screen.queryByTestId('data-testid-LinkButtonGroup');
+
+    expect(child).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'test-button' })).toBeTruthy();
   });
 });

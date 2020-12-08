@@ -6,7 +6,7 @@ import Loading from '~/components/Loading';
 import Checkbox from '~/components/Checkbox';
 import TextInput from '~/components/TextInput';
 import styles from './NewsLetterSignUp.css';
-import { useNotificationContext } from 'contexts';
+import { useNotificationContext } from '~/contexts';
 
 const NewsLetterSignUp = ({
   className,

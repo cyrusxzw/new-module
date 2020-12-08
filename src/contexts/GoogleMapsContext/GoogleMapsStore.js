@@ -7,7 +7,7 @@ const loadGoogleMapsAsync = loader =>
     });
   });
 
-export const useGoogleMap = (apiKey, options = { libraries: ['places'] }) => {
+const useGoogleMapsStore = (apiKey, options = { libraries: ['places'] }) => {
   const [googleMap, setGoogleMap] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -42,4 +42,4 @@ export const useGoogleMap = (apiKey, options = { libraries: ['places'] }) => {
   return { googleMap, isLoading };
 };
 
-export default useGoogleMap;
+export { useGoogleMapsStore };

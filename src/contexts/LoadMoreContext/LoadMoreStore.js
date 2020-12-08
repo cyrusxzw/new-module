@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 
-export const LOAD_MORE_ACTION_TYPES = {
+const LOAD_MORE_ACTION_TYPES = {
   FAIL: 'FAIL',
   FETCHING: 'FETCHING',
   SUCCESS: 'SUCCESS',
@@ -11,7 +11,7 @@ const initialState = {
   isLoading: false,
 };
 
-function reducer(state, action) {
+const reducer = (state, action) => {
   if (action.type === LOAD_MORE_ACTION_TYPES.FETCHING) {
     return {
       hasError: false,
@@ -32,9 +32,9 @@ function reducer(state, action) {
   throw new Error(
     `useLoadMore: Dispatch action type "${action.type}" not found.`,
   );
-}
+};
 
-const useLoadMore = onClick => {
+const useLoadMoreStore = onClick => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { isLoading, hasError } = state;
 
@@ -47,4 +47,4 @@ const useLoadMore = onClick => {
   };
 };
 
-export default useLoadMore;
+export { useLoadMoreStore, LOAD_MORE_ACTION_TYPES };

@@ -46,7 +46,6 @@ exports[`<ProductDetailBody /> renders base component correctly 1`] = `
             >
               <input
                 aria-checked="true"
-                checked=""
                 class="input"
                 data-test-ref="PRODUCT_DETAIL_VARIANT_SELECT"
                 id="option-ARD33"

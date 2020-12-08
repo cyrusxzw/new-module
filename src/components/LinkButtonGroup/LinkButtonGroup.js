@@ -6,6 +6,7 @@ import styles from './LinkButtonGroup.module.css';
 
 const isReactFragment = component => {
   if (component.type) return component.type === Fragment;
+
   return component === Fragment;
 };
 
@@ -43,19 +44,23 @@ const LinkButtonGroup = ({
     ? children.props.children
     : children;
 
-  return (
-    <div className={classSet}>
-      <>
-        {React.Children.map(childComponents, child => {
-          if (child === null) return null;
+  if (childComponents === undefined) return null;
 
-          return React.cloneElement(child, {
-            className: `${child.props?.className || ''} ${childrenClassSet}`,
-            textAlign,
-            theme: currentTheme,
-          });
-        })}
-      </>
+  const filteredChildComponents = React.Children.map(childComponents, child => {
+    if (child === null || child.props?.children === undefined) return null;
+
+    return React.cloneElement(child, {
+      className: `${child.props?.className || ''} ${childrenClassSet}`,
+      textAlign,
+      theme: currentTheme,
+    });
+  });
+
+  if (filteredChildComponents.length === 0) return null;
+
+  return (
+    <div className={classSet} data-testid="data-testid-LinkButtonGroup">
+      {filteredChildComponents}
     </div>
   );
 };

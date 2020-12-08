@@ -1,19 +1,22 @@
 import { useReducer } from 'react';
 
-export const ADD_TO_CART_ACTION_TYPES = {
+const ADD_TO_CART_ACTION_TYPES = {
   FAIL: 'FAIL',
   FETCHING: 'FETCHING',
   SUCCESS: 'SUCCESS',
 };
 
-const initialState = {
+const defaultState = {
+  actionTypes: {},
+  dispatch: () => {},
   errorMessage: '',
   hasError: false,
   isLoading: false,
   isUpdateSuccessful: false,
+  onClick: () => {},
 };
 
-function reducer(state, action) {
+const reducer = (state, action) => {
   if (action.type === ADD_TO_CART_ACTION_TYPES.FETCHING) {
     return {
       errorMessage: '',
@@ -38,12 +41,12 @@ function reducer(state, action) {
   }
 
   throw new Error(
-    `useAddToCart: Dispatch action type "${action.type}" not found.`,
+    `useAddToCartStore: Dispatch action type "${action.type}" not found.`,
   );
-}
+};
 
-const useAddToCart = onClick => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+const useAddToCartStore = onClick => {
+  const [state, dispatch] = useReducer(reducer, defaultState);
   const { errorMessage, hasError, isLoading, isUpdateSuccessful } = state;
 
   return {
@@ -57,4 +60,4 @@ const useAddToCart = onClick => {
   };
 };
 
-export default useAddToCart;
+export { useAddToCartStore, ADD_TO_CART_ACTION_TYPES };

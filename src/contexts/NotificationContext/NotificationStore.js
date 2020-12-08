@@ -1,12 +1,12 @@
 import { useReducer } from 'react';
 
-export const SHOW_NOTIFICATION = 'SHOW_NOTIFICATION';
+const SHOW_NOTIFICATION = 'SHOW_NOTIFICATION';
 
 const initialState = {
   showModal: false,
 };
 
-function reducer(state, action) {
+const reducer = (state, action) => {
   if (action.type === SHOW_NOTIFICATION) {
     return {
       showModal: !state.showModal,
@@ -16,9 +16,9 @@ function reducer(state, action) {
   throw new Error(
     `useNotification: Dispatch action type "${action.type}" not found.`,
   );
-}
+};
 
-const useNotification = () => {
+const useNotificationStore = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { showModal } = state;
 
@@ -29,4 +29,4 @@ const useNotification = () => {
   };
 };
 
-export default useNotification;
+export { useNotificationStore, SHOW_NOTIFICATION };

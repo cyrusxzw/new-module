@@ -1,12 +1,12 @@
-import { useCallback, useState } from 'react';
+import { useEffect, useState } from 'react';
 import find from 'lodash/find';
 
-const useVariantSelect = (variants = []) => {
-  const [selectedVariant, updateSelectedVariant] = useState(variants[0]);
+const useVariantSelectStore = (variants = []) => {
+  const [selectedVariant, setSelectedVariant] = useState({});
 
-  const setSelectedVariant = useCallback(currentSelectedVariant => {
-    updateSelectedVariant(currentSelectedVariant);
-  }, []);
+  useEffect(() => {
+    setSelectedVariant(variants[0]);
+  }, [variants]);
 
   const onVariantChange = (event, currentVariants) => {
     event.persist();
@@ -29,4 +29,4 @@ const useVariantSelect = (variants = []) => {
   };
 };
 
-export default useVariantSelect;
+export { useVariantSelectStore };

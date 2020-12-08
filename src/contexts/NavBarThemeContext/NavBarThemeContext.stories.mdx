@@ -1,15 +1,14 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { NavBarThemeContextProvider, useNavBarThemeContext } from '~/contexts';
-import { useNavBarTheme } from '~/customHooks';
 
-<Meta title="Hooks/useTheme" />
+<Meta title="Contexts/NavBarThemeContext" component="NavBarThemeContextProvider" />
 
 # useNavBarTheme
 
-The `NavBarThemeContextProvider` method, `useNavBarThemeContext` and `useNavBarTheme` hooks are used to set and consume global values for site theme.
+The `NavBarThemeContextProvider` component and `useNavBarThemeContext` consumer hook are used to set and consume global values for site theme.
 
 <Preview>
-  <Story name="Base hook">
+  <Story name="NavBarThemeContextProvider">
     {() => {
       const ChildComponent = () => {
         return (
@@ -17,7 +16,7 @@ The `NavBarThemeContextProvider` method, `useNavBarThemeContext` and `useNavBarT
         );
       };
       return (
-        <NavBarThemeContextProvider value={useNavBarTheme({ navigationAndLogoTheme: 'light' })}>
+        <NavBarThemeContextProvider navigationAndLogoTheme="light">
           <ChildComponent />
         </NavBarThemeContextProvider>
       );

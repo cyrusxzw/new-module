@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useAddToCartContext, useVariantSelectContext } from 'contexts';
+import { useAddToCartContext, useVariantSelectContext } from '~/contexts';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import Button from '~/components/Button';
 import Loading from '~/components/Loading';
@@ -16,7 +16,7 @@ const AddToCartButton = ({
   isFullWidth,
   theme,
 }) => {
-  const addToCart = useAddToCartContext();
+  const addToCartContext = useAddToCartContext();
   const { selectedVariant } = useVariantSelectContext();
 
   if (!selectedVariant) return null;
@@ -36,7 +36,7 @@ const AddToCartButton = ({
   );
 
   const handleOnClick = () => {
-    const { actionTypes, dispatch, onClick } = addToCart;
+    const { actionTypes, dispatch, onClick } = addToCartContext;
 
     onClick(sku, dispatch, actionTypes);
   };
@@ -74,7 +74,13 @@ const AddToCartButton = ({
     );
   }
 
-  const { errorMessage, hasError, isLoading, isUpdateSuccessful } = addToCart;
+  const {
+    errorMessage,
+    hasError,
+    isLoading,
+    isUpdateSuccessful,
+  } = addToCartContext;
+
   const cartActionLabel = `${copy.cartAction} — ${price}`;
   const updateNotificationLabel = copy.updateNotification;
   const showUpdateSuccessMessage = !isLoading && isUpdateSuccessful;

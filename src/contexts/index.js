@@ -2,32 +2,36 @@
 import {
   AddToCartContextProvider,
   useAddToCartContext,
-} from './AddToCart.context';
+} from './AddToCartContext';
+
 import {
   GoogleMapsContextProvider,
   useGoogleMapsContext,
-} from './GoogleMaps.context';
-import {
-  LoadMoreContextProvider,
-  useLoadMoreContext,
-} from './LoadMore.context';
+} from './GoogleMapsContext';
+
+import { LoadMoreContextProvider, useLoadMoreContext } from './LoadMoreContext';
+
 import {
   NavBarThemeContextProvider,
   useNavBarThemeContext,
-} from './NavBarTheme.context';
+} from './NavBarThemeContext';
+
 import {
   NotificationContextProvider,
   useNotificationContext,
-} from './Notification.context';
+} from './NotificationContext';
+
 import {
   ProductDetailContextProvider,
   useProductDetailContext,
-} from './ProductDetail.context';
-import { ThemeContextProvider, useThemeContext } from './Theme.context';
+} from './ProductDetailContext';
+
+import { ThemeContextProvider, useThemeContext } from './ThemeContext';
+
 import {
   VariantSelectContextProvider,
   useVariantSelectContext,
-} from './VariantSelect.context';
+} from './VariantSelectContext';
 
 export { AddToCartContextProvider };
 export { useAddToCartContext };
