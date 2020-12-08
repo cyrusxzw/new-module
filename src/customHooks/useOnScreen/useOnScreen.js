@@ -56,3 +56,4 @@ const useOnScreen = (
 };
 
 export { useOnScreen };
+export default { useOnScreen }; /** For jest.spyOn */

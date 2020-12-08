@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { render } from '@testing-library/react';
 import { useExecuteOnImpression } from './useExecuteOnImpression';
-import * as useOnScreenHook from '../useOnScreen';
+import * as useOnScreenHook from '../useOnScreen/useOnScreen';
 
 describe('useExecuteOnImpression', () => {
   const callback = jest.fn();
