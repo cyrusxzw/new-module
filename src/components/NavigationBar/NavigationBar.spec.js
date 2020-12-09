@@ -1,28 +1,27 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import NavigationBar from './NavigationBar';
 import * as Hyperlink from '~/components/Hyperlink';
-// import styles from './NavigationBar.module.css';
 
 describe('<NavigationBar />', () => {
   const MockHyperLink = jest.fn(() => null);
 
-  // const parentLink = {
-  //   text: 'Martha',
-  //   url: '/test',
-  // };
-  // const childLinks = [
-  //   {
-  //     text: 'Bruce',
-  //     url: '/child1',
-  //     hasTargetInNewWindow: true,
-  //   },
-  //   {
-  //     text: 'Cornholio',
-  //     url: '/child2',
-  //     hasTargetInNewWindow: false,
-  //   },
-  // ];
+  const parentLink = {
+    text: 'Martha',
+    url: '/test',
+  };
+  const childLinks = [
+    {
+      text: 'Bruce',
+      url: '/child1',
+      hasTargetInNewWindow: true,
+    },
+    {
+      text: 'Cornholio',
+      url: '/child2',
+      hasTargetInNewWindow: false,
+    },
+  ];
 
   beforeEach(() => {
     MockHyperLink.mockClear();
@@ -30,41 +29,28 @@ describe('<NavigationBar />', () => {
   });
 
   it('should not render the component if no links are provided', () => {
-    render(<NavigationBar />);
+    const { queryByTestId } = render(<NavigationBar />);
 
-    const child = screen.queryByTestId('data-testid-NavigationBar');
-
-    expect(child).not.toBeInTheDocument();
+    expect(queryByTestId('data-testid-NavigationBar')).not.toBeInTheDocument();
   });
 
-  it.todo("should not render a parent link if it's not provided");
-  // mount(<NavigationBar childLinks={childLinks} />);
-  //
-  // expect(MockHyperLink.mock.calls[0][0].className).not.toContain(
-  //   styles.hasChildren,
-  // );
+  it("should not render a parent link if it's not provided", () => {
+    const { queryByTestId, getAllByRole } = render(
+      <NavigationBar childLinks={childLinks} />,
+    );
 
-  it.todo('should not render the separator if child links are not provided');
-  // mount(<NavigationBar parentLink={parentLink} />);
-  //
-  // expect(MockHyperLink.mock.calls[0][0].className).not.toContain(
-  //   styles.hasChildren,
-  // );
+    expect(queryByTestId('data-testid-NavigationBar')).toBeInTheDocument();
+    expect(queryByTestId('NAVIGATION_BAR_PARENT_LINK')).not.toBeInTheDocument();
+    expect(getAllByRole('listitem')).toHaveLength(2);
+  });
 
-  it.todo('should mark only the selected url as active');
-  // mount(
-  //   <NavigationBar
-  //     childLinks={childLinks}
-  //     parentLink={parentLink}
-  //     selectedUrl="/child1"
-  //   />,
-  // );
-  //
-  // expect(MockHyperLink.mock.calls[0][0].className).not.toContain(
-  //   styles.isActive,
-  // ); // parent
-  // expect(MockHyperLink.mock.calls[1][0].className).toContain(styles.isActive); // active child
-  // expect(MockHyperLink.mock.calls[2][0].className).not.toContain(
-  //   styles.isActive,
-  // ); // inactive child
+  it('should render a parent link if it is provided', () => {
+    const { queryByTestId, getAllByRole } = render(
+      <NavigationBar childLinks={childLinks} parentLink={parentLink} />,
+    );
+
+    expect(queryByTestId('data-testid-NavigationBar')).toBeInTheDocument();
+    expect(queryByTestId('NAVIGATION_BAR_PARENT_LINK')).toBeInTheDocument();
+    expect(getAllByRole('listitem')).toHaveLength(3);
+  });
 });

@@ -38,7 +38,15 @@ const NavigationBar = ({ childLinks, className, parentLink, selectedUrl }) => {
           });
 
           return (
-            <li className={cx(styles.listItem)} key={index}>
+            <li
+              className={cx(styles.listItem)}
+              data-testid={
+                parentLink && index === 0
+                  ? testRefs.parentLink
+                  : testRefs.childLink
+              }
+              key={index}
+            >
               <Hyperlink
                 className={linkClasses}
                 dataTestRef={
