@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Modal from './Modal';
 
 describe('<Modal />', () => {
@@ -11,7 +11,7 @@ describe('<Modal />', () => {
   });
 
   it('renders component correctly and fires the close button on click', () => {
-    const { getByText, getByTitle } = render(
+    render(
       <Modal
         copy={{ close: copyClose }}
         isVisible={true}
@@ -21,9 +21,9 @@ describe('<Modal />', () => {
       </Modal>,
     );
 
-    expect(getByText('test')).toBeTruthy();
+    expect(screen.getByText('test')).toBeTruthy();
 
-    fireEvent.click(getByTitle(copyClose));
+    fireEvent.click(screen.getByTitle(copyClose));
 
     expect(handleOnClose).toHaveBeenCalledTimes(1);
   });

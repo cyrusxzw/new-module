@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import ModalBody from './ModalBody';
 import ModalBodyFixture from './ModalBody.fixture';
 
@@ -24,7 +24,7 @@ describe('<ModalBody />', () => {
     const handleOnClose = jest.fn();
     const copyClose = 'close';
 
-    const { getByText, getByTitle } = render(
+    render(
       <ModalBody
         copy={{ close: copyClose }}
         isVisible={true}
@@ -34,9 +34,9 @@ describe('<ModalBody />', () => {
       </ModalBody>,
     );
 
-    expect(getByText('test')).toBeTruthy();
+    expect(screen.getByText('test')).toBeTruthy();
 
-    fireEvent.click(getByTitle(copyClose));
+    fireEvent.click(screen.getByTitle(copyClose));
 
     expect(handleOnClose).toHaveBeenCalledTimes(1);
   });

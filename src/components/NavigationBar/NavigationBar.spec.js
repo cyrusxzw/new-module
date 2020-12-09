@@ -1,56 +1,55 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import NavigationBar from './NavigationBar';
-import * as Hyperlink from '~/components/Hyperlink';
 
 describe('<NavigationBar />', () => {
-  const MockHyperLink = jest.fn(() => null);
-
   const parentLink = {
-    text: 'Martha',
-    url: '/test',
+    text: 'parentLink',
+    url: '/',
   };
+
   const childLinks = [
     {
-      text: 'Bruce',
-      url: '/child1',
+      text: 'childLink1',
+      url: '/',
       hasTargetInNewWindow: true,
     },
     {
-      text: 'Cornholio',
-      url: '/child2',
+      text: 'childLink2',
+      url: '/',
       hasTargetInNewWindow: false,
     },
   ];
 
-  beforeEach(() => {
-    MockHyperLink.mockClear();
-    jest.spyOn(Hyperlink, 'default').mockImplementation(MockHyperLink);
-  });
-
   it('should not render the component if no links are provided', () => {
-    const { queryByTestId } = render(<NavigationBar />);
+    render(<NavigationBar />);
 
-    expect(queryByTestId('data-testid-NavigationBar')).not.toBeInTheDocument();
+    const navBar = screen.queryByTestId('data-testid-NavigationBar');
+
+    expect(navBar).not.toBeInTheDocument();
   });
 
   it("should not render a parent link if it's not provided", () => {
-    const { queryByTestId, getAllByRole } = render(
-      <NavigationBar childLinks={childLinks} />,
-    );
+    render(<NavigationBar childLinks={childLinks} />);
 
-    expect(queryByTestId('data-testid-NavigationBar')).toBeInTheDocument();
-    expect(queryByTestId('NAVIGATION_BAR_PARENT_LINK')).not.toBeInTheDocument();
-    expect(getAllByRole('listitem')).toHaveLength(2);
+    const navBar = screen.queryByTestId('data-testid-NavigationBar');
+    const parent = screen.queryByTestId('NAVIGATION_BAR_PARENT_LINK');
+    const children = screen.getAllByRole('listitem');
+
+    expect(navBar).toBeInTheDocument();
+    expect(parent).not.toBeInTheDocument();
+    expect(children).toHaveLength(2);
   });
 
   it('should render a parent link if it is provided', () => {
-    const { queryByTestId, getAllByRole } = render(
-      <NavigationBar childLinks={childLinks} parentLink={parentLink} />,
-    );
+    render(<NavigationBar childLinks={childLinks} parentLink={parentLink} />);
 
-    expect(queryByTestId('data-testid-NavigationBar')).toBeInTheDocument();
-    expect(queryByTestId('NAVIGATION_BAR_PARENT_LINK')).toBeInTheDocument();
-    expect(getAllByRole('listitem')).toHaveLength(3);
+    const navBar = screen.queryByTestId('data-testid-NavigationBar');
+    const parent = screen.queryByTestId('NAVIGATION_BAR_PARENT_LINK');
+    const children = screen.getAllByRole('listitem');
+
+    expect(navBar).toBeInTheDocument();
+    expect(parent).toBeInTheDocument();
+    expect(children).toHaveLength(3);
   });
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import FlyinPanel from './FlyinPanel';
 
 describe('<FlyinPanel />', () => {
@@ -11,7 +11,7 @@ describe('<FlyinPanel />', () => {
   });
 
   it('renders component correctly and fires the close button on click', () => {
-    const { getByText, getByTitle, getByRole } = render(
+    render(
       <FlyinPanel
         copy={{ close: copyClose }}
         isVisible={true}
@@ -21,11 +21,10 @@ describe('<FlyinPanel />', () => {
       </FlyinPanel>,
     );
 
-    expect(getByText('test')).toBeTruthy();
+    expect(screen.getByText('test')).toBeTruthy();
+    expect(screen.getByRole('note')).toBeTruthy();
 
-    expect(getByRole('note')).toBeTruthy();
-
-    fireEvent.click(getByTitle(copyClose));
+    fireEvent.click(screen.getByTitle(copyClose));
 
     expect(handleOnClose).toHaveBeenCalledTimes(1);
   });

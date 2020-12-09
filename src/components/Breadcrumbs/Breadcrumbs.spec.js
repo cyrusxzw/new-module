@@ -29,11 +29,9 @@ describe('<Breadcrumbs />', () => {
   });
 
   it('should render the corrct number of items', async () => {
-    const { getAllByRole } = render(
-      <Breadcrumbs items={BreadcrumbsFixture.items} />,
-    );
+    render(<Breadcrumbs items={BreadcrumbsFixture.items} />);
 
-    const listItems = getAllByRole('listitem');
+    const listItems = screen.getAllByRole('listitem');
 
     expect(listItems).toHaveLength(2);
   });
