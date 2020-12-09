@@ -1,29 +1,49 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Button from './Button';
 
-const mockFn = jest.fn();
-
 describe('<Button />', () => {
+  const handleOnClick = jest.fn();
+  const buttonText = 'button';
+
   it('should be defined', () => {
     expect(Button).toBeDefined();
   });
 
   it('renders base component correctly with `onClick` prop', () => {
     const { container } = render(
-      <Button className="aesop" onClick={mockFn} title="Aēsop">
-        Button
+      <Button className="class" onClick={handleOnClick} title="button-title">
+        {buttonText}
       </Button>,
     );
 
+    const button = screen.getByRole('button', { name: /button/i });
+
     expect(container).toMatchSnapshot();
+    expect(button).toBeTruthy();
   });
 
   it('should return `null` if no children are passed', () => {
-    render(<Button className="aesop" onClick={mockFn} title="Aēsop" />);
+    render(
+      <Button className="aesop" onClick={handleOnClick} title="button-title" />,
+    );
 
-    const child = screen.queryByTestId('data-testid-Breadcrumbs');
+    const button = screen.queryByRole('button', { name: /button/i });
 
-    expect(child).not.toBeInTheDocument();
+    expect(button).not.toBeInTheDocument();
+  });
+
+  it('should call handle onClick callback if pressed', () => {
+    render(
+      <Button className="class" onClick={handleOnClick} title="button-title">
+        {buttonText}
+      </Button>,
+    );
+
+    const button = screen.getByRole('button', { name: /button/i });
+
+    fireEvent.click(button);
+
+    expect(handleOnClick).toHaveBeenCalledTimes(1);
   });
 });

@@ -3,11 +3,11 @@
 exports[`<Button /> renders base component correctly with \`onClick\` prop 1`] = `
 <div>
   <button
-    class="base blockStyle dark aesop"
-    title="Aēsop"
+    class="base blockStyle dark class"
+    title="button-title"
     type="button"
   >
-    Button
+    button
   </button>
 </div>
 `;
