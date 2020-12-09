@@ -22,6 +22,8 @@ const Accordion = forwardRef(
     }
 
     const classSet = cx(styles.base, styles[theme], className);
+    /** handleOnChange gets passed to the AccessibleAccordion dependency */
+    /* istanbul ignore next */
     const handleOnChange = nodes => setIsActiveNodes(nodes);
     const checkIsActive = id => activeNodes.includes(id);
 

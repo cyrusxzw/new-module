@@ -4,7 +4,7 @@ import {
   AddToCartContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
-import mockAddToCartButtonOnClick from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
+import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
 import AccordionProductFixture from './AccordionProduct.fixture.js';
 import AccordionProduct from './AccordionProduct';
 

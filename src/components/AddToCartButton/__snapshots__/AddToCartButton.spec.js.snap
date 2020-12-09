@@ -1,20 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AddToCartButton /> renders alternate action button correctly 1`] = `
-<div>
-  <a
-    class="base blockStyle alternate left dark base fullWidth"
-    data-test-ref="ADD_TO_CART"
-    href="/"
-    target="_self"
-    title="Nunc sagittis ultrices dignissim"
-  >
-    Nunc sagittis ultrices dignissim
-  </a>
-</div>
-`;
-
-exports[`<AddToCartButton /> renders base component correctly 1`] = `
+exports[`<AddToCartButton /> should render base component correctly 1`] = `
 <div>
   <button
     class="base alternate blockStyle dark base fullWidth"
@@ -32,21 +18,6 @@ exports[`<AddToCartButton /> renders base component correctly 1`] = `
         Add to your cart — $26.45
       </span>
     </span>
-  </button>
-</div>
-`;
-
-exports[`<AddToCartButton /> renders out of stock button correctly 1`] = `
-<div>
-  <button
-    class="base alternate blockStyle dark disabled base fullWidth"
-    data-test-ref="DATA_TEST_REF"
-    disabled=""
-    title="Out of stock"
-    type="button"
-  >
-    Out of Stock
-     — $26.45
   </button>
 </div>
 `;

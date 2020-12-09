@@ -22,6 +22,7 @@ describe('<Modal />', () => {
     );
 
     expect(screen.getByText('test')).toBeTruthy();
+    expect(handleOnClose).toHaveBeenCalledTimes(0);
 
     fireEvent.click(screen.getByTitle(copyClose));
 

@@ -4,6 +4,7 @@ exports[`<Loading /> renders base component correctly 1`] = `
 <div>
   <span
     class="base isLoading medium dark"
+    data-testid="data-testid-loading"
   >
     <span
       class="dot"

@@ -5,8 +5,8 @@ import {
   ProductDetailContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
-import mockAddToCartButtonOnClick from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
-import AddToCartButtonFixture from '~/components/AddToCartButton/AddToCartButton.fixture';
+import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
+import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
 import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
 import ProductDetailBodyFixture from './ProductDetailBody.fixture';
 import ProductDetailBody from './ProductDetailBody';

@@ -13,6 +13,7 @@ exports[`<BynderWidget /> renders base component correctly 1`] = `
     </h3>
     <span
       class="base isLoading medium dark"
+      data-testid="data-testid-loading"
     >
       <span
         class="dot"
@@ -46,6 +47,7 @@ exports[`<BynderWidget /> renders null if there is an error 1`] = `
     </h3>
     <span
       class="base isLoading medium dark"
+      data-testid="data-testid-loading"
     >
       <span
         class="dot"

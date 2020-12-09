@@ -1,80 +1,159 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import PropTypes from 'prop-types';
+import { fireEvent, render, screen } from '@testing-library/react';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
-import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
 import AddToCartButton from './AddToCartButton';
-import AddToCartButtonFixture from './AddToCartButton.fixture';
-import mockAddToCartButtonOnClick from './__mocks__/AddToCartButton.onClick';
+import { AddToCartButtonFixture as fixture } from './AddToCartButton.fixture';
+import { mockAddToCartButtonOnClick } from './__mocks__/AddToCartButton.onClick';
+
+const AddToCartButtonWithProviders = ({ onClick, product, variants, copy }) => {
+  return (
+    <AddToCartContextProvider onClick={onClick}>
+      <ProductDetailContextProvider product={product}>
+        <VariantSelectContextProvider variants={variants}>
+          <AddToCartButton copy={copy} />
+        </VariantSelectContextProvider>
+      </ProductDetailContextProvider>
+    </AddToCartContextProvider>
+  );
+};
+
+AddToCartButtonWithProviders.propTypes = {
+  onClick: PropTypes.func,
+  product: PropTypes.object,
+  variants: PropTypes.array,
+  copy: PropTypes.object,
+};
 
 describe('<AddToCartButton />', () => {
+  const handleOnClick = jest.fn();
+  const product = fixture.product;
+  const variants = fixture.variants;
+  const outOfStockVariant = fixture.outOfStockVariant;
+  const alternateActionVariant = fixture.alternateActionVariant;
+  const copy = fixture.copy;
+
   it('should be defined', () => {
     expect(AddToCartButton).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
-      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-        <ProductDetailContextProvider
-          product={ProductDetailHeaderFixture.product}
-        >
-          <VariantSelectContextProvider
-            variants={ProductDetailHeaderFixture.product.variantOptions}
-          >
-            <AddToCartButton
-              className={AddToCartButtonFixture.className}
-              copy={AddToCartButtonFixture.copy}
-              isEnabled={AddToCartButtonFixture.isEnabled}
-            />
-          </VariantSelectContextProvider>
-        </ProductDetailContextProvider>
-      </AddToCartContextProvider>,
+      <AddToCartButtonWithProviders
+        copy={copy}
+        onClick={mockAddToCartButtonOnClick}
+        product={product}
+        variants={variants}
+      />,
     );
 
+    const button = screen.getByRole('button', {
+      name: `${fixture.copy.cartAction} — ${fixture.variants[0].price}`,
+    });
+
+    expect(button).toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
 
-  it('renders out of stock button correctly', () => {
-    const { container } = render(
-      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-        <ProductDetailContextProvider
-          product={ProductDetailHeaderFixture.product}
-        >
-          <VariantSelectContextProvider
-            variants={ProductDetailHeaderFixture.variantOutOfStock}
-          >
-            <AddToCartButton
-              className={AddToCartButtonFixture.className}
-              copy={AddToCartButtonFixture.copy}
-              dataTestRef={AddToCartButtonFixture.dataTestRef}
-              isEnabled={AddToCartButtonFixture.isEnabled}
-            />
-          </VariantSelectContextProvider>
-        </ProductDetailContextProvider>
-      </AddToCartContextProvider>,
+  it('should render out of stock button correctly', () => {
+    render(
+      <AddToCartButtonWithProviders
+        copy={copy}
+        onClick={mockAddToCartButtonOnClick}
+        product={product}
+        variants={outOfStockVariant}
+      />,
     );
 
-    expect(container).toMatchSnapshot();
+    const button = screen.getByRole('button', {
+      name: copy.outOfStock.title,
+    });
+
+    expect(button).toBeInTheDocument();
   });
 
-  it('renders alternate action button correctly', () => {
-    const { container } = render(
-      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-        <ProductDetailContextProvider
-          product={ProductDetailHeaderFixture.product}
-        >
-          <VariantSelectContextProvider
-            variants={ProductDetailHeaderFixture.variantAlternateAction}
-          >
-            <AddToCartButton copy={AddToCartButtonFixture.copy} />
-          </VariantSelectContextProvider>
-        </ProductDetailContextProvider>
-      </AddToCartContextProvider>,
+  it('should render alternate action button correctly', () => {
+    render(
+      <AddToCartButtonWithProviders
+        copy={copy}
+        onClick={mockAddToCartButtonOnClick}
+        product={product}
+        variants={alternateActionVariant}
+      />,
     );
 
-    expect(container).toMatchSnapshot();
+    const button = screen.getByRole('link', {
+      name: alternateActionVariant[0].alternateAction.label,
+    });
+
+    expect(button).toBeInTheDocument();
+  });
+
+  it('should call on click callback successfully', () => {
+    render(
+      <AddToCartButtonWithProviders
+        copy={copy}
+        onClick={handleOnClick}
+        product={product}
+        variants={variants}
+      />,
+    );
+
+    const button = screen.getByRole('button', {
+      name: `${fixture.copy.cartAction} — ${fixture.variants[0].price}`,
+    });
+
+    expect(button).toBeInTheDocument();
+    expect(handleOnClick).toHaveBeenCalledTimes(0);
+
+    fireEvent.click(button);
+
+    expect(handleOnClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('should should return null if there are no selected variants', () => {
+    render(
+      <AddToCartButtonWithProviders
+        copy={copy}
+        onClick={handleOnClick}
+        product={product}
+        variants={[]}
+      />,
+    );
+
+    const button = screen.queryByRole('button');
+
+    expect(button).not.toBeInTheDocument();
+  });
+
+  it('should show laoding html when clicked', async () => {
+    render(
+      <AddToCartButtonWithProviders
+        copy={copy}
+        onClick={mockAddToCartButtonOnClick}
+        product={product}
+        variants={variants}
+      />,
+    );
+
+    const button = screen.getByRole('button', {
+      name: `${fixture.copy.cartAction} — ${fixture.variants[0].price}`,
+    });
+
+    expect(button).toBeInTheDocument();
+
+    let breadcrumbs = screen.queryByTestId('data-testid-loading');
+
+    expect(breadcrumbs).not.toBeInTheDocument();
+
+    fireEvent.click(button);
+
+    breadcrumbs = await screen.findByTestId('data-testid-loading');
+
+    expect(breadcrumbs).toBeInTheDocument();
   });
 });

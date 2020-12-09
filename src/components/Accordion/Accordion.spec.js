@@ -19,16 +19,17 @@ describe('<Accordion />', () => {
       />,
     );
 
+    const accordion = screen.queryByTestId('data-testid-Accordion');
+
+    expect(accordion).toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
-
-  it.todo('should render full Accordion with test data');
 
   it('should return `null` if the length of the `items` prop is 0', () => {
     render(<Accordion items={[]} />);
 
-    const child = screen.queryByTestId('data-testid-Accordion');
+    const accordion = screen.queryByTestId('data-testid-Accordion');
 
-    expect(child).not.toBeInTheDocument();
+    expect(accordion).not.toBeInTheDocument();
   });
 });
