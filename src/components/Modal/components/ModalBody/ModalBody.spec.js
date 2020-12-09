@@ -1,5 +1,6 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import ModalBody from './ModalBody';
 import ModalBodyFixture from './ModalBody.fixture';
 
@@ -36,7 +37,7 @@ describe('<ModalBody />', () => {
 
     expect(screen.getByText('test')).toBeTruthy();
 
-    fireEvent.click(screen.getByTitle(copyClose));
+    userEvent.click(screen.getByTitle(copyClose));
 
     expect(handleOnClose).toHaveBeenCalledTimes(1);
   });

@@ -1,28 +1,21 @@
-import React, { useState } from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { useEscapeKeyListener } from './useEscapeKeyListener';
 
 describe('useExecuteOnImpression', () => {
-  // const [count, setCount] = useState(0);
-  // const handleEscapeOnKeyPress = () => setCount(count => count + 1);
   const handleEscapeOnKeyPressMock = jest.fn();
 
-  // eslint-disable-next-line react/prop-types
-  const TestRig = () => {
+  const ComponentWithHook = () => {
     useEscapeKeyListener(handleEscapeOnKeyPressMock);
 
-    return <div>hello word</div>;
+    return <div>escape</div>;
   };
 
-  it('should call handleEscapeOnKeyPress using the passed in options', () => {
-    render(<TestRig />);
+  it('should call handleEscapeOnKeyPress with callback', () => {
+    render(<ComponentWithHook />);
 
-    fireEvent.keyDown(screen.getByText(/hello word/i), {
-      key: 'Escape',
-      code: 'Escape',
-      keyCode: 27,
-      charCode: 27,
-    });
+    userEvent.type(screen.getByText(/escape/i), '{esc}');
 
     expect(handleEscapeOnKeyPressMock).toHaveBeenCalledTimes(1);
   });

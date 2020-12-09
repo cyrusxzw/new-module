@@ -1,5 +1,6 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import FlyinPanel from './FlyinPanel';
 
 describe('<FlyinPanel />', () => {
@@ -24,7 +25,7 @@ describe('<FlyinPanel />', () => {
     expect(screen.getByText('test')).toBeTruthy();
     expect(screen.getByRole('note')).toBeTruthy();
 
-    fireEvent.click(screen.getByTitle(copyClose));
+    userEvent.click(screen.getByTitle(copyClose));
 
     expect(handleOnClose).toHaveBeenCalledTimes(1);
   });

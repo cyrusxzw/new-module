@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
@@ -110,7 +111,7 @@ describe('<AddToCartButton />', () => {
     expect(button).toBeInTheDocument();
     expect(handleOnClick).toHaveBeenCalledTimes(0);
 
-    fireEvent.click(button);
+    userEvent.click(button);
 
     expect(handleOnClick).toHaveBeenCalledTimes(1);
   });
@@ -150,7 +151,7 @@ describe('<AddToCartButton />', () => {
 
     expect(breadcrumbs).not.toBeInTheDocument();
 
-    fireEvent.click(button);
+    userEvent.click(button);
 
     breadcrumbs = await screen.findByTestId('data-testid-loading');
 

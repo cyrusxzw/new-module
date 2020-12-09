@@ -1,5 +1,6 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Button from './Button';
 
 describe('<Button />', () => {
@@ -42,7 +43,7 @@ describe('<Button />', () => {
 
     const button = screen.getByRole('button', { name: /button/i });
 
-    fireEvent.click(button);
+    userEvent.click(button);
 
     expect(handleOnClick).toHaveBeenCalledTimes(1);
   });
