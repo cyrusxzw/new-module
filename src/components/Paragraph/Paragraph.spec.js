@@ -7,7 +7,7 @@ describe('<Paragraph />', () => {
     expect(Paragraph).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Paragraph>
         A lightweight, vitamin C-rich layering serum that soothes, replenishes

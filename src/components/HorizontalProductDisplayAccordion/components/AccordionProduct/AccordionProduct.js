@@ -29,6 +29,7 @@ const AccordionProduct = ({
         isExpanded && styles.isExpanded,
         isCompressed && styles.isCompressed,
       )}
+      data-testid="data-testid-AccordionProduct"
       id={id}
       onClick={isCompressed ? () => resetAccordion() : undefined}
       onKeyDown={isCompressed ? () => resetAccordion() : undefined}

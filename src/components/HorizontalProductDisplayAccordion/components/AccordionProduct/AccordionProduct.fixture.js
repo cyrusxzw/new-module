@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+export const AccordionProductFixture = {
   closedState: {
     addToCart: {
       cartAction: 'Add to your cart',

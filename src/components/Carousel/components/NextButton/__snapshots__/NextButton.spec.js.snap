@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Carousel.NextButton /> renders base component correctly 1`] = `
+exports[`<Carousel.NextButton /> should render base component correctly 1`] = `
 <div>
   <button
     class="base dark base"

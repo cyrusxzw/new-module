@@ -8,7 +8,7 @@ describe('<GoogleMap />', () => {
     expect(GoogleMap).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <GoogleMap
         center={GoogleMapFixture.customPinMarkerCenter}

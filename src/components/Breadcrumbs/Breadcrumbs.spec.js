@@ -8,7 +8,7 @@ describe('<Breadcrumbs />', () => {
     expect(Breadcrumbs).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Breadcrumbs
         className={BreadcrumbsFixture.className}

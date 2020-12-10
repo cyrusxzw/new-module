@@ -8,7 +8,7 @@ describe('<ImageCarousel />', () => {
     expect(ImageCarousel).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <ImageCarousel slides={ImageCarouselFixture.slides} />,
     );

@@ -8,7 +8,7 @@ describe('<Message />', () => {
     expect(Message).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(<Message {...MessageFixture} />);
 
     expect(container).toMatchSnapshot();

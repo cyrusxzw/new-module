@@ -8,7 +8,7 @@ describe('<RadioGroup />', () => {
     expect(RadioGroup).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <RadioGroup
         className={RadioGroupFixture.className}

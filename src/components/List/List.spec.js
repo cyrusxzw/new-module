@@ -7,7 +7,7 @@ describe('Component - Element - List', () => {
     expect(List).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <List
         items={[

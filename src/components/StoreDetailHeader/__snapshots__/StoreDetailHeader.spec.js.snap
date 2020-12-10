@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<StoreDetailHeader /> renders base component correctly 1`] = `
+exports[`<StoreDetailHeader /> should render base component correctly 1`] = `
 <div>
   <div
     class="base reverse contentOnly dark base dark"

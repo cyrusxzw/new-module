@@ -8,7 +8,7 @@ describe('<TwoColumnLayout />', () => {
     expect(TwoColumnLayout).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <TwoColumnLayout
         childrenClassNames={TwoColumnLayoutFixture.childrenClassNames}

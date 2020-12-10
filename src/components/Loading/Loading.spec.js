@@ -7,7 +7,7 @@ describe('<Loading />', () => {
     expect(Loading).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(<Loading isLoading={true} />);
 
     expect(container).toMatchSnapshot();

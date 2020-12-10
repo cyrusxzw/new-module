@@ -8,7 +8,7 @@ describe('<IconLink />', () => {
     expect(IconLink).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <IconLink
         altText={IconLinkFixture[0].altText}

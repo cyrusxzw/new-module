@@ -76,7 +76,7 @@ exports[`<Carousel.Slide /> renders a slide without a heading correctly 1`] = `
 </div>
 `;
 
-exports[`<Carousel.Slide /> renders base component correctly 1`] = `
+exports[`<Carousel.Slide /> should render base component correctly 1`] = `
 <div>
   <div
     class="information dark"

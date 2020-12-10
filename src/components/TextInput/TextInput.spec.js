@@ -7,7 +7,7 @@ describe('<TextInput />', () => {
     expect(TextInput).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <TextInput data-test-ref="test-data-ref" id="test-textinput" />,
     );

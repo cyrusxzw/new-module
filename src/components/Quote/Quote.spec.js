@@ -8,7 +8,7 @@ describe('<Quote />', () => {
     expect(Quote).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Quote author={QuoteFixture.author} content={QuoteFixture.content} />,
     );

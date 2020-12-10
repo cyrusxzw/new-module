@@ -8,7 +8,7 @@ describe('<FooterBlock />', () => {
     expect(FooterBlock).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <FooterBlock
         copy={FooterBlockFixture.blockNoLink.copy}

@@ -8,7 +8,7 @@ describe('<FullWidthHeroScroll />', () => {
     expect(FullWidthHeroScroll).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <FullWidthHeroScroll
         backgroundMediaType={FullWidthHeroScrollFixture.backgroundMediaType}

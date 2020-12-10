@@ -13,7 +13,7 @@ describe('<ProductDetailImage />', () => {
     expect(ProductDetailImage).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const product = ProductDetailHeaderFixture.product;
     const variants = ProductDetailHeaderFixture.product.variantOptions;
 

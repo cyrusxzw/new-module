@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ProductGridItem /> renders base component correctly 1`] = `
+exports[`<ProductGridItem /> should render base component correctly 1`] = `
 <div>
   <div
     class="base dark"

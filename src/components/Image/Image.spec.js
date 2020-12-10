@@ -7,7 +7,7 @@ describe('<Image />', () => {
     expect(Image).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Image
         altText="Image of Milk Cleansing Campaign Aesop 2019"

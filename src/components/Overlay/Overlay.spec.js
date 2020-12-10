@@ -9,7 +9,7 @@ describe('<Overlay />', () => {
     expect(Overlay).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(<Overlay isVisible={true} onClose={mockFn} />);
 
     expect(container).toMatchSnapshot();

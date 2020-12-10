@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FullWidthHeroScroll /> renders base component correctly 1`] = `
+exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
 <div>
   <section
     class="base light"

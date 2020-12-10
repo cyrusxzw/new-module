@@ -7,7 +7,7 @@ describe('<Checkbox />', () => {
     expect(Checkbox).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Checkbox
         content="Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest."

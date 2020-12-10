@@ -35,7 +35,7 @@ exports[`<BodyCopy /> does not render content when no \`content\` prop supplied 
 </div>
 `;
 
-exports[`<BodyCopy /> renders base component correctly 1`] = `
+exports[`<BodyCopy /> should render base component correctly 1`] = `
 <div>
   <article
     class="base dark"

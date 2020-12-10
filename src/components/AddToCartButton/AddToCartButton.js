@@ -57,23 +57,6 @@ const AddToCartButton = ({
     );
   }
 
-  if (!isInStock || !sku) {
-    return (
-      <Button
-        className={classSet}
-        dataTestRef={dataTestRef}
-        isAlternate={true}
-        isEnabled={false}
-        onClick={() => {}}
-        theme={theme}
-        title={copy.outOfStock?.title}
-      >
-        {copy.outOfStock?.label}
-        {price && ` — ${price}`}
-      </Button>
-    );
-  }
-
   const {
     errorMessage,
     hasError,
@@ -81,32 +64,40 @@ const AddToCartButton = ({
     isUpdateSuccessful,
   } = addToCartContext;
 
-  const cartActionLabel = `${copy.cartAction} — ${price}`;
-  const updateNotificationLabel = copy.updateNotification;
-  const showUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
-
-  const labelClassName = cx(
-    styles.label,
-    { [styles.hideLabel]: isLoading },
-    { [styles.showSuccessMessage]: showUpdateSuccessMessage },
-  );
-
   if (hasError) {
     /** @TODO Handle errors thrown by handleOnClick */
     console.error('Add To Cart button updateError: ', errorMessage); // eslint-disable-line
   }
+
+  const cartActionLabel = `${copy.cartAction} — ${price}`;
+  const updateNotificationLabel = copy.updateNotification;
+  const shouldShowUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
+
+  const isButtonEnabled =
+    !isLoading &&
+    !!price &&
+    !!sku &&
+    isInStock &&
+    !!sku &&
+    isEnabled &&
+    !hasError &&
+    isSellable;
+
+  const labelClassName = cx(
+    styles.label,
+    { [styles.hideLabel]: isLoading },
+    { [styles.showSuccessMessage]: shouldShowUpdateSuccessMessage },
+  );
 
   return (
     <Button
       className={classSet}
       dataTestRef={dataTestRef}
       isAlternate={true}
-      isEnabled={
-        !isLoading && price && sku && isEnabled && !hasError && isSellable
-      }
+      isEnabled={isButtonEnabled}
       onClick={handleOnClick}
       theme={theme}
-      title={cartActionLabel}
+      title={isInStock ? cartActionLabel : copy.outOfStock?.title}
     >
       {isLoading && (
         <Loading
@@ -119,11 +110,11 @@ const AddToCartButton = ({
       <span
         className={labelClassName}
         data-test-ref={
-          showUpdateSuccessMessage ? `${dataTestRef}_SUCCESS` : undefined
+          shouldShowUpdateSuccessMessage ? `${dataTestRef}_SUCCESS` : undefined
         }
       >
         <span>{updateNotificationLabel}</span>
-        <span>{cartActionLabel}</span>
+        <span>{isInStock ? cartActionLabel : copy.outOfStock?.label}</span>
       </span>
     </Button>
   );

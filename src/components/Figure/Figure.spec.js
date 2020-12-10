@@ -8,7 +8,7 @@ describe('<Figure />', () => {
     expect(Figure).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Figure caption="About Aesop" id="about">
         <Image

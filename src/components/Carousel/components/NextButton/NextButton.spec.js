@@ -7,7 +7,7 @@ describe('<Carousel.NextButton />', () => {
     expect(NextButton).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(<NextButton onClick={() => {}} />);
 
     expect(container).toMatchSnapshot();

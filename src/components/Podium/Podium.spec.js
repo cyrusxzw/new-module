@@ -8,7 +8,7 @@ describe('<Podium />', () => {
     expect(Podium).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Podium
         paddingBottom={PodiumFixture.paddingBottom}

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ProductDetailBody /> renders base component correctly 1`] = `
+exports[`<ProductDetailBody /> should render base component correctly 1`] = `
 <div>
   <div
     class="base dark fixture-classname"

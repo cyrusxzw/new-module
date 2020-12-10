@@ -16,7 +16,7 @@ describe('<ProductGridItem />', () => {
     expect(ProductGridItem).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
         <ProductDetailContextProvider

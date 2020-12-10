@@ -8,7 +8,7 @@ describe('<SectionHeading />', () => {
     expect(SectionHeading).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <SectionHeading
         heading="Title: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream."

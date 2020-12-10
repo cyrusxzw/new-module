@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ContentHubArticleList /> renders base component correctly with pattern 0 1`] = `
+exports[`<ContentHubArticleList /> should render base component correctly with pattern 0 1`] = `
 <div>
   <section>
     <div
@@ -779,7 +779,7 @@ exports[`<ContentHubArticleList /> renders base component correctly with pattern
 </div>
 `;
 
-exports[`<ContentHubArticleList /> renders base component correctly with pattern 1 1`] = `
+exports[`<ContentHubArticleList /> should render base component correctly with pattern 1 1`] = `
 <div>
   <section>
     <div

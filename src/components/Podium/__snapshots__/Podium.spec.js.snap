@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Podium /> renders base component correctly 1`] = `
+exports[`<Podium /> should render base component correctly 1`] = `
 <div>
   <section
     class="base nonePaddingBottom nonePaddingLeft nonePaddingRight nonePaddingTop fadeEnter fadeEnterActive"

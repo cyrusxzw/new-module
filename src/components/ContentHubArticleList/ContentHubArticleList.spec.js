@@ -8,7 +8,7 @@ describe('<ContentHubArticleList />', () => {
     expect(ContentHubArticleList).toBeDefined();
   });
 
-  it('renders base component correctly with pattern 1', () => {
+  it('should render base component correctly with pattern 1', () => {
     const { container } = render(
       <ContentHubArticleList
         articles={ContentHubArticleListFixture.articles}
@@ -19,7 +19,7 @@ describe('<ContentHubArticleList />', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders base component correctly with pattern 0', () => {
+  it('should render base component correctly with pattern 0', () => {
     const { container } = render(
       <ContentHubArticleList
         articles={ContentHubArticleListFixture.articles}

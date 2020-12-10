@@ -8,7 +8,7 @@ describe('<KitList />', () => {
     expect(KitList).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(<KitList items={KitListFixture.items} />);
 
     expect(container).toMatchSnapshot();

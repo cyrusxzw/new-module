@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ContentHubArticle /> renders base component correctly 1`] = `
+exports[`<ContentHubArticle /> should render base component correctly 1`] = `
 <div>
   <div
     class="base"

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TwoColumnLayout /> renders base component correctly 1`] = `
+exports[`<TwoColumnLayout /> should render base component correctly 1`] = `
 <div>
   <div
     class="base reverse dark TwoColumnLayout"

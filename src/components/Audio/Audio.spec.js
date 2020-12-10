@@ -8,7 +8,7 @@ describe('<Audio />', () => {
     expect(Audio).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Audio
         artistName={AudioFixture.artistName}

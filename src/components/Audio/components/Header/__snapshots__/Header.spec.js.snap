@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Audio.Header /> renders base component correctly 1`] = `
+exports[`<Audio.Header /> should render base component correctly 1`] = `
 <div>
   <header
     class="base"

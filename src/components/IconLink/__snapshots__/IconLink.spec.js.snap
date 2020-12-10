@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<IconLink /> renders base component correctly 1`] = `
+exports[`<IconLink /> should render base component correctly 1`] = `
 <div>
   <a
     class="base left dark"

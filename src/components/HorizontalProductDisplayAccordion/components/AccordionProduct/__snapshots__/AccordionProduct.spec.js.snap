@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AccordionProduct /> renders base component correctly 1`] = `
+exports[`<AccordionProduct /> should render base component correctly 1`] = `
 <div>
   <div
     class="base"
+    data-testid="data-testid-AccordionProduct"
     id="Aganice"
     role="button"
     tabindex="-1"

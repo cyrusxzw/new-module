@@ -7,7 +7,7 @@ describe('<Textarea />', () => {
     expect(Textarea).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Textarea dataTestRef="test-data-ref" id="test-textarea" />,
     );

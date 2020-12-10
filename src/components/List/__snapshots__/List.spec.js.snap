@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component - Element - List renders base component correctly 1`] = `
+exports[`Component - Element - List should render base component correctly 1`] = `
 <div>
   <ul
     class="base dark"

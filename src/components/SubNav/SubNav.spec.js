@@ -8,7 +8,7 @@ describe('<SubNav />', () => {
     expect(SubNav).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <SubNav
         heading={SubNavFixture.heading}

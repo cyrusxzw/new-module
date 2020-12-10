@@ -8,7 +8,7 @@ describe('<BodyCopy />', () => {
     expect(BodyCopy).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <BodyCopy
         content={<div>{BodyCopyFixture.linkButtonGroup.children}</div>}

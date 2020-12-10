@@ -7,7 +7,7 @@ describe('<Carousel.Pagination />', () => {
     expect(Pagination).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(<Pagination dots={[0]} />);
 
     expect(container).toMatchSnapshot();

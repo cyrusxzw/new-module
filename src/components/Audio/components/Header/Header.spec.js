@@ -7,7 +7,7 @@ describe('<Audio.Header />', () => {
     expect(Header).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(<Header artistName="foo" trackTitle="bar" />);
 
     expect(container).toMatchSnapshot();

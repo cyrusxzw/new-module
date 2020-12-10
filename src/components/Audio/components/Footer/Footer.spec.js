@@ -7,7 +7,7 @@ describe('<Audio.Footer />', () => {
     expect(Footer).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Footer artistName="foo" audioUrl="/" trackTitle="bar" />,
     );

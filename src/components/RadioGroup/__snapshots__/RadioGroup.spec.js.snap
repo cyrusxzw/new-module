@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<RadioGroup /> renders base component correctly 1`] = `
+exports[`<RadioGroup /> should render base component correctly 1`] = `
 <div>
   <ul
     class="base"

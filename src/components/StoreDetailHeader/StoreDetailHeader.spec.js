@@ -9,7 +9,7 @@ describe('<StoreDetailHeader />', () => {
     expect(StoreDetailHeader).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <StoreDetailHeader
         alternateHoursNote={StoreHoursListFixture.alternateHoursNote}

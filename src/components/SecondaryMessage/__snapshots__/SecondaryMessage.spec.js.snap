@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SecondaryMessage /> renders base component correctly 1`] = `
+exports[`<SecondaryMessage /> should render base component correctly 1`] = `
 <div>
   <section
     class="wrapper"

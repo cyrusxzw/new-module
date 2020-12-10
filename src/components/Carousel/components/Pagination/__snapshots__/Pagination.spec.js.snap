@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Carousel.Pagination /> renders base component correctly 1`] = `
+exports[`<Carousel.Pagination /> should render base component correctly 1`] = `
 <div>
   <div
     class="base"

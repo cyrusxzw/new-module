@@ -7,7 +7,7 @@ describe('<Heading />', () => {
     expect(Heading).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Heading level="1" size="large">
         Heading

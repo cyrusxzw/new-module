@@ -11,7 +11,7 @@ describe('<Button />', () => {
     expect(Button).toBeDefined();
   });
 
-  it('renders base component correctly with `onClick` prop', () => {
+  it('should render base component correctly with `onClick` prop', () => {
     const { container } = render(
       <Button className="class" onClick={handleOnClick} title="button-title">
         {buttonText}

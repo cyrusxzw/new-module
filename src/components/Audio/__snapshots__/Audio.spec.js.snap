@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Audio /> renders base component correctly 1`] = `
+exports[`<Audio /> should render base component correctly 1`] = `
 <div>
   <article
     class="base disabled"

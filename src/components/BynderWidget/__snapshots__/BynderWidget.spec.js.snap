@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<BynderWidget /> renders base component correctly 1`] = `
+exports[`<BynderWidget /> should render base component correctly 1`] = `
 <div>
   <article
     class="base dark"

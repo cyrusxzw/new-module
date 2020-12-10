@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DoubleMedia /> renders base component correctly 1`] = `
+exports[`<DoubleMedia /> should render base component correctly 1`] = `
 <div>
   <div
     class="base dark"

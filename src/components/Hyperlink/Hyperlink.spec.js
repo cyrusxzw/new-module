@@ -21,7 +21,7 @@ describe('<Hyperlink />', () => {
     expect(Hyperlink).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <Hyperlink text="Aesop" url="https://aesop.com">
         Aesop

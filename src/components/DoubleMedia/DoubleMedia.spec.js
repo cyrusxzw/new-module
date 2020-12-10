@@ -8,7 +8,7 @@ describe('<DoubleMedia />', () => {
     expect(DoubleMedia).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <DoubleMedia
         mediaOne={{

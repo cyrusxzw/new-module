@@ -8,7 +8,7 @@ describe('<ProductExtract />', () => {
     expect(ProductExtract).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <ProductExtract
         dataTestRef={ProductExtractFixture.dataTestRef}

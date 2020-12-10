@@ -8,7 +8,7 @@ describe('<HorizontalProductDisplayAccordion />', () => {
     expect(HorizontalProductDisplayAccordion).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
+  it('should render base component correctly', () => {
     const { container } = render(
       <HorizontalProductDisplayAccordion
         addToCartCopy={HorizontalProductDisplayAccordionFixture.addToCartCopy}
