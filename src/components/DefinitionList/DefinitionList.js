@@ -8,6 +8,10 @@ const DefinitionList = forwardRef(function DefinitionListRef(
   { className, hasBottomBorder, isVisible, items, theme },
   ref,
 ) {
+  if (!isObjectPopulatedArray(items)) {
+    return null;
+  }
+
   const classSet = cx(
     styles.base,
     styles[theme],
@@ -18,10 +22,6 @@ const DefinitionList = forwardRef(function DefinitionListRef(
   const descriptionClassSet = cx(styles.description, {
     [styles.slideIn]: isVisible,
   });
-
-  if (!isObjectPopulatedArray(items)) {
-    return null;
-  }
 
   return (
     <dl className={classSet} data-testid="data-testid-DefinitionList" ref={ref}>

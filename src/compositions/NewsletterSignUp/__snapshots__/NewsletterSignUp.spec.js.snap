@@ -94,7 +94,7 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
           <span
             class="content light"
           >
-            I accept the Terms & Conditions
+            I accept the Terms & Conditions 
           </span>
         </label>
         <div

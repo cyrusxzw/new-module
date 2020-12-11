@@ -109,7 +109,7 @@ describe('<AddToCartButton />', () => {
     });
 
     expect(button).toBeInTheDocument();
-    expect(handleOnClick).toHaveBeenCalledTimes(0);
+    expect(handleOnClick).not.toHaveBeenCalled();
 
     userEvent.click(button);
 

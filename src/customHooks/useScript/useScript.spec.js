@@ -91,7 +91,7 @@ describe('useScript', () => {
 
     expect(isLoading).toBe(true);
     expect(error).toBe(null);
-    expect(handleOnLoad).toHaveBeenCalledTimes(0);
+    expect(handleOnLoad).not.toHaveBeenCalled();
 
     act(() => {
       const el = document.querySelector('script');
