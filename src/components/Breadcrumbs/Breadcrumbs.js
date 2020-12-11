@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { isObjectPopulatedArray } from '~/utils/objects';
-import Hyperlink from '~/components/Hyperlink';
+import { Hyperlink } from '~/components/Hyperlink';
 import styles from './Breadcrumbs.module.css';
 
 const Breadcrumbs = ({ className, items, theme }) => {
@@ -52,4 +52,4 @@ Breadcrumbs.defaultProps = {
   theme: 'dark',
 };
 
-export default Breadcrumbs;
+export { Breadcrumbs };

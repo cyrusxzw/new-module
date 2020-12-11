@@ -84,4 +84,4 @@ LinkButtonGroup.defaultProps = {
   theme: undefined,
 };
 
-export default LinkButtonGroup;
+export { LinkButtonGroup };

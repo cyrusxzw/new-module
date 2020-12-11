@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '~/components/Button';
+import { Button } from '~/components/Button';
 import { useNotificationContext } from '~/contexts';
 
 const ToogleButton = () => {
@@ -18,4 +18,4 @@ const ToogleButton = () => {
   );
 };
 
-export default ToogleButton;
+export { ToogleButton };

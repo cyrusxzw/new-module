@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import TextOverFullWidthAsset from './TextOverFullWidthAsset';
+import { TextOverFullWidthAsset } from './TextOverFullWidthAsset';
 
-export default TextOverFullWidthAsset;
+export { TextOverFullWidthAsset };

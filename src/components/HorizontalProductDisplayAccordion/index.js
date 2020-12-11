@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import HorizontalProductDisplayAccordion from './HorizontalProductDisplayAccordion';
+import { HorizontalProductDisplayAccordion } from './HorizontalProductDisplayAccordion';
 
-export default HorizontalProductDisplayAccordion;
+export { HorizontalProductDisplayAccordion };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import KitList from './KitList';
-import KitListFixture from './KitList.fixture';
+import { KitList } from './KitList';
+import { KitListFixture } from './KitList.fixture';
 
 describe('<KitList />', () => {
   it('should be defined', () => {

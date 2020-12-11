@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Icon from '~/components/Icon';
 import cx from 'classnames';
+import { Icon } from '~/components/Icon';
 import styles from './Select.module.css';
 
 const Select = ({
@@ -115,4 +115,4 @@ Select.defaultProps = {
   value: undefined,
 };
 
-export default Select;
+export { Select };

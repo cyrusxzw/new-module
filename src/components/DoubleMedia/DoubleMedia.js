@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import MediaBlock from './components/MediaBlock';
+import { MediaBlock } from './components/MediaBlock';
 import styles from './DoubleMedia.module.css';
 
 const DoubleMedia = ({ mediaOne, mediaTwo, className, theme }) => {
@@ -61,4 +61,4 @@ DoubleMedia.defaultProps = {
   theme: 'dark',
 };
 
-export default DoubleMedia;
+export { DoubleMedia };

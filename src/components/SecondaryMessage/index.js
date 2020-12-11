@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import SecondaryMessage from './SecondaryMessage';
+import { SecondaryMessage } from './SecondaryMessage';
 
-export default SecondaryMessage;
+export { SecondaryMessage };

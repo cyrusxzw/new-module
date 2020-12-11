@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const RadioGroupFixture = {
   className: '',
   dataTestRef: 'RADIO_GROUP_TEST_REF',
   errorMessage: 'Test Error Messsage',
@@ -17,3 +17,5 @@ export default {
   ],
   value: 'morbi-id-nulla',
 };
+
+export { RadioGroupFixture };

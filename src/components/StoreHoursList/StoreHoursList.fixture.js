@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const StoreHoursListFixture = {
   className: '',
   heading: 'Opening hours',
   hoursList: [
@@ -13,3 +13,5 @@ export default {
   ],
   alternateHoursNote: 'Special opening hours',
 };
+
+export { StoreHoursListFixture };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import DialogBanner from './DialogBanner';
+import { DialogBanner } from './DialogBanner';
 
 const mockFn = jest.fn();
 

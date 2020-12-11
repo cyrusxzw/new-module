@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Hidden from './Hidden';
+import { Hidden } from './Hidden';
 
-export default Hidden;
+export { Hidden };

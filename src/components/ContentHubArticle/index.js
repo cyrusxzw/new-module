@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import ContentHubArticle from './ContentHubArticle';
+import { ContentHubArticle } from './ContentHubArticle';
 
-export default ContentHubArticle;
+export { ContentHubArticle };

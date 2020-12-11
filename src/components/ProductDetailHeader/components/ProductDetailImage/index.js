@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import ProductDetailImage from './ProductDetailImage';
+import { ProductDetailImage } from './ProductDetailImage';
 
-export default ProductDetailImage;
+export { ProductDetailImage };

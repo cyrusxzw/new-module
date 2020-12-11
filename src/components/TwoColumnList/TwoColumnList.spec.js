@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import TwoColumnList from './TwoColumnList';
-import TwoColumnListFixture from './TwoColumnList.fixture';
+import { TwoColumnList } from './TwoColumnList';
+import { TwoColumnListFixture } from './TwoColumnList.fixture';
 
 describe('<TwoColumnList />', () => {
   it('should be defined', () => {

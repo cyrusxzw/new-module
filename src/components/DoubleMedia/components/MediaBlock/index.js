@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import MediaBlock from './MediaBlock';
+import { MediaBlock } from './MediaBlock';
 
-export default MediaBlock;
+export { MediaBlock };

@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Media from './Media';
+import { Media } from './Media';
 
-export default Media;
+export { Media };

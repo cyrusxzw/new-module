@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Poster from './Poster';
+import { Poster } from './Poster';
 
-export default Poster;
+export { Poster };

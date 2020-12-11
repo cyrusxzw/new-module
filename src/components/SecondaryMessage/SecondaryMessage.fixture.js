@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const SecondaryMessageFixture = {
   className: 'exercitationCupidatat',
   id: 'exercitationCupidatat',
   items: [
@@ -23,3 +23,5 @@ export default {
     },
   ],
 };
+
+export { SecondaryMessageFixture };

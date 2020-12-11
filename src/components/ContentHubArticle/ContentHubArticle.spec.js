@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ContentHubArticle from './ContentHubArticle';
-import ContentHubArticleFixture from './ContentHubArticle.fixture';
+import { ContentHubArticle } from './ContentHubArticle';
+import { ContentHubArticleFixture } from './ContentHubArticle.fixture';
 
 describe('<ContentHubArticle />', () => {
   it('should be defined', () => {

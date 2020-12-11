@@ -9,7 +9,7 @@ import {
   AccordionItemPanel,
 } from 'react-accessible-accordion';
 import { Collapse } from 'react-collapse';
-import Icon from '~/components/Icon';
+import { Icon } from '~/components/Icon';
 import { isObjectPopulatedArray } from '~/utils/objects';
 import styles from './Accordion.module.css';
 
@@ -96,4 +96,4 @@ Accordion.defaultProps = {
   wrapperClass: undefined,
 };
 
-export default Accordion;
+export { Accordion };

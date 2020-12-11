@@ -1,4 +1,4 @@
-export const getProgressColorHex = (progressColor, colors) => {
+const getProgressColorHex = (progressColor, colors) => {
   if (progressColor === 'green') {
     return colors.HIGHLIGHT_GREEN;
   } else if (progressColor === 'blue') {
@@ -7,3 +7,5 @@ export const getProgressColorHex = (progressColor, colors) => {
 
   return colors.HIGHLIGHT_ORANGE;
 };
+
+export { getProgressColorHex };

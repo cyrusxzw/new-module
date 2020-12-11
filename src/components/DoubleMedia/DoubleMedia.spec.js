@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import DoubleMedia from './DoubleMedia';
-import DoubleMediaFixture from './DoubleMedia.fixture';
+import { DoubleMediaFixture } from './DoubleMedia.fixture';
+import { DoubleMedia } from './DoubleMedia';
 
 describe('<DoubleMedia />', () => {
   it('should be defined', () => {

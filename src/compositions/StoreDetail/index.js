@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import StoreDetail from './StoreDetail';
+import { StoreDetail } from './StoreDetail';
 
-export default StoreDetail;
+export { StoreDetail };

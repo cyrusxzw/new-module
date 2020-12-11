@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const MessageFixture = {
   className: 'exercitationCupidatat',
   copy:
     'Irure anim labore incididunt lorem occaecat Cillum reprehenderit Duis commodo ipsum sunt fugiat qui nulla dolor nostrud tempor quis non.',
@@ -10,3 +10,5 @@ export default {
     url: '/',
   },
 };
+
+export { MessageFixture };

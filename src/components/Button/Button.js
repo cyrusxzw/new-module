@@ -78,4 +78,4 @@ Button.defaultProps = {
   theme: 'dark',
 };
 
-export default Button;
+export { Button };

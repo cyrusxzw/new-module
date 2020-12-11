@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
 
-export default {
+const HorizontalProductDisplayAccordionFixture = {
   addToCartCopy: {
     cartAction: 'Add to your cart',
     updateNotification: 'added to your cart',
@@ -265,3 +265,5 @@ export default {
     },
   ],
 };
+
+export { HorizontalProductDisplayAccordionFixture };

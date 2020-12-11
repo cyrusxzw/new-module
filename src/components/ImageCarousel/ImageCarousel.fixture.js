@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const ImageCarouselFixture = {
   autoplaySpeed: 3000,
   hasAutoplay: false,
   slides: [
@@ -26,3 +26,5 @@ export default {
   ],
   theme: 'dark',
 };
+
+export { ImageCarouselFixture };

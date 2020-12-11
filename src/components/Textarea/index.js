@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Textarea from './Textarea';
+import { Textarea } from './Textarea';
 
-export default Textarea;
+export { Textarea };

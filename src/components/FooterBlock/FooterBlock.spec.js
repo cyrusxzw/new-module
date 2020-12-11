@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import FooterBlock from './FooterBlock';
-import FooterBlockFixture from './FooterBlock.fixture';
+import { FooterBlock } from './FooterBlock';
+import { FooterBlockFixture } from './FooterBlock.fixture';
 
 describe('<FooterBlock />', () => {
   it('should be defined', () => {

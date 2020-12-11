@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const NewsletterSignUpFixture = {
   consentErrorMsg:
     'Please confirm your accept our Terms & Conditions before proceeding ',
   errorMessage: 'Please enter valid email address',
@@ -9,3 +9,5 @@ export default {
   subscriptionMessage:
     'Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.',
 };
+
+export { NewsletterSignUpFixture };

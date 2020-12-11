@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Message from './Message';
+import { Message } from './Message';
 
-export default Message;
+export { Message };

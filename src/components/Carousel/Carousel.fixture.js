@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const CarouselFixture = {
   autoplaySpeed: 3000,
   hasAutoplay: false,
   introduction: {
@@ -77,3 +77,5 @@ export default {
     },
   ],
 };
+
+export { CarouselFixture };

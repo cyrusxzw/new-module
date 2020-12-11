@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Heading from '~/components/Heading';
+import { Heading } from '~/components/Heading';
 import styles from './Header.module.css';
 
 const Header = React.memo(props => (
@@ -29,4 +29,4 @@ Header.defaultProps = {
   trackTitle: undefined,
 };
 
-export default Header;
+export { Header };

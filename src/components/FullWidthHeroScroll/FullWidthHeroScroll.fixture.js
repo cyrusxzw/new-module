@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const FullWidthHeroScrollFixture = {
   backgroundMediaType: 'video',
   backgroundImage: {
     altText: 'alt image',
@@ -60,3 +60,5 @@ export default {
   ],
   theme: 'light',
 };
+
+export { FullWidthHeroScrollFixture };

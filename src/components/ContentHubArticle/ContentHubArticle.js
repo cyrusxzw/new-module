@@ -2,9 +2,9 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useOnScreen } from '~/customHooks';
-import Image from '~/components/Image';
-import Hyperlink from '~/components/Hyperlink';
-import Transition from '~/components/Transition';
+import { Image } from '~/components/Image';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Transition } from '~/components/Transition';
 import styles from './ContentHubArticle.module.css';
 
 const ContentHubArticle = ({
@@ -214,4 +214,4 @@ ContentHubArticle.defaultProps = {
   verticalThumbnail: undefined,
 };
 
-export default ContentHubArticle;
+export { ContentHubArticle };

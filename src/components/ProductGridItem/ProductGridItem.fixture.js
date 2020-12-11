@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const ProductGridItemFixture = {
   info: '4 Sizes / From $ 26.45',
   variantOptionsOneItem: [
     {
@@ -63,3 +63,5 @@ export default {
   ],
   url: '/p/',
 };
+
+export { ProductGridItemFixture };

@@ -63,7 +63,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                     for="newsletter-email"
                   >
                     <input
-                      class="formTextInput light footerNewsLetter"
+                      class="formTextInput light footerNewsletter"
                       data-test-ref="EMAIL_SIGN_UP_INPUT"
                       id="newsletter-email"
                       name="newsletter-email"

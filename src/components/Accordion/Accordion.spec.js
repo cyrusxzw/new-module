@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import AccordionFixture from './Accordion.fixture';
-import Accordion from './Accordion';
+import { AccordionFixture } from './Accordion.fixture';
+import { Accordion } from './Accordion';
 
 jest.mock('react-accessible-accordion');
 

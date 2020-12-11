@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const NavigationBarFixture = {
   parentLink: {
     text: 'All Body & Hand',
     url: '/parent',
@@ -37,3 +37,5 @@ export default {
   ],
   selectedUrl: '/child3',
 };
+
+export { NavigationBarFixture };

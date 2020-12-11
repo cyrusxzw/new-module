@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { KEYBOARD_CODES } from '~/constants';
 import { useEscapeKeyListener } from '~/customHooks';
-import Transition from '~/components/Transition';
+import { Transition } from '~/components/Transition';
 import styles from './Overlay.module.css';
 
 const Overlay = ({ className, isVisible = false, onClose }) => {
@@ -53,4 +53,4 @@ Overlay.defaultProps = {
   onClose: undefined,
 };
 
-export default Overlay;
+export { Overlay };

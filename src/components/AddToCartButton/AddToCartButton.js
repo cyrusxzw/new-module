@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useAddToCartContext, useVariantSelectContext } from '~/contexts';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
-import Button from '~/components/Button';
-import Loading from '~/components/Loading';
-import Hyperlink from '~/components/Hyperlink';
+import { Button } from '~/components/Button';
+import { Loading } from '~/components/Loading';
+import { Hyperlink } from '~/components/Hyperlink';
 import styles from './AddToCartButton.module.css';
 
 const AddToCartButton = ({
@@ -152,4 +152,4 @@ AddToCartButton.defaultProps = {
   theme: 'dark',
 };
 
-export default AddToCartButton;
+export { AddToCartButton };

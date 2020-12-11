@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ReadMore from './ReadMore';
-import ReadMoreFixture from './ReadMore.fixture';
+import { ReadMore } from './ReadMore';
+import { ReadMoreFixture } from './ReadMore.fixture';
 
 describe('<ReadMore />', () => {
   it('should be defined', () => {

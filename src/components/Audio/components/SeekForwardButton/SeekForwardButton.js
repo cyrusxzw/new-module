@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Button from '~/components/Button';
-import Icon from '~/components/Icon';
+import { Button } from '~/components/Button';
+import { Icon } from '~/components/Icon';
 import styles from './SeekForwardButton.module.css';
 
 const SeekForwardButton = React.memo(
@@ -44,4 +44,4 @@ SeekForwardButton.defaultProps = {
   progressColor: 'orange',
 };
 
-export default SeekForwardButton;
+export { SeekForwardButton };

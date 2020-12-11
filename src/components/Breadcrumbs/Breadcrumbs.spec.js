@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Breadcrumbs from './Breadcrumbs';
-import BreadcrumbsFixture from './Breadcrumbs.fixture';
+import { Breadcrumbs } from './Breadcrumbs';
+import { BreadcrumbsFixture } from './Breadcrumbs.fixture';
 
 describe('<Breadcrumbs />', () => {
   it('should be defined', () => {

@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import TwoColumnList from './TwoColumnList';
+import { TwoColumnList } from './TwoColumnList';
 
-export default TwoColumnList;
+export { TwoColumnList };

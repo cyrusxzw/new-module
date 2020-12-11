@@ -5,11 +5,11 @@ import {
   ProductDetailContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
-import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
+import { ProductDetailHeaderFixture } from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
 import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
-import ProductCommerce from './ProductCommerce';
-import ProductCommerceFixture from './ProductCommerce.fixture';
+import { ProductCommerce } from './ProductCommerce';
+import { ProductCommerceFixture } from './ProductCommerce.fixture';
 
 describe('<ProductCommerce />', () => {
   it('should be defined', () => {

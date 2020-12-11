@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Button from '~/components/Button';
-import Icon from '~/components/Icon';
+import { Button } from '~/components/Button';
+import { Icon } from '~/components/Icon';
 import styles from './PausePlayButton.module.css';
 
 const PausePlayButton = React.memo(
@@ -66,4 +66,4 @@ PausePlayButton.defaultProps = {
   progressColor: 'orange',
 };
 
-export default PausePlayButton;
+export { PausePlayButton };

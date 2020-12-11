@@ -64,4 +64,4 @@ Heading.defaultProps = {
   theme: 'dark',
 };
 
-export default Heading;
+export { Heading };

@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import Carousel from './Carousel';
-import CarouselFixture from './Carousel.fixture';
+import { Carousel } from './Carousel';
+import { CarouselFixture } from './Carousel.fixture';
 
 <Meta title="Components/Carousel" component={Carousel} />
 
@@ -10,7 +10,11 @@ import CarouselFixture from './Carousel.fixture';
 <Canvas>
   <Story name="Base component">
     <Carousel
-      hasFullWidthSlides={knobs.boolean('hasFullWidthSlides', false, 'Presentation')}
+      hasFullWidthSlides={knobs.boolean(
+        'hasFullWidthSlides',
+        false,
+        'Presentation',
+      )}
       hasShowCaption={knobs.boolean('hasShowCaption', false, 'Presentation')}
       hasSlideCounter={knobs.boolean('hasSlideCounter', false, 'Presentation')}
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}

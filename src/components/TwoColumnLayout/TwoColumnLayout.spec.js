@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import TwoColumnLayout from './TwoColumnLayout';
-import TwoColumnLayoutFixture from './TwoColumnLayout.fixture';
+import { TwoColumnLayout } from './TwoColumnLayout';
+import { TwoColumnLayoutFixture } from './TwoColumnLayout.fixture';
 
 describe('<TwoColumnLayout />', () => {
   it('should be defined', () => {

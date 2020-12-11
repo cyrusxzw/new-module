@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import TextInput from './TextInput';
+import { TextInput } from './TextInput';
 
-export default TextInput;
+export { TextInput };

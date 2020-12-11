@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import GoogleMap from './GoogleMap';
-import GoogleMapFixture from './GoogleMap.fixture';
+import { GoogleMapFixture } from './GoogleMap.fixture';
+import { GoogleMap } from './GoogleMap';
 
 describe('<GoogleMap />', () => {
   it('should be defined', () => {

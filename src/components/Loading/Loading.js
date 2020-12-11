@@ -39,4 +39,4 @@ Loading.defaultProps = {
   theme: 'dark',
 };
 
-export default Loading;
+export { Loading };

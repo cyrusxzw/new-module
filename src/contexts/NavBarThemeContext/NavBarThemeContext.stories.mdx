@@ -1,7 +1,10 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { NavBarThemeContextProvider, useNavBarThemeContext } from '~/contexts';
 
-<Meta title="Contexts/NavBarThemeContext" component="NavBarThemeContextProvider" />
+<Meta
+  title="Contexts/NavBarThemeContext"
+  component="NavBarThemeContextProvider"
+/>
 
 # useNavBarTheme
 
@@ -12,7 +15,9 @@ The `NavBarThemeContextProvider` component and `useNavBarThemeContext` consumer 
     {() => {
       const ChildComponent = () => {
         return (
-          <pre><code>{JSON.stringify(useNavBarThemeContext())}</code></pre>
+          <pre>
+            <code>{JSON.stringify(useNavBarThemeContext())}</code>
+          </pre>
         );
       };
       return (
@@ -33,10 +38,12 @@ import { useNavBarTheme } from '~/customHooks';
 import ComponentB from '~/ComponentB';
 
 const ComponentA = () => (
-  <NavBarThemeContextProvider value={useNavBarTheme({ navigationAndLogoTheme: 'light' })}>
+  <NavBarThemeContextProvider
+    value={useNavBarTheme({ navigationAndLogoTheme: 'light' })}
+  >
     <ComponentB />
   </NavBarThemeContextProvider>
-)
+);
 
 // ComponentB.js
 import { useNavBarThemeContext } from '~/contexts';

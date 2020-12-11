@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import ReadMore from './ReadMore';
+import { ReadMore } from './ReadMore';
 
-export default ReadMore;
+export { ReadMore };

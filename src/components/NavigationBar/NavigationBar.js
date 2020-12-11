@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Hyperlink from '~/components/Hyperlink';
+import { Hyperlink } from '~/components/Hyperlink';
 import styles from './NavigationBar.module.css';
 
 const testRefs = {
@@ -92,4 +92,4 @@ NavigationBar.defaultProps = {
   selectedUrl: undefined,
 };
 
-export default NavigationBar;
+export { NavigationBar };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import DefinitionListWithProductExtract from './DefinitionListWithProductExtract';
+import { DefinitionListWithProductExtract } from './DefinitionListWithProductExtract';
 
 describe('<DefinitionListWithProductExtract />', () => {
   it('should be defined', () => {

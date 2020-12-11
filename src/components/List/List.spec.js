@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import List from './List';
+import { List } from './List';
 
 describe('Component - Element - List', () => {
   it('should be defined', () => {

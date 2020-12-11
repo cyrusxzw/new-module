@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import ProductExtract from './ProductExtract';
-import ProductExtractFixture from './ProductExtract.fixture';
+import { ProductExtract } from './ProductExtract';
+import { ProductExtractFixture } from './ProductExtract.fixture';
 
 describe('<ProductExtract />', () => {
   it('should be defined', () => {

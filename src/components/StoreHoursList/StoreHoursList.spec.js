@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import StoreHoursList from './StoreHoursList';
-import StoreHoursListFixture from './StoreHoursList.fixture';
+import { StoreHoursList } from './StoreHoursList';
+import { StoreHoursListFixture } from './StoreHoursList.fixture';
 
 describe('<StoreHoursList />', () => {
   it('should be defined', () => {

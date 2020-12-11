@@ -4,9 +4,9 @@ import {
   ProductDetailContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
-import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
-import ProductDetailImageFixture from './ProductDetailImage.fixture';
-import ProductDetailImage from './ProductDetailImage';
+import { ProductDetailHeaderFixture } from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
+import { ProductDetailImageFixture } from './ProductDetailImage.fixture';
+import { ProductDetailImage } from './ProductDetailImage';
 
 describe('<ProductDetailImage />', () => {
   it('should be defined', () => {

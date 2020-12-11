@@ -7,9 +7,9 @@ import {
 } from '~/contexts';
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
 import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
-import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
-import ProductDetailBodyFixture from './ProductDetailBody.fixture';
-import ProductDetailBody from './ProductDetailBody';
+import { ProductDetailHeaderFixture } from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
+import { ProductDetailBodyFixture } from './ProductDetailBody.fixture';
+import { ProductDetailBody } from './ProductDetailBody';
 
 describe('<ProductDetailBody />', () => {
   it('should be defined', () => {

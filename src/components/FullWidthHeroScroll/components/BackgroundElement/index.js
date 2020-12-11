@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import BackgroundElement from './BackgroundElement';
+import { BackgroundElement } from './BackgroundElement';
 
-export default BackgroundElement;
+export { BackgroundElement };

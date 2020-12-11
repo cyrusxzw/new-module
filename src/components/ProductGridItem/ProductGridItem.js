@@ -5,14 +5,14 @@ import { HEADING } from '~/constants';
 import { useProductDetailContext, useVariantSelectContext } from '~/contexts';
 import { useImageTransition } from '~/customHooks';
 import { getVariantRadioOptions } from '~/utils/product';
-import AddToCartButton from '~/components/AddToCartButton';
-import DefinitionList from '~/components/DefinitionList';
-import Heading from '~/components/Heading';
-import Hyperlink from '~/components/Hyperlink';
-import Image from '~/components/Image';
-import RadioGroup from '~/components/RadioGroup';
-import Transition from '~/components/Transition';
+import { AddToCartButton } from '~/components/AddToCartButton';
+import { DefinitionList } from '~/components/DefinitionList';
+import { Heading } from '~/components/Heading';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Image } from '~/components/Image';
 import { P } from '~/components/Paragraph';
+import { RadioGroup } from '~/components/RadioGroup';
+import { Transition } from '~/components/Transition';
 import styles from './ProductGridItem.module.css';
 
 const ProductGridItem = React.forwardRef(
@@ -170,4 +170,4 @@ ProductGridItem.defaultProps = {
   url: undefined,
 };
 
-export default ProductGridItem;
+export { ProductGridItem };

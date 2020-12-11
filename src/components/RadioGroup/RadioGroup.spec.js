@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import RadioGroup from './RadioGroup';
-import RadioGroupFixture from './RadioGroup.fixture';
+import { RadioGroup } from './RadioGroup';
+import { RadioGroupFixture } from './RadioGroup.fixture';
 
 describe('<RadioGroup />', () => {
   it('should be defined', () => {

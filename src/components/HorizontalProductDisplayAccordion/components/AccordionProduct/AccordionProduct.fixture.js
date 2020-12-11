@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export const AccordionProductFixture = {
+const AccordionProductFixture = {
   closedState: {
     addToCart: {
       cartAction: 'Add to your cart',
@@ -81,3 +81,5 @@ export const AccordionProductFixture = {
     },
   },
 };
+
+export { AccordionProductFixture };

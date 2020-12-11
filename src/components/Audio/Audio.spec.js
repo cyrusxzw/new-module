@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Audio from './Audio';
-import AudioFixture from './Audio.fixture';
+import { Audio } from './Audio';
+import { AudioFixture } from './Audio.fixture';
 
 describe('<Audio />', () => {
   it('should be defined', () => {

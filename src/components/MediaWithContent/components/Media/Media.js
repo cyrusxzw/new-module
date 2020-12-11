@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Figure from '~/components/Figure';
-import Hyperlink from '~/components/Hyperlink';
+import { Figure } from '~/components/Figure';
+import { Hyperlink } from '~/components/Hyperlink';
 import styles from './Media.module.css';
 
 const Media = ({
@@ -66,4 +66,4 @@ Media.defaultProps = {
   media: undefined,
 };
 
-export default Media;
+export { Media };

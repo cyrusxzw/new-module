@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import PausePlayButton from './PausePlayButton';
+import { PausePlayButton } from './PausePlayButton';
 
-export default PausePlayButton;
+export { PausePlayButton };

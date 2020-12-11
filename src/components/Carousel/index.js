@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Carousel from './Carousel';
+import { Carousel } from './Carousel';
 
-export default Carousel;
+export { Carousel };

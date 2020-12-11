@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Audio from './Audio';
+import { Audio } from './Audio';
 
-export default Audio;
+export { Audio };

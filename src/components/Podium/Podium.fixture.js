@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const PodiumFixture = {
   className: undefined,
   id: 'id',
   isActive: true,
@@ -7,3 +7,5 @@ export default {
   paddingBottom: 'none',
   transition: 'fade',
 };
+
+export { PodiumFixture };

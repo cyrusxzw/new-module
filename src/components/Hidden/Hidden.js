@@ -60,4 +60,4 @@ Hidden.defaultProps = {
   isXLarge: false,
 };
 
-export default Hidden;
+export { Hidden };

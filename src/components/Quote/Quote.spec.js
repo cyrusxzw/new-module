@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Quote from './Quote';
-import QuoteFixture from './Quote.fixture';
+import { Quote } from './Quote';
+import { QuoteFixture } from './Quote.fixture';
 
 describe('<Quote />', () => {
   it('should be defined', () => {

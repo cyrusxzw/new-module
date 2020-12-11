@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import FooterBlock from './FooterBlock';
-import FooterBlockFixture from './FooterBlock.fixture'
+import { FooterBlock } from './FooterBlock';
+import { FooterBlockFixture } from './FooterBlock.fixture';
 
 # FooterBlock
 
@@ -24,12 +24,14 @@ import FooterBlockFixture from './FooterBlock.fixture'
 <Canvas>
   <Story name="Block Navigation">
     <FooterBlock
-      isVisibleOnTabletAndMobile={knobs.boolean('isVisibleOnTabletAndMobile', true, 'Presentation')}
+      isVisibleOnTabletAndMobile={knobs.boolean(
+        'isVisibleOnTabletAndMobile',
+        true,
+        'Presentation',
+      )}
       links={FooterBlockFixture.navigation.links}
       heading={FooterBlockFixture.navigation.heading}
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
 </Canvas>
-
-

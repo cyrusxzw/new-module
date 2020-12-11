@@ -7,7 +7,7 @@ import {
   ascertainIsMediumOnlyViewport,
   ascertainIsLargeViewport,
 } from '~/utils/viewports';
-import Transition from '~/components/Transition';
+import { Transition } from '~/components/Transition';
 import styles from './VideoPlayer.module.css';
 
 const VideoPlayer = forwardRef(function VideoPlayerRef(
@@ -97,4 +97,4 @@ VideoPlayer.defaultProps = {
   small: undefined,
 };
 
-export default VideoPlayer;
+export { VideoPlayer };

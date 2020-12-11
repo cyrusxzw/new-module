@@ -7,9 +7,9 @@ import * as HYPERLINK_STYLE_TYPES from './hyperlink-style-types.js';
 import * as STORES from './stores.js';
 import * as TEST_REFS from './test_refs.js';
 import * as TRANSITIONS from './transitions.js';
-import HTML from './html.js';
-import KEYBOARD_CODES from './keyboard-codes.js';
-import LABELS from './labels.js';
+import * as HTML from './html.js';
+import * as KEYBOARD_CODES from './keyboard-codes.js';
+import * as LABELS from './labels.js';
 
 export { BREAKPOINTS };
 export { COLORS };

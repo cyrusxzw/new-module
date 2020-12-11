@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Paragraph, { ParagraphSet } from './Paragraph';
+import { Paragraph, ParagraphSet } from './Paragraph';
 
 describe('<Paragraph />', () => {
   it('should be defined', () => {

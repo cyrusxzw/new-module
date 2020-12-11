@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const GoogleMapFixture = {
   initialZoom: 14,
   center: { lat: -37.8064, lng: 144.9826 },
   customPinMarker: { lat: -37.78863, lng: 144.9847727, type: 'PIN' },
@@ -152,3 +152,5 @@ export default {
     },
   ],
 };
+
+export { GoogleMapFixture };

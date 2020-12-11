@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Video from './Video';
+import { Video } from './Video';
 
-export default Video;
+export { Video };

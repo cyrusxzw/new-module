@@ -32,4 +32,4 @@ GridOverlay.propTypes = {
   isActive: PropTypes.bool,
 };
 
-export default GridOverlay;
+export { GridOverlay };

@@ -1,4 +1,4 @@
-import StoreDetail from './StoreDetail';
+import { StoreDetail } from './StoreDetail';
 
 describe('<StoreDetail />', () => {
   it('should be defined', () => {

@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { storiesOf } from '@storybook/react';
 import '~.storybook/storybook.module.css';
-import KitList from '~/components/KitList';
+import { KitList } from '~/components/KitList';
 import { P } from '~/components/Paragraph';
-import Transition from '~/components/Transition';
+import { Transition } from '~/components/Transition';
 import { useOnScreen } from './useOnScreen';
 
 storiesOf('Hooks/useOnScreen', module).add('Base hook', () => {

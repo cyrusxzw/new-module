@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import BodyCopy from './BodyCopy';
-import BodyCopyFixture from './BodyCopy.fixture';
+import { BodyCopy } from './BodyCopy';
+import { BodyCopyFixture } from './BodyCopy.fixture';
 
 describe('<BodyCopy />', () => {
   it('should be defined', () => {

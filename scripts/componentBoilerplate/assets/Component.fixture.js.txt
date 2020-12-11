@@ -1,2 +1,4 @@
 /* istanbul ignore file */
-export default {};
+const ComponentBoilerplateFixture = {};
+
+export { ComponentBoilerplateFixture };

@@ -3,9 +3,9 @@ import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useEscapeKeyListener, useOverflowHidden } from '~/customHooks';
-import ModalBody from './components/ModalBody';
-import Overlay from '~/components/Overlay';
-import Transition from '~/components/Transition';
+import { ModalBody } from './components/ModalBody';
+import { Overlay } from '~/components/Overlay';
+import { Transition } from '~/components/Transition';
 import styles from './Modal.module.css';
 
 /** Set up the Modal component's anchor point for ReactDOM.createPortal */
@@ -75,4 +75,5 @@ Modal.defaultProps = {
   onClose: undefined,
   theme: 'dark',
 };
-export default Modal;
+
+export { Modal };

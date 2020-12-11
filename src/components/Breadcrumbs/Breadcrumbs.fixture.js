@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const BreadcrumbsFixture = {
   classname: 'breadcrumbs',
   items: [
     {
@@ -11,3 +11,5 @@ export default {
   ],
   theme: 'dark',
 };
+
+export { BreadcrumbsFixture };

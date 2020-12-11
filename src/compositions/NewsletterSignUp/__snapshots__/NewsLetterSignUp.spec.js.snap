@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NewsLetterSignUp /> should render base component correctly 1`] = `
+exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
 <div>
   <div
     class="base"
@@ -19,7 +19,7 @@ exports[`<NewsLetterSignUp /> should render base component correctly 1`] = `
               for="newsletter-email"
             >
               <input
-                class="formTextInput light footerNewsLetter"
+                class="formTextInput light footerNewsletter"
                 data-test-ref="EMAIL_SIGN_UP_INPUT"
                 id="newsletter-email"
                 name="newsletter-email"

@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Footer from './Footer';
+import { Footer } from './Footer';
 
-export default Footer;
+export { Footer };

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import StoreHoursListFixture from '~/components/StoreHoursList/StoreHoursList.fixture';
-import StoreDetailHeader from './StoreDetailHeader';
-import StoreDetailHeaderFixture from './StoreDetailHeader.fixture';
+import { StoreHoursListFixture } from '~/components/StoreHoursList/StoreHoursList.fixture';
+import { StoreDetailHeader } from './StoreDetailHeader';
+import { StoreDetailHeaderFixture } from './StoreDetailHeader.fixture';
 
 describe('<StoreDetailHeader />', () => {
   it('should be defined', () => {

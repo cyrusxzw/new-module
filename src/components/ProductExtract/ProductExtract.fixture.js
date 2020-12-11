@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const ProductExtractFixture = {
   dataTestRef: 'test_id',
   product: {
     image: {
@@ -12,3 +12,5 @@ export default {
   },
   works: 'Works well with',
 };
+
+export { ProductExtractFixture };

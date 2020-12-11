@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const ReadMoreFixture = {
   articles: [
     {
       id: 'test_1',
@@ -71,3 +71,5 @@ export default {
     },
   ],
 };
+
+export { ReadMoreFixture };

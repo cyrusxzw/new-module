@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const StoreDetailFixture = {
   storeImage: {
     altText: 'Store Detail Image',
     large: './assets/images/StoreDetail/image-large.jpg',
@@ -49,3 +49,5 @@ export default {
     },
   ],
 };
+
+export { StoreDetailFixture };

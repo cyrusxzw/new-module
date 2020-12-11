@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import ProductGridItem from './ProductGridItem';
+import { ProductGridItem } from './ProductGridItem';
 
-export default ProductGridItem;
+export { ProductGridItem };

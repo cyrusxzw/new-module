@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import ProductCommerce from './ProductCommerce';
+import { ProductCommerce } from './ProductCommerce';
 
-export default ProductCommerce;
+export { ProductCommerce };

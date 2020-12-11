@@ -11,14 +11,14 @@ import {
   ascertainIsLargeOrXLargeOnlyViewport,
   ascertainIsSmallOrMediumOnlyViewport,
 } from '~/utils/viewports';
-import Hyperlink from '~/components/Hyperlink';
-import Transition from '~/components/Transition';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Transition } from '~/components/Transition';
 import { getCarouselSettings } from './Carousel.utils';
-import CarouselIntroduction from './components/CarouselIntroduction';
-import NextButton from './components/NextButton/NextButton';
-import Pagination from './components/Pagination';
-import PreviousButton from './components/PreviousButton';
-import Slide from './components/Slide';
+import { CarouselIntroduction } from './components/CarouselIntroduction';
+import { NextButton } from './components/NextButton/NextButton';
+import { Pagination } from './components/Pagination';
+import { PreviousButton } from './components/PreviousButton';
+import { Slide } from './components/Slide';
 import styles from './Carousel.module.css';
 
 const Carousel = ({
@@ -269,4 +269,4 @@ Carousel.defaultProps = {
   theme: undefined,
 };
 
-export default Carousel;
+export { Carousel };

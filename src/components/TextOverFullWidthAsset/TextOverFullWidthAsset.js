@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Image from '~/components/Image';
-import Video from '~/components/Video';
+import { Image } from '~/components/Image';
+import { Video } from '~/components/Video';
 import styles from './TextOverFullWidthAsset.module.css';
 
 const TextOverFullWidthAsset = ({
@@ -75,4 +75,4 @@ TextOverFullWidthAsset.defaultProps = {
   mediaType: undefined,
 };
 
-export default TextOverFullWidthAsset;
+export { TextOverFullWidthAsset };

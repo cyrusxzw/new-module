@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Loading from '~/components/Loading';
+import { Loading } from '~/components/Loading';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { useWaveSurfer } from './Audio.customHooks';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import styles from './Audio.module.css';
 
 const Audio = ({
@@ -114,4 +114,4 @@ Audio.defaultProps = {
   trackTitle: undefined,
 };
 
-export default Audio;
+export { Audio };

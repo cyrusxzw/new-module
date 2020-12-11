@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const DefinitionListWithProductExtractFixture = {
   dataTestRef: 'test_id',
   product: {
     image: {
@@ -29,3 +29,5 @@ export default {
     },
   ],
 };
+
+export { DefinitionListWithProductExtractFixture };

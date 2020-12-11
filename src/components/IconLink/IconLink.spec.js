@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import IconLink from './IconLink';
-import IconLinkFixture from './IconLink.fixture';
+import { IconLink } from './IconLink';
+import { IconLinkFixture } from './IconLink.fixture';
 
 describe('<IconLink />', () => {
   it('should be defined', () => {
@@ -11,13 +11,13 @@ describe('<IconLink />', () => {
   it('should render base component correctly', () => {
     const { container } = render(
       <IconLink
-        altText={IconLinkFixture[0].altText}
+        altText={IconLinkFixture.items[0].altText}
         dataTestRef="test-data-ref"
         hasTargetInNewWindow={true}
         height={25}
-        icon={IconLinkFixture[0].icon}
-        id={IconLinkFixture[0].altText}
-        target={IconLinkFixture[0].target}
+        icon={IconLinkFixture.items[0].icon}
+        id={IconLinkFixture.items[0].altText}
+        target={IconLinkFixture.items[0].target}
         width={25}
       />,
     );

@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export const mockOnClick = async email => {
+const newsletterSignUpOnClick = async email => {
   try {
     await (() =>
       new Promise(resolve => {
@@ -14,4 +14,4 @@ export const mockOnClick = async email => {
   }
 };
 
-export default mockOnClick;
+export { newsletterSignUpOnClick };

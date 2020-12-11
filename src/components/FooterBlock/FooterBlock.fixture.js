@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const FooterBlockFixture = {
   actionLabel: 'Learn More',
   block: {
     heading: 'Sustainability',
@@ -41,3 +41,5 @@ export default {
     ],
   },
 };
+
+export { FooterBlockFixture };

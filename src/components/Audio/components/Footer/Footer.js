@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import moment from 'moment';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
-import Hyperlink from '~/components/Hyperlink';
-import Icon from '~/components/Icon';
-import PausePlayButton from '~/components/Audio/components/PausePlayButton';
-import SeekBackwardButton from '~/components/Audio/components/SeekBackwardButton';
-import SeekForwardButton from '~/components/Audio/components/SeekForwardButton';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Icon } from '~/components/Icon';
+import { PausePlayButton } from '~/components/Audio/components/PausePlayButton';
+import { SeekBackwardButton } from '~/components/Audio/components/SeekBackwardButton';
+import { SeekForwardButton } from '~/components/Audio/components/SeekForwardButton';
 import styles from './Footer.module.css';
 
 const Footer = React.memo(
@@ -123,4 +123,4 @@ Footer.defaultProps = {
   progressColor: 'orange',
 };
 
-export default Footer;
+export { Footer };

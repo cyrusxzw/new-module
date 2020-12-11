@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
-import AddToCartButton from '~/components/AddToCartButton';
-import Button from '~/components/Button';
-import Heading from '~/components/Heading';
-import Hyperlink from '~/components/Hyperlink';
-import Image from '~/components/Image';
-import LinkButtonGroup from '~/components/LinkButtonGroup';
-import Video from '~/components/Video';
+import { AddToCartButton } from '~/components/AddToCartButton';
+import { Button } from '~/components/Button';
+import { Heading } from '~/components/Heading';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Image } from '~/components/Image';
+import { LinkButtonGroup } from '~/components/LinkButtonGroup';
+import { Video } from '~/components/Video';
 import styles from './AccordionProduct.module.css';
 
 const AccordionProduct = ({
@@ -289,4 +289,4 @@ AccordionProduct.defaultProps = {
   toggleAccordion: undefined,
 };
 
-export default AccordionProduct;
+export { AccordionProduct };

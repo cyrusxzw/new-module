@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import BynderWidget from './BynderWidget';
+import { BynderWidget } from './BynderWidget';
 
 describe('<BynderWidget />', () => {
   it('should be defined', () => {

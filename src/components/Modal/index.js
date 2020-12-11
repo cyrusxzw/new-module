@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Modal from './Modal';
+import { Modal } from './Modal';
 
-export default Modal;
+export { Modal };

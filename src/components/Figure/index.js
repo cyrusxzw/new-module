@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Figure from './Figure';
+import { Figure } from './Figure';
 
-export default Figure;
+export { Figure };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { getEyebrowLevel, getSubHeadingLevel } from './SectionHeading.utils';
-import SectionHeading from './SectionHeading';
+import { SectionHeading } from './SectionHeading';
 
 describe('<SectionHeading />', () => {
   it('should be defined', () => {

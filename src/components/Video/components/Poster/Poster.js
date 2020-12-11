@@ -1,9 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import Button from '~/components/Button';
-import Image from '~/components/Image';
-import Transition from '~/components/Transition';
+import { Button } from '~/components/Button';
+import { Image } from '~/components/Image';
+import { Transition } from '~/components/Transition';
 import styles from './Poster.module.css';
 
 const Poster = ({
@@ -62,4 +62,4 @@ Poster.defaultProps = {
   small: undefined,
 };
 
-export default Poster;
+export { Poster };

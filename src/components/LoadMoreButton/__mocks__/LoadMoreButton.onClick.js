@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export const mockOnClick = async (LoadMoreDispatch, LOAD_MORE_ACTION_TYPES) => {
+const mockOnClick = async (LoadMoreDispatch, LOAD_MORE_ACTION_TYPES) => {
   LoadMoreDispatch({ type: LOAD_MORE_ACTION_TYPES.FETCHING });
   try {
     const result = await (() =>
@@ -19,4 +19,4 @@ export const mockOnClick = async (LoadMoreDispatch, LOAD_MORE_ACTION_TYPES) => {
   }
 };
 
-export default mockOnClick;
+export { mockOnClick };

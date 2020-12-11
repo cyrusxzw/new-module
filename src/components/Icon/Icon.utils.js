@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Icon.module.css';
 
-export const generateSvgBlueprint = (svg, uuidKey) => {
+const generateSvgBlueprint = (svg, uuidKey) => {
   function mapSvgData(svgData) {
     return svgData.map((item, i) => {
       const tagName = Object.keys(item)[0];
@@ -24,4 +24,4 @@ export const generateSvgBlueprint = (svg, uuidKey) => {
   return mapSvgData(svg.data);
 };
 
-export default { generateSvgBlueprint };
+export { generateSvgBlueprint };

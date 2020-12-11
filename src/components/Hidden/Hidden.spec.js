@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Hidden from './Hidden';
+import { Hidden } from './Hidden';
 
 describe('<Hidden />', () => {
   it('should be defined', () => {

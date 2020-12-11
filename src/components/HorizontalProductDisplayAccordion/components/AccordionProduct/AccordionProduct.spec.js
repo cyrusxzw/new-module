@@ -7,7 +7,7 @@ import {
 } from '~/contexts';
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
 import { AccordionProductFixture } from './AccordionProduct.fixture.js';
-import AccordionProduct from './AccordionProduct';
+import { AccordionProduct } from './AccordionProduct';
 
 describe('<AccordionProduct />', () => {
   it('should be defined', () => {

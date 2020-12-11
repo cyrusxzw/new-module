@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import DefinitionList from '~/components/DefinitionList';
-import Image from '~/components/Image';
-import MediaWithContent from './MediaWithContent';
-import MediaWithContentFixture from './MediaWithContent.fixture';
+import { DefinitionList } from '~/components/DefinitionList';
+import { Image } from '~/components/Image';
+import { MediaWithContent } from './MediaWithContent';
+import { MediaWithContentFixture } from './MediaWithContent.fixture';
 
 describe('<MediaWithContent />', () => {
   it('should be defined', () => {

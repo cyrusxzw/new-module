@@ -1,3 +1,1 @@
-export default {
-  AESOP: 'Aesop',
-};
+export const AESOP = 'Aesop';

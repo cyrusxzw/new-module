@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Footer from './Footer';
-import FooterFixture from './Footer.fixture';
-import NewsLetterSignUpFixture from '../NewsLetterSignUp/NewsLetterSignUp.fixture';
-import NotificationModalFixture from '~/components/NotificationModal/NotificationModal.fixture';
+import { Footer } from './Footer';
+import { FooterFixture } from './Footer.fixture';
+import { NewsletterSignUpFixture } from '../NewsletterSignUp/NewsletterSignUp.fixture';
+import { NotificationModalFixture } from '~/components/NotificationModal/NotificationModal.fixture';
 
 describe('<Footer />', () => {
   it('should be defined', () => {
@@ -14,13 +14,13 @@ describe('<Footer />', () => {
     const { container } = render(
       <Footer
         blocks={FooterFixture.blocks}
-        consentErrorMsg={NewsLetterSignUpFixture.consentErrorMsg}
-        errorMessage={NewsLetterSignUpFixture.errorMessage}
+        consentErrorMsg={NewsletterSignUpFixture.consentErrorMsg}
+        errorMessage={NewsletterSignUpFixture.errorMessage}
         notificationMessage={NotificationModalFixture.notificationMessage}
         showTermsConditionsTextBox={true}
-        subscriptionMessage={NewsLetterSignUpFixture.subscriptionMessage}
-        termsAndCondition={NewsLetterSignUpFixture.termsAndCondition}
-        termsMessage={NewsLetterSignUpFixture.termsMessage}
+        subscriptionMessage={NewsletterSignUpFixture.subscriptionMessage}
+        termsAndCondition={NewsletterSignUpFixture.termsAndCondition}
+        termsMessage={NewsletterSignUpFixture.termsMessage}
       />,
     );
 

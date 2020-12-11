@@ -5,15 +5,15 @@ import {
   ProductDetailContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
-import Podium from '~/components/Podium';
+import { Podium } from '~/components/Podium';
 import { P } from '~/components/Paragraph';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
-import Hyperlink from '~/components/Hyperlink';
+import { Hyperlink } from '~/components/Hyperlink';
 import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
-import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
-import ProductCommerce from './ProductCommerce';
-import ProductCommerceFixture from './ProductCommerce.fixture';
+import { ProductDetailHeaderFixture } from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
+import { ProductCommerce } from './ProductCommerce';
+import { ProductCommerceFixture } from './ProductCommerce.fixture';
 
 <Meta title="Components/ProductCommerce" component={ProductCommerce} />
 
@@ -45,26 +45,26 @@ Requires `AddToCartContextProvider`, `ProductDetailContextProvider` and `Variant
                   {knobs.text(
                     'description',
                     ProductCommerceFixture.description,
-                    'Content'
+                    'Content',
                   )}
                 </P>
               }
               eyebrow={knobs.text(
                 'eyebrow',
                 ProductCommerceFixture.eyebrow,
-                'Content'
+                'Content',
               )}
               heading={knobs.text(
                 'heading',
                 ProductCommerceFixture.heading,
-                'Content'
+                'Content',
               )}
               size={ProductDetailHeaderFixture.product.size}
               theme={knobs.select(
                 'theme',
                 ['dark', 'light'],
                 'dark',
-                'Presentation'
+                'Presentation',
               )}
             />
           </VariantSelectContextProvider>

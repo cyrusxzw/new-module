@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import DefinitionList from './DefinitionList';
-import DefinitionListFixture from './DefinitionList.fixture';
+import { DefinitionList } from './DefinitionList';
+import { DefinitionListFixture } from './DefinitionList.fixture';
 
 describe('<DefinitionList />', () => {
   it('should be defined', () => {

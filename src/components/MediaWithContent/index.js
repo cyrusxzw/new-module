@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import MediaWithContent from './MediaWithContent';
+import { MediaWithContent } from './MediaWithContent';
 
-export default MediaWithContent;
+export { MediaWithContent };

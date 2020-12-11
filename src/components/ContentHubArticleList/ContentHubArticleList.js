@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import ContentHubArticle from '~/components/ContentHubArticle';
+import { ContentHubArticle } from '~/components/ContentHubArticle';
 import styles from './ContentHubArticleList.module.css';
 
 const ContentHubArticleList = ({
@@ -329,4 +329,4 @@ ContentHubArticleList.defaultProps = {
   pattern: 0,
 };
 
-export default ContentHubArticleList;
+export { ContentHubArticleList };

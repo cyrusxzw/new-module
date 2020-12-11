@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const StoreDetailHeaderFixture = {
   copy: {
     location: 'Location',
     email: 'Email',
@@ -11,3 +11,5 @@ export default {
   phone: '+61 5555 1234',
   storeName: 'Lorem ipsum dolor',
 };
+
+export { StoreDetailHeaderFixture };

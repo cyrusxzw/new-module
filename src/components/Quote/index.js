@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Quote from './Quote';
+import { Quote } from './Quote';
 
-export default Quote;
+export { Quote };

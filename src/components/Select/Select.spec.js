@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Select from './Select';
-import SelectFixture from './Select.fixture';
+import { Select } from './Select';
+import { SelectFixture } from './Select.fixture';
 
 describe('<Select />', () => {
   it('should be defined', () => {

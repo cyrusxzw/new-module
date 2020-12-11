@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import cx from 'classnames';
 import PropTypes from 'prop-types';
-import Icon from '~/components/Icon';
-import Loading from '~/components/Loading';
-import Checkbox from '~/components/Checkbox';
-import TextInput from '~/components/TextInput';
-import styles from './NewsLetterSignUp.css';
+import cx from 'classnames';
 import { useNotificationContext } from '~/contexts';
+import { Icon } from '~/components/Icon';
+import { Loading } from '~/components/Loading';
+import { Checkbox } from '~/components/Checkbox';
+import { TextInput } from '~/components/TextInput';
+import styles from './NewsletterSignUp.css';
 
-const NewsLetterSignUp = ({
+const NewsletterSignUp = ({
   className,
   consentErrorMsg,
   errorMessage,
@@ -95,7 +95,7 @@ const NewsLetterSignUp = ({
               hasContent={hasContent}
               hasError={!!error}
               id="newsletter-email"
-              inputClassName={cx(styles.footerNewsLetter)}
+              inputClassName={cx(styles.footerNewsletter)}
               isEnabled={!isLoading}
               label="Email Address"
               name="newsletter-email"
@@ -159,7 +159,7 @@ const NewsLetterSignUp = ({
   );
 };
 
-NewsLetterSignUp.propTypes = {
+NewsletterSignUp.propTypes = {
   className: PropTypes.string,
   consentErrorMsg: PropTypes.string,
   errorMessage: PropTypes.string,
@@ -171,7 +171,7 @@ NewsLetterSignUp.propTypes = {
   subscriptionMessage: PropTypes.string,
 };
 
-NewsLetterSignUp.defaultProps = {
+NewsletterSignUp.defaultProps = {
   className: undefined,
   consentErrorMsg: undefined,
   errorMessage: 'NEWSLETTER_SIGNUP',
@@ -183,4 +183,4 @@ NewsLetterSignUp.defaultProps = {
   subscriptionMessage: undefined,
 };
 
-export default NewsLetterSignUp;
+export { NewsletterSignUp };

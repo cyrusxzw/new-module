@@ -59,4 +59,4 @@ DefinitionList.defaultProps = {
   theme: 'dark',
 };
 
-export default DefinitionList;
+export { DefinitionList };

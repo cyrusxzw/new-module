@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import TextOverFullWidthAsset from './TextOverFullWidthAsset';
-import TextOverFullWidthAssetFixture from './TextOverFullWidthAsset.fixture';
+import { TextOverFullWidthAsset } from './TextOverFullWidthAsset';
+import { TextOverFullWidthAssetFixture } from './TextOverFullWidthAsset.fixture';
 
 describe('<TextOverFullWidthAsset />', () => {
   it('should be defined', () => {

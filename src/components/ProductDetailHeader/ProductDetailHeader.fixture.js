@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const ProductDetailHeaderFixture = {
   breadcrumbs: {
     items: [
       {
@@ -120,3 +120,5 @@ export default {
     },
   ],
 };
+
+export { ProductDetailHeaderFixture };

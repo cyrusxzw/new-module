@@ -9,7 +9,7 @@ import {
 } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
 import { ascertainIsSmallOnlyViewport } from '~/utils/viewports';
-import AccordionProduct from './components/AccordionProduct';
+import { AccordionProduct } from './components/AccordionProduct';
 import styles from './HorizontalProductDisplayAccordion.module.css';
 
 const HorizontalProductDisplayAccordion = ({ id, products, addToCartCopy }) => {
@@ -241,4 +241,4 @@ HorizontalProductDisplayAccordion.defaultProps = {
   },
 };
 
-export default HorizontalProductDisplayAccordion;
+export { HorizontalProductDisplayAccordion };

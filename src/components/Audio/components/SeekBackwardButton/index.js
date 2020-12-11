@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import SeekBackwardButton from './SeekBackwardButton';
+import { SeekBackwardButton } from './SeekBackwardButton';
 
-export default SeekBackwardButton;
+export { SeekBackwardButton };

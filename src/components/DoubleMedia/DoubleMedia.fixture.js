@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const DoubleMediaFixture = {
   imageOne: {
     type: 'image',
     altText:
@@ -55,3 +55,5 @@ export default {
   },
   title: 'Aesop favourites',
 };
+
+export { DoubleMediaFixture };

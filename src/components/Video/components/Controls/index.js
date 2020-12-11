@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Controls from './Controls';
+import { Controls } from './Controls';
 
-export default Controls;
+export { Controls };

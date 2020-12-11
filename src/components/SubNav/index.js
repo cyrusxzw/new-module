@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import SubNav from './SubNav';
+import { SubNav } from './SubNav';
 
-export default SubNav;
+export { SubNav };

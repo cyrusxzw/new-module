@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Podium from './Podium';
+import { Podium } from './Podium';
 
-export default Podium;
+export { Podium };

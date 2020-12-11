@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import SecondaryMessage from './SecondaryMessage';
-import SecondaryMessageFixture from './SecondaryMessage.fixture';
+import { SecondaryMessage } from './SecondaryMessage';
+import { SecondaryMessageFixture } from './SecondaryMessage.fixture';
 
 describe('<SecondaryMessage />', () => {
   it('should be defined', () => {

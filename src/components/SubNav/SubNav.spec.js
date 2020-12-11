@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import SubNav from './SubNav';
-import SubNavFixture from './SubNav.fixture';
+import { SubNav } from './SubNav';
+import { SubNavFixture } from './SubNav.fixture';
 
 describe('<SubNav />', () => {
   it('should be defined', () => {

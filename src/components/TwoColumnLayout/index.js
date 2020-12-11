@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import TwoColumnLayout from './TwoColumnLayout';
+import { TwoColumnLayout } from './TwoColumnLayout';
 
-export default TwoColumnLayout;
+export { TwoColumnLayout };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import HorizontalProductDisplayAccordionFixture from './HorizontalProductDisplayAccordion.fixture';
-import HorizontalProductDisplayAccordion from './HorizontalProductDisplayAccordion';
+import { HorizontalProductDisplayAccordionFixture } from './HorizontalProductDisplayAccordion.fixture';
+import { HorizontalProductDisplayAccordion } from './HorizontalProductDisplayAccordion';
 
 describe('<HorizontalProductDisplayAccordion />', () => {
   it('should be defined', () => {

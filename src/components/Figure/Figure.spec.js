@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Figure from './Figure';
-import Image from '~/components/Image';
+import { Figure } from './Figure';
+import { Image } from '~/components/Image';
 
 describe('<Figure />', () => {
   it('should be defined', () => {

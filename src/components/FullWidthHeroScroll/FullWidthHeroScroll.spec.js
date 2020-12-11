@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import FullWidthHeroScroll from './FullWidthHeroScroll';
-import FullWidthHeroScrollFixture from './FullWidthHeroScroll.fixture';
+import { FullWidthHeroScroll } from './FullWidthHeroScroll';
+import { FullWidthHeroScrollFixture } from './FullWidthHeroScroll.fixture';
 
 describe('<FullWidthHeroScroll />', () => {
   it('should be defined', () => {

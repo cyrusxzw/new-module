@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import Header from './Header';
+import { Header } from './Header';
 
-export default Header;
+export { Header };

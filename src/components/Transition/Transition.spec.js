@@ -1,6 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import Transition from './Transition';
+import { render } from '@testing-library/react';
+import { Transition } from './Transition';
 
 describe('<Transition />', () => {
   it('should be defined', () => {

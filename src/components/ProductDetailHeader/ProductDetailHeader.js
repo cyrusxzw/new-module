@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useProductDetailContext, useThemeContext } from '~/contexts';
-import Breadcrumbs from '~/components/Breadcrumbs';
-import Hidden from '~/components/Hidden';
-import ProductDetailBody from './components/ProductDetailBody';
-import ProductDetailImage from './components/ProductDetailImage';
+import { Breadcrumbs } from '~/components/Breadcrumbs';
+import { Hidden } from '~/components/Hidden';
+import { ProductDetailBody } from './components/ProductDetailBody';
+import { ProductDetailImage } from './components/ProductDetailImage';
 import styles from './ProductDetailHeader.module.css';
 
 const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
@@ -111,4 +111,4 @@ ProductDetailHeader.defaultProps = {
   theme: undefined,
 };
 
-export default ProductDetailHeader;
+export { ProductDetailHeader };

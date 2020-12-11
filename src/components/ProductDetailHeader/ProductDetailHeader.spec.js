@@ -6,9 +6,9 @@ import {
   VariantSelectContextProvider,
 } from '~/contexts';
 import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
-import ProductDetailBodyFixture from '~/components/ProductDetailHeader/components/ProductDetailBody/ProductDetailBody.fixture';
-import ProductDetailHeaderFixture from './ProductDetailHeader.fixture';
-import ProductDetailHeader from './ProductDetailHeader';
+import { ProductDetailBodyFixture } from '~/components/ProductDetailHeader/components/ProductDetailBody/ProductDetailBody.fixture';
+import { ProductDetailHeaderFixture } from './ProductDetailHeader.fixture';
+import { ProductDetailHeader } from './ProductDetailHeader';
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
 
 describe('<ProductDetailHeader />', () => {

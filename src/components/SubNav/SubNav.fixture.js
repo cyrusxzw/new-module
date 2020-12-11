@@ -3,7 +3,7 @@ import { HYPERLINK_STYLE_TYPES } from '~/constants';
 
 const { EXTERNAL_NO_ICON_TEXT_LINK } = HYPERLINK_STYLE_TYPES;
 
-export default {
+const SubNavFixture = {
   heading: 'Phasellus aliquet sem',
   id: 'sub-nav',
   isSelect: false,
@@ -23,3 +23,5 @@ export default {
   ],
   theme: 'dark',
 };
+
+export { SubNavFixture };

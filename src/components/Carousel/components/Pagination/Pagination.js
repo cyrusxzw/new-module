@@ -38,4 +38,4 @@ Pagination.defaultProps = {
   theme: 'dark',
 };
 
-export default Pagination;
+export { Pagination };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
-import Hyperlink from './Hyperlink';
+import { Hyperlink } from './Hyperlink';
 import {
   checkIsExternalFromStyle,
   checkIsInlineFromStyle,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import CarouselFixture from './Carousel.fixture';
-import Carousel from './Carousel';
+import { CarouselFixture } from './Carousel.fixture';
+import { Carousel } from './Carousel';
 
 describe('<Carousel />', () => {
   it('should be defined', () => {

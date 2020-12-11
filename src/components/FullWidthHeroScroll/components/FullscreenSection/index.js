@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import FullscreenSection from './FullscreenSection';
+import { FullscreenSection } from './FullscreenSection';
 
-export default FullscreenSection;
+export { FullscreenSection };

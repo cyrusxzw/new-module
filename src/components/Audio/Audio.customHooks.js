@@ -4,7 +4,7 @@ import WaveSurfer from 'wavesurfer.js';
 import { COLORS } from '~/constants';
 import { getProgressColorHex } from './Audio.utils';
 
-export const useWaveSurfer = (progressColor, hasAutoPlay) => {
+const useWaveSurfer = (progressColor, hasAutoPlay) => {
   const waveformRef = useRef(null);
   const wavesurfer = useRef(null);
   const trackRef = useRef(null);
@@ -74,3 +74,5 @@ export const useWaveSurfer = (progressColor, hasAutoPlay) => {
     wavesurfer,
   };
 };
+
+export { useWaveSurfer };

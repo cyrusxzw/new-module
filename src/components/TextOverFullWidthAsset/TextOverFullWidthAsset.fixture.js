@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export default {
+const TextOverFullWidthAssetFixture = {
   className: 'TextOverFullWidthAsset-className',
   copyHeight: 'Top',
   copySide: 'Left',
@@ -38,3 +38,5 @@ export default {
       'https://player.vimeo.com/external/384448295.hd.mp4?s=d9af2574fcf5166d977e91e9ecc734e224646bdc&profile_id=175',
   },
 };
+
+export { TextOverFullWidthAssetFixture };

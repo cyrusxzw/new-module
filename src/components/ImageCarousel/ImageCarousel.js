@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Carousel from '~/components/Carousel';
+import { Carousel } from '~/components/Carousel';
 
 const ImageCarousel = ({
   autoplaySpeed,
@@ -51,4 +51,4 @@ ImageCarousel.defaultProps = {
   theme: 'dark',
 };
 
-export default ImageCarousel;
+export { ImageCarousel };

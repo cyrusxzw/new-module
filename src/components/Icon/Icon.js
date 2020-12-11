@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 import find from 'lodash/find';
-import svgs from './Icon.svgs';
+import { svgs } from './Icon.svgs';
 import { generateSvgBlueprint } from './Icon.utils';
 import styles from './Icon.module.css';
 
@@ -81,4 +81,4 @@ Icon.defaultProps = {
   width: 12,
 };
 
-export default Icon;
+export { Icon };
