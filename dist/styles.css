@@ -7571,15 +7571,15 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 @media (min-width: 640px) {
 .ProductCommerce-module_image__uw1Dg {
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end
@@ -8927,6 +8927,11 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
     margin: 0 auto
 }
   }
+.ReadMore-module_readMoreArticle__OUIMr {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
 @media (max-width: 639px) {
 .ReadMore-module_readMoreArticle__OUIMr {
     padding-right: 20px;
