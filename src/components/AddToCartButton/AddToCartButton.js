@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useAddToCartContext, useVariantSelectContext } from 'contexts';
@@ -19,8 +19,6 @@ const AddToCartButton = ({
   const addToCart = useAddToCartContext();
   const { selectedVariant } = useVariantSelectContext();
 
-  if (!selectedVariant) return null;
-
   const {
     alternateAction,
     isInStock,
@@ -28,6 +26,24 @@ const AddToCartButton = ({
     price,
     sku,
   } = selectedVariant;
+
+  const { errorMessage, hasError, isLoading, isUpdateSuccessful } = addToCart;
+  const cartActionLabel = `${copy.cartAction} — ${price}`;
+  const updateNotificationLabel = copy.updateNotification;
+  const showUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
+
+  const [isDelayedDisabled, setIsDelayedDisabled] = useState(false);
+
+  useEffect(() => {
+    if (showUpdateSuccessMessage) {
+      setIsDelayedDisabled(true);
+      setTimeout(() => {
+        setIsDelayedDisabled(false);
+      }, 2500);
+    }
+  }, [showUpdateSuccessMessage]);
+
+  if (!selectedVariant) return null;
 
   const classSet = cx(
     styles.base,
@@ -74,16 +90,11 @@ const AddToCartButton = ({
     );
   }
 
-  const { errorMessage, hasError, isLoading, isUpdateSuccessful } = addToCart;
-  const cartActionLabel = `${copy.cartAction} — ${price}`;
-  const updateNotificationLabel = copy.updateNotification;
-  const showUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
-
   const labelClassName = cx(
     styles.label,
     { [styles.hideLabel]: isLoading },
     { [styles.showSuccessMessage]: showUpdateSuccessMessage },
-  );
+    );
 
   if (hasError) {
     /** @TODO Handle errors thrown by handleOnClick */
@@ -96,7 +107,13 @@ const AddToCartButton = ({
       dataTestRef={dataTestRef}
       isAlternate={true}
       isEnabled={
-        !isLoading && price && sku && isEnabled && !hasError && isSellable
+        !isLoading &&
+        price &&
+        sku &&
+        isEnabled &&
+        !hasError &&
+        !isDelayedDisabled &&
+        isSellable
       }
       onClick={handleOnClick}
       theme={theme}
