@@ -50,6 +50,8 @@ const LinkButtonGroup = ({
     <div className={classSet} data-testid="data-testid-LinkButtonGroup">
       <>
         {React.Children.map(childComponents, child => {
+          if (child === null) return null;
+
           return React.cloneElement(child, {
             className: `${child.props?.className || ''} ${childrenClassSet}`,
             textAlign,
