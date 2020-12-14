@@ -59,7 +59,7 @@ const FlyinPanel = ({
               {heading}
             </Heading>
           )}
-          <div id={describedby}>{children}</div>
+          <div className={styles.content} id={describedby}>{children}</div>
         </aside>
       </Transition>
     </>
