@@ -4719,15 +4719,15 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   }
 @media (min-width: 640px) {
 .FlyinPanel-module_base__1Tlwv {
-    width: 50%;
     padding-top: calc(34px * 4);
-    padding-right: 34px;
+    padding-right: calc(34px * 4);
     padding-bottom: calc(34px * 2);
-    padding-left: 34px
+    padding-left: calc(34px * 4)
 }
   }
 @media (min-width: 1025px) {
 .FlyinPanel-module_base__1Tlwv {
+    width: 50%;
     padding-top: calc(40px * 4);
     padding-right: 40px;
     padding-bottom: calc(40px * 2);
