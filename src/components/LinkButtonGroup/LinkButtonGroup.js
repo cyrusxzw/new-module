@@ -46,6 +46,8 @@ const LinkButtonGroup = ({
 
   if (childComponents === undefined) return null;
 
+  console.log('@LinkButtonGroup childComponents', childComponents);
+
   return (
     <div className={classSet} data-testid="data-testid-LinkButtonGroup">
       <>
