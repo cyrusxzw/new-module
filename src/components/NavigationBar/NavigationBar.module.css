@@ -1,12 +1,14 @@
 @import 'styles/index';
 
-.wrapper {
+:root {
   --background-color-solid: rgba(235, 234, 222, 1);
   --background-color-transparent: rgba(235, 234, 222, 0);
   --left-faded-edge-width: 20px;
   --right-faded-edge-width: 50px;
   --font-color: #666;
+}
 
+.wrapper {
   position: relative;
   overflow: hidden;
   background-color: var(--background-color-solid);
