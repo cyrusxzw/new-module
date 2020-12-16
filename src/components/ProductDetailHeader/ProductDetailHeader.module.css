@@ -22,7 +22,9 @@
 
   @media (--viewport-xl) {
     padding-top: 120px;
+    padding-right: 0;
     padding-bottom: 120px;
+    padding-left: 0;
   }
 
   &,
@@ -47,28 +49,36 @@
   }
 
   @media (--viewport-xl) {
-    width: calc(100% * 4 / 12);
-    margin-right: 2.5%;
+    width: calc(100% * 3 / 12);
+    margin-right: calc(100% * 1 / 12);
   }
 }
 
 .image {
   @media (--viewport-lg) {
-    max-width: 440px;
-  }
-  @media (--viewport-lg-only) {
-    margin-right: auto;
-    margin-left: auto;
-  }
-  @media (--viewport-lg) {
     width: calc(100% * 7 / 12);
     align-self: flex-end;
+
+    picture {
+      display: block;
+      max-width: 440px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  @media (--viewport-xl) {
+    width: calc(100% * 4 / 12);
   }
 }
 
 .largeImage {
   @media (--viewport-lg) {
-    max-width: 880px;
+    width: calc(100% * 7 / 12);
+
+    picture {
+      max-width: 880px;
+    }
   }
 }
 
