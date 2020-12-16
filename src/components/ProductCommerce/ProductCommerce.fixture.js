@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const ProductCommerceFixture = {
   cta: {
     text: 'Lorem ipsum dolor',

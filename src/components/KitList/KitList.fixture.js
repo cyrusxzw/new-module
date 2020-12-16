@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const KitListFixture = {
   items: [
     { content: 'Pellentesque vitae sapien leo', id: '1' },

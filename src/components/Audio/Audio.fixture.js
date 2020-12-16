@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const AudioFixture = {
   audioUrl: './assets/audio/Istros_Imagined.mp3',
   artistName: 'Jesse Paris Smith',

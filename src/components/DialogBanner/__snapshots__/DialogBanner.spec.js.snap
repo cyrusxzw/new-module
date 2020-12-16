@@ -3,7 +3,9 @@
 exports[`<DialogBanner /> should render base component correctly 1`] = `
 <div>
   <div
+    aria-hidden="true"
     class="base isVisible"
+    data-testid="data-testid-Overlay"
     role="button"
     tabindex="-1"
   />

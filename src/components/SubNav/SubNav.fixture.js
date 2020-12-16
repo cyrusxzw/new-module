@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 
 const { EXTERNAL_NO_ICON_TEXT_LINK } = HYPERLINK_STYLE_TYPES;

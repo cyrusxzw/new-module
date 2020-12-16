@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const ListFixture = {
   items: [
     { content: 'Lorem ipsum dolor sit amet', id: 'Lorem ipsum dolor sit amet' },

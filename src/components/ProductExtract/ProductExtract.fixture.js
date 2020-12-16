@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const ProductExtractFixture = {
   dataTestRef: 'test_id',
   product: {

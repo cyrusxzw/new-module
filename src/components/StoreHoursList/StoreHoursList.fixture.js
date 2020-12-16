@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const StoreHoursListFixture = {
   className: '',
   heading: 'Opening hours',

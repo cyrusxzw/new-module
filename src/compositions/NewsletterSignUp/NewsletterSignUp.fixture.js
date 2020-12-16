@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const NewsletterSignUpFixture = {
   consentErrorMsg:
     'Please confirm your accept our Terms & Conditions before proceeding ',

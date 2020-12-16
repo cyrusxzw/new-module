@@ -5,6 +5,12 @@ module.exports = {
   unmockedModulePathPatterns: ['react'],
   testURL: 'http://localhost/',
   collectCoverage: true,
+  coveragePathIgnorePatterns: [
+    'node_modules',
+    'fixture.js',
+    '.storybook',
+    'index.js',
+  ],
   coverageThreshold: {
     global: {
       statements: 82,
@@ -15,8 +21,8 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   testPathIgnorePatterns: [
-    `<rootDir>/(dist|docs|node_modules|.cache)/`,
-    `<rootDir>/src/compositions/ProductDetail/`,
+    '<rootDir>/(dist|docs|node_modules|.cache)/',
+    '.storybook',
   ],
   globals: {
     __TEST__: true,

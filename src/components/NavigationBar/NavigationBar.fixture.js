@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const NavigationBarFixture = {
   parentLink: {
     text: 'All Body & Hand',

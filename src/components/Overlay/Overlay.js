@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { KEYBOARD_CODES } from '~/constants';
 import { useEscapeKeyListener } from '~/customHooks';
 import { Transition } from '~/components/Transition';
 import styles from './Overlay.module.css';
 
-const Overlay = ({ className, isVisible = false, onClose }) => {
+const Overlay = ({ className, isVisible, onClose }) => {
   useEscapeKeyListener(onClose);
 
   const classSet = cx(
@@ -17,12 +16,6 @@ const Overlay = ({ className, isVisible = false, onClose }) => {
     className,
   );
 
-  const handleOnKeyPress = event => {
-    if (event.keyCode === KEYBOARD_CODES.ESCAPE) {
-      onClose();
-    }
-  };
-
   return (
     <Transition
       hasCSSTransitionMountOnEnter={true}
@@ -31,9 +24,10 @@ const Overlay = ({ className, isVisible = false, onClose }) => {
       type="fade"
     >
       <div
+        aria-hidden="true"
         className={classSet}
+        data-testid="data-testid-Overlay"
         onClick={onClose}
-        onKeyPress={handleOnKeyPress}
         role="button"
         tabIndex={-1}
       />

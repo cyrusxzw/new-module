@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const GoogleMapFixture = {
   initialZoom: 14,
   center: { lat: -37.8064, lng: 144.9826 },

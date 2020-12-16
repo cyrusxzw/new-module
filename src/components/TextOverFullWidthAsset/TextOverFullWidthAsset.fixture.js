@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const TextOverFullWidthAssetFixture = {
   className: 'TextOverFullWidthAsset-className',
   copyHeight: 'Top',

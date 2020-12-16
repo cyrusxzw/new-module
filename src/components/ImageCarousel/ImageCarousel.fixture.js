@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const ImageCarouselFixture = {
   autoplaySpeed: 3000,
   hasAutoplay: false,

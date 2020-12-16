@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const ProductDetailImageFixture = {
   className: 'fixture-classname',
   id: 'image-id',

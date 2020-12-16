@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const PodiumFixture = {
   className: undefined,
   id: 'id',

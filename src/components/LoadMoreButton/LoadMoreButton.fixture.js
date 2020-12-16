@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const LoadMoreButtonFixture = {
   className: '',
   copy: {

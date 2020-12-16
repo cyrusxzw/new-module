@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import { useEscapeKeyListener } from './useEscapeKeyListener';
 import { useExecuteOnImpression } from './useExecuteOnImpression';
 import { useHasMounted } from './useHasMounted';

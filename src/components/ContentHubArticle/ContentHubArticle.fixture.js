@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const ContentHubArticleFixture = {
   id: 'test_id',
   category: 'Product',

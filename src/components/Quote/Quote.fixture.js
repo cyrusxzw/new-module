@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const QuoteFixture = {
   author: 'Lorem ipsum',
   content:

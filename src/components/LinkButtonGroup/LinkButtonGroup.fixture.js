@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const LinkButtonGroupFixture = {
   link: {
     text: 'Lorem ipsum',

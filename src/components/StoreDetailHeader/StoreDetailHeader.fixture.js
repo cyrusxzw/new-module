@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const StoreDetailHeaderFixture = {
   copy: {
     location: 'Location',

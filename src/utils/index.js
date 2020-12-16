@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import * as environment from './environment';
 import * as objects from './objects';
 import * as product from './product';

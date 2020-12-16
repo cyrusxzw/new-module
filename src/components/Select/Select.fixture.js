@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const SelectFixture = {
   className: '',
   dataTestRef: 'SELECT_TEST_REF',

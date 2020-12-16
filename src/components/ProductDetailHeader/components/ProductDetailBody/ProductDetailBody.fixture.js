@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const ProductDetailBodyFixture = {
   className: 'fixture-classname',
   copy: {

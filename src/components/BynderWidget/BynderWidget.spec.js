@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
+import { render, screen } from '@testing-library/react';
 import { BynderWidget } from './BynderWidget';
 
 describe('<BynderWidget />', () => {
@@ -7,22 +8,40 @@ describe('<BynderWidget />', () => {
     expect(BynderWidget).toBeDefined();
   });
 
-  it('should render base component correctly', () => {
+  it('should render base component correctly', async () => {
     const { container } = render(
       <BynderWidget
-        heading="Media Releases"
+        heading="heading"
         id="6E8E63F9-7A54-442B-861E291124E19D94"
       />,
     );
 
+    const heading = await screen.findByRole('heading', { name: 'heading' });
+
+    expect(heading).toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
 
-  it('renders null if there is an error', () => {
-    const { container } = render(
-      <BynderWidget heading="Media Releases" id="" />,
+  it('should return null if useScript returns an error', async () => {
+    render(
+      <BynderWidget
+        heading="heading"
+        id="6E8E63F9-7A54-442B-861E291124E19D94"
+      />,
     );
 
-    expect(container).toMatchSnapshot();
+    const heading = await screen.findByRole('heading', { name: 'heading' });
+
+    expect(heading).toBeInTheDocument();
+
+    act(() => {
+      const el = document.querySelector('script');
+
+      if (el) {
+        el.dispatchEvent(new Event('error'));
+      }
+    });
+
+    expect(heading).not.toBeInTheDocument();
   });
 });

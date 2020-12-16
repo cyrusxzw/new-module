@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const ProductDetailHeaderFixture = {
   breadcrumbs: {
     items: [

@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const ProductGridItemFixture = {
   info: '4 Sizes / From $ 26.45',
   variantOptionsOneItem: [

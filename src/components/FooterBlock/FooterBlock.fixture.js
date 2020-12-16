@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const FooterBlockFixture = {
   actionLabel: 'Learn More',
   block: {

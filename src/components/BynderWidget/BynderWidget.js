@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useScript } from '~/customHooks';
+import { Heading } from '~/components/Heading';
 import { Loading } from '~/components/Loading';
 import styles from './BynderWidget.module.css';
 
@@ -22,7 +23,9 @@ const BynderWidget = ({ className, heading, id, theme }) => {
 
   return (
     <article className={classSet} id={id}>
-      <h3 className={styles.heading}>{heading}</h3>
+      <Heading className={styles.heading} level="3" size="xSmall">
+        {heading}
+      </Heading>
       <Loading isLoading={isLoading} />
       <div
         data-bynder-widget="media-list"

@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const BreadcrumbsFixture = {
   classname: 'breadcrumbs',
   items: [

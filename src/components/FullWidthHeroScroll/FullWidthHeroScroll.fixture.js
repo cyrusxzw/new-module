@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const FullWidthHeroScrollFixture = {
   backgroundMediaType: 'video',
   backgroundImage: {

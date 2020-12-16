@@ -12,11 +12,25 @@ describe('useExecuteOnImpression', () => {
     return <div>escape</div>;
   };
 
-  it('should call handleEscapeOnKeyPress with callback', () => {
+  beforeEach(() => {
+    handleEscapeOnKeyPressMock.mockClear();
+  });
+
+  it('should run callback', () => {
     render(<ComponentWithHook />);
+
+    expect(handleEscapeOnKeyPressMock).not.toHaveBeenCalled();
 
     userEvent.type(screen.getByText(/escape/i), '{esc}');
 
     expect(handleEscapeOnKeyPressMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('should not run callback if another key is pressed', () => {
+    render(<ComponentWithHook />);
+
+    userEvent.type(screen.getByText(/escape/i), '{space}');
+
+    expect(handleEscapeOnKeyPressMock).not.toHaveBeenCalled();
   });
 });

@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const StoreDetailFixture = {
   storeImage: {
     altText: 'Store Detail Image',

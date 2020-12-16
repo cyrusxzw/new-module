@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const SecondaryMessageFixture = {
   className: 'exercitationCupidatat',
   id: 'exercitationCupidatat',

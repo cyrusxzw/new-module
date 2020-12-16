@@ -7,9 +7,9 @@ exports[`<BynderWidget /> should render base component correctly 1`] = `
     id="6E8E63F9-7A54-442B-861E291124E19D94"
   >
     <h3
-      class="heading"
+      class="base xSmall dark heading"
     >
-      Media Releases
+      heading
     </h3>
     <span
       class="base isLoading medium dark"
@@ -28,40 +28,6 @@ exports[`<BynderWidget /> should render base component correctly 1`] = `
     <div
       data-bynder-widget="media-list"
       data-collection-id="6E8E63F9-7A54-442B-861E291124E19D94"
-      data-rows="3"
-    />
-  </article>
-</div>
-`;
-
-exports[`<BynderWidget /> renders null if there is an error 1`] = `
-<div>
-  <article
-    class="base dark"
-    id=""
-  >
-    <h3
-      class="heading"
-    >
-      Media Releases
-    </h3>
-    <span
-      class="base isLoading medium dark"
-      data-testid="data-testid-loading"
-    >
-      <span
-        class="dot"
-      />
-      <span
-        class="dot"
-      />
-      <span
-        class="dot"
-      />
-    </span>
-    <div
-      data-bynder-widget="media-list"
-      data-collection-id=""
       data-rows="3"
     />
   </article>

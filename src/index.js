@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import components from './components';
 import compositions from './compositions';
 import constants from './constants';

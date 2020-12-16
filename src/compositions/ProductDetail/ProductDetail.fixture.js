@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 const ProductDetailFixture = {
   className: 'fixture-classname',
   product: {

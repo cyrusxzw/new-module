@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
 
 const HorizontalProductDisplayAccordionFixture = {
