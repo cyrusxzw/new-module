@@ -58,8 +58,16 @@
   @media (--viewport-lg) {
     width: calc(100% * 7 / 12);
     align-self: flex-end;
+  }
 
-    picture {
+  picture {
+    @media (--viewport-sm-only) {
+      margin-bottom: 30px;
+    }
+    @media (--viewport-md-only) {
+      margin-bottom: 50px;
+    }
+    @media (--viewport-lg) {
       display: block;
       max-width: 440px;
       margin-right: auto;
@@ -83,12 +91,14 @@
 }
 
 .breadcrumbs {
+  margin-bottom: 25px;
   @media (--viewport-md-only) {
-    margin: 0;
-    transform: translateY(20px);
+    margin: 20px 0 0;
+    transform: translateY(-20px);
   }
 
   @media (--viewport-lg) {
     max-width: 470px;
+    margin-top: 0;
   }
 }
