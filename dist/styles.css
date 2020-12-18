@@ -8810,6 +8810,11 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
       max-width: 880px;
     }
   }
+@media (min-width: 1220px) {
+.ProductDetailHeader-module_largeImage__gi0t6 {
+    width: calc(100% * 7 / 12)
+}
+  }
 .ProductDetailHeader-module_breadcrumbs__QlA2m {
   margin-bottom: 25px;
 }

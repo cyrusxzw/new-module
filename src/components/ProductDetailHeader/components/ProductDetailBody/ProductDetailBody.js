@@ -7,6 +7,7 @@ import {
   useThemeContext,
   useVariantSelectContext,
 } from '~/contexts';
+import useWindowHasResized from '~/customHooks/useWindowHasResized';
 import { getVariantRadioOptions } from '~/utils/product';
 import AddToCartButton from '~/components/AddToCartButton';
 import Button from '~/components/Button';
@@ -20,6 +21,10 @@ import ProductExtract from '~/components/ProductExtract/ProductExtract.js';
 import RadioGroup from '~/components/RadioGroup';
 import Transition from '~/components/Transition';
 import styles from './ProductDetailBody.module.css';
+import {
+  ascertainIsLargeViewport,
+  ascertainIsSmallOrMediumOnlyViewport,
+} from '~/utils/viewports/viewports';
 
 const ProductDetailBody = ({ className, copy, theme }) => {
   const currentTheme = useThemeContext(theme, 'dark');
@@ -30,6 +35,7 @@ const ProductDetailBody = ({ className, copy, theme }) => {
     onVariantChange,
     variants,
   } = useVariantSelectContext();
+  useWindowHasResized();
 
   if (!productDetail) return null;
 
@@ -172,7 +178,10 @@ const ProductDetailBody = ({ className, copy, theme }) => {
           >
             <DefinitionList
               className={styles.definitionList}
-              hasBottomBorder={true}
+              hasBottomBorder={
+                (!!variantRadioOptions.length && ascertainIsLargeViewport()) ||
+                ascertainIsSmallOrMediumOnlyViewport()
+              }
               items={definitionListItems}
               theme={currentTheme}
             />

@@ -88,6 +88,9 @@
       max-width: 880px;
     }
   }
+  @media (--viewport-xl) {
+    width: calc(100% * 7 / 12);
+  }
 }
 
 .breadcrumbs {
