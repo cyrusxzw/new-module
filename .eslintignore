@@ -4,10 +4,11 @@
 /.githooks
 /.pnp
 /.storybook
-/storybook-static
 /build
+/config/componentBoilerplate
 /coverage
+/dist
 /node_modules
 /public
 /static
-/config/componentBoilerplate
+/storybook-static
