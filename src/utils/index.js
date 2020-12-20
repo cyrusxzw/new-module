@@ -8,6 +8,7 @@ export { objects };
 export { product };
 export { viewports };
 
+/* eslint-disable-next-line import/no-default-export */
 export default {
   environment,
   objects,

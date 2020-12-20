@@ -3,6 +3,12 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "alias": {
+        "map": [["~", "./src"]],
+        "extensions": [".js", ".json"]
+      }
     }
   },
   "env": {
@@ -11,10 +17,12 @@
     "es6": true,
     "jest": true
   },
-  "plugins": ["react", "react-hooks", "jsx-a11y", "testing-library", "jest-dom"],
+  "plugins": ["import", "react", "react-hooks", "jsx-a11y", "testing-library", "jest-dom"],
   "extends": [
     "eslint:recommended",
     "eslint-config-prettier",
+    "plugin:import/errors",
+    "plugin:import/warnings",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:testing-library/recommended",
@@ -44,20 +52,27 @@
     }
   },
   "rules": {
-    "block-scoped-var": 2,
-    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
-    "camelcase": 2,
-    "comma-dangle": [2, "always-multiline"],
-    "comma-spacing": [2, { "before": false, "after": true }],
-    "comma-style": [2, "last"],
-    "import/no-unresolved": "off",
-    "import/prefer-default-export": "off",
-    "indent": [2, 2],
-    "init-declarations": [2, "always"],
-    "jest-dom/prefer-empty": 2,
+    "block-scoped-var": "error",
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "camelcase": "error",
+    "comma-dangle": ["error", "always-multiline"],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "comma-style": ["error", "last"],
+    "import/no-unresolved": [
+      "error",
+      {
+        "commonjs": true,
+        "caseSensitive": false,
+        "ignore": ["storybook.module.css$"]
+      }
+    ],
+    "import/no-default-export": "warn",
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "init-declarations": ["error", "always"],
+    "jest-dom/prefer-empty": "error",
     "jsx-a11y/media-has-caption": "off",
     "jsx-a11y/label-has-associated-control": [
-      2,
+      "error",
       {
         "components": ["Label"],
         "required": {
@@ -131,7 +146,7 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "semi": ["error", "always"],
-    "space-before-blocks": [2, "always"],
+    "space-before-blocks": ["error", "always"],
     "space-before-function-paren": [
       "error",
       {

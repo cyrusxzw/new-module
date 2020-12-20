@@ -15,6 +15,7 @@ export { useOverflowHidden };
 export { useScript };
 export { useWindowHasResized };
 
+/* eslint-disable-next-line import/no-default-export */
 export default {
   useEscapeKeyListener,
   useExecuteOnImpression,

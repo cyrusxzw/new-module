@@ -22,6 +22,7 @@ export { STORES };
 export { TEST_REFS };
 export { TRANSITIONS };
 
+/* eslint-disable-next-line import/no-default-export */
 export default {
   BREAKPOINTS,
   COLORS,

@@ -122,6 +122,7 @@ export { TwoColumnLayout };
 export { TwoColumnList };
 export { Video };
 
+/* eslint-disable-next-line import/no-default-export */
 export default {
   Accordion,
   AddToCartButton,
