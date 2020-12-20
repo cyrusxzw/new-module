@@ -26,8 +26,8 @@
     "start": "npm run storybook",
     "storybook": "start-storybook -p 6006  -s ./public",
     "stylelint": "stylelint 'src/**/*.css'",
-    "test": "jest --no-cache --passWithNoTests --maxWorkers=2",
-    "test-coverage": "open coverage/lcov-report/index.html",
+    "test": "jest",
+    "test:coverage": "open coverage/lcov-report/index.html",
     "test:watch": "jest --watch"
   },
   "repository": {
