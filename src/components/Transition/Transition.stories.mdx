@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import { State } from '~.storybook/State';
 import Button from '~/components/Button';
@@ -13,7 +13,7 @@ import Transition from './Transition';
 
 # Transition
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <State initialState={{ isActive: false }}>
       {(state, setState) => {
@@ -54,8 +54,8 @@ import Transition from './Transition';
       }}
     </State>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Transition} />
+<ArgsTable of={Transition} />

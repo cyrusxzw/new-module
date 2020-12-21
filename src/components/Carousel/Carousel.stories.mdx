@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import Carousel from './Carousel';
 import CarouselFixture from './Carousel.fixture';
@@ -7,7 +7,7 @@ import CarouselFixture from './Carousel.fixture';
 
 # Carousel
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Carousel
       hasFullWidthSlides={knobs.boolean('hasFullWidthSlides', false, 'Presentation')}
@@ -68,8 +68,8 @@ import CarouselFixture from './Carousel.fixture';
       ]}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Carousel} />
+<ArgsTable of={Carousel} />

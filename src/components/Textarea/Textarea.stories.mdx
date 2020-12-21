@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import Podium from '~/components/Podium';
 import Textarea from './Textarea';
@@ -7,7 +7,7 @@ import Textarea from './Textarea';
 
 <Meta title="Components/Textarea" component={Textarea} />
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Podium horizontalPadding="small" verticalPadding="small">
       <Textarea
@@ -16,9 +16,9 @@ import Textarea from './Textarea';
       />
     </Podium>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ContentHubArticle} />
+<ArgsTable of={ContentHubArticle} />
 

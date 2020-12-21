@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import {
   AddToCartContextProvider,
@@ -18,7 +18,7 @@ Requires `AddToCartContextProvider`, with a prop of `onClick`, which is a callba
 as arguments. See [AddToCartButton.onClick.js mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/AddToCartButton/__mocks__/AddToCartButton.onClick.js)
 for an example.
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     {(() => {
       const theme = knobs.select('theme', ['dark', 'light'], AddToCartButtonFixture.theme, 'Presentation')
@@ -39,8 +39,8 @@ for an example.
       )
     })()}
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={AddToCartButton} />
+<ArgsTable of={AddToCartButton} />

@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import Podium from '~/components/Podium';
 import IconLink from './IconLink';
@@ -8,7 +8,7 @@ import IconLinkFixture from './IconLink.fixture';
 
 # IconLink
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <div style={{ display: 'flex', flexWrap: 'wrap', textAlign: 'center' }}>
       {IconLinkFixture.map((icon, key) => (
@@ -27,8 +27,8 @@ import IconLinkFixture from './IconLink.fixture';
       ))}
     </div>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={IconLink} />
+<ArgsTable of={IconLink} />
