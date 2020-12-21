@@ -1,7 +1,0 @@
-{
-  "**/*.+(js|json|md|css)": [
-    "format",
-    "jest --findRelatedTests",
-    "git add"
-  ]
-}
