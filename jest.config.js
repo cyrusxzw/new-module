@@ -20,7 +20,7 @@ module.exports = {
       lines: 83,
     },
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleFileExtensions: ['js', 'json', 'node'],
   testPathIgnorePatterns: [
     '<rootDir>/(dist|docs|node_modules|.cache)/',
     '.storybook',
@@ -38,4 +38,8 @@ module.exports = {
   transform: {
     '^.+\\.js?$': 'babel-jest',
   },
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname',
+  ],
 };

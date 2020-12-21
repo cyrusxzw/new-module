@@ -50,7 +50,7 @@ npm run build:watch
 
 ### VS Code
 
-Visual Studio  code struggles to make sense of aliased imports which are being utilised in this project.
+Visual Studio code struggles to make sense of aliased imports which are being utilised in this project.
 To address this you can use a `jsconfig.json` with a sample shown below. More information can be found [here](https://code.visualstudio.com/docs/languages/jsconfig)
 
 ```json
@@ -58,15 +58,10 @@ To address this you can use a `jsconfig.json` with a sample shown below. More in
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./src/*"
-      ]
+      "~/*": ["./src/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "exclude": ["node_modules", "dist"]
 }
 ```
 
@@ -89,6 +84,7 @@ This project adopts a simplified version of the [Gitflow Workflow](https://www.a
 `master` is always the updated stable version that truthfully represent production code.
 
 ### Releasing code
+
 This project follows the [Semantic Versioning](https://semver.org/) standard or `MAJOR.MINOR.PATCH`. The version number is automatically maintained by the [semantic-release](https://github.com/semantic-release/semantic-release) package.
 
 Commits to the `develop` branch will be released on the `develop` channel. These will be tagged as follows `v1.2.3-develop.4`. These can be thought of as 'beta' builds. The final number `.4` in the example above will be incremented until the `develop` branch is merged into `master`.
@@ -102,28 +98,32 @@ Changes to the version number are calculated automatically via the CI flow. In s
 See [Commit messages](#commit-messages) below for more information.
 
 ### Commit messages
-Commit messages follow the [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/). Details about each commit message type are explained in this [article](https://medium.com/@menuka/writing-meaningful-git-commit-messages-a62756b65c81). The basis of this is built around `type(scope?): subject` and is enforced by [commitlint](https://github.com/conventional-changelog/commitlint).
 
+Commit messages follow the [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/). Details about each commit message type are explained in this [article](https://medium.com/@menuka/writing-meaningful-git-commit-messages-a62756b65c81). The basis of this is built around `type(scope?): subject` and is enforced by [commitlint](https://github.com/conventional-changelog/commitlint).
 
 #### Examples
 
-```feat(AES-123): add XComponent section```
+`feat(AES-123): add XComponent section`
 
-```fix: issue with XComponent CSS```
+`fix: issue with XComponent CSS`
 
-```style: clean up whitespace issues```
+`style: clean up whitespace issues`
 
 ### Breaking changes
-Breaking changes should generally avoid, however they can be made in two ways;
-  - by adding `!` after the commit type `feat(aes-123)!: change all the APIs!`
-  - by adding `BREAKING CHANGE` in the commit body
-  ```
-    feat(aes-123): change all the APIs!
 
-    BREAKING CHANGE: The APIs have all been rewritten because I felt like it
-  ```
+Breaking changes should generally avoid, however they can be made in two ways;
+
+- by adding `!` after the commit type `feat(aes-123)!: change all the APIs!`
+- by adding `BREAKING CHANGE` in the commit body
+
+```
+  feat(aes-123): change all the APIs!
+
+  BREAKING CHANGE: The APIs have all been rewritten because I felt like it
+```
 
 #### Valid commit types
+
 ```
 build
 ci
