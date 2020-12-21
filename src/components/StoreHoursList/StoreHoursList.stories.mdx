@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import StoreHoursList from './StoreHoursList';
 import StoreHoursListFixture from './StoreHoursList.fixture';
@@ -7,7 +7,7 @@ import StoreHoursListFixture from './StoreHoursList.fixture';
 
 # StoreHoursList
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <StoreHoursList
       alternateHoursNote={StoreHoursListFixture.alternateHoursNote}
@@ -15,8 +15,8 @@ import StoreHoursListFixture from './StoreHoursList.fixture';
       hoursList={StoreHoursListFixture.hoursList}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={StoreHoursList} />
+<ArgsTable of={StoreHoursList} />

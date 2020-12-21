@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import DefinitionListWithProductExtract from './DefinitionListWithProductExtract';
 import DefinitionListWithProductExtractFixture from './DefinitionListWithProductExtract.fixture';
@@ -10,7 +10,7 @@ import DefinitionListWithProductExtractFixture from './DefinitionListWithProduct
 
 # DefinitionListWithProductExtract
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <DefinitionListWithProductExtract
       dataTestRef={DefinitionListWithProductExtractFixture.dataTestRef}
@@ -37,8 +37,8 @@ import DefinitionListWithProductExtractFixture from './DefinitionListWithProduct
       works={DefinitionListWithProductExtractFixture.works}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={DefinitionListWithProductExtract} />
+<ArgsTable of={DefinitionListWithProductExtract} />

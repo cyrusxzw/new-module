@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import NavigationBar from './NavigationBar';
 import navigationBarFixture from './NavigationBar.fixture';
@@ -7,20 +7,20 @@ import navigationBarFixture from './NavigationBar.fixture';
 
 # NavigationBar
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <NavigationBar 
       parentLink={navigationBarFixture.parentLink}
       childLinks={navigationBarFixture.childLinks}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Variations
 
 ### With a selected link
 
-<Preview>
+<Canvas>
   <Story name="With a selected link">
     <NavigationBar 
       parentLink={navigationBarFixture.parentLink}
@@ -28,35 +28,35 @@ import navigationBarFixture from './NavigationBar.fixture';
       selectedUrl={navigationBarFixture.selectedUrl}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Without a parent link
 
-<Preview>
+<Canvas>
   <Story name="Without a parent link">
     <NavigationBar 
       childLinks={navigationBarFixture.childLinks}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Without child links
 
-<Preview>
+<Canvas>
   <Story name="Without child links">
     <NavigationBar 
       parentLink={navigationBarFixture.parentLink}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Without any links
 
-<Preview>
+<Canvas>
   <Story name="Without any links">
     <NavigationBar />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 

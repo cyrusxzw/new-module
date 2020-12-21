@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { NavBarThemeContextProvider, useNavBarThemeContext } from '~/contexts';
 import { useNavBarTheme } from '~/customHooks';
 
@@ -8,7 +8,7 @@ import { useNavBarTheme } from '~/customHooks';
 
 The `NavBarThemeContextProvider` method, `useNavBarThemeContext` and `useNavBarTheme` hooks are used to set and consume global values for site theme.
 
-<Preview>
+<Canvas>
   <Story name="Base hook">
     {() => {
       const ChildComponent = () => {
@@ -23,7 +23,7 @@ The `NavBarThemeContextProvider` method, `useNavBarThemeContext` and `useNavBarT
       );
     }}
   </Story>
-</Preview>
+</Canvas>
 
 ## Usage
 

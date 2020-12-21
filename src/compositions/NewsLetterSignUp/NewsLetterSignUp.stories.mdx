@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import Podium from '~/components/Podium';
 import NotificationModal from '~/components/NotificationModal';
@@ -12,7 +12,7 @@ import { NotificationContextProvider } from '~/contexts';
 
 <Meta title="Compositions/NewsLetterSignUp" component={NewsLetterSignUp} />
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Podium horizontalPadding="small" verticalPadding="small">
       <NotificationContextProvider>
@@ -35,9 +35,9 @@ import { NotificationContextProvider } from '~/contexts';
       </NotificationContextProvider>
     </Podium>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={NewsLetterSignUp} />
+<ArgsTable of={NewsLetterSignUp} />
 

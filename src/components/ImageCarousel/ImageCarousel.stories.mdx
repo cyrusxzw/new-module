@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import TwoColumnLayout from '~/components/TwoColumnLayout';
 import BodyCopy from '~/components/BodyCopy';
@@ -10,7 +10,7 @@ import ImageCarouselFixture from './ImageCarousel.fixture';
 
 # ImageCarousel
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <ImageCarousel
       autoplaySpeed={knobs.number('autoplaySpeed', ImageCarouselFixture.autoplaySpeed, 'Presentation')}
@@ -36,17 +36,17 @@ import ImageCarouselFixture from './ImageCarousel.fixture';
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ImageCarousel} />
+<ArgsTable of={ImageCarousel} />
 
 ## Variations
 
 ### With Autoplay
 
-<Preview>
+<Canvas>
   <Story name="With Autoplay">
     <ImageCarousel
       autoplaySpeed={knobs.number('autoplaySpeed', ImageCarouselFixture.autoplaySpeed, 'Presentation')}
@@ -54,13 +54,13 @@ import ImageCarouselFixture from './ImageCarousel.fixture';
       slides={ImageCarouselFixture.slides}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Rendered in Two Column Layout
 
 Wrapped in a `Podium` component. The `ImageCarousel` component has `hasAutoplay` enabled.
 
-<Preview>
+<Canvas>
   <Story name="Rendered in Two Column Layout">
     <Podium verticalPadding="small" paddingRight="small" isHorizontalFlushOnSmall={true} isHorizontalFlushOnMedium={true}>
       <TwoColumnLayout
@@ -99,4 +99,4 @@ Wrapped in a `Podium` component. The `ImageCarousel` component has `hasAutoplay`
       />
     </Podium>
   </Story>
-</Preview>
+</Canvas>

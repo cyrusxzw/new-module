@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import Hyperlink from './Hyperlink';
 
@@ -9,7 +9,7 @@ import Hyperlink from './Hyperlink';
 
 # Hyperlink
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Hyperlink
       style={knobs.select(
@@ -34,8 +34,8 @@ import Hyperlink from './Hyperlink';
       {knobs.text('children', 'Lorem ipsum dolor sit amet', 'Copy')}
     </Hyperlink>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Hyperlink} />
+<ArgsTable of={Hyperlink} />

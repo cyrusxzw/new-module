@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import Image from './Image';
 
@@ -6,7 +6,7 @@ import Image from './Image';
 
 # Image
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Image
       altText={knobs.text('altText', 'Lorem ipsum dolor sit amet')}
@@ -28,8 +28,8 @@ import Image from './Image';
       )}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Image} />
+<ArgsTable of={Image} />

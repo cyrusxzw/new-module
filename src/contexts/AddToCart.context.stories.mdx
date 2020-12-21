@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import AddToCartContextProvider from '~/contexts/AddToCart.context';
 
 <Meta title="Contexts/AddToCartContext" component="AddToCartContextProvider" />
@@ -20,4 +20,4 @@ onClick: function(sku<string>, addToCartDispatch<function>, ADD_TO_CART_ACTION_T
 
 ## API
 
-<Props of={AddToCartContextProvider} />
+<ArgsTable of={AddToCartContextProvider} />

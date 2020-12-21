@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import {
   LoadMoreContextProvider,
@@ -15,7 +15,7 @@ Requires `LoadMoreContextProvider`, with a prop of `onClick`, which is a callbac
 as arguments. See [LoadMoreButton.onClick.js mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/LoadMoreButton/__mocks__/LoadMoreButton.onClick.js)
 for an example.
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     {(() => {
       return (
@@ -30,8 +30,8 @@ for an example.
       )
     })()}
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={LoadMoreButton} />
+<ArgsTable of={LoadMoreButton} />
