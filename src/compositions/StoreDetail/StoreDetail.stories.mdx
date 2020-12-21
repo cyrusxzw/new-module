@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import constants from '~.storybook/constants';
 import { GoogleMapsContextProvider } from '~/contexts';
@@ -9,14 +9,14 @@ import StoreDetailFixture from './StoreDetail.fixture';
 
 # StoreDetail
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <GoogleMapsContextProvider apiKey={constants.GOOGLE_MAPS.DEVELOPMENT_API_KEY}>
       <StoreDetail />
     </GoogleMapsContextProvider>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={StoreDetail} />
+<ArgsTable of={StoreDetail} />

@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import Podium from '~/components/Podium';
 import NotificationModal from '~/components/NotificationModal';
@@ -13,7 +13,7 @@ import newsLetterSignUpOnClick from '../NewsLetterSignUp/__mocks__/NewsLetterSig
 
 <Meta title="Compositions/Footer" component={Footer} />
 
-<Preview>
+<Canvas>
   <Story name="Base component">
        <Footer 
         blocks={FooterFixture.blocks}
@@ -28,9 +28,9 @@ import newsLetterSignUpOnClick from '../NewsLetterSignUp/__mocks__/NewsLetterSig
         notificationMessage={NotificationModalFixture.notificationMessage}
        />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Footer} />
+<ArgsTable of={Footer} />
 

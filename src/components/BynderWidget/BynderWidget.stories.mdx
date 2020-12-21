@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import BynderWidget from './BynderWidget';
 import BynderWidgetFixture from './BynderWidget.fixture';
@@ -7,15 +7,15 @@ import BynderWidgetFixture from './BynderWidget.fixture';
 
 # BynderWidget
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <BynderWidget
       heading="Media Releases"
       id="6E8E63F9-7A54-442B-861E291124E19D94"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={BynderWidget} />
+<ArgsTable of={BynderWidget} />

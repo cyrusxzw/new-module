@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import TwoColumnList from './TwoColumnList';
 import TwoColumnListFixture from './TwoColumnList.fixture';
@@ -7,7 +7,7 @@ import TwoColumnListFixture from './TwoColumnList.fixture';
 
 # TwoColumnList
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <TwoColumnList
       leftColumn={knobs.object(
@@ -28,8 +28,8 @@ import TwoColumnListFixture from './TwoColumnList.fixture';
       )}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={TwoColumnList} />
+<ArgsTable of={TwoColumnList} />

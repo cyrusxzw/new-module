@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import DefinitionList from './DefinitionList';
 import DefinitionListFixture from './DefinitionList.fixture';
@@ -7,7 +7,7 @@ import DefinitionListFixture from './DefinitionList.fixture';
 
 # DefinitionList
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <DefinitionList
       hasBottomBorder={knobs.boolean('hasBottomBorder', false, 'Presentation')}
@@ -21,8 +21,8 @@ import DefinitionListFixture from './DefinitionList.fixture';
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={DefinitionList} />
+<ArgsTable of={DefinitionList} />

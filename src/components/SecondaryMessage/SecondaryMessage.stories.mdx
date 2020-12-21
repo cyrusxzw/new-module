@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import SecondaryMessage from './SecondaryMessage';
 import SecondaryMessageFixture from './SecondaryMessage.fixture';
@@ -7,12 +7,12 @@ import SecondaryMessageFixture from './SecondaryMessage.fixture';
 
 # SecondaryMessage
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <SecondaryMessage {...SecondaryMessageFixture} />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={SecondaryMessage} />
+<ArgsTable of={SecondaryMessage} />

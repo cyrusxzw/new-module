@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import List from './List';
 import ListFixture from './List.fixture';
@@ -7,15 +7,15 @@ import ListFixture from './List.fixture';
 
 # List
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <List
       items={knobs.object('items', ListFixture.items, 'Copy')}
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={List} />
+<ArgsTable of={List} />

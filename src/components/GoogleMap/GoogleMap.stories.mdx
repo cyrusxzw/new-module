@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import { GoogleMapsContextProvider } from '~/contexts/GoogleMaps.context';
 import constants from '~.storybook/constants';
@@ -11,7 +11,7 @@ import GoogleMapFixture from './GoogleMap.fixture';
 
 Presented as with `customPinMarker`.
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <GoogleMapsContextProvider apiKey={constants.GOOGLE_MAPS.DEVELOPMENT_API_KEY}>
       <GoogleMap
@@ -25,17 +25,17 @@ Presented as with `customPinMarker`.
       />
     </GoogleMapsContextProvider>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={GoogleMap} />
+<ArgsTable of={GoogleMap} />
 
 ## Variations
 
 ### With Place Marker Indexes
 
-<Preview>
+<Canvas>
   <Story name="With Place Marker Indexes">
     <GoogleMapsContextProvider apiKey={constants.GOOGLE_MAPS.DEVELOPMENT_API_KEY}>
       <GoogleMap
@@ -46,11 +46,11 @@ Presented as with `customPinMarker`.
       />
     </GoogleMapsContextProvider>
   </Story>
-</Preview>
+</Canvas>
 
 ### With Custom Place Marker
 
-<Preview>
+<Canvas>
   <Story name="With Custom Place Marker">
     <GoogleMapsContextProvider apiKey={constants.GOOGLE_MAPS.DEVELOPMENT_API_KEY}>
       <GoogleMap
@@ -63,4 +63,4 @@ Presented as with `customPinMarker`.
       />
     </GoogleMapsContextProvider>
   </Story>
-</Preview>
+</Canvas>

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import { useOnScreen } from '~/customHooks/useOnScreen';
 import CarouselFixture from '~/components/Carousel/Carousel.fixture';
@@ -19,7 +19,7 @@ Presented here with both `paddingTop` and `paddingBottom` set to `small`, and fa
 
 *The black border is for demonstration purposes only.*
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <div style={{ border: '1px solid #333', margin: '20px'}}>
         {(() => {
@@ -105,8 +105,8 @@ Presented here with both `paddingTop` and `paddingBottom` set to `small`, and fa
         })()}
     </div>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Podium} />
+<ArgsTable of={Podium} />
