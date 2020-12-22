@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useOnScreen } from '~/customHooks';
+import { useOnScreen } from '~/customHooks/useOnScreen';
 
 /**
  * A hook to execute a callback when the element enters the fold

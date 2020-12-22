@@ -56,5 +56,3 @@ const useOnScreen = (
 };
 
 export { useOnScreen };
-/* eslint-disable-next-line import/no-default-export */
-export default { useOnScreen }; /** For jest.spyOn */
