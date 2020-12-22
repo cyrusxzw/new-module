@@ -3,13 +3,17 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
-import styles from './SeekBackwardButton.module.css';
+import styles from './SeekButton.module.css';
 
-const SeekBackwardButton = React.memo(
-  ({ copy, isLoading, onClick, progressColor }) => {
+const SeekButton = React.memo(
+  ({ copy, direction, isLoading, onClick, progressColor }) => {
+    const classSet = cx(styles.base, styles[progressColor], {
+      [styles.forward]: direction === 'forward',
+    });
+
     return (
       <Button
-        className={cx(styles.base, styles[progressColor])}
+        className={classSet}
         isEnabled={!isLoading}
         isInline={true}
         onClick={onClick}
@@ -26,22 +30,24 @@ const SeekBackwardButton = React.memo(
   },
 );
 
-SeekBackwardButton.propTypes = {
+SeekButton.propTypes = {
   copy: PropTypes.shape({
     title: PropTypes.string,
   }),
+  direction: PropTypes.oneOf(['forward', 'backward']),
   isLoading: PropTypes.bool,
   onClick: PropTypes.func,
   progressColor: PropTypes.oneOf(['orange', 'green', 'blue']),
 };
 
-SeekBackwardButton.defaultProps = {
+SeekButton.defaultProps = {
   copy: {
     title: undefined,
   },
+  direction: 'forward',
   isLoading: false,
   onClick: undefined,
   progressColor: 'orange',
 };
 
-export { SeekBackwardButton };
+export { SeekButton };

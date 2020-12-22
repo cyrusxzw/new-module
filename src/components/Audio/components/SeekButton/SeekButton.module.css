@@ -1,7 +1,6 @@
 @import 'styles/index';
 
 .icon {
-  transform: rotate(180deg);
   transition: fill 200ms var(--easing-ease-out-cubic);
 
   &.disabled {
@@ -19,4 +18,8 @@
   .blue:not([disabled]):hover & {
     fill: var(--color-highlight-blue);
   }
+}
+
+.forward {
+  transform: rotate(180deg);
 }

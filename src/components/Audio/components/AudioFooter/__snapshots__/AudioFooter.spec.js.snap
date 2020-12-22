@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Audio.Footer /> should render base component correctly 1`] = `
+exports[`<Audio.AudioFooter /> should render base component correctly 1`] = `
 <div>
   <footer
     class="base orange"
@@ -17,7 +17,7 @@ exports[`<Audio.Footer /> should render base component correctly 1`] = `
       class="controls"
     >
       <button
-        class="base dark base orange"
+        class="base dark base orange forward"
         type="button"
       >
         <svg

@@ -1,14 +1,16 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Header } from './Header';
+import { AudioHeader } from './AudioHeader';
 
-describe('<Audio.Header />', () => {
+describe('<Audio.AudioHeader />', () => {
   it('should be defined', () => {
-    expect(Header).toBeDefined();
+    expect(AudioHeader).toBeDefined();
   });
 
   it('should render base component correctly', () => {
-    const { container } = render(<Header artistName="foo" trackTitle="bar" />);
+    const { container } = render(
+      <AudioHeader artistName="foo" trackTitle="bar" />,
+    );
 
     expect(container).toMatchSnapshot();
   });

@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Loading } from '~/components/Loading';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import { AudioHeader } from './components/AudioHeader';
+import { AudioFooter } from './components/AudioFooter';
 import { useWaveSurfer } from './Audio.customHooks';
 import styles from './Audio.module.css';
 
@@ -44,7 +44,7 @@ const Audio = ({
 
   return (
     <article className={classSet} id={id}>
-      <Header artistName={artistName} trackTitle={trackTitle} />
+      <AudioHeader artistName={artistName} trackTitle={trackTitle} />
 
       <div className={styles.waveContainer}>
         <Loading className={styles.loading} isLoading={isLoading} />
@@ -52,7 +52,7 @@ const Audio = ({
         <audio ref={trackRef} src={audioUrl} />
       </div>
 
-      <Footer
+      <AudioFooter
         audioUrl={audioUrl}
         copy={{
           downloadLabel: copy.downloadLabel,

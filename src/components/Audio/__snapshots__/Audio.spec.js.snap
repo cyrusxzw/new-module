@@ -39,22 +39,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
       </span>
       <figure
         class="waveform"
-      >
-        <wave
-          style="display: block; position: relative; user-select: none; webkit-user-select: none; height: 80px; width: 100%; overflow-x: auto; overflow-y: hidden;"
-        >
-          <wave
-            style="position: absolute; z-index: 3; left: 0px; top: 0px; bottom: 0px; overflow: hidden; width: 0px; display: none; box-sizing: border-box; border-right-style: solid; pointer-events: none; border-right-width: 1px; border-right-color: transparent;"
-          >
-            <canvas
-              style="position: absolute; left: 0px; top: 0px; bottom: 0px; height: 100%;"
-            />
-          </wave>
-          <canvas
-            style="position: absolute; z-index: 2; left: 0px; top: 0px; bottom: 0px; height: 100%; pointer-events: none;"
-          />
-        </wave>
-      </figure>
+      />
       <audio
         src="./assets/audio/Istros_Imagined.mp3"
       />
@@ -74,7 +59,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
         class="controls"
       >
         <button
-          class="base dark disabled base orange"
+          class="base dark disabled base orange forward"
           disabled=""
           title="Seek Backward"
           type="button"

@@ -6,11 +6,10 @@ import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
 import { PausePlayButton } from '~/components/Audio/components/PausePlayButton';
-import { SeekBackwardButton } from '~/components/Audio/components/SeekBackwardButton';
-import { SeekForwardButton } from '~/components/Audio/components/SeekForwardButton';
-import styles from './Footer.module.css';
+import { SeekButton } from '~/components/Audio/components/SeekButton';
+import styles from './AudioFooter.module.css';
 
-const Footer = React.memo(
+const AudioFooter = React.memo(
   ({
     audioUrl,
     copy,
@@ -30,10 +29,11 @@ const Footer = React.memo(
           {moment.utc(duration * 1000).format('mm:ss')}
         </time>
         <div className={styles.controls}>
-          <SeekForwardButton
+          <SeekButton
             copy={{
               title: copy.seekBackwardTitle,
             }}
+            direction="forward"
             isLoading={isLoading}
             onClick={onSeekForwardButtonClick}
             progressColor={progressColor}
@@ -49,10 +49,11 @@ const Footer = React.memo(
             onClick={onPlayPauseButtonClick}
             progressColor={progressColor}
           />
-          <SeekBackwardButton
+          <SeekButton
             copy={{
               title: copy.seekBackwardTitle,
             }}
+            direction="backward"
             isLoading={isLoading}
             onClick={onSeekBackwardButtonClick}
             progressColor={progressColor}
@@ -81,7 +82,7 @@ const Footer = React.memo(
   },
 );
 
-Footer.propTypes = {
+AudioFooter.propTypes = {
   audioUrl: PropTypes.string,
   copy: PropTypes.shape({
     downloadTitle: PropTypes.string,
@@ -102,7 +103,7 @@ Footer.propTypes = {
   progressColor: PropTypes.oneOf(['orange', 'green', 'blue']),
 };
 
-Footer.defaultProps = {
+AudioFooter.defaultProps = {
   audioUrl: undefined,
   copy: {
     downloadTitle: undefined,
@@ -123,4 +124,4 @@ Footer.defaultProps = {
   progressColor: 'orange',
 };
 
-export { Footer };
+export { AudioFooter };

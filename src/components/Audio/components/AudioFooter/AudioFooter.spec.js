@@ -1,15 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Footer } from './Footer';
+import { AudioFooter } from './AudioFooter';
 
-describe('<Audio.Footer />', () => {
+describe('<Audio.AudioFooter />', () => {
   it('should be defined', () => {
-    expect(Footer).toBeDefined();
+    expect(AudioFooter).toBeDefined();
   });
 
   it('should render base component correctly', () => {
     const { container } = render(
-      <Footer artistName="foo" audioUrl="/" trackTitle="bar" />,
+      <AudioFooter artistName="foo" audioUrl="/" trackTitle="bar" />,
     );
 
     expect(container).toMatchSnapshot();
