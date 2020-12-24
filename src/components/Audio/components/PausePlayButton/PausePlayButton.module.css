@@ -1,0 +1,70 @@
+@import 'styles/index';
+
+.base {
+  position: relative;
+  display: flex;
+  width: 47px;
+  height: 47px;
+  justify-content: center;
+  padding: 15px;
+  border: 1px solid var(--color-dark-copy);
+  margin: 0 15px;
+  border-radius: 100%;
+  line-height: 1;
+  transition: border-color 200ms var(--easing-ease-out-cubic);
+
+  &.disabled {
+    border-color: var(--color-dark-disabled);
+  }
+}
+
+.orange:not([disabled]):hover {
+  border-color: var(--color-highlight-orange);
+
+  svg {
+    fill: var(--color-highlight-orange);
+  }
+}
+
+.green:not([disabled]):hover {
+  border-color: var(--color-highlight-green);
+
+  svg {
+    fill: var(--color-highlight-green);
+  }
+}
+
+.blue:not([disabled]):hover {
+  border-color: var(--color-highlight-blue);
+
+  svg {
+    fill: var(--color-highlight-blue);
+  }
+}
+
+.iconPlay {
+  position: absolute;
+  top: 15px;
+  opacity: 1;
+  transform: translateX(1px);
+  transition: all 400ms var(--easing-ease-out-cubic);
+
+  &.disabled {
+    fill: var(--color-dark-disabled);
+  }
+}
+
+.iconPause {
+  position: absolute;
+  top: 15px;
+  opacity: 1;
+  transition: all 400ms var(--easing-ease-out-cubic);
+
+  &.disabled {
+    fill: var(--color-dark-disabled);
+  }
+}
+
+.hidden {
+  opacity: 0;
+}

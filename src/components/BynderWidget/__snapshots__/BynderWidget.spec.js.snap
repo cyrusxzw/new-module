@@ -1,32 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<BynderWidget /> renders base component correctly 1`] = `
-<article
-  className="base dark"
-  id="6E8E63F9-7A54-442B-861E291124E19D94"
->
-  <h3
-    className="heading"
+exports[`<BynderWidget /> should render base component correctly 1`] = `
+<div>
+  <article
+    class="base dark"
+    id="6E8E63F9-7A54-442B-861E291124E19D94"
   >
-    Media Releases
-  </h3>
-  <span
-    className="base isLoading medium dark"
-  >
+    <h3
+      class="base xSmall dark heading"
+    >
+      heading
+    </h3>
     <span
-      className="dot"
+      class="base isLoading medium dark"
+      data-testid="data-testid-loading"
+    >
+      <span
+        class="dot"
+      />
+      <span
+        class="dot"
+      />
+      <span
+        class="dot"
+      />
+    </span>
+    <div
+      data-bynder-widget="media-list"
+      data-collection-id="6E8E63F9-7A54-442B-861E291124E19D94"
+      data-rows="3"
     />
-    <span
-      className="dot"
-    />
-    <span
-      className="dot"
-    />
-  </span>
-  <div
-    data-bynder-widget="media-list"
-    data-collection-id="6E8E63F9-7A54-442B-861E291124E19D94"
-    data-rows="3"
-  />
-</article>
+  </article>
+</div>
 `;

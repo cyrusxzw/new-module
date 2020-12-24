@@ -1,78 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SectionHeading /> renders base component correctly 1`] = `
-<header
-  className="base"
-  id="Anti-Oxidant"
->
-  <h2
-    className="base xLarge dark heading"
+exports[`<SectionHeading /> should render base component correctly 1`] = `
+<div>
+  <header
+    class="base"
+    id="Anti-Oxidant"
   >
-    Title: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream.
-  </h2>
-</header>
+    <h2
+      class="base xLarge dark heading"
+    >
+      Title: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream.
+    </h2>
+  </header>
+</div>
 `;
 
 exports[`<SectionHeading /> renders with subHeading and eyebrow variation correctly 1`] = `
-<header
-  className="base"
-  id="Anti-Oxidant"
->
-  <h2
-    className="base xLarge dark heading"
+<div>
+  <header
+    class="base"
+    id="Anti-Oxidant"
   >
-    Heading: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream.
-  </h2>
-  <h3
-    className="base mediumWeightFont xXSmall dark eyebrow"
-  >
-    Eyebrow: Offers fortification of the highest order against free radicals.
-  </h3>
-  <h4
-    className="base mediumWeightFont xSmall dark subHeading"
-  >
-    SubHeading: Parsley Seed Cream. Intensely soothing, nourishing and hydrating, this elegant formulation contains a potent blend of botanicals that offer fortification of the highest order against free radicals.
-  </h4>
-</header>
+    <h2
+      class="base xLarge dark heading"
+    >
+      Heading: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream.
+    </h2>
+    <h3
+      class="base mediumWeightFont xXSmall dark eyebrow"
+    >
+      Eyebrow: Offers fortification of the highest order against free radicals.
+    </h3>
+    <h4
+      class="base mediumWeightFont xSmall dark subHeading"
+    >
+      SubHeading: Parsley Seed Cream. Intensely soothing, nourishing and hydrating, this elegant formulation contains a potent blend of botanicals that offer fortification of the highest order against free radicals.
+    </h4>
+  </header>
+</div>
 `;
 
 exports[`<SectionHeading /> renders with subHeading variation correctly 1`] = `
-<header
-  className="base"
-  id="Parsley"
->
-  <h2
-    className="base xLarge dark heading"
+<div>
+  <header
+    class="base"
+    id="Parsley"
   >
-    Heading: Fortification of the highest order.
-  </h2>
-  <h3
-    className="base mediumWeightFont xSmall dark subHeading"
-  >
-    Subcopy: Parsley Seed Anti-Oxidant Facial Hydrating Cream 60mL
-  </h3>
-</header>
+    <h2
+      class="base xLarge dark heading"
+    >
+      Heading: Fortification of the highest order.
+    </h2>
+    <h3
+      class="base mediumWeightFont xSmall dark subHeading"
+    >
+      Subcopy: Parsley Seed Anti-Oxidant Facial Hydrating Cream 60mL
+    </h3>
+  </header>
+</div>
 `;
 
 exports[`<SectionHeading /> renders with subHeading, eyebrow variation, font family correctly 1`] = `
-<header
-  className="base"
-  id="Anti-Oxidant"
->
-  <h2
-    className="base xLarge dark heading ZapfTitleFont"
+<div>
+  <header
+    class="base"
+    id="Anti-Oxidant"
   >
-    Heading: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream.
-  </h2>
-  <h3
-    className="base mediumWeightFont xXSmall dark eyebrow"
-  >
-    Eyebrow: Offers fortification of the highest order against free radicals.
-  </h3>
-  <h4
-    className="base mediumWeightFont xSmall dark subHeading"
-  >
-    SubHeading: Parsley Seed Cream. Intensely soothing, nourishing and hydrating, this elegant formulation contains a potent blend of botanicals that offer fortification of the highest order against free radicals.
-  </h4>
-</header>
+    <h2
+      class="base xLarge dark heading ZapfTitleFont"
+    >
+      Heading: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream.
+    </h2>
+    <h3
+      class="base mediumWeightFont xXSmall dark eyebrow"
+    >
+      Eyebrow: Offers fortification of the highest order against free radicals.
+    </h3>
+    <h4
+      class="base mediumWeightFont xSmall dark subHeading"
+    >
+      SubHeading: Parsley Seed Cream. Intensely soothing, nourishing and hydrating, this elegant formulation contains a potent blend of botanicals that offer fortification of the highest order against free radicals.
+    </h4>
+  </header>
+</div>
 `;

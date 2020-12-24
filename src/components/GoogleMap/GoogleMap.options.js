@@ -1,4 +1,4 @@
-const MapOptions = {
+const GoogleMapOptions = {
   SEARCH_TYPES: ['address', 'geocode', '(regions)'],
   SEARCH_TYPE_ADDRESS: 'address',
   SEARCH_TYPE_GEOCODE: 'geocode',
@@ -241,4 +241,4 @@ const MapOptions = {
   },
 };
 
-export default MapOptions;
+export { GoogleMapOptions };

@@ -1,4 +1,4 @@
-export default {
+const ProductCommerceFixture = {
   cta: {
     text: 'Lorem ipsum dolor',
     url: '/',
@@ -82,3 +82,5 @@ export default {
     },
   ],
 };
+
+export { ProductCommerceFixture };

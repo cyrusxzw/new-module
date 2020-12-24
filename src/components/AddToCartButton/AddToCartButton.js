@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useAddToCartContext, useVariantSelectContext } from 'contexts';
+import { useAddToCartContext, useVariantSelectContext } from '~/contexts';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
-import Button from '~/components/Button';
-import Loading from '~/components/Loading';
-import Hyperlink from '~/components/Hyperlink';
+import { Button } from '~/components/Button';
+import { Loading } from '~/components/Loading';
+import { Hyperlink } from '~/components/Hyperlink';
 import styles from './AddToCartButton.module.css';
 
 const AddToCartButton = ({
@@ -16,7 +16,7 @@ const AddToCartButton = ({
   isFullWidth,
   theme,
 }) => {
-  const addToCart = useAddToCartContext();
+  const addToCartContext = useAddToCartContext();
   const { selectedVariant } = useVariantSelectContext();
 
   if (!selectedVariant) return null;
@@ -36,7 +36,7 @@ const AddToCartButton = ({
   );
 
   const handleOnClick = () => {
-    const { actionTypes, dispatch, onClick } = addToCart;
+    const { actionTypes, dispatch, onClick } = addToCartContext;
 
     onClick(sku, dispatch, actionTypes);
   };
@@ -57,50 +57,47 @@ const AddToCartButton = ({
     );
   }
 
-  if (!isInStock || !sku) {
-    return (
-      <Button
-        className={classSet}
-        dataTestRef={dataTestRef}
-        isAlternate={true}
-        isEnabled={false}
-        onClick={() => {}}
-        theme={theme}
-        title={copy.outOfStock?.title}
-      >
-        {copy.outOfStock?.label}
-        {price && ` — ${price}`}
-      </Button>
-    );
-  }
-
-  const { errorMessage, hasError, isLoading, isUpdateSuccessful } = addToCart;
-  const cartActionLabel = `${copy.cartAction} — ${price}`;
-  const updateNotificationLabel = copy.updateNotification;
-  const showUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
-
-  const labelClassName = cx(
-    styles.label,
-    { [styles.hideLabel]: isLoading },
-    { [styles.showSuccessMessage]: showUpdateSuccessMessage },
-  );
+  const {
+    errorMessage,
+    hasError,
+    isLoading,
+    isUpdateSuccessful,
+  } = addToCartContext;
 
   if (hasError) {
     /** @TODO Handle errors thrown by handleOnClick */
     console.error('Add To Cart button updateError: ', errorMessage); // eslint-disable-line
   }
 
+  const cartActionLabel = `${copy.cartAction} — ${price}`;
+  const updateNotificationLabel = copy.updateNotification;
+  const shouldShowUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
+
+  const isButtonEnabled =
+    !isLoading &&
+    !!price &&
+    !!sku &&
+    isInStock &&
+    !!sku &&
+    isEnabled &&
+    !hasError &&
+    isSellable;
+
+  const labelClassName = cx(
+    styles.label,
+    { [styles.hideLabel]: isLoading },
+    { [styles.showSuccessMessage]: shouldShowUpdateSuccessMessage },
+  );
+
   return (
     <Button
       className={classSet}
       dataTestRef={dataTestRef}
       isAlternate={true}
-      isEnabled={
-        !isLoading && price && sku && isEnabled && !hasError && isSellable
-      }
+      isEnabled={isButtonEnabled}
       onClick={handleOnClick}
       theme={theme}
-      title={cartActionLabel}
+      title={isInStock ? cartActionLabel : copy.outOfStock?.title}
     >
       {isLoading && (
         <Loading
@@ -113,11 +110,11 @@ const AddToCartButton = ({
       <span
         className={labelClassName}
         data-test-ref={
-          showUpdateSuccessMessage ? `${dataTestRef}_SUCCESS` : undefined
+          shouldShowUpdateSuccessMessage ? `${dataTestRef}_SUCCESS` : undefined
         }
       >
         <span>{updateNotificationLabel}</span>
-        <span>{cartActionLabel}</span>
+        <span>{isInStock ? cartActionLabel : copy.outOfStock?.label}</span>
       </span>
     </Button>
   );
@@ -155,4 +152,4 @@ AddToCartButton.defaultProps = {
   theme: 'dark',
 };
 
-export default AddToCartButton;
+export { AddToCartButton };

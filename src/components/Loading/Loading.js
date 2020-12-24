@@ -17,7 +17,7 @@ const Loading = ({ className, isLoading, size, theme }) => {
   );
 
   return (
-    <span className={classSet}>
+    <span className={classSet} data-testid="data-testid-loading">
       <span className={styles.dot} />
       <span className={styles.dot} />
       <span className={styles.dot} />
@@ -39,4 +39,4 @@ Loading.defaultProps = {
   theme: 'dark',
 };
 
-export default Loading;
+export { Loading };

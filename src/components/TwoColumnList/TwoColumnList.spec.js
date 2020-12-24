@@ -1,22 +1,21 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import TwoColumnList from './TwoColumnList';
-import TwoColumnListFixture from './TwoColumnList.fixture';
+import { render } from '@testing-library/react';
+import { TwoColumnList } from './TwoColumnList';
+import { TwoColumnListFixture } from './TwoColumnList.fixture';
 
 describe('<TwoColumnList />', () => {
   it('should be defined', () => {
     expect(TwoColumnList).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <TwoColumnList
-          leftColumn={TwoColumnListFixture.leftColumn}
-          rightColumn={TwoColumnListFixture.rightColumn}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <TwoColumnList
+        leftColumn={TwoColumnListFixture.leftColumn}
+        rightColumn={TwoColumnListFixture.rightColumn}
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
   });
 });

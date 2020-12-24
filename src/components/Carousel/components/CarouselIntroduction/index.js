@@ -1,3 +1,3 @@
-import CarouselIntroduction from './CarouselIntroduction';
+import { CarouselIntroduction } from './CarouselIntroduction';
 
-export default CarouselIntroduction;
+export { CarouselIntroduction };

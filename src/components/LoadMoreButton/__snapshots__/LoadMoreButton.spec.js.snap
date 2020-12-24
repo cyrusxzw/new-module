@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LoadMoreButton /> renders base component correctly 1`] = `
-<button
-  className="base blockStyle dark base"
-  data-test-ref="CONTENT_HUB_LOAD_MORE_BUTTON"
-  disabled={false}
-  onClick={[Function]}
-  title="Load More"
-  type="button"
->
-  <span
-    className="label"
+exports[`<LoadMoreButton /> should render base component correctly 1`] = `
+<div>
+  <button
+    class="base blockStyle dark base"
+    data-test-ref="CONTENT_HUB_LOAD_MORE_BUTTON"
+    title="Load More"
+    type="button"
   >
-    <span>
-      Load More
+    <span
+      class="label"
+    >
+      <span>
+        Load More
+      </span>
     </span>
-  </span>
-</button>
+  </button>
+</div>
 `;

@@ -1,10 +1,10 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import { ThemeContextProvider } from '~/contexts';
-import LinkButtonGroup from '~/components/LinkButtonGroup';
-import SubNav from '~/components/SubNav';
-import BodyCopy from './BodyCopy';
-import BodyCopyFixture from './BodyCopy.fixture';
+import { LinkButtonGroup } from '~/components/LinkButtonGroup';
+import { SubNav } from '~/components/SubNav';
+import { BodyCopy } from './BodyCopy';
+import { BodyCopyFixture } from './BodyCopy.fixture';
 
 <Meta title="Components/BodyCopy" component={BodyCopy} />
 
@@ -13,7 +13,12 @@ import BodyCopyFixture from './BodyCopy.fixture';
 <Canvas>
   <Story name="Base component">
     {(() => {
-      const theme = knobs.select('theme', ['dark', 'light'], BodyCopyFixture.theme, 'Presentation')
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        BodyCopyFixture.theme,
+        'Presentation',
+      );
       return (
         <ThemeContextProvider theme={theme}>
           <BodyCopy
@@ -30,7 +35,11 @@ import BodyCopyFixture from './BodyCopy.fixture';
               'Typography',
             )}
             heading={knobs.text('heading', BodyCopyFixture.heading, 'Copy')}
-            subHeading={knobs.text('subHeading', BodyCopyFixture.subHeading, 'Copy')}
+            subHeading={knobs.text(
+              'subHeading',
+              BodyCopyFixture.subHeading,
+              'Copy',
+            )}
             content={(() => {
               const options = {
                 SubNav: {
@@ -42,13 +51,17 @@ import BodyCopyFixture from './BodyCopy.fixture';
                   props: BodyCopyFixture.linkButtonGroup,
                 },
               };
-              const componentName = knobs.select('content', Object.keys(options), 'LinkButtonGroup');
+              const componentName = knobs.select(
+                'content',
+                Object.keys(options),
+                'LinkButtonGroup',
+              );
               const { Component, props } = options[componentName];
-              return <Component {...props} />
+              return <Component {...props} />;
             })()}
           />
         </ThemeContextProvider>
-      )
+      );
     })()}
   </Story>
 </Canvas>

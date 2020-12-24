@@ -1,3 +1,3 @@
-import BynderWidget from './BynderWidget';
+import { BynderWidget } from './BynderWidget';
 
-export default BynderWidget;
+export { BynderWidget };

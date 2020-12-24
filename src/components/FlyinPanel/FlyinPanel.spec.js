@@ -1,34 +1,32 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import FlyinPanel from './FlyinPanel';
-
-configure({ adapter: new Adapter() });
-
-jest.mock('uuid', () => {
-  let value = 0;
-  return {
-    v4: () => value++,
-  };
-});
-
-const mockFn = jest.fn();
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { FlyinPanel } from './FlyinPanel';
 
 describe('<FlyinPanel />', () => {
+  const handleOnClose = jest.fn();
+  const copyClose = 'close';
+
   it('should be defined', () => {
     expect(FlyinPanel).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <FlyinPanel onClose={mockFn} title="title">
-          Content
-        </FlyinPanel>,
-      )
-      .toJSON();
+  it('renders component correctly and fires the close button on click', () => {
+    render(
+      <FlyinPanel
+        copy={{ close: copyClose }}
+        isVisible={true}
+        onClose={handleOnClose}
+      >
+        test
+      </FlyinPanel>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(screen.getByText('test')).toBeTruthy();
+    expect(screen.getByRole('note')).toBeTruthy();
+
+    userEvent.click(screen.getByTitle(copyClose));
+
+    expect(handleOnClose).toHaveBeenCalledTimes(1);
   });
 });

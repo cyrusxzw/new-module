@@ -1,19 +1,20 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import ToogleButton from './ToogleButton';
-
-configure({ adapter: new Adapter() });
+import { render } from '@testing-library/react';
+import { NotificationContextProvider } from '~/contexts';
+import { ToogleButton } from './ToogleButton';
 
 describe('<ToogleButton />', () => {
   it('should be defined', () => {
     expect(ToogleButton).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer.create(<ToogleButton />).toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <NotificationContextProvider>
+        <ToogleButton />
+      </NotificationContextProvider>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

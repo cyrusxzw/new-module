@@ -1,16 +1,16 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import GridOverlay from '~.storybook/GridOverlay.js';
-import Accordion from '~/components/Accordion';
-import BodyCopy from '~/components/BodyCopy';
-import BynderWidget from '~/components/BynderWidget';
-import Image from '~/components/Image';
-import SubNav from '~/components/SubNav';
-import SubNavFixture from '~/components/SubNav/SubNav.fixture';
-import TwoColumnList from '~/components/TwoColumnList';
-import Video from '~/components/Video';
-import TwoColumnListFixture from '~/components/TwoColumnList/TwoColumnList.fixture';
-import TwoColumnLayout from './TwoColumnLayout';
+import { GridOverlay } from '~.storybook/GridOverlay.js';
+import { Accordion } from '~/components/Accordion';
+import { BodyCopy } from '~/components/BodyCopy';
+import { BynderWidget } from '~/components/BynderWidget';
+import { Image } from '~/components/Image';
+import { SubNav } from '~/components/SubNav';
+import { SubNavFixture } from '~/components/SubNav/SubNav.fixture';
+import { TwoColumnList } from '~/components/TwoColumnList';
+import { Video } from '~/components/Video';
+import { TwoColumnListFixture } from '~/components/TwoColumnList/TwoColumnList.fixture';
+import { TwoColumnLayout } from './TwoColumnLayout';
 
 <Meta title="Components/TwoColumnLayout" component={TwoColumnLayout} />
 
@@ -19,8 +19,16 @@ import TwoColumnLayout from './TwoColumnLayout';
 <Canvas>
   <Story name="Base component">
     {() => {
-      const gridOverlayActive = knobs.boolean('isActive', false, 'Grid overlay');
-      const gridOverlayIntertedColours = knobs.boolean('hasInvertedColours', false, 'Grid overlay');
+      const gridOverlayActive = knobs.boolean(
+        'isActive',
+        false,
+        'Grid overlay',
+      );
+      const gridOverlayIntertedColours = knobs.boolean(
+        'hasInvertedColours',
+        false,
+        'Grid overlay',
+      );
       const theme = knobs.select(
         'theme',
         ['dark', 'light'],
@@ -29,7 +37,10 @@ import TwoColumnLayout from './TwoColumnLayout';
       );
       return (
         <div>
-          <GridOverlay isActive={gridOverlayActive} hasInvertedColours={gridOverlayIntertedColours} />
+          <GridOverlay
+            isActive={gridOverlayActive}
+            hasInvertedColours={gridOverlayIntertedColours}
+          />
           <TwoColumnLayout
             childrenClassNames={{ sidebar: 'sidebar', content: 'content' }}
             content={
@@ -97,9 +108,9 @@ import TwoColumnLayout from './TwoColumnLayout';
                       content: (
                         <React.Fragment>
                           <p>
-                            We respectfully request that you review the following
-                            guidelines to ensure close alignment prior to
-                            submitting a letter of enquiry:
+                            We respectfully request that you review the
+                            following guidelines to ensure close alignment prior
+                            to submitting a letter of enquiry:
                           </p>
                           <p>
                             Applicant organisations must be a DGR Item 1 entity,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Hyperlink from '~/components/Hyperlink';
-import Image from '~/components/Image';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Image } from '~/components/Image';
 
 const IconLink = ({
   altText,
@@ -58,4 +58,4 @@ IconLink.defaultProps = {
   width: 21,
 };
 
-export default IconLink;
+export { IconLink };

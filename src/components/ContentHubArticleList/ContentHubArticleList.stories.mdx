@@ -1,21 +1,27 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import Podium from '~/components/Podium';
-import ContentHubArticleList from './ContentHubArticleList';
-import ContentHubArticleListFixture from './ContentHubArticleList.fixture';
+import { Podium } from '~/components/Podium';
+import { ContentHubArticleList } from './ContentHubArticleList';
+import { ContentHubArticleListFixture } from './ContentHubArticleList.fixture';
 
-<Meta title="Components/ContentHubArticleList" component={ContentHubArticleList} />
+<Meta
+  title="Components/ContentHubArticleList"
+  component={ContentHubArticleList}
+/>
 
 # ContentHubArticleList
 
 <Canvas>
   <Story name="Base component">
     <Podium transition="fade">
-       <ContentHubArticleList
-          articles={ContentHubArticleListFixture.articles.slice(0, knobs.select('number', [1, 2, 3, 4], 4, 'Presentation'))}
-          isFirstGroup={false}
-          pattern={knobs.select('pattern', [0, 1], 0, 'Presentation')}
-        />
+      <ContentHubArticleList
+        articles={ContentHubArticleListFixture.articles.slice(
+          0,
+          knobs.select('number', [1, 2, 3, 4], 4, 'Presentation'),
+        )}
+        isFirstGroup={false}
+        pattern={knobs.select('pattern', [0, 1], 0, 'Presentation')}
+      />
     </Podium>
   </Story>
 </Canvas>

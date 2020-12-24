@@ -81,4 +81,4 @@ Textarea.defaultProps = {
   value: undefined,
 };
 
-export default Textarea;
+export { Textarea };

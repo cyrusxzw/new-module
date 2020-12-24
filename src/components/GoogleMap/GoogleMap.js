@@ -10,17 +10,17 @@ import {
   STORES,
   TRANSITIONS,
 } from '~/constants';
-import { useGoogleMapsContext } from '~/contexts/GoogleMaps.context';
-import useWindowHasResized from '~/customHooks/useWindowHasResized';
+import { useGoogleMapsContext } from '~/contexts';
+import { useWindowHasResized } from '~/customHooks';
 import {
   ascertainIsSmallOnlyViewport,
   ascertainIsMediumViewport,
 } from '~/utils/viewports';
-import Hyperlink from '~/components/Hyperlink';
-import Loading from '~/components/Loading';
-import Transition from '~/components/Transition';
-import GoogleMapOptions from './GoogleMap.options';
-import InfoCard from './components/InfoCard';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Loading } from '~/components/Loading';
+import { Transition } from '~/components/Transition';
+import { GoogleMapOptions } from './GoogleMap.options';
+import { InfoCard } from './components/InfoCard';
 import styles from './GoogleMap.module.css';
 
 const GoogleMap = ({
@@ -361,4 +361,4 @@ GoogleMap.defaultProps = {
   places: [],
 };
 
-export default GoogleMap;
+export { GoogleMap };

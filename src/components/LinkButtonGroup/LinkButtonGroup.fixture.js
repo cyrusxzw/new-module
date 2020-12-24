@@ -1,4 +1,4 @@
-export default {
+const LinkButtonGroupFixture = {
   link: {
     text: 'Lorem ipsum',
     url: '/',
@@ -10,3 +10,5 @@ export default {
     style: 'External No Icon Button Link',
   },
 };
+
+export { LinkButtonGroupFixture };

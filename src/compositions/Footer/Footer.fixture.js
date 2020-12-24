@@ -1,4 +1,4 @@
-export default {
+const FooterFixture = {
   blocks: [
     {
       heading: 'Orders & Support',
@@ -195,3 +195,5 @@ export default {
     },
   ],
 };
+
+export { FooterFixture };

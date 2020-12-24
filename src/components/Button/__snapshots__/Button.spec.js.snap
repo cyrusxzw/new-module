@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> renders base component correctly with \`onClick\` prop 1`] = `
-<button
-  className="base blockStyle dark aesop"
-  disabled={false}
-  onClick={[MockFunction]}
-  title="Aēsop"
-  type="button"
->
-  Button
-</button>
+exports[`<Button /> should render base component correctly with \`onClick\` prop 1`] = `
+<div>
+  <button
+    class="base blockStyle dark class"
+    title="button-title"
+    type="button"
+  >
+    button
+  </button>
+</div>
 `;

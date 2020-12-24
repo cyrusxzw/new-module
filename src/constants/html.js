@@ -1,3 +1,1 @@
-export default {
-  A: 'a',
-};
+export const A = 'a';

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Hyperlink from '~/components/Hyperlink';
-import SectionHeading from '~/components/SectionHeading';
-import Paragraph from '~/components/Paragraph';
+import { Hyperlink } from '~/components/Hyperlink';
+import { SectionHeading } from '~/components/SectionHeading';
+import { Paragraph } from '~/components/Paragraph';
 import styles from './CarouselIntroduction.module.css';
 
 const CarouselIntroduction = ({
@@ -70,4 +70,4 @@ CarouselIntroduction.defaultProps = {
   eyebrow: undefined,
 };
 
-export default CarouselIntroduction;
+export { CarouselIntroduction };

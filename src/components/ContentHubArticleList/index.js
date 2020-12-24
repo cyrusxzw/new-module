@@ -1,3 +1,3 @@
-import ContentHubArticleList from './ContentHubArticleList';
+import { ContentHubArticleList } from './ContentHubArticleList';
 
-export default ContentHubArticleList;
+export { ContentHubArticleList };

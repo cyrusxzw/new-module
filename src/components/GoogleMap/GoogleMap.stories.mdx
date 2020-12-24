@@ -1,9 +1,9 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import { GoogleMapsContextProvider } from '~/contexts/GoogleMaps.context';
-import constants from '~.storybook/constants';
-import GoogleMap from './GoogleMap';
-import GoogleMapFixture from './GoogleMap.fixture';
+import { constants } from '~.storybook/constants';
+import { GoogleMapsContextProvider } from '~/contexts';
+import { GoogleMapFixture } from './GoogleMap.fixture';
+import { GoogleMap } from './GoogleMap';
 
 <Meta title="Components/GoogleMap" component={GoogleMap} />
 
@@ -13,14 +13,32 @@ Presented as with `customPinMarker`.
 
 <Canvas>
   <Story name="Base component">
-    <GoogleMapsContextProvider apiKey={constants.GOOGLE_MAPS.DEVELOPMENT_API_KEY}>
+    <GoogleMapsContextProvider
+      apiKey={constants.GOOGLE_MAPS.DEVELOPMENT_API_KEY}
+    >
       <GoogleMap
-        center={knobs.object('center', GoogleMapFixture.customPinMarkerCenter, 'Presentation')}
+        center={knobs.object(
+          'center',
+          GoogleMapFixture.customPinMarkerCenter,
+          'Presentation',
+        )}
         copy={knobs.object('copy', GoogleMapFixture.copy, 'Content')}
-        customMarker={knobs.object('customMarker', GoogleMapFixture.customPinMarker, 'Content')}
-        hasMarkerIndexes={knobs.boolean('hasMarkerIndexes', false, 'Presentation')}
+        customMarker={knobs.object(
+          'customMarker',
+          GoogleMapFixture.customPinMarker,
+          'Content',
+        )}
+        hasMarkerIndexes={knobs.boolean(
+          'hasMarkerIndexes',
+          false,
+          'Presentation',
+        )}
         id="google-map"
-        initialZoom={knobs.number('initialZoom', GoogleMapFixture.initialZoom, 'Presentation')}
+        initialZoom={knobs.number(
+          'initialZoom',
+          GoogleMapFixture.initialZoom,
+          'Presentation',
+        )}
         places={knobs.object('places', GoogleMapFixture.places, 'Content')}
       />
     </GoogleMapsContextProvider>
@@ -37,7 +55,9 @@ Presented as with `customPinMarker`.
 
 <Canvas>
   <Story name="With Place Marker Indexes">
-    <GoogleMapsContextProvider apiKey={constants.GOOGLE_MAPS.DEVELOPMENT_API_KEY}>
+    <GoogleMapsContextProvider
+      apiKey={constants.GOOGLE_MAPS.DEVELOPMENT_API_KEY}
+    >
       <GoogleMap
         center={GoogleMapFixture.center}
         hasMarkerIndexes={true}
@@ -52,7 +72,9 @@ Presented as with `customPinMarker`.
 
 <Canvas>
   <Story name="With Custom Place Marker">
-    <GoogleMapsContextProvider apiKey={constants.GOOGLE_MAPS.DEVELOPMENT_API_KEY}>
+    <GoogleMapsContextProvider
+      apiKey={constants.GOOGLE_MAPS.DEVELOPMENT_API_KEY}
+    >
       <GoogleMap
         center={GoogleMapFixture.customPlaceMarkerCenter}
         customMarker={GoogleMapFixture.customPlaceMarker}

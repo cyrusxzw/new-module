@@ -1,3 +1,3 @@
-import DefinitionList from './DefinitionList';
+import { DefinitionList } from './DefinitionList';
 
-export default DefinitionList;
+export { DefinitionList };

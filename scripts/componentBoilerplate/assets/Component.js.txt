@@ -13,7 +13,7 @@ const ComponentBoilerplate = forwardRef(function ComponentBoilerplateRef({
   const classSet = cx(styles.base, styles[currentTheme], className);
 
   return <div className={classSet}>{children}</div>;
-})
+});
 
 ComponentBoilerplate.propTypes = {
   children: PropTypes.node,
@@ -27,4 +27,4 @@ ComponentBoilerplate.defaultProps = {
   theme: undefined,
 };
 
-export default ComponentBoilerplate;
+export { ComponentBoilerplate };

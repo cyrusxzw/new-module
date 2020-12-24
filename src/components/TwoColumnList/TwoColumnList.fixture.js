@@ -1,4 +1,4 @@
-export default {
+const TwoColumnListFixture = {
   leftColumn: [
     {
       id: '1',
@@ -59,3 +59,5 @@ export default {
     },
   ],
 };
+
+export { TwoColumnListFixture };

@@ -1,4 +1,4 @@
-export default {
+const SelectFixture = {
   className: '',
   dataTestRef: 'SELECT_TEST_REF',
   errorMessage: 'Test Error Messsage',
@@ -22,3 +22,5 @@ export default {
   theme: 'dark',
   value: 'morbi-id-nulla',
 };
+
+export { SelectFixture };

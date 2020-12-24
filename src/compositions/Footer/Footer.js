@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import FooterBlock from '~/components/FooterBlock';
-import Hidden from '~/components/Hidden';
-import IconLink from '~/components/IconLink';
-import NotificationModal from '~/components/NotificationModal';
-import NewsLetterSignUp from '../NewsLetterSignUp';
-import styles from './Footer.css';
 import { NotificationContextProvider } from '~/contexts';
+import { NewsletterSignUp } from '~/compositions/NewsletterSignUp';
+import { FooterBlock } from '~/components/FooterBlock';
+import { Hidden } from '~/components/Hidden';
+import { IconLink } from '~/components/IconLink';
+import { NotificationModal } from '~/components/NotificationModal';
+import styles from './Footer.css';
 
 const Footer = ({
   blocks,
@@ -33,7 +33,7 @@ const Footer = ({
         />
         <div className={styles.block}>
           <div className={styles.signup}>
-            <NewsLetterSignUp
+            <NewsletterSignUp
               consentErrorMsg={consentErrorMsg}
               errorMessage={errorMessage}
               onClick={onClick}
@@ -118,4 +118,4 @@ Footer.defaultProps = {
   onClick: undefined,
 };
 
-export default Footer;
+export { Footer };

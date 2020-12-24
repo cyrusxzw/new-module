@@ -1,10 +1,10 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import '~.storybook/storybook.module.css';
-import DefinitionList from '~/components/DefinitionList';
-import MediaWithContentFixture from '~/components/MediaWithContent/MediaWithContent.fixture';
-import MediaWithContent from '~/components/MediaWithContent';
-import Video from './Video';
+import { DefinitionList } from '~/components/DefinitionList';
+import { MediaWithContentFixture } from '~/components/MediaWithContent/MediaWithContent.fixture';
+import { MediaWithContent } from '~/components/MediaWithContent';
+import { Video } from './Video';
 
 <Meta title="Components/Video" component={Video} />
 
@@ -27,7 +27,11 @@ import Video from './Video';
         'Presentation',
       )}
       isFullWidth={knobs.boolean('isFullWidth', true, 'Presentation')}
-      isScrollBasedVideo={knobs.boolean('isScrollBasedVideo', false, 'Attributes')}
+      isScrollBasedVideo={knobs.boolean(
+        'isScrollBasedVideo',
+        false,
+        'Attributes',
+      )}
       large={knobs.text(
         'large',
         'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174&size=large',

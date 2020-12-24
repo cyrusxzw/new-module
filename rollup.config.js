@@ -14,6 +14,7 @@ import pkg from './package.json';
 /** @TODO set up actual env vars */
 const NODE_ENV = 'development';
 
+/* eslint-disable-next-line import/no-default-export */
 export default {
   input: 'src/index.js',
   output: [

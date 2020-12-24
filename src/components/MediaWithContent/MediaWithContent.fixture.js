@@ -1,10 +1,10 @@
 import React from 'react';
-import Hyperlink from '~/components/Hyperlink';
+import { Hyperlink } from '~/components/Hyperlink';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 
 const { EXTERNAL_NO_ICON_TEXT_LINK } = HYPERLINK_STYLE_TYPES;
 
-export default {
+const MediaWithContentFixture = {
   copy: {
     default: {
       eyebrow: 'Praesent tincidunt accumsan',
@@ -196,3 +196,5 @@ export default {
       'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
   },
 };
+
+export { MediaWithContentFixture };

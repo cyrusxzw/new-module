@@ -1,108 +1,98 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ContentHubArticle /> renders base component correctly 1`] = `
-<div
-  className="base"
-  id="test_id"
->
+exports[`<ContentHubArticle /> should render base component correctly 1`] = `
+<div>
   <div
-    className="category"
+    class="base"
+    id="test_id"
   >
-    Product
-  </div>
-  <div
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
+    <div
+      class="category"
+    >
+      Product
+    </div>
+    <div>
+      <a
+        class="base left dark title"
+        data-test-ref="test_id_TITLE"
+        href="https://www.aesop.com/au/r/careers?contentful=true"
+        target="_self"
+        title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+      >
+        <h1>
+          <span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+          </span>
+        </h1>
+      </a>
+    </div>
+    <div
+      class="note"
+    >
+      <span>
+        5 minute read
+      </span>
+    </div>
     <a
-      className="base left dark title"
-      data-test-ref="test_id_TITLE"
+      class="base left dark image nonMobile"
+      data-test-ref="test_id_NON_MOBILE_THUMBNAIL"
       href="https://www.aesop.com/au/r/careers?contentful=true"
-      onClick={[Function]}
       target="_self"
       title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
     >
-      <h1>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
-        </span>
-      </h1>
+      <div>
+        <picture
+          class="base picture dark image"
+        >
+          <source
+            media="(min-width: 1025px)"
+            srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+          />
+          <source
+            media="(min-width: 640px)"
+            srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+          />
+          <source
+            media="(min-width: 0px)"
+            srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+          />
+          <img
+            alt="horizontal_hub"
+            loading="lazy"
+          />
+        </picture>
+      </div>
+    </a>
+    <a
+      class="base left dark image mobile"
+      data-test-ref="test_id_MOBILE_THUMBNAIL"
+      href="https://www.aesop.com/au/r/careers?contentful=true"
+      target="_self"
+      title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+    >
+      <div>
+        <picture
+          class="base picture dark image"
+        >
+          <source
+            media="(min-width: 1025px)"
+            srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+          />
+          <source
+            media="(min-width: 640px)"
+            srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+          />
+          <source
+            media="(min-width: 0px)"
+            srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+          />
+          <img
+            alt="horizontal_hub"
+            loading="lazy"
+          />
+        </picture>
+      </div>
     </a>
   </div>
-  <div
-    className="note"
-  >
-    <span>
-      5 minute read
-    </span>
-  </div>
-  <a
-    className="base left dark image nonMobile"
-    data-test-ref="test_id_NON_MOBILE_THUMBNAIL"
-    href="https://www.aesop.com/au/r/careers?contentful=true"
-    onClick={[Function]}
-    target="_self"
-    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-  >
-    <div
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-    >
-      <picture
-        className="base picture dark image"
-      >
-        <source
-          media="(min-width: 1025px)"
-          srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-        />
-        <source
-          media="(min-width: 640px)"
-          srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-        />
-        <source
-          media="(min-width: 0px)"
-          srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-        />
-        <img
-          alt="horizontal_hub"
-          loading="lazy"
-        />
-      </picture>
-    </div>
-  </a>
-  <a
-    className="base left dark image mobile"
-    data-test-ref="test_id_MOBILE_THUMBNAIL"
-    href="https://www.aesop.com/au/r/careers?contentful=true"
-    onClick={[Function]}
-    target="_self"
-    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-  >
-    <div
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-    >
-      <picture
-        className="base picture dark image"
-      >
-        <source
-          media="(min-width: 1025px)"
-          srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-        />
-        <source
-          media="(min-width: 640px)"
-          srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-        />
-        <source
-          media="(min-width: 0px)"
-          srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-        />
-        <img
-          alt="horizontal_hub"
-          loading="lazy"
-        />
-      </picture>
-    </div>
-  </a>
 </div>
 `;

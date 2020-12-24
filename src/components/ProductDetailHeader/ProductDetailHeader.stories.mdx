@@ -1,18 +1,18 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import GridOverlay from '~.storybook/GridOverlay.js';
+import { GridOverlay } from '~.storybook/GridOverlay.js';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
-import ProductDetailBodyFixture from '~/components/ProductDetailHeader/components/ProductDetailBody/ProductDetailBody.fixture';
-import ProductDetailHeader from './ProductDetailHeader';
-import ProductDetailHeaderFixture from './ProductDetailHeader.fixture';
-import AddToCartButtonFixture from '~/components/AddToCartButton/AddToCartButton.fixture';
-import mockAddToCartButtonOnClick from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
-import SecondaryMessage from '~/components/SecondaryMessage';
-import SecondaryMessageFixture from '~/components/SecondaryMessage/SecondaryMessage.fixture';
+import { ProductDetailBodyFixture } from '~/components/ProductDetailHeader/components/ProductDetailBody/ProductDetailBody.fixture';
+import { ProductDetailHeader } from './ProductDetailHeader';
+import { ProductDetailHeaderFixture } from './ProductDetailHeader.fixture';
+import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
+import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
+import { SecondaryMessage } from '~/components/SecondaryMessage';
+import { SecondaryMessageFixture } from '~/components/SecondaryMessage/SecondaryMessage.fixture';
 
 <Meta title="Components/ProductDetailHeader" component={ProductDetailHeader} />
 
@@ -21,21 +21,43 @@ import SecondaryMessageFixture from '~/components/SecondaryMessage/SecondaryMess
 <Canvas>
   <Story name="Base component">
     {(() => {
-      const gridOverlayActive = knobs.boolean('isActive', false, 'Grid overlay');
-      const gridOverlayIntertedColours = knobs.boolean('hasInvertedColours', false, 'Grid overlay');
-      const theme = knobs.select('theme', ['dark', 'light'], ProductDetailHeaderFixture.theme, 'Presentation')
-      const { productName, description, ...productRest } = ProductDetailHeaderFixture.product;
+      const gridOverlayActive = knobs.boolean(
+        'isActive',
+        false,
+        'Grid overlay',
+      );
+      const gridOverlayIntertedColours = knobs.boolean(
+        'hasInvertedColours',
+        false,
+        'Grid overlay',
+      );
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        ProductDetailHeaderFixture.theme,
+        'Presentation',
+      );
+      const {
+        productName,
+        description,
+        ...productRest
+      } = ProductDetailHeaderFixture.product;
       const productDetails = {
         productName: knobs.text('productName', productName, 'Content'),
         description: knobs.text('description', description, 'Content'),
         ...productRest,
-      }
+      };
       return (
         <div>
-          <GridOverlay isActive={gridOverlayActive} hasInvertedColours={gridOverlayIntertedColours} />
+          <GridOverlay
+            isActive={gridOverlayActive}
+            hasInvertedColours={gridOverlayIntertedColours}
+          />
           <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
             <ProductDetailContextProvider product={productDetails}>
-              <VariantSelectContextProvider variants={ProductDetailHeaderFixture.product.variantOptions}>
+              <VariantSelectContextProvider
+                variants={ProductDetailHeaderFixture.product.variantOptions}
+              >
                 <ProductDetailHeader
                   breadcrumbs={ProductDetailHeaderFixture.breadcrumbs}
                   className={ProductDetailHeaderFixture.className}
@@ -43,7 +65,8 @@ import SecondaryMessageFixture from '~/components/SecondaryMessage/SecondaryMess
                     addToCart: AddToCartButtonFixture.copy,
                     size: ProductDetailBodyFixture.copy.size,
                     ingredients: ProductDetailBodyFixture.copy.ingredients,
-                    upSellProductLabel: ProductDetailBodyFixture.copy.upSellProductLabel,
+                    upSellProductLabel:
+                      ProductDetailBodyFixture.copy.upSellProductLabel,
                   }}
                   theme={theme}
                 />
@@ -52,7 +75,7 @@ import SecondaryMessageFixture from '~/components/SecondaryMessage/SecondaryMess
             </ProductDetailContextProvider>
           </AddToCartContextProvider>
         </div>
-      )
+      );
     })()}
   </Story>
 </Canvas>

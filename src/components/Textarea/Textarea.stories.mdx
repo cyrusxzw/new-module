@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import Podium from '~/components/Podium';
-import Textarea from './Textarea';
+import { Podium } from '~/components/Podium';
+import { Textarea } from './Textarea';
 
 # Textarea
 
@@ -11,7 +11,7 @@ import Textarea from './Textarea';
   <Story name="Base component">
     <Podium horizontalPadding="small" verticalPadding="small">
       <Textarea
-        id='test-textarea'
+        id="test-textarea"
         theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
       />
     </Podium>
@@ -21,4 +21,3 @@ import Textarea from './Textarea';
 ## API
 
 <ArgsTable of={ContentHubArticle} />
-

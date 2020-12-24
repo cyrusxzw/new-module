@@ -1,21 +1,29 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import Transition from './Transition';
+import { render } from '@testing-library/react';
+import { Transition } from './Transition';
 
 describe('<Transition />', () => {
   it('should be defined', () => {
     expect(Transition).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Transition isActive={true} type="fade">
-          <div>Content</div>
-        </Transition>,
-      )
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <Transition isActive={true} type="fade">
+        <div>Content</div>
+      </Transition>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should return null if child is not a valid element', () => {
+    const { container } = render(
+      <Transition isActive={true} type="fade">
+        {1}
+      </Transition>,
+    );
+
+    expect(container).toMatchSnapshot();
   });
 });

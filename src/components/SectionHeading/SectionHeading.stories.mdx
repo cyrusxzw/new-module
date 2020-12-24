@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import SectionHeading from './SectionHeading';
+import { SectionHeading } from './SectionHeading';
 
 <Meta title="Components/SectionHeading" component={SectionHeading} />
 
@@ -21,7 +21,11 @@ import SectionHeading from './SectionHeading';
       )}
       isFlush={knobs.boolean('isFlush', false, 'Presentation')}
       id="Anti-Oxidant"
-      isOffsetPageHeading={knobs.boolean('isOffsetPageHeading', false, 'Presentation')}
+      isOffsetPageHeading={knobs.boolean(
+        'isOffsetPageHeading',
+        false,
+        'Presentation',
+      )}
       isPageHeading={knobs.boolean('isPageHeading', false, 'Presentation')}
       subHeading={knobs.text(
         'subHeading',
@@ -29,7 +33,12 @@ import SectionHeading from './SectionHeading';
         'Copy',
       )}
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
-      titleFont={knobs.select('titleFont', ['Suisse', 'Zapf'], 'Zapf', 'Presentation')}
+      titleFont={knobs.select(
+        'titleFont',
+        ['Suisse', 'Zapf'],
+        'Zapf',
+        'Presentation',
+      )}
     />
   </Story>
 </Canvas>

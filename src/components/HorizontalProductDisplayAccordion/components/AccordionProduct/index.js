@@ -1,3 +1,3 @@
-import AccordionProduct from './AccordionProduct';
+import { AccordionProduct } from './AccordionProduct';
 
-export default AccordionProduct;
+export { AccordionProduct };

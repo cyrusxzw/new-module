@@ -1,3 +1,3 @@
-import NextButton from './NextButton';
+import { NextButton } from './NextButton';
 
-export default NextButton;
+export { NextButton };

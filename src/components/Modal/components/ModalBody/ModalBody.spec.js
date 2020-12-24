@@ -1,49 +1,44 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import ModalBody from './ModalBody';
-import ModalBodyFixture from './ModalBody.fixture';
-
-const mockFn = jest.fn();
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { ModalBody } from './ModalBody';
+import { ModalBodyFixture } from './ModalBody.fixture';
 
 describe('<ModalBody />', () => {
   it('should be defined', () => {
     expect(ModalBody).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <ModalBody
-          copy={ModalBodyFixture.copy}
-          isVisible={true}
-          onClose={mockFn}
-        >
-          Body Content
-        </ModalBody>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+  it('should render component correctly and match html snapshot', () => {
+    const mockFn = jest.fn();
+
+    const { container } = render(
+      <ModalBody copy={ModalBodyFixture.copy} isVisible={true} onClose={mockFn}>
+        Body Content
+      </ModalBody>,
+    );
+
+    expect(container).toMatchSnapshot();
   });
 
-  describe('when clicking on the close button', () => {
-    it('should invoke handleClose', () => {
-      const component = renderer.create(
-        <ModalBody
-          copy={ModalBodyFixture.copy}
-          isVisible={true}
-          onClose={mockFn}
-        >
-          Body Content
-        </ModalBody>,
-      );
+  it('should render content and fire the close button on click', () => {
+    const handleOnClose = jest.fn();
+    const copyClose = 'close';
 
-      const closeButton = component.root.findByProps({
-        'data-test-ref': 'MODAL_CLOSE_BUTTON',
-      });
+    render(
+      <ModalBody
+        copy={{ close: copyClose }}
+        isVisible={true}
+        onClose={handleOnClose}
+      >
+        test
+      </ModalBody>,
+    );
 
-      closeButton.props.onClick();
+    expect(screen.getByText('test')).toBeTruthy();
 
-      expect(mockFn).toHaveBeenCalled();
-    });
+    userEvent.click(screen.getByTitle(copyClose));
+
+    expect(handleOnClose).toHaveBeenCalledTimes(1);
   });
 });

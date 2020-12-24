@@ -85,4 +85,4 @@ RadioGroup.defaultProps = {
   value: undefined,
 };
 
-export default RadioGroup;
+export { RadioGroup };

@@ -1,3 +1,3 @@
-import ToogleButton from './ToogleButton';
+import { ToogleButton } from './ToogleButton';
 
-export default ToogleButton;
+export { ToogleButton };

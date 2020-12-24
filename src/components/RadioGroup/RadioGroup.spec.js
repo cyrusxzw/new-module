@@ -1,32 +1,26 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import RadioGroup from './RadioGroup';
-import RadioGroupFixture from './RadioGroup.fixture';
-
-configure({ adapter: new Adapter() });
+import { render } from '@testing-library/react';
+import { RadioGroup } from './RadioGroup';
+import { RadioGroupFixture } from './RadioGroup.fixture';
 
 describe('<RadioGroup />', () => {
   it('should be defined', () => {
     expect(RadioGroup).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <RadioGroup
-          className={RadioGroupFixture.className}
-          dataTestRef={RadioGroupFixture.dataTestRef}
-          errorMessage={RadioGroupFixture.errorMessage}
-          name={RadioGroupFixture.name}
-          onChange={RadioGroupFixture.onChange}
-          options={RadioGroupFixture.options}
-          value={RadioGroupFixture.value}
-        />,
-      )
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <RadioGroup
+        className={RadioGroupFixture.className}
+        dataTestRef={RadioGroupFixture.dataTestRef}
+        errorMessage={RadioGroupFixture.errorMessage}
+        name={RadioGroupFixture.name}
+        onChange={RadioGroupFixture.onChange}
+        options={RadioGroupFixture.options}
+        value={RadioGroupFixture.value}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

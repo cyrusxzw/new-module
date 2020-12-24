@@ -16,7 +16,7 @@ const Pagination = ({ dots, hasFlushPagination, progressIndex, theme }) => {
   );
 
   return (
-    <div className={styles.base}>
+    <div className={styles.base} data-testid="data-testid-Carousel-Pagination">
       <div className={listClassSet}>
         <div className={styles.bar} style={{ width, left: positionLeft }} />
       </div>
@@ -38,4 +38,4 @@ Pagination.defaultProps = {
   theme: 'dark',
 };
 
-export default Pagination;
+export { Pagination };

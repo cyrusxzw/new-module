@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-
-import DefinitionList from '../DefinitionList/DefinitionList';
-import ProductExtract from '../ProductExtract/ProductExtract';
+import { DefinitionList } from '../DefinitionList/DefinitionList';
+import { ProductExtract } from '../ProductExtract/ProductExtract';
 
 const DefinitionListWithProductExtract = ({
   dataTestRef,
@@ -70,4 +69,4 @@ DefinitionListWithProductExtract.defaultProps = {
   works: 'Works well with',
 };
 
-export default DefinitionListWithProductExtract;
+export { DefinitionListWithProductExtract };

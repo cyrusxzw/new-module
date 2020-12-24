@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Media from './components/Media';
-import Content from './components/Content';
+import { Media } from './components/Media';
+import { Content } from './components/Content';
 import styles from './MediaWithContent.module.css';
 
 const MediaWithContent = forwardRef(function MediaWithContentRef(
@@ -103,4 +103,4 @@ MediaWithContent.defaultProps = {
   theme: 'dark',
 };
 
-export default MediaWithContent;
+export { MediaWithContent };

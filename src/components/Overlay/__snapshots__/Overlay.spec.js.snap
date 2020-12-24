@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Overlay /> renders base component correctly 1`] = `
-<div
-  className="base isVisible"
-  onClick={[MockFunction]}
-  onKeyPress={[Function]}
-  role="button"
-  tabIndex={-1}
-/>
+exports[`<Overlay /> should render base component correctly 1`] = `
+<div>
+  <div
+    aria-hidden="true"
+    class="base isVisible"
+    data-testid="data-testid-Overlay"
+    role="button"
+    tabindex="-1"
+  />
+</div>
 `;

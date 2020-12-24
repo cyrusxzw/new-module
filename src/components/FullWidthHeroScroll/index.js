@@ -1,3 +1,3 @@
-import FullWidthHeroScroll from './FullWidthHeroScroll';
+import { FullWidthHeroScroll } from './FullWidthHeroScroll';
 
-export default FullWidthHeroScroll;
+export { FullWidthHeroScroll };

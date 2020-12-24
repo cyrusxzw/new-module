@@ -1,3 +1,3 @@
-import DialogBanner from './DialogBanner';
+import { DialogBanner } from './DialogBanner';
 
-export default DialogBanner;
+export { DialogBanner };

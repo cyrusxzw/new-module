@@ -1,21 +1,15 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import PreviousButton from './PreviousButton';
-
-configure({ adapter: new Adapter() });
+import { render } from '@testing-library/react';
+import { PreviousButton } from './PreviousButton';
 
 describe('<Carousel.PreviousButton />', () => {
   it('should be defined', () => {
     expect(PreviousButton).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<PreviousButton onClick={() => {}} />)
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(<PreviousButton onClick={() => {}} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

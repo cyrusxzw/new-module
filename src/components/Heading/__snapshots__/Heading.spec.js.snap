@@ -1,25 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Heading /> renders base component correctly 1`] = `
-<h1
-  className="base large dark"
->
-  Heading
-</h1>
-`;
-
-exports[`<Heading /> renders level 2 size medium variation correctly 1`] = `
-<h2
-  className="base medium dark"
->
-  Heading
-</h2>
-`;
-
-exports[`<Heading /> renders level 4 size small variation correctly 1`] = `
-<h4
-  className="base small dark"
->
-  Heading
-</h4>
+exports[`<Heading /> should render base component correctly 1`] = `
+<div>
+  <h1
+    class="base large dark"
+  >
+    test-heading
+  </h1>
+</div>
 `;

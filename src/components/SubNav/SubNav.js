@@ -2,12 +2,12 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import useWindowHasResized from '~/customHooks/useWindowHasResized';
+import { useWindowHasResized } from '~/customHooks';
 import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
-import Heading from '~/components/Heading';
-import Hyperlink from '~/components/Hyperlink';
-import Select from '~/components/Select';
-import List from '~/components/List';
+import { List } from '~/components/List';
+import { Select } from '~/components/Select';
+import { Heading } from '~/components/Heading';
+import { Hyperlink } from '~/components/Hyperlink';
 import styles from './SubNav.module.css';
 
 const SubNav = forwardRef(
@@ -107,4 +107,4 @@ SubNav.defaultProps = {
   theme: undefined,
 };
 
-export default SubNav;
+export { SubNav };

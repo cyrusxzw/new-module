@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { AddToCartContextProvider } from '~/contexts';
+
+<Meta title="Contexts/AddToCartContext" component="AddToCartContextProvider" />
+
+# AddToCartContext
+
+The `AddToCartContextProvider` component takes a prop of `onClick`, described below.
+
+The `useAddToCartContext` consumer hook returns the following state object:
+
+```js
+actionTypes: <object>,
+dispatch: reducer <function>,
+onClick: function(sku<string>, addToCartDispatch<function>, ADD_TO_CART_ACTION_TYPES<array[string]>),
+state: <object> {
+  errorMessage
+  hasError: <boolean>,
+  isLoading: <boolean>,
+  isUpdateSuccessful: <boolean>,
+}
+```
+
+## API
+
+<ArgsTable of={AddToCartContextProvider} />

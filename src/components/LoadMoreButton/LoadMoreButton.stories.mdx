@@ -1,11 +1,9 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import {
-  LoadMoreContextProvider,
-} from '~/contexts';
-import LoadMoreButton from './LoadMoreButton';
-import LoadMoreButtonFixture from './LoadMoreButton.fixture';
-import mockLoadMoreButtonOnClick from './__mocks__/LoadMoreButton.onClick';
+import { LoadMoreContextProvider } from '~/contexts';
+import { LoadMoreButton } from './LoadMoreButton';
+import { LoadMoreButtonFixture } from './LoadMoreButton.fixture';
+import { mockOnClick as mockLoadMoreButtonOnClick } from './__mocks__/LoadMoreButton.onClick';
 
 <Meta title="Components/LoadMoreButton" component={LoadMoreButton} />
 
@@ -27,7 +25,7 @@ for an example.
             isEnabled={LoadMoreButtonFixture.isEnabled}
           />
         </LoadMoreContextProvider>
-      )
+      );
     })()}
   </Story>
 </Canvas>

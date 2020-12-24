@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useLoadMoreContext } from 'contexts';
-import Button from '~/components/Button';
-import Loading from '~/components/Loading';
+import { useLoadMoreContext } from '~/contexts';
+import { Button } from '~/components/Button';
+import { Loading } from '~/components/Loading';
 import styles from './LoadMoreButton.module.css';
 
 const LoadMoreButton = ({ className, copy, dataTestRef, isEnabled }) => {
@@ -68,4 +68,4 @@ LoadMoreButton.defaultProps = {
   isEnabled: true,
 };
 
-export default LoadMoreButton;
+export { LoadMoreButton };

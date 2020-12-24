@@ -1,21 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Checkbox /> renders base component correctly 1`] = `
-<label
-  className="base"
-  htmlFor="test-checkbox"
->
-  <input
-    className="checkBox dark"
-    data-test-ref="test-data-ref"
-    disabled={true}
-    id="test-checkbox"
-    type="checkbox"
-  />
-  <span
-    className="content dark"
+exports[`<Checkbox /> should render base component correctly 1`] = `
+<div>
+  <label
+    class="base"
+    for="test-checkbox"
   >
-    Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.
-  </span>
-</label>
+    <input
+      class="checkBox dark"
+      data-test-ref="test-data-ref"
+      disabled=""
+      id="test-checkbox"
+      type="checkbox"
+    />
+    <span
+      class="content dark"
+    >
+      Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.
+    </span>
+  </label>
+</div>
 `;

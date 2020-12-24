@@ -1,8 +1,7 @@
 {
   "parser": "css",
   "extends": [
-    "stylelint-config-idiomatic-order",
-    "./node_modules/prettier-stylelint/config.js"
+    "stylelint-config-idiomatic-order"
   ],
   "rules": {
     "string-quotes": "single",

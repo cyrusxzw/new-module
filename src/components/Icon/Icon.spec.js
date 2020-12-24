@@ -1,10 +1,6 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import Icon from './Icon';
-
-configure({ adapter: new Adapter() });
+import { render, screen } from '@testing-library/react';
+import { Icon } from './Icon';
 
 jest.mock('uuid', () => {
   let value = 0;
@@ -18,24 +14,31 @@ describe('<Icon />', () => {
     expect(Icon).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer.create(<Icon name="rightArrow" />).toJSON();
+  it('should render render base component correctly', () => {
+    const { container } = render(<Icon name="rightArrow" />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
-  it('renders SVG with provided title prop correctly', () => {
-    const tree = renderer
-      .create(<Icon name="rightArrow" title="aesop" />)
-      .toJSON();
+  it('should render SVG with provided title prop correctly', () => {
+    render(<Icon name="chevron" title="title" />);
 
-    expect(tree).toMatchSnapshot();
+    const icon = screen.getByRole('img', { name: 'title' });
+
+    expect(icon).toBeInTheDocument();
   });
-});
 
-describe('<Icon /> error handling.', () => {
+  it('should render SVG that has nested `g` tags correctly', () => {
+    const { container } = render(<Icon name="muted" title="title" />);
+
+    expect(container).toMatchSnapshot();
+  });
+
   it('should return `null` if svg name is not found', () => {
-    const component = shallow(<Icon name="foo" />);
-    expect(component.type()).toEqual(null);
+    render(<Icon name="" />);
+
+    const child = screen.queryByTestId('data-testid-Icon');
+
+    expect(child).not.toBeInTheDocument();
   });
 });

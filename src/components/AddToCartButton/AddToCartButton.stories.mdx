@@ -5,10 +5,10 @@ import {
   ProductDetailContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
-import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
-import AddToCartButton from './AddToCartButton';
-import AddToCartButtonFixture from './AddToCartButton.fixture';
-import mockAddToCartButtonOnClick from './__mocks__/AddToCartButton.onClick';
+import { ProductDetailHeaderFixture } from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
+import { AddToCartButton } from './AddToCartButton';
+import { AddToCartButtonFixture } from './AddToCartButton.fixture';
+import { mockAddToCartButtonOnClick } from './__mocks__/AddToCartButton.onClick';
 
 <Meta title="Components/AddToCartButton" component={AddToCartButton} />
 
@@ -21,22 +21,29 @@ for an example.
 <Canvas>
   <Story name="Base component">
     {(() => {
-      const theme = knobs.select('theme', ['dark', 'light'], AddToCartButtonFixture.theme, 'Presentation')
-      const { productName, ...productRest } = ProductDetailHeaderFixture.product;
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        AddToCartButtonFixture.theme,
+        'Presentation',
+      );
+      const {
+        productName,
+        ...productRest
+      } = ProductDetailHeaderFixture.product;
       const productDetails = {
         productName: knobs.text('productName', productName, 'Content'),
         ...productRest,
-      }
+      };
       return (
         <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-          <VariantSelectContextProvider variants={ProductDetailHeaderFixture.product.variantOptions}>
-            <AddToCartButton
-              theme={theme}
-              copy={AddToCartButtonFixture.copy}
-            />
+          <VariantSelectContextProvider
+            variants={ProductDetailHeaderFixture.product.variantOptions}
+          >
+            <AddToCartButton theme={theme} copy={AddToCartButtonFixture.copy} />
           </VariantSelectContextProvider>
         </AddToCartContextProvider>
-      )
+      );
     })()}
   </Story>
 </Canvas>

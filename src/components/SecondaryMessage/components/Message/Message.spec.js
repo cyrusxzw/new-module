@@ -1,20 +1,16 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import Message from './Message';
-import MessageFixture from './Message.fixture';
-
-configure({ adapter: new Adapter() });
+import { render } from '@testing-library/react';
+import { Message } from './Message';
+import { MessageFixture } from './Message.fixture';
 
 describe('<Message />', () => {
   it('should be defined', () => {
     expect(Message).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer.create(<Message {...MessageFixture} />).toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(<Message {...MessageFixture} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

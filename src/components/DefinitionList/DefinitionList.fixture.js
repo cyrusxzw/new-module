@@ -1,4 +1,4 @@
-export default {
+const DefinitionListFixture = {
   items: [
     {
       description: 'Proin vulputate eros quis lectus pretium gravida.',
@@ -17,3 +17,5 @@ export default {
     },
   ],
 };
+
+export { DefinitionListFixture };

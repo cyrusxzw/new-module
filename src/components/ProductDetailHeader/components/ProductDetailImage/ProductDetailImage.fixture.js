@@ -1,4 +1,4 @@
-export default {
+const ProductDetailImageFixture = {
   className: 'fixture-classname',
   id: 'image-id',
   theme: 'dark',
@@ -35,3 +35,5 @@ export default {
     },
   ],
 };
+
+export { ProductDetailImageFixture };

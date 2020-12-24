@@ -1,4 +1,4 @@
-export default {
+const ProductDetailBodyFixture = {
   className: 'fixture-classname',
   copy: {
     upSellProductLabel: 'Discover the kit',
@@ -32,3 +32,5 @@ export default {
   productName: 'Lorem ipsum dolor',
   theme: 'dark',
 };
+
+export { ProductDetailBodyFixture };

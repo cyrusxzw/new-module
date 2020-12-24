@@ -1,54 +1,44 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import CarouselFixture from './Carousel.fixture';
-import Carousel from './Carousel';
-
-configure({ adapter: new Adapter() });
+import { render } from '@testing-library/react';
+import { CarouselFixture } from './Carousel.fixture';
+import { Carousel } from './Carousel';
 
 describe('<Carousel />', () => {
   it('should be defined', () => {
     expect(Carousel).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Carousel
-          introduction={CarouselFixture.introduction}
-          slides={CarouselFixture.slides}
-        />,
-      )
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <Carousel
+        introduction={CarouselFixture.introduction}
+        slides={CarouselFixture.slides}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders component correctly if no `introduction` prop is provided', () => {
-    const tree = renderer
-      .create(<Carousel slides={CarouselFixture.slides} />)
-      .toJSON();
+    const { container } = render(<Carousel slides={CarouselFixture.slides} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders component correctly if no `url` member is provided on the `slides` prop', () => {
-    const tree = renderer
-      .create(
-        <Carousel
-          slides={[
-            {
-              description: CarouselFixture.slides[0].description,
-              heading: CarouselFixture.slides[0].heading,
-              image: CarouselFixture.slides[0].image,
-            },
-          ]}
-        />,
-      )
-      .toJSON();
+    const { container } = render(
+      <Carousel
+        slides={[
+          {
+            description: CarouselFixture.slides[0].description,
+            heading: CarouselFixture.slides[0].heading,
+            image: CarouselFixture.slides[0].image,
+          },
+        ]}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   // @TODO Address hooks + version of react + testing suite
