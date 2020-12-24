@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as knobs from '@storybook/addon-knobs';
+import { FormText } from './';
+
+<Meta title="Components/FormText" component={FormText} />
+
+# FormText
+
+<Canvas>
+  <Story name="Base component">
+    <FormText 
+      label={knobs.text('label', 'Email Address', 'Content')}
+      onChange={(e) => console.log('OnChange fired')}
+      errorMessage={knobs.text('errorMessage', '', 'Content')}
+      isDisabled={knobs.boolean('isDisabled', false, 'Presentation')}
+      theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
+    />
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of={FormText} />

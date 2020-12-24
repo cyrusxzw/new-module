@@ -16,6 +16,7 @@ import { DoubleMedia } from './DoubleMedia';
 import { Figure } from './Figure';
 import { FlyinPanel } from './FlyinPanel';
 import { FooterBlock } from './FooterBlock';
+import { FormText } from './FormText';
 import { FullWidthHeroScroll } from './FullWidthHeroScroll';
 import { GoogleMap } from './GoogleMap';
 import { Heading } from './Heading';
@@ -77,6 +78,7 @@ export { DoubleMedia };
 export { Figure };
 export { FlyinPanel };
 export { FooterBlock };
+export { FormText };
 export { FullWidthHeroScroll };
 export { GoogleMap };
 export { Heading };
@@ -142,6 +144,7 @@ export default {
   Figure,
   FlyinPanel,
   FooterBlock,
+  FormText,
   FullWidthHeroScroll,
   GoogleMap,
   Heading,
