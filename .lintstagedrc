@@ -1,6 +1,7 @@
 {
   "**/*.{js,json,md}": [
     "prettier --write",
+    "eslint . --ignore-path .eslintignore --config .eslintrc",
     "jest --findRelatedTests"
   ],
   "**/*.css": [
