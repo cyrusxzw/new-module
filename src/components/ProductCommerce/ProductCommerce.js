@@ -30,6 +30,8 @@ const ProductCommerce = React.forwardRef(
       size,
       theme,
       isActive,
+      trackFunc,
+      trackDataProps,
     },
     ref,
   ) => {
@@ -60,7 +62,7 @@ const ProductCommerce = React.forwardRef(
     const RADIO_GROUP_DATA_TEST_REF = 'PRODUCT_COMMERCE_VARIANT_SELECT';
 
     return (
-      <div className={classSet} id={id} ref={ref}>
+      <div className={classSet} id={id} ref={ref} {...trackDataProps}>
         <Transition isActive={isActive} type={TRANSITIONS.TYPE.SLOW_FADE}>
           <SectionHeading
             className={styles.header}

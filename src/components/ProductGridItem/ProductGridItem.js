@@ -16,7 +16,10 @@ import { Transition } from '~/components/Transition';
 import styles from './ProductGridItem.module.css';
 
 const ProductGridItem = React.forwardRef(
-  ({ className, copy, cta, id, info, theme, url }, ref) => {
+  (
+    { className, copy, cta, id, info, theme, url, trackFunc, trackDataProps },
+    ref,
+  ) => {
     const imageRef = useRef();
     const {
       selectedVariant,
@@ -51,9 +54,14 @@ const ProductGridItem = React.forwardRef(
     const RADIO_GROUP_DATA_TEST_REF = 'PRODUCT_GRID_ITEM_VARIANT_SELECT';
 
     return (
-      <div className={classSet} id={id} ref={ref}>
+      <div className={classSet} id={id} {...trackDataProps}>
         <Transition isActive={isImageActive} name="fade">
-          <Hyperlink className={styles.imageLink} url={url}>
+          <Hyperlink
+            className={styles.imageLink}
+            onClick={() => trackFunc(ref, id)}
+            ref={ref}
+            url={url}
+          >
             <Image
               altText={currentImage.altText}
               className={styles.image}
@@ -144,7 +152,9 @@ ProductGridItem.propTypes = {
   cta: PropTypes.shape({
     text: PropTypes.string,
     url: PropTypes.string,
+    clickFunction: PropTypes.func,
   }),
+  trackDataProps: PropTypes.object,
   id: PropTypes.string,
   info: PropTypes.string,
   theme: PropTypes.oneOf(['dark', 'light']),
