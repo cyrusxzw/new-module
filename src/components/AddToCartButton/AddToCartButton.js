@@ -17,6 +17,9 @@ const AddToCartButton = ({
   theme,
 }) => {
   const addToCartContext = useAddToCartContext();
+
+  console.log('hello');
+
   const { selectedVariant } = useVariantSelectContext();
 
   if (!selectedVariant) return null;
@@ -63,6 +66,8 @@ const AddToCartButton = ({
     isLoading,
     isUpdateSuccessful,
   } = addToCartContext;
+
+  const foo = '';
 
   if (hasError) {
     /** @TODO Handle errors thrown by handleOnClick */
