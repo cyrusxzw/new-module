@@ -1,0 +1,11 @@
+{
+  "**/*.{js,json,md}": [
+    "prettier --write",
+    "jest --findRelatedTests",
+    "git add"
+  ],
+  "**/*.css": [
+    "stylelint --fix",
+    "git add"
+  ]
+}

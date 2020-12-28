@@ -131,7 +131,7 @@ describe('<AddToCartButton />', () => {
     expect(button).not.toBeInTheDocument();
   });
 
-  it('should show laoding html when clicked', async () => {
+  it('should show loading html when clicked', async () => {
     render(
       <AddToCartButtonWithProviders
         copy={copy}
@@ -147,14 +147,14 @@ describe('<AddToCartButton />', () => {
 
     expect(button).toBeInTheDocument();
 
-    let breadcrumbs = screen.queryByTestId('data-testid-loading');
+    let loading = screen.queryByTestId('data-testid-loading');
 
-    expect(breadcrumbs).not.toBeInTheDocument();
+    expect(loading).not.toBeInTheDocument();
 
     userEvent.click(button);
 
-    breadcrumbs = await screen.findByTestId('data-testid-loading');
+    loading = await screen.findByTestId('data-testid-loading');
 
-    expect(breadcrumbs).toBeInTheDocument();
+    expect(loading).toBeInTheDocument();
   });
 });
