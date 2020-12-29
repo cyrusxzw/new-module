@@ -27,7 +27,7 @@ describe('<TextOverFullWidthAsset />', () => {
   it('should not render anything if content and mediaType are not valid', () => {
     render(<TextOverFullWidthAsset content="" mediaType="Audio" />);
 
-    const child = screen.queryByTestId('data-testid-TextOverFullWidthAsset');
+    const child = screen.queryByTestId(/data-testid-TextOverFullWidthAsset/i);
 
     expect(child).not.toBeInTheDocument();
   });
@@ -60,7 +60,7 @@ describe('<TextOverFullWidthAsset />', () => {
       />,
     );
 
-    const child = screen.queryByTestId('data-testid-VideoPlayer');
+    const child = screen.getByTestId(/data-testid-VideoPlayer/i);
 
     expect(child).toBeInTheDocument();
   });

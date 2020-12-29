@@ -16,7 +16,7 @@ describe('<Carousel.Pagination />', () => {
   it('should return null if `dots` array is empty', () => {
     render(<Pagination />);
 
-    const child = screen.queryByTestId('data-testid-Carousel-Pagination');
+    const child = screen.queryByTestId(/data-testid-Carousel-Pagination/i);
 
     expect(child).not.toBeInTheDocument();
   });

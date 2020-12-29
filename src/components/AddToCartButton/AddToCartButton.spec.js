@@ -147,13 +147,13 @@ describe('<AddToCartButton />', () => {
 
     expect(button).toBeInTheDocument();
 
-    let loading = screen.queryByTestId('data-testid-loading');
+    let loading = screen.queryByTestId(/data-testid-loading/i);
 
     expect(loading).not.toBeInTheDocument();
 
     userEvent.click(button);
 
-    loading = await screen.findByTestId('data-testid-loading');
+    loading = await screen.findByTestId(/data-testid-loading/i);
 
     expect(loading).toBeInTheDocument();
   });

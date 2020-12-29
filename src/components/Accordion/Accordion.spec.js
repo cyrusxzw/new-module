@@ -19,7 +19,7 @@ describe('<Accordion />', () => {
       />,
     );
 
-    const accordion = screen.queryByTestId('data-testid-Accordion');
+    const accordion = screen.getByTestId(/data-testid-Accordion/i);
 
     expect(accordion).toBeInTheDocument();
     expect(container).toMatchSnapshot();
@@ -28,7 +28,7 @@ describe('<Accordion />', () => {
   it('should return `null` if the length of the `items` prop is 0', () => {
     render(<Accordion items={[]} />);
 
-    const accordion = screen.queryByTestId('data-testid-Accordion');
+    const accordion = screen.queryByTestId(/data-testid-Accordion/i);
 
     expect(accordion).not.toBeInTheDocument();
   });

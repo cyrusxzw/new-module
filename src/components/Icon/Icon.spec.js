@@ -23,7 +23,7 @@ describe('<Icon />', () => {
   it('should render SVG with provided title prop correctly', () => {
     render(<Icon name="chevron" title="title" />);
 
-    const icon = screen.getByRole('img', { name: 'title' });
+    const icon = screen.getByRole('img', { name: /title/i });
 
     expect(icon).toBeInTheDocument();
   });
@@ -37,7 +37,7 @@ describe('<Icon />', () => {
   it('should return `null` if svg name is not found', () => {
     render(<Icon name="" />);
 
-    const child = screen.queryByTestId('data-testid-Icon');
+    const child = screen.queryByTestId(/data-testid-Icon/i);
 
     expect(child).not.toBeInTheDocument();
   });

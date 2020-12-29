@@ -18,11 +18,11 @@ describe('<FlyinPanel />', () => {
         isVisible={true}
         onClose={handleOnClose}
       >
-        test
+        flyin panel
       </FlyinPanel>,
     );
 
-    expect(screen.getByText('test')).toBeTruthy();
+    expect(screen.getByText(/flyin panel/i)).toBeTruthy();
     expect(screen.getByRole('note')).toBeTruthy();
 
     userEvent.click(screen.getByTitle(copyClose));

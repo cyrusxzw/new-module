@@ -18,11 +18,11 @@ describe('<Modal />', () => {
         isVisible={true}
         onClose={handleOnClose}
       >
-        test
+        modal test
       </Modal>,
     );
 
-    expect(screen.getByText('test')).toBeTruthy();
+    expect(screen.getByText(/modal test/i)).toBeTruthy();
     expect(handleOnClose).not.toHaveBeenCalled();
 
     userEvent.click(screen.getByTitle(copyClose));

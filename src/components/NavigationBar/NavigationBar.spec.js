@@ -24,7 +24,7 @@ describe('<NavigationBar />', () => {
   it('should not render the component if no links are provided', () => {
     render(<NavigationBar />);
 
-    const navBar = screen.queryByTestId('data-testid-NavigationBar');
+    const navBar = screen.queryByTestId(/data-testid-NavigationBar/i);
 
     expect(navBar).not.toBeInTheDocument();
   });
@@ -32,8 +32,8 @@ describe('<NavigationBar />', () => {
   it("should not render a parent link if it's not provided", () => {
     render(<NavigationBar childLinks={childLinks} />);
 
-    const navBar = screen.queryByTestId('data-testid-NavigationBar');
-    const parent = screen.queryByTestId('NAVIGATION_BAR_PARENT_LINK');
+    const navBar = screen.getByTestId(/data-testid-NavigationBar/i);
+    const parent = screen.queryByTestId(/NAVIGATION_BAR_PARENT_LINK/i);
     const children = screen.getAllByRole('listitem');
 
     expect(navBar).toBeInTheDocument();
@@ -44,8 +44,8 @@ describe('<NavigationBar />', () => {
   it('should render a parent link if it is provided', () => {
     render(<NavigationBar childLinks={childLinks} parentLink={parentLink} />);
 
-    const navBar = screen.queryByTestId('data-testid-NavigationBar');
-    const parent = screen.queryByTestId('NAVIGATION_BAR_PARENT_LINK');
+    const navBar = screen.getByTestId(/data-testid-NavigationBar/i);
+    const parent = screen.getByTestId(/NAVIGATION_BAR_PARENT_LINK/i);
     const children = screen.getAllByRole('listitem');
 
     expect(navBar).toBeInTheDocument();
