@@ -119,7 +119,7 @@ const Video = forwardRef(function VideoRef(
   return (
     <div className={classSet} id={id} ref={ref} role="group">
       {!!fallbackImage && (!hasVideo || hasAutoplay) && (
-        <figure className={styles.fallbackImageFigure} id={id} ref={ref}>
+        <figure className={styles.fallbackImageFigure} ref={ref}>
           <Image
             altText={fallbackImage.copy?.altText}
             className={cx(styles.fallbackImage, fallbackImage.className)}

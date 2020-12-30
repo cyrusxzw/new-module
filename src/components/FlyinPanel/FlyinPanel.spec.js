@@ -5,7 +5,6 @@ import { FlyinPanel } from './FlyinPanel';
 
 describe('<FlyinPanel />', () => {
   const handleOnClose = jest.fn();
-  const copyClose = 'close';
 
   it('should be defined', () => {
     expect(FlyinPanel).toBeDefined();
@@ -14,7 +13,7 @@ describe('<FlyinPanel />', () => {
   it('renders component correctly and fires the close button on click', () => {
     render(
       <FlyinPanel
-        copy={{ close: copyClose }}
+        copy={{ close: 'close flyin panel button' }}
         isVisible={true}
         onClose={handleOnClose}
       >
@@ -25,7 +24,7 @@ describe('<FlyinPanel />', () => {
     expect(screen.getByText(/flyin panel/i)).toBeTruthy();
     expect(screen.getByRole('note')).toBeTruthy();
 
-    userEvent.click(screen.getByTitle(copyClose));
+    userEvent.click(screen.getByTitle(/close flyin panel button/i));
 
     expect(handleOnClose).toHaveBeenCalledTimes(1);
   });

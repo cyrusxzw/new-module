@@ -125,9 +125,6 @@ exports[`<ProductGridItem /> should render base component correctly 1`] = `
             </span>
           </label>
         </li>
-        <div
-          class="errorMessage"
-        />
       </ul>
     </div>
     <button

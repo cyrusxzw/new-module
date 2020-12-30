@@ -2,13 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Icon } from './Icon';
 
-jest.mock('uuid', () => {
-  let value = 0;
-  return {
-    v4: () => value++,
-  };
-});
-
 describe('<Icon />', () => {
   it('should be defined', () => {
     expect(Icon).toBeDefined();

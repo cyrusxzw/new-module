@@ -1,8 +1,10 @@
 {
   "**/*.{js,json,md}": [
     "prettier --write",
+    "jest --findRelatedTests --coverageThreshold '{}'"
+  ],
+  "**/*.js": [
     "eslint --ignore-path .eslintignore --config .eslintrc",
-    "jest --findRelatedTests"
   ],
   "**/*.css": [
     "stylelint --fix"

@@ -26,7 +26,7 @@ describe('<ModalBody />', () => {
 
     render(
       <ModalBody
-        copy={{ close: 'close' }}
+        copy={{ close: 'close modal body button' }}
         isVisible={true}
         onClose={handleOnClose}
       >
@@ -36,7 +36,7 @@ describe('<ModalBody />', () => {
 
     expect(screen.getByText(/modal body test/i)).toBeTruthy();
 
-    userEvent.click(screen.getByTitle(/close/i));
+    userEvent.click(screen.getByTitle(/close modal body button/i));
 
     expect(handleOnClose).toHaveBeenCalledTimes(1);
   });
