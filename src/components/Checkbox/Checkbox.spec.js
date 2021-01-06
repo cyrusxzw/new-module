@@ -20,4 +20,12 @@ describe('<Checkbox />', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it('should assign an id value if one is not provided', () => {
+    const { getByRole } = render(<Checkbox content="Check me" />);
+
+    const checkBox = getByRole('checkbox');
+
+    expect(checkBox.id).toBeDefined();
+  });
 });

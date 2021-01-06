@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './Checkbox.module.css';
 
 const Checkbox = ({
@@ -9,7 +10,7 @@ const Checkbox = ({
   content,
   contentClassName,
   dataTestRef,
-  id,
+  id: idProp,
   isEnabled,
   name,
   onChange,
@@ -22,6 +23,8 @@ const Checkbox = ({
     checkboxClassName,
   );
   const contentClassSet = cx(styles.content, styles[theme], contentClassName);
+
+  const id = idProp || uuidv4();
 
   return (
     <label className={baseClassSet} htmlFor={id}>
@@ -45,7 +48,7 @@ Checkbox.propTypes = {
   content: PropTypes.string.isRequired,
   contentClassName: PropTypes.string,
   dataTestRef: PropTypes.string,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   isEnabled: PropTypes.bool,
   name: PropTypes.string,
   onChange: PropTypes.func,
