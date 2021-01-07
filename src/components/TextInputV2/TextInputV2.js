@@ -2,9 +2,9 @@ import React, { forwardRef, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import styles from './FormText.module.css';
+import styles from './TextInputV2.module.css';
 
-const FormText = forwardRef(
+const TextInputV2 = forwardRef(
   (
     {
       autoComplete,
@@ -83,7 +83,7 @@ const FormText = forwardRef(
   },
 );
 
-FormText.propTypes = {
+TextInputV2.propTypes = {
   autoComplete: PropTypes.string,
   classes: PropTypes.shape({
     errorMessage: PropTypes.string,
@@ -114,7 +114,7 @@ FormText.propTypes = {
   value: PropTypes.string,
 };
 
-FormText.defaultProps = {
+TextInputV2.defaultProps = {
   classes: {},
   isDisabled: false,
   onChange: () => {},
@@ -122,4 +122,4 @@ FormText.defaultProps = {
   type: 'text',
 };
 
-export { FormText };
+export { TextInputV2 };

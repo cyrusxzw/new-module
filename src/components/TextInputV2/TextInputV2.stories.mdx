@@ -1,14 +1,14 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import { FormText } from './';
+import { TextInputV2 } from './';
 
-<Meta title="Components/FormText" component={FormText} />
+<Meta title="Form Elements/TextInputV2" component={TextInputV2} />
 
-# FormText
+# TextInputV2
 
 <Canvas>
   <Story name="Base component">
-    <FormText 
+    <TextInputV2 
       label={knobs.text('label', 'Email Address', 'Content')}
       onChange={(e) => console.log('OnChange fired')}
       errorMessage={knobs.text('errorMessage', '', 'Content')}
@@ -20,4 +20,4 @@ import { FormText } from './';
 
 ## API
 
-<ArgsTable of={FormText} />
+<ArgsTable of={TextInputV2} />
