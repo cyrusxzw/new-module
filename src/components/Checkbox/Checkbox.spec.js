@@ -28,4 +28,14 @@ describe('<Checkbox />', () => {
 
     expect(checkBox.id).toBeDefined();
   });
+
+  it('should render the error message if it is provided', () => {
+    const { getByText } = render(
+      <Checkbox content="Check me" errorMessage="ERROR!" />,
+    );
+
+    const errorMessage = getByText('ERROR!');
+
+    expect(errorMessage).toHaveClass('errorMessage');
+  });
 });
