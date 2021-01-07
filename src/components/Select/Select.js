@@ -74,7 +74,7 @@ const Select = ({
         theme={theme}
         width={15}
       />
-      <div className={styles.errorMessage}>{errorMessage}</div>
+      {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
     </div>
   );
 };
