@@ -39,38 +39,3 @@ exports[`<SubNav /> should render base component correctly 1`] = `
   </nav>
 </div>
 `;
-
-exports[`<SubNav /> renders without heading if no \`heading\` prop is passed 1`] = `
-<div>
-  <nav
-    class="base dark"
-  >
-    <ul
-      class="base dark"
-    >
-      <li
-        class="item item"
-      >
-        <a
-          class="base left dark link"
-          href="https://aesop.com/"
-          target="_self"
-        >
-          Morbi id nulla
-        </a>
-      </li>
-      <li
-        class="item item"
-      >
-        <a
-          class="base left dark link"
-          href="https://aesop.com/"
-          target="_self"
-        >
-          Nullam ultrices
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
-`;
