@@ -39,3 +39,69 @@ exports[`<SubNav /> should render base component correctly 1`] = `
   </nav>
 </div>
 `;
+
+exports[`<SubNav isSelect /> should render base component correctly 1`] = `
+<div>
+  <nav
+    class="base dark select"
+  >
+    <h3
+      class="base small dark heading"
+    >
+      Phasellus aliquet sem
+    </h3>
+    <div
+      class="base dark"
+    >
+      <label
+        class="label"
+        for="sub-nav"
+      />
+      <select
+        aria-label="sub-nav"
+        class="input isBlock"
+        id="sub-nav"
+        name="sub-nav"
+      >
+        <option
+          value="https://aesop.com/"
+        >
+          Morbi id nulla
+        </option>
+        <option
+          value="https://aesop.com/"
+        >
+          Nullam ultrices
+        </option>
+      </select>
+      <svg
+        aria-labelledby="chevron-0"
+        class="base chevron dark icon"
+        data-testid="data-testid-Icon"
+        focusable="false"
+        height="15"
+        role="img"
+        style="height: 15px; width: 15px;"
+        tabindex="-1"
+        viewBox="0 0 50 50"
+        width="15"
+      >
+        <title
+          id="chevron-0"
+        >
+          chevron
+        </title>
+        <g>
+          <polygon
+            class="chevron"
+            points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
+          />
+        </g>
+      </svg>
+      <div
+        class="errorMessage"
+      />
+    </div>
+  </nav>
+</div>
+`;

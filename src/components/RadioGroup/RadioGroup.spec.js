@@ -26,7 +26,7 @@ describe('<RadioGroup />', () => {
   });
 
   it('should return correct number of items', () => {
-    const itemCount = RadioGroupFixture.options.length; // 2
+    const itemCount = RadioGroupFixture.options.length;
 
     render(
       <RadioGroup
@@ -37,11 +37,9 @@ describe('<RadioGroup />', () => {
     );
 
     const list = screen.getByRole('list');
-
-    expect(list).toBeInTheDocument();
-
     const items = screen.getAllByRole('listitem');
 
+    expect(list).toBeInTheDocument();
     expect(items).toHaveLength(itemCount);
   });
 

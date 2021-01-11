@@ -51,6 +51,7 @@ const Select = ({
         {label}
       </label>
       <select
+        aria-label={label || name}
         className={cx(styles.input, { [styles.isBlock]: isBlock })}
         data-test-ref={dataTestRef}
         id={name}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { SubNav } from './SubNav';
 import { SubNavFixture } from './SubNav.fixture';
 
@@ -45,14 +46,41 @@ describe('<SubNav />', () => {
     expect(heading).not.toBeInTheDocument();
   });
 
-  it('should render a select if isSelect is passed', () => {
+  it('should be accesible as a list', async () => {
+    const { container } = render(
+      <SubNav id="test-nav" isSelect={true} links={SubNavFixture.links} />,
+    );
+
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('<SubNav isSelect />', () => {
+  beforeAll(() => {
     // Force matchMedia to evaluate to true
     window.matchMedia = () => ({
       matches: true,
       addListener: () => {},
       removeListener: () => {},
     });
+  });
 
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <SubNav
+        heading={SubNavFixture.heading}
+        id={SubNavFixture.id}
+        isSelect={true}
+        links={SubNavFixture.links}
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render a select if isSelect is passed', () => {
     render(
       <SubNav id="test-nav" isSelect={true} links={SubNavFixture.links} />,
     );
@@ -67,13 +95,6 @@ describe('<SubNav />', () => {
   });
 
   it('should change window location on nav select change', () => {
-    // Force matchMedia to evaluate to true
-    window.matchMedia = () => ({
-      matches: true,
-      addListener: () => {},
-      removeListener: () => {},
-    });
-
     const mockResponse = jest.fn();
 
     render(
@@ -96,5 +117,29 @@ describe('<SubNav />', () => {
     userEvent.selectOptions(select, 'https://aesop.com/');
 
     expect(window.location.href).toBe('https://aesop.com/');
+  });
+});
+
+describe('<SubNav isSelect /> Accessibility', () => {
+  beforeAll(() => {
+    // https://github.com/nickcolley/jest-axe/issues/147
+    window.getComputedStyle = () => {};
+
+    // Force matchMedia to evaluate to true
+    window.matchMedia = () => ({
+      matches: true,
+      addListener: () => {},
+      removeListener: () => {},
+    });
+  });
+
+  it('should be accesible as a nav select', async () => {
+    const { container } = render(
+      <SubNav id="test-nav" isSelect={true} links={SubNavFixture.links} />,
+    );
+
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
   });
 });

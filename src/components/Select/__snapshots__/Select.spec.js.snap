@@ -12,6 +12,7 @@ exports[`<Select /> should render base component correctly 1`] = `
       Vestibulum accumsan
     </label>
     <select
+      aria-label="Vestibulum accumsan"
       class="input"
       id="select"
       name="select"
