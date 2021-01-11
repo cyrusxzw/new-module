@@ -66,6 +66,8 @@ export {
   Video,
 } from './components';
 
+export { DynamicForm } from './compositions';
+
 import * as constants from './constants';
 export { constants };
 
