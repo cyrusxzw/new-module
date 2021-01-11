@@ -55,7 +55,7 @@ describe('<RadioGroup />', () => {
     expect(screen.queryByRole('list')).not.toBeInTheDocument();
   });
 
-  it('should return one item ...', () => {
+  it('should return one item span and not a radio control', () => {
     render(
       <RadioGroup
         name={RadioGroupFixture.name}
@@ -69,6 +69,7 @@ describe('<RadioGroup />', () => {
       />,
     );
 
+    expect(screen.queryByRole('list')).not.toBeInTheDocument();
     expect(screen.getByText(/test label/i)).toBeInTheDocument();
   });
 
