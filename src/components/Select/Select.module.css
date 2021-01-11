@@ -90,6 +90,7 @@
 }
 
 .errorMessage {
+  display: block;
   height: rem(14px);
   margin: 10px 0 0;
   color: var(--color-error);

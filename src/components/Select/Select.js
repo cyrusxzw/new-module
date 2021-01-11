@@ -80,7 +80,7 @@ const Select = forwardRef(
           width={15}
         />
         {errorMessage && (
-          <div className={styles.errorMessage}>{errorMessage}</div>
+          <span className={styles.errorMessage}>{errorMessage}</span>
         )}
       </div>
     );
