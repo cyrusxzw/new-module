@@ -96,6 +96,7 @@
 }
 
 .errorMessage {
+  display: block;
   margin: 10px 0 0;
   color: var(--color-error);
   font-size: rem(14px);

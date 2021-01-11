@@ -9,7 +9,7 @@ import { TextInputV2 } from './';
 <Canvas>
   <Story name="Base component">
     <TextInputV2 
-      label={knobs.text('label', 'Email Address', 'Content')}
+      label={knobs.text('label', "Pets name", 'Content')}
       onChange={(e) => console.log('OnChange fired')}
       errorMessage={knobs.text('errorMessage', '', 'Content')}
       isDisabled={knobs.boolean('isDisabled', false, 'Presentation')}

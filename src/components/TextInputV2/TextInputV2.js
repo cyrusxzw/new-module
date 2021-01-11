@@ -1,6 +1,7 @@
 import React, { forwardRef, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { v4 as uuidv4 } from 'uuid';
 
 import styles from './TextInputV2.module.css';
 
@@ -11,7 +12,7 @@ const TextInputV2 = forwardRef(
       classes,
       dataTestRef,
       errorMessage,
-      id,
+      id: idProp,
       isDisabled,
       label,
       max,
@@ -34,12 +35,12 @@ const TextInputV2 = forwardRef(
       },
       [onChange, setValue],
     );
+    const id = idProp || uuidv4();
 
     return (
       <div className={cx(styles.wrapper, classes.wrapper)}>
         <div>
           <input
-            aria-label={label}
             autoComplete={autoComplete}
             className={cx(
               styles.input,
@@ -61,22 +62,23 @@ const TextInputV2 = forwardRef(
             value={value}
           />
           {label && (
-            <span
+            <label
               className={cx(
                 styles.label,
                 styles[theme],
                 { [styles.moved]: value },
                 classes.label,
               )}
+              htmlFor={id}
             >
               {label}
-            </span>
+            </label>
           )}
         </div>
         {errorMessage && (
-          <div className={cx(styles.errorMessage, classes.errorMessage)}>
+          <span className={cx(styles.errorMessage, classes.errorMessage)}>
             {errorMessage}
-          </div>
+          </span>
         )}
       </div>
     );
