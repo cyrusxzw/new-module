@@ -35,12 +35,15 @@ const TextInputV2 = forwardRef(
       },
       [onChange, setValue],
     );
-    const id = idProp || uuidv4();
+    const inputId = idProp || uuidv4();
+    const errorMessageId = `${inputId}-error-message`;
 
     return (
       <div className={cx(styles.wrapper, classes.wrapper)}>
         <div>
           <input
+            aria-describedby={errorMessageId}
+            aria-invalid={!!errorMessage}
             autoComplete={autoComplete}
             className={cx(
               styles.input,
@@ -50,7 +53,7 @@ const TextInputV2 = forwardRef(
             )}
             data-test-ref={dataTestRef}
             disabled={isDisabled}
-            id={id}
+            id={inputId}
             max={max}
             maxLength={maxLength}
             min={min}
@@ -69,14 +72,17 @@ const TextInputV2 = forwardRef(
                 { [styles.moved]: value },
                 classes.label,
               )}
-              htmlFor={id}
+              htmlFor={inputId}
             >
               {label}
             </label>
           )}
         </div>
         {errorMessage && (
-          <span className={cx(styles.errorMessage, classes.errorMessage)}>
+          <span
+            className={cx(styles.errorMessage, classes.errorMessage)}
+            id={errorMessageId}
+          >
             {errorMessage}
           </span>
         )}

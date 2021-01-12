@@ -32,6 +32,7 @@ const Select = forwardRef(
       styles[theme],
       className,
     );
+    const errorMessageId = `${name}-error-message`;
 
     const handleFocus = event => {
       if (onFocus) {
@@ -55,6 +56,8 @@ const Select = forwardRef(
           {label}
         </label>
         <select
+          aria-describedby={errorMessageId}
+          aria-invalid={!!errorMessage}
           className={cx(styles.input, { [styles.isBlock]: isBlock })}
           data-test-ref={dataTestRef}
           id={name}
@@ -80,7 +83,9 @@ const Select = forwardRef(
           width={15}
         />
         {errorMessage && (
-          <span className={styles.errorMessage}>{errorMessage}</span>
+          <span className={styles.errorMessage} id={errorMessageId}>
+            {errorMessage}
+          </span>
         )}
       </div>
     );

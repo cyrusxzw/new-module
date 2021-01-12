@@ -30,16 +30,19 @@ const Checkbox = forwardRef(
     );
     const contentClassSet = cx(styles.content, styles[theme], contentClassName);
 
-    const id = idProp || uuidv4();
+    const inputId = idProp || uuidv4();
+    const errorMessageId = `${inputId}-error-message`;
 
     return (
       <React.Fragment>
-        <label className={baseClassSet} htmlFor={id}>
+        <label className={baseClassSet} htmlFor={inputId}>
           <input
+            aria-describedby={errorMessageId}
+            aria-invalid={!!errorMessage}
             className={checkboxClassSet}
             data-test-ref={dataTestRef}
             disabled={!isEnabled}
-            id={id}
+            id={inputId}
             name={name}
             onChange={onChange}
             ref={ref}
@@ -48,7 +51,9 @@ const Checkbox = forwardRef(
           <span className={contentClassSet}>{content}</span>
         </label>
         {errorMessage && (
-          <span className={cx(styles.errorMessage)}>{errorMessage}</span>
+          <span className={cx(styles.errorMessage)} id={errorMessageId}>
+            {errorMessage}
+          </span>
         )}
       </React.Fragment>
     );
