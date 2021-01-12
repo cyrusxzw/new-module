@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { ParagraphSet } from '~/components/Paragraph';
-import SectionHeading from '~/components/SectionHeading';
+import { SectionHeading } from '~/components/SectionHeading';
 import styles from './Content.module.css';
 
 const Content = ({
@@ -95,4 +95,4 @@ Content.defaultProps = {
   theme: 'dark',
 };
 
-export default Content;
+export { Content };

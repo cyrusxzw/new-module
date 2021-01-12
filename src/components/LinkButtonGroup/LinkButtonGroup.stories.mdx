@@ -1,14 +1,15 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import Hyperlink from '~/components/Hyperlink';
-import LinkButtonGroup from './LinkButtonGroup';
-import LinkButtonGroupFixture from './LinkButtonGroup.fixture';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Button } from '~/components/Button';
+import { LinkButtonGroup } from './LinkButtonGroup';
+import { LinkButtonGroupFixture } from './LinkButtonGroup.fixture';
 
 <Meta title="Components/LinkButtonGroup" component={LinkButtonGroup} />
 
 # LinkButtonGroup
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <LinkButtonGroup
       hasFitContent={knobs.boolean('hasFitContent', false, 'Presentation')}
@@ -62,8 +63,8 @@ import LinkButtonGroupFixture from './LinkButtonGroup.fixture';
       </Hyperlink>
     </LinkButtonGroup>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={LinkButtonGroup} />
+<ArgsTable of={LinkButtonGroup} />

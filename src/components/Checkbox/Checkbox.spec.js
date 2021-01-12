@@ -1,29 +1,23 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import Checkbox from './Checkbox';
-
-configure({ adapter: new Adapter() });
+import { render } from '@testing-library/react';
+import { Checkbox } from './Checkbox';
 
 describe('<Checkbox />', () => {
   it('should be defined', () => {
     expect(Checkbox).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Checkbox
-          content="Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest."
-          dataTestRef="test-data-ref"
-          id="test-checkbox"
-          isEnabled={false}
-          theme="dark"
-        />,
-      )
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <Checkbox
+        content="Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest."
+        dataTestRef="test-data-ref"
+        id="test-checkbox"
+        isEnabled={false}
+        theme="dark"
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

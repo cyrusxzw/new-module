@@ -1,21 +1,17 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import DefinitionListWithProductExtract from './DefinitionListWithProductExtract';
-
-configure({ adapter: new Adapter() });
+import { render } from '@testing-library/react';
+import { DefinitionListWithProductExtract } from './DefinitionListWithProductExtract';
 
 describe('<DefinitionListWithProductExtract />', () => {
   it('should be defined', () => {
     expect(DefinitionListWithProductExtract).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<DefinitionListWithProductExtract dataTestRef="test_id" />)
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <DefinitionListWithProductExtract dataTestRef="test_id" />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

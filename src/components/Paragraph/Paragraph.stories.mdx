@@ -1,6 +1,6 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import Paragraph, { P, ParagraphSet } from './Paragraph';
+import { Paragraph, P, ParagraphSet } from './Paragraph';
 
 <Meta
   title="Components/Paragraph"
@@ -9,7 +9,7 @@ import Paragraph, { P, ParagraphSet } from './Paragraph';
 
 # Paragraph
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Paragraph
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
@@ -17,17 +17,17 @@ import Paragraph, { P, ParagraphSet } from './Paragraph';
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id erat est. Ut convallis, neque id semper fermentum, urna risus gravida nibh, vel molestie sapien leo ac tortor. Nunc dignissim quis arcu a lobortis. Phasellus tempus consequat erat, at egestas elit pulvinar lacinia. Nullam pretium, risus a dictum rhoncus, ex libero cursus erat, dignissim malesuada tortor justo quis enim. Nulla pellentesque sit amet ante et molestie. Mauris interdum odio at mauris pulvinar, non placerat nulla tempus.
     </Paragraph>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Paragraph} />
+<ArgsTable of={Paragraph} />
 
 ## Variations
 
 ### ParagraphSet
 
-<Preview>
+<Canvas>
   <Story name="ParagraphSet component">
     <ParagraphSet
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
@@ -40,4 +40,4 @@ import Paragraph, { P, ParagraphSet } from './Paragraph';
       </Paragraph>
     </ParagraphSet>
   </Story>
-</Preview>
+</Canvas>

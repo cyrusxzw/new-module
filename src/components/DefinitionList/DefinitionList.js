@@ -8,6 +8,10 @@ const DefinitionList = forwardRef(function DefinitionListRef(
   { className, hasBottomBorder, isVisible, items, theme },
   ref,
 ) {
+  if (!isObjectPopulatedArray(items)) {
+    return null;
+  }
+
   const classSet = cx(
     styles.base,
     styles[theme],
@@ -19,12 +23,8 @@ const DefinitionList = forwardRef(function DefinitionListRef(
     [styles.slideIn]: isVisible,
   });
 
-  if (!isObjectPopulatedArray(items)) {
-    return null;
-  }
-
   return (
-    <dl className={classSet} ref={ref}>
+    <dl className={classSet} data-testid="data-testid-DefinitionList" ref={ref}>
       {items
         .filter(({ description, term }) => description || term)
         .map(({ description, id, term }) => (
@@ -59,4 +59,4 @@ DefinitionList.defaultProps = {
   theme: 'dark',
 };
 
-export default DefinitionList;
+export { DefinitionList };

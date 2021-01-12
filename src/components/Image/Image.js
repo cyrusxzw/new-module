@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import get from 'lodash/get';
 import { constraintsByViewport } from '~/utils/viewports';
-import Hyperlink from '~/components/Hyperlink';
+import { Hyperlink } from '~/components/Hyperlink';
 import styles from './Image.module.css';
 
 const Image = forwardRef(function ImageRef(
@@ -113,4 +113,4 @@ Image.defaultProps = {
   type: undefined,
 };
 
-export default Image;
+export { Image };

@@ -1,25 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TwoColumnLayout /> renders base component correctly 1`] = `
-<div
-  className="base reverse dark TwoColumnLayout"
-  id="TwoColumnLayout"
->
+exports[`<TwoColumnLayout /> should render base component correctly 1`] = `
+<div>
   <div
-    className="content fullWidth content"
-    id="mainColumn"
+    class="base reverse dark TwoColumnLayout"
+    id="TwoColumnLayout"
   >
-    <div>
-      content
+    <div
+      class="content fullWidth content"
+      id="mainColumn"
+    >
+      <div>
+        content
+      </div>
     </div>
+    <aside
+      class="sidebar sidebar"
+      id="sidebarColum"
+    >
+      <div>
+        sidebar
+      </div>
+    </aside>
   </div>
-  <aside
-    className="sidebar sidebar"
-    id="sidebarColum"
-  >
-    <div>
-      sidebar
-    </div>
-  </aside>
 </div>
 `;

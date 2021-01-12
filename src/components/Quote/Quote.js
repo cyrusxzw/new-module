@@ -32,4 +32,4 @@ Quote.defaultProps = {
   theme: undefined,
 };
 
-export default Quote;
+export { Quote };

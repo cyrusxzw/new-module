@@ -1,188 +1,165 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Video /> renders base component correctly 1`] = `
-<div
-  className="base fullWidth"
-  id="video"
-  role="group"
->
-  <figure
-    className="fallbackImageFigure"
-    id="video"
-  >
-    <picture
-      className="base picture dark fallbackImage"
-    >
-      <source
-        media="(min-width: 1025px)"
-        srcSet="./assets/images/MediaWithContent/video-poster.png"
-      />
-      <source
-        media="(min-width: 640px)"
-        srcSet="./assets/images/MediaWithContent/video-poster.png"
-      />
-      <source
-        media="(min-width: 0px)"
-        srcSet="./assets/images/MediaWithContent/video-poster.png"
-      />
-      <img
-        alt="How to Use Video for Tea Tree Leaf Facial Exfoliant"
-        loading="lazy"
-      />
-    </picture>
-  </figure>
-  <video
-    autoPlay={true}
-    className="base"
-    controls={false}
-    loop={true}
-    muted={true}
-    playsInline={true}
-  >
-    <source
-      src="https://player.vimeo.com/external/300219772.hd.mp4?s=981a375b08836e6d99532afaefda0b9a78fbf404&profile_id=174"
-      type="video/mp4"
-    />
-  </video>
-  <button
-    className="base dark base fadeEnter"
-    disabled={false}
-    onClick={[Function]}
-    title="View video"
-    type="button"
-  >
-    <picture
-      className="base picture dark"
-    >
-      <img
-        alt="How to Use Video for Tea Tree Leaf Facial Exfoliant"
-        loading="lazy"
-      />
-    </picture>
-  </button>
+exports[`<Video /> should render base component correctly 1`] = `
+<div>
   <div
-    className="base"
+    class="base fullWidth"
+    id="video"
+    role="group"
   >
-    <div
-      className="zoomEnter"
+    <figure
+      class="fallbackImageFigure"
+      id="video"
     >
-      <div
-        className="fullScreenControlsHeader"
+      <picture
+        class="base picture dark fallbackImage"
       >
-        <button
-          className="base dark close"
-          disabled={false}
-          onClick={[Function]}
-          title="Close"
-          type="button"
-        >
-          <svg
-            className="base close light"
-            data-ref=""
-            focusable="false"
-            height={16}
-            role="img"
-            style={
-              Object {
-                "height": "16px",
-                "width": "16px",
-              }
-            }
-            tabIndex={-1}
-            viewBox="0 0 50 50"
-            width={16}
-          >
-            <g>
-              <polygon
-                className="close"
-                points="50,5 45,0 25,20 5,0 0,5 20,25 0,45 5,50 25,30 45,50 50,45 30,25"
-              />
-            </g>
-          </svg>
-        </button>
-        <button
-          className="base dark fullScreenPlayPauseButton"
-          disabled={false}
-          onClick={[Function]}
-          title="Pause video"
-          type="button"
-        >
-          <svg
-            className="base pause light"
-            data-ref=""
-            focusable="false"
-            height={10}
-            role="img"
-            style={
-              Object {
-                "height": "10px",
-                "width": "10px",
-              }
-            }
-            tabIndex={-1}
-            viewBox="0 0 9 10"
-            width={10}
-          >
-            <g>
-              <polygon
-                className="play"
-                points="0,0 3,0 3,10 0,10 0,0"
-              />
-              <polygon
-                className="play"
-                points="6,0 9,0 9,10 6,10 6,0"
-              />
-            </g>
-          </svg>
-        </button>
-      </div>
-    </div>
+        <source
+          media="(min-width: 1025px)"
+          srcset="./assets/images/MediaWithContent/video-poster.png"
+        />
+        <source
+          media="(min-width: 640px)"
+          srcset="./assets/images/MediaWithContent/video-poster.png"
+        />
+        <source
+          media="(min-width: 0px)"
+          srcset="./assets/images/MediaWithContent/video-poster.png"
+        />
+        <img
+          alt="How to Use Video for Tea Tree Leaf Facial Exfoliant"
+          loading="lazy"
+        />
+      </picture>
+    </figure>
+    <video
+      autoplay=""
+      class="base"
+      data-testid="data-testid-VideoPlayer"
+      loop=""
+      playsinline=""
+    >
+      <source
+        src="https://player.vimeo.com/external/300219772.hd.mp4?s=981a375b08836e6d99532afaefda0b9a78fbf404&profile_id=174"
+        type="video/mp4"
+      />
+    </video>
     <button
-      className="base dark playPauseButton activePlayPauseButton"
-      disabled={false}
-      onClick={[Function]}
-      title="Pause video"
+      class="base dark base fadeEnter"
+      title="View video"
       type="button"
     >
-      <svg
-        className="base pause dark"
-        data-ref=""
-        focusable="false"
-        height={10}
-        role="img"
-        style={
-          Object {
-            "height": "10px",
-            "width": "10px",
-          }
-        }
-        tabIndex={-1}
-        viewBox="0 0 9 10"
-        width={10}
+      <picture
+        class="base picture dark"
       >
-        <g>
-          <polygon
-            className="play"
-            points="0,0 3,0 3,10 0,10 0,0"
-          />
-          <polygon
-            className="play"
-            points="6,0 9,0 9,10 6,10 6,0"
-          />
-        </g>
-      </svg>
+        <img
+          alt="How to Use Video for Tea Tree Leaf Facial Exfoliant"
+          loading="lazy"
+        />
+      </picture>
     </button>
     <div
-      className="progressBar"
+      class="base"
     >
       <div
-        className="progress"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
+        class="zoomEnter"
+      >
+        <div
+          class="fullScreenControlsHeader"
+        >
+          <button
+            class="base dark close"
+            title="Close"
+            type="button"
+          >
+            <svg
+              class="base close light"
+              data-ref=""
+              data-testid="data-testid-Icon"
+              focusable="false"
+              height="16"
+              role="img"
+              style="height: 16px; width: 16px;"
+              tabindex="-1"
+              viewBox="0 0 50 50"
+              width="16"
+            >
+              <g>
+                <polygon
+                  class="close"
+                  points="50,5 45,0 25,20 5,0 0,5 20,25 0,45 5,50 25,30 45,50 50,45 30,25"
+                />
+              </g>
+            </svg>
+          </button>
+          <button
+            class="base dark fullScreenPlayPauseButton"
+            title="Pause video"
+            type="button"
+          >
+            <svg
+              class="base pause light"
+              data-ref=""
+              data-testid="data-testid-Icon"
+              focusable="false"
+              height="10"
+              role="img"
+              style="height: 10px; width: 10px;"
+              tabindex="-1"
+              viewBox="0 0 9 10"
+              width="10"
+            >
+              <g>
+                <polygon
+                  class="play"
+                  points="0,0 3,0 3,10 0,10 0,0"
+                />
+                <polygon
+                  class="play"
+                  points="6,0 9,0 9,10 6,10 6,0"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <button
+        class="base dark playPauseButton activePlayPauseButton"
+        title="Pause video"
+        type="button"
+      >
+        <svg
+          class="base pause dark"
+          data-ref=""
+          data-testid="data-testid-Icon"
+          focusable="false"
+          height="10"
+          role="img"
+          style="height: 10px; width: 10px;"
+          tabindex="-1"
+          viewBox="0 0 9 10"
+          width="10"
+        >
+          <g>
+            <polygon
+              class="play"
+              points="0,0 3,0 3,10 0,10 0,0"
+            />
+            <polygon
+              class="play"
+              points="6,0 9,0 9,10 6,10 6,0"
+            />
+          </g>
+        </svg>
+      </button>
+      <div
+        class="progressBar"
+      >
+        <div
+          class="progress"
+          style="width: 0%;"
+        />
+      </div>
     </div>
   </div>
 </div>

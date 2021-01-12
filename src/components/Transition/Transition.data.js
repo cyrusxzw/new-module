@@ -96,7 +96,7 @@ const zoom = {
   timeout: 500,
 };
 
-export default {
+const data = {
   fade,
   shiftInDown,
   shiftInLeft,
@@ -106,3 +106,5 @@ export default {
   slowFade,
   zoom,
 };
+
+export { data };

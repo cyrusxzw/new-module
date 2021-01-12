@@ -9,12 +9,12 @@ import {
   AccordionItemPanel,
 } from 'react-accessible-accordion';
 import { Collapse } from 'react-collapse';
-import Icon from '~/components/Icon';
+import { Icon } from '~/components/Icon';
 import { isObjectPopulatedArray } from '~/utils/objects';
 import styles from './Accordion.module.css';
 
 const Accordion = forwardRef(
-  ({ className, items, theme, wrapperClass }, ref) => {
+  ({ className, id, items, theme, wrapperClass }, ref) => {
     const [activeNodes, setIsActiveNodes] = React.useState([]);
 
     if (!isObjectPopulatedArray(items)) {
@@ -22,11 +22,18 @@ const Accordion = forwardRef(
     }
 
     const classSet = cx(styles.base, styles[theme], className);
+    /** handleOnChange gets passed to the AccessibleAccordion dependency */
+    /* istanbul ignore next */
     const handleOnChange = nodes => setIsActiveNodes(nodes);
     const checkIsActive = id => activeNodes.includes(id);
 
     return (
-      <div className={cx(wrapperClass)} ref={ref}>
+      <div
+        className={cx(wrapperClass)}
+        data-testid="data-testid-Accordion"
+        id={id}
+        ref={ref}
+      >
         <AccessibleAccordion
           allowMultipleExpanded={true}
           allowZeroExpanded={true}
@@ -69,6 +76,7 @@ const Accordion = forwardRef(
 
 Accordion.propTypes = {
   className: PropTypes.string,
+  id: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       content: PropTypes.node.isRequired,
@@ -82,9 +90,10 @@ Accordion.propTypes = {
 
 Accordion.defaultProps = {
   className: undefined,
+  id: undefined,
   items: undefined,
   theme: 'dark',
   wrapperClass: undefined,
 };
 
-export default Accordion;
+export { Accordion };

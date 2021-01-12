@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Carousel from '~/components/Carousel';
-import DefinitionList from '~/components/DefinitionList';
-import Image from '~/components/Image';
-import KitList from '~/components/KitList';
-import MediaWithContent from '~/components/MediaWithContent';
-import Podium from '~/components/Podium';
-import ProductDetailHeader from '~/components/ProductDetailHeader';
-import Quote from '~/components/Quote';
+import { Carousel } from '~/components/Carousel';
+import { DefinitionList } from '~/components/DefinitionList';
+import { Image } from '~/components/Image';
+import { KitList } from '~/components/KitList';
+import { MediaWithContent } from '~/components/MediaWithContent';
+import { Podium } from '~/components/Podium';
+import { ProductDetailHeader } from '~/components/ProductDetailHeader';
+import { Quote } from '~/components/Quote';
 import styles from './ProductDetail.module.css';
 
 const ProductDetail = ({
@@ -106,4 +106,4 @@ ProductDetail.defaultProps = {
   relatedProducts: undefined,
 };
 
-export default ProductDetail;
+export { ProductDetail };

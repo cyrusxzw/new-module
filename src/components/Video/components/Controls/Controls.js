@@ -2,12 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
-import { useEscapeKeyListener } from '~/customHooks/useEscapeKeyListener';
-import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
-import Button from '~/components/Button';
-import Icon from '~/components/Icon';
-import Transition from '~/components/Transition';
+import { useEscapeKeyListener } from '~/customHooks';
 import { isInBrowser } from '~/utils/environment';
+import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
+import { Button } from '~/components/Button';
+import { Icon } from '~/components/Icon';
+import { Transition } from '~/components/Transition';
 import styles from './Controls.module.css';
 
 const Controls = ({
@@ -262,4 +262,4 @@ Controls.defaultProps = {
   progress: 0,
 };
 
-export default Controls;
+export { Controls };

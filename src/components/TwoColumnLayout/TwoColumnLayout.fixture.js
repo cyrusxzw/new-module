@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default {
+const TwoColumnLayoutFixture = {
   childrenClassNames: { content: 'content', sidebar: 'sidebar' },
   className: 'TwoColumnLayout',
   content: <div>content</div>,
@@ -9,3 +9,5 @@ export default {
   isReversed: true,
   sidebar: <div>sidebar</div>,
 };
+
+export { TwoColumnLayoutFixture };

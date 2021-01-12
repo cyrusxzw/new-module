@@ -1,13 +1,13 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import Icon from './Icon';
-import svgs from './Icon.svgs';
+import { Icon } from './Icon';
+import { svgs } from './Icon.svgs';
 
 <Meta title="Components/Icon" component={Icon} />
 
 # Icon
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <div style={{ display: 'flex', flexWrap: 'wrap', textAlign: 'center' }}>
       {svgs.map((svg, key) => (
@@ -28,8 +28,8 @@ import svgs from './Icon.svgs';
       ))}
     </div>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Icon} />
+<ArgsTable of={Icon} />

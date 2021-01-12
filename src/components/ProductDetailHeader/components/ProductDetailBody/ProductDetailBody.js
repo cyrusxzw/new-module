@@ -7,19 +7,19 @@ import {
   useThemeContext,
   useVariantSelectContext,
 } from '~/contexts';
-import useWindowHasResized from '~/customHooks/useWindowHasResized';
+import { useWindowHasResized } from '~/customHooks/useWindowHasResized';
 import { getVariantRadioOptions } from '~/utils/product';
-import AddToCartButton from '~/components/AddToCartButton';
-import Button from '~/components/Button';
-import DefinitionList from '~/components/DefinitionList';
-import FlyinPanel from '~/components/FlyinPanel';
-import Heading from '~/components/Heading';
-import Hidden from '~/components/Hidden';
-import Icon from '~/components/Icon';
-import Paragraph from '~/components/Paragraph';
-import ProductExtract from '~/components/ProductExtract/ProductExtract.js';
-import RadioGroup from '~/components/RadioGroup';
-import Transition from '~/components/Transition';
+import { AddToCartButton } from '~/components/AddToCartButton';
+import { Button } from '~/components/Button';
+import { DefinitionList } from '~/components/DefinitionList';
+import { FlyinPanel } from '~/components/FlyinPanel';
+import { Heading } from '~/components/Heading';
+import { Hidden } from '~/components/Hidden';
+import { Icon } from '~/components/Icon';
+import { Paragraph } from '~/components/Paragraph';
+import { ProductExtract } from '~/components/ProductExtract/ProductExtract.js';
+import { RadioGroup } from '~/components/RadioGroup';
+import { Transition } from '~/components/Transition';
 import styles from './ProductDetailBody.module.css';
 import {
   ascertainIsLargeViewport,
@@ -282,4 +282,4 @@ ProductDetailBody.defaultProps = {
   theme: undefined,
 };
 
-export default ProductDetailBody;
+export { ProductDetailBody };

@@ -1,41 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DefinitionListWithProductExtract /> renders base component correctly 1`] = `
-<div
-  className="base dark slideIn hasTopMargin item1"
->
+exports[`<DefinitionListWithProductExtract /> should render base component correctly 1`] = `
+<div>
   <div
-    className="flexContainer delayAnimation slideIn"
+    class="base dark slideIn hasTopMargin item1"
+    data-testid="data-testid-ProductExtract"
   >
     <div
-      className="productDescription"
+      class="flexContainer delayAnimation slideIn"
     >
-      <h4
-        className="base xXSmall dark heading delayAnimation slideIn"
-      >
-        <span>
-          Works well with
-        </span>
-      </h4>
       <div
-        className="productName delayAnimation slideIn"
+        class="productDescription"
       >
-        <div>
-          <span />
+        <h4
+          class="base xXSmall dark heading delayAnimation slideIn"
+        >
+          <span>
+            Works well with
+          </span>
+        </h4>
+        <div
+          class="productName delayAnimation slideIn"
+        >
+          <div>
+            <span />
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      className="productImage delayAnimation slideIn small"
-    >
-      <picture
-        className="base picture dark"
+      <div
+        class="productImage delayAnimation slideIn small"
       >
-        <img
-          alt="Product Extract"
-          loading="lazy"
-        />
-      </picture>
+        <picture
+          class="base picture dark"
+        >
+          <img
+            alt="Product Extract"
+            loading="lazy"
+          />
+        </picture>
+      </div>
     </div>
   </div>
 </div>

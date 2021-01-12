@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import ContentHubArticle from '~/components/ContentHubArticle';
-import Transition from '~/components/Transition';
+import { ContentHubArticle } from '~/components/ContentHubArticle';
+import { Transition } from '~/components/Transition';
 import styles from './ReadMore.module.css';
 
 const ReadMore = ({ articles, className }) => {
@@ -46,4 +46,4 @@ ReadMore.defaultProps = {
   className: undefined,
 };
 
-export default ReadMore;
+export { ReadMore };

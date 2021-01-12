@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { ThemeContextProvider } from '~/contexts';
-import Transition from '~/components/Transition';
+import { Transition } from '~/components/Transition';
 import styles from './Podium.module.css';
 
 const Podium = forwardRef(function PodiumRef(
@@ -114,4 +114,4 @@ Podium.defaultProps = {
   verticalPadding: 'none',
 };
 
-export default Podium;
+export { Podium };

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { isObjectPopulatedArray } from '~/utils/objects';
-import Hyperlink from '~/components/Hyperlink';
+import { Hyperlink } from '~/components/Hyperlink';
 import styles from './Breadcrumbs.module.css';
 
 const Breadcrumbs = ({ className, items, theme }) => {
@@ -13,7 +13,7 @@ const Breadcrumbs = ({ className, items, theme }) => {
   const classSet = cx(styles.base, styles[theme], className);
 
   return (
-    <nav className={classSet}>
+    <nav className={classSet} data-testid="data-testid-Breadcrumbs">
       <ul className={styles.list}>
         {items.map(item => (
           <li className={styles.item} key={item.id}>
@@ -52,4 +52,4 @@ Breadcrumbs.defaultProps = {
   theme: 'dark',
 };
 
-export default Breadcrumbs;
+export { Breadcrumbs };

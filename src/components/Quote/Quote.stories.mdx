@@ -1,13 +1,13 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import Quote from './Quote';
-import QuoteFixture from './Quote.fixture';
+import { Quote } from './Quote';
+import { QuoteFixture } from './Quote.fixture';
 
 <Meta title="Components/Quote" component={Quote} />
 
 # Quote
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Quote
       author={knobs.text('author', QuoteFixture.author, 'Copy')}
@@ -15,8 +15,8 @@ import QuoteFixture from './Quote.fixture';
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Quote} />
+<ArgsTable of={Quote} />

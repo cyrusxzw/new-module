@@ -1,4 +1,4 @@
-export default {
+const ProductDetailFixture = {
   className: 'fixture-classname',
   product: {
     sku: 'ARD33',
@@ -56,3 +56,5 @@ export default {
     ],
   },
 };
+
+export { ProductDetailFixture };

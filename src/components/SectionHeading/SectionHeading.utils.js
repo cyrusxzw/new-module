@@ -1,7 +1,7 @@
-export const getEyebrowLevel = (heading, isPageHeading) =>
+const getEyebrowLevel = (heading, isPageHeading) =>
   heading ? (isPageHeading ? '2' : '3') : isPageHeading ? '1' : '2';
 
-export const getSubHeadingLevel = (eyebrow, heading, isPageHeading) => {
+const getSubHeadingLevel = (eyebrow, heading, isPageHeading) => {
   if (eyebrow) {
     if (heading) {
       return isPageHeading ? '3' : '4';
@@ -16,3 +16,5 @@ export const getSubHeadingLevel = (eyebrow, heading, isPageHeading) => {
 
   return isPageHeading ? '1' : '2';
 };
+
+export { getEyebrowLevel, getSubHeadingLevel };

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Hyperlink from '~/components/Hyperlink';
+import { Hyperlink } from '~/components/Hyperlink';
 import styles from './NavigationBar.module.css';
 
 const testRefs = {
@@ -27,6 +27,7 @@ const NavigationBar = ({ childLinks, className, parentLink, selectedUrl }) => {
     <div
       className={cx(styles.wrapper, className)}
       data-test-ref={testRefs.wrapper}
+      data-testid="data-testid-NavigationBar"
     >
       <ul className={cx(styles.list)}>
         {links.map(({ hasTargetInNewWindow, text, url }, index) => {
@@ -37,7 +38,15 @@ const NavigationBar = ({ childLinks, className, parentLink, selectedUrl }) => {
           });
 
           return (
-            <li className={cx(styles.listItem)} key={index}>
+            <li
+              className={cx(styles.listItem)}
+              data-testid={
+                parentLink && index === 0
+                  ? testRefs.parentLink
+                  : testRefs.childLink
+              }
+              key={index}
+            >
               <Hyperlink
                 className={linkClasses}
                 dataTestRef={
@@ -83,4 +92,4 @@ NavigationBar.defaultProps = {
   selectedUrl: undefined,
 };
 
-export default NavigationBar;
+export { NavigationBar };

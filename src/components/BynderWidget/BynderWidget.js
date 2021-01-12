@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import useScript from '~/customHooks/useScript';
-import Loading from '~/components/Loading';
+import { useScript } from '~/customHooks';
+import { Heading } from '~/components/Heading';
+import { Loading } from '~/components/Loading';
 import styles from './BynderWidget.module.css';
 
 const BynderWidget = ({ className, heading, id, theme }) => {
@@ -16,13 +17,15 @@ const BynderWidget = ({ className, heading, id, theme }) => {
     },
   });
 
-  if (error) return; /** @TODO failed script load error */
+  if (error) return null; /** @TODO failed script load error */
 
   const classSet = cx(styles.base, styles[theme], className);
 
   return (
     <article className={classSet} id={id}>
-      <h3 className={styles.heading}>{heading}</h3>
+      <Heading className={styles.heading} level="3" size="xSmall">
+        {heading}
+      </Heading>
       <Loading isLoading={isLoading} />
       <div
         data-bynder-widget="media-list"
@@ -47,4 +50,4 @@ BynderWidget.defaultProps = {
   theme: 'dark',
 };
 
-export default BynderWidget;
+export { BynderWidget };

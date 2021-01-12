@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '~/components/Button';
-import { useNotificationContext } from 'contexts';
+import { Button } from '~/components/Button';
+import { useNotificationContext } from '~/contexts';
 
 const ToogleButton = () => {
   const footerSuccessModal = useNotificationContext();
@@ -18,4 +18,4 @@ const ToogleButton = () => {
   );
 };
 
-export default ToogleButton;
+export { ToogleButton };

@@ -1,21 +1,29 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import TwoColumnLayout from '~/components/TwoColumnLayout';
-import BodyCopy from '~/components/BodyCopy';
-import Podium from '~/components/Podium'
-import ImageCarousel from './ImageCarousel';
-import ImageCarouselFixture from './ImageCarousel.fixture';
+import { TwoColumnLayout } from '~/components/TwoColumnLayout';
+import { BodyCopy } from '~/components/BodyCopy';
+import { Podium } from '~/components/Podium';
+import { ImageCarousel } from './ImageCarousel';
+import { ImageCarouselFixture } from './ImageCarousel.fixture';
 
 <Meta title="Components/ImageCarousel" component={ImageCarousel} />
 
 # ImageCarousel
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <ImageCarousel
-      autoplaySpeed={knobs.number('autoplaySpeed', ImageCarouselFixture.autoplaySpeed, 'Presentation')}
+      autoplaySpeed={knobs.number(
+        'autoplaySpeed',
+        ImageCarouselFixture.autoplaySpeed,
+        'Presentation',
+      )}
       hasAutoplay={knobs.boolean('hasAutoplay', false, 'Presentation')}
-      hasFlushPagination={knobs.boolean('hasFlushPagination', false, 'Presentation')}
+      hasFlushPagination={knobs.boolean(
+        'hasFlushPagination',
+        false,
+        'Presentation',
+      )}
       isCompact={knobs.boolean('isCompact', false, 'Presentation')}
       slides={[
         {
@@ -36,33 +44,42 @@ import ImageCarouselFixture from './ImageCarousel.fixture';
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ImageCarousel} />
+<ArgsTable of={ImageCarousel} />
 
 ## Variations
 
 ### With Autoplay
 
-<Preview>
+<Canvas>
   <Story name="With Autoplay">
     <ImageCarousel
-      autoplaySpeed={knobs.number('autoplaySpeed', ImageCarouselFixture.autoplaySpeed, 'Presentation')}
+      autoplaySpeed={knobs.number(
+        'autoplaySpeed',
+        ImageCarouselFixture.autoplaySpeed,
+        'Presentation',
+      )}
       hasAutoplay={true}
       slides={ImageCarouselFixture.slides}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Rendered in Two Column Layout
 
 Wrapped in a `Podium` component. The `ImageCarousel` component has `hasAutoplay` enabled.
 
-<Preview>
+<Canvas>
   <Story name="Rendered in Two Column Layout">
-    <Podium verticalPadding="small" paddingRight="small" isHorizontalFlushOnSmall={true} isHorizontalFlushOnMedium={true}>
+    <Podium
+      verticalPadding="small"
+      paddingRight="small"
+      isHorizontalFlushOnSmall={true}
+      isHorizontalFlushOnMedium={true}
+    >
       <TwoColumnLayout
         hasFullWidthContent={knobs.boolean(
           'hasFullWidthContent',
@@ -70,13 +87,9 @@ Wrapped in a `Podium` component. The `ImageCarousel` component has `hasAutoplay`
           'Presentation',
         )}
         id="TwoColumn-id"
-        isFlushOnSmall={knobs.boolean(
-          'isFlushOnSmall',
-          true,
-          'Presentation',
-        )}
+        isFlushOnSmall={knobs.boolean('isFlushOnSmall', true, 'Presentation')}
         isReversed={knobs.boolean('isReversed', true, 'Presentation')}
-        sidebar={(
+        sidebar={
           <BodyCopy
             cta={{
               text: 'Quisque non enim',
@@ -87,16 +100,16 @@ Wrapped in a `Podium` component. The `ImageCarousel` component has `hasAutoplay`
             heading="Nunc dignissim quis"
             copy="Nunc dignissim quis arcu a lobortis. Nullam auctor id nulla non sagittis. Quisque non enim efficitur quam mattis."
           />
-        )}
-        content={(
+        }
+        content={
           <ImageCarousel
             hasAutoplay={true}
             hasFlushPagination={true}
             isCompact={true}
             slides={ImageCarouselFixture.slides}
           />
-        )}
+        }
       />
     </Podium>
   </Story>
-</Preview>
+</Canvas>

@@ -1,4 +1,4 @@
-export default {
+const AccordionProductFixture = {
   closedState: {
     addToCart: {
       cartAction: 'Add to your cart',
@@ -80,3 +80,5 @@ export default {
     },
   },
 };
+
+export { AccordionProductFixture };

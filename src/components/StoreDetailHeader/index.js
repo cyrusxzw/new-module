@@ -1,3 +1,3 @@
-import StoreDetailHeader from './StoreDetailHeader';
+import { StoreDetailHeader } from './StoreDetailHeader';
 
-export default StoreDetailHeader;
+export { StoreDetailHeader };

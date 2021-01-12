@@ -1,4 +1,4 @@
-export default {
+const KitListFixture = {
   items: [
     { content: 'Pellentesque vitae sapien leo', id: '1' },
     { content: 'Nunc in euismod lectus', id: '2' },
@@ -13,3 +13,5 @@ export default {
     },
   ],
 };
+
+export { KitListFixture };

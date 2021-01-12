@@ -1,7 +1,7 @@
 import React from 'react';
 import { BREAKPOINTS } from '~/constants';
 
-export const getCarouselSettings = ({
+const getCarouselSettings = ({
   autoplaySpeed,
   className,
   hasAutoplay,
@@ -60,3 +60,5 @@ export const getCarouselSettings = ({
   speed: 500,
   swipeToSlide: true,
 });
+
+export { getCarouselSettings };

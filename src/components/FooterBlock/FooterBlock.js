@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Hidden from '~/components/Hidden';
-import Hyperlink from '~/components/Hyperlink';
+import { Hidden } from '~/components/Hidden';
+import { Hyperlink } from '~/components/Hyperlink';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import cx from 'classnames';
 import styles from './FooterBlock.css';
@@ -90,4 +90,4 @@ FooterBlock.defaultProps = {
   theme: 'dark',
 };
 
-export default FooterBlock;
+export { FooterBlock };

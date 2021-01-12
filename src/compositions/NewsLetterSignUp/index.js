@@ -1,3 +1,3 @@
-import NewsLetterSignUp from './NewsLetterSignUp';
+import { NewsletterSignUp } from './NewsletterSignUp';
 
-export default NewsLetterSignUp;
+export { NewsletterSignUp };

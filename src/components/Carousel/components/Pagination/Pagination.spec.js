@@ -1,24 +1,23 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import Pagination from './Pagination';
-
-configure({ adapter: new Adapter() });
+import { render, screen } from '@testing-library/react';
+import { Pagination } from './Pagination';
 
 describe('<Carousel.Pagination />', () => {
   it('should be defined', () => {
     expect(Pagination).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer.create(<Pagination dots={[0]} />).toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(<Pagination dots={[0]} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
-  it('returns null if dots array was empty', () => {
-    const component = shallow(<Pagination />);
-    expect(component.type()).toEqual(null);
+  it('should return null if `dots` array is empty', () => {
+    render(<Pagination />);
+
+    const child = screen.queryByTestId('data-testid-Carousel-Pagination');
+
+    expect(child).not.toBeInTheDocument();
   });
 });

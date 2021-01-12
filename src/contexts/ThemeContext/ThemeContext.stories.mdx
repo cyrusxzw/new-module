@@ -1,0 +1,54 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ThemeContextProvider, useThemeContext } from './ThemeContext';
+
+<Meta title="Contexts/ThemeContext" component="ThemeContextProvider" />
+
+# ThemeContext
+
+The `ThemeContextProvider` component takes a prop of `theme`, a string of either 'dark' or 'light';
+
+The `useThemeContext` consumer hook takes two arguments, the current components `theme` prop and a fallback theme, and returns a 'dark' or 'light' string as state.
+
+<Canvas>
+  <>
+    {(() => {
+      const LevelOne = () => {
+        return(
+          <div>LevelOne component theme context: {useThemeContext()}</div>
+        );
+      }
+      const LevelTwo = ({ children }) => {
+        return(
+          <div>LevelTwo sibling component theme context: {useThemeContext()} <div>{children}</div></div>
+        );
+      }
+      const LevelThree = () => {
+        return(
+          <div>LevelThree child component theme context: {useThemeContext()}</div>
+        );
+      }
+      const LevelFour = ({ theme }) => {
+        return(
+          <div>LevelFour child component with theme prop: {useThemeContext(theme)}</div>
+        );
+      }
+      return (
+        <ThemeContextProvider theme="light">
+          <LevelOne />
+          <ThemeContextProvider theme="dark">
+            <LevelTwo>
+              <ThemeContextProvider theme="light">
+                <LevelThree />
+                <LevelFour theme="dark" />
+              </ThemeContextProvider>
+            </LevelTwo>
+          </ThemeContextProvider>
+        </ThemeContextProvider>
+      )
+    })()}
+  </>
+</Canvas>
+
+## API
+
+<ArgsTable of={ThemeContextProvider} />

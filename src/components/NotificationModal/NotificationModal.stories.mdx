@@ -1,27 +1,29 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import NotificationModal from './NotificationModal';
-import ToogleButton from './components/ToogleButton';
-import NotificationModalFixture from './NotificationModal.fixture';
-import Podium from '~/components/Podium';
 import { NotificationContextProvider } from '~/contexts';
-
+import { Podium } from '~/components/Podium';
+import { ToogleButton } from './components/ToogleButton';
+import { NotificationModal } from './NotificationModal';
+import { NotificationModalFixture } from './NotificationModal.fixture';
 
 <Meta title="Components/NotificationModal" component={NotificationModal} />
 
 # NotificationModal
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <NotificationContextProvider>
       <Podium horizontalPadding="small" verticalPadding="small">
         <ToogleButton />
       </Podium>
-      <NotificationModal backgroundColor='#d5d5cc' notificationMessage={NotificationModalFixture.notificationMessage}/>
+      <NotificationModal
+        backgroundColor="#d5d5cc"
+        notificationMessage={NotificationModalFixture.notificationMessage}
+      />
     </NotificationContextProvider>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={NotificationModal} />
+<ArgsTable of={NotificationModal} />

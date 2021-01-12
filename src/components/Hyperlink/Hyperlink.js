@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Icon from '~/components/Icon';
+import { Icon } from '~/components/Icon';
 import {
+  checkIsExternalFromStyle,
   checkIsInlineFromStyle,
   getTargetType,
   hasIconFromStyle,
-  checkIsExternalFromStyle,
 } from './Hyperlink.utils';
 import styles from './Hyperlink.module.css';
 
@@ -113,4 +113,4 @@ Hyperlink.defaultProps = {
   url: undefined,
 };
 
-export default Hyperlink;
+export { Hyperlink };

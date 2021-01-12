@@ -1,24 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TextInput /> renders base component correctly 1`] = `
-<div
-  className="formText"
->
-  <label
-    htmlFor="test-textinput"
+exports[`<TextInput /> should render base component correctly 1`] = `
+<div>
+  <div
+    class="formText"
   >
-    <input
-      className="formTextInput undefined"
-      data-test-ref="test-data-ref"
-      disabled={true}
-      id="test-textinput"
-      noValidate={true}
-      placeholder=""
-      type="text"
-    />
-    <span
-      className="formTextLabel undefined"
-    />
-  </label>
+    <label
+      for="test-textinput"
+    >
+      <input
+        class="formTextInput undefined"
+        data-test-ref="test-data-ref"
+        disabled=""
+        id="test-textinput"
+        novalidate=""
+        placeholder=""
+        type="text"
+        value=""
+      />
+      <span
+        class="formTextLabel undefined"
+      />
+    </label>
+  </div>
 </div>
 `;

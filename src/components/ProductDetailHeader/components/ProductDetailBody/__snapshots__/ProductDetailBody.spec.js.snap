@@ -1,0 +1,285 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductDetailBody /> should render base component correctly 1`] = `
+<div>
+  <div
+    class="base dark fixture-classname"
+  >
+    <div
+      class="content"
+    >
+      <header
+        class="header"
+      >
+        <h1
+          class="base flush xLarge dark productName fadeEnter fadeEnterActive"
+        >
+          Lorem ipsum dolor
+        </h1>
+      </header>
+      <div
+        class="description"
+      >
+        <p
+          class="base dark flush descriptionCopy fadeEnter fadeEnterActive"
+        >
+          Nunc sagittis ultrices dignissim. Nullam dignissim nisi nec dolor blandit convallis. Suspendisse quis facilisis arcu, nec feugiat ligula.
+        </p>
+      </div>
+      <div
+        class="purchase"
+      >
+        <h4
+          class="base flush mediumWeightFont xXSmall dark shiftInDownEnter shiftInDownEnterActive"
+        >
+          Sizes
+        </h4>
+        <ul
+          class="base variants shiftInDownEnter shiftInDownEnterActive"
+        >
+          <li
+            class="radio"
+          >
+            <label
+              class="label"
+              for="option-ARD33"
+            >
+              <input
+                aria-checked="true"
+                class="input"
+                data-test-ref="PRODUCT_DETAIL_VARIANT_SELECT"
+                id="option-ARD33"
+                name="sku"
+                tabindex="0"
+                type="radio"
+                value="ARD33"
+              />
+              <span
+                class="pot dark"
+              />
+              <span
+                class="labelContent dark"
+              >
+                50 mL - In stock
+              </span>
+            </label>
+          </li>
+          <li
+            class="radio"
+          >
+            <label
+              class="label"
+              for="option-ARD32"
+            >
+              <input
+                aria-checked="false"
+                class="input"
+                data-test-ref="PRODUCT_DETAIL_VARIANT_SELECT"
+                id="option-ARD32"
+                name="sku"
+                tabindex="0"
+                type="radio"
+                value="ARD32"
+              />
+              <span
+                class="pot dark"
+              />
+              <span
+                class="labelContent dark"
+              >
+                100 mL - Not in stock
+              </span>
+            </label>
+          </li>
+          <div
+            class="errorMessage"
+          />
+        </ul>
+        <button
+          class="base alternate blockStyle dark base fullWidth"
+          data-test-ref="ADD_TO_CART"
+          title="Add to your cart — $26.45"
+          type="button"
+        >
+          <span
+            class="label"
+          >
+            <span>
+              Added to your cart
+            </span>
+            <span>
+              Add to your cart — $26.45
+            </span>
+          </span>
+        </button>
+      </div>
+      <div
+        class="cartDisclaimer"
+      >
+        <span>
+          Praesent rhoncus ex quis elit vehicula
+        </span>
+      </div>
+      <div
+        class="details"
+      >
+        <dl
+          class="base dark definitionList shiftInDownEnter shiftInDownEnterActive"
+          data-testid="data-testid-DefinitionList"
+        >
+          <dt
+            class="term slideIn"
+          >
+            Lorem ipsum dolor
+          </dt>
+          <dd
+            class="description slideIn"
+          >
+            Lorem ipsum dolort, consectetur adipiscing elit.
+          </dd>
+          <dt
+            class="term slideIn"
+          >
+            Ut consectetur mi
+          </dt>
+          <dd
+            class="description slideIn"
+          >
+            Ut consectetur, vitae libero imperdiet id.
+          </dd>
+          <dt
+            class="term slideIn"
+          >
+            <span>
+              Pellentesque tristique
+            </span>
+            <button
+              class="base dark flyinPanelTrigger"
+              title="Pellentesque tristique"
+              type="button"
+            >
+              <svg
+                class="base plusAndCloseWithCircle dark"
+                data-ref=""
+                data-testid="data-testid-Icon"
+                focusable="false"
+                height="22"
+                role="img"
+                style="height: 22px; width: 22px;"
+                tabindex="-1"
+                viewBox="0 0 50 50"
+                width="22"
+              >
+                <g>
+                  <circle
+                    class="circle"
+                    cx="25"
+                    cy="25"
+                    fill="none"
+                    r="22"
+                  />
+                  <polygon
+                    class="plus"
+                    points="26.2,15.2 23.8,15.2 23.8,23.9 15,23.9 15,26.4 23.8,26.4 23.8,35.1 26.2,35.1 26.2,26.4 35,26.4 35,23.9 26.2,23.9"
+                  />
+                  <polygon
+                    class="close"
+                    points="32.9,19 31.2,17.3 25,23.4 18.8,17.2 17,19 23.3,25.2 17.1,31.3 18.8,33 25,26.9 31.2,33.1 33,31.3 26.7,25.1"
+                  />
+                </g>
+              </svg>
+            </button>
+          </dt>
+          <dd
+            class="description slideIn"
+          >
+            Maecenas mattis, urna vel commodo vehicula
+          </dd>
+        </dl>
+      </div>
+      <div
+        class="upSell"
+      >
+        <div
+          class="base dark slideIn item1"
+          data-testid="data-testid-ProductExtract"
+        >
+          <a
+            class="base left dark link"
+            data-test-ref="PRODUCT_UP_SELL"
+            href="/"
+            target="_self"
+            title="The Reveller Fragrant hand and body care"
+          >
+            <div
+              class="flexContainer delayAnimation slideIn"
+            >
+              <div
+                class="productDescription"
+              >
+                <h4
+                  class="base xXSmall dark heading delayAnimation slideIn"
+                >
+                  <span>
+                    Discover the kit
+                  </span>
+                </h4>
+                <div
+                  class="productName delayAnimation slideIn"
+                >
+                  <div>
+                    <span>
+                      The Reveller Fragrant hand and body care
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="productImage delayAnimation slideIn medium"
+              >
+                <picture
+                  class="base picture dark"
+                >
+                  <source
+                    media="(min-width: 0px)"
+                    srcset="https://www.aesop.com/medias/Aesop-Kits-Gift-Kits-2019-20-The-Reveller-with-Product-Small-781x524px.png?context=bWFzdGVyfGltYWdlc3wxMTMwMjN8aW1hZ2UvcG5nfGltYWdlcy9oZjgvaDI1LzkxNTAzNjg5NDAwNjIucG5nfDllZjNkMjBkNjZhZTI0OGRhZWZhOGJlMzA5NDM3OTg4ZGFlNjE1MWY1ZDg2ZmU4MjUwZmEwOWMwMmRkNzhmNDg"
+                  />
+                  <img
+                    alt="Product Extract"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mediumSidebar"
+    >
+      <header
+        class="mediumHeader"
+      >
+        <h1
+          class="base xLarge dark mediumProductName"
+        >
+          Lorem ipsum dolor
+        </h1>
+        <p
+          class="base dark mediumDescriptionCopy"
+        >
+          Nunc sagittis ultrices dignissim. Nullam dignissim nisi nec dolor blandit convallis. Suspendisse quis facilisis arcu, nec feugiat ligula.
+        </p>
+        <div
+          class="cartDisclaimer"
+        >
+          <span>
+            Praesent rhoncus ex quis elit vehicula
+          </span>
+        </div>
+      </header>
+    </div>
+  </div>
+</div>
+`;

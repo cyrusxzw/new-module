@@ -1,8 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import Heading from '~/components/Heading';
-import Image from '~/components/Image';
+import { Heading } from '~/components/Heading';
+import { Image } from '~/components/Image';
 import styles from './Slide.module.css';
 
 const Slide = ({
@@ -62,4 +62,4 @@ Slide.defaultProps = {
   theme: 'dark',
 };
 
-export default Slide;
+export { Slide };

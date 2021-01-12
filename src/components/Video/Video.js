@@ -2,17 +2,19 @@ import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import VideoScroller from 'video-scroller';
-import { useEscapeKeyListener } from '~/customHooks/useEscapeKeyListener';
-import { useOverflowHidden } from '~/customHooks/useOverflowHidden';
-import useWindowHasResized from '~/customHooks/useWindowHasResized';
+import {
+  useEscapeKeyListener,
+  useOverflowHidden,
+  useWindowHasResized,
+} from '~/customHooks';
 import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
-import Image from '~/components/Image';
-import Controls from './components/Controls';
-import Poster from './components/Poster';
-import VideoPlayer from './components/VideoPlayer';
+import { Image } from '~/components/Image';
+import { Controls } from './components/Controls';
+import { Poster } from './components/Poster';
+import { VideoPlayer } from './components/VideoPlayer';
 import styles from './Video.module.css';
 
-export const Video = forwardRef(function VideoRef(
+const Video = forwardRef(function VideoRef(
   {
     className,
     copy,
@@ -274,4 +276,4 @@ Video.defaultProps = {
   small: undefined,
 };
 
-export default Video;
+export { Video };

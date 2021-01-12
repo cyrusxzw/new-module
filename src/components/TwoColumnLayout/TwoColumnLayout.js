@@ -70,4 +70,4 @@ TwoColumnLayout.defaultProps = {
   theme: 'dark',
 };
 
-export default TwoColumnLayout;
+export { TwoColumnLayout };

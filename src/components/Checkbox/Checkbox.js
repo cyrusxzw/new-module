@@ -65,4 +65,4 @@ Checkbox.defaultProps = {
   theme: 'dark',
 };
 
-export default Checkbox;
+export { Checkbox };

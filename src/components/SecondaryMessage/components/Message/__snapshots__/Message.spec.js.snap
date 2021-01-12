@@ -1,32 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Message /> renders base component correctly 1`] = `
-<div
-  className="base exercitationCupidatat"
-  id="anim"
->
-  <a
-    className="base left dark link"
-    href="/"
-    target="_self"
-    title="Irure anim labore incididunt lorem occaecat"
+exports[`<Message /> should render base component correctly 1`] = `
+<div>
+  <div
+    class="base exercitationCupidatat"
+    id="anim"
   >
-    <div
-      className="content"
+    <a
+      class="base left dark link"
+      href="/"
+      target="_self"
+      title="Irure anim labore incididunt lorem occaecat"
     >
-      <h4
-        className="base xXSmall dark heading"
-      >
-        <span>
-          Irure anim labore
-        </span>
-      </h4>
       <div
-        className="copy"
+        class="content"
       >
-        Irure anim labore incididunt lorem occaecat Cillum reprehenderit Duis commodo ipsum sunt fugiat qui nulla dolor nostrud tempor quis non.
+        <h4
+          class="base xXSmall dark heading"
+        >
+          <span>
+            Irure anim labore
+          </span>
+        </h4>
+        <div
+          class="copy"
+        >
+          Irure anim labore incididunt lorem occaecat Cillum reprehenderit Duis commodo ipsum sunt fugiat qui nulla dolor nostrud tempor quis non.
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
 </div>
 `;

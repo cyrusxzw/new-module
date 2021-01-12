@@ -1,25 +1,41 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import GridOverlay from '~.storybook/GridOverlay.js';
-import FullWidthHeroScroll from './FullWidthHeroScroll';
-import FullWidthHeroScrollFixture from './FullWidthHeroScroll.fixture';
+import { GridOverlay } from '~.storybook/GridOverlay.js';
+import { FullWidthHeroScroll } from './FullWidthHeroScroll';
+import { FullWidthHeroScrollFixture } from './FullWidthHeroScroll.fixture';
 
 <Meta title="Components/FullWidthHeroScroll" component={FullWidthHeroScroll} />
 
 ### Full Width Hero Scroll
 
-<Preview>
+<Canvas>
   <Story name="Full Width Hero Scroll">
-    <GridOverlay isActive={knobs.boolean('isActive', false, 'Grid overlay')} hasInvertedColours={knobs.boolean('hasInvertedColours', false, 'Grid overlay')} />
+    <GridOverlay
+      isActive={knobs.boolean('isActive', false, 'Grid overlay')}
+      hasInvertedColours={knobs.boolean(
+        'hasInvertedColours',
+        false,
+        'Grid overlay',
+      )}
+    />
     <FullWidthHeroScroll
       backgroundImage={FullWidthHeroScrollFixture.backgroundImage}
-      backgroundMediaType={knobs.select('backgroundMediaType', ['video', 'image'], FullWidthHeroScrollFixture.backgroundMediaType, 'Presentation')}
+      backgroundMediaType={knobs.select(
+        'backgroundMediaType',
+        ['video', 'image'],
+        FullWidthHeroScrollFixture.backgroundMediaType,
+        'Presentation',
+      )}
       backgroundVideo={FullWidthHeroScrollFixture.backgroundVideo}
       copy={FullWidthHeroScrollFixture.copy}
       cta={FullWidthHeroScrollFixture.cta}
       eyebrow={FullWidthHeroScrollFixture.eyebrow}
-      hasSerifFontHeading={knobs.boolean('hasSerifFontHeading', false, 'Presentation')}
+      hasSerifFontHeading={knobs.boolean(
+        'hasSerifFontHeading',
+        false,
+        'Presentation',
+      )}
       hasTopOffset={knobs.boolean('hasTopOffset', false, 'Presentation')}
       heading={FullWidthHeroScrollFixture.heading}
       id={FullWidthHeroScrollFixture.id}
@@ -27,8 +43,8 @@ import FullWidthHeroScrollFixture from './FullWidthHeroScroll.fixture';
       theme={knobs.select('theme', ['dark', 'light'], 'light', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 # API
 
-<Props of={FullWidthHeroScroll} />
+<ArgsTable of={FullWidthHeroScroll} />

@@ -1,8 +1,8 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import AddToCartButtonFixture from '~/components/AddToCartButton/AddToCartButton.fixture';
-import HorizontalProductDisplayAccordion from './HorizontalProductDisplayAccordion';
-import HorizontalProductDisplayAccordionFixture from './HorizontalProductDisplayAccordion.fixture';
+import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
+import { HorizontalProductDisplayAccordionFixture } from './HorizontalProductDisplayAccordion.fixture';
+import { HorizontalProductDisplayAccordion } from './HorizontalProductDisplayAccordion';
 
 <Meta
   title="Components/HorizontalProductDisplayAccordion"
@@ -11,7 +11,7 @@ import HorizontalProductDisplayAccordionFixture from './HorizontalProductDisplay
 
 # HorizontalProductDisplayAccordion
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <HorizontalProductDisplayAccordion
       addToCartCopy={AddToCartButtonFixture.copy}
@@ -19,8 +19,8 @@ import HorizontalProductDisplayAccordionFixture from './HorizontalProductDisplay
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={HorizontalProductDisplayAccordion} />
+<ArgsTable of={HorizontalProductDisplayAccordion} />

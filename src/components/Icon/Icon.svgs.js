@@ -367,4 +367,4 @@ const svgs = [
   },
 ];
 
-export default svgs;
+export { svgs };

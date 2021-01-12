@@ -40,4 +40,4 @@ List.defaultProps = {
   theme: 'dark',
 };
 
-export default List;
+export { List };

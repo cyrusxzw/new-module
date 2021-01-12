@@ -1,37 +1,34 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import ProductExtract from './ProductExtract';
-import ProductExtractFixture from './ProductExtract.fixture';
-
-configure({ adapter: new Adapter() });
+import { render, screen } from '@testing-library/react';
+import { ProductExtract } from './ProductExtract';
+import { ProductExtractFixture } from './ProductExtract.fixture';
 
 describe('<ProductExtract />', () => {
   it('should be defined', () => {
     expect(ProductExtract).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <ProductExtract
-          dataTestRef={ProductExtractFixture.dataTestRef}
-          product={ProductExtractFixture.product}
-        />,
-      )
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <ProductExtract
+        dataTestRef={ProductExtractFixture.dataTestRef}
+        product={ProductExtractFixture.product}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
-  it('returns null product prop is not a populated object', () => {
-    const component = shallow(
+  it('should return null product prop is not a populated object', () => {
+    render(
       <ProductExtract
         dataTestRef={ProductExtractFixture.dataTestRef}
         product={{}}
       />,
     );
-    expect(component.type()).toEqual(null);
+
+    const child = screen.queryByTestId('data-testid-ProductExtract');
+
+    expect(child).not.toBeInTheDocument();
   });
 });

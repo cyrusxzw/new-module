@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Button from '~/components/Button';
-import Icon from '~/components/Icon';
+import { Button } from '~/components/Button';
+import { Icon } from '~/components/Icon';
 import styles from './PreviousButton.module.css';
 
 /**
@@ -33,4 +33,4 @@ PreviousButton.defaultProps = {
   theme: 'dark',
 };
 
-export default PreviousButton;
+export { PreviousButton };

@@ -1,12 +1,12 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import Heading from './Heading';
+import { Heading } from './Heading';
 
 <Meta title="Components/Heading" component={Heading} />
 
 # Heading
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Heading
       isFlush={knobs.boolean('isFlush', false, 'Presentation')}
@@ -18,27 +18,27 @@ import Heading from './Heading';
       {knobs.text('children', 'Lorem ipsum dolor sit amet consectetur', 'Copy')}
     </Heading>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Heading} />
+<ArgsTable of={Heading} />
 
 ## Variations
 
 ### Heading With Serif Font
 
-<Preview>
+<Canvas>
   <Story name="Heading with Serif Font">
     <Heading level="1" size="xLarge" hasSerifFont={true}>
       Lorem ipsum dolor sit amet consectetur
     </Heading>
   </Story>
-</Preview>
+</Canvas>
 
 ### Heading Size Variations
 
-<Preview>
+<Canvas>
   <Story name="Heading size variations">
     <div>
       <Heading level="1" size="xLarge">
@@ -61,4 +61,4 @@ import Heading from './Heading';
       </Heading>
     </div>
   </Story>
-</Preview>
+</Canvas>

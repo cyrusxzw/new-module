@@ -1,27 +1,38 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import BreadcrumbsFixture from './Breadcrumbs.fixture';
-import Breadcrumbs from './Breadcrumbs';
-
-configure({ adapter: new Adapter() });
+import { render, screen } from '@testing-library/react';
+import { Breadcrumbs } from './Breadcrumbs';
+import { BreadcrumbsFixture } from './Breadcrumbs.fixture';
 
 describe('<Breadcrumbs />', () => {
   it('should be defined', () => {
     expect(Breadcrumbs).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Breadcrumbs
-          items={BreadcrumbsFixture.items}
-          theme={BreadcrumbsFixture.theme}
-        />,
-      )
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <Breadcrumbs
+        className={BreadcrumbsFixture.className}
+        items={BreadcrumbsFixture.items}
+        theme={BreadcrumbsFixture.theme}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should return `null` if the length of the `items` prop is 0', () => {
+    render(<Breadcrumbs items={[]} />);
+
+    const breadcrumbs = screen.queryByTestId('data-testid-Breadcrumbs');
+
+    expect(breadcrumbs).not.toBeInTheDocument();
+  });
+
+  it('should render the corrct number of items', async () => {
+    render(<Breadcrumbs items={BreadcrumbsFixture.items} />);
+
+    const listItems = screen.getAllByRole('listitem');
+
+    expect(listItems).toHaveLength(2);
   });
 });

@@ -1,33 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ConditionalWrapper /> renders alternateWrapper correctly 1`] = `
-<div
-  className="alternateWrapper"
->
-  <span
-    className="children"
+<div>
+  <div
+    class="alternateWrapper"
   >
-    children
-  </span>
+    <span
+      class="children"
+    >
+      children
+    </span>
+  </div>
 </div>
 `;
 
-exports[`<ConditionalWrapper /> renders base component correctly 1`] = `
-<div
-  className="wrapper"
->
-  <span
-    className="children"
+exports[`<ConditionalWrapper /> should render base component correctly 1`] = `
+<div>
+  <div
+    class="wrapper"
   >
-    children
-  </span>
+    <span
+      class="children"
+    >
+      children
+    </span>
+  </div>
 </div>
 `;
 
 exports[`<ConditionalWrapper /> renders children only is condition is false 1`] = `
-<span
-  className="children"
->
-  children
-</span>
+<div>
+  <span
+    class="children"
+  >
+    children
+  </span>
+</div>
 `;

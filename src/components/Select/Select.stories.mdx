@@ -1,14 +1,14 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import { State } from '~.storybook/State';
-import Select from './Select';
-import SelectFixture from './Select.fixture';
+import { Select } from './Select';
+import { SelectFixture } from './Select.fixture';
 
 <Meta title="Components/Select" component={Select} />
 
 # Select
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <State
      initialState={{
@@ -33,8 +33,8 @@ import SelectFixture from './Select.fixture';
      }}
     </State>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Select} />
+<ArgsTable of={Select} />

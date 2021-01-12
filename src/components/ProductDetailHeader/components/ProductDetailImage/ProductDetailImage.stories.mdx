@@ -1,8 +1,11 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { VariantSelectContextProvider } from '~/contexts';
-import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
-import ProductDetailImageFixture from '~/components/ProductDetailHeader/components/ProductDetailImage/ProductDetailImage.fixture';
-import ProductDetailImage from '~/components/ProductDetailHeader/components/ProductDetailImage';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import {
+  VariantSelectContextProvider,
+  ProductDetailContextProvider,
+} from '~/contexts';
+import { ProductDetailHeaderFixture } from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
+import { ProductDetailImageFixture } from '~/components/ProductDetailHeader/components/ProductDetailImage/ProductDetailImage.fixture';
+import { ProductDetailImage } from '~/components/ProductDetailHeader/components/ProductDetailImage';
 
 <Meta
   title="Components/ProductDetailHeader/ProductDetailImage"
@@ -11,10 +14,14 @@ import ProductDetailImage from '~/components/ProductDetailHeader/components/Prod
 
 # ProductDetailImage
 
-<Preview>
+<Canvas>
   <Story name="Base component">
-    <VariantSelectContextProvider variants={ProductDetailImageFixture.variantOptions}>
-      <ProductDetailContextProvider product={ProductDetailHeaderFixture.product}>
+    <VariantSelectContextProvider
+      variants={ProductDetailImageFixture.variantOptions}
+    >
+      <ProductDetailContextProvider
+        product={ProductDetailHeaderFixture.product}
+      >
         <ProductDetailImage
           className={ProductDetailImageFixture.className}
           id={ProductDetailImageFixture.id}
@@ -23,8 +30,8 @@ import ProductDetailImage from '~/components/ProductDetailHeader/components/Prod
       </ProductDetailContextProvider>
     </VariantSelectContextProvider>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ProductDetailImage} />
+<ArgsTable of={ProductDetailImage} />

@@ -1,5 +1,1 @@
-import { isInBrowser } from './environment';
-
-export { isInBrowser };
-
-export default { isInBrowser };
+export { isInBrowser } from './environment';

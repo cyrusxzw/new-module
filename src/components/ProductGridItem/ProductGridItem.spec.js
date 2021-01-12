@@ -1,26 +1,24 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import {
+  AddToCartContextProvider,
   ProductDetailContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
-import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
-import AddToCartButtonFixture from '~/components/AddToCartButton/AddToCartButton.fixture';
-import ProductGridItem from './ProductGridItem';
-import ProductGridItemFixture from './ProductGridItem.fixture';
-
-configure({ adapter: new Adapter() });
+import { ProductDetailHeaderFixture } from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
+import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
+import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
+import { ProductGridItem } from './ProductGridItem';
+import { ProductGridItemFixture } from './ProductGridItem.fixture';
 
 describe('<ProductGridItem />', () => {
   it('should be defined', () => {
     expect(ProductGridItem).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
         <ProductDetailContextProvider
           product={ProductDetailHeaderFixture.product}
         >
@@ -36,10 +34,10 @@ describe('<ProductGridItem />', () => {
               url={ProductGridItemFixture.url}
             />
           </VariantSelectContextProvider>
-        </ProductDetailContextProvider>,
-      )
-      .toJSON();
+        </ProductDetailContextProvider>
+      </AddToCartContextProvider>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

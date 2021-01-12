@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Heading from '~/components/Heading';
+import { Heading } from '~/components/Heading';
 import { getEyebrowLevel, getSubHeadingLevel } from './SectionHeading.utils';
 import styles from './SectionHeading.module.css';
 
@@ -113,4 +113,4 @@ SectionHeading.defaultProps = {
   titleFont: undefined,
 };
 
-export default SectionHeading;
+export { SectionHeading };

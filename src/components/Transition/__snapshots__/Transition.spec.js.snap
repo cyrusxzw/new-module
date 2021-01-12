@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Transition /> renders base component correctly 1`] = `
-<div
-  className=""
->
-  Content
+exports[`<Transition /> should render base component correctly 1`] = `
+<div>
+  <div
+    class=""
+  >
+    Content
+  </div>
 </div>
 `;
+
+exports[`<Transition /> should return null if child is not a valid element 1`] = `<div />`;

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { HEADING, HYPERLINK_STYLE_TYPES, GOOGLE_MAPS } from '~/constants';
-import Heading from '~/components/Heading';
-import Hyperlink from '~/components/Hyperlink';
-import StoreHoursList from '~/components/StoreHoursList';
+import { Heading } from '~/components/Heading';
+import { Hyperlink } from '~/components/Hyperlink';
+import { StoreHoursList } from '~/components/StoreHoursList';
 import styles from './InfoCard.module.css';
 
 const DATA_TEST_REF = 'DIRECTION_URL';
@@ -92,4 +92,4 @@ InfoCard.defaultProps = {
   storeName: undefined,
 };
 
-export default InfoCard;
+export { InfoCard };

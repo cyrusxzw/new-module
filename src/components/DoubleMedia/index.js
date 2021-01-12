@@ -1,3 +1,3 @@
-import DoubleMedia from './DoubleMedia';
+import { DoubleMedia } from './DoubleMedia';
 
-export default DoubleMedia;
+export { DoubleMedia };

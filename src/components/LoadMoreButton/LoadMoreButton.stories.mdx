@@ -1,11 +1,9 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import {
-  LoadMoreContextProvider,
-} from '~/contexts';
-import LoadMoreButton from './LoadMoreButton';
-import LoadMoreButtonFixture from './LoadMoreButton.fixture';
-import mockLoadMoreButtonOnClick from './__mocks__/LoadMoreButton.onClick';
+import { LoadMoreContextProvider } from '~/contexts';
+import { LoadMoreButton } from './LoadMoreButton';
+import { LoadMoreButtonFixture } from './LoadMoreButton.fixture';
+import { mockOnClick as mockLoadMoreButtonOnClick } from './__mocks__/LoadMoreButton.onClick';
 
 <Meta title="Components/LoadMoreButton" component={LoadMoreButton} />
 
@@ -15,7 +13,7 @@ Requires `LoadMoreContextProvider`, with a prop of `onClick`, which is a callbac
 as arguments. See [LoadMoreButton.onClick.js mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/LoadMoreButton/__mocks__/LoadMoreButton.onClick.js)
 for an example.
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     {(() => {
       return (
@@ -27,11 +25,11 @@ for an example.
             isEnabled={LoadMoreButtonFixture.isEnabled}
           />
         </LoadMoreContextProvider>
-      )
+      );
     })()}
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={LoadMoreButton} />
+<ArgsTable of={LoadMoreButton} />

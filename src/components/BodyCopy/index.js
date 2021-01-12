@@ -1,3 +1,3 @@
-import BodyCopy from './BodyCopy';
+import { BodyCopy } from './BodyCopy';
 
-export default BodyCopy;
+export { BodyCopy };

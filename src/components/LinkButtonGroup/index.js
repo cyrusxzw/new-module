@@ -1,3 +1,3 @@
-import LinkButtonGroup from './LinkButtonGroup';
+import { LinkButtonGroup } from './LinkButtonGroup';
 
-export default LinkButtonGroup;
+export { LinkButtonGroup };

@@ -1,38 +1,32 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import ContentHubArticle from './ContentHubArticle';
-import ContentHubArticleFixture from './ContentHubArticle.fixture';
-
-configure({ adapter: new Adapter() });
+import { render } from '@testing-library/react';
+import { ContentHubArticle } from './ContentHubArticle';
+import { ContentHubArticleFixture } from './ContentHubArticle.fixture';
 
 describe('<ContentHubArticle />', () => {
   it('should be defined', () => {
     expect(ContentHubArticle).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <ContentHubArticle
-          category={ContentHubArticleFixture.category}
-          dataTestRef={ContentHubArticleFixture.dataTestRef}
-          horizontalThumbnail={ContentHubArticleFixture.horizontalThumbnail}
-          id={ContentHubArticleFixture.id}
-          isHorizontal={true}
-          isInFirstGroup={true}
-          isMenuItem={false}
-          isReadMore={false}
-          longTitle={ContentHubArticleFixture.longTitle}
-          onClick={ContentHubArticleFixture.onClick}
-          readingTime={ContentHubArticleFixture.readingTime}
-          uri={ContentHubArticleFixture.uri}
-          verticalThumbnail={ContentHubArticleFixture.verticalThumbnail}
-        />,
-      )
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <ContentHubArticle
+        category={ContentHubArticleFixture.category}
+        dataTestRef={ContentHubArticleFixture.dataTestRef}
+        horizontalThumbnail={ContentHubArticleFixture.horizontalThumbnail}
+        id={ContentHubArticleFixture.id}
+        isHorizontal={true}
+        isInFirstGroup={true}
+        isMenuItem={false}
+        isReadMore={false}
+        longTitle={ContentHubArticleFixture.longTitle}
+        onClick={ContentHubArticleFixture.onClick}
+        readingTime={ContentHubArticleFixture.readingTime}
+        uri={ContentHubArticleFixture.uri}
+        verticalThumbnail={ContentHubArticleFixture.verticalThumbnail}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });
