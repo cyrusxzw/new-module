@@ -11,6 +11,7 @@ import { Button } from '../../components/Button';
 <Canvas>
   <Story name="Base component">
     <DynamicForm
+      defaultValues={{ title: 'mr', firstname: 'Bruce' }}
       formSchema={knobs.select('formSchema', {
         'None': null,
         'Au Sign up form': DynamicFormFixture.auSignUp,

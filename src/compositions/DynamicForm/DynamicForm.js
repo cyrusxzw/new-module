@@ -7,7 +7,7 @@ import { componentMap } from './component-map';
 import styles from './DynamicForm.module.css';
 
 const DynamicForm = forwardRef(function DynamicFormRef(
-  { children, className, formSchema, onSubmit, theme },
+  { children, className, defaultValues, formSchema, onSubmit, theme },
   ref,
 ) {
   const { control, handleSubmit, errors } = useForm({
@@ -25,7 +25,16 @@ const DynamicForm = forwardRef(function DynamicFormRef(
     <form className={classSet} onSubmit={handleSubmit(onSubmit)} ref={ref}>
       {formSchema.map(
         (
-          { name, id, label, validation, type, options, subtype, defaultValue },
+          {
+            name,
+            id,
+            label,
+            validation,
+            type,
+            options,
+            subtype,
+            defaultValue: defaultValueFromSchema,
+          },
           index,
         ) => {
           const InputField = componentMap[type];
@@ -54,7 +63,7 @@ const DynamicForm = forwardRef(function DynamicFormRef(
           return (
             <InputField
               control={control}
-              defaultValue={defaultValue}
+              defaultValue={defaultValues?.[name] || defaultValueFromSchema}
               errorMessage={errors[name]?.message}
               id={id}
               key={index}
@@ -76,6 +85,7 @@ const DynamicForm = forwardRef(function DynamicFormRef(
 DynamicForm.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  defaultValues: PropTypes.object,
   formSchema: PropTypes.array,
   onSubmit: PropTypes.func.isRequired,
   theme: PropTypes.oneOf(['dark', 'light']),
@@ -84,6 +94,7 @@ DynamicForm.propTypes = {
 DynamicForm.defaultProps = {
   children: undefined,
   className: undefined,
+  defaultValues: undefined,
   formSchema: undefined,
   onSubmit: undefined,
   theme: undefined,
