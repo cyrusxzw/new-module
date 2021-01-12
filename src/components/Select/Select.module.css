@@ -54,8 +54,8 @@
 
 .icon {
   position: absolute;
+  top: 35px;
   right: 22px;
-  bottom: calc(50% - 9px);
   pointer-events: none;
 
   .dark & {
@@ -90,17 +90,20 @@
 }
 
 .errorMessage {
+  display: block;
   height: rem(14px);
   margin: 10px 0 0;
   color: var(--color-error);
   font-size: rem(14px);
   line-height: 1.4;
-  opacity: 0;
-  transition: opacity 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .hasError {
-  .errorMessage {
-    opacity: 1;
+  .input {
+    border-color: var(--color-error);
+  }
+
+  .icon {
+    fill: var(--color-error);
   }
 }

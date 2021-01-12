@@ -12,6 +12,8 @@ exports[`<Select /> should render base component correctly 1`] = `
       Vestibulum accumsan
     </label>
     <select
+      aria-describedby="select-error-message"
+      aria-invalid="true"
       class="input"
       id="select"
       name="select"
@@ -49,11 +51,12 @@ exports[`<Select /> should render base component correctly 1`] = `
         />
       </g>
     </svg>
-    <div
+    <span
       class="errorMessage"
+      id="select-error-message"
     >
       Test Error Messsage
-    </div>
+    </span>
   </div>
 </div>
 `;

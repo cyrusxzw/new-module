@@ -56,6 +56,10 @@
   &:hover {
     cursor: pointer;
   }
+
+  &.hasError {
+    border-color: var(--color-error);
+  }
 }
 
 .content {
@@ -69,6 +73,17 @@
   &.light {
     color: var(--color-light-copy);
   }
+
+  @media (--viewport-sm-only) {
+    font-size: rem(12px);
+  }
+}
+
+.errorMessage {
+  margin-left: 23px; /* box width + left margin */
+  color: var(--color-error);
+  font-family: var(--font-family-sans-serif-regular);
+  font-size: rem(14px);
 
   @media (--viewport-sm-only) {
     font-size: rem(12px);
