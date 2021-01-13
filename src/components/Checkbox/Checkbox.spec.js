@@ -20,4 +20,22 @@ describe('<Checkbox />', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it('should assign an id value if one is not provided', () => {
+    const { getByRole } = render(<Checkbox content="Check me" />);
+
+    const checkBox = getByRole('checkbox');
+
+    expect(checkBox.id).toBeDefined();
+  });
+
+  it('should render the error message if it is provided', () => {
+    const { getByText } = render(
+      <Checkbox content="Check me" errorMessage="ERROR!" />,
+    );
+
+    const errorMessage = getByText('ERROR!');
+
+    expect(errorMessage).toHaveClass('errorMessage');
+  });
 });

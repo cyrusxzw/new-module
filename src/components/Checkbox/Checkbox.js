@@ -1,43 +1,64 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './Checkbox.module.css';
 
-const Checkbox = ({
-  className,
-  checkboxClassName,
-  content,
-  contentClassName,
-  dataTestRef,
-  id,
-  isEnabled,
-  name,
-  onChange,
-  theme,
-}) => {
-  const baseClassSet = cx(styles.base, className);
-  const checkboxClassSet = cx(
-    styles.checkBox,
-    styles[theme],
-    checkboxClassName,
-  );
-  const contentClassSet = cx(styles.content, styles[theme], contentClassName);
+const Checkbox = forwardRef(
+  (
+    {
+      className,
+      checkboxClassName,
+      content,
+      contentClassName,
+      dataTestRef,
+      errorMessage,
+      id: idProp,
+      isEnabled,
+      name,
+      onChange,
+      theme,
+    },
+    ref,
+  ) => {
+    const baseClassSet = cx(styles.base, className);
+    const checkboxClassSet = cx(
+      styles.checkBox,
+      styles[theme],
+      { [styles.hasError]: errorMessage },
+      checkboxClassName,
+    );
+    const contentClassSet = cx(styles.content, styles[theme], contentClassName);
 
-  return (
-    <label className={baseClassSet} htmlFor={id}>
-      <input
-        className={checkboxClassSet}
-        data-test-ref={dataTestRef}
-        disabled={!isEnabled}
-        id={id}
-        name={name}
-        onChange={onChange}
-        type="checkbox"
-      />
-      <span className={contentClassSet}>{content}</span>
-    </label>
-  );
-};
+    const inputId = idProp || uuidv4();
+    const errorMessageId = `${inputId}-error-message`;
+
+    return (
+      <React.Fragment>
+        <label className={baseClassSet} htmlFor={inputId}>
+          <input
+            aria-describedby={errorMessageId}
+            aria-invalid={!!errorMessage}
+            className={checkboxClassSet}
+            data-test-ref={dataTestRef}
+            disabled={!isEnabled}
+            id={inputId}
+            name={name}
+            onChange={onChange}
+            ref={ref}
+            type="checkbox"
+          />
+          <span className={contentClassSet}>{content}</span>
+        </label>
+        {errorMessage && (
+          <span className={cx(styles.errorMessage)} id={errorMessageId}>
+            {errorMessage}
+          </span>
+        )}
+      </React.Fragment>
+    );
+  },
+);
 
 Checkbox.propTypes = {
   className: PropTypes.string,
@@ -45,7 +66,8 @@ Checkbox.propTypes = {
   content: PropTypes.string.isRequired,
   contentClassName: PropTypes.string,
   dataTestRef: PropTypes.string,
-  id: PropTypes.string.isRequired,
+  errorMessage: PropTypes.string,
+  id: PropTypes.string,
   isEnabled: PropTypes.bool,
   name: PropTypes.string,
   onChange: PropTypes.func,

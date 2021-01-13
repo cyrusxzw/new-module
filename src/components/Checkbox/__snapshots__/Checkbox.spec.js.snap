@@ -7,6 +7,8 @@ exports[`<Checkbox /> should render base component correctly 1`] = `
     for="test-checkbox"
   >
     <input
+      aria-describedby="test-checkbox-error-message"
+      aria-invalid="false"
       class="checkBox dark"
       data-test-ref="test-data-ref"
       disabled=""
