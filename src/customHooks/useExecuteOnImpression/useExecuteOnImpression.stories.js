@@ -1,15 +1,17 @@
 import React, { useRef } from 'react';
 import { storiesOf } from '@storybook/react';
+import * as knobs from '@storybook/addon-knobs';
 import { useExecuteOnImpression } from './useExecuteOnImpression';
 
-const ComponentToMakeAnImpression = () => {
+// eslint-disable-next-line react/prop-types
+const ComponentToMakeAnImpression = ({ isExecutableOnReEntry, threshold }) => {
   const ref = useRef(null);
 
   // eslint-disable-next-line no-alert
   const callbackOnImpression = () => alert('I made an impression');
   useExecuteOnImpression(ref, callbackOnImpression, {
-    threshold: 0.5,
-    isExecutableOnReEntry: false,
+    threshold,
+    isExecutableOnReEntry,
   });
   const styling = {
     height: '500px',
@@ -26,7 +28,19 @@ storiesOf('Hooks/useExecuteOnImpression', module).add('Base hook', () => {
       <div style={{ height: '100vh' }}>
         Scroll down to see the hook's behaviour
       </div>
-      <ComponentToMakeAnImpression />
+      <ComponentToMakeAnImpression
+        isExecutableOnReEntry={knobs.boolean(
+          'isExecutableOnReEntry',
+          false,
+          'Hook options',
+        )}
+        threshold={knobs.number(
+          'threshold',
+          0.5,
+          { min: 0, max: 1 },
+          'Hook options',
+        )}
+      />
     </React.Fragment>
   );
 });
