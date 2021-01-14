@@ -1,4 +1,6 @@
-export * as components from './components';
+/** components */
+import * as components from './components';
+export { components };
 export {
   Accordion,
   AddToCartButton,
@@ -65,12 +67,13 @@ export {
   Video,
 } from './components';
 
-export * as compositions from './compositions';
-export { Footer, NewsletterSignUp } from './compositions';
+/** constants */
+import * as constants from './constants';
+export { constants };
 
-export * as constants from './constants';
-
-export * as contexts from './contexts';
+/** contexts */
+import * as contexts from './contexts';
+export { contexts };
 export {
   AddToCartContextProvider,
   useAddToCartContext,
@@ -90,7 +93,9 @@ export {
   useVariantSelectContext,
 } from './contexts';
 
-export * as customHooks from './customHooks';
+/** customHooks */
+import * as customHooks from './customHooks';
+export { customHooks };
 export {
   useEscapeKeyListener,
   useHasMounted,
@@ -101,5 +106,7 @@ export {
   useWindowHasResized,
 } from './customHooks';
 
-export * as utils from './utils';
+/** utils */
+import * as utils from './utils';
+export { utils };
 export { environment, objects, product, viewports } from './utils';

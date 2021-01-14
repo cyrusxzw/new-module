@@ -1,4 +1,9 @@
-export * as environment from './environment';
-export * as objects from './objects';
-export * as product from './product';
-export * as viewports from './viewports';
+import * as environment from './environment';
+import * as objects from './objects';
+import * as product from './product';
+import * as viewports from './viewports';
+
+export { environment };
+export { objects };
+export { product };
+export { viewports };
