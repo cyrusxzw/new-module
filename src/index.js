@@ -1,4 +1,3 @@
-/** components */
 import * as components from './components';
 export { components };
 export {
@@ -67,11 +66,9 @@ export {
   Video,
 } from './components';
 
-/** constants */
 import * as constants from './constants';
 export { constants };
 
-/** contexts */
 import * as contexts from './contexts';
 export { contexts };
 export {
@@ -93,7 +90,6 @@ export {
   useVariantSelectContext,
 } from './contexts';
 
-/** customHooks */
 import * as customHooks from './customHooks';
 export { customHooks };
 export {
@@ -106,7 +102,6 @@ export {
   useWindowHasResized,
 } from './customHooks';
 
-/** utils */
 import * as utils from './utils';
 export { utils };
 export { environment, objects, product, viewports } from './utils';
