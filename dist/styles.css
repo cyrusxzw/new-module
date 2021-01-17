@@ -5985,7 +5985,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     pointer-events: none;
   }
 .AccordionProduct-module_accordionDefaultContent__1FbLP > div {
-    max-width: 600px;
+    max-width: 500px;
     padding: 20px;
     text-align: center;
   }
@@ -6168,7 +6168,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 .AccordionProduct-module_accordionOpenCopy__a-AcA,
 .AccordionProduct-module_accordionClosedCopy__2Z1Hp {
   padding: 0;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   color: #333;
   font-family: 'Suisse Regular', sans-serif;
   font-size: 16px;
