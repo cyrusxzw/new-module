@@ -57,7 +57,7 @@
 .image {
   @media (--viewport-lg) {
     width: calc(100% * 7 / 12);
-    align-self: flex-end;
+    align-self: center;
   }
 
   picture {

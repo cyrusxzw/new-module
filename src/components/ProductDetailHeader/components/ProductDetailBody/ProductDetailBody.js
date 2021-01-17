@@ -180,7 +180,7 @@ const ProductDetailBody = ({ className, copy, theme }) => {
               className={styles.definitionList}
               hasBottomBorder={
                 (!!variantRadioOptions.length && ascertainIsLargeViewport()) ||
-                ascertainIsSmallOrMediumOnlyViewport()
+                (ascertainIsSmallOrMediumOnlyViewport() && upSellProduct)
               }
               items={definitionListItems}
               theme={currentTheme}

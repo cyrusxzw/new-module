@@ -7726,7 +7726,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   font-size: 14px;
 }
 .RadioGroup-module_singleLabel__2EXn9.RadioGroup-module_dark__1sDrv {
-    color: #333;
+    color: #666;
   }
 .RadioGroup-module_singleLabel__2EXn9.RadioGroup-module_light__3vm1F {
     color: #fffef2;
@@ -8708,7 +8708,8 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 @media (min-width: 1025px) {
 .ProductDetailBody-module_description__2bLVF .ProductDetailBody-module_descriptionCopy__Xpu92 {
       margin-bottom: 0;
-      font-size: 15px
+      font-size: 14px;
+      line-height: 1.4
   }
     }
 .ProductDetailBody-module_purchase__3O5jE {
@@ -9055,8 +9056,8 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
 @media (min-width: 1025px) {
 .ProductDetailHeader-module_image__32mQI {
     width: calc(100% * 7 / 12);
-    -ms-flex-item-align: end;
-        align-self: flex-end
+    -ms-flex-item-align: center;
+        align-self: center
 }
   }
 @media (max-width: 639px) {
