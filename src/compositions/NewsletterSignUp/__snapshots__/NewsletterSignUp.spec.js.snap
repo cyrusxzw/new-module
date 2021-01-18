@@ -65,42 +65,46 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
         class="footerNewsletterErrorMessage"
       />
       <section>
-        <label
-          class="base"
-          for="subscription"
-        >
-          <input
-            aria-describedby="subscription-error-message"
-            aria-invalid="false"
-            class="checkBox light"
-            data-test-ref="EMAIL_SIGN_UP_SUBSCRIPTION_CHECKBOX"
-            id="subscription"
-            type="checkbox"
-          />
-          <span
-            class="content light"
+        <div>
+          <label
+            class="base"
+            for="subscription"
           >
-            Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.
-          </span>
-        </label>
-        <label
-          class="base"
-          for="terms"
-        >
-          <input
-            aria-describedby="terms-error-message"
-            aria-invalid="false"
-            class="checkBox light"
-            data-test-ref="EMAIL_SIGN_UP_TERMS_AND_CONDITIONS_CHECKBOX"
-            id="terms"
-            type="checkbox"
-          />
-          <span
-            class="content light"
+            <input
+              aria-describedby="subscription-error-message"
+              aria-invalid="false"
+              class="checkBox light"
+              data-test-ref="EMAIL_SIGN_UP_SUBSCRIPTION_CHECKBOX"
+              id="subscription"
+              type="checkbox"
+            />
+            <span
+              class="content light"
+            >
+              Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.
+            </span>
+          </label>
+        </div>
+        <div>
+          <label
+            class="base"
+            for="terms"
           >
-            I accept the Terms & Conditions 
-          </span>
-        </label>
+            <input
+              aria-describedby="terms-error-message"
+              aria-invalid="false"
+              class="checkBox light"
+              data-test-ref="EMAIL_SIGN_UP_TERMS_AND_CONDITIONS_CHECKBOX"
+              id="terms"
+              type="checkbox"
+            />
+            <span
+              class="content light"
+            >
+              I accept the Terms & Conditions 
+            </span>
+          </label>
+        </div>
         <div
           class="termsAndConditionWrapper"
         >
