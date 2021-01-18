@@ -1,18 +1,18 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import ComponentBoilerplate from './ComponentBoilerplate';
-import ComponentBoilerplateFixture from './ComponentBoilerplate.fixture';
+import { ComponentBoilerplate } from './ComponentBoilerplate';
+import { ComponentBoilerplateFixture } from './ComponentBoilerplate.fixture';
 
 <Meta title="Components/ComponentBoilerplate" component={ComponentBoilerplate} />
 
 # ComponentBoilerplate
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <ComponentBoilerplate />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ComponentBoilerplate} />
+<ArgsTable of={ComponentBoilerplate} />

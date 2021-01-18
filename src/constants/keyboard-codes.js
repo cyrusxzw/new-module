@@ -1,4 +1,2 @@
-export default {
-  ENTER: 13,
-  ESCAPE: 27,
-};
+export const ENTER = 13;
+export const ESCAPE = 27;

@@ -26,11 +26,3 @@ export const XXLARGE = {
   MIN_WIDTH: 1600,
   VIEWPORT: 'xlarge',
 };
-
-export default {
-  SMALL,
-  MEDIUM,
-  LARGE,
-  XLARGE,
-  XXLARGE,
-};

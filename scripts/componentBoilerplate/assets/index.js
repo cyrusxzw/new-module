@@ -1,3 +1,3 @@
-import ComponentBoilerplate from './ComponentBoilerplate';
+import { ComponentBoilerplate } from './ComponentBoilerplate';
 
-export default ComponentBoilerplate;
+export { ComponentBoilerplate };

@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export const mockOnClick = async (
+const mockAddToCartButtonOnClick = async (
   sku,
   addToCartDispatch,
   ADD_TO_CART_ACTION_TYPES,
@@ -28,4 +28,4 @@ export const mockOnClick = async (
   }
 };
 
-export default mockOnClick;
+export { mockAddToCartButtonOnClick };

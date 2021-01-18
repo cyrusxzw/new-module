@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import List from '~/components/List';
+import { List } from '~/components/List';
 import styles from './KitList.module.css';
 
 const KitList = forwardRef(function KitListRef(
@@ -42,4 +42,4 @@ KitList.defaultProps = {
   theme: 'dark',
 };
 
-export default KitList;
+export { KitList };

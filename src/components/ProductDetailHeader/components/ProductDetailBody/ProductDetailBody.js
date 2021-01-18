@@ -8,17 +8,17 @@ import {
   useVariantSelectContext,
 } from '~/contexts';
 import { getVariantRadioOptions } from '~/utils/product';
-import AddToCartButton from '~/components/AddToCartButton';
-import Button from '~/components/Button';
-import DefinitionList from '~/components/DefinitionList';
-import FlyinPanel from '~/components/FlyinPanel';
-import Heading from '~/components/Heading';
-import Hidden from '~/components/Hidden';
-import Icon from '~/components/Icon';
-import Paragraph from '~/components/Paragraph';
-import ProductExtract from '~/components/ProductExtract/ProductExtract.js';
-import RadioGroup from '~/components/RadioGroup';
-import Transition from '~/components/Transition';
+import { AddToCartButton } from '~/components/AddToCartButton';
+import { Button } from '~/components/Button';
+import { DefinitionList } from '~/components/DefinitionList';
+import { FlyinPanel } from '~/components/FlyinPanel';
+import { Heading } from '~/components/Heading';
+import { Hidden } from '~/components/Hidden';
+import { Icon } from '~/components/Icon';
+import { Paragraph } from '~/components/Paragraph';
+import { ProductExtract } from '~/components/ProductExtract/ProductExtract.js';
+import { RadioGroup } from '~/components/RadioGroup';
+import { Transition } from '~/components/Transition';
 import styles from './ProductDetailBody.module.css';
 
 const ProductDetailBody = ({ className, copy, theme }) => {
@@ -55,34 +55,36 @@ const ProductDetailBody = ({ className, copy, theme }) => {
   const RADIO_GROUP_DATA_TEST_REF = 'PRODUCT_DETAIL_VARIANT_SELECT';
   const PRODUCT_UP_SELL = 'PRODUCT_UP_SELL';
 
+  const ingredientsItem = {
+    term: (
+      <>
+        <span>{copy.ingredients.label}</span>
+        {ingredients && (
+          <Button
+            className={ingredientsTriggerClassSet}
+            isInline={true}
+            onClick={handleOnIngredientsTriggerClick}
+            theme={currentTheme}
+            title={copy.ingredients.title}
+          >
+            <Icon
+              height={22}
+              isActive={isFlyinPanelVisible}
+              name="plusAndCloseWithCircle"
+              theme={currentTheme}
+              width={22}
+            />
+          </Button>
+        )}
+      </>
+    ),
+    description: keyIngredient,
+    id: 'ingredients',
+  };
+
   const definitionListItems = [
     ...definitionList,
-    {
-      term: (
-        <>
-          <span>{copy.ingredients.label}</span>
-          {ingredients && (
-            <Button
-              className={ingredientsTriggerClassSet}
-              isInline={true}
-              onClick={handleOnIngredientsTriggerClick}
-              theme={currentTheme}
-              title={copy.ingredients.title}
-            >
-              <Icon
-                height={22}
-                isActive={isFlyinPanelVisible}
-                name="plusAndCloseWithCircle"
-                theme={currentTheme}
-                width={22}
-              />
-            </Button>
-          )}
-        </>
-      ),
-      description: keyIngredient,
-      id: 'ingredients',
-    },
+    copy.ingredients.label ? ingredientsItem : {},
   ];
 
   return (
@@ -104,19 +106,21 @@ const ProductDetailBody = ({ className, copy, theme }) => {
           </header>
         </Hidden>
 
-        <Hidden isMedium={true}>
-          <div className={styles.description}>
-            <Transition isActiveOnMount={true} type={TRANSITIONS.TYPE.FADE}>
-              <Paragraph
-                className={styles.descriptionCopy}
-                isFlush={true}
-                theme={currentTheme}
-              >
-                {description}
-              </Paragraph>
-            </Transition>
-          </div>
-        </Hidden>
+        {description && (
+          <Hidden isMedium={true}>
+            <div className={styles.description}>
+              <Transition isActiveOnMount={true} type={TRANSITIONS.TYPE.FADE}>
+                <Paragraph
+                  className={styles.descriptionCopy}
+                  isFlush={true}
+                  theme={currentTheme}
+                >
+                  {description}
+                </Paragraph>
+              </Transition>
+            </div>
+          </Hidden>
+        )}
 
         <div className={styles.purchase}>
           <Transition
@@ -130,7 +134,7 @@ const ProductDetailBody = ({ className, copy, theme }) => {
               size={HEADING.SIZE.X_X_SMALL}
               theme={currentTheme}
             >
-              {copy?.size}
+              {variants.length > 1 ? copy?.size?.plural : copy?.size?.singular}
             </Heading>
           </Transition>
           <Transition
@@ -231,7 +235,10 @@ ProductDetailBody.propTypes = {
         title: PropTypes.string,
       }),
     }),
-    size: PropTypes.string,
+    size: PropTypes.shape({
+      singular: PropTypes.string,
+      plural: PropTypes.string,
+    }),
     ingredients: PropTypes.shape({
       heading: PropTypes.string,
       label: PropTypes.string,
@@ -253,7 +260,10 @@ ProductDetailBody.defaultProps = {
         title: undefined,
       },
     },
-    size: undefined,
+    size: {
+      singular: undefined,
+      plural: undefined,
+    },
     ingredients: {
       heading: undefined,
       label: undefined,
@@ -264,4 +274,4 @@ ProductDetailBody.defaultProps = {
   theme: undefined,
 };
 
-export default ProductDetailBody;
+export { ProductDetailBody };

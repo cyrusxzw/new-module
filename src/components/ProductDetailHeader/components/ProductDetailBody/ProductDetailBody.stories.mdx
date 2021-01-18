@@ -1,16 +1,16 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
-import mockAddToCartButtonOnClick from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
-import AddToCartButtonFixture from '~/components/AddToCartButton/AddToCartButton.fixture';
-import ProductDetailBodyFixture from './ProductDetailBody.fixture';
-import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
-import ProductDetailImageFixture from '~/components/ProductDetailHeader/components/ProductDetailImage/ProductDetailImage.fixture';
-import ProductDetailBody from './ProductDetailBody';
+import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
+import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
+import { ProductDetailBodyFixture } from './ProductDetailBody.fixture';
+import { ProductDetailHeaderFixture } from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
+import { ProductDetailImageFixture } from '~/components/ProductDetailHeader/components/ProductDetailImage/ProductDetailImage.fixture';
+import { ProductDetailBody } from './ProductDetailBody';
 
 <Meta
   title="Components/ProductDetailHeader/ProductDetailBody"
@@ -19,20 +19,31 @@ import ProductDetailBody from './ProductDetailBody';
 
 # ProductDetailBody
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     {(() => {
-      const theme = knobs.select('theme', ['dark', 'light'], ProductDetailBodyFixture.theme, 'Presentation')
-      const { productName, description, ...productRest } = ProductDetailHeaderFixture.product;
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        ProductDetailBodyFixture.theme,
+        'Presentation',
+      );
+      const {
+        productName,
+        description,
+        ...productRest
+      } = ProductDetailHeaderFixture.product;
       const productDetails = {
         productName: knobs.text('productName', productName, 'Content'),
         description: knobs.text('description', description, 'Content'),
         ...productRest,
-      }
+      };
       return (
         <ProductDetailContextProvider product={productDetails}>
           <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-            <VariantSelectContextProvider variants={ProductDetailImageFixture.variantOptions}>
+            <VariantSelectContextProvider
+              variants={ProductDetailImageFixture.variantOptions}
+            >
               <ProductDetailBody
                 className={ProductDetailBodyFixture.className}
                 copy={{
@@ -44,11 +55,11 @@ import ProductDetailBody from './ProductDetailBody';
             </VariantSelectContextProvider>
           </AddToCartContextProvider>
         </ProductDetailContextProvider>
-      )
+      );
     })()}
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ProductDetailBody} />
+<ArgsTable of={ProductDetailBody} />

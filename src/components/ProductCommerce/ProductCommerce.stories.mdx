@@ -1,19 +1,19 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
-import Podium from '~/components/Podium';
+import { Podium } from '~/components/Podium';
 import { P } from '~/components/Paragraph';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
-import Hyperlink from '~/components/Hyperlink';
-import AddToCartButtonFixture from '~/components/AddToCartButton/AddToCartButton.fixture';
-import mockAddToCartButtonOnClick from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
-import ProductDetailHeaderFixture from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
-import ProductCommerce from './ProductCommerce';
-import ProductCommerceFixture from './ProductCommerce.fixture';
+import { Hyperlink } from '~/components/Hyperlink';
+import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
+import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
+import { ProductDetailHeaderFixture } from '~/components/ProductDetailHeader/ProductDetailHeader.fixture';
+import { ProductCommerce } from './ProductCommerce';
+import { ProductCommerceFixture } from './ProductCommerce.fixture';
 
 <Meta title="Components/ProductCommerce" component={ProductCommerce} />
 
@@ -23,7 +23,7 @@ Presented in a [Podium](?path=/docs/components-podium--base-component) component
 
 Requires `AddToCartContextProvider`, `ProductDetailContextProvider` and `VariantSelectContextProvider`.
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <Podium verticalPadding="small">
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
@@ -45,26 +45,26 @@ Requires `AddToCartContextProvider`, `ProductDetailContextProvider` and `Variant
                   {knobs.text(
                     'description',
                     ProductCommerceFixture.description,
-                    'Content'
+                    'Content',
                   )}
                 </P>
               }
               eyebrow={knobs.text(
                 'eyebrow',
                 ProductCommerceFixture.eyebrow,
-                'Content'
+                'Content',
               )}
               heading={knobs.text(
                 'heading',
                 ProductCommerceFixture.heading,
-                'Content'
+                'Content',
               )}
               size={ProductDetailHeaderFixture.product.size}
               theme={knobs.select(
                 'theme',
                 ['dark', 'light'],
                 'dark',
-                'Presentation'
+                'Presentation',
               )}
             />
           </VariantSelectContextProvider>
@@ -72,8 +72,8 @@ Requires `AddToCartContextProvider`, `ProductDetailContextProvider` and `Variant
       </AddToCartContextProvider>
     </Podium>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ProductCommerce} />
+<ArgsTable of={ProductCommerce} />

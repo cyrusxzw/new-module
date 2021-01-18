@@ -1,3 +1,3 @@
-import KitList from './KitList';
+import { KitList } from './KitList';
 
-export default KitList;
+export { KitList };

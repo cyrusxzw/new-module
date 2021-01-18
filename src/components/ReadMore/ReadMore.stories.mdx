@@ -1,21 +1,21 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import Podium from '~/components/Podium';
-import ReadMore from './ReadMore';
-import ReadMoreFixture from './ReadMore.fixture';
+import { Podium } from '~/components/Podium';
+import { ReadMore } from './ReadMore';
+import { ReadMoreFixture } from './ReadMore.fixture';
 
 <Meta title="Components/ReadMore" component={ReadMore} />
 
 # ReadMore
 
-<Preview>
+<Canvas>
   <Story name="Base component">
-     <Podium>
-       <ReadMore articles={ReadMoreFixture.articles} />
+    <Podium>
+      <ReadMore articles={ReadMoreFixture.articles} />
     </Podium>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ReadMore} />
+<ArgsTable of={ReadMore} />

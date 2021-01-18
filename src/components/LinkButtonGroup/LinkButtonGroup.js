@@ -6,6 +6,7 @@ import styles from './LinkButtonGroup.module.css';
 
 const isReactFragment = component => {
   if (component.type) return component.type === Fragment;
+
   return component === Fragment;
 };
 
@@ -43,8 +44,10 @@ const LinkButtonGroup = ({
     ? children.props.children
     : children;
 
+  if (childComponents === undefined) return null;
+
   return (
-    <div className={classSet}>
+    <div className={classSet} data-testid="data-testid-LinkButtonGroup">
       <>
         {React.Children.map(childComponents, child => {
           if (child === null) return null;
@@ -83,4 +86,4 @@ LinkButtonGroup.defaultProps = {
   theme: undefined,
 };
 
-export default LinkButtonGroup;
+export { LinkButtonGroup };

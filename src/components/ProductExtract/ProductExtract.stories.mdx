@@ -1,24 +1,19 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import ProductExtract from './ProductExtract';
-import ProductExtractFixture from './ProductExtract.fixture';
+import { ProductExtract } from './ProductExtract';
+import { ProductExtractFixture } from './ProductExtract.fixture';
 
 <Meta title="Components/ProductExtract" component={ProductExtract} />
 
 # ProductExtract
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <ProductExtract
       dataTestRef={ProductExtractFixture.dataTestRef}
       hasBottomBorder={knobs.boolean('hasBottomBorder', false, 'Presentation')}
       isVisible={knobs.boolean('isActive', true, 'Presentation')}
-      itemNum={knobs.select(
-        'itemNum',
-        ['1', '2', '3', '4'],
-        '4',
-        'Presentation',
-      )}
+      itemNum={knobs.select('itemNum', [1, 2, 3, 4], 4, 'Presentation')}
       product={knobs.object(
         'product',
         ProductExtractFixture.product,
@@ -28,8 +23,8 @@ import ProductExtractFixture from './ProductExtract.fixture';
       works={ProductExtractFixture.works}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={ProductExtract} />
+<ArgsTable of={ProductExtract} />

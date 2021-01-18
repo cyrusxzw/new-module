@@ -1,8 +1,11 @@
-export default {
+const ProductDetailBodyFixture = {
   className: 'fixture-classname',
   copy: {
     upSellProductLabel: 'Discover the kit',
-    size: 'Size',
+    size: {
+      singular: 'Size',
+      plural: 'Sizes',
+    },
     cart:
       ' Quisque in felis id tellus condimentum scelerisque. Aliquam quis vestibulum felis, quis porta tellus',
     ingredients: {
@@ -29,3 +32,5 @@ export default {
   productName: 'Lorem ipsum dolor',
   theme: 'dark',
 };
+
+export { ProductDetailBodyFixture };

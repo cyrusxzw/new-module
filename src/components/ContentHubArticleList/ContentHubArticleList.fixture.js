@@ -1,4 +1,4 @@
-export default {
+const ContentHubArticleListFixture = {
   articles: [
     {
       id: 'test_1',
@@ -93,3 +93,5 @@ export default {
     },
   ],
 };
+
+export { ContentHubArticleListFixture };

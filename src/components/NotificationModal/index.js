@@ -1,3 +1,3 @@
-import NotificationModal from './NotificationModal';
+import { NotificationModal } from './NotificationModal';
 
-export default NotificationModal;
+export { NotificationModal };

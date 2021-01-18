@@ -1,5 +1,1 @@
-import { getVariantRadioOptions } from './product';
-
-export { getVariantRadioOptions };
-
-export default { getVariantRadioOptions };
+export { getVariantRadioOptions } from './product';

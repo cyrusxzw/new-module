@@ -48,7 +48,7 @@
   :global(.cluster) {
     width: 40px !important;
     height: 40px !important;
-    background-image: url('./Map-cluster-icon.svg');
+    background-image: url('./assets/Map-cluster-icon.svg');
 
     img,
     span {

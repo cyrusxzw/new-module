@@ -1,22 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Paragraph /> renders base component correctly 1`] = `
-<p
-  className="base dark"
->
-  A lightweight, vitamin C-rich layering serum that soothes, replenishes and balances skin with its complex blend of anti-oxidant, hydrating and conditioning ingredients.
-</p>
+exports[`<Paragraph /> should render base component correctly 1`] = `
+<div>
+  <p
+    class="base dark"
+  >
+    A lightweight, vitamin C-rich layering serum that soothes, replenishes and balances skin with its complex blend of anti-oxidant, hydrating conditioning ingredients.
+  </p>
+</div>
 `;
 
 exports[`<ParagraphSet /> renders a given collection of \`p\` tags 1`] = `
-<div
-  className="set dark"
->
-  <p>
-    A lightweight, vitamin C-rich layering serum that soothes
-  </p>
-  <p>
-    Replenishes and balances skin with its complex blend of anti-oxidant, hydrating and conditioning ingredients.
-  </p>
+<div>
+  <div
+    class="set dark"
+  >
+    <p>
+      A lightweight, vitamin C-rich layering serum that soothes
+    </p>
+    <p>
+      Replenishes and balances skin with its complex blend of anti-oxidant, hydrating and conditioning ingredients.
+    </p>
+  </div>
 </div>
 `;

@@ -1,6 +1,11 @@
-export default {
+const TextOverFullWidthAssetFixture = {
+  className: 'TextOverFullWidthAsset-className',
+  copyHeight: 'Top',
+  copySide: 'Left',
+  mediaType: 'Image',
+  content: 'content',
   backgroundImage: {
-    altText: 'A look inside Aesop: the book',
+    altText: 'TextOverFullWidthAsset-backgroundImage-altText',
     caption: null,
     large:
       '//images.ctfassets.net/u1nb1km7t5q7/1Sw3Q1024SHFqrriGvx6y1/4c7e5243ac23747ab5f8e262af599624/Aesop_Book_Hybris_PDP_Secondary_Full_Bleed_4_Desktop_2880x1660px.jpg',
@@ -32,3 +37,5 @@ export default {
       'https://player.vimeo.com/external/384448295.hd.mp4?s=d9af2574fcf5166d977e91e9ecc734e224646bdc&profile_id=175',
   },
 };
+
+export { TextOverFullWidthAssetFixture };

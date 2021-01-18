@@ -1,7 +1,7 @@
 import { addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-export const parameters = {
+const parameters = {
   a11y: {
     element: '#root',
     config: {},
@@ -25,6 +25,13 @@ export const parameters = {
       },
     ],
   },
+  options: {
+    storySort: {
+      order: ['Compositions', 'Contexts', 'Hooks', 'Form Elements'],
+    },
+  },
 };
 
 addDecorator(withKnobs);
+
+export { parameters };

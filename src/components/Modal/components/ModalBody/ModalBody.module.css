@@ -12,6 +12,7 @@
   font-family: var(--font-family-sans-serif-regular);
   font-size: rem(15px);
   line-height: 1.6;
+  pointer-events: auto;
   transform: translateZ(0);
 
   * {

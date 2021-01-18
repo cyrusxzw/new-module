@@ -1,10 +1,6 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import Hidden from './Hidden';
-
-configure({ adapter: new Adapter() });
+import { render } from '@testing-library/react';
+import { Hidden } from './Hidden';
 
 describe('<Hidden />', () => {
   it('should be defined', () => {
@@ -12,14 +8,12 @@ describe('<Hidden />', () => {
   });
 
   it('renders returned component correctly', () => {
-    const tree = renderer
-      .create(
-        <Hidden isSmall={true}>
-          <span>Hidden content</span>
-        </Hidden>,
-      )
-      .toJSON();
+    const { container } = render(
+      <Hidden isSmall={true}>
+        <span>Hidden content</span>
+      </Hidden>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

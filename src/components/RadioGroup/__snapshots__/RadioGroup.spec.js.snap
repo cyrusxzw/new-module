@@ -1,71 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<RadioGroup /> renders base component correctly 1`] = `
-<ul
-  className="base"
->
-  <li
-    className="radio"
+exports[`<RadioGroup /> should render base component correctly 1`] = `
+<div>
+  <ul
+    class="base"
   >
-    <label
-      className="label"
-      htmlFor="option-morbi-id-nulla"
+    <li
+      class="radio"
     >
-      <input
-        aria-checked={true}
-        checked={true}
-        className="input"
-        data-test-ref="RADIO_GROUP_TEST_REF"
-        id="option-morbi-id-nulla"
-        name="radio-group"
-        onChange={[Function]}
-        tabIndex={0}
-        type="radio"
-        value="morbi-id-nulla"
-      />
-      <span
-        className="pot dark"
-      />
-      <span
-        className="labelContent dark"
+      <label
+        class="label"
+        for="option-morbi-id-nulla"
       >
-        Morbi id nulla
-      </span>
-    </label>
-  </li>
-  <li
-    className="radio"
-  >
-    <label
-      className="label"
-      htmlFor="option-nullam-ultrices"
+        <input
+          aria-checked="true"
+          checked=""
+          class="input"
+          data-test-ref="RADIO_GROUP_TEST_REF"
+          id="option-morbi-id-nulla"
+          name="radio-group"
+          tabindex="0"
+          type="radio"
+          value="morbi-id-nulla"
+        />
+        <span
+          class="pot dark"
+        />
+        <span
+          class="labelContent dark"
+        >
+          Morbi id nulla
+        </span>
+      </label>
+    </li>
+    <li
+      class="radio"
     >
-      <input
-        aria-checked={false}
-        checked={false}
-        className="input"
-        data-test-ref="RADIO_GROUP_TEST_REF"
-        id="option-nullam-ultrices"
-        name="radio-group"
-        onChange={[Function]}
-        tabIndex={0}
-        type="radio"
-        value="nullam-ultrices"
-      />
-      <span
-        className="pot dark"
-      />
-      <span
-        className="labelContent dark"
+      <label
+        class="label"
+        for="option-nullam-ultrices"
       >
-        Nullam ultrices
-      </span>
-    </label>
-  </li>
-  <div
-    className="errorMessage"
-  >
-    Test Error Messsage
-  </div>
-</ul>
+        <input
+          aria-checked="false"
+          class="input"
+          data-test-ref="RADIO_GROUP_TEST_REF"
+          id="option-nullam-ultrices"
+          name="radio-group"
+          tabindex="0"
+          type="radio"
+          value="nullam-ultrices"
+        />
+        <span
+          class="pot dark"
+        />
+        <span
+          class="labelContent dark"
+        >
+          Nullam ultrices
+        </span>
+      </label>
+    </li>
+    <div
+      class="errorMessage"
+    >
+      Test Error Messsage
+    </div>
+  </ul>
+</div>
 `;

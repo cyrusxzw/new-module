@@ -1,13 +1,13 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import useWindowHasResized from '~/customHooks/useWindowHasResized';
+import { useWindowHasResized } from '~/customHooks';
 import {
   ascertainIsSmallOnlyViewport,
   ascertainIsMediumOnlyViewport,
   ascertainIsLargeViewport,
 } from '~/utils/viewports';
-import Transition from '~/components/Transition';
+import { Transition } from '~/components/Transition';
 import styles from './VideoPlayer.module.css';
 
 const VideoPlayer = forwardRef(function VideoPlayerRef(
@@ -55,6 +55,7 @@ const VideoPlayer = forwardRef(function VideoPlayerRef(
         autoPlay={hasAutoplay}
         className={classSet}
         controls={false}
+        data-testid="data-testid-VideoPlayer"
         loop={hasLoop}
         muted={!hasAllowAudio || (hasAllowAudio && isMuted)}
         playsInline={true}
@@ -96,4 +97,4 @@ VideoPlayer.defaultProps = {
   small: undefined,
 };
 
-export default VideoPlayer;
+export { VideoPlayer };

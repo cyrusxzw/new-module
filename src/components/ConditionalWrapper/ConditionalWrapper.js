@@ -35,4 +35,4 @@ ConditionalWrapper.defaultProps = {
   wrapper: undefined,
 };
 
-export default ConditionalWrapper;
+export { ConditionalWrapper };

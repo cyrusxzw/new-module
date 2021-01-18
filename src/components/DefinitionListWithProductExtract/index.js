@@ -1,3 +1,3 @@
-import DefinitionListWithProductExtract from './DefinitionListWithProductExtract';
+import { DefinitionListWithProductExtract } from './DefinitionListWithProductExtract';
 
-export default DefinitionListWithProductExtract;
+export { DefinitionListWithProductExtract };

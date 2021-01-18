@@ -1,9 +1,7 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
-import Hyperlink from './Hyperlink';
+import { Hyperlink } from './Hyperlink';
 import {
   checkIsExternalFromStyle,
   checkIsInlineFromStyle,
@@ -18,30 +16,19 @@ const {
   INTERNAL_TEXT_LINK,
 } = HYPERLINK_STYLE_TYPES;
 
-configure({ adapter: new Adapter() });
-
 describe('<Hyperlink />', () => {
   it('should be defined', () => {
     expect(Hyperlink).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
-        <Hyperlink text="Aesop" url="https://aesop.com">
-          Aesop
-        </Hyperlink>,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should return `a` as the tag if no `text` prop was provided', () => {
-    const component = shallow(
-      <Hyperlink url="https://aesop.com">Aesop</Hyperlink>,
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <Hyperlink text="Aesop" url="https://aesop.com">
+        Aesop
+      </Hyperlink>,
     );
-    expect(component.type()).toEqual('a');
+
+    expect(container).toMatchSnapshot();
   });
 });
 

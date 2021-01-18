@@ -1,29 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Figure /> renders base component correctly 1`] = `
-<figure
-  className="base dark"
-  id="about"
->
-  <picture
-    className="base picture dark"
+exports[`<Figure /> should render base component correctly 1`] = `
+<div>
+  <figure
+    class="base dark"
+    id="about"
   >
-    <source
-      media="(min-width: 1025px)"
-      srcSet="https://release.aesop-web-ui.aesopdigital.io/images/products/Skin_Perfect_Facial_Hydrating_Cream_60mL_large.png"
-    />
-    <img
-      alt="Image Alt Text"
-    />
-  </picture>
-  <figcaption
-    className="captionWrapper border captionOffset"
-  >
-    <div
-      className="caption"
+    <picture
+      class="base picture dark"
     >
-      About Aesop
-    </div>
-  </figcaption>
-</figure>
+      <source
+        media="(min-width: 1025px)"
+        srcset="https://release.aesop-web-ui.aesopdigital.io/images/products/Skin_Perfect_Facial_Hydrating_Cream_60mL_large.png"
+      />
+      <img
+        alt="Image Alt Text"
+        loading="lazy"
+      />
+    </picture>
+    <figcaption
+      class="captionWrapper border captionOffset"
+    >
+      <div
+        class="caption"
+      >
+        About Aesop
+      </div>
+    </figcaption>
+  </figure>
+</div>
 `;

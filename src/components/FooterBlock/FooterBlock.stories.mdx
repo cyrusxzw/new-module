@@ -1,13 +1,13 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import FooterBlock from './FooterBlock';
-import FooterBlockFixture from './FooterBlock.fixture'
+import { FooterBlock } from './FooterBlock';
+import { FooterBlockFixture } from './FooterBlock.fixture';
 
 # FooterBlock
 
 <Meta title="Components/FooterBlock" component={FooterBlock} />
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <FooterBlock
       copy={FooterBlockFixture.blockNoLink.copy}
@@ -15,21 +15,23 @@ import FooterBlockFixture from './FooterBlock.fixture'
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={FooterBlock} />
+<ArgsTable of={FooterBlock} />
 
-<Preview>
+<Canvas>
   <Story name="Block Navigation">
     <FooterBlock
-      isVisibleOnTabletAndMobile={knobs.boolean('isVisibleOnTabletAndMobile', true, 'Presentation')}
+      isVisibleOnTabletAndMobile={knobs.boolean(
+        'isVisibleOnTabletAndMobile',
+        true,
+        'Presentation',
+      )}
       links={FooterBlockFixture.navigation.links}
       heading={FooterBlockFixture.navigation.heading}
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
-
-
+</Canvas>

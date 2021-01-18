@@ -1,4 +1,4 @@
-export default {
+const ContentHubArticleFixture = {
   id: 'test_id',
   category: 'Product',
   dataTestRef: 'test_id',
@@ -22,3 +22,5 @@ export default {
     console.log('click tracking: test_id'); // eslint-disable-line no-console
   },
 };
+
+export { ContentHubArticleFixture };

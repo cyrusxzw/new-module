@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Figure from '~/components/Figure';
-import Hyperlink from '~/components/Hyperlink';
-import Image from '~/components/Image';
-import Video from '~/components/Video';
+import { Figure } from '~/components/Figure';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Image } from '~/components/Image';
+import { Video } from '~/components/Video';
 import styles from './MediaBlock.module.css';
 
 const MediaBlock = ({
@@ -118,4 +118,4 @@ MediaBlock.defaultProps = {
   theme: 'dark',
 };
 
-export default MediaBlock;
+export { MediaBlock };

@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Media from './components/Media';
-import Content from './components/Content';
+import { Media } from './components/Media';
+import { Content } from './components/Content';
 import styles from './MediaWithContent.module.css';
 
 const MediaWithContent = forwardRef(function MediaWithContentRef(
@@ -15,6 +15,7 @@ const MediaWithContent = forwardRef(function MediaWithContentRef(
     foregroundImage,
     foregroundImageLink,
     hasFullWidthImage,
+    hasSerifFontHeading,
     hasTopOffset,
     isHero,
     isReverse,
@@ -48,6 +49,7 @@ const MediaWithContent = forwardRef(function MediaWithContentRef(
         content={content}
         copy={copy}
         hasFullWidthImage={hasFullWidthImage}
+        hasSerifFontHeading={hasSerifFontHeading}
         hasTopOffset={hasTopOffset}
         isHero={isHero}
         isReverse={isReverse}
@@ -71,6 +73,7 @@ MediaWithContent.propTypes = {
   foregroundImage: PropTypes.element,
   foregroundImageLink: PropTypes.object,
   hasFullWidthImage: PropTypes.bool,
+  hasSerifFontHeading: PropTypes.bool,
   hasTopOffset: PropTypes.bool,
   isHero: PropTypes.bool,
   isReverse: PropTypes.bool,
@@ -92,6 +95,7 @@ MediaWithContent.defaultProps = {
   foregroundImage: undefined,
   foregroundImageLink: undefined,
   hasFullWidthImage: false,
+  hasSerifFontHeading: true,
   hasTopOffset: false,
   isHero: false,
   isReverse: false,
@@ -99,4 +103,4 @@ MediaWithContent.defaultProps = {
   theme: 'dark',
 };
 
-export default MediaWithContent;
+export { MediaWithContent };

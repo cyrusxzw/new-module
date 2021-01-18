@@ -1,164 +1,156 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FooterBlock /> renders base component correctly 1`] = `
-<section
-  className="base dark"
->
-  <h1
-    className="heading"
-  />
-  <div
-    className="divider dark"
-  />
-  <div
-    className="listItem copy"
+exports[`<FooterBlock /> should render base component correctly 1`] = `
+<div>
+  <section
+    class="base dark"
   >
-    Aesop acknowledges the Traditional Owners of the lands on which we live and work, and pays deepest respects to Elders past, present and emerging. We also acknowledge that sovereignty of these lands has never been ceded.
-  </div>
-</section>
+    <h1
+      class="heading"
+    />
+    <div
+      class="divider dark"
+    />
+    <div
+      class="listItem copy"
+    >
+      Aesop acknowledges the Traditional Owners of the lands on which we live and work, and pays deepest respects to Elders past, present and emerging. We also acknowledge that sovereignty of these lands has never been ceded.
+    </div>
+  </section>
+</div>
 `;
 
 exports[`<FooterBlock /> renders block navigation component correctly 1`] = `
-<section
-  className="base dark"
->
-  <h1
-    className="heading"
-  />
-  <div
-    className="divider dark"
-  />
-  <ul
-    className="list"
+<div>
+  <section
+    class="base dark"
   >
-    <li>
-      <a
-        className="base hasIcon hasExternalIcon left dark listItem"
-        data-test-ref="FOOTER_LINK"
-        href="https://www.aesop.com/au/r/contact-us"
-        target="_blank"
-        title="Contact us"
-      >
-        Contact us
-         
-        <i
-          aria-hidden="true"
-          className="icon"
+    <h1
+      class="heading"
+    />
+    <div
+      class="divider dark"
+    />
+    <ul
+      class="list"
+    >
+      <li>
+        <a
+          class="base hasIcon hasExternalIcon left dark listItem"
+          data-test-ref="FOOTER_LINK"
+          href="https://www.aesop.com/au/r/contact-us"
+          target="_blank"
+          title="Contact us"
         >
-          <svg
-            className="base rightUpArrow dark"
-            data-ref=""
-            focusable="false"
-            height={12}
-            role="img"
-            style={
-              Object {
-                "height": "12px",
-                "width": "12px",
-              }
-            }
-            tabIndex={-1}
-            viewBox="0 0 50 50"
-            width={12}
+          Contact us
+           
+          <i
+            aria-hidden="true"
+            class="icon"
           >
-            <g>
-              <path
-                d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-              />
-            </g>
-          </svg>
-        </i>
-      </a>
-    </li>
-    <li>
-      <a
-        className="base hasIcon hasExternalIcon left dark listItem"
-        data-test-ref="FOOTER_LINK"
-        href="https://www.aesop.com/au/r/shipping/"
-        target="_blank"
-        title="Delivery and returns"
-      >
-        Delivery and returns
-         
-        <i
-          aria-hidden="true"
-          className="icon"
+            <svg
+              class="base rightUpArrow dark"
+              data-ref=""
+              data-testid="data-testid-Icon"
+              focusable="false"
+              height="12"
+              role="img"
+              style="height: 12px; width: 12px;"
+              tabindex="-1"
+              viewBox="0 0 50 50"
+              width="12"
+            >
+              <g>
+                <path
+                  d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                />
+              </g>
+            </svg>
+          </i>
+        </a>
+      </li>
+      <li>
+        <a
+          class="base hasIcon hasExternalIcon left dark listItem"
+          data-test-ref="FOOTER_LINK"
+          href="https://www.aesop.com/au/r/shipping/"
+          target="_blank"
+          title="Delivery and returns"
         >
-          <svg
-            className="base rightUpArrow dark"
-            data-ref=""
-            focusable="false"
-            height={12}
-            role="img"
-            style={
-              Object {
-                "height": "12px",
-                "width": "12px",
-              }
-            }
-            tabIndex={-1}
-            viewBox="0 0 50 50"
-            width={12}
+          Delivery and returns
+           
+          <i
+            aria-hidden="true"
+            class="icon"
           >
-            <g>
-              <path
-                d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-              />
-            </g>
-          </svg>
-        </i>
-      </a>
-    </li>
-    <li>
-      <a
-        className="base hasIcon hasExternalIcon left dark listItem"
-        data-test-ref="FOOTER_LINK"
-        href="https://www.aesop.com/au/r/contact-us"
-        target="_blank"
-        title="Click And Collect"
-      >
-        Click And Collect
-         
-        <i
-          aria-hidden="true"
-          className="icon"
+            <svg
+              class="base rightUpArrow dark"
+              data-ref=""
+              data-testid="data-testid-Icon"
+              focusable="false"
+              height="12"
+              role="img"
+              style="height: 12px; width: 12px;"
+              tabindex="-1"
+              viewBox="0 0 50 50"
+              width="12"
+            >
+              <g>
+                <path
+                  d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                />
+              </g>
+            </svg>
+          </i>
+        </a>
+      </li>
+      <li>
+        <a
+          class="base hasIcon hasExternalIcon left dark listItem"
+          data-test-ref="FOOTER_LINK"
+          href="https://www.aesop.com/au/r/contact-us"
+          target="_blank"
+          title="Click And Collect"
         >
-          <svg
-            className="base rightUpArrow dark"
-            data-ref=""
-            focusable="false"
-            height={12}
-            role="img"
-            style={
-              Object {
-                "height": "12px",
-                "width": "12px",
-              }
-            }
-            tabIndex={-1}
-            viewBox="0 0 50 50"
-            width={12}
+          Click And Collect
+           
+          <i
+            aria-hidden="true"
+            class="icon"
           >
-            <g>
-              <path
-                d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-              />
-            </g>
-          </svg>
-        </i>
-      </a>
-    </li>
-    <li>
-      <a
-        className="base left dark listItem"
-        data-test-ref="FOOTER_LINK"
-        href="https://www.aesop.com/au/r/shipping/"
-        target="_self"
-        title="Track Your Orders"
-      >
-        Track Your Orders
-      </a>
-    </li>
-  </ul>
-</section>
+            <svg
+              class="base rightUpArrow dark"
+              data-ref=""
+              data-testid="data-testid-Icon"
+              focusable="false"
+              height="12"
+              role="img"
+              style="height: 12px; width: 12px;"
+              tabindex="-1"
+              viewBox="0 0 50 50"
+              width="12"
+            >
+              <g>
+                <path
+                  d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                />
+              </g>
+            </svg>
+          </i>
+        </a>
+      </li>
+      <li>
+        <a
+          class="base left dark listItem"
+          data-test-ref="FOOTER_LINK"
+          href="https://www.aesop.com/au/r/shipping/"
+          target="_self"
+          title="Track Your Orders"
+        >
+          Track Your Orders
+        </a>
+      </li>
+    </ul>
+  </section>
+</div>
 `;

@@ -1,4 +1,4 @@
-export const arrayOfLength = (maxLength, props, propName, componentName) => {
+const arrayOfLength = (maxLength, props, propName, componentName) => {
   const arrayPropLength = props[propName].length;
 
   if (arrayPropLength > maxLength) {
@@ -7,3 +7,5 @@ export const arrayOfLength = (maxLength, props, propName, componentName) => {
     );
   }
 };
+
+export { arrayOfLength };

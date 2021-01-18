@@ -1,23 +1,30 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import Overlay from './Overlay';
-
-configure({ adapter: new Adapter() });
-
-const mockFn = jest.fn();
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Overlay } from './Overlay';
 
 describe('<Overlay />', () => {
+  const handleOnClose = jest.fn();
+
   it('should be defined', () => {
     expect(Overlay).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<Overlay isVisible={true} onClose={mockFn} />)
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <Overlay isVisible={true} onClose={handleOnClose} />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should call the onClick callback when the escape key is pressed', () => {
+    render(<Overlay isVisible={true} onClose={handleOnClose} />);
+
+    expect(handleOnClose).not.toHaveBeenCalled();
+
+    userEvent.type(screen.getByTestId(/data-testid-Overlay/i), '{esc}');
+
+    expect(handleOnClose).toHaveBeenCalled();
   });
 });

@@ -1,98 +1,67 @@
 import React from 'react';
-import { configure, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import TextOverFullWidthAsset from './TextOverFullWidthAsset';
-import Image from '~/components/Image';
-import Video from '~/components/Video';
-
-configure({ adapter: new Adapter() });
-
-jest.mock('../Image', () => ({
-  __esModule: true,
-  default: jest.fn(() => <p>this is an image</p>),
-}));
-
-jest.mock('../Video', () => ({
-  __esModule: true,
-  default: jest.fn(() => <p>this is an video</p>),
-}));
+import { render, screen } from '@testing-library/react';
+import { TextOverFullWidthAsset } from './TextOverFullWidthAsset';
+import { TextOverFullWidthAssetFixture } from './TextOverFullWidthAsset.fixture';
 
 describe('<TextOverFullWidthAsset />', () => {
-  const MockContent = <p>Nice try, guy</p>;
-  const backgroundImage = {
-    alt: 'strange picture of a sumo warrior',
-  };
-  const backgroundVideo = {
-    small: 'smol video',
-  };
-
-  beforeEach(() => {
-    jest.spyOn(console, 'error').mockImplementation(); // suppress warnings re incorrect type
-    jest.clearAllMocks();
+  it('should be defined', () => {
+    expect(TextOverFullWidthAsset).toBeDefined();
   });
 
-  it('should not render anything if content and mediaType are not valid', () => {
-    const wrapper = mount(
+  it('should render base component correctly', () => {
+    const { container } = render(
       <TextOverFullWidthAsset
-        backgroundImage={backgroundImage}
-        backgroundVideo={backgroundVideo}
+        backgroundImage={TextOverFullWidthAssetFixture.backgroundImage}
+        backgroundVideo={TextOverFullWidthAssetFixture.backgroundVideo}
+        className={TextOverFullWidthAssetFixture.className}
+        content={TextOverFullWidthAssetFixture.content}
+        copyHeight={TextOverFullWidthAssetFixture.copyHeight}
+        copySide={TextOverFullWidthAssetFixture.copySide}
+        mediaType={TextOverFullWidthAssetFixture.mediaType}
       />,
     );
 
-    expect(wrapper.isEmptyRender()).toBe(true);
+    expect(container).toMatchSnapshot();
   });
 
-  it('should render an Image with the correct values if the mediaType is Image', () => {
-    const expectedProps = {
-      ...backgroundImage,
-      className: 'media',
-    };
+  it('should not render anything if content and mediaType are not valid', () => {
+    render(<TextOverFullWidthAsset content="" mediaType="Audio" />);
 
-    mount(
+    const child = screen.queryByTestId('data-testid-TextOverFullWidthAsset');
+
+    expect(child).not.toBeInTheDocument();
+  });
+
+  it('should render a given image if the mediaType is Image', () => {
+    render(
       <TextOverFullWidthAsset
-        backgroundImage={backgroundImage}
-        backgroundVideo={backgroundVideo}
-        content={MockContent}
+        backgroundImage={TextOverFullWidthAssetFixture.backgroundImage}
+        content=""
         mediaType="Image"
       />,
     );
 
-    expect(Video).not.toHaveBeenCalled();
-    expect(Image.mock.calls[0][0]).toEqual(expectedProps);
+    const child = screen.getByRole('img', {
+      name: /textoverfullwidthasset-backgroundimage-alttext/i,
+    });
+
+    expect(child).toBeInTheDocument();
   });
 
-  it('should render an Video with the correct values if the mediaType is Video', () => {
-    const expectedProps = {
-      ...backgroundVideo,
-      className: 'media',
-      hasControls: false,
-      hasAllowAudio: false,
-      hasAutoplay: true,
-      hasLoop: true,
-      hasSpanContent: false,
-      hasPlayInFullScreen: false,
-      isHeroFullWidth: false,
-      isFullWidth: true,
-      isScrollBasedVideo: false,
-    };
-
-    mount(
+  /**
+   * Known issue in testing output: https://github.com/testing-library/react-testing-library/issues/470
+   */
+  it('should render a given video if the mediaType is Video', () => {
+    render(
       <TextOverFullWidthAsset
-        backgroundImage={backgroundImage}
-        backgroundVideo={backgroundVideo}
-        content={MockContent}
+        backgroundVideo={TextOverFullWidthAssetFixture.backgroundVideo}
+        content=""
         mediaType="Video"
       />,
     );
 
-    expect(Image).not.toHaveBeenCalled();
-    expect(Video.mock.calls[0][0]).toEqual(expectedProps);
-  });
+    const child = screen.queryByTestId('data-testid-VideoPlayer');
 
-  it('should not render media if the mediaType is not Image or Video', () => {
-    mount(<TextOverFullWidthAsset content={MockContent} mediaType="Song" />);
-
-    expect(Image).not.toHaveBeenCalled();
-    expect(Video).not.toHaveBeenCalled();
+    expect(child).toBeInTheDocument();
   });
 });

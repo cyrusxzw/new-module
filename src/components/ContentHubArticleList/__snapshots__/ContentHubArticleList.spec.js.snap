@@ -1,1319 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ContentHubArticleList /> renders base component correctly with pattern 0 1`] = `
-<section>
-  <div
-    className="base"
-  >
+exports[`<ContentHubArticleList /> should render base component correctly with pattern 0 1`] = `
+<div>
+  <section>
     <div
-      className="top-left-0 article"
+      class="base"
     >
       <div
-        className="base"
-        id="test_1"
+        class="top-left-0 article"
       >
         <div
-          className="category"
-        >
-          Product
-        </div>
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <a
-            className="base left dark title"
-            data-test-ref="test_1_TITLE"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="1. Senorial consectetur adipiscing elit."
-          >
-            <h1>
-              <span>
-                1. Senorial consectetur adipiscing elit.
-              </span>
-            </h1>
-          </a>
-        </div>
-        <div
-          className="note"
-        >
-          <span>
-            15 minute read
-          </span>
-        </div>
-        <a
-          className="base left dark image nonMobile"
-          data-test-ref="test_1_NON_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="1. Senorial consectetur adipiscing elit."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <img
-                alt="horizontal_hub"
-              />
-            </picture>
-          </div>
-        </a>
-        <a
-          className="base left dark image mobile"
-          data-test-ref="test_1_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="1. Senorial consectetur adipiscing elit."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <img
-                alt="horizontal_hub"
-              />
-            </picture>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div
-      className="top-right-0 article"
-    >
-      <div
-        className="base"
-        id="test_2"
-      >
-        <div
-          className="category"
-        >
-          Product
-        </div>
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <a
-            className="base left dark title"
-            data-test-ref="test_2_TITLE"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-          >
-            <h1>
-              <span>
-                2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
-              </span>
-            </h1>
-          </a>
-        </div>
-        <div
-          className="note"
-        >
-          <span>
-            15 minute read
-          </span>
-        </div>
-        <a
-          className="base left dark image nonMobile"
-          data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <img
-                alt="vertical_hub"
-              />
-            </picture>
-          </div>
-        </a>
-        <a
-          className="base left dark image mobile"
-          data-test-ref="test_2_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <img
-                alt="vertical_hub"
-              />
-            </picture>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div
-      className="bottom-left-0 article"
-    >
-      <div
-        className="base"
-        id="test_3"
-      >
-        <div
-          className="category"
-        >
-          Culture
-        </div>
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <a
-            className="base left dark title"
-            data-test-ref="test_3_TITLE"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-          >
-            <h1>
-              <span>
-                3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
-              </span>
-            </h1>
-          </a>
-        </div>
-        <div
-          className="note"
-        >
-          <span>
-            15 minute read
-          </span>
-        </div>
-        <a
-          className="base left dark image nonMobile"
-          data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <img
-                alt="vertical_hub"
-              />
-            </picture>
-          </div>
-        </a>
-        <a
-          className="base left dark image mobile"
-          data-test-ref="test_3_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <img
-                alt="vertical_hub"
-              />
-            </picture>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div
-      className="bottom-right-0 article"
-    >
-      <div
-        className="base"
-        id="test_4"
-      >
-        <div
-          className="category"
-        >
-          Aesop Spotify
-        </div>
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <a
-            className="base left dark title"
-            data-test-ref="test_4_TITLE"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-          >
-            <h1>
-              <span>
-                4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
-              </span>
-            </h1>
-          </a>
-        </div>
-        <div
-          className="note"
-        >
-          <span>
-            15 minute read
-          </span>
-        </div>
-        <a
-          className="base left dark image nonMobile"
-          data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <img
-                alt="horizontal_hub"
-              />
-            </picture>
-          </div>
-        </a>
-        <a
-          className="base left dark image mobile"
-          data-test-ref="test_4_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <img
-                alt="horizontal_hub"
-              />
-            </picture>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    className="mobile"
-  >
-    <div
-      className="base"
-      id="test_1"
-    >
-      <div
-        className="category"
-      >
-        Product
-      </div>
-      <div
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <a
-          className="base left dark title"
-          data-test-ref="test_1_TITLE"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="1. Senorial consectetur adipiscing elit."
-        >
-          <h1>
-            <span>
-              1. Senorial consectetur adipiscing elit.
-            </span>
-          </h1>
-        </a>
-      </div>
-      <div
-        className="note"
-      >
-        <span>
-          15 minute read
-        </span>
-      </div>
-      <a
-        className="base left dark image nonMobile"
-        data-test-ref="test_1_NON_MOBILE_THUMBNAIL"
-        href="https://www.aesop.com/au/r/careers?contentful=true"
-        onClick={[Function]}
-        target="_self"
-        title="1. Senorial consectetur adipiscing elit."
-      >
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <picture
-            className="base picture dark image"
-          >
-            <source
-              media="(min-width: 1025px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 640px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 0px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <img
-              alt="horizontal_hub"
-            />
-          </picture>
-        </div>
-      </a>
-      <a
-        className="base left dark image mobile"
-        data-test-ref="test_1_MOBILE_THUMBNAIL"
-        href="https://www.aesop.com/au/r/careers?contentful=true"
-        onClick={[Function]}
-        target="_self"
-        title="1. Senorial consectetur adipiscing elit."
-      >
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <picture
-            className="base picture dark image"
-          >
-            <source
-              media="(min-width: 1025px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 640px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 0px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <img
-              alt="horizontal_hub"
-            />
-          </picture>
-        </div>
-      </a>
-    </div>
-    <div
-      className="mobileMiddleRow"
-    >
-      <div
-        className="middleArticle"
-      >
-        <div
-          className="base leftMiddleArticle"
-          id="test_2"
-        >
-          <div
-            className="category"
-          >
-            Product
-          </div>
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <a
-              className="base left dark title"
-              data-test-ref="test_2_TITLE"
-              href="https://www.aesop.com/au/r/careers?contentful=true"
-              onClick={[Function]}
-              target="_self"
-              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-            >
-              <h1>
-                <span>
-                  2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
-                </span>
-              </h1>
-            </a>
-          </div>
-          <div
-            className="note"
-          >
-            <span>
-              15 minute read
-            </span>
-          </div>
-          <a
-            className="base left dark image nonMobile"
-            data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-          >
-            <div
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            >
-              <picture
-                className="base picture dark image"
-              >
-                <source
-                  media="(min-width: 1025px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <source
-                  media="(min-width: 640px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <source
-                  media="(min-width: 0px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <img
-                  alt="vertical_hub"
-                />
-              </picture>
-            </div>
-          </a>
-          <a
-            className="base left dark image mobile"
-            data-test-ref="test_2_MOBILE_THUMBNAIL"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-          >
-            <div
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            >
-              <picture
-                className="base picture dark image"
-              >
-                <source
-                  media="(min-width: 1025px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <source
-                  media="(min-width: 640px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <source
-                  media="(min-width: 0px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <img
-                  alt="vertical_hub"
-                />
-              </picture>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div
-        className="middleArticle"
-      >
-        <div
-          className="base rightMiddleArticle"
-          id="test_3"
-        >
-          <div
-            className="category"
-          >
-            Culture
-          </div>
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <a
-              className="base left dark title"
-              data-test-ref="test_3_TITLE"
-              href="https://www.aesop.com/au/r/careers?contentful=true"
-              onClick={[Function]}
-              target="_self"
-              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-            >
-              <h1>
-                <span>
-                  3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
-                </span>
-              </h1>
-            </a>
-          </div>
-          <div
-            className="note"
-          >
-            <span>
-              15 minute read
-            </span>
-          </div>
-          <a
-            className="base left dark image nonMobile"
-            data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-          >
-            <div
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            >
-              <picture
-                className="base picture dark image"
-              >
-                <source
-                  media="(min-width: 1025px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <source
-                  media="(min-width: 640px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <source
-                  media="(min-width: 0px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <img
-                  alt="vertical_hub"
-                />
-              </picture>
-            </div>
-          </a>
-          <a
-            className="base left dark image mobile"
-            data-test-ref="test_3_MOBILE_THUMBNAIL"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-          >
-            <div
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            >
-              <picture
-                className="base picture dark image"
-              >
-                <source
-                  media="(min-width: 1025px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <source
-                  media="(min-width: 640px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <source
-                  media="(min-width: 0px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                />
-                <img
-                  alt="vertical_hub"
-                />
-              </picture>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div
-      className="base"
-      id="test_4"
-    >
-      <div
-        className="category"
-      >
-        Aesop Spotify
-      </div>
-      <div
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <a
-          className="base left dark title"
-          data-test-ref="test_4_TITLE"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <h1>
-            <span>
-              4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
-            </span>
-          </h1>
-        </a>
-      </div>
-      <div
-        className="note"
-      >
-        <span>
-          15 minute read
-        </span>
-      </div>
-      <a
-        className="base left dark image nonMobile"
-        data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
-        href="https://www.aesop.com/au/r/careers?contentful=true"
-        onClick={[Function]}
-        target="_self"
-        title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-      >
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <picture
-            className="base picture dark image"
-          >
-            <source
-              media="(min-width: 1025px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 640px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 0px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <img
-              alt="horizontal_hub"
-            />
-          </picture>
-        </div>
-      </a>
-      <a
-        className="base left dark image mobile"
-        data-test-ref="test_4_MOBILE_THUMBNAIL"
-        href="https://www.aesop.com/au/r/careers?contentful=true"
-        onClick={[Function]}
-        target="_self"
-        title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-      >
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <picture
-            className="base picture dark image"
-          >
-            <source
-              media="(min-width: 1025px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 640px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 0px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <img
-              alt="horizontal_hub"
-            />
-          </picture>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-`;
-
-exports[`<ContentHubArticleList /> renders base component correctly with pattern 1 1`] = `
-<section>
-  <div
-    className="base"
-  >
-    <div
-      className="top-left-1 article"
-    >
-      <div
-        className="base fadeEnter"
-        id="test_1"
-      >
-        <div
-          className="category"
-        >
-          Product
-        </div>
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <a
-            className="base left dark title"
-            data-test-ref="test_1_TITLE"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="1. Senorial consectetur adipiscing elit."
-          >
-            <h1>
-              <span>
-                1. Senorial consectetur adipiscing elit.
-              </span>
-            </h1>
-          </a>
-        </div>
-        <div
-          className="note"
-        >
-          <span>
-            15 minute read
-          </span>
-        </div>
-        <a
-          className="base left dark image nonMobile"
-          data-test-ref="test_1_NON_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="1. Senorial consectetur adipiscing elit."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <img
-                alt="vertical_hub"
-              />
-            </picture>
-          </div>
-        </a>
-        <a
-          className="base left dark image mobile"
-          data-test-ref="test_1_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="1. Senorial consectetur adipiscing elit."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <img
-                alt="vertical_hub"
-              />
-            </picture>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div
-      className="top-right-1 article"
-    >
-      <div
-        className="base fadeEnter"
-        id="test_2"
-      >
-        <div
-          className="category"
-        >
-          Product
-        </div>
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <a
-            className="base left dark title"
-            data-test-ref="test_2_TITLE"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-          >
-            <h1>
-              <span>
-                2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
-              </span>
-            </h1>
-          </a>
-        </div>
-        <div
-          className="note"
-        >
-          <span>
-            15 minute read
-          </span>
-        </div>
-        <a
-          className="base left dark image nonMobile"
-          data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <img
-                alt="horizontal_hub"
-              />
-            </picture>
-          </div>
-        </a>
-        <a
-          className="base left dark image mobile"
-          data-test-ref="test_2_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <img
-                alt="horizontal_hub"
-              />
-            </picture>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div
-      className="bottom-left-1 article"
-    >
-      <div
-        className="base fadeEnter"
-        id="test_3"
-      >
-        <div
-          className="category"
-        >
-          Culture
-        </div>
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <a
-            className="base left dark title"
-            data-test-ref="test_3_TITLE"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-          >
-            <h1>
-              <span>
-                3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
-              </span>
-            </h1>
-          </a>
-        </div>
-        <div
-          className="note"
-        >
-          <span>
-            15 minute read
-          </span>
-        </div>
-        <a
-          className="base left dark image nonMobile"
-          data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <img
-                alt="horizontal_hub"
-              />
-            </picture>
-          </div>
-        </a>
-        <a
-          className="base left dark image mobile"
-          data-test-ref="test_3_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-              />
-              <img
-                alt="horizontal_hub"
-              />
-            </picture>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div
-      className="bottom-right-1 article"
-    >
-      <div
-        className="base fadeEnter"
-        id="test_4"
-      >
-        <div
-          className="category"
-        >
-          Aesop Spotify
-        </div>
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <a
-            className="base left dark title"
-            data-test-ref="test_4_TITLE"
-            href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
-            target="_self"
-            title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-          >
-            <h1>
-              <span>
-                4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
-              </span>
-            </h1>
-          </a>
-        </div>
-        <div
-          className="note"
-        >
-          <span>
-            15 minute read
-          </span>
-        </div>
-        <a
-          className="base left dark image nonMobile"
-          data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <img
-                alt="vertical_hub"
-              />
-            </picture>
-          </div>
-        </a>
-        <a
-          className="base left dark image mobile"
-          data-test-ref="test_4_MOBILE_THUMBNAIL"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <picture
-              className="base picture dark image"
-            >
-              <source
-                media="(min-width: 1025px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 640px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <source
-                media="(min-width: 0px)"
-                srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
-              />
-              <img
-                alt="vertical_hub"
-              />
-            </picture>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    className="mobile"
-  >
-    <div
-      className="mobileMiddleRow"
-    >
-      <div
-        className="middleArticle"
-      >
-        <div
-          className="base leftMiddleArticle fadeEnter"
+          class="base"
           id="test_1"
         >
           <div
-            className="category"
+            class="category"
           >
             Product
           </div>
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
+          <div>
             <a
-              className="base left dark title"
+              class="base left dark title"
               data-test-ref="test_1_TITLE"
               href="https://www.aesop.com/au/r/careers?contentful=true"
-              onClick={[Function]}
               target="_self"
               title="1. Senorial consectetur adipiscing elit."
             >
@@ -1325,74 +34,68 @@ exports[`<ContentHubArticleList /> renders base component correctly with pattern
             </a>
           </div>
           <div
-            className="note"
+            class="note"
           >
             <span>
               15 minute read
             </span>
           </div>
           <a
-            className="base left dark image nonMobile"
+            class="base left dark image nonMobile"
             data-test-ref="test_1_NON_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
             target="_self"
             title="1. Senorial consectetur adipiscing elit."
           >
-            <div
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            >
+            <div>
               <picture
-                className="base picture dark image"
+                class="base picture dark image"
               >
                 <source
                   media="(min-width: 1025px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <source
                   media="(min-width: 640px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <source
                   media="(min-width: 0px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <img
-                  alt="vertical_hub"
+                  alt="horizontal_hub"
+                  loading="lazy"
                 />
               </picture>
             </div>
           </a>
           <a
-            className="base left dark image mobile"
+            class="base left dark image mobile"
             data-test-ref="test_1_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
             target="_self"
             title="1. Senorial consectetur adipiscing elit."
           >
-            <div
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            >
+            <div>
               <picture
-                className="base picture dark image"
+                class="base picture dark image"
               >
                 <source
                   media="(min-width: 1025px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <source
                   media="(min-width: 640px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <source
                   media="(min-width: 0px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <img
-                  alt="vertical_hub"
+                  alt="horizontal_hub"
+                  loading="lazy"
                 />
               </picture>
             </div>
@@ -1400,240 +103,214 @@ exports[`<ContentHubArticleList /> renders base component correctly with pattern
         </div>
       </div>
       <div
-        className="middleArticle"
-      />
-    </div>
-    <div
-      className="base fadeEnter"
-      id="test_2"
-    >
-      <div
-        className="category"
+        class="top-right-0 article"
       >
-        Product
-      </div>
-      <div
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <a
-          className="base left dark title"
-          data-test-ref="test_2_TITLE"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+        <div
+          class="base"
+          id="test_2"
         >
-          <h1>
+          <div
+            class="category"
+          >
+            Product
+          </div>
+          <div>
+            <a
+              class="base left dark title"
+              data-test-ref="test_2_TITLE"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <h1>
+                <span>
+                  2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+                </span>
+              </h1>
+            </a>
+          </div>
+          <div
+            class="note"
+          >
             <span>
-              2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+              15 minute read
             </span>
-          </h1>
-        </a>
+          </div>
+          <a
+            class="base left dark image nonMobile"
+            data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <img
+                  alt="vertical_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+          <a
+            class="base left dark image mobile"
+            data-test-ref="test_2_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <img
+                  alt="vertical_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+        </div>
       </div>
       <div
-        className="note"
-      >
-        <span>
-          15 minute read
-        </span>
-      </div>
-      <a
-        className="base left dark image nonMobile"
-        data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
-        href="https://www.aesop.com/au/r/careers?contentful=true"
-        onClick={[Function]}
-        target="_self"
-        title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+        class="bottom-left-0 article"
       >
         <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
+          class="base"
+          id="test_3"
         >
-          <picture
-            className="base picture dark image"
+          <div
+            class="category"
           >
-            <source
-              media="(min-width: 1025px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 640px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 0px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <img
-              alt="horizontal_hub"
-            />
-          </picture>
-        </div>
-      </a>
-      <a
-        className="base left dark image mobile"
-        data-test-ref="test_2_MOBILE_THUMBNAIL"
-        href="https://www.aesop.com/au/r/careers?contentful=true"
-        onClick={[Function]}
-        target="_self"
-        title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
-      >
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <picture
-            className="base picture dark image"
+            Culture
+          </div>
+          <div>
+            <a
+              class="base left dark title"
+              data-test-ref="test_3_TITLE"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <h1>
+                <span>
+                  3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                </span>
+              </h1>
+            </a>
+          </div>
+          <div
+            class="note"
           >
-            <source
-              media="(min-width: 1025px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 640px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 0px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <img
-              alt="horizontal_hub"
-            />
-          </picture>
-        </div>
-      </a>
-    </div>
-    <div
-      className="base fadeEnter"
-      id="test_3"
-    >
-      <div
-        className="category"
-      >
-        Culture
-      </div>
-      <div
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <a
-          className="base left dark title"
-          data-test-ref="test_3_TITLE"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
-          onClick={[Function]}
-          target="_self"
-          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-        >
-          <h1>
             <span>
-              3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+              15 minute read
             </span>
-          </h1>
-        </a>
+          </div>
+          <a
+            class="base left dark image nonMobile"
+            data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <img
+                  alt="vertical_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+          <a
+            class="base left dark image mobile"
+            data-test-ref="test_3_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <img
+                  alt="vertical_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+        </div>
       </div>
       <div
-        className="note"
-      >
-        <span>
-          15 minute read
-        </span>
-      </div>
-      <a
-        className="base left dark image nonMobile"
-        data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
-        href="https://www.aesop.com/au/r/careers?contentful=true"
-        onClick={[Function]}
-        target="_self"
-        title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+        class="bottom-right-0 article"
       >
         <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <picture
-            className="base picture dark image"
-          >
-            <source
-              media="(min-width: 1025px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 640px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 0px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <img
-              alt="horizontal_hub"
-            />
-          </picture>
-        </div>
-      </a>
-      <a
-        className="base left dark image mobile"
-        data-test-ref="test_3_MOBILE_THUMBNAIL"
-        href="https://www.aesop.com/au/r/careers?contentful=true"
-        onClick={[Function]}
-        target="_self"
-        title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-      >
-        <div
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <picture
-            className="base picture dark image"
-          >
-            <source
-              media="(min-width: 1025px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 640px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <source
-              media="(min-width: 0px)"
-              srcSet="./assets/images/ContentHubArticle/horizontal_hub.jpg"
-            />
-            <img
-              alt="horizontal_hub"
-            />
-          </picture>
-        </div>
-      </a>
-    </div>
-    <div
-      className="mobileMiddleRow"
-    >
-      <div
-        className="middleArticle"
-      />
-      <div
-        className="middleArticle"
-      >
-        <div
-          className="base rightMiddleArticle fadeEnter"
+          class="base"
           id="test_4"
         >
           <div
-            className="category"
+            class="category"
           >
             Aesop Spotify
           </div>
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
+          <div>
             <a
-              className="base left dark title"
+              class="base left dark title"
               data-test-ref="test_4_TITLE"
               href="https://www.aesop.com/au/r/careers?contentful=true"
-              onClick={[Function]}
               target="_self"
               title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
             >
@@ -1645,74 +322,68 @@ exports[`<ContentHubArticleList /> renders base component correctly with pattern
             </a>
           </div>
           <div
-            className="note"
+            class="note"
           >
             <span>
               15 minute read
             </span>
           </div>
           <a
-            className="base left dark image nonMobile"
+            class="base left dark image nonMobile"
             data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
             target="_self"
             title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
-            <div
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            >
+            <div>
               <picture
-                className="base picture dark image"
+                class="base picture dark image"
               >
                 <source
                   media="(min-width: 1025px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <source
                   media="(min-width: 640px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <source
                   media="(min-width: 0px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <img
-                  alt="vertical_hub"
+                  alt="horizontal_hub"
+                  loading="lazy"
                 />
               </picture>
             </div>
           </a>
           <a
-            className="base left dark image mobile"
+            class="base left dark image mobile"
             data-test-ref="test_4_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers?contentful=true"
-            onClick={[Function]}
             target="_self"
             title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
-            <div
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            >
+            <div>
               <picture
-                className="base picture dark image"
+                class="base picture dark image"
               >
                 <source
                   media="(min-width: 1025px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <source
                   media="(min-width: 640px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <source
                   media="(min-width: 0px)"
-                  srcSet="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
                 />
                 <img
-                  alt="vertical_hub"
+                  alt="horizontal_hub"
+                  loading="lazy"
                 />
               </picture>
             </div>
@@ -1720,6 +391,1179 @@ exports[`<ContentHubArticleList /> renders base component correctly with pattern
         </div>
       </div>
     </div>
-  </div>
-</section>
+    <div
+      class="mobile"
+    >
+      <div
+        class="base"
+        id="test_1"
+      >
+        <div
+          class="category"
+        >
+          Product
+        </div>
+        <div>
+          <a
+            class="base left dark title"
+            data-test-ref="test_1_TITLE"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="1. Senorial consectetur adipiscing elit."
+          >
+            <h1>
+              <span>
+                1. Senorial consectetur adipiscing elit.
+              </span>
+            </h1>
+          </a>
+        </div>
+        <div
+          class="note"
+        >
+          <span>
+            15 minute read
+          </span>
+        </div>
+        <a
+          class="base left dark image nonMobile"
+          data-test-ref="test_1_NON_MOBILE_THUMBNAIL"
+          href="https://www.aesop.com/au/r/careers?contentful=true"
+          target="_self"
+          title="1. Senorial consectetur adipiscing elit."
+        >
+          <div>
+            <picture
+              class="base picture dark image"
+            >
+              <source
+                media="(min-width: 1025px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 640px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 0px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <img
+                alt="horizontal_hub"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </a>
+        <a
+          class="base left dark image mobile"
+          data-test-ref="test_1_MOBILE_THUMBNAIL"
+          href="https://www.aesop.com/au/r/careers?contentful=true"
+          target="_self"
+          title="1. Senorial consectetur adipiscing elit."
+        >
+          <div>
+            <picture
+              class="base picture dark image"
+            >
+              <source
+                media="(min-width: 1025px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 640px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 0px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <img
+                alt="horizontal_hub"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+      <div
+        class="mobileMiddleRow"
+      >
+        <div
+          class="middleArticle"
+        >
+          <div
+            class="base leftMiddleArticle"
+            id="test_2"
+          >
+            <div
+              class="category"
+            >
+              Product
+            </div>
+            <div>
+              <a
+                class="base left dark title"
+                data-test-ref="test_2_TITLE"
+                href="https://www.aesop.com/au/r/careers?contentful=true"
+                target="_self"
+                title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+              >
+                <h1>
+                  <span>
+                    2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+                  </span>
+                </h1>
+              </a>
+            </div>
+            <div
+              class="note"
+            >
+              <span>
+                15 minute read
+              </span>
+            </div>
+            <a
+              class="base left dark image nonMobile"
+              data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <div>
+                <picture
+                  class="base picture dark image"
+                >
+                  <source
+                    media="(min-width: 1025px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 640px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 0px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <img
+                    alt="vertical_hub"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </a>
+            <a
+              class="base left dark image mobile"
+              data-test-ref="test_2_MOBILE_THUMBNAIL"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <div>
+                <picture
+                  class="base picture dark image"
+                >
+                  <source
+                    media="(min-width: 1025px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 640px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 0px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <img
+                    alt="vertical_hub"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div
+          class="middleArticle"
+        >
+          <div
+            class="base rightMiddleArticle"
+            id="test_3"
+          >
+            <div
+              class="category"
+            >
+              Culture
+            </div>
+            <div>
+              <a
+                class="base left dark title"
+                data-test-ref="test_3_TITLE"
+                href="https://www.aesop.com/au/r/careers?contentful=true"
+                target="_self"
+                title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+              >
+                <h1>
+                  <span>
+                    3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                  </span>
+                </h1>
+              </a>
+            </div>
+            <div
+              class="note"
+            >
+              <span>
+                15 minute read
+              </span>
+            </div>
+            <a
+              class="base left dark image nonMobile"
+              data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <div>
+                <picture
+                  class="base picture dark image"
+                >
+                  <source
+                    media="(min-width: 1025px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 640px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 0px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <img
+                    alt="vertical_hub"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </a>
+            <a
+              class="base left dark image mobile"
+              data-test-ref="test_3_MOBILE_THUMBNAIL"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <div>
+                <picture
+                  class="base picture dark image"
+                >
+                  <source
+                    media="(min-width: 1025px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 640px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 0px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <img
+                    alt="vertical_hub"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="base"
+        id="test_4"
+      >
+        <div
+          class="category"
+        >
+          Aesop Spotify
+        </div>
+        <div>
+          <a
+            class="base left dark title"
+            data-test-ref="test_4_TITLE"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <h1>
+              <span>
+                4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+              </span>
+            </h1>
+          </a>
+        </div>
+        <div
+          class="note"
+        >
+          <span>
+            15 minute read
+          </span>
+        </div>
+        <a
+          class="base left dark image nonMobile"
+          data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
+          href="https://www.aesop.com/au/r/careers?contentful=true"
+          target="_self"
+          title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+        >
+          <div>
+            <picture
+              class="base picture dark image"
+            >
+              <source
+                media="(min-width: 1025px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 640px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 0px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <img
+                alt="horizontal_hub"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </a>
+        <a
+          class="base left dark image mobile"
+          data-test-ref="test_4_MOBILE_THUMBNAIL"
+          href="https://www.aesop.com/au/r/careers?contentful=true"
+          target="_self"
+          title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+        >
+          <div>
+            <picture
+              class="base picture dark image"
+            >
+              <source
+                media="(min-width: 1025px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 640px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 0px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <img
+                alt="horizontal_hub"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`<ContentHubArticleList /> should render base component correctly with pattern 1 1`] = `
+<div>
+  <section>
+    <div
+      class="base"
+    >
+      <div
+        class="top-left-1 article"
+      >
+        <div
+          class="base fadeEnter fadeEnterActive"
+          id="test_1"
+        >
+          <div
+            class="category"
+          >
+            Product
+          </div>
+          <div>
+            <a
+              class="base left dark title"
+              data-test-ref="test_1_TITLE"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="1. Senorial consectetur adipiscing elit."
+            >
+              <h1>
+                <span>
+                  1. Senorial consectetur adipiscing elit.
+                </span>
+              </h1>
+            </a>
+          </div>
+          <div
+            class="note"
+          >
+            <span>
+              15 minute read
+            </span>
+          </div>
+          <a
+            class="base left dark image nonMobile"
+            data-test-ref="test_1_NON_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="1. Senorial consectetur adipiscing elit."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <img
+                  alt="vertical_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+          <a
+            class="base left dark image mobile"
+            data-test-ref="test_1_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="1. Senorial consectetur adipiscing elit."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <img
+                  alt="vertical_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div
+        class="top-right-1 article"
+      >
+        <div
+          class="base fadeEnter fadeEnterActive"
+          id="test_2"
+        >
+          <div
+            class="category"
+          >
+            Product
+          </div>
+          <div>
+            <a
+              class="base left dark title"
+              data-test-ref="test_2_TITLE"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <h1>
+                <span>
+                  2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+                </span>
+              </h1>
+            </a>
+          </div>
+          <div
+            class="note"
+          >
+            <span>
+              15 minute read
+            </span>
+          </div>
+          <a
+            class="base left dark image nonMobile"
+            data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <img
+                  alt="horizontal_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+          <a
+            class="base left dark image mobile"
+            data-test-ref="test_2_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <img
+                  alt="horizontal_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div
+        class="bottom-left-1 article"
+      >
+        <div
+          class="base fadeEnter fadeEnterActive"
+          id="test_3"
+        >
+          <div
+            class="category"
+          >
+            Culture
+          </div>
+          <div>
+            <a
+              class="base left dark title"
+              data-test-ref="test_3_TITLE"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <h1>
+                <span>
+                  3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                </span>
+              </h1>
+            </a>
+          </div>
+          <div
+            class="note"
+          >
+            <span>
+              15 minute read
+            </span>
+          </div>
+          <a
+            class="base left dark image nonMobile"
+            data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <img
+                  alt="horizontal_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+          <a
+            class="base left dark image mobile"
+            data-test-ref="test_3_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+                />
+                <img
+                  alt="horizontal_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div
+        class="bottom-right-1 article"
+      >
+        <div
+          class="base fadeEnter fadeEnterActive"
+          id="test_4"
+        >
+          <div
+            class="category"
+          >
+            Aesop Spotify
+          </div>
+          <div>
+            <a
+              class="base left dark title"
+              data-test-ref="test_4_TITLE"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <h1>
+                <span>
+                  4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                </span>
+              </h1>
+            </a>
+          </div>
+          <div
+            class="note"
+          >
+            <span>
+              15 minute read
+            </span>
+          </div>
+          <a
+            class="base left dark image nonMobile"
+            data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <img
+                  alt="vertical_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+          <a
+            class="base left dark image mobile"
+            data-test-ref="test_4_MOBILE_THUMBNAIL"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <div>
+              <picture
+                class="base picture dark image"
+              >
+                <source
+                  media="(min-width: 1025px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <source
+                  media="(min-width: 0px)"
+                  srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                />
+                <img
+                  alt="vertical_hub"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mobile"
+    >
+      <div
+        class="mobileMiddleRow"
+      >
+        <div
+          class="middleArticle"
+        >
+          <div
+            class="base leftMiddleArticle fadeEnter fadeEnterActive"
+            id="test_1"
+          >
+            <div
+              class="category"
+            >
+              Product
+            </div>
+            <div>
+              <a
+                class="base left dark title"
+                data-test-ref="test_1_TITLE"
+                href="https://www.aesop.com/au/r/careers?contentful=true"
+                target="_self"
+                title="1. Senorial consectetur adipiscing elit."
+              >
+                <h1>
+                  <span>
+                    1. Senorial consectetur adipiscing elit.
+                  </span>
+                </h1>
+              </a>
+            </div>
+            <div
+              class="note"
+            >
+              <span>
+                15 minute read
+              </span>
+            </div>
+            <a
+              class="base left dark image nonMobile"
+              data-test-ref="test_1_NON_MOBILE_THUMBNAIL"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="1. Senorial consectetur adipiscing elit."
+            >
+              <div>
+                <picture
+                  class="base picture dark image"
+                >
+                  <source
+                    media="(min-width: 1025px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 640px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 0px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <img
+                    alt="vertical_hub"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </a>
+            <a
+              class="base left dark image mobile"
+              data-test-ref="test_1_MOBILE_THUMBNAIL"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="1. Senorial consectetur adipiscing elit."
+            >
+              <div>
+                <picture
+                  class="base picture dark image"
+                >
+                  <source
+                    media="(min-width: 1025px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 640px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 0px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <img
+                    alt="vertical_hub"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div
+          class="middleArticle"
+        />
+      </div>
+      <div
+        class="base fadeEnter fadeEnterActive"
+        id="test_2"
+      >
+        <div
+          class="category"
+        >
+          Product
+        </div>
+        <div>
+          <a
+            class="base left dark title"
+            data-test-ref="test_2_TITLE"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <h1>
+              <span>
+                2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+              </span>
+            </h1>
+          </a>
+        </div>
+        <div
+          class="note"
+        >
+          <span>
+            15 minute read
+          </span>
+        </div>
+        <a
+          class="base left dark image nonMobile"
+          data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
+          href="https://www.aesop.com/au/r/careers?contentful=true"
+          target="_self"
+          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+        >
+          <div>
+            <picture
+              class="base picture dark image"
+            >
+              <source
+                media="(min-width: 1025px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 640px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 0px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <img
+                alt="horizontal_hub"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </a>
+        <a
+          class="base left dark image mobile"
+          data-test-ref="test_2_MOBILE_THUMBNAIL"
+          href="https://www.aesop.com/au/r/careers?contentful=true"
+          target="_self"
+          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+        >
+          <div>
+            <picture
+              class="base picture dark image"
+            >
+              <source
+                media="(min-width: 1025px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 640px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 0px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <img
+                alt="horizontal_hub"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+      <div
+        class="base fadeEnter fadeEnterActive"
+        id="test_3"
+      >
+        <div
+          class="category"
+        >
+          Culture
+        </div>
+        <div>
+          <a
+            class="base left dark title"
+            data-test-ref="test_3_TITLE"
+            href="https://www.aesop.com/au/r/careers?contentful=true"
+            target="_self"
+            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          >
+            <h1>
+              <span>
+                3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+              </span>
+            </h1>
+          </a>
+        </div>
+        <div
+          class="note"
+        >
+          <span>
+            15 minute read
+          </span>
+        </div>
+        <a
+          class="base left dark image nonMobile"
+          data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
+          href="https://www.aesop.com/au/r/careers?contentful=true"
+          target="_self"
+          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+        >
+          <div>
+            <picture
+              class="base picture dark image"
+            >
+              <source
+                media="(min-width: 1025px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 640px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 0px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <img
+                alt="horizontal_hub"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </a>
+        <a
+          class="base left dark image mobile"
+          data-test-ref="test_3_MOBILE_THUMBNAIL"
+          href="https://www.aesop.com/au/r/careers?contentful=true"
+          target="_self"
+          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+        >
+          <div>
+            <picture
+              class="base picture dark image"
+            >
+              <source
+                media="(min-width: 1025px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 640px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <source
+                media="(min-width: 0px)"
+                srcset="./assets/images/ContentHubArticle/horizontal_hub.jpg"
+              />
+              <img
+                alt="horizontal_hub"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+      <div
+        class="mobileMiddleRow"
+      >
+        <div
+          class="middleArticle"
+        />
+        <div
+          class="middleArticle"
+        >
+          <div
+            class="base rightMiddleArticle fadeEnter fadeEnterActive"
+            id="test_4"
+          >
+            <div
+              class="category"
+            >
+              Aesop Spotify
+            </div>
+            <div>
+              <a
+                class="base left dark title"
+                data-test-ref="test_4_TITLE"
+                href="https://www.aesop.com/au/r/careers?contentful=true"
+                target="_self"
+                title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+              >
+                <h1>
+                  <span>
+                    4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                  </span>
+                </h1>
+              </a>
+            </div>
+            <div
+              class="note"
+            >
+              <span>
+                15 minute read
+              </span>
+            </div>
+            <a
+              class="base left dark image nonMobile"
+              data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <div>
+                <picture
+                  class="base picture dark image"
+                >
+                  <source
+                    media="(min-width: 1025px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 640px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 0px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <img
+                    alt="vertical_hub"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </a>
+            <a
+              class="base left dark image mobile"
+              data-test-ref="test_4_MOBILE_THUMBNAIL"
+              href="https://www.aesop.com/au/r/careers?contentful=true"
+              target="_self"
+              title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <div>
+                <picture
+                  class="base picture dark image"
+                >
+                  <source
+                    media="(min-width: 1025px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 640px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 0px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <img
+                    alt="vertical_hub"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 `;

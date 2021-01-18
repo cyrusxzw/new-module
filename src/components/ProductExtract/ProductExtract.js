@@ -4,7 +4,10 @@ import isEmpty from 'lodash/isEmpty';
 import cx from 'classnames';
 import { HEADING } from '~/constants';
 import { useThemeContext } from '~/contexts';
-import { ConditionalWrapper, Heading, Hyperlink, Image } from '~/components';
+import { ConditionalWrapper } from '~/components/ConditionalWrapper';
+import { Heading } from '~/components/Heading';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Image } from '~/components/Image';
 import styles from './ProductExtract.module.css';
 
 const ProductExtract = forwardRef(function ProductExtractRef(
@@ -76,7 +79,11 @@ const ProductExtract = forwardRef(function ProductExtractRef(
   }
 
   return (
-    <div className={classSet} ref={ref}>
+    <div
+      className={classSet}
+      data-testid="data-testid-ProductExtract"
+      ref={ref}
+    >
       <ConditionalWrapper
         condition={!!product.url}
         wrapper={children => (
@@ -110,8 +117,8 @@ const ProductExtract = forwardRef(function ProductExtractRef(
           <div className={productImageClassSet}>
             <Image
               altText={product.image.altText}
-              large={product.image.small}
-              medium={product.image.small}
+              large={product.image.large}
+              medium={product.image.medium}
               small={product.image.small}
             />
           </div>
@@ -156,4 +163,4 @@ ProductExtract.defaultProps = {
   works: undefined,
 };
 
-export default ProductExtract;
+export { ProductExtract };

@@ -2,11 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
-import { useEscapeKeyListener } from '~/customHooks/useEscapeKeyListener';
+import { useEscapeKeyListener } from '~/customHooks';
+import { isInBrowser } from '~/utils/environment';
 import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
-import Button from '~/components/Button';
-import Icon from '~/components/Icon';
-import Transition from '~/components/Transition';
+import { Button } from '~/components/Button';
+import { Icon } from '~/components/Icon';
+import { Transition } from '~/components/Transition';
 import styles from './Controls.module.css';
 
 const Controls = ({
@@ -33,10 +34,11 @@ const Controls = ({
   });
 
   const eventTimeout = useRef(null);
-  const windowIsDefined = typeof window !== 'undefined';
+  const windowIsDefined = isInBrowser();
   const TIMEOUT = 3000;
 
   useEffect(() => {
+    // TODO: wrapping calls inside a useEffect in window presence checks may be redundant
     if (windowIsDefined) {
       window.clearTimeout(eventTimeout.current);
     }
@@ -260,4 +262,4 @@ Controls.defaultProps = {
   progress: 0,
 };
 
-export default Controls;
+export { Controls };

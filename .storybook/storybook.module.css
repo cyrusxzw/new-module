@@ -48,6 +48,9 @@
 }
 
 :global {
+  .sidebar-header img {
+    height: 100%;
+  }
   .sbdocs-content {
     max-width: 1300px !important;
   }

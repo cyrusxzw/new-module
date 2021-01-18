@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Image from '~/components/Image';
-import DoubleMedia from '~/components/DoubleMedia';
-import GoogleMap from '~/components/GoogleMap';
-import Heading from '~/components/Heading';
-import ImageCarousel from '~/components/ImageCarousel';
+import { Image } from '~/components/Image';
+import { DoubleMedia } from '~/components/DoubleMedia';
+import { GoogleMap } from '~/components/GoogleMap';
+import { Heading } from '~/components/Heading';
+import { ImageCarousel } from '~/components/ImageCarousel';
 import { P } from '~/components/Paragraph';
-import Podium from '~/components/Podium';
-import TwoColumnLayout from '~/components/TwoColumnLayout';
+import { Podium } from '~/components/Podium';
+import { TwoColumnLayout } from '~/components/TwoColumnLayout';
+import { StoreDetailHeader } from '~/components/StoreDetailHeader';
+import { GoogleMapFixture } from '~/components/GoogleMap/GoogleMap.fixture';
+import { StoreHoursListFixture } from '~/components/StoreHoursList/StoreHoursList.fixture';
+import { StoreDetailHeaderFixture } from '~/components/StoreDetailHeader/StoreDetailHeader.fixture';
+import { StoreDetailFixture } from './StoreDetail.fixture';
 import styles from './StoreDetail.module.css';
-import StoreDetailHeader from '~/components/StoreDetailHeader';
-import GoogleMapFixture from '~/components/GoogleMap/GoogleMap.fixture';
-import StoreHoursListFixture from '~/components/StoreHoursList/StoreHoursList.fixture';
-import StoreDetailHeaderFixture from '~/components/StoreDetailHeader/StoreDetailHeader.fixture';
-import StoreDetailFixture from './StoreDetail.fixture';
 
 const StoreDetail = ({ className }) => {
   const classSet = cx(styles.base, className);
@@ -136,4 +136,4 @@ StoreDetail.defaultProps = {
   className: undefined,
 };
 
-export default StoreDetail;
+export { StoreDetail };

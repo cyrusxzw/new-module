@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default {
+export const AccordionFixture = {
+  id: 'testing-id',
   items: [
     {
       id: '1',

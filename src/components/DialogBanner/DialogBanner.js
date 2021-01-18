@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useEscapeKeyListener } from '~/customHooks/useEscapeKeyListener';
-import { useOverflowHidden } from '~/customHooks/useOverflowHidden';
-import Button from '~/components/Button';
-import Heading from '~/components/Heading';
-import Hyperlink from '~/components/Hyperlink';
-import Icon from '~/components/Icon';
+import { useEscapeKeyListener, useOverflowHidden } from '~/customHooks';
+import { Button } from '~/components/Button';
+import { Heading } from '~/components/Heading';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Icon } from '~/components/Icon';
 import { P } from '~/components/Paragraph';
-import Overlay from '~/components/Overlay';
-import Transition from '~/components/Transition';
+import { Overlay } from '~/components/Overlay';
+import { Transition } from '~/components/Transition';
 import styles from './DialogBanner.module.css';
 
 const DialogBanner = ({
@@ -133,4 +132,4 @@ DialogBanner.defaultProps = {
   heading: undefined,
 };
 
-export default DialogBanner;
+export { DialogBanner };

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { ParagraphSet } from '~/components/Paragraph';
-import SectionHeading from '~/components/SectionHeading';
+import { SectionHeading } from '~/components/SectionHeading';
 import styles from './Content.module.css';
 
 const Content = ({
@@ -10,6 +10,7 @@ const Content = ({
   content,
   copy,
   hasFullWidthImage,
+  hasSerifFontHeading,
   hasTopOffset,
   isHero,
   isReverse,
@@ -36,7 +37,7 @@ const Content = ({
           }}
           className={styles.header}
           eyebrow={copy.eyebrow}
-          hasSerifFontHeading={true}
+          hasSerifFontHeading={hasSerifFontHeading}
           heading={copy.heading}
           isFlush={!isHero}
           isPageHeading={isHero}
@@ -70,6 +71,7 @@ Content.propTypes = {
     subHeading: PropTypes.string,
   }).isRequired,
   hasFullWidthImage: PropTypes.bool,
+  hasSerifFontHeading: PropTypes.bool,
   hasTopOffset: PropTypes.bool,
   isHero: PropTypes.bool,
   isReverse: PropTypes.bool,
@@ -86,10 +88,11 @@ Content.defaultProps = {
     subHeading: undefined,
   },
   hasFullWidthImage: false,
+  hasSerifFontHeading: true,
   hasTopOffset: false,
   isHero: false,
   isReverse: false,
   theme: 'dark',
 };
 
-export default Content;
+export { Content };

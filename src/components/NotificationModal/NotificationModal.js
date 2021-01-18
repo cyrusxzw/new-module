@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useNotificationContext } from 'contexts';
-import Icon from '~/components/Icon';
+import { useNotificationContext } from '~/contexts';
+import { Icon } from '~/components/Icon';
 import styles from './NotificationModal.module.css';
 
 const NotificationModal = ({
@@ -54,4 +54,4 @@ NotificationModal.defaultProps = {
   notificationMessage: undefined,
 };
 
-export default NotificationModal;
+export { NotificationModal };

@@ -1,485 +1,398 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Carousel /> renders base component correctly 1`] = `
-<div
-  className="base dark"
->
+exports[`<Carousel /> should render base component correctly 1`] = `
+<div>
   <div
-    className="slick-slider carousel slick-initialized"
-    dir="ltr"
+    class="base dark"
   >
-    <button
-      className="base dark base hidden"
-      disabled={false}
-      onClick={null}
-      title="next slide"
-      type="button"
-    >
-      <svg
-        className="base chevron dark"
-        data-ref=""
-        focusable="false"
-        height={16}
-        role="img"
-        style={
-          Object {
-            "height": "16px",
-            "width": "16px",
-          }
-        }
-        tabIndex={-1}
-        viewBox="0 0 50 50"
-        width={16}
-      >
-        <g>
-          <polygon
-            className="chevron"
-            points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
-          />
-        </g>
-      </svg>
-    </button>
     <div
-      className="slick-list"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={null}
-      onMouseMove={null}
-      onMouseUp={[Function]}
-      onTouchCancel={null}
-      onTouchEnd={[Function]}
-      onTouchMove={null}
-      onTouchStart={[Function]}
-      style={Object {}}
+      class="slick-slider carousel slick-initialized"
+      dir="ltr"
     >
+      <button
+        class="base dark base hidden"
+        title="next slide"
+        type="button"
+      >
+        <svg
+          class="base chevron dark"
+          data-ref=""
+          data-testid="data-testid-Icon"
+          focusable="false"
+          height="16"
+          role="img"
+          style="height: 16px; width: 16px;"
+          tabindex="-1"
+          viewBox="0 0 50 50"
+          width="16"
+        >
+          <g>
+            <polygon
+              class="chevron"
+              points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
+            />
+          </g>
+        </svg>
+      </button>
       <div
-        className="slick-track"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseOver={[Function]}
-        style={
-          Object {
-            "WebkitTransform": "translate3d(0px, 0px, 0px)",
-            "WebkitTransition": "",
-            "msTransform": "translateX(0px)",
-            "opacity": 1,
-            "transform": "translate3d(0px, 0px, 0px)",
-            "transition": "",
-          }
-        }
+        class="slick-list"
       >
         <div
-          aria-hidden={false}
-          className="slick-slide slick-active slick-current"
-          data-index={0}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
+          class="slick-track"
+          style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
         >
-          <div>
-            <div
-              className="base dark"
-            >
-              <header
-                className="heading base"
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active slick-current"
+            data-index="0"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="base dark"
               >
-                <h2
-                  className="base flush serifFont xLarge dark heading"
+                <header
+                  class="heading base"
                 >
-                  Maecenas elementum
-                </h2>
-                <h3
-                  className="base flush mediumWeightFont xXSmall dark eyebrow"
+                  <h2
+                    class="base flush serifFont xLarge dark heading"
+                  >
+                    Maecenas elementum
+                  </h2>
+                  <h3
+                    class="base flush mediumWeightFont xXSmall dark eyebrow"
+                  >
+                    Aenean ac tortor consectetur
+                  </h3>
+                </header>
+                <p
+                  class="base dark description hasFooter"
                 >
-                  Aenean ac tortor consectetur
-                </h3>
-              </header>
-              <p
-                className="base dark description hasFooter"
-              >
-                Maecenas elementum, metus id facilisis placerat, turpis diam sodales velit, quis sodales ipsum nunc nec velit. Aenean ac tortor consectetur, volutpat massa sed, ultricies orci.
-              </p>
-              <footer
-                className="ctaWrapper"
+                  Maecenas elementum, metus id facilisis placerat, turpis diam sodales velit, quis sodales ipsum nunc nec velit. Aenean ac tortor consectetur, volutpat massa sed, ultricies orci.
+                </p>
+                <footer
+                  class="ctaWrapper"
+                >
+                  <a
+                    class="base hasIcon left dark"
+                    href="/"
+                    target="_self"
+                    title="Aenean ac tortor"
+                  >
+                    Aenean ac tortor
+                     
+                    <i
+                      aria-hidden="true"
+                      class="icon"
+                    >
+                      <svg
+                        class="base rightArrow dark"
+                        data-ref=""
+                        data-testid="data-testid-Icon"
+                        focusable="false"
+                        height="12"
+                        role="img"
+                        style="height: 12px; width: 12px;"
+                        tabindex="-1"
+                        viewBox="0 0 50 50"
+                        width="12"
+                      >
+                        <g>
+                          <path
+                            d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
+                          />
+                        </g>
+                      </svg>
+                    </i>
+                  </a>
+                </footer>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active"
+            data-index="1"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
                 <a
-                  className="base hasIcon left dark"
+                  class="base left dark item link"
                   href="/"
                   target="_self"
-                  title="Aenean ac tortor"
+                  title="Link to Quisque non enim efficitur"
                 >
-                  Aenean ac tortor
-                   
-                  <i
-                    aria-hidden="true"
-                    className="icon"
+                  <div
+                    class="information dark"
                   >
-                    <svg
-                      className="base rightArrow dark"
-                      data-ref=""
-                      focusable="false"
-                      height={12}
-                      role="img"
-                      style={
-                        Object {
-                          "height": "12px",
-                          "width": "12px",
-                        }
-                      }
-                      tabIndex={-1}
-                      viewBox="0 0 50 50"
-                      width={12}
+                    <h5
+                      class="base xXSmall dark heading dark"
                     >
-                      <g>
-                        <path
-                          d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
-                        />
-                      </g>
-                    </svg>
-                  </i>
+                      Quisque non enim efficitur
+                    </h5>
+                    <div
+                      class="description dark"
+                    >
+                      Vivamus sollicitudin ac ligula
+                    </div>
+                  </div>
+                  <div
+                    class="imageContainer"
+                  >
+                    <picture
+                      class="base picture dark image"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <img
+                        alt="Quisque non enim efficitur"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
                 </a>
-              </footer>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          aria-hidden={false}
-          className="slick-slide slick-active"
-          data-index={1}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
-        >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
-              <a
-                className="base left dark item link"
-                href="/"
-                target="_self"
-                title="Link to Quisque non enim efficitur"
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active"
+            data-index="2"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
-                <div
-                  className="information dark"
+                <a
+                  class="base left dark item link"
+                  href="/"
+                  target="_self"
+                  title="Link to Phasellus posuere porta varius"
                 >
-                  <h5
-                    className="base xXSmall dark heading dark"
-                  >
-                    Quisque non enim efficitur
-                  </h5>
                   <div
-                    className="description dark"
+                    class="information dark"
                   >
-                    Vivamus sollicitudin ac ligula
+                    <h5
+                      class="base xXSmall dark heading dark"
+                    >
+                      Phasellus posuere porta varius
+                    </h5>
+                    <div
+                      class="description dark"
+                    >
+                      Suspendisse elit mauris
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="imageContainer"
-                >
-                  <picture
-                    className="base picture dark image"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <img
-                      alt="Quisque non enim efficitur"
-                    />
-                  </picture>
-                </div>
-              </a>
+                    <picture
+                      class="base picture dark image"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <img
+                        alt="Phasellus posuere porta varius"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          aria-hidden={false}
-          className="slick-slide slick-active"
-          data-index={2}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
-        >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
-              <a
-                className="base left dark item link"
-                href="/"
-                target="_self"
-                title="Link to Phasellus posuere porta varius"
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active"
+            data-index="3"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
-                <div
-                  className="information dark"
+                <a
+                  class="base left dark item link"
+                  href="/"
+                  target="_self"
+                  title="Link to Etiam at pharetra nisl"
                 >
-                  <h5
-                    className="base xXSmall dark heading dark"
-                  >
-                    Phasellus posuere porta varius
-                  </h5>
                   <div
-                    className="description dark"
+                    class="information dark"
                   >
-                    Suspendisse elit mauris
+                    <h5
+                      class="base xXSmall dark heading dark"
+                    >
+                      Etiam at pharetra nisl
+                    </h5>
+                    <div
+                      class="description dark"
+                    >
+                      Aliquam metus enim, pellentesque eu
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="imageContainer"
-                >
-                  <picture
-                    className="base picture dark image"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <img
-                      alt="Phasellus posuere porta varius"
-                    />
-                  </picture>
-                </div>
-              </a>
+                    <picture
+                      class="base picture dark image"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Large-1584x962px.png?context=bWFzdGVyfGltYWdlc3wzOTUwOTh8aW1hZ2UvcG5nfGltYWdlcy9oMWMvaDk4LzkxMTA3OTc2NDc5MDIucG5nfGYwMTE1NGQ3N2M0MDBmYTg1NzY4OTlkNTg0NTlmNmYzMWRkYmJkYzczYjFlOGEyMGMyOWVlZDRmZTRkYzE5ZjI"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Medium-1238x752px.png?context=bWFzdGVyfGltYWdlc3wyNDczMDF8aW1hZ2UvcG5nfGltYWdlcy9oNjYvaDE5LzkxMTA3OTc4NzcyNzgucG5nfDk4Y2RjZjY4NDk3MGM4YzQ3YzMyMzY4NDhlYjNjNDFhNGNjNGM5MzE1NzFjNDc3YTg3NGIyNDdlYmQ1Yzc1NTA"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Small-863x524px.png?context=bWFzdGVyfGltYWdlc3wxMjYxNTN8aW1hZ2UvcG5nfGltYWdlcy9oOTgvaDRmLzkxMTA3OTc5MTAwNDYucG5nfDExYTg3YzY4MmZlZTBlODU1NWJiN2IzNzBhNWYwZmExNzg2NGMzNDZhMWQyM2VjZWE4ZWVhMDljMjVmMmRiYzA"
+                      />
+                      <img
+                        alt="Etiam at pharetra nisl"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          aria-hidden={false}
-          className="slick-slide slick-active"
-          data-index={3}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
-        >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
-              <a
-                className="base left dark item link"
-                href="/"
-                target="_self"
-                title="Link to Etiam at pharetra nisl"
+          <div
+            aria-hidden="true"
+            class="slick-slide"
+            data-index="4"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
-                <div
-                  className="information dark"
+                <a
+                  class="base left dark item link"
+                  href="/"
+                  target="_self"
+                  title="Link to Phasellus posuere porta varius"
                 >
-                  <h5
-                    className="base xXSmall dark heading dark"
-                  >
-                    Etiam at pharetra nisl
-                  </h5>
                   <div
-                    className="description dark"
+                    class="information dark"
                   >
-                    Aliquam metus enim, pellentesque eu
+                    <h5
+                      class="base xXSmall dark heading dark"
+                    >
+                      Phasellus posuere porta varius
+                    </h5>
+                    <div
+                      class="description dark"
+                    >
+                      Suspendisse elit
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="imageContainer"
-                >
-                  <picture
-                    className="base picture dark image"
-                  >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Large-1584x962px.png?context=bWFzdGVyfGltYWdlc3wzOTUwOTh8aW1hZ2UvcG5nfGltYWdlcy9oMWMvaDk4LzkxMTA3OTc2NDc5MDIucG5nfGYwMTE1NGQ3N2M0MDBmYTg1NzY4OTlkNTg0NTlmNmYzMWRkYmJkYzczYjFlOGEyMGMyOWVlZDRmZTRkYzE5ZjI"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Medium-1238x752px.png?context=bWFzdGVyfGltYWdlc3wyNDczMDF8aW1hZ2UvcG5nfGltYWdlcy9oNjYvaDE5LzkxMTA3OTc4NzcyNzgucG5nfDk4Y2RjZjY4NDk3MGM4YzQ3YzMyMzY4NDhlYjNjNDFhNGNjNGM5MzE1NzFjNDc3YTg3NGIyNDdlYmQ1Yzc1NTA"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Small-863x524px.png?context=bWFzdGVyfGltYWdlc3wxMjYxNTN8aW1hZ2UvcG5nfGltYWdlcy9oOTgvaDRmLzkxMTA3OTc5MTAwNDYucG5nfDExYTg3YzY4MmZlZTBlODU1NWJiN2IzNzBhNWYwZmExNzg2NGMzNDZhMWQyM2VjZWE4ZWVhMDljMjVmMmRiYzA"
-                    />
-                    <img
-                      alt="Etiam at pharetra nisl"
-                    />
-                  </picture>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-hidden={true}
-          className="slick-slide"
-          data-index={4}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
-        >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
-              <a
-                className="base left dark item link"
-                href="/"
-                target="_self"
-                title="Link to Phasellus posuere porta varius"
-              >
-                <div
-                  className="information dark"
-                >
-                  <h5
-                    className="base xXSmall dark heading dark"
-                  >
-                    Phasellus posuere porta varius
-                  </h5>
                   <div
-                    className="description dark"
+                    class="imageContainer"
                   >
-                    Suspendisse elit
+                    <picture
+                      class="base picture dark image"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <img
+                        alt="Phasellus posuere porta varius"
+                        loading="lazy"
+                      />
+                    </picture>
                   </div>
-                </div>
-                <div
-                  className="imageContainer"
-                >
-                  <picture
-                    className="base picture dark image"
-                  >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <img
-                      alt="Phasellus posuere porta varius"
-                    />
-                  </picture>
-                </div>
-              </a>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <button
-      className="base dark base"
-      disabled={false}
-      onClick={[Function]}
-      title="next slide"
-      type="button"
-    >
-      <svg
-        className="base chevron dark"
-        data-ref=""
-        focusable="false"
-        height={16}
-        role="img"
-        style={
-          Object {
-            "height": "16px",
-            "width": "16px",
-          }
-        }
-        tabIndex={-1}
-        viewBox="0 0 50 50"
-        width={16}
+      <button
+        class="base dark base"
+        title="next slide"
+        type="button"
       >
-        <g>
-          <polygon
-            className="chevron"
-            points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
-          />
-        </g>
-      </svg>
-    </button>
-    <div
-      className="base"
-    >
+        <svg
+          class="base chevron dark"
+          data-ref=""
+          data-testid="data-testid-Icon"
+          focusable="false"
+          height="16"
+          role="img"
+          style="height: 16px; width: 16px;"
+          tabindex="-1"
+          viewBox="0 0 50 50"
+          width="16"
+        >
+          <g>
+            <polygon
+              class="chevron"
+              points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
+            />
+          </g>
+        </svg>
+      </button>
       <div
-        className="list dark"
+        class="base"
+        data-testid="data-testid-Carousel-Pagination"
       >
         <div
-          className="bar"
-          style={
-            Object {
-              "left": "0%",
-              "width": "50%",
-            }
-          }
-        />
+          class="list dark"
+        >
+          <div
+            class="bar"
+            style="width: 50%; left: 0%;"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -487,423 +400,353 @@ exports[`<Carousel /> renders base component correctly 1`] = `
 `;
 
 exports[`<Carousel /> renders component correctly if no \`introduction\` prop is provided 1`] = `
-<div
-  className="base dark"
->
+<div>
   <div
-    className="slick-slider carousel slick-initialized"
+    class="base dark"
   >
-    
     <div
-      className="slick-list"
+      class="slick-slider carousel slick-initialized"
     >
+      
       <div
-        className="slick-track"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseOver={[Function]}
-        style={
-          Object {
-            "WebkitTransform": "translate3d(0px, 0px, 0px)",
-            "WebkitTransition": "",
-            "msTransform": "translateX(0px)",
-            "opacity": 1,
-            "transform": "translate3d(0px, 0px, 0px)",
-            "transition": "",
-          }
-        }
+        class="slick-list"
       >
         <div
-          aria-hidden={false}
-          className="slick-slide slick-active slick-current"
-          data-index={0}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
+          class="slick-track"
+          style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
         >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
-              <a
-                className="base left dark item link"
-                href="/"
-                target="_self"
-                title="Link to Quisque non enim efficitur"
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active slick-current"
+            data-index="0"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
-                <div
-                  className="information dark"
+                <a
+                  class="base left dark item link"
+                  href="/"
+                  target="_self"
+                  title="Link to Quisque non enim efficitur"
                 >
-                  <h5
-                    className="base xXSmall dark heading dark"
-                  >
-                    Quisque non enim efficitur
-                  </h5>
                   <div
-                    className="description dark"
+                    class="information dark"
                   >
-                    Vivamus sollicitudin ac ligula
+                    <h5
+                      class="base xXSmall dark heading dark"
+                    >
+                      Quisque non enim efficitur
+                    </h5>
+                    <div
+                      class="description dark"
+                    >
+                      Vivamus sollicitudin ac ligula
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="imageContainer"
-                >
-                  <picture
-                    className="base picture dark image"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <img
-                      alt="Quisque non enim efficitur"
-                    />
-                  </picture>
-                </div>
-              </a>
+                    <picture
+                      class="base picture dark image"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <img
+                        alt="Quisque non enim efficitur"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          aria-hidden={false}
-          className="slick-slide slick-active"
-          data-index={1}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
-        >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
-              <a
-                className="base left dark item link"
-                href="/"
-                target="_self"
-                title="Link to Phasellus posuere porta varius"
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active"
+            data-index="1"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
-                <div
-                  className="information dark"
+                <a
+                  class="base left dark item link"
+                  href="/"
+                  target="_self"
+                  title="Link to Phasellus posuere porta varius"
                 >
-                  <h5
-                    className="base xXSmall dark heading dark"
-                  >
-                    Phasellus posuere porta varius
-                  </h5>
                   <div
-                    className="description dark"
+                    class="information dark"
                   >
-                    Suspendisse elit mauris
+                    <h5
+                      class="base xXSmall dark heading dark"
+                    >
+                      Phasellus posuere porta varius
+                    </h5>
+                    <div
+                      class="description dark"
+                    >
+                      Suspendisse elit mauris
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="imageContainer"
-                >
-                  <picture
-                    className="base picture dark image"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <img
-                      alt="Phasellus posuere porta varius"
-                    />
-                  </picture>
-                </div>
-              </a>
+                    <picture
+                      class="base picture dark image"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <img
+                        alt="Phasellus posuere porta varius"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          aria-hidden={false}
-          className="slick-slide slick-active"
-          data-index={2}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
-        >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
-              <a
-                className="base left dark item link"
-                href="/"
-                target="_self"
-                title="Link to Etiam at pharetra nisl"
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active"
+            data-index="2"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
-                <div
-                  className="information dark"
+                <a
+                  class="base left dark item link"
+                  href="/"
+                  target="_self"
+                  title="Link to Etiam at pharetra nisl"
                 >
-                  <h5
-                    className="base xXSmall dark heading dark"
-                  >
-                    Etiam at pharetra nisl
-                  </h5>
                   <div
-                    className="description dark"
+                    class="information dark"
                   >
-                    Aliquam metus enim, pellentesque eu
+                    <h5
+                      class="base xXSmall dark heading dark"
+                    >
+                      Etiam at pharetra nisl
+                    </h5>
+                    <div
+                      class="description dark"
+                    >
+                      Aliquam metus enim, pellentesque eu
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="imageContainer"
-                >
-                  <picture
-                    className="base picture dark image"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Large-1584x962px.png?context=bWFzdGVyfGltYWdlc3wzOTUwOTh8aW1hZ2UvcG5nfGltYWdlcy9oMWMvaDk4LzkxMTA3OTc2NDc5MDIucG5nfGYwMTE1NGQ3N2M0MDBmYTg1NzY4OTlkNTg0NTlmNmYzMWRkYmJkYzczYjFlOGEyMGMyOWVlZDRmZTRkYzE5ZjI"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Medium-1238x752px.png?context=bWFzdGVyfGltYWdlc3wyNDczMDF8aW1hZ2UvcG5nfGltYWdlcy9oNjYvaDE5LzkxMTA3OTc4NzcyNzgucG5nfDk4Y2RjZjY4NDk3MGM4YzQ3YzMyMzY4NDhlYjNjNDFhNGNjNGM5MzE1NzFjNDc3YTg3NGIyNDdlYmQ1Yzc1NTA"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Small-863x524px.png?context=bWFzdGVyfGltYWdlc3wxMjYxNTN8aW1hZ2UvcG5nfGltYWdlcy9oOTgvaDRmLzkxMTA3OTc5MTAwNDYucG5nfDExYTg3YzY4MmZlZTBlODU1NWJiN2IzNzBhNWYwZmExNzg2NGMzNDZhMWQyM2VjZWE4ZWVhMDljMjVmMmRiYzA"
-                    />
-                    <img
-                      alt="Etiam at pharetra nisl"
-                    />
-                  </picture>
-                </div>
-              </a>
+                    <picture
+                      class="base picture dark image"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Large-1584x962px.png?context=bWFzdGVyfGltYWdlc3wzOTUwOTh8aW1hZ2UvcG5nfGltYWdlcy9oMWMvaDk4LzkxMTA3OTc2NDc5MDIucG5nfGYwMTE1NGQ3N2M0MDBmYTg1NzY4OTlkNTg0NTlmNmYzMWRkYmJkYzczYjFlOGEyMGMyOWVlZDRmZTRkYzE5ZjI"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Medium-1238x752px.png?context=bWFzdGVyfGltYWdlc3wyNDczMDF8aW1hZ2UvcG5nfGltYWdlcy9oNjYvaDE5LzkxMTA3OTc4NzcyNzgucG5nfDk4Y2RjZjY4NDk3MGM4YzQ3YzMyMzY4NDhlYjNjNDFhNGNjNGM5MzE1NzFjNDc3YTg3NGIyNDdlYmQ1Yzc1NTA"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Small-863x524px.png?context=bWFzdGVyfGltYWdlc3wxMjYxNTN8aW1hZ2UvcG5nfGltYWdlcy9oOTgvaDRmLzkxMTA3OTc5MTAwNDYucG5nfDExYTg3YzY4MmZlZTBlODU1NWJiN2IzNzBhNWYwZmExNzg2NGMzNDZhMWQyM2VjZWE4ZWVhMDljMjVmMmRiYzA"
+                      />
+                      <img
+                        alt="Etiam at pharetra nisl"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          aria-hidden={false}
-          className="slick-slide slick-active"
-          data-index={3}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
-        >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
-              <a
-                className="base left dark item link"
-                href="/"
-                target="_self"
-                title="Link to Phasellus posuere porta varius"
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active"
+            data-index="3"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
-                <div
-                  className="information dark"
+                <a
+                  class="base left dark item link"
+                  href="/"
+                  target="_self"
+                  title="Link to Phasellus posuere porta varius"
                 >
-                  <h5
-                    className="base xXSmall dark heading dark"
-                  >
-                    Phasellus posuere porta varius
-                  </h5>
                   <div
-                    className="description dark"
+                    class="information dark"
                   >
-                    Suspendisse elit
+                    <h5
+                      class="base xXSmall dark heading dark"
+                    >
+                      Phasellus posuere porta varius
+                    </h5>
+                    <div
+                      class="description dark"
+                    >
+                      Suspendisse elit
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="imageContainer"
-                >
-                  <picture
-                    className="base picture dark image"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <img
-                      alt="Phasellus posuere porta varius"
-                    />
-                  </picture>
-                </div>
-              </a>
+                    <picture
+                      class="base picture dark image"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <img
+                        alt="Phasellus posuere porta varius"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      
+      
     </div>
-    
-    
   </div>
 </div>
 `;
 
 exports[`<Carousel /> renders component correctly if no \`url\` member is provided on the \`slides\` prop 1`] = `
-<div
-  className="base dark"
->
+<div>
   <div
-    className="slick-slider carousel slick-initialized"
+    class="base dark"
   >
-    
     <div
-      className="slick-list"
+      class="slick-slider carousel slick-initialized"
     >
+      
       <div
-        className="slick-track"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseOver={[Function]}
-        style={
-          Object {
-            "WebkitTransform": "translate3d(0px, 0px, 0px)",
-            "WebkitTransition": "",
-            "msTransform": "translateX(0px)",
-            "opacity": 1,
-            "transform": "translate3d(0px, 0px, 0px)",
-            "transition": "",
-          }
-        }
+        class="slick-list"
       >
         <div
-          aria-hidden={false}
-          className="slick-slide slick-active slick-current"
-          data-index={0}
-          onClick={[Function]}
-          style={
-            Object {
-              "outline": "none",
-              "width": 0,
-            }
-          }
-          tabIndex="-1"
+          class="slick-track"
+          style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
         >
-          <div>
-            <div
-              className="slideWrapper"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "width": "100%",
-                }
-              }
-              tabIndex={-1}
-            >
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active slick-current"
+            data-index="0"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
               <div
-                className="item"
+                class="slideWrapper"
+                style="width: 100%; display: inline-block;"
+                tabindex="-1"
               >
                 <div
-                  className="information dark"
+                  class="item"
                 >
-                  <h5
-                    className="base xXSmall dark heading dark"
-                  >
-                    Quisque non enim efficitur
-                  </h5>
                   <div
-                    className="description dark"
+                    class="information dark"
                   >
-                    Vivamus sollicitudin ac ligula
+                    <h5
+                      class="base xXSmall dark heading dark"
+                    >
+                      Quisque non enim efficitur
+                    </h5>
+                    <div
+                      class="description dark"
+                    >
+                      Vivamus sollicitudin ac ligula
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="imageContainer"
-                >
-                  <picture
-                    className="base picture dark image"
+                  <div
+                    class="imageContainer"
                   >
-                    <source
-                      media="(min-width: 1025px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <source
-                      media="(min-width: 0px)"
-                      srcSet="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
-                    />
-                    <img
-                      alt="Quisque non enim efficitur"
-                    />
-                  </picture>
+                    <picture
+                      class="base picture dark image"
+                    >
+                      <source
+                        media="(min-width: 1025px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <source
+                        media="(min-width: 0px)"
+                        srcset="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
+                      />
+                      <img
+                        alt="Quisque non enim efficitur"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
+      
     </div>
-    
-    
   </div>
 </div>
 `;

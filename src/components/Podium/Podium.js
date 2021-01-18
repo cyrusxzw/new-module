@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { ThemeContextProvider } from '~/contexts';
-import Transition from '~/components/Transition';
+import { Transition } from '~/components/Transition';
 import styles from './Podium.module.css';
 
 const Podium = forwardRef(function PodiumRef(
@@ -12,6 +12,7 @@ const Podium = forwardRef(function PodiumRef(
     className,
     'data-test-ref': dataTestRef,
     horizontalPadding,
+    id,
     isActive,
     isActiveOnMount,
     isHorizontalFlushOnLarge,
@@ -44,7 +45,12 @@ const Podium = forwardRef(function PodiumRef(
   return (
     <ThemeContextProvider theme={theme}>
       <Transition isActiveOnMount={true} type={transition}>
-        <section className={classSet} data-test-ref={dataTestRef} style={style}>
+        <section
+          className={classSet}
+          data-test-ref={dataTestRef}
+          id={id}
+          style={style}
+        >
           <Transition
             isActive={isActive}
             isActiveOnMount={isActiveOnMount}
@@ -64,6 +70,7 @@ Podium.propTypes = {
   className: PropTypes.string,
   'data-test-ref': PropTypes.string,
   horizontalPadding: PropTypes.oneOf(['none', 'small']),
+  id: PropTypes.string,
   isActive: PropTypes.bool,
   isActiveOnMount: PropTypes.bool,
   isHorizontalFlushOnLarge: PropTypes.bool,
@@ -92,6 +99,7 @@ Podium.defaultProps = {
   className: undefined,
   'data-test-ref': undefined,
   horizontalPadding: 'none',
+  id: undefined,
   isActive: true,
   isActiveOnMount: undefined,
   isHorizontalFlushOnLarge: undefined,
@@ -106,4 +114,4 @@ Podium.defaultProps = {
   verticalPadding: 'none',
 };
 
-export default Podium;
+export { Podium };

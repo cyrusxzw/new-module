@@ -11,7 +11,7 @@ const {
   INTERNAL_TEXT_LINK,
 } = HYPERLINK_STYLE_TYPES;
 
-export const checkIsInlineFromStyle = style => {
+const checkIsInlineFromStyle = style => {
   const styleRepresentsInline = includes(
     [
       EXTERNAL_NO_ICON_TEXT_LINK,
@@ -25,7 +25,7 @@ export const checkIsInlineFromStyle = style => {
   return styleRepresentsInline ? true : false;
 };
 
-export const checkIsExternalFromStyle = style => {
+const checkIsExternalFromStyle = style => {
   const styleRepresentsAbsoluteLink = includes(
     [
       EXTERNAL_BUTTON_LINK,
@@ -39,7 +39,7 @@ export const checkIsExternalFromStyle = style => {
   return styleRepresentsAbsoluteLink ? true : false;
 };
 
-export const hasIconFromStyle = style =>
+const hasIconFromStyle = style =>
   includes(
     [
       EXTERNAL_BUTTON_LINK,
@@ -52,10 +52,11 @@ export const hasIconFromStyle = style =>
     ? true
     : false;
 
-export const getTargetType = openInANewWindow =>
+const getTargetType = openInANewWindow =>
   openInANewWindow ? '_blank' : '_self';
 
-export default {
+export {
+  checkIsExternalFromStyle,
   checkIsInlineFromStyle,
   getTargetType,
   hasIconFromStyle,

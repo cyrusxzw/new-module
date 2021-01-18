@@ -1,100 +1,104 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DoubleMedia /> renders base component correctly 1`] = `
-<div
-  className="base dark"
->
-  <figure
-    className="base dark figure dark"
+exports[`<DoubleMedia /> should render base component correctly 1`] = `
+<div>
+  <div
+    class="base dark"
   >
-    <picture
-      className="base picture dark"
-    >
-      <source
-        media="(min-width: 1025px)"
-        srcSet="./assets/images/DoubleImage/image-one-large.jpg"
-      />
-      <source
-        media="(min-width: 640px)"
-        srcSet="./assets/images/DoubleImage/image-one-medium.jpg"
-      />
-      <source
-        media="(min-width: 0px)"
-        srcSet="./assets/images/DoubleImage/image-one-small.jpg"
-      />
-      <img
-        alt="A tactile approach infuses our work, from our product development to our retail service and visual merchandising."
-      />
-    </picture>
-    <figcaption
-      className="figcaption"
-    >
-      <h3
-        className="heading"
-      >
-        <span
-          className="headingWrapper"
-        >
-          Aesop favourites
-        </span>
-      </h3>
-      <div
-        className="caption"
-      >
-        Our passion for creativity in form and function, extends to the setting of a meal among staff.
-      </div>
-    </figcaption>
-  </figure>
-  <figure
-    className="base dark figure dark"
-  >
-    <a
-      className="base left dark imageLinkWrapper"
-      href="/au/c/skin/cleanse"
-      target="_self"
+    <figure
+      class="base dark figure dark"
     >
       <picture
-        className="base picture dark"
+        class="base picture dark"
       >
         <source
           media="(min-width: 1025px)"
-          srcSet="./assets/images/DoubleImage/image-two-large.jpg"
+          srcset="./assets/images/DoubleImage/image-one-large.jpg"
         />
         <source
           media="(min-width: 640px)"
-          srcSet="./assets/images/DoubleImage/image-two-medium.jpg"
+          srcset="./assets/images/DoubleImage/image-one-medium.jpg"
         />
         <source
           media="(min-width: 0px)"
-          srcSet="./assets/images/DoubleImage/image-two-small.jpg"
+          srcset="./assets/images/DoubleImage/image-one-small.jpg"
         />
         <img
-          alt="Image of: Our passion for creativity in form and function, extends to the setting of a meal among staff."
+          alt="A tactile approach infuses our work, from our product development to our retail service and visual merchandising."
+          loading="lazy"
         />
       </picture>
-    </a>
-    <figcaption
-      className="figcaption"
-    >
-      <h3
-        className="heading headingLink"
+      <figcaption
+        class="figcaption"
       >
-        <a
-          className="base left dark headingWrapper"
-          href="/au/c/skin/cleanse"
-          target="_self"
+        <h3
+          class="heading"
         >
-          <span>
+          <span
+            class="headingWrapper"
+          >
             Aesop favourites
           </span>
-        </a>
-      </h3>
-      <div
-        className="caption"
+        </h3>
+        <div
+          class="caption"
+        >
+          Our passion for creativity in form and function, extends to the setting of a meal among staff.
+        </div>
+      </figcaption>
+    </figure>
+    <figure
+      class="base dark figure dark"
+    >
+      <a
+        class="base left dark imageLinkWrapper"
+        href="/au/c/skin/cleanse"
+        target="_self"
       >
-        Our passion for creativity in form and function, extends to the setting of a meal among staff.
-      </div>
-    </figcaption>
-  </figure>
+        <picture
+          class="base picture dark"
+        >
+          <source
+            media="(min-width: 1025px)"
+            srcset="./assets/images/DoubleImage/image-two-large.jpg"
+          />
+          <source
+            media="(min-width: 640px)"
+            srcset="./assets/images/DoubleImage/image-two-medium.jpg"
+          />
+          <source
+            media="(min-width: 0px)"
+            srcset="./assets/images/DoubleImage/image-two-small.jpg"
+          />
+          <img
+            alt="Image of: Our passion for creativity in form and function, extends to the setting of a meal among staff."
+            loading="lazy"
+          />
+        </picture>
+      </a>
+      <figcaption
+        class="figcaption"
+      >
+        <h3
+          class="heading headingLink"
+        >
+          <a
+            class="base left dark headingWrapper"
+            href="/au/c/skin/cleanse"
+            target="_self"
+          >
+            <span>
+              Aesop favourites
+            </span>
+          </a>
+        </h3>
+        <div
+          class="caption"
+        >
+          Our passion for creativity in form and function, extends to the setting of a meal among staff.
+        </div>
+      </figcaption>
+    </figure>
+  </div>
 </div>
 `;

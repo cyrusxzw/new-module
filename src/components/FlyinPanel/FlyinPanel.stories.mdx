@@ -1,11 +1,10 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import { State } from '~.storybook/State';
-import Button from '~/components/Button';
-import Heading from '~/components/Heading';
+import { Button } from '~/components/Button';
+import { Heading } from '~/components/Heading';
 import { P } from '~/components/Paragraph';
-import FlyinPanel from './FlyinPanel';
-import FlyinPanelFixture from './FlyinPanel.fixture';
+import { FlyinPanel } from './FlyinPanel';
 
 <Meta
   title="Components/FlyinPanel"
@@ -14,7 +13,7 @@ import FlyinPanelFixture from './FlyinPanel.fixture';
 
 # FlyinPanel
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <State initialState={{ isVisible: false }}>
       {(state, setState) => {
@@ -50,8 +49,8 @@ import FlyinPanelFixture from './FlyinPanel.fixture';
       }}
     </State>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={FlyinPanel} />
+<ArgsTable of={FlyinPanel} />

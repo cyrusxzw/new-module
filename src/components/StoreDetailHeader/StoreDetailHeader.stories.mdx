@@ -1,33 +1,49 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import StoreHoursListFixture from '~/components/StoreHoursList/StoreHoursList.fixture';
-import StoreDetailHeader from './StoreDetailHeader';
-import StoreDetailHeaderFixture from './StoreDetailHeader.fixture';
+import { StoreHoursListFixture } from '~/components/StoreHoursList/StoreHoursList.fixture';
+import { StoreDetailHeader } from './StoreDetailHeader';
+import { StoreDetailHeaderFixture } from './StoreDetailHeader.fixture';
 
 <Meta title="Components/StoreDetailHeader" component={StoreDetailHeader} />
 
 # StoreDetailHeader
 
-<Preview>
+<Canvas>
   <Story name="Base component">
     <StoreDetailHeader
       alternateHoursNote={StoreHoursListFixture.alternateHoursNote}
       copy={{
-        location: knobs.text('location', StoreDetailHeaderFixture.copy.location, 'Copy'),
-        openingHours: knobs.text('openingHours', StoreDetailHeaderFixture.copy.openingHours, 'Copy'),
+        location: knobs.text(
+          'location',
+          StoreDetailHeaderFixture.copy.location,
+          'Copy',
+        ),
+        openingHours: knobs.text(
+          'openingHours',
+          StoreDetailHeaderFixture.copy.openingHours,
+          'Copy',
+        ),
         phone: knobs.text('phone', StoreDetailHeaderFixture.copy.phone, 'Copy'),
         email: knobs.text('email', StoreDetailHeaderFixture.copy.email, 'Copy'),
       }}
       email={knobs.text('email', StoreDetailHeaderFixture.email, 'Content')}
-      location={knobs.text('location', StoreDetailHeaderFixture.location, 'Content')}
+      location={knobs.text(
+        'location',
+        StoreDetailHeaderFixture.location,
+        'Content',
+      )}
       openingHours={StoreHoursListFixture.hoursList}
       phone={knobs.text('phone', StoreDetailHeaderFixture.phone, 'Content')}
-      storeName={knobs.text('storeName', StoreDetailHeaderFixture.storeName, 'Content')}
+      storeName={knobs.text(
+        'storeName',
+        StoreDetailHeaderFixture.storeName,
+        'Content',
+      )}
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={StoreDetailHeader} />
+<ArgsTable of={StoreDetailHeader} />

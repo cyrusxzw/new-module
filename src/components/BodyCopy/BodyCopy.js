@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import SectionHeading from '~/components/SectionHeading';
+import { SectionHeading } from '~/components/SectionHeading';
 import styles from './BodyCopy.module.css';
 
 const BodyCopy = forwardRef(
@@ -90,4 +90,4 @@ BodyCopy.defaultProps = {
   theme: undefined,
 };
 
-export default BodyCopy;
+export { BodyCopy };

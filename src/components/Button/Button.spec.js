@@ -1,26 +1,50 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import Button from './Button';
-
-configure({ adapter: new Adapter() });
-
-const mockFn = jest.fn();
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Button } from './Button';
 
 describe('<Button />', () => {
+  const handleOnClick = jest.fn();
+  const buttonText = 'button';
+
   it('should be defined', () => {
     expect(Button).toBeDefined();
   });
 
-  it('renders base component correctly with `onClick` prop', () => {
-    const tree = renderer
-      .create(
-        <Button className="aesop" onClick={mockFn} title="Aēsop">
-          Button
-        </Button>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+  it('should render base component correctly with `onClick` prop', () => {
+    const { container } = render(
+      <Button className="class" onClick={handleOnClick} title="button-title">
+        {buttonText}
+      </Button>,
+    );
+
+    const button = screen.getByRole('button', { name: /button/i });
+
+    expect(container).toMatchSnapshot();
+    expect(button).toBeTruthy();
+  });
+
+  it('should return `null` if no children are passed', () => {
+    render(
+      <Button className="aesop" onClick={handleOnClick} title="button-title" />,
+    );
+
+    const button = screen.queryByRole('button', { name: /button/i });
+
+    expect(button).not.toBeInTheDocument();
+  });
+
+  it('should call handle onClick callback if pressed', () => {
+    render(
+      <Button className="class" onClick={handleOnClick} title="button-title">
+        {buttonText}
+      </Button>,
+    );
+
+    const button = screen.getByRole('button', { name: /button/i });
+
+    userEvent.click(button);
+
+    expect(handleOnClick).toHaveBeenCalledTimes(1);
   });
 });

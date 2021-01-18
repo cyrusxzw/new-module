@@ -1,120 +1,122 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<StoreHoursList /> renders base component correctly 1`] = `
-<div
-  className="base dark"
->
-  <h4
-    className="base xXSmall dark heading"
-  >
-    Opening hours
-  </h4>
-  <ul
-    className="list"
-  >
-    <li
-      className="item"
-    >
-      <span
-        className="dayName"
-      >
-        Monday
-      </span>
-      <span
-        className="hours"
-      >
-        11am - 4pm
-      </span>
-    </li>
-    <li
-      className="item"
-    >
-      <span
-        className="dayName"
-      >
-        Tuesday
-      </span>
-      <span
-        className="hours alternateHours"
-      >
-        10am - 3pm
-      </span>
-    </li>
-    <li
-      className="item"
-    >
-      <span
-        className="dayName"
-      >
-        Wednesday
-      </span>
-      <span
-        className="hours"
-      >
-        10am - 3pm
-      </span>
-    </li>
-    <li
-      className="item"
-    >
-      <span
-        className="dayName"
-      >
-        Thursday
-      </span>
-      <span
-        className="hours"
-      >
-        10am - 3pm
-      </span>
-    </li>
-    <li
-      className="item"
-    >
-      <span
-        className="dayName"
-      >
-        Friday
-      </span>
-      <span
-        className="hours"
-      >
-        10am - 3pm
-      </span>
-    </li>
-    <li
-      className="item"
-    >
-      <span
-        className="dayName"
-      >
-        Saturday
-      </span>
-      <span
-        className="hours alternateHours"
-      >
-        10am - 3pm
-      </span>
-    </li>
-    <li
-      className="item"
-    >
-      <span
-        className="dayName"
-      >
-        Sunday
-      </span>
-      <span
-        className="hours"
-      >
-        10am - 3pm
-      </span>
-    </li>
-  </ul>
+exports[`<StoreHoursList /> should render base component correctly 1`] = `
+<div>
   <div
-    className="alternateHoursNote"
+    class="base dark"
   >
-    Special opening hours
+    <h4
+      class="base xXSmall dark heading"
+    >
+      Opening hours
+    </h4>
+    <ul
+      class="list"
+    >
+      <li
+        class="item"
+      >
+        <span
+          class="dayName"
+        >
+          Monday
+        </span>
+        <span
+          class="hours"
+        >
+          11am - 4pm
+        </span>
+      </li>
+      <li
+        class="item"
+      >
+        <span
+          class="dayName"
+        >
+          Tuesday
+        </span>
+        <span
+          class="hours alternateHours"
+        >
+          10am - 3pm
+        </span>
+      </li>
+      <li
+        class="item"
+      >
+        <span
+          class="dayName"
+        >
+          Wednesday
+        </span>
+        <span
+          class="hours"
+        >
+          10am - 3pm
+        </span>
+      </li>
+      <li
+        class="item"
+      >
+        <span
+          class="dayName"
+        >
+          Thursday
+        </span>
+        <span
+          class="hours"
+        >
+          10am - 3pm
+        </span>
+      </li>
+      <li
+        class="item"
+      >
+        <span
+          class="dayName"
+        >
+          Friday
+        </span>
+        <span
+          class="hours"
+        >
+          10am - 3pm
+        </span>
+      </li>
+      <li
+        class="item"
+      >
+        <span
+          class="dayName"
+        >
+          Saturday
+        </span>
+        <span
+          class="hours alternateHours"
+        >
+          10am - 3pm
+        </span>
+      </li>
+      <li
+        class="item"
+      >
+        <span
+          class="dayName"
+        >
+          Sunday
+        </span>
+        <span
+          class="hours"
+        >
+          10am - 3pm
+        </span>
+      </li>
+    </ul>
+    <div
+      class="alternateHoursNote"
+    >
+      Special opening hours
+    </div>
   </div>
 </div>
 `;

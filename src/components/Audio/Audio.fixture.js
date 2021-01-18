@@ -1,4 +1,4 @@
-export default {
+const AudioFixture = {
   audioUrl: './assets/audio/Istros_Imagined.mp3',
   artistName: 'Jesse Paris Smith',
   className: undefined,
@@ -16,3 +16,5 @@ export default {
   progressColor: 'orange',
   trackTitle: 'Istros Imagined',
 };
+
+export { AudioFixture };

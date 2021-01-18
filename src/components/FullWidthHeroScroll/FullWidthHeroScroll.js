@@ -2,9 +2,12 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
-import { BodyCopy, Hyperlink, Icon } from '~/components';
-import BackgroundElement from './components/BackgroundElement';
-import FullscreenSection from './components/FullscreenSection';
+import { isInBrowser } from '~/utils/environment';
+import { BodyCopy } from '~/components/BodyCopy';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Icon } from '~/components/Icon';
+import { BackgroundElement } from './components/BackgroundElement';
+import { FullscreenSection } from './components/FullscreenSection';
 import styles from './FullWidthHeroScroll.module.css';
 
 const FullWidthHeroScroll = ({
@@ -43,11 +46,13 @@ const FullWidthHeroScroll = ({
   });
 
   const handleScrollDown = () => {
-    window.scroll({
-      top: window.innerHeight - offset,
-      left: 0,
-      behavior: 'smooth',
-    });
+    if (isInBrowser()) {
+      window.scroll({
+        top: window.innerHeight - offset,
+        left: 0,
+        behavior: 'smooth',
+      });
+    }
   };
 
   const classSet = cx(styles.base, styles[theme], {
@@ -141,4 +146,4 @@ FullWidthHeroScroll.defaultProps = {
   textBlocks: [],
 };
 
-export default FullWidthHeroScroll;
+export { FullWidthHeroScroll };

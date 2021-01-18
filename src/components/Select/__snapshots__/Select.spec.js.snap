@@ -1,65 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Select /> renders base component correctly 1`] = `
-<div
-  className="base hasFocus hasError dark"
->
-  <label
-    className="label"
-    htmlFor="select"
-  >
-    Vestibulum accumsan
-  </label>
-  <select
-    className="input"
-    id="select"
-    name="select"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    value="morbi-id-nulla"
-  >
-    <option
-      value=""
-    />
-    <option
-      value="morbi-id-nulla"
-    >
-      Morbi id nulla
-    </option>
-    <option
-      value="nullam-ultrices"
-    >
-      Nullam ultrices
-    </option>
-  </select>
-  <svg
-    className="base chevron dark icon"
-    data-ref=""
-    focusable="false"
-    height={15}
-    role="img"
-    style={
-      Object {
-        "height": "15px",
-        "width": "15px",
-      }
-    }
-    tabIndex={-1}
-    viewBox="0 0 50 50"
-    width={15}
-  >
-    <g>
-      <polygon
-        className="chevron"
-        points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
-      />
-    </g>
-  </svg>
+exports[`<Select /> should render base component correctly 1`] = `
+<div>
   <div
-    className="errorMessage"
+    class="base hasFocus hasError dark"
   >
-    Test Error Messsage
+    <label
+      class="label"
+      for="select"
+    >
+      Vestibulum accumsan
+    </label>
+    <select
+      aria-describedby="select-error-message"
+      aria-invalid="true"
+      class="input"
+      id="select"
+      name="select"
+    >
+      <option
+        value=""
+      />
+      <option
+        value="morbi-id-nulla"
+      >
+        Morbi id nulla
+      </option>
+      <option
+        value="nullam-ultrices"
+      >
+        Nullam ultrices
+      </option>
+    </select>
+    <svg
+      class="base chevron dark icon"
+      data-ref=""
+      data-testid="data-testid-Icon"
+      focusable="false"
+      height="15"
+      role="img"
+      style="height: 15px; width: 15px;"
+      tabindex="-1"
+      viewBox="0 0 50 50"
+      width="15"
+    >
+      <g>
+        <polygon
+          class="chevron"
+          points="25,31.3 4.2,10.5 0.1,14.6 25,39.5 50,14.6 45.9,10.5"
+        />
+      </g>
+    </svg>
+    <span
+      class="errorMessage"
+      id="select-error-message"
+    >
+      Test Error Messsage
+    </span>
   </div>
 </div>
 `;

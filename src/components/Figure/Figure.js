@@ -51,4 +51,4 @@ Figure.defaultProps = {
   theme: 'dark',
 };
 
-export default Figure;
+export { Figure };

@@ -1,4 +1,5 @@
-export default {
+const BreadcrumbsFixture = {
+  classname: 'breadcrumbs',
   items: [
     {
       label: 'Suspendisse quis elit',
@@ -9,3 +10,5 @@ export default {
   ],
   theme: 'dark',
 };
+
+export { BreadcrumbsFixture };

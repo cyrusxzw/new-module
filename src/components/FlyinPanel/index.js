@@ -1,3 +1,3 @@
-import FlyinPanel from './FlyinPanel';
+import { FlyinPanel } from './FlyinPanel';
 
-export default FlyinPanel;
+export { FlyinPanel };

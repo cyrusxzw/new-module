@@ -1,34 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Breadcrumbs /> renders base component correctly 1`] = `
-<nav
-  className="base dark"
->
-  <ul
-    className="list"
+exports[`<Breadcrumbs /> should render base component correctly 1`] = `
+<div>
+  <nav
+    class="base dark"
+    data-testid="data-testid-Breadcrumbs"
   >
-    <li
-      className="item"
+    <ul
+      class="list"
     >
-      <a
-        className="base left dark link"
-        href="/"
-        target="_self"
+      <li
+        class="item"
       >
-        Suspendisse quis elit
-      </a>
-    </li>
-    <li
-      className="item"
-    >
-      <a
-        className="base left dark link"
-        href="/"
-        target="_self"
+        <a
+          class="base left dark link"
+          href="/"
+          target="_self"
+        >
+          Suspendisse quis elit
+        </a>
+      </li>
+      <li
+        class="item"
       >
-        Maecenas luctus
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          class="base left dark link"
+          href="/"
+          target="_self"
+        >
+          Maecenas luctus
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
 `;

@@ -1,0 +1,1 @@
+export { isInBrowser } from './environment';

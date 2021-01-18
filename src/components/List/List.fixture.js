@@ -1,4 +1,4 @@
-export default {
+const ListFixture = {
   items: [
     { content: 'Lorem ipsum dolor sit amet', id: 'Lorem ipsum dolor sit amet' },
     {
@@ -13,3 +13,5 @@ export default {
     { content: 'Nullam et felis sem', id: 'Nullam et felis sem' },
   ],
 };
+
+export { ListFixture };

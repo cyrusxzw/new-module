@@ -1,16 +1,11 @@
 import React, { useRef } from 'react';
+import { render } from '@testing-library/react';
 import { useExecuteOnImpression } from './useExecuteOnImpression';
-import * as hooks from '~/customHooks';
-import { configure, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-configure({ adapter: new Adapter() });
-
-jest.mock('~/customHooks');
+import * as useOnScreenHook from '../useOnScreen/useOnScreen';
 
 describe('useExecuteOnImpression', () => {
   const callback = jest.fn();
-  const useOnScreenSpy = jest.spyOn(hooks, 'useOnScreen');
+  const useOnScreenSpy = jest.spyOn(useOnScreenHook, 'useOnScreen');
 
   // eslint-disable-next-line react/prop-types
   const TestRig = ({ options }) => {
@@ -30,7 +25,7 @@ describe('useExecuteOnImpression', () => {
       isExecutableOnReEntry: false,
     };
 
-    mount(<TestRig options={options} />);
+    render(<TestRig options={options} />);
 
     expect(useOnScreenSpy).toHaveBeenCalledWith(
       expect.any(Object),
@@ -41,7 +36,7 @@ describe('useExecuteOnImpression', () => {
   });
 
   it('should call useOnScreen with the default values if options are not provided', () => {
-    mount(<TestRig />);
+    render(<TestRig />);
 
     expect(useOnScreenSpy).toHaveBeenCalledWith(
       expect.any(Object),
@@ -54,7 +49,7 @@ describe('useExecuteOnImpression', () => {
   it('should not call the function if the element is not on screen', () => {
     useOnScreenSpy.mockReturnValue(false);
 
-    mount(<TestRig />);
+    render(<TestRig />);
 
     expect(callback).not.toHaveBeenCalled();
   });
@@ -62,7 +57,7 @@ describe('useExecuteOnImpression', () => {
   it('should call the function  when the element is in view', () => {
     useOnScreenSpy.mockReturnValue(true);
 
-    mount(<TestRig />);
+    render(<TestRig />);
 
     expect(callback).toHaveBeenCalledTimes(1);
   });

@@ -1,0 +1,9 @@
+@import 'styles/index';
+
+.base {
+  margin-bottom: 20px;
+}
+
+.artistName {
+  color: var(--color-dark-label);
+}

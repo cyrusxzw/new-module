@@ -1,21 +1,17 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import TextInput from './TextInput';
-
-configure({ adapter: new Adapter() });
+import { render } from '@testing-library/react';
+import { TextInput } from './TextInput';
 
 describe('<TextInput />', () => {
   it('should be defined', () => {
     expect(TextInput).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<TextInput data-test-ref="test-data-ref" id="test-textinput" />)
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <TextInput data-test-ref="test-data-ref" id="test-textinput" />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

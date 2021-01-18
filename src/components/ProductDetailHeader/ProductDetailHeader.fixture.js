@@ -1,4 +1,4 @@
-export default {
+const ProductDetailHeaderFixture = {
   breadcrumbs: {
     items: [
       {
@@ -46,6 +46,7 @@ export default {
     },
     variantOptions: [
       {
+        cartDisclaimer: 'Praesent rhoncus ex quis elit vehicula',
         size: '50 mL - In stock',
         sku: 'ARD33',
         price: '$26.45',
@@ -63,6 +64,7 @@ export default {
         },
       },
       {
+        cartDisclaimer: 'Pet tincidunt nisi scelerisque',
         size: '100 mL - Not in stock',
         sku: 'ARD32',
         price: '$86.97',
@@ -80,6 +82,28 @@ export default {
   },
   variantOutOfStock: [
     {
+      cartDisclaimer: 'Nunc sagittis ultrices dignissim',
+      size: '50 ml',
+      sku: 'ARD33',
+      price: '$26.45',
+      isInStock: false,
+      image: {
+        altText: 'alt-tag-ARD33',
+        sizes: {
+          large: './assets/images/Product/variant-one-large.png',
+          medium: './assets/images/Product/variant-one-medium.png',
+          small: './assets/images/Product/variant-one-small.png',
+        },
+      },
+    },
+  ],
+  variantAlternateAction: [
+    {
+      alternateAction: {
+        url: '/',
+        label: 'Nunc sagittis ultrices dignissim',
+      },
+      cartDisclaimer: 'Nunc sagittis ultrices dignissim',
       size: '50 ml',
       sku: 'ARD33',
       price: '$26.45',
@@ -95,3 +119,5 @@ export default {
     },
   ],
 };
+
+export { ProductDetailHeaderFixture };

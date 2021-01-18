@@ -3,11 +3,22 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import get from 'lodash/get';
 import { constraintsByViewport } from '~/utils/viewports';
-import Hyperlink from '~/components/Hyperlink';
+import { Hyperlink } from '~/components/Hyperlink';
 import styles from './Image.module.css';
 
 const Image = forwardRef(function ImageRef(
-  { altText, className, cta, large, medium, small, style, type, theme },
+  {
+    altText,
+    className,
+    cta,
+    isLazyLoaded,
+    large,
+    medium,
+    small,
+    style,
+    type,
+    theme,
+  },
   ref,
 ) {
   const fullBleedImage = type === 'componentFullBleedImage';
@@ -54,7 +65,7 @@ const Image = forwardRef(function ImageRef(
         />
       )}
 
-      <img alt={altText} ref={ref} />
+      <img alt={altText} loading={isLazyLoaded ? 'lazy' : 'eager'} ref={ref} />
     </picture>
   );
 
@@ -78,6 +89,7 @@ Image.propTypes = {
   cta: PropTypes.object,
   id: PropTypes.string,
   isFullBleedImage: PropTypes.bool,
+  isLazyLoaded: PropTypes.bool,
   large: PropTypes.string,
   medium: PropTypes.string,
   small: PropTypes.string,
@@ -92,6 +104,7 @@ Image.defaultProps = {
   cta: undefined,
   id: undefined,
   isFullBleedImage: undefined,
+  isLazyLoaded: true,
   large: undefined,
   medium: undefined,
   small: undefined,
@@ -100,4 +113,4 @@ Image.defaultProps = {
   type: undefined,
 };
 
-export default Image;
+export { Image };

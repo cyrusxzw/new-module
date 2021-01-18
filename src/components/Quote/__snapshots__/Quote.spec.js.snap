@@ -1,22 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Quote /> renders base component correctly 1`] = `
-<div
-  className="base dark"
->
+exports[`<Quote /> should render base component correctly 1`] = `
+<div>
   <div
-    className="wrapper"
+    class="base dark"
   >
-    <blockquote
-      className="blockquote"
+    <div
+      class="wrapper"
     >
-      ‘Lorem ipsum dolor sit amet, consectetur adipiscing sit amet ipsum dolor elit’
-    </blockquote>
-    <cite
-      className="author"
-    >
-      Lorem ipsum
-    </cite>
+      <blockquote
+        class="blockquote"
+      >
+        ‘Lorem ipsum dolor sit amet, consectetur adipiscing sit amet ipsum dolor elit’
+      </blockquote>
+      <cite
+        class="author"
+      >
+        Lorem ipsum
+      </cite>
+    </div>
   </div>
 </div>
 `;

@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useOnScreen } from '~/customHooks/useOnScreen';
-import { Transition } from '~/components';
+import { useOnScreen } from '~/customHooks';
+import { Transition } from '~/components/Transition';
 import styles from './FullscreenSection.module.css';
 
 const FullscreenSection = ({ text, theme }) => {
@@ -30,4 +30,4 @@ FullscreenSection.defaultProps = {
   theme: 'dark',
 };
 
-export default FullscreenSection;
+export { FullscreenSection };

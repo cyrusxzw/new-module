@@ -1,23 +1,23 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import GridOverlay from '~.storybook/GridOverlay.js';
+import { GridOverlay } from '~.storybook/GridOverlay.js';
 import { boolean, select, text, radios } from '@storybook/addon-knobs';
-import DefinitionList from '~/components/DefinitionList';
-import Hyperlink from '~/components/Hyperlink';
-import Image from '~/components/Image';
-import KitList from '~/components/KitList';
-import LinkButtonGroup from '~/components/LinkButtonGroup';
-import SubNav from '~/components/SubNav';
-import Video from '~/components/Video';
-import MediaWithContent from './MediaWithContent';
-import MediaWithContentFixture from './MediaWithContent.fixture';
+import { DefinitionList } from '~/components/DefinitionList';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Image } from '~/components/Image';
+import { KitList } from '~/components/KitList';
+import { LinkButtonGroup } from '~/components/LinkButtonGroup';
+import { SubNav } from '~/components/SubNav';
+import { Video } from '~/components/Video';
+import { MediaWithContent } from './MediaWithContent';
+import { MediaWithContentFixture } from './MediaWithContent.fixture';
 
 <Meta title="Components/MediaWithContent" component={MediaWithContent} />
 
 # MediaWithContent
 
-<Preview>
+<Canvas>
   <Story name="Base Component">
     {(() => {
       const gridOverlayActive = knobs.boolean('isActive', false, 'Grid overlay');
@@ -123,17 +123,17 @@ import MediaWithContentFixture from './MediaWithContent.fixture';
       )
     })()}
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={MediaWithContent} />
+<ArgsTable of={MediaWithContent} />
 
 ## Variations
 
 ### With Definition List
 
-<Preview>
+<Canvas>
   <Story name="Definition List">
     <MediaWithContent
       backgroundColor="#fffeef"
@@ -157,11 +157,11 @@ import MediaWithContentFixture from './MediaWithContent.fixture';
       }
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### With Kit List
 
-<Preview>
+<Canvas>
   <Story name="With Kit List">
     <MediaWithContent
       content={<KitList items={MediaWithContentFixture.kitList.items} />}
@@ -176,11 +176,11 @@ import MediaWithContentFixture from './MediaWithContent.fixture';
       }
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### With Expectations
 
-<Preview>
+<Canvas>
   <Story name="With Expectations">
     <MediaWithContent
       copy={MediaWithContentFixture.copy.expectations}
@@ -195,11 +195,11 @@ import MediaWithContentFixture from './MediaWithContent.fixture';
       }
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### With Video for Media
 
-<Preview>
+<Canvas>
   <Story name="With Video for Media">
     <MediaWithContent
       backgroundColor="#fffeef"
@@ -238,11 +238,11 @@ import MediaWithContentFixture from './MediaWithContent.fixture';
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Hero Image
 
-<Preview>
+<Canvas>
   <Story name="Hero Image">
     <MediaWithContent
       backgroundColor="#633e43"
@@ -276,11 +276,11 @@ import MediaWithContentFixture from './MediaWithContent.fixture';
       theme="light"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Hero Image Full Width
 
-<Preview>
+<Canvas>
   <Story name="Hero Image Full Width">
     <MediaWithContent
       backgroundColor="#222e56"
@@ -314,11 +314,11 @@ import MediaWithContentFixture from './MediaWithContent.fixture';
       theme="light"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Hero Image with Foreground Image
 
-<Preview>
+<Canvas>
   <Story name="Hero Image with Foreground Image">
     <MediaWithContent
       backgroundColor="#f5f3e6"
@@ -349,11 +349,11 @@ import MediaWithContentFixture from './MediaWithContent.fixture';
       theme="dark"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Hero Video
 
-<Preview>
+<Canvas>
   <Story name="Hero Video">
     <MediaWithContent
       backgroundColor="#633e43"
@@ -386,11 +386,11 @@ import MediaWithContentFixture from './MediaWithContent.fixture';
       theme="light"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Hero Video full width
 
-<Preview>
+<Canvas>
   <Story name="Hero Video full width">
     <MediaWithContent
       backgroundColor="#000"
@@ -416,12 +416,12 @@ import MediaWithContentFixture from './MediaWithContent.fixture';
       theme="light"
     />
   </Story>
-</Preview>
+</Canvas>
 
 
 ### Hero Full width with Foreground Image
 
-<Preview>
+<Canvas>
   <Story name="Hero Full width with Foreground Image">
     <MediaWithContent
       backgroundColor="#f5f3e6"
@@ -452,4 +452,4 @@ import MediaWithContentFixture from './MediaWithContent.fixture';
       theme="dark"
     />
   </Story>
-</Preview>
+</Canvas>

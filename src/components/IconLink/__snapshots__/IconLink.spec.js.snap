@@ -1,37 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<IconLink /> renders base component correctly 1`] = `
-<a
-  className="base left dark"
-  data-test-ref="test-data-ref"
-  href="https://about.instagram.com/"
-  target="_blank"
-  title="Instagram"
->
-  <picture
-    className="base picture dark"
-    style={
-      Object {
-        "height": "25px",
-        "width": "25px",
-      }
-    }
+exports[`<IconLink /> should render base component correctly 1`] = `
+<div>
+  <a
+    class="base left dark"
+    data-test-ref="test-data-ref"
+    href="https://about.instagram.com/"
+    target="_blank"
+    title="Instagram"
   >
-    <source
-      media="(min-width: 1025px)"
-      srcSet="./assets/images/IconLink/instagram.png"
-    />
-    <source
-      media="(min-width: 640px)"
-      srcSet="./assets/images/IconLink/instagram.png"
-    />
-    <source
-      media="(min-width: 0px)"
-      srcSet="./assets/images/IconLink/instagram.png"
-    />
-    <img
-      alt="Instagram"
-    />
-  </picture>
-</a>
+    <picture
+      class="base picture dark"
+      style="height: 25px; width: 25px;"
+    >
+      <source
+        media="(min-width: 1025px)"
+        srcset="./assets/images/IconLink/instagram.png"
+      />
+      <source
+        media="(min-width: 640px)"
+        srcset="./assets/images/IconLink/instagram.png"
+      />
+      <source
+        media="(min-width: 0px)"
+        srcset="./assets/images/IconLink/instagram.png"
+      />
+      <img
+        alt="Instagram"
+        loading="lazy"
+      />
+    </picture>
+  </a>
+</div>
 `;

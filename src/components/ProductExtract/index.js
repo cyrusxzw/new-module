@@ -1,3 +1,3 @@
-import ProductExtract from './ProductExtract';
+import { ProductExtract } from './ProductExtract';
 
-export default ProductExtract;
+export { ProductExtract };

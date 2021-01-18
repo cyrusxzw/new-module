@@ -1,21 +1,22 @@
 import React from 'react';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import { VariantSelectContextProvider } from '~/contexts';
-import renderer from 'react-test-renderer';
-import AccordionProductFixture from './AccordionProduct.fixture.js';
-import AccordionProduct from './AccordionProduct';
-
-configure({ adapter: new Adapter() });
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import {
+  AddToCartContextProvider,
+  VariantSelectContextProvider,
+} from '~/contexts';
+import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
+import { AccordionProductFixture } from './AccordionProduct.fixture.js';
+import { AccordionProduct } from './AccordionProduct';
 
 describe('<AccordionProduct />', () => {
   it('should be defined', () => {
     expect(AccordionProduct).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
         <VariantSelectContextProvider
           variants={AccordionProductFixture.openState.product.variants}
         >
@@ -25,9 +26,42 @@ describe('<AccordionProduct />', () => {
             id={AccordionProductFixture.id}
             openState={AccordionProductFixture.openState}
           />
-        </VariantSelectContextProvider>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+        </VariantSelectContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const accordionProduct = screen.getByTestId('data-testid-AccordionProduct');
+
+    expect(accordionProduct).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should fire resetAccordion onClick if the accordion is compressed', () => {
+    const handleOnClose = jest.fn();
+
+    render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <VariantSelectContextProvider
+          variants={AccordionProductFixture.openState.product.variants}
+        >
+          <AccordionProduct
+            addToCart={AccordionProductFixture.addToCart}
+            closedState={AccordionProductFixture.closedState}
+            id={AccordionProductFixture.id}
+            isCompressed={true}
+            openState={AccordionProductFixture.openState}
+            resetAccordion={handleOnClose}
+          />
+        </VariantSelectContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const accordionProduct = screen.getByTestId('data-testid-AccordionProduct');
+
+    expect(handleOnClose).not.toHaveBeenCalled();
+
+    userEvent.click(accordionProduct);
+
+    expect(handleOnClose).toHaveBeenCalledTimes(1);
   });
 });

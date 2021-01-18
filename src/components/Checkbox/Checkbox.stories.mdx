@@ -1,24 +1,25 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import Podium from '~/components/Podium';
-import Checkbox from './Checkbox';
+import { Podium } from '~/components/Podium';
+import { Checkbox } from './Checkbox';
 
-<Meta title="Components/Checkbox" component={Checkbox} />
+<Meta title="Form Elements/Checkbox" component={Checkbox} />
 
 # Checkbox
 
-<Preview>
+<Canvas>
   <Story name="Base component">
-    <Podium horizontalPadding="small" verticalPadding="small">
+    <Podium>
       <Checkbox
-        content='Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.'
-        id='test-Checkbox'
+        content={knobs.text('content', 'Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.', 'Content')}
+        errorMessage={knobs.text('errorMessage', '', 'Content')}
+        isEnabled={knobs.boolean('isEnabled', true, 'Presentation')}
         theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
       />
     </Podium>
   </Story>
-</Preview>
+</Canvas>
 
 ## API
 
-<Props of={Checkbox} />
+<ArgsTable of={Checkbox} />

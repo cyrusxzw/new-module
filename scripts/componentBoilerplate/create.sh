@@ -21,7 +21,7 @@ else
 
     cd "../../$LOCATION/$COMPONENT/";
 
-    sed -i "" "$COMPONENT.js" "$COMPONENT.module.css" "$COMPONENT.spec.js" "$COMPONENT.stories.mdx" "$COMPONENT.fixture.js" "index.js";
+    sed -i "" "s/ComponentBoilerplate/$COMPONENT/g" "$COMPONENT.js" "$COMPONENT.module.css" "$COMPONENT.spec.js" "$COMPONENT.stories.mdx" "$COMPONENT.fixture.js" "index.js";
 
     echo "-----------------------------------------------------------------------";
     echo "New component '$COMPONENT' created! 🎉 : $LOCATION/$COMPONENT";

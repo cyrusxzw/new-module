@@ -1,27 +1,26 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import renderer from 'react-test-renderer';
-import DefinitionList from './DefinitionList';
-import DefinitionListFixture from './DefinitionList.fixture';
-
-configure({ adapter: new Adapter() });
+import { render, screen } from '@testing-library/react';
+import { DefinitionList } from './DefinitionList';
+import { DefinitionListFixture } from './DefinitionList.fixture';
 
 describe('<DefinitionList />', () => {
   it('should be defined', () => {
     expect(DefinitionList).toBeDefined();
   });
 
-  it('renders base component correctly', () => {
-    const tree = renderer
-      .create(<DefinitionList items={DefinitionListFixture.items} />)
-      .toJSON();
+  it('should render base component correctly', () => {
+    const { container } = render(
+      <DefinitionList items={DefinitionListFixture.items} />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
-  it('returns null items prop is not a populated array', () => {
-    const component = shallow(<DefinitionList items={[]} />);
-    expect(component.type()).toEqual(null);
+  it('should return `null` if the `items` prop is not a populated array', () => {
+    render(<DefinitionList items={[]} />);
+
+    const child = screen.queryByTestId('data-testid-DefinitionList');
+
+    expect(child).not.toBeInTheDocument();
   });
 });

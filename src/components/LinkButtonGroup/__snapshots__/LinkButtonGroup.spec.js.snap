@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LinkButtonGroup /> renders base component correctly 1`] = `null`;
-
 exports[`<LinkButtonGroup /> renders children correctly 1`] = `
-<div
-  className="base flush"
->
-  <a
-    className=" link flushLink center"
-    href="/au/r/about"
-    textAlign="center"
-    theme="light"
+<div>
+  <div
+    class="base flush"
+    data-testid="data-testid-LinkButtonGroup"
   >
-    Link
-  </a>
+    <button
+      class="base blockStyle light  link flushLink center"
+      title="test-button"
+      type="button"
+    >
+      Test
+    </button>
+  </div>
 </div>
 `;
