@@ -2,8 +2,11 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useForm } from 'react-hook-form';
+
 import { useThemeContext } from '~/contexts';
 import { componentMap } from './component-map';
+import { getValidationRules } from './validators/validators';
+
 import styles from './DynamicForm.module.css';
 
 const DynamicForm = forwardRef(function DynamicFormRef(
@@ -58,27 +61,13 @@ const DynamicForm = forwardRef(function DynamicFormRef(
                   return null;
                 }
 
-                const rules = {};
-
-                if (validation.isRequired?.value) {
-                  rules.required = validation.isRequired.message;
-                }
-
-                if (validation.pattern) {
-                  rules.pattern = {
-                    value: new RegExp(validation.pattern.value),
-                    message: validation.pattern.message,
-                  };
-                }
-
-                rules.maxLength = validation.maxLength;
-
                 const flex = styling?.flex;
+                const isFirstField = index === 0;
+                const isLastField = index === fieldsArray.length - 1;
                 const formFieldClassSet = cx(styles.formField, {
                   [styles[`flex${flex}`]]: flex,
-                  [styles.firstField]: index === 0 && isFirstFieldGroup,
-                  [styles.lastField]:
-                    index === fieldsArray.length - 1 && isLastFieldGroup,
+                  [styles.firstField]: isFirstField && isFirstFieldGroup,
+                  [styles.lastField]: isLastField && isLastFieldGroup,
                 });
 
                 return (
@@ -94,7 +83,7 @@ const DynamicForm = forwardRef(function DynamicFormRef(
                     label={label}
                     name={name}
                     options={options}
-                    rules={rules}
+                    rules={getValidationRules(validation, type)}
                     subtype={subtype}
                     theme={currentTheme}
                   />

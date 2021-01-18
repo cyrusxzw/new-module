@@ -22,7 +22,6 @@ const DynamicFormFixture = {
         ],
         validation: {
           isRequired: {
-            value: true,
             message: 'Please select your title',
           },
         },
@@ -34,7 +33,6 @@ const DynamicFormFixture = {
         type: 'TextField',
         validation: {
           isRequired: {
-            value: true,
             message: 'Please enter your first name',
           },
           maxLength: {
@@ -53,7 +51,6 @@ const DynamicFormFixture = {
         type: 'TextField',
         validation: {
           isRequired: {
-            value: true,
             message: 'Please enter your Last name',
           },
           maxLength: {
@@ -74,7 +71,6 @@ const DynamicFormFixture = {
         type: 'TextField',
         validation: {
           isRequired: {
-            value: true,
             message: 'Please enter your email address',
           },
           pattern: {
@@ -93,7 +89,6 @@ const DynamicFormFixture = {
         subtype: 'password',
         validation: {
           isRequired: {
-            value: true,
             message: 'Please enter your password',
           },
         },
@@ -109,7 +104,6 @@ const DynamicFormFixture = {
         type: 'TextField',
         validation: {
           isRequired: {
-            value: true,
             message: 'Please enter your Last name',
           },
           maxLength: {
@@ -127,7 +121,6 @@ const DynamicFormFixture = {
         type: 'TextField',
         validation: {
           isRequired: {
-            value: true,
             message: 'Please enter your first name',
           },
           maxLength: {
@@ -145,7 +138,6 @@ const DynamicFormFixture = {
         type: 'TextField',
         validation: {
           isRequired: {
-            value: true,
             message: 'Please enter your email address',
           },
           pattern: {
@@ -163,7 +155,6 @@ const DynamicFormFixture = {
         type: 'Checkbox',
         validation: {
           isRequired: {
-            value: true,
             message: 'Please check that you are older than 14 years old',
           },
         },

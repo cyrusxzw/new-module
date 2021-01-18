@@ -1,4 +1,4 @@
-import { FieldTypes } from './constants';
+import { FieldTypes } from './DynamicForm.constants';
 import { CheckboxWrapper, SelectWrapper, TextFieldWrapper } from './wrappers';
 
 export const componentMap = {
