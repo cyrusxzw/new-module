@@ -3,16 +3,17 @@ import * as knobs from '@storybook/addon-knobs';
 import { Podium } from '~/components/Podium';
 import { Checkbox } from './Checkbox';
 
-<Meta title="Components/Checkbox" component={Checkbox} />
+<Meta title="Form Elements/Checkbox" component={Checkbox} />
 
 # Checkbox
 
 <Canvas>
   <Story name="Base component">
-    <Podium horizontalPadding="small" verticalPadding="small">
+    <Podium>
       <Checkbox
-        content="Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest."
-        id="test-Checkbox"
+        content={knobs.text('content', 'Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.', 'Content')}
+        errorMessage={knobs.text('errorMessage', '', 'Content')}
+        isEnabled={knobs.boolean('isEnabled', true, 'Presentation')}
         theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
       />
     </Podium>

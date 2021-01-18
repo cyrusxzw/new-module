@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as knobs from '@storybook/addon-knobs';
+import { TextInputV2 } from './';
+
+<Meta title="Form Elements/TextInputV2" component={TextInputV2} />
+
+# TextInputV2
+
+<Canvas>
+  <Story name="Base component">
+    <TextInputV2 
+      label={knobs.text('label', "Pets name", 'Content')}
+      onChange={(e) => console.log('OnChange fired')}
+      errorMessage={knobs.text('errorMessage', '', 'Content')}
+      isDisabled={knobs.boolean('isDisabled', false, 'Presentation')}
+      theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
+    />
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of={TextInputV2} />

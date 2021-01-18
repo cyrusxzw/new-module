@@ -14,25 +14,10 @@ export { BREAKPOINTS };
 export { COLORS };
 export { GOOGLE_MAPS };
 export { HEADING };
-export { HTML };
 export { HYPERLINK_STYLE_TYPES };
-export { KEYBOARD_CODES };
-export { LABELS };
 export { STORES };
 export { TEST_REFS };
 export { TRANSITIONS };
-
-/* eslint-disable-next-line import/no-default-export */
-export default {
-  BREAKPOINTS,
-  COLORS,
-  GOOGLE_MAPS,
-  HEADING,
-  HTML,
-  HYPERLINK_STYLE_TYPES,
-  KEYBOARD_CODES,
-  LABELS,
-  STORES,
-  TEST_REFS,
-  TRANSITIONS,
-};
+export { HTML };
+export { KEYBOARD_CODES };
+export { LABELS };

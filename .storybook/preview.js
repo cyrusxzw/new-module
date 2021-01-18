@@ -25,6 +25,11 @@ const parameters = {
       },
     ],
   },
+  options: {
+    storySort: {
+      order: ['Compositions', 'Contexts', 'Hooks', 'Form Elements'],
+    },
+  },
 };
 
 addDecorator(withKnobs);

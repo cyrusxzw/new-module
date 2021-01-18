@@ -74,6 +74,8 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
           for="subscription"
         >
           <input
+            aria-describedby="subscription-error-message"
+            aria-invalid="false"
             class="checkBox light"
             data-test-ref="EMAIL_SIGN_UP_SUBSCRIPTION_CHECKBOX"
             id="subscription"
@@ -90,6 +92,8 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
           for="terms"
         >
           <input
+            aria-describedby="terms-error-message"
+            aria-invalid="false"
             class="checkBox light"
             data-test-ref="EMAIL_SIGN_UP_TERMS_AND_CONDITIONS_CHECKBOX"
             id="terms"
