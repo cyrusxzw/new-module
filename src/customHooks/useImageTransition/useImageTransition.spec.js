@@ -6,11 +6,11 @@ describe('useImageTransition', () => {
   let result = {};
 
   beforeAll(() => {
-    jest.spyOn(console, 'error').mockImplementation(() => {});
+    jest.spyOn(global.console, 'error').mockImplementation(() => {});
   });
 
   afterAll(() => {
-    console.error.mockRestore(); // eslint-disable-line no-console
+    global.console.error.mockRestore(); // eslint-disable-line no-console
   });
 
   beforeEach(() => {
