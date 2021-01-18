@@ -8,6 +8,7 @@ import { TextInputV2 } from '~/components/TextInputV2';
 
 export const componentMap = {
   Checkbox: ({
+    className,
     control,
     defaultValue,
     errorMessage,
@@ -23,6 +24,7 @@ export const componentMap = {
       name={name}
       render={({ onChange }) => (
         <Checkbox
+          className={className}
           content={label}
           errorMessage={errorMessage}
           id={id}
@@ -34,6 +36,7 @@ export const componentMap = {
     />
   ),
   Select: ({
+    className,
     control,
     defaultValue,
     errorMessage,
@@ -50,6 +53,7 @@ export const componentMap = {
       name={name}
       render={({ onChange, value }) => (
         <Select
+          className={className}
           errorMessage={errorMessage}
           id={id}
           label={label}
@@ -64,6 +68,7 @@ export const componentMap = {
     />
   ),
   TextField: ({
+    className,
     control,
     defaultValue,
     errorMessage,
@@ -80,6 +85,7 @@ export const componentMap = {
       name={name}
       render={({ onChange, value }) => (
         <TextInputV2
+          classes={{ wrapper: className }}
           errorMessage={errorMessage}
           id={id}
           label={label}

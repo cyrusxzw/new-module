@@ -1,16 +1,56 @@
 @import 'styles/index';
 
-.base {
+.formRowWrapper {
   display: flex;
-  min-width: 400px;
   flex-direction: column;
 
-  > div {
+  > * {
     margin: 10px 0;
   }
 
-  > button {
-    align-self: center;
-    margin: 10px 0;
+  @media (--viewport-md) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 0;
+
+    &.firstGroup {
+      padding-top: 0;
+    }
+
+    &.lastGroup {
+      padding-bottom: 0;
+    }
+
+    > * {
+      margin: 0 10px;
+    }
+
+    :first-child {
+      margin-left: 0;
+    }
+
+    :last-child {
+      margin-right: 0;
+    }
   }
+}
+
+.formField {
+  flex: 1;
+
+  &.firstField {
+    margin-top: 0;
+  }
+
+  &.lastField {
+    margin-bottom: 0;
+  }
+}
+
+.flex2 {
+  flex: 2;
+}
+
+.flex3 {
+  flex: 3;
 }

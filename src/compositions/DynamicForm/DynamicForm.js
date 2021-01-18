@@ -19,64 +19,91 @@ const DynamicForm = forwardRef(function DynamicFormRef(
     return null;
   }
 
-  const classSet = cx(styles.base, styles[currentTheme], className);
+  const classSet = cx(styles[currentTheme], className);
 
   return (
     <form className={classSet} onSubmit={handleSubmit(onSubmit)} ref={ref}>
-      {formSchema.map(
-        (
-          {
-            name,
-            id,
-            label,
-            validation,
-            type,
-            options,
-            subtype,
-            defaultValue: defaultValueFromSchema,
-          },
-          index,
-        ) => {
-          const InputField = componentMap[type];
+      {formSchema.map((fieldsArray, fieldsArrayIndex) => {
+        const isFirstFieldGroup = fieldsArrayIndex === 0;
+        const isLastFieldGroup = fieldsArrayIndex === formSchema.length - 1;
+        const fieldGroupClassSet = cx(styles.formRowWrapper, {
+          [styles.firstGroup]: isFirstFieldGroup,
+          [styles.lastGroup]: isLastFieldGroup,
+        });
 
-          if (!InputField) {
-            // eslint-disable-next-line no-console
-            console.warn(`Field with type ${type} has no registered component`);
-            return null;
-          }
+        return (
+          <div className={fieldGroupClassSet} key={fieldsArrayIndex}>
+            {fieldsArray.map(
+              (
+                {
+                  defaultValue: defaultValueFromSchema,
+                  id,
+                  label,
+                  name,
+                  options,
+                  styling,
+                  subtype,
+                  type,
+                  validation,
+                },
+                index,
+              ) => {
+                const InputField = componentMap[type];
 
-          const rules = {};
+                if (!InputField) {
+                  // eslint-disable-next-line no-console
+                  console.warn(
+                    `Field with type ${type} has no registered component`,
+                  );
+                  return null;
+                }
 
-          if (validation.isRequired?.value) {
-            rules.required = validation.isRequired.message;
-          }
+                const rules = {};
 
-          if (validation.pattern) {
-            rules.pattern = {
-              value: new RegExp(validation.pattern.value),
-              message: validation.pattern.message,
-            };
-          }
+                if (validation.isRequired?.value) {
+                  rules.required = validation.isRequired.message;
+                }
 
-          rules.maxLength = validation.maxLength;
+                if (validation.pattern) {
+                  rules.pattern = {
+                    value: new RegExp(validation.pattern.value),
+                    message: validation.pattern.message,
+                  };
+                }
 
-          return (
-            <InputField
-              control={control}
-              defaultValue={defaultValues?.[name] || defaultValueFromSchema}
-              errorMessage={errors[name]?.message}
-              id={id}
-              key={index}
-              label={label}
-              name={name}
-              options={options}
-              rules={rules}
-              subtype={subtype}
-              theme={currentTheme}
-            />
-          );
-        },
-      )}
+                rules.maxLength = validation.maxLength;
+
+                const flex = styling?.flex;
+                const formFieldClassSet = cx(styles.formField, {
+                  [styles[`flex${flex}`]]: flex,
+                  [styles.firstField]: index === 0 && isFirstFieldGroup,
+                  [styles.lastField]:
+                    index === fieldsArray.length - 1 && isLastFieldGroup,
+                });
+
+                return (
+                  <InputField
+                    className={formFieldClassSet}
+                    control={control}
+                    defaultValue={
+                      defaultValues?.[name] || defaultValueFromSchema
+                    }
+                    errorMessage={errors[name]?.message}
+                    id={id}
+                    key={index}
+                    label={label}
+                    name={name}
+                    options={options}
+                    rules={rules}
+                    subtype={subtype}
+                    theme={currentTheme}
+                  />
+                );
+              },
+            )}
+          </div>
+        );
+      })}
       {children}
     </form>
   );
