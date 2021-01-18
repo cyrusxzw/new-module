@@ -16,14 +16,24 @@ describe('<Transition />', () => {
 
     expect(container).toMatchSnapshot();
   });
+});
 
-  it('should return null if child is not a valid element', () => {
-    const { container } = render(
+describe('<Transition /> required props', () => {
+  beforeAll(() => {
+    jest.spyOn(global.console, 'error').mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    global.console.error.mockRestore();
+  });
+
+  it('should return null and throw a prop error if child is not a valid element', () => {
+    render(
       <Transition isActive={true} type="fade">
         {1}
       </Transition>,
     );
 
-    expect(container).toMatchSnapshot();
+    expect(console.error).toHaveBeenCalledTimes(1); // eslint-disable-line no-console
   });
 });
