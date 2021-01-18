@@ -57,8 +57,8 @@ const Select = forwardRef(
         </label>
         <select
           aria-describedby={errorMessageId}
-          aria-label={label || name}
           aria-invalid={!!errorMessage}
+          aria-label={label || name}
           className={cx(styles.input, { [styles.isBlock]: isBlock })}
           data-test-ref={dataTestRef}
           id={name}
