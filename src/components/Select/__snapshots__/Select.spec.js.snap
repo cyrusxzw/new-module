@@ -13,8 +13,8 @@ exports[`<Select /> should render base component correctly 1`] = `
     </label>
     <select
       aria-describedby="select-error-message"
-      aria-label="Vestibulum accumsan"
       aria-invalid="true"
+      aria-label="Vestibulum accumsan"
       class="input"
       id="select"
       name="select"

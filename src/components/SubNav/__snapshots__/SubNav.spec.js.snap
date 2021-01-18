@@ -58,6 +58,8 @@ exports[`<SubNav isSelect /> should render base component correctly 1`] = `
         for="sub-nav"
       />
       <select
+        aria-describedby="sub-nav-error-message"
+        aria-invalid="false"
         aria-label="sub-nav"
         class="input isBlock"
         id="sub-nav"
@@ -98,9 +100,7 @@ exports[`<SubNav isSelect /> should render base component correctly 1`] = `
           />
         </g>
       </svg>
-      <div
-        class="errorMessage"
-      />
+      
     </div>
   </nav>
 </div>
