@@ -23,17 +23,17 @@ ProductDetailContextProvider.propTypes = {
         description: PropTypes.node,
       }),
     ),
-    ingredients: PropTypes.string,
-    keyIngredient: PropTypes.string,
+    flyinPanel: PropTypes.string,
     productName: PropTypes.string.isRequired,
-    upSellProduct: PropTypes.shape({
-      image: PropTypes.shape({
-        altText: PropTypes.string,
-        small: PropTypes.string,
-      }),
-      name: PropTypes.string,
-      url: PropTypes.string,
+    imageSize: PropTypes.string,
+  }),
+  upSellProduct: PropTypes.shape({
+    image: PropTypes.shape({
+      altText: PropTypes.string,
+      small: PropTypes.string,
     }),
+    name: PropTypes.string,
+    url: PropTypes.string,
   }),
 };
 

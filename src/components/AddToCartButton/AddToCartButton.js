@@ -18,7 +18,12 @@ const AddToCartButton = ({
 }) => {
   const addToCartContext = useAddToCartContext();
   const { selectedVariant } = useVariantSelectContext();
-  const { errorMessage, hasError, isLoading, isUpdateSuccessful } = addToCartContext;
+  const {
+    errorMessage,
+    hasError,
+    isLoading,
+    isUpdateSuccessful,
+  } = addToCartContext;
   const updateNotificationLabel = copy.updateNotification;
   const shouldShowUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
 

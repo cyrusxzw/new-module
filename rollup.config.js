@@ -24,7 +24,7 @@ export default {
       sourcemap: true,
     },
     {
-      exports: 'default',
+      exports: 'named',
       file: pkg.main,
       format: 'cjs',
       sourcemap: true,
