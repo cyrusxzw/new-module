@@ -6,6 +6,7 @@ const DynamicFormFixture = {
         id: 'title',
         label: 'Title',
         type: 'Select',
+        testRef: 'title-input',
         options: [
           {
             label: 'Mr',

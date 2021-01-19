@@ -6,6 +6,7 @@ import { TextInputV2 } from '~/components/TextInputV2';
 export const TextFieldWrapper = ({
   className,
   control,
+  dataTestRef,
   defaultValue,
   errorMessage,
   id,
@@ -22,6 +23,7 @@ export const TextFieldWrapper = ({
     render={({ onChange, value }) => (
       <TextInputV2
         classes={{ wrapper: className }}
+        dataTestRef={dataTestRef}
         errorMessage={errorMessage}
         id={id}
         label={label}

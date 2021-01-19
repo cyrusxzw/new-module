@@ -6,6 +6,7 @@ import { Select } from '~/components/Select';
 export const SelectWrapper = ({
   className,
   control,
+  dataTestRef,
   defaultValue,
   errorMessage,
   id,
@@ -22,6 +23,7 @@ export const SelectWrapper = ({
     render={({ onChange, value }) => (
       <Select
         className={className}
+        dataTestRef={dataTestRef}
         errorMessage={errorMessage}
         id={id}
         label={label}

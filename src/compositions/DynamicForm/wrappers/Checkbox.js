@@ -6,6 +6,7 @@ import { Checkbox } from '~/components/Checkbox';
 export const CheckboxWrapper = ({
   className,
   control,
+  dataTestRef,
   defaultValue,
   errorMessage,
   id,
@@ -22,6 +23,7 @@ export const CheckboxWrapper = ({
       <Checkbox
         className={className}
         content={label}
+        dataTestRef={dataTestRef}
         errorMessage={errorMessage}
         id={id}
         onChange={e => onChange(e.target.checked)}

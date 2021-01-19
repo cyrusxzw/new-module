@@ -46,6 +46,7 @@ const DynamicForm = forwardRef(function DynamicFormRef(
                   options,
                   styling,
                   subtype,
+                  testRef,
                   type,
                   validation,
                 },
@@ -74,6 +75,7 @@ const DynamicForm = forwardRef(function DynamicFormRef(
                   <InputField
                     className={formFieldClassSet}
                     control={control}
+                    dataTestRef={testRef}
                     defaultValue={
                       defaultValues?.[name] || defaultValueFromSchema
                     }
