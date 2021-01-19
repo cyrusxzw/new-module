@@ -45,6 +45,8 @@ describe('<DynamicForm />', () => {
 
   beforeEach(() => {
     jest.spyOn(validators, 'getValidationRules').mockReset();
+    jest.spyOn(console, 'warn').mockReset();
+    jest.spyOn(console, 'error').mockReset();
   });
 
   it('should not render anything if the schema is not defined', () => {
@@ -54,10 +56,6 @@ describe('<DynamicForm />', () => {
   });
 
   it('should warn if the element type is not registered in the map', () => {
-    const consoleWarnSpy = jest
-      .spyOn(console, 'warn')
-      .mockImplementationOnce(() => {});
-
     render(
       <DynamicForm
         formSchema={[[{ type: 'Not a real element' }]]}
@@ -65,7 +63,8 @@ describe('<DynamicForm />', () => {
       />,
     );
 
-    expect(consoleWarnSpy).toHaveBeenCalled();
+    // eslint-disable-next-line no-console
+    expect(console.warn).toHaveBeenCalled();
   });
 
   it('should populate with the default value from schema', () => {

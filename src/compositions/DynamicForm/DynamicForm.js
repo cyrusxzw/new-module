@@ -8,6 +8,7 @@ import { componentMap } from './component-map';
 import { getValidationRules } from './validators/validators';
 
 import styles from './DynamicForm.module.css';
+import { FieldTypes } from './DynamicForm.constants';
 
 const DynamicForm = forwardRef(function DynamicFormRef(
   { children, className, defaultValues, formSchema, onSubmit, theme },
@@ -104,7 +105,22 @@ DynamicForm.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   defaultValues: PropTypes.object,
-  formSchema: PropTypes.array,
+  formSchema: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        defaultValue: PropTypes.string,
+        id: PropTypes.string,
+        label: PropTypes.string,
+        name: PropTypes.string.isRequired,
+        options: PropTypes.array,
+        styling: PropTypes.shape({ flex: PropTypes.number }),
+        subtype: PropTypes.string,
+        testRef: PropTypes.string,
+        type: PropTypes.oneOf(Object.values(FieldTypes)),
+        validation: PropTypes.object,
+      }),
+    ),
+  ),
   onSubmit: PropTypes.func.isRequired,
   theme: PropTypes.oneOf(['dark', 'light']),
 };
