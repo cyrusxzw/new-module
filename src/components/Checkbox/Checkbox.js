@@ -34,7 +34,7 @@ const Checkbox = forwardRef(
     const errorMessageId = `${inputId}-error-message`;
 
     return (
-      <React.Fragment>
+      <div>
         <label className={baseClassSet} htmlFor={inputId}>
           <input
             aria-describedby={errorMessageId}
@@ -55,7 +55,7 @@ const Checkbox = forwardRef(
             {errorMessage}
           </span>
         )}
-      </React.Fragment>
+      </div>
     );
   },
 );

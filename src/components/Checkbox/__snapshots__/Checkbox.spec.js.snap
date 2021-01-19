@@ -2,24 +2,26 @@
 
 exports[`<Checkbox /> should render base component correctly 1`] = `
 <div>
-  <label
-    class="base"
-    for="test-checkbox"
-  >
-    <input
-      aria-describedby="test-checkbox-error-message"
-      aria-invalid="false"
-      class="checkBox dark"
-      data-test-ref="test-data-ref"
-      disabled=""
-      id="test-checkbox"
-      type="checkbox"
-    />
-    <span
-      class="content dark"
+  <div>
+    <label
+      class="base"
+      for="test-checkbox"
     >
-      Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.
-    </span>
-  </label>
+      <input
+        aria-describedby="test-checkbox-error-message"
+        aria-invalid="false"
+        class="checkBox dark"
+        data-test-ref="test-data-ref"
+        disabled=""
+        id="test-checkbox"
+        type="checkbox"
+      />
+      <span
+        class="content dark"
+      >
+        Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.
+      </span>
+    </label>
+  </div>
 </div>
 `;
