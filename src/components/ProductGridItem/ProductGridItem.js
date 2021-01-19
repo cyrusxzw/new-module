@@ -19,7 +19,7 @@ const ProductGridItem = React.forwardRef(
   (
     {
       className,
-      clickTrackingFunction,
+      ctaClickFunction,
       copy,
       cta,
       id,
@@ -68,7 +68,7 @@ const ProductGridItem = React.forwardRef(
         <Transition isActive={isImageActive} name="fade">
           <Hyperlink
             className={styles.imageLink}
-            onClick={() => clickTrackingFunction()}
+            onClick={() => ctaClickFunction()}
             url={url}
           >
             <Image
@@ -127,7 +127,7 @@ const ProductGridItem = React.forwardRef(
           <Hyperlink
             className={classCtaLinkSet}
             isAlternate={false}
-            onClick={() => clickTrackingFunction()}
+            onClick={() => ctaClickFunction()}
             theme={theme}
             title={cta?.text}
             url={cta?.url}
@@ -149,7 +149,7 @@ const ProductGridItem = React.forwardRef(
 
 ProductGridItem.propTypes = {
   className: PropTypes.string,
-  clickTrackingFunction: PropTypes.func,
+  ctaClickFunction: PropTypes.func,
   copy: PropTypes.shape({
     addToCart: PropTypes.shape({
       cartAction: PropTypes.string,
