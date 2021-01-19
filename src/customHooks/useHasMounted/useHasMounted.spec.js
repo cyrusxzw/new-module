@@ -12,10 +12,10 @@ describe('useHasMounted', () => {
       return null;
     };
 
-    expect(hasMounted).toBeFalsy();
+    expect(hasMounted).toBe(false);
 
     render(<ComponentWithHook />);
 
-    expect(hasMounted).toBeTruthy();
+    expect(hasMounted).toBe(true);
   });
 });

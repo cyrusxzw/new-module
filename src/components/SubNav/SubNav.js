@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
@@ -15,7 +15,6 @@ const SubNav = forwardRef(
     { className, heading, headingClassName, id, isSelect, links, theme },
     ref,
   ) => {
-    const count = useRef(0);
     const currentTheme = useThemeContext(theme, 'dark');
 
     useWindowHasResized();
@@ -27,9 +26,7 @@ const SubNav = forwardRef(
       className,
     );
 
-    const isSmallOrMediumViewport = ascertainIsSmallOrMediumOnlyViewport(
-      count.current++,
-    );
+    const isSmallOrMediumViewport = ascertainIsSmallOrMediumOnlyViewport();
 
     const onChange = event => {
       window.location.href = event.target.value;

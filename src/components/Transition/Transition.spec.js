@@ -27,7 +27,7 @@ describe('<Transition /> required props', () => {
     global.console.error.mockRestore();
   });
 
-  it('should return null and throw a prop error if child is not a valid element', () => {
+  it('should throw a prop error if child is not a valid element', () => {
     render(
       <Transition isActive={true} type="fade">
         {1}
