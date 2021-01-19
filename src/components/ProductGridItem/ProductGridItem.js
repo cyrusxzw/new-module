@@ -64,12 +64,11 @@ const ProductGridItem = React.forwardRef(
     const RADIO_GROUP_DATA_TEST_REF = 'PRODUCT_GRID_ITEM_VARIANT_SELECT';
 
     return (
-      <div className={classSet} id={id} {...trackDataProps}>
+      <div className={classSet} id={id} {...trackDataProps} ref={ref}>
         <Transition isActive={isImageActive} name="fade">
           <Hyperlink
             className={styles.imageLink}
             onClick={() => clickTrackingFunction()}
-            ref={ref}
             url={url}
           >
             <Image
