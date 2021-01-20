@@ -1,20 +1,18 @@
 import { useEffect, useState } from 'react';
 
 const defaultState = {
-  productDetail: {
-    description: '',
-    id: '',
-    variantOptions: [],
-    cartDisclaimer: '',
-    definitionList: [],
-    flyinPanel: '',
-    productName: '',
-    upSellProduct: null,
-    imageSize: 'Small',
-  },
+  description: '',
+  id: '',
+  variantOptions: [],
+  cartDisclaimer: '',
+  definitionList: [],
+  flyinPanel: '',
+  productName: '',
+  upSellProduct: null,
+  imageSize: 'Small',
 };
 
-const useProductDetailStore = (product = defaultState.productDetail) => {
+const useProductDetailStore = (product = defaultState) => {
   const [productDetail, setProductDetail] = useState(product);
 
   useEffect(() => {
