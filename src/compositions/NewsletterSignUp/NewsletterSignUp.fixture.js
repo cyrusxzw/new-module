@@ -1,4 +1,4 @@
-const NewsletterSignupFixture = {
+const NewsletterSignUpFixture = {
   consentErrorMsg:
     'Please confirm your accept our Terms & Conditions before proceeding ',
   errorMessage: 'Please enter valid email address',
@@ -9,4 +9,4 @@ const NewsletterSignupFixture = {
     'Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.',
 };
 
-export { NewsletterSignupFixture };
+export { NewsletterSignUpFixture };

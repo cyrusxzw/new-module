@@ -1,24 +1,24 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { NotificationContextProvider } from '~/contexts';
-import { NewsletterSignup } from './NewsletterSignup';
-import { NewsletterSignupFixture } from './NewsletterSignup.fixture';
+import { NewsletterSignUp } from './NewsletterSignUp';
+import { NewsletterSignUpFixture } from './NewsletterSignUp.fixture';
 
-describe('<NewsletterSignup />', () => {
+describe('<NewsletterSignUp />', () => {
   it('should be defined', () => {
-    expect(NewsletterSignup).toBeDefined();
+    expect(NewsletterSignUp).toBeDefined();
   });
 
   it('should render base component correctly', () => {
     const { container } = render(
       <NotificationContextProvider>
-        <NewsletterSignup
-          consentErrorMsg={NewsletterSignupFixture.consentErrorMsg}
-          errorMessage={NewsletterSignupFixture.errorMessage}
+        <NewsletterSignUp
+          consentErrorMsg={NewsletterSignUpFixture.consentErrorMsg}
+          errorMessage={NewsletterSignUpFixture.errorMessage}
           showTermsConditionsTextBox={true}
-          subscriptionMessage={NewsletterSignupFixture.subscriptionMessage}
-          termsAndCondition={NewsletterSignupFixture.termsAndCondition}
-          termsMessage={NewsletterSignupFixture.termsMessage}
+          subscriptionMessage={NewsletterSignUpFixture.subscriptionMessage}
+          termsAndCondition={NewsletterSignUpFixture.termsAndCondition}
+          termsMessage={NewsletterSignUpFixture.termsMessage}
           theme="light"
         />
       </NotificationContextProvider>,

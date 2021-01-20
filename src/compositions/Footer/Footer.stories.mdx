@@ -5,8 +5,8 @@ import { NotificationModal } from '~/components/NotificationModal';
 import { NotificationModalFixture } from '~/components/NotificationModal/NotificationModal.fixture';
 import { Footer } from './Footer';
 import { FooterFixture } from './Footer.fixture';
-import { NewsletterSignupFixture } from '../NewsletterSignup/NewsletterSignup.fixture';
-import { newsletterSignUpOnClick } from '../NewsletterSignup/__mocks__/NewsletterSignup.onClick';
+import { NewsletterSignUpFixture } from '../NewsletterSignUp/NewsletterSignUp.fixture';
+import { newsletterSignUpOnClick } from '../NewsletterSignUp/__mocks__/NewsletterSignUp.onClick';
 
 # Footer
 
@@ -16,18 +16,18 @@ import { newsletterSignUpOnClick } from '../NewsletterSignup/__mocks__/Newslette
   <Story name="Base component">
     <Footer
       blocks={FooterFixture.blocks}
-      consentErrorMsg={NewsletterSignupFixture.consentErrorMsg}
+      consentErrorMsg={NewsletterSignUpFixture.consentErrorMsg}
       iconLinks={FooterFixture.iconLinks}
-      errorMessage={NewsletterSignupFixture.errorMessage}
+      errorMessage={NewsletterSignUpFixture.errorMessage}
       onClick={newsletterSignUpOnClick}
       showTermsConditionsTextBox={knobs.boolean(
         'showTermsConditionsTextBox',
         true,
         'Presentation',
       )}
-      subscriptionMessage={NewsletterSignupFixture.subscriptionMessage}
-      termsAndCondition={NewsletterSignupFixture.termsAndCondition}
-      termsMessage={NewsletterSignupFixture.termsMessage}
+      subscriptionMessage={NewsletterSignUpFixture.subscriptionMessage}
+      termsAndCondition={NewsletterSignUpFixture.termsAndCondition}
+      termsMessage={NewsletterSignUpFixture.termsMessage}
       notificationMessage={NotificationModalFixture.notificationMessage}
     />
   </Story>

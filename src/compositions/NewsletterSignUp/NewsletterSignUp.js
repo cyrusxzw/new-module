@@ -6,9 +6,9 @@ import { Icon } from '~/components/Icon';
 import { Loading } from '~/components/Loading';
 import { Checkbox } from '~/components/Checkbox';
 import { TextInput } from '~/components/TextInput';
-import styles from './NewsletterSignup.css';
+import styles from './NewsletterSignUp.css';
 
-const NewsletterSignup = ({
+const NewsletterSignUp = ({
   className,
   consentErrorMsg,
   errorMessage,
@@ -159,7 +159,7 @@ const NewsletterSignup = ({
   );
 };
 
-NewsletterSignup.propTypes = {
+NewsletterSignUp.propTypes = {
   className: PropTypes.string,
   consentErrorMsg: PropTypes.string,
   errorMessage: PropTypes.string,
@@ -171,7 +171,7 @@ NewsletterSignup.propTypes = {
   subscriptionMessage: PropTypes.string,
 };
 
-NewsletterSignup.defaultProps = {
+NewsletterSignUp.defaultProps = {
   className: undefined,
   consentErrorMsg: undefined,
   errorMessage: 'NEWSLETTER_SIGNUP',
@@ -183,4 +183,4 @@ NewsletterSignup.defaultProps = {
   subscriptionMessage: undefined,
 };
 
-export { NewsletterSignup };
+export { NewsletterSignUp };

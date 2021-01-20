@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { Footer } from './Footer';
 import { FooterFixture } from './Footer.fixture';
-import { NewsletterSignupFixture } from '../NewsletterSignup/NewsletterSignup.fixture';
+import { NewsletterSignUpFixture } from '../NewsletterSignUp/NewsletterSignUp.fixture';
 import { NotificationModalFixture } from '~/components/NotificationModal/NotificationModal.fixture';
 
 describe('<Footer />', () => {
@@ -14,13 +14,13 @@ describe('<Footer />', () => {
     const { container } = render(
       <Footer
         blocks={FooterFixture.blocks}
-        consentErrorMsg={NewsletterSignupFixture.consentErrorMsg}
-        errorMessage={NewsletterSignupFixture.errorMessage}
+        consentErrorMsg={NewsletterSignUpFixture.consentErrorMsg}
+        errorMessage={NewsletterSignUpFixture.errorMessage}
         notificationMessage={NotificationModalFixture.notificationMessage}
         showTermsConditionsTextBox={true}
-        subscriptionMessage={NewsletterSignupFixture.subscriptionMessage}
-        termsAndCondition={NewsletterSignupFixture.termsAndCondition}
-        termsMessage={NewsletterSignupFixture.termsMessage}
+        subscriptionMessage={NewsletterSignUpFixture.subscriptionMessage}
+        termsAndCondition={NewsletterSignUpFixture.termsAndCondition}
+        termsMessage={NewsletterSignUpFixture.termsMessage}
       />,
     );
 
