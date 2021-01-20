@@ -1,3 +1,3 @@
-import { NewsletterSignUp } from './NewsletterSignUp';
+import { NewsletterSignup } from './NewsletterSignup';
 
-export { NewsletterSignUp };
+export { NewsletterSignup };

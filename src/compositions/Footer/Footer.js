@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { NotificationContextProvider } from '~/contexts';
-import { NewsletterSignUp } from '~/compositions/NewsletterSignUp';
+import { NewsletterSignup } from '~/compositions/NewsletterSignup';
 import { FooterBlock } from '~/components/FooterBlock';
 import { Hidden } from '~/components/Hidden';
 import { IconLink } from '~/components/IconLink';
@@ -33,7 +33,7 @@ const Footer = ({
         />
         <div className={styles.block}>
           <div className={styles.signup}>
-            <NewsletterSignUp
+            <NewsletterSignup
               consentErrorMsg={consentErrorMsg}
               errorMessage={errorMessage}
               onClick={onClick}

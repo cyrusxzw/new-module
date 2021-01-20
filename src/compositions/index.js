@@ -1,2 +1,2 @@
 export { Footer } from './Footer';
-export { NewsletterSignUp } from './NewsletterSignUp';
+export { NewsletterSignup } from './NewsletterSignup';

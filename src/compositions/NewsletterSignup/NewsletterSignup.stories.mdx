@@ -4,13 +4,13 @@ import { NotificationContextProvider } from '~/contexts';
 import { Podium } from '~/components/Podium';
 import { NotificationModal } from '~/components/NotificationModal';
 import { NotificationModalFixture } from '~/components/NotificationModal/NotificationModal.fixture';
-import { NewsletterSignUp } from './NewsletterSignUp';
-import { NewsletterSignUpFixture } from './NewsletterSignUp.fixture'
-import { newsletterSignUpOnClick } from './__mocks__/NewsletterSignUp.onClick';
+import { NewsletterSignup } from './NewsletterSignup';
+import { NewsletterSignupFixture } from './NewsletterSignup.fixture'
+import { newsletterSignUpOnClick } from './__mocks__/NewsletterSignup.onClick';
 
-# NewsletterSignUp
+# NewsletterSignup
 
-<Meta title="Compositions/NewsletterSignUp" component={NewsletterSignUp} />
+<Meta title="Compositions/NewsletterSignup" component={NewsletterSignup} />
 
 <Canvas>
   <Story name="Base component">
@@ -21,14 +21,14 @@ import { newsletterSignUpOnClick } from './__mocks__/NewsletterSignUp.onClick';
             backgroundColor="#d5d5cc"
             notificationMessage={NotificationModalFixture.notificationMessage}
           />
-          <NewsletterSignUp
-            consentErrorMsg={NewsletterSignUpFixture.consentErrorMsg}
-            errorMessage={NewsletterSignUpFixture.errorMessage}
+          <NewsletterSignup
+            consentErrorMsg={NewsletterSignupFixture.consentErrorMsg}
+            errorMessage={NewsletterSignupFixture.errorMessage}
             onClick={newsletterSignUpOnClick}
             showTermsConditionsTextBox={knobs.boolean('showTermsConditionsTextBox', true, 'Presentation')}
-            subscriptionMessage={NewsletterSignUpFixture.subscriptionMessage}
-            termsAndCondition={NewsletterSignUpFixture.termsAndCondition}
-            termsMessage={NewsletterSignUpFixture.termsMessage}
+            subscriptionMessage={NewsletterSignupFixture.subscriptionMessage}
+            termsAndCondition={NewsletterSignupFixture.termsAndCondition}
+            termsMessage={NewsletterSignupFixture.termsMessage}
             theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
           />
         </div>
@@ -39,4 +39,4 @@ import { newsletterSignUpOnClick } from './__mocks__/NewsletterSignUp.onClick';
 
 ## API
 
-<ArgsTable of={NewsletterSignUp} />
+<ArgsTable of={NewsletterSignup} />
