@@ -17,17 +17,7 @@ import styles from './ProductGridItem.module.css';
 
 const ProductGridItem = React.forwardRef(
   (
-    {
-      className,
-      ctaClickFunction,
-      copy,
-      cta,
-      id,
-      info,
-      theme,
-      url,
-      trackDataProps,
-    },
+    { className, onCtaClick, copy, cta, id, info, theme, url, trackDataProps },
     ref,
   ) => {
     const imageRef = useRef();
@@ -68,7 +58,7 @@ const ProductGridItem = React.forwardRef(
         <Transition isActive={isImageActive} name="fade">
           <Hyperlink
             className={styles.imageLink}
-            onClick={() => ctaClickFunction()}
+            onClick={() => onCtaClick()}
             url={url}
           >
             <Image
@@ -127,7 +117,7 @@ const ProductGridItem = React.forwardRef(
           <Hyperlink
             className={classCtaLinkSet}
             isAlternate={false}
-            onClick={() => ctaClickFunction()}
+            onClick={() => onCtaClick()}
             theme={theme}
             title={cta?.text}
             url={cta?.url}
@@ -149,7 +139,7 @@ const ProductGridItem = React.forwardRef(
 
 ProductGridItem.propTypes = {
   className: PropTypes.string,
-  ctaClickFunction: PropTypes.func,
+  onCtaClick: PropTypes.func,
   copy: PropTypes.shape({
     addToCart: PropTypes.shape({
       cartAction: PropTypes.string,

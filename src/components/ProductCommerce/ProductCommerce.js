@@ -30,7 +30,7 @@ const ProductCommerce = React.forwardRef(
       size,
       theme,
       isActive,
-      ctaClickFunction,
+      onCtaClick,
       trackDataProps,
     },
     ref,
@@ -132,7 +132,7 @@ const ProductCommerce = React.forwardRef(
               <Hyperlink
                 className={styles.cta}
                 isAlternate={false}
-                onClick={() => ctaClickFunction()}
+                onClick={() => onCtaClick()}
                 style={HYPERLINK_STYLE_TYPES.INTERNAL_BUTTON_LINK}
                 url={cta.url}
               >
@@ -148,7 +148,7 @@ const ProductCommerce = React.forwardRef(
 
 ProductCommerce.propTypes = {
   className: PropTypes.string,
-  ctaClickFunction: PropTypes.func,
+  onCtaClick: PropTypes.func,
   copy: PropTypes.shape({
     addToCart: PropTypes.shape({
       cartAction: PropTypes.string,
