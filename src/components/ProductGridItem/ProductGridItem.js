@@ -16,10 +16,7 @@ import { Transition } from '~/components/Transition';
 import styles from './ProductGridItem.module.css';
 
 const ProductGridItem = React.forwardRef(
-  (
-    { className, onCtaClick, copy, cta, id, info, theme, url, trackDataProps },
-    ref,
-  ) => {
+  ({ className, onCtaClick, copy, cta, id, info, theme, url }, ref) => {
     const imageRef = useRef();
     const {
       selectedVariant,
@@ -54,7 +51,7 @@ const ProductGridItem = React.forwardRef(
     const RADIO_GROUP_DATA_TEST_REF = 'PRODUCT_GRID_ITEM_VARIANT_SELECT';
 
     return (
-      <div className={classSet} id={id} {...trackDataProps} ref={ref}>
+      <div className={classSet} id={id} ref={ref}>
         <Transition isActive={isImageActive} name="fade">
           <Hyperlink
             className={styles.imageLink}
@@ -158,7 +155,6 @@ ProductGridItem.propTypes = {
   id: PropTypes.string,
   info: PropTypes.string,
   theme: PropTypes.oneOf(['dark', 'light']),
-  trackDataProps: PropTypes.object,
   url: PropTypes.string,
 };
 

@@ -31,7 +31,6 @@ const ProductCommerce = React.forwardRef(
       theme,
       isActive,
       onCtaClick,
-      trackDataProps,
     },
     ref,
   ) => {
@@ -62,7 +61,7 @@ const ProductCommerce = React.forwardRef(
     const RADIO_GROUP_DATA_TEST_REF = 'PRODUCT_COMMERCE_VARIANT_SELECT';
 
     return (
-      <div className={classSet} id={id} ref={ref} {...trackDataProps}>
+      <div className={classSet} id={id} ref={ref}>
         <Transition isActive={isActive} type={TRANSITIONS.TYPE.SLOW_FADE}>
           <SectionHeading
             className={styles.header}
@@ -171,7 +170,6 @@ ProductCommerce.propTypes = {
   size: PropTypes.string,
   isActive: PropTypes.bool,
   theme: PropTypes.oneOf(['dark', 'light']),
-  trackDataProps: PropTypes.object,
 };
 
 ProductCommerce.defaultProps = {
