@@ -1,14 +1,12 @@
 @import 'styles/index';
 
 .formRowWrapper {
-  display: flex;
-  flex-direction: column;
-
   > * {
-    margin: 10px 0;
+    margin: 20px 0;
   }
 
   @media (--viewport-md) {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 15px 0;
