@@ -173,6 +173,7 @@ ProductGridItem.defaultProps = {
   cta: undefined,
   id: undefined,
   info: undefined,
+  onCtaClick: () => {},
   theme: 'dark',
   url: undefined,
 };

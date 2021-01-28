@@ -1,5 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
@@ -44,5 +46,41 @@ describe('<ProductCommerce />', () => {
     );
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should execute cta click correctly', () => {
+    const product = ProductDetailHeaderFixture.product;
+    const variants = ProductDetailHeaderFixture.product.variantOptions;
+
+    const onCtaClickMock = jest.fn();
+
+    const { getAllByRole } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <ProductDetailContextProvider product={product}>
+          <VariantSelectContextProvider variants={variants}>
+            <ProductCommerce
+              copy={{
+                addToCart: AddToCartButtonFixture.copy,
+                ...ProductCommerceFixture.copy,
+              }}
+              cta={ProductCommerceFixture.cta}
+              description={<p>ProductCommerceFixture.description</p>}
+              eyebrow={ProductCommerceFixture.eyebrow}
+              heading={ProductCommerceFixture.heading}
+              onAddToCartClick={mockAddToCartButtonOnClick}
+              onCtaClick={onCtaClickMock}
+              productName={ProductCommerceFixture.productName}
+              theme="dark"
+              variants={ProductCommerceFixture.variantOptions}
+            />
+          </VariantSelectContextProvider>
+        </ProductDetailContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const link = getAllByRole('link')[0]; // First Hyperlink with click function
+    userEvent.click(link);
+
+    expect(onCtaClickMock).toHaveBeenCalledTimes(1);
   });
 });
