@@ -87,7 +87,7 @@ const ContentHubArticle = ({
             dataTestRef={`${dataTestRef}_READMORE_THUMBNAIL`}
             onClick={onClick}
             title={longTitle}
-            url={uri + '?contentful=true'} // @TODO Need to remove the query
+            url={uri} 
           >
             <div
               onMouseEnter={() => imageMouseEnter()}
@@ -114,7 +114,7 @@ const ContentHubArticle = ({
             dataTestRef={`${dataTestRef}_TITLE`}
             onClick={onClick}
             title={longTitle}
-            url={uri + '?contentful=true'} // @TODO Need to remove the query
+            url={uri} 
           >
             <h1>
               <span>{longTitle}</span>
@@ -133,7 +133,7 @@ const ContentHubArticle = ({
             dataTestRef={`${dataTestRef}_NON_MOBILE_THUMBNAIL`}
             onClick={onClick}
             title={longTitle}
-            url={uri + '?contentful=true'} // @TODO Need to remove the query
+            url={uri} 
           >
             <div
               onMouseEnter={() => imageMouseEnter()}
@@ -156,7 +156,7 @@ const ContentHubArticle = ({
             dataTestRef={`${dataTestRef}_MOBILE_THUMBNAIL`}
             onClick={onClick}
             title={longTitle}
-            url={uri + '?contentful=true'} // @TODO Need to remove the query
+            url={uri} 
           >
             <div
               onMouseEnter={() => imageMouseEnter()}
