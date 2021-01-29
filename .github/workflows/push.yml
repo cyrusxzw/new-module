@@ -1,4 +1,4 @@
-name: Prepare Release
+name: On Branch Push
 on:
   push:
     branches:
@@ -7,14 +7,19 @@ on:
       - '**'
 
 jobs:
-  prepare_release:
-    name: Prepare Release
+  test_and_release:
+    name: Test & Release
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
+
+      - name: Create variables
+        run: |
+          echo "BRANCH=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          echo "RELEASE_BRANCHES=['develop', 'master']" >> $GITHUB_ENV
 
       - name: Install
         run: npm ci
@@ -26,9 +31,11 @@ jobs:
         run: npm run test
 
       - name: Build for Release
+        if: "contains(env.RELEASE_BRANCHES, env.BRANCH)"
         run: npm run release
 
       - name: Create Release
+        if: "contains(env.RELEASE_BRANCHES, env.BRANCH)"
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.X_GITHUB_TOKEN }}
