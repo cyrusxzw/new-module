@@ -60,11 +60,11 @@ exports[`<RadioGroup /> should render base component correctly 1`] = `
         </span>
       </label>
     </li>
-    <div
-      class="errorMessage"
-    >
-      Test Error Messsage
-    </div>
   </ul>
+  <div
+    class="errorMessage"
+  >
+    Test Error Messsage
+  </div>
 </div>
 `;

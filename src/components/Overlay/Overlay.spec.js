@@ -6,6 +6,10 @@ import { Overlay } from './Overlay';
 describe('<Overlay />', () => {
   const handleOnClose = jest.fn();
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should be defined', () => {
     expect(Overlay).toBeDefined();
   });
@@ -18,13 +22,27 @@ describe('<Overlay />', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should call the onClick callback when the escape key is pressed', () => {
+  it('should call the onClose callback when the escape key is pressed', () => {
     render(<Overlay isVisible={true} onClose={handleOnClose} />);
+
+    const overlay = screen.getByTestId(/data-testid-Overlay/i);
 
     expect(handleOnClose).not.toHaveBeenCalled();
 
-    userEvent.type(screen.getByTestId(/data-testid-Overlay/i), '{esc}');
+    userEvent.type(overlay, '{esc}');
 
     expect(handleOnClose).toHaveBeenCalled();
+  });
+
+  it('should call the onClose callback when the overlay is clicked', () => {
+    render(<Overlay isVisible={true} onClose={handleOnClose} />);
+
+    const overlay = screen.getByTestId(/data-testid-Overlay/i);
+
+    expect(handleOnClose).not.toHaveBeenCalled();
+
+    userEvent.click(overlay);
+
+    expect(handleOnClose).toHaveBeenCalledTimes(1);
   });
 });

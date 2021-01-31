@@ -65,8 +65,8 @@ exports[`<Audio /> should render base component correctly 1`] = `
           type="button"
         >
           <svg
+            aria-labelledby="seek-0"
             class="base seek dark icon disabled"
-            data-ref=""
             data-testid="data-testid-Icon"
             focusable="false"
             height="20"
@@ -76,6 +76,11 @@ exports[`<Audio /> should render base component correctly 1`] = `
             viewBox="0 0 20 12"
             width="20"
           >
+            <title
+              id="seek-0"
+            >
+              seek
+            </title>
             <g>
               <path
                 d="M19.996,11.991 L9.999,5.990 L19.996,-0.012"
@@ -93,8 +98,8 @@ exports[`<Audio /> should render base component correctly 1`] = `
           type="button"
         >
           <svg
+            aria-labelledby="play-1"
             class="base play dark iconPlay disabled"
-            data-ref=""
             data-testid="data-testid-Icon"
             focusable="false"
             height="15"
@@ -104,6 +109,11 @@ exports[`<Audio /> should render base component correctly 1`] = `
             viewBox="0 0 8 11"
             width="15"
           >
+            <title
+              id="play-1"
+            >
+              play
+            </title>
             <g>
               <polygon
                 class="play"
@@ -112,8 +122,8 @@ exports[`<Audio /> should render base component correctly 1`] = `
             </g>
           </svg>
           <svg
+            aria-labelledby="pause-2"
             class="base pause dark iconPause hidden disabled"
-            data-ref=""
             data-testid="data-testid-Icon"
             focusable="false"
             height="15"
@@ -123,6 +133,11 @@ exports[`<Audio /> should render base component correctly 1`] = `
             viewBox="0 0 9 10"
             width="15"
           >
+            <title
+              id="pause-2"
+            >
+              pause
+            </title>
             <g>
               <polygon
                 class="play"
@@ -142,8 +157,8 @@ exports[`<Audio /> should render base component correctly 1`] = `
           type="button"
         >
           <svg
+            aria-labelledby="seek-3"
             class="base seek dark icon disabled"
-            data-ref=""
             data-testid="data-testid-Icon"
             focusable="false"
             height="20"
@@ -153,6 +168,11 @@ exports[`<Audio /> should render base component correctly 1`] = `
             viewBox="0 0 20 12"
             width="20"
           >
+            <title
+              id="seek-3"
+            >
+              seek
+            </title>
             <g>
               <path
                 d="M19.996,11.991 L9.999,5.990 L19.996,-0.012"
@@ -176,8 +196,8 @@ exports[`<Audio /> should render base component correctly 1`] = `
         >
           Download Music 
           <svg
+            aria-labelledby="download-4"
             class="base download dark downloadButtonIcon"
-            data-ref=""
             data-testid="data-testid-Icon"
             focusable="false"
             height="13"
@@ -187,6 +207,11 @@ exports[`<Audio /> should render base component correctly 1`] = `
             viewBox="0 0 11 14"
             width="13"
           >
+            <title
+              id="download-4"
+            >
+              download
+            </title>
             <g>
               <path
                 d="M10.992,6.125 L6.125,10.782 L6.125,0.001 L4.848,0.001 L4.848,10.768 L-0.004,6.125 L-0.004,7.819 L5.495,13.011 L10.992,7.819 L10.992,6.125 Z"

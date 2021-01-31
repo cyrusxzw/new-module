@@ -20,8 +20,8 @@ exports[`<Footer /> should render base component correctly 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-labelledby="close-0"
           class="base close dark"
-          data-ref=""
           data-testid="data-testid-Icon"
           focusable="false"
           height="15"
@@ -31,6 +31,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
           viewBox="0 0 50 50"
           width="15"
         >
+          <title
+            id="close-0"
+          >
+            close
+          </title>
           <g>
             <polygon
               class="close"
@@ -68,7 +73,6 @@ exports[`<Footer /> should render base component correctly 1`] = `
                       id="newsletter-email"
                       name="newsletter-email"
                       novalidate=""
-                      placeholder=""
                       type="text"
                       value=""
                     />
@@ -86,8 +90,8 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 disabled=""
               >
                 <svg
+                  aria-labelledby="rightArrow-1"
                   class="base rightArrow light signUpIcon light"
-                  data-ref=""
                   data-testid="data-testid-Icon"
                   focusable="false"
                   height="12"
@@ -97,6 +101,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   viewBox="0 0 50 50"
                   width="12"
                 >
+                  <title
+                    id="rightArrow-1"
+                  >
+                    rightArrow
+                  </title>
                   <g>
                     <path
                       d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
@@ -191,8 +200,8 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
+                  aria-labelledby="rightUpArrow-2"
                   class="base rightUpArrow light"
-                  data-ref=""
                   data-testid="data-testid-Icon"
                   focusable="false"
                   height="12"
@@ -202,6 +211,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   viewBox="0 0 50 50"
                   width="12"
                 >
+                  <title
+                    id="rightUpArrow-2"
+                  >
+                    rightUpArrow
+                  </title>
                   <g>
                     <path
                       d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
@@ -226,8 +240,8 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
+                  aria-labelledby="rightUpArrow-3"
                   class="base rightUpArrow light"
-                  data-ref=""
                   data-testid="data-testid-Icon"
                   focusable="false"
                   height="12"
@@ -237,6 +251,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   viewBox="0 0 50 50"
                   width="12"
                 >
+                  <title
+                    id="rightUpArrow-3"
+                  >
+                    rightUpArrow
+                  </title>
                   <g>
                     <path
                       d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
@@ -261,8 +280,8 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
+                  aria-labelledby="rightUpArrow-4"
                   class="base rightUpArrow light"
-                  data-ref=""
                   data-testid="data-testid-Icon"
                   focusable="false"
                   height="12"
@@ -272,6 +291,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   viewBox="0 0 50 50"
                   width="12"
                 >
+                  <title
+                    id="rightUpArrow-4"
+                  >
+                    rightUpArrow
+                  </title>
                   <g>
                     <path
                       d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
@@ -538,8 +562,8 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
+                  aria-labelledby="rightUpArrow-5"
                   class="base rightUpArrow light"
-                  data-ref=""
                   data-testid="data-testid-Icon"
                   focusable="false"
                   height="12"
@@ -549,6 +573,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   viewBox="0 0 50 50"
                   width="12"
                 >
+                  <title
+                    id="rightUpArrow-5"
+                  >
+                    rightUpArrow
+                  </title>
                   <g>
                     <path
                       d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
@@ -573,8 +602,8 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
+                  aria-labelledby="rightUpArrow-6"
                   class="base rightUpArrow light"
-                  data-ref=""
                   data-testid="data-testid-Icon"
                   focusable="false"
                   height="12"
@@ -584,6 +613,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   viewBox="0 0 50 50"
                   width="12"
                 >
+                  <title
+                    id="rightUpArrow-6"
+                  >
+                    rightUpArrow
+                  </title>
                   <g>
                     <path
                       d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
@@ -608,8 +642,8 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
+                  aria-labelledby="rightUpArrow-7"
                   class="base rightUpArrow light"
-                  data-ref=""
                   data-testid="data-testid-Icon"
                   focusable="false"
                   height="12"
@@ -619,6 +653,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   viewBox="0 0 50 50"
                   width="12"
                 >
+                  <title
+                    id="rightUpArrow-7"
+                  >
+                    rightUpArrow
+                  </title>
                   <g>
                     <path
                       d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
@@ -643,8 +682,8 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
+                  aria-labelledby="rightUpArrow-8"
                   class="base rightUpArrow light"
-                  data-ref=""
                   data-testid="data-testid-Icon"
                   focusable="false"
                   height="12"
@@ -654,6 +693,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   viewBox="0 0 50 50"
                   width="12"
                 >
+                  <title
+                    id="rightUpArrow-8"
+                  >
+                    rightUpArrow
+                  </title>
                   <g>
                     <path
                       d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"

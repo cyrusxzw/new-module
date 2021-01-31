@@ -13,8 +13,8 @@ exports[`<ModalBody /> should render component correctly and match html snapshot
       type="button"
     >
       <svg
+        aria-labelledby="close-0"
         class="base close dark closeIcon"
-        data-ref=""
         data-testid="data-testid-Icon"
         focusable="false"
         height="14"
@@ -24,6 +24,11 @@ exports[`<ModalBody /> should render component correctly and match html snapshot
         viewBox="0 0 50 50"
         width="14"
       >
+        <title
+          id="close-0"
+        >
+          close
+        </title>
         <g>
           <polygon
             class="close"

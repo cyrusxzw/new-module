@@ -53,9 +53,8 @@ const TextInput = ({
           noValidate={!hasValidation}
           onBlur={onBlur}
           onChange={onChange}
-          placeholder=""
           ref={inputRef}
-          type={type || 'text'}
+          type={type}
           value={value}
         />
         <span className={labelClassSet}>{label}</span>
@@ -94,6 +93,29 @@ TextInput.propTypes = {
   ]),
   'data-test-ref': PropTypes.string,
   value: PropTypes.string,
+};
+
+TextInput.defaultProps = {
+  className: undefined,
+  defaultValue: undefined,
+  hasContent: false,
+  hasError: false,
+  hasValidation: false,
+  inputClassName: undefined,
+  inputRef: undefined,
+  isEnabled: true,
+  label: undefined,
+  max: undefined,
+  min: undefined,
+  name: undefined,
+  maxLength: undefined,
+  onBlur: undefined,
+  onChange: undefined,
+  prefixElement: undefined,
+  theme: 'dark',
+  type: 'text',
+  'data-test-ref': undefined,
+  value: undefined,
 };
 
 export { TextInput };

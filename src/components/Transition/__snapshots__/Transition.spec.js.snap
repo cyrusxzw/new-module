@@ -9,5 +9,3 @@ exports[`<Transition /> should render base component correctly 1`] = `
   </div>
 </div>
 `;
-
-exports[`<Transition /> should return null if child is not a valid element 1`] = `<div />`;

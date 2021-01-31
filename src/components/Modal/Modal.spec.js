@@ -5,28 +5,55 @@ import { Modal } from './Modal';
 
 describe('<Modal />', () => {
   const handleOnClose = jest.fn();
-  const copyClose = 'close';
 
   it('should be defined', () => {
     expect(Modal).toBeDefined();
   });
 
   it('renders component correctly and fires the close button on click', () => {
+    const closeCopy = 'close modal copy';
+
     render(
       <Modal
-        copy={{ close: copyClose }}
+        copy={{ close: closeCopy }}
         isVisible={true}
         onClose={handleOnClose}
       >
-        test
+        modal test
       </Modal>,
     );
 
-    expect(screen.getByText('test')).toBeTruthy();
+    expect(screen.getByText(/modal test/i)).toBeTruthy();
     expect(handleOnClose).not.toHaveBeenCalled();
 
-    userEvent.click(screen.getByTitle(copyClose));
+    userEvent.click(screen.getByTitle(closeCopy));
 
     expect(handleOnClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('should render modal only when `isVisible` prop is true', () => {
+    const { rerender } = render(
+      <Modal
+        copy={{ close: 'close modal copy' }}
+        isVisible={false}
+        onClose={handleOnClose}
+      >
+        modal test
+      </Modal>,
+    );
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    rerender(
+      <Modal
+        copy={{ close: 'close modal copy' }}
+        isVisible={true}
+        onClose={handleOnClose}
+      >
+        modal test
+      </Modal>,
+    );
+
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 });
