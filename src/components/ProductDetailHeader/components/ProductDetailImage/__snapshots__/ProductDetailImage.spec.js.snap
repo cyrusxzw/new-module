@@ -15,9 +15,6 @@ exports[`<ProductDetailImage /> should render base component correctly 1`] = `
           loading="lazy"
         />
       </picture>
-      <div
-        class="cartDisclaimer"
-      />
     </figure>
   </div>
 </div>

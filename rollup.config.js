@@ -44,7 +44,7 @@ export default {
     }),
     postcss({
       modules: true,
-      extract: 'dist/styles.css',
+      extract: 'styles.css',
       sourceMap: NODE_ENV === 'development' ? true : false,
       minimize: NODE_ENV === 'development' ? false : true,
     }),

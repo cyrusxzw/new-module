@@ -45,11 +45,13 @@ const ProductDetailImage = ({ className, theme }) => {
               ref={imageRef}
               small={sizes?.small}
             />
-            <Hidden isMedium={true} isSmall={true}>
-              <div className={styles.cartDisclaimer}>
-                {currentCartDisclaimer}
-              </div>
-            </Hidden>
+            {currentCartDisclaimer && (
+              <Hidden isMedium={true} isSmall={true}>
+                <div className={styles.cartDisclaimer}>
+                  <span>{currentCartDisclaimer}</span>
+                </div>
+              </Hidden>
+            )}
           </Figure>
         </Transition>
       </div>

@@ -15,6 +15,7 @@
 .image {
   img {
     width: auto;
+    max-width: 100%;
     max-height: 200px;
 
     @media (--viewport-md) {
@@ -22,7 +23,6 @@
     }
 
     @media (--viewport-lg) {
-      max-width: 100%;
       max-height: 500px;
     }
 
@@ -34,7 +34,7 @@
 
 .cartDisclaimer {
   max-width: 300px;
-  margin: 18px auto;
+  margin: 15px auto;
   font-size: rem(13px);
   line-height: 1.6;
   text-align: center;

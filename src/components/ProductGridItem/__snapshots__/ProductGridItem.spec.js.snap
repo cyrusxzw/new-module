@@ -168,6 +168,16 @@ exports[`<ProductGridItem /> should render base component correctly 1`] = `
       >
         Ut consectetur, vitae libero imperdiet id.
       </dd>
+      <dt
+        class="term slideIn"
+      >
+        Pellentesque tristique
+      </dt>
+      <dd
+        class="description slideIn"
+      >
+        Maecenas mattis, urna vel commodo vehicula
+      </dd>
     </dl>
   </div>
 </div>

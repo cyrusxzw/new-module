@@ -18,10 +18,10 @@
     opacity 1500ms linear;
 }
 
-%transition-transform-500ms-ease-out-visibility-500ms-ease-out {
+%transition-transform-800ms-ease-out-visibility-800ms-ease-out {
   transition:
-    transform 500ms var(--easing-ease-out-cubic),
-    visibility 500ms var(--easing-ease-out-cubic);
+    transform 800ms var(--easing-ease-out-cubic),
+    visibility 800ms var(--easing-ease-out-cubic);
 }
 
 .fadeEnter {
@@ -160,7 +160,7 @@
 }
 
 .slideDownEnterActive {
-  @extend %transition-transform-500ms-ease-out-visibility-500ms-ease-out;
+  @extend %transition-transform-800ms-ease-out-visibility-800ms-ease-out;
 
   transform: translate3d(0, 0, 0);
   visibility: visible;
@@ -177,7 +177,7 @@
 }
 
 .slideDownExitActive {
-  @extend %transition-transform-500ms-ease-out-visibility-500ms-ease-out;
+  @extend %transition-transform-800ms-ease-out-visibility-800ms-ease-out;
 
   transform: translate3d(0, -100%, 0);
   visibility: hidden;
@@ -194,7 +194,7 @@
 }
 
 .slideRightEnterActive {
-  @extend %transition-transform-500ms-ease-out-visibility-500ms-ease-out;
+  @extend %transition-transform-800ms-ease-out-visibility-800ms-ease-out;
 
   transform: translate3d(0, 0, 0);
   visibility: visible;
@@ -211,7 +211,7 @@
 }
 
 .slideRightExitActive {
-  @extend %transition-transform-500ms-ease-out-visibility-500ms-ease-out;
+  @extend %transition-transform-800ms-ease-out-visibility-800ms-ease-out;
 
   transform: translate3d(-100%, 0, 0);
   visibility: hidden;

@@ -69,7 +69,7 @@ const slideDown = {
     exitActive: transitions.slideDownExitActive,
     exitDone: transitions.slideDownExitDone,
   },
-  timeout: 500,
+  timeout: 800,
 };
 
 const slideRight = {
@@ -81,7 +81,7 @@ const slideRight = {
     exitActive: transitions.slideRightExitActive,
     exitDone: transitions.slideRightExitDone,
   },
-  timeout: 500,
+  timeout: 800,
 };
 
 const zoom = {
