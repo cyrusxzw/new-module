@@ -15,6 +15,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
+      - uses: actions/setup-node@v2
+        with:
+          # need at least 10.18.0 for semantic release
+          node-version: '10.18.0'
 
       - name: Install
         run: npm ci
