@@ -12,6 +12,9 @@ const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const { productDetail } = useProductDetailContext();
   const classSet = cx(styles.base, className);
+  const imageClassSet = cx(styles.image, {
+    [styles.largeImage]: productDetail.imageSize === 'Large',
+  });
 
   return (
     <div className={classSet}>
@@ -28,14 +31,13 @@ const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
             copy={{
               addToCart: copy?.addToCart,
               size: copy?.size,
-              ingredients: copy?.ingredients,
               upSellProductLabel: copy?.upSellProductLabel,
             }}
             theme={currentTheme}
           />
         </div>
 
-        <div className={styles.image}>
+        <div className={imageClassSet}>
           <Hidden isLarge={true} isMedium={true} isXLarge={true}>
             <Breadcrumbs
               className={styles.breadcrumbs}
@@ -82,11 +84,6 @@ ProductDetailHeader.propTypes = {
       singular: PropTypes.string,
       plural: PropTypes.string,
     }),
-    ingredients: PropTypes.shape({
-      heading: PropTypes.string,
-      label: PropTypes.string,
-      title: PropTypes.string,
-    }),
     upSellProductLabel: PropTypes.string,
   }),
   theme: PropTypes.oneOf(['dark', 'light']),
@@ -105,7 +102,6 @@ ProductDetailHeader.defaultProps = {
       singular: undefined,
       plural: undefined,
     },
-    ingredients: undefined,
     upSellProductLabel: undefined,
   },
   theme: undefined,

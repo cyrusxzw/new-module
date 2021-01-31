@@ -16,7 +16,7 @@ import { Transition } from '~/components/Transition';
 import styles from './ProductGridItem.module.css';
 
 const ProductGridItem = React.forwardRef(
-  ({ className, copy, cta, id, info, theme, url }, ref) => {
+  ({ className, onCtaClick, copy, cta, id, info, theme, url }, ref) => {
     const imageRef = useRef();
     const {
       selectedVariant,
@@ -53,7 +53,11 @@ const ProductGridItem = React.forwardRef(
     return (
       <div className={classSet} id={id} ref={ref}>
         <Transition isActive={isImageActive} name="fade">
-          <Hyperlink className={styles.imageLink} url={url}>
+          <Hyperlink
+            className={styles.imageLink}
+            onClick={() => onCtaClick()}
+            url={url}
+          >
             <Image
               altText={currentImage.altText}
               className={styles.image}
@@ -110,6 +114,7 @@ const ProductGridItem = React.forwardRef(
           <Hyperlink
             className={classCtaLinkSet}
             isAlternate={false}
+            onClick={() => onCtaClick()}
             theme={theme}
             title={cta?.text}
             url={cta?.url}
@@ -131,6 +136,7 @@ const ProductGridItem = React.forwardRef(
 
 ProductGridItem.propTypes = {
   className: PropTypes.string,
+  onCtaClick: PropTypes.func,
   copy: PropTypes.shape({
     addToCart: PropTypes.shape({
       cartAction: PropTypes.string,
@@ -144,6 +150,7 @@ ProductGridItem.propTypes = {
   cta: PropTypes.shape({
     text: PropTypes.string,
     url: PropTypes.string,
+    clickFunction: PropTypes.func,
   }),
   id: PropTypes.string,
   info: PropTypes.string,
@@ -166,6 +173,7 @@ ProductGridItem.defaultProps = {
   cta: undefined,
   id: undefined,
   info: undefined,
+  onCtaClick: () => {},
   theme: 'dark',
   url: undefined,
 };

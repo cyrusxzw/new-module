@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useAddToCartContext, useVariantSelectContext } from '~/contexts';
@@ -18,6 +18,25 @@ const AddToCartButton = ({
 }) => {
   const addToCartContext = useAddToCartContext();
   const { selectedVariant } = useVariantSelectContext();
+  const {
+    errorMessage,
+    hasError,
+    isLoading,
+    isUpdateSuccessful,
+  } = addToCartContext;
+  const updateNotificationLabel = copy.updateNotification;
+  const shouldShowUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
+
+  const [isDelayedDisabled, setIsDelayedDisabled] = useState(false);
+
+  useEffect(() => {
+    if (shouldShowUpdateSuccessMessage) {
+      setIsDelayedDisabled(true);
+      setTimeout(() => {
+        setIsDelayedDisabled(false);
+      }, 2500);
+    }
+  }, [shouldShowUpdateSuccessMessage]);
 
   if (!selectedVariant) return null;
 
@@ -28,6 +47,7 @@ const AddToCartButton = ({
     price,
     sku,
   } = selectedVariant;
+  const cartActionLabel = `${copy.cartAction} — ${price}`;
 
   const classSet = cx(
     styles.base,
@@ -57,21 +77,10 @@ const AddToCartButton = ({
     );
   }
 
-  const {
-    errorMessage,
-    hasError,
-    isLoading,
-    isUpdateSuccessful,
-  } = addToCartContext;
-
   if (hasError) {
     /** @TODO Handle errors thrown by handleOnClick */
     console.error('Add To Cart button updateError: ', errorMessage); // eslint-disable-line
   }
-
-  const cartActionLabel = `${copy.cartAction} — ${price}`;
-  const updateNotificationLabel = copy.updateNotification;
-  const shouldShowUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
 
   const isButtonEnabled =
     !isLoading &&
@@ -81,6 +90,7 @@ const AddToCartButton = ({
     !!sku &&
     isEnabled &&
     !hasError &&
+    !isDelayedDisabled &&
     isSellable;
 
   const labelClassName = cx(

@@ -156,13 +156,15 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
             <div
               class="cartDisclaimer"
             >
-              Quisque in felis id tellus condimentum scelerisque. Aliquam quis vestibulum felis, quis porta tellus
+              <span>
+                Praesent rhoncus ex quis elit vehicula
+              </span>
             </div>
             <div
               class="details"
             >
               <dl
-                class="base dark hasBottomBorder definitionList shiftInDownEnter shiftInDownEnterActive"
+                class="base dark definitionList shiftInDownEnter shiftInDownEnterActive"
                 data-testid="data-testid-DefinitionList"
               >
                 <dt
@@ -192,8 +194,8 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
                     Pellentesque tristique
                   </span>
                   <button
-                    class="base dark ingredientsTrigger"
-                    title="Pellentesque tristique iaculis ipsum"
+                    class="base dark flyinPanelTrigger"
+                    title="Pellentesque tristique"
                     type="button"
                   >
                     <svg
@@ -312,7 +314,9 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
               <div
                 class="cartDisclaimer"
               >
-                Quisque in felis id tellus condimentum scelerisque. Aliquam quis vestibulum felis, quis porta tellus
+                <span>
+                  Praesent rhoncus ex quis elit vehicula
+                </span>
               </div>
             </header>
           </div>
@@ -365,9 +369,6 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
                 loading="lazy"
               />
             </picture>
-            <div
-              class="cartDisclaimer"
-            />
           </figure>
         </div>
       </div>
