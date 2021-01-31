@@ -131,9 +131,6 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
                     </span>
                   </label>
                 </li>
-                <div
-                  class="errorMessage"
-                />
               </ul>
               <button
                 class="base alternate blockStyle dark base fullWidth"
@@ -199,8 +196,8 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
                     type="button"
                   >
                     <svg
+                      aria-labelledby="plusAndCloseWithCircle-1"
                       class="base plusAndCloseWithCircle dark"
-                      data-ref=""
                       data-testid="data-testid-Icon"
                       focusable="false"
                       height="22"
@@ -210,6 +207,11 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
                       viewBox="0 0 50 50"
                       width="22"
                     >
+                      <title
+                        id="plusAndCloseWithCircle-1"
+                      >
+                        plusAndCloseWithCircle
+                      </title>
                       <g>
                         <circle
                           class="circle"

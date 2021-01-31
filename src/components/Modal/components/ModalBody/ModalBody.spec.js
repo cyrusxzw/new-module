@@ -23,21 +23,20 @@ describe('<ModalBody />', () => {
 
   it('should render content and fire the close button on click', () => {
     const handleOnClose = jest.fn();
-    const copyClose = 'close';
 
     render(
       <ModalBody
-        copy={{ close: copyClose }}
+        copy={{ close: 'close modal body button' }}
         isVisible={true}
         onClose={handleOnClose}
       >
-        test
+        modal body test
       </ModalBody>,
     );
 
-    expect(screen.getByText('test')).toBeTruthy();
+    expect(screen.getByText(/modal body test/i)).toBeTruthy();
 
-    userEvent.click(screen.getByTitle(copyClose));
+    userEvent.click(screen.getByTitle(/close modal body button/i));
 
     expect(handleOnClose).toHaveBeenCalledTimes(1);
   });

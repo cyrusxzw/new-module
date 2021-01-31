@@ -5,7 +5,7 @@ exports[`<Heading /> should render base component correctly 1`] = `
   <h1
     class="base large dark"
   >
-    test-heading
+    test heading
   </h1>
 </div>
 `;

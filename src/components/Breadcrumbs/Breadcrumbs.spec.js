@@ -23,7 +23,7 @@ describe('<Breadcrumbs />', () => {
   it('should return `null` if the length of the `items` prop is 0', () => {
     render(<Breadcrumbs items={[]} />);
 
-    const breadcrumbs = screen.queryByTestId('data-testid-Breadcrumbs');
+    const breadcrumbs = screen.queryByTestId(/data-testid-Breadcrumbs/i);
 
     expect(breadcrumbs).not.toBeInTheDocument();
   });

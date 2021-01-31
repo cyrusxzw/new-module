@@ -37,9 +37,11 @@ const Icon = ({
     className,
   );
 
+  const ariaTitle = title || name;
+
   return (
     <svg
-      aria-labelledby={title ? uuidAriaLabellBy : undefined}
+      aria-labelledby={uuidAriaLabellBy}
       className={classSet}
       data-ref={dataRef}
       data-testid="data-testid-Icon"
@@ -51,7 +53,7 @@ const Icon = ({
       viewBox={svg.viewBox}
       width={width}
     >
-      {title && <title id={uuidAriaLabellBy}>{title}</title>}
+      <title id={uuidAriaLabellBy}>{ariaTitle}</title>
       <g>{svgBlueprint}</g>
     </svg>
   );
@@ -71,10 +73,9 @@ Icon.propTypes = {
 
 Icon.defaultProps = {
   className: undefined,
-  dataRef: '',
+  dataRef: undefined,
   height: 12,
   isActive: false,
-  name: '',
   tabIndex: -1,
   theme: 'dark',
   title: undefined,

@@ -9,7 +9,6 @@ exports[`<Video /> should render base component correctly 1`] = `
   >
     <figure
       class="fallbackImageFigure"
-      id="video"
     >
       <picture
         class="base picture dark fallbackImage"
@@ -73,8 +72,8 @@ exports[`<Video /> should render base component correctly 1`] = `
             type="button"
           >
             <svg
+              aria-labelledby="close-0"
               class="base close light"
-              data-ref=""
               data-testid="data-testid-Icon"
               focusable="false"
               height="16"
@@ -84,6 +83,11 @@ exports[`<Video /> should render base component correctly 1`] = `
               viewBox="0 0 50 50"
               width="16"
             >
+              <title
+                id="close-0"
+              >
+                close
+              </title>
               <g>
                 <polygon
                   class="close"
@@ -98,8 +102,8 @@ exports[`<Video /> should render base component correctly 1`] = `
             type="button"
           >
             <svg
+              aria-labelledby="pause-1"
               class="base pause light"
-              data-ref=""
               data-testid="data-testid-Icon"
               focusable="false"
               height="10"
@@ -109,6 +113,11 @@ exports[`<Video /> should render base component correctly 1`] = `
               viewBox="0 0 9 10"
               width="10"
             >
+              <title
+                id="pause-1"
+              >
+                pause
+              </title>
               <g>
                 <polygon
                   class="play"
@@ -129,8 +138,8 @@ exports[`<Video /> should render base component correctly 1`] = `
         type="button"
       >
         <svg
+          aria-labelledby="pause-2"
           class="base pause dark"
-          data-ref=""
           data-testid="data-testid-Icon"
           focusable="false"
           height="10"
@@ -140,6 +149,11 @@ exports[`<Video /> should render base component correctly 1`] = `
           viewBox="0 0 9 10"
           width="10"
         >
+          <title
+            id="pause-2"
+          >
+            pause
+          </title>
           <g>
             <polygon
               class="play"

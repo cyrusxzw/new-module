@@ -11,23 +11,23 @@ describe('<LinkButtonGroup />', () => {
   it('renders children correctly', () => {
     const { container } = render(
       <LinkButtonGroup theme="light">
-        <Button onClick={() => {}} title="test-button">
+        <Button onClick={() => {}} title="test button">
           Test
         </Button>
       </LinkButtonGroup>,
     );
 
-    const child = screen.queryByTestId('data-testid-LinkButtonGroup');
+    const child = screen.getByTestId(/data-testid-LinkButtonGroup/i);
 
     expect(container).toMatchSnapshot();
     expect(child).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'test-button' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /test button/i })).toBeTruthy();
   });
 
   it('should return `null` if no children were passed', () => {
     render(<LinkButtonGroup />);
 
-    const child = screen.queryByTestId('data-testid-LinkButtonGroup');
+    const child = screen.queryByTestId(/data-testid-LinkButtonGroup/i);
 
     expect(child).not.toBeInTheDocument();
   });
@@ -39,7 +39,7 @@ describe('<LinkButtonGroup />', () => {
       </LinkButtonGroup>,
     );
 
-    const child = screen.queryByTestId('data-testid-LinkButtonGroup');
+    const child = screen.queryByTestId(/data-testid-LinkButtonGroup/i);
 
     expect(child).not.toBeInTheDocument();
   });
@@ -48,16 +48,16 @@ describe('<LinkButtonGroup />', () => {
     render(
       <LinkButtonGroup textAlign="right" theme="light">
         <>
-          <Button onClick={() => {}} title="test-button">
+          <Button onClick={() => {}} title="test button">
             Test
           </Button>
         </>
       </LinkButtonGroup>,
     );
 
-    const child = screen.queryByTestId('data-testid-LinkButtonGroup');
+    const child = screen.getByTestId(/data-testid-LinkButtonGroup/i);
 
     expect(child).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'test-button' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /test button/i })).toBeTruthy();
   });
 });

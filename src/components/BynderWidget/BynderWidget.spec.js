@@ -16,7 +16,7 @@ describe('<BynderWidget />', () => {
       />,
     );
 
-    const heading = await screen.findByRole('heading', { name: 'heading' });
+    const heading = await screen.findByRole('heading', { name: /heading/i });
 
     expect(heading).toBeInTheDocument();
     expect(container).toMatchSnapshot();
@@ -30,7 +30,7 @@ describe('<BynderWidget />', () => {
       />,
     );
 
-    const heading = await screen.findByRole('heading', { name: 'heading' });
+    const heading = await screen.findByRole('heading', { name: /heading/i });
 
     expect(heading).toBeInTheDocument();
 

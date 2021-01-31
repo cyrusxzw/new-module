@@ -19,7 +19,7 @@ describe('<DefinitionList />', () => {
   it('should return `null` if the `items` prop is not a populated array', () => {
     render(<DefinitionList items={[]} />);
 
-    const child = screen.queryByTestId('data-testid-DefinitionList');
+    const child = screen.queryByTestId(/data-testid-DefinitionList/i);
 
     expect(child).not.toBeInTheDocument();
   });

@@ -9,17 +9,15 @@ exports[`<TextInput /> should render base component correctly 1`] = `
       for="test-textinput"
     >
       <input
-        class="formTextInput undefined"
+        class="formTextInput dark"
         data-test-ref="test-data-ref"
-        disabled=""
         id="test-textinput"
         novalidate=""
-        placeholder=""
         type="text"
         value=""
       />
       <span
-        class="formTextLabel undefined"
+        class="formTextLabel dark"
       />
     </label>
   </div>

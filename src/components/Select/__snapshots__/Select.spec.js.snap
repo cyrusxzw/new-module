@@ -14,6 +14,7 @@ exports[`<Select /> should render base component correctly 1`] = `
     <select
       aria-describedby="select-error-message"
       aria-invalid="true"
+      aria-label="Vestibulum accumsan"
       class="input"
       id="select"
       name="select"
@@ -33,8 +34,8 @@ exports[`<Select /> should render base component correctly 1`] = `
       </option>
     </select>
     <svg
+      aria-labelledby="chevron-0"
       class="base chevron dark icon"
-      data-ref=""
       data-testid="data-testid-Icon"
       focusable="false"
       height="15"
@@ -44,6 +45,11 @@ exports[`<Select /> should render base component correctly 1`] = `
       viewBox="0 0 50 50"
       width="15"
     >
+      <title
+        id="chevron-0"
+      >
+        chevron
+      </title>
       <g>
         <polygon
           class="chevron"

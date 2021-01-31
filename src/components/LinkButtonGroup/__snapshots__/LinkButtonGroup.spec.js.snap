@@ -8,7 +8,7 @@ exports[`<LinkButtonGroup /> renders children correctly 1`] = `
   >
     <button
       class="base blockStyle light  link flushLink center"
-      title="test-button"
+      title="test button"
       type="button"
     >
       Test

@@ -30,7 +30,9 @@ describe('<AccordionProduct />', () => {
       </AddToCartContextProvider>,
     );
 
-    const accordionProduct = screen.getByTestId('data-testid-AccordionProduct');
+    const accordionProduct = screen.getByTestId(
+      /data-testid-AccordionProduct/i,
+    );
 
     expect(accordionProduct).toBeInTheDocument();
     expect(container).toMatchSnapshot();
@@ -56,7 +58,9 @@ describe('<AccordionProduct />', () => {
       </AddToCartContextProvider>,
     );
 
-    const accordionProduct = screen.getByTestId('data-testid-AccordionProduct');
+    const accordionProduct = screen.getByTestId(
+      /data-testid-AccordionProduct/i,
+    );
 
     expect(handleOnClose).not.toHaveBeenCalled();
 
