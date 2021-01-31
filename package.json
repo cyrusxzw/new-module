@@ -19,7 +19,7 @@
     "generate-component": "./scripts/componentBoilerplate/create.sh $element",
     "lint": "npm run eslint && npm run stylelint",
     "prepublishOnly": "npm run release",
-    "release": "npm run build:dev && npm run build:prod",
+    "release": "npm run build:prod",
     "sanity-check": "npm run format && npm run lint && npm test",
     "start": "npm run storybook",
     "storybook": "start-storybook -p 6006  -s ./public",
