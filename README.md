@@ -1,4 +1,6 @@
-![Aesop Logo GEL](logo.jpg)
+# Aesop Global Experience Language
+
+![Update Web UI build badge](https://img.shields.io/github/workflow/status/aesop/aesop-gel/Update%20Web%20UI?label=Update%20Web%20UI%20build&logo=github) ![Prepare Release build badge](https://img.shields.io/github/workflow/status/aesop/aesop-gel/Prepare%20Release?label=Prepare%20Release%20build&logo=github) ![Version badge](https://img.shields.io/github/package-json/v/aesop/aesop-gel) ![Pre Release Build badge](https://img.shields.io/github/v/release/aesop/aesop-gel?include_prereleases&label=pre%20release%20build) ![Tag badge](https://img.shields.io/github/v/tag/aesop/aesop-gel)
 
 ## Tooling Requirements
 
