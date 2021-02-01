@@ -20,6 +20,7 @@ module.exports = {
       lines: 84,
     },
   },
+  coverageReporters: ['lcov', 'text', 'text-summary'],
   moduleFileExtensions: ['js', 'json', 'node'],
   testPathIgnorePatterns: [
     '<rootDir>/(dist|docs|node_modules|.cache)/',
