@@ -14,6 +14,7 @@
     "build:dev": "NODE_ENV=development rollup -c",
     "build:prod": "NODE_ENV=production rollup -c",
     "build:watch": "NODE_ENV=production rollup -c -w",
+    "deploy-storybook": "gh-pages -d storybook-static",
     "eslint": "eslint \"**/*.js\" --ignore-path .eslintignore --config .eslintrc",
     "format": "prettier --write \"**/*.{js,json,md}\" --loglevel \"error\"",
     "generate-component": "./scripts/componentBoilerplate/create.sh $element",
@@ -37,7 +38,7 @@
   "bugs": {
     "url": "https://github.com/aesop/aesop-gel/issues"
   },
-  "homepage": "https://github.com/aesop/aesop-gel#readme",
+  "homepage": "https://github.com/aesop/aesop-gel",
   "peerDependencies": {
     "@google/markerclusterer": "1.0.1",
     "classnames": "^2.2.5",
@@ -118,6 +119,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "eslint-plugin-testing-library": "^3.10.1",
+    "gh-pages": "^3.1.0",
     "husky": "^4.2.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.0.1",
