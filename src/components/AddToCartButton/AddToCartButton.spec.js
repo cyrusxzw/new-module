@@ -46,10 +46,6 @@ describe('<AddToCartButton />', () => {
     global.console.error.mockRestore(); // eslint-disable-line no-console
   });
 
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
   afterEach(() => {
     jest.clearAllMocks();
     jest.useRealTimers();
