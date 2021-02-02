@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useAddToCartContext, useVariantSelectContext } from '~/contexts';
@@ -6,6 +6,7 @@ import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import { Button } from '~/components/Button';
 import { Loading } from '~/components/Loading';
 import { Hyperlink } from '~/components/Hyperlink';
+import { useDelayedDisabled } from './AddToCartButton.utils';
 import styles from './AddToCartButton.module.css';
 
 const AddToCartButton = ({
@@ -24,19 +25,9 @@ const AddToCartButton = ({
     isLoading,
     isUpdateSuccessful,
   } = addToCartContext;
-  const updateNotificationLabel = copy.updateNotification;
   const shouldShowUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
-
-  const [isDelayedDisabled, setIsDelayedDisabled] = useState(false);
-
-  useEffect(() => {
-    if (shouldShowUpdateSuccessMessage) {
-      setIsDelayedDisabled(true);
-      setTimeout(() => {
-        setIsDelayedDisabled(false);
-      }, 2500);
-    }
-  }, [shouldShowUpdateSuccessMessage]);
+  const isDelayedDisabled = useDelayedDisabled(shouldShowUpdateSuccessMessage);
+  const updateNotificationLabel = copy.updateNotification;
 
   if (!selectedVariant) return null;
 
@@ -123,7 +114,11 @@ const AddToCartButton = ({
           shouldShowUpdateSuccessMessage ? `${dataTestRef}_SUCCESS` : undefined
         }
       >
-        <span>{updateNotificationLabel}</span>
+        {shouldShowUpdateSuccessMessage ? (
+          <span>{updateNotificationLabel}</span>
+        ) : (
+          <span> </span>
+        )}
         <span>{isInStock ? cartActionLabel : copy.outOfStock?.label}</span>
       </span>
     </Button>
