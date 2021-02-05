@@ -151,7 +151,9 @@ exports[`<AccordionProduct /> should render base component correctly 1`] = `
               <span
                 class="label"
               >
-                <span />
+                <span>
+                   
+                </span>
                 <span>
                   undefined — $26.45
                 </span>
