@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { render, screen } from '@testing-library/react';
+import { render, act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import {
   AddToCartContextProvider,
@@ -37,6 +37,19 @@ describe('<AddToCartButton />', () => {
   const outOfStockVariant = fixture.outOfStockVariant;
   const alternateActionVariant = fixture.alternateActionVariant;
   const copy = fixture.copy;
+
+  beforeAll(() => {
+    jest.spyOn(global.console, 'error').mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    global.console.error.mockRestore(); // eslint-disable-line no-console
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+    jest.useRealTimers();
+  });
 
   it('should be defined', () => {
     expect(AddToCartButton).toBeDefined();
@@ -156,5 +169,34 @@ describe('<AddToCartButton />', () => {
     loading = await screen.findByTestId(/data-testid-loading/i);
 
     expect(loading).toBeInTheDocument();
+  });
+
+  it('should have no active timers on unmount (should not throw state update error)', async () => {
+    jest.useFakeTimers();
+
+    const { unmount } = render(
+      <AddToCartButtonWithProviders
+        copy={copy}
+        onClick={mockAddToCartButtonOnClick}
+        product={product}
+        variants={variants}
+      />,
+    );
+
+    const button = screen.getByRole('button', {
+      name: `${fixture.copy.cartAction} — ${fixture.variants[0].price}`,
+    });
+
+    userEvent.click(button);
+
+    const successMessage = await screen.findByText(/added to your cart/i);
+
+    expect(successMessage).toBeInTheDocument();
+
+    unmount();
+
+    act(() => jest.runOnlyPendingTimers());
+
+    expect(console.error).not.toHaveBeenCalled(); // eslint-disable-line no-console
   });
 });
