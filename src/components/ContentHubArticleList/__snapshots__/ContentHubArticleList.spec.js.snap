@@ -494,6 +494,102 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         >
           <div
             class="base leftMiddleArticle"
+            id="test_4"
+          >
+            <div
+              class="category"
+            >
+              Aesop Spotify
+            </div>
+            <div>
+              <a
+                class="base left dark title"
+                data-test-ref="test_4_TITLE"
+                href="https://www.aesop.com/au/r/careers"
+                target="_self"
+                title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+              >
+                <h1>
+                  <span>
+                    4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                  </span>
+                </h1>
+              </a>
+            </div>
+            <div
+              class="note"
+            >
+              <span>
+                15 minute read
+              </span>
+            </div>
+            <a
+              class="base left dark image nonMobile"
+              data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
+              href="https://www.aesop.com/au/r/careers"
+              target="_self"
+              title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <div>
+                <picture
+                  class="base picture dark image"
+                >
+                  <source
+                    media="(min-width: 1025px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 640px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 0px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <img
+                    alt="vertical_hub"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </a>
+            <a
+              class="base left dark image mobile"
+              data-test-ref="test_4_MOBILE_THUMBNAIL"
+              href="https://www.aesop.com/au/r/careers"
+              target="_self"
+              title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            >
+              <div>
+                <picture
+                  class="base picture dark image"
+                >
+                  <source
+                    media="(min-width: 1025px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 640px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <source
+                    media="(min-width: 0px)"
+                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
+                  />
+                  <img
+                    alt="vertical_hub"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div
+          class="middleArticle"
+        >
+          <div
+            class="base rightMiddleArticle"
             id="test_2"
           >
             <div
@@ -585,123 +681,27 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             </a>
           </div>
         </div>
-        <div
-          class="middleArticle"
-        >
-          <div
-            class="base rightMiddleArticle"
-            id="test_3"
-          >
-            <div
-              class="category"
-            >
-              Culture
-            </div>
-            <div>
-              <a
-                class="base left dark title"
-                data-test-ref="test_3_TITLE"
-                href="https://www.aesop.com/au/r/careers"
-                target="_self"
-                title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-              >
-                <h1>
-                  <span>
-                    3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
-                  </span>
-                </h1>
-              </a>
-            </div>
-            <div
-              class="note"
-            >
-              <span>
-                15 minute read
-              </span>
-            </div>
-            <a
-              class="base left dark image nonMobile"
-              data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
-              href="https://www.aesop.com/au/r/careers"
-              target="_self"
-              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-            >
-              <div>
-                <picture
-                  class="base picture dark image"
-                >
-                  <source
-                    media="(min-width: 1025px)"
-                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                  />
-                  <source
-                    media="(min-width: 640px)"
-                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                  />
-                  <source
-                    media="(min-width: 0px)"
-                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                  />
-                  <img
-                    alt="vertical_hub"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
-            </a>
-            <a
-              class="base left dark image mobile"
-              data-test-ref="test_3_MOBILE_THUMBNAIL"
-              href="https://www.aesop.com/au/r/careers"
-              target="_self"
-              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
-            >
-              <div>
-                <picture
-                  class="base picture dark image"
-                >
-                  <source
-                    media="(min-width: 1025px)"
-                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                  />
-                  <source
-                    media="(min-width: 640px)"
-                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                  />
-                  <source
-                    media="(min-width: 0px)"
-                    srcset="./assets/images/ContentHubArticle/vertical_hub.jpg"
-                  />
-                  <img
-                    alt="vertical_hub"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
-            </a>
-          </div>
-        </div>
       </div>
       <div
         class="base"
-        id="test_4"
+        id="test_3"
       >
         <div
           class="category"
         >
-          Aesop Spotify
+          Culture
         </div>
         <div>
           <a
             class="base left dark title"
-            data-test-ref="test_4_TITLE"
+            data-test-ref="test_3_TITLE"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
             <h1>
               <span>
-                4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
               </span>
             </h1>
           </a>
@@ -715,10 +715,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         </div>
         <a
           class="base left dark image nonMobile"
-          data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
+          data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
           href="https://www.aesop.com/au/r/careers"
           target="_self"
-          title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
         >
           <div>
             <picture
@@ -745,10 +745,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         </a>
         <a
           class="base left dark image mobile"
-          data-test-ref="test_4_MOBILE_THUMBNAIL"
+          data-test-ref="test_3_MOBILE_THUMBNAIL"
           href="https://www.aesop.com/au/r/careers"
           target="_self"
-          title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
         >
           <div>
             <picture
