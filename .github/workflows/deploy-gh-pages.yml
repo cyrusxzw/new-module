@@ -4,6 +4,8 @@ on:
     tags:
       - v*
 
+  workflow_dispatch:
+
 jobs:
   deploy_storybook:
     name: Deploy Storybook
