@@ -12,7 +12,7 @@ exports[`<AddToCartButton /> should render base component correctly 1`] = `
       class="label"
     >
       <span>
-        Added to your cart
+         
       </span>
       <span>
         Add to your cart — $26.45

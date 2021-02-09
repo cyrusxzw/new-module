@@ -150,7 +150,7 @@ exports[`<HorizontalProductDisplayAccordion /> should render base component corr
                   class="label"
                 >
                   <span>
-                    added to your cart
+                     
                   </span>
                   <span>
                     Add to your cart — $26.45
@@ -348,7 +348,7 @@ exports[`<HorizontalProductDisplayAccordion /> should render base component corr
                   class="label"
                 >
                   <span>
-                    added to your cart
+                     
                   </span>
                   <span>
                     Add to your cart — $26.45
@@ -546,7 +546,7 @@ exports[`<HorizontalProductDisplayAccordion /> should render base component corr
                   class="label"
                 >
                   <span>
-                    added to your cart
+                     
                   </span>
                   <span>
                     Add to your cart — $26.45
