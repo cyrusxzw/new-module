@@ -29,7 +29,7 @@ TBA
 ## Development
 
 ```bash
-npm i && nvm use && npm run storybook
+nvm use && npm ci && npm start
 ```
 
 ### While using a consuming application
@@ -158,10 +158,10 @@ npm run test -- -u
 
 ### UI and Design Testing
 
-Story Book is used to Visually test and showcase components. Run the following to build the storybook files and serve them on `http://localhost:6006/?path=/story/*` respectively:
+Story Book is used to Visually test and showcase components. Run the following to build the storybook files and serve them on `http://localhost:6006/?path=/story/*`:
 
 ```
-npm run build-storybook && npm run storybook
+npm start
 ```
 
 More on testing with the [Testing Readme](documentation/TESTING.md)
@@ -174,14 +174,14 @@ It is encouraged to write code that is [Self-documenting](https://en.wikipedia.o
 
 In the event of more complex code, `@TODO` statements or tslint / eslint ignores, use double slash for single line comments that relate to a block of code. Slightly different for css:
 
-```
+```javascript
 // single line comment about the following code block
 function add(a, b) {
   return a + b;
 }
+```
 
-...
-
+```css
 /* single line comment about the following code block */
 .base {
   color: pink;
@@ -190,11 +190,11 @@ function add(a, b) {
 
 double slash for single line comments to the right of a single statement:
 
-```
+```javascript
 const add = (a, b) => a + b; // single line comment about this statement
+```
 
-...
-
+```css
 .base {
   /* single line comment about this statement */
   color: pink;
@@ -203,7 +203,7 @@ const add = (a, b) => a + b; // single line comment about this statement
 
 and JSDoc format for multi line comments:
 
-```
+```javascript
 /**
  * multi line comment
  * about the following code block
@@ -211,9 +211,9 @@ and JSDoc format for multi line comments:
 function add(a, b) {
   return a + b;
 }
+```
 
-...
-
+```css
 /**
  * multi line comment
  * about the following code block
