@@ -145,8 +145,11 @@ const Video = forwardRef(function VideoRef(
           captions={{
             isActive: hasCaptions,
             onToggleClick: handleOnCaptionsToggleClick,
-            shouldShowToggle: !!captions?.fileUrl && captions?.shouldShowToggle,
-            toggleTitle: captions?.toggleTitle,
+            shouldShowToggleButton:
+              !!captions?.fileUrl &&
+              !!captions?.language &&
+              captions?.shouldShowToggleButton,
+            toggleButtonTitle: captions?.toggleButtonTitle,
           }}
           copy={{
             closeButtonTitle: copy?.closeButtonTitle,
@@ -176,9 +179,8 @@ Video.propTypes = {
     fileUrl: PropTypes.string,
     isActive: PropTypes.bool,
     language: PropTypes.string,
-    onToggleClick: PropTypes.func,
-    shouldShowToggle: PropTypes.bool,
-    toggleTitle: PropTypes.string,
+    shouldShowToggleButton: PropTypes.bool,
+    toggleButtonTitle: PropTypes.string,
   }),
   className: PropTypes.string,
   copy: PropTypes.shape({

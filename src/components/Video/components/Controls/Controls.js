@@ -110,7 +110,7 @@ const Controls = ({
     (!hasPlayInFullScreen || isSmallMediumViewport);
 
   const isInlineCaptionsToggleActive =
-    captions?.shouldShowToggle &&
+    captions?.shouldShowToggleButton &&
     hasActiveVideo &&
     (!hasPlayInFullScreen || isSmallMediumViewport);
 
@@ -147,7 +147,7 @@ const Controls = ({
           })}
           isInline={true}
           onClick={handleOnCaptionsToggleClick}
-          title={captions?.toggleTitle}
+          title={captions?.toggleButtonTitle}
         >
           CC
         </Button>
@@ -182,7 +182,7 @@ const Controls = ({
             )}
 
             <Transition
-              isActive={captions?.shouldShowToggle && hasActiveVideo}
+              isActive={captions?.shouldShowToggleButton && hasActiveVideo}
               type="fade"
             >
               <Button
@@ -192,7 +192,7 @@ const Controls = ({
                 })}
                 isInline={true}
                 onClick={handleOnCaptionsToggleClick}
-                title={captions?.toggleTitle}
+                title={captions?.toggleButtonTitle}
               >
                 CC
               </Button>
@@ -258,8 +258,8 @@ Controls.propTypes = {
   captions: PropTypes.shape({
     isActive: PropTypes.bool,
     onToggleClick: PropTypes.func,
-    shouldShowToggle: PropTypes.bool,
-    toggleTitle: PropTypes.string,
+    shouldShowToggleButton: PropTypes.bool,
+    toggleButtonTitle: PropTypes.string,
   }),
   className: PropTypes.string,
   copy: PropTypes.shape({

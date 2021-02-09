@@ -71,10 +71,22 @@ import { Video } from './Video';
   <Story name="Video with Captions Track">
     <Video
       captions={{
-        isActive: true,
-        shouldShowToggle: true,
-        language: 'en',
-        fileUrl: './assets/captions/Raeburn-The-Making-of-ENG.vtt',
+        isActive: knobs.boolean('isActive', true, 'Captions'),
+        shouldShowToggleButton: knobs.boolean(
+          'shouldShowToggleButton',
+          true,
+          'Captions',
+        ),
+        toggleButtonTitle: knobs.text(
+          'toggleButtonTitle',
+          'toggle captions',
+          'Captions',
+        ),
+        language: knobs.text('language', 'en', 'Captions'),
+        fileUrl: knobs.text(
+          'fileUrl',
+          './assets/captions/Raeburn-The-Making-of-ENG.vtt',
+        ),
       }}
       hasAllowAudio={true}
       hasAutoplay={false}
