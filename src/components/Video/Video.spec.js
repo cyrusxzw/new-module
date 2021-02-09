@@ -8,6 +8,10 @@ describe('<Video />', () => {
     expect(Video).toBeDefined();
   });
 
+  it('should not with no props', () => {
+    render(<Video />);
+  });
+
   it('should render base component correctly', () => {
     const { container } = render(
       <Video

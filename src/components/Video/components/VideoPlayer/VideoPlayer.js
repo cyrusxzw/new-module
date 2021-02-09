@@ -2,32 +2,32 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useWindowHasResized } from '~/customHooks';
-import {
-  ascertainIsSmallOnlyViewport,
-  ascertainIsMediumOnlyViewport,
-  ascertainIsLargeViewport,
-} from '~/utils/viewports';
 import { Transition } from '~/components/Transition';
+import { getVideoSrc } from './VideoPlayer.utils';
 import styles from './VideoPlayer.module.css';
 
 const VideoPlayer = forwardRef(function VideoPlayerRef(
   {
+    captions,
     className,
-    hasActiveVideo,
-    hasAllowAudio,
-    hasAutoplay,
-    hasLoop,
-    hasPlayInFullScreen,
-    isActive,
-    isBackground,
-    isMuted,
-    large,
-    medium,
-    small,
+    hasActiveVideo = false,
+    hasAllowAudio = false,
+    hasAutoplay = false,
+    hasLoop = true,
+    hasNativeControls = false,
+    hasPlayInFullScreen = false,
+    isActive = true,
+    isBackground = false,
+    isMuted = true,
+    sizes,
   },
   ref,
 ) {
   useWindowHasResized();
+
+  const src = getVideoSrc(sizes);
+  const shouldShowCaptions =
+    captions && captions.isActive && captions.fileUrl && captions.language;
 
   const classSet = cx(
     styles.base,
@@ -39,62 +39,54 @@ const VideoPlayer = forwardRef(function VideoPlayerRef(
     className,
   );
 
-  const getVideoSrc = () => {
-    if (small && ascertainIsSmallOnlyViewport()) return small;
-
-    if (medium && ascertainIsMediumOnlyViewport()) return medium;
-
-    if (large && ascertainIsLargeViewport()) return large;
-
-    return small || medium || large || '';
-  };
-
   return (
     <Transition isActive={isActive} type="fade">
       <video
         autoPlay={hasAutoplay}
         className={classSet}
-        controls={false}
+        controls={hasNativeControls}
         data-testid="data-testid-VideoPlayer"
         loop={hasLoop}
         muted={!hasAllowAudio || (hasAllowAudio && isMuted)}
         playsInline={true}
         ref={ref}
       >
-        <source src={getVideoSrc()} type="video/mp4" />
+        <source src={src} type="video/mp4" />
+
+        {shouldShowCaptions && (
+          <track
+            default={true}
+            kind="subtitles"
+            src={captions.fileUrl}
+            srcLang={captions.language}
+          />
+        )}
       </video>
     </Transition>
   );
 });
 
 VideoPlayer.propTypes = {
+  captions: PropTypes.shape({
+    fileUrl: PropTypes.string,
+    isActive: PropTypes.bool,
+    language: PropTypes.string,
+  }),
   className: PropTypes.string,
   hasActiveVideo: PropTypes.bool,
   hasAllowAudio: PropTypes.bool,
   hasAutoplay: PropTypes.bool,
   hasLoop: PropTypes.bool,
+  hasNativeControls: PropTypes.bool,
   hasPlayInFullScreen: PropTypes.bool,
   isActive: PropTypes.bool,
   isBackground: PropTypes.bool,
   isMuted: PropTypes.bool,
-  large: PropTypes.string,
-  medium: PropTypes.string,
-  small: PropTypes.string,
-};
-
-VideoPlayer.defaultProps = {
-  className: undefined,
-  hasActiveVideo: false,
-  hasAllowAudio: false,
-  hasAutoplay: false,
-  hasLoop: true,
-  hasPlayInFullScreen: false,
-  isActive: true,
-  isBackground: false,
-  isMuted: true,
-  large: undefined,
-  medium: undefined,
-  small: undefined,
+  sizes: PropTypes.shape({
+    large: PropTypes.string,
+    medium: PropTypes.string,
+    small: PropTypes.string,
+  }),
 };
 
 export { VideoPlayer };

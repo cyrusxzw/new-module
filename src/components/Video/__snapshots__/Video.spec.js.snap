@@ -45,7 +45,6 @@ exports[`<Video /> should render base component correctly 1`] = `
     </video>
     <button
       class="base dark base fadeEnter"
-      title="View video"
       type="button"
     >
       <picture
@@ -67,12 +66,17 @@ exports[`<Video /> should render base component correctly 1`] = `
           class="fullScreenControlsHeader"
         >
           <button
+            class="base dark captionsToggle fadeEnter"
+            type="button"
+          >
+            CC
+          </button>
+          <button
             class="base dark close"
-            title="Close"
             type="button"
           >
             <svg
-              aria-labelledby="close-0"
+              aria-labelledby="close-4"
               class="base close light"
               data-testid="data-testid-Icon"
               focusable="false"
@@ -84,7 +88,7 @@ exports[`<Video /> should render base component correctly 1`] = `
               width="16"
             >
               <title
-                id="close-0"
+                id="close-4"
               >
                 close
               </title>
@@ -98,11 +102,10 @@ exports[`<Video /> should render base component correctly 1`] = `
           </button>
           <button
             class="base dark fullScreenPlayPauseButton"
-            title="Pause video"
             type="button"
           >
             <svg
-              aria-labelledby="pause-1"
+              aria-labelledby="pause-5"
               class="base pause light"
               data-testid="data-testid-Icon"
               focusable="false"
@@ -114,7 +117,7 @@ exports[`<Video /> should render base component correctly 1`] = `
               width="10"
             >
               <title
-                id="pause-1"
+                id="pause-5"
               >
                 pause
               </title>
@@ -134,11 +137,10 @@ exports[`<Video /> should render base component correctly 1`] = `
       </div>
       <button
         class="base dark playPauseButton activePlayPauseButton"
-        title="Pause video"
         type="button"
       >
         <svg
-          aria-labelledby="pause-2"
+          aria-labelledby="pause-6"
           class="base pause dark"
           data-testid="data-testid-Icon"
           focusable="false"
@@ -150,7 +152,7 @@ exports[`<Video /> should render base component correctly 1`] = `
           width="10"
         >
           <title
-            id="pause-2"
+            id="pause-6"
           >
             pause
           </title>

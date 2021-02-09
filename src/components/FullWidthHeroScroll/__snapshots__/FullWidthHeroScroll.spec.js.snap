@@ -50,7 +50,6 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
         </video>
         <button
           class="base dark base fadeEnter"
-          title="View video"
           type="button"
         >
           <picture
@@ -110,7 +109,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
               class="icon"
             >
               <svg
-                aria-labelledby="rightArrow-0"
+                aria-labelledby="rightArrow-1"
                 class="base rightArrow light"
                 data-testid="data-testid-Icon"
                 focusable="false"
@@ -122,7 +121,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
                 width="12"
               >
                 <title
-                  id="rightArrow-0"
+                  id="rightArrow-1"
                 >
                   rightArrow
                 </title>
@@ -140,7 +139,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
           type="button"
         >
           <svg
-            aria-labelledby="scrolldown-1"
+            aria-labelledby="scrolldown-2"
             class="base scrolldown light"
             data-testid="data-testid-Icon"
             focusable="false"
@@ -152,7 +151,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
             width="12"
           >
             <title
-              id="scrolldown-1"
+              id="scrolldown-2"
             >
               scrolldown
             </title>

@@ -15,7 +15,7 @@ const useEscapeKeyListener = onKeyPress => {
       document.addEventListener('keydown', detectEscapeKey, true);
     }
 
-    return function cleanUp() {
+    return function cleanup() {
       if (typeof document !== 'undefined') {
         document.removeEventListener('keydown', detectEscapeKey, true);
       }

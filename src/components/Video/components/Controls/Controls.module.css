@@ -143,6 +143,42 @@
   display: none;
 }
 
+.captionsToggle {
+  position: absolute;
+  z-index: calc(var(--z-index-fixed-full-screen-video) + 1);
+  top: calc(var(--layout-sm-spacing) * 2);
+  left: calc(var(--layout-sm-spacing) * 2 + 40px);
+  padding: 15px 5px;
+  background-color: var(--color-grey-40);
+  border-radius: 100%;
+  color: var(--color-light-link);
+  font-family: var(--font-family-sans-serif-regular);
+  font-size: rem(14px);
+  line-height: 0;
+  opacity: 0.8;
+  transition: opacity 200ms var(--easing-ease-in-sine);
+
+  &:hover,
+  &:focus {
+    color: var(--color-light-link);
+    opacity: 1;
+  }
+
+  &.isActive {
+    text-decoration: underline;
+  }
+
+  @media (--viewport-md) {
+    top: calc(var(--layout-md-spacing) * 2);
+    left: calc(var(--layout-md-spacing) * 2 + 50px);
+  }
+
+  @media (--viewport-lg) {
+    top: calc(var(--layout-lg-spacing) * 2);
+    left: calc(var(--layout-lg-spacing) * 2 + 60px);
+  }
+}
+
 .fullScreenPlayPauseButton.fullScreenPlayPauseButton {
   position: absolute;
   z-index: var(--z-index-fixed-full-screen-video);

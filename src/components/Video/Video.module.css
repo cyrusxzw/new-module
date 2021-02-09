@@ -8,6 +8,39 @@
   margin: 0;
   object-fit: cover;
 
+  video::cue {
+    font: 14px/14px;
+    font-size: 14px;
+    line-height: 14px;
+    opacity: 1;
+    transform: translateY(-30px) !important;
+
+    @media (--viewport-md) {
+      font: 16px/16px;
+      font-size: 16px;
+      line-height: 16px;
+      transform: translateY(-40px) !important;
+    }
+
+    @media (--viewport-lg) {
+      transform: translateY(-60px) !important;
+    }
+  }
+
+  video::-webkit-media-text-track-container {
+    line-height: 14px;
+    transform: translateY(-30px) !important;
+
+    @media (--viewport-md) {
+      line-height: 16px;
+      transform: translateY(-40px) !important;
+    }
+
+    @media (--viewport-lg) {
+      transform: translateY(-60px) !important;
+    }
+  }
+
   @media (--viewport-sm-md-only) {
     height: 0;
     padding-top: 30px;
