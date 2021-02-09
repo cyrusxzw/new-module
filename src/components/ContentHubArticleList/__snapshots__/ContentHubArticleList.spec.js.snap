@@ -11,7 +11,7 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
       >
         <div
           class="base"
-          id="test_1"
+          id="4"
         >
           <div
             class="category"
@@ -21,14 +21,14 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           <div>
             <a
               class="base left dark title"
-              data-test-ref="test_1_TITLE"
+              data-test-ref="4_TITLE"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="1. Senorial consectetur adipiscing elit."
+              title="4. Senorial consectetur adipiscing elit."
             >
               <h1>
                 <span>
-                  1. Senorial consectetur adipiscing elit.
+                  4. Senorial consectetur adipiscing elit.
                 </span>
               </h1>
             </a>
@@ -42,10 +42,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </div>
           <a
             class="base left dark image nonMobile"
-            data-test-ref="test_1_NON_MOBILE_THUMBNAIL"
+            data-test-ref="4_NON_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="1. Senorial consectetur adipiscing elit."
+            title="4. Senorial consectetur adipiscing elit."
           >
             <div>
               <picture
@@ -72,10 +72,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </a>
           <a
             class="base left dark image mobile"
-            data-test-ref="test_1_MOBILE_THUMBNAIL"
+            data-test-ref="4_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="1. Senorial consectetur adipiscing elit."
+            title="4. Senorial consectetur adipiscing elit."
           >
             <div>
               <picture
@@ -107,7 +107,7 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
       >
         <div
           class="base"
-          id="test_2"
+          id="3"
         >
           <div
             class="category"
@@ -117,14 +117,14 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           <div>
             <a
               class="base left dark title"
-              data-test-ref="test_2_TITLE"
+              data-test-ref="3_TITLE"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
             >
               <h1>
                 <span>
-                  2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+                  3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
                 </span>
               </h1>
             </a>
@@ -138,10 +138,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </div>
           <a
             class="base left dark image nonMobile"
-            data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
+            data-test-ref="3_NON_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -168,10 +168,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </a>
           <a
             class="base left dark image mobile"
-            data-test-ref="test_2_MOBILE_THUMBNAIL"
+            data-test-ref="3_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -203,24 +203,24 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
       >
         <div
           class="base"
-          id="test_4"
+          id="2"
         >
           <div
             class="category"
           >
-            Aesop Spotify
+            Culture
           </div>
           <div>
             <a
               class="base left dark title"
-              data-test-ref="test_4_TITLE"
+              data-test-ref="2_TITLE"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
             >
               <h1>
                 <span>
-                  4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                  2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
                 </span>
               </h1>
             </a>
@@ -234,10 +234,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </div>
           <a
             class="base left dark image nonMobile"
-            data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
+            data-test-ref="2_NON_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -264,10 +264,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </a>
           <a
             class="base left dark image mobile"
-            data-test-ref="test_4_MOBILE_THUMBNAIL"
+            data-test-ref="2_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -299,24 +299,24 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
       >
         <div
           class="base"
-          id="test_3"
+          id="1"
         >
           <div
             class="category"
           >
-            Culture
+            Aesop Spotify
           </div>
           <div>
             <a
               class="base left dark title"
-              data-test-ref="test_3_TITLE"
+              data-test-ref="1_TITLE"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+              title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
             >
               <h1>
                 <span>
-                  3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                  1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
                 </span>
               </h1>
             </a>
@@ -330,10 +330,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </div>
           <a
             class="base left dark image nonMobile"
-            data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
+            data-test-ref="1_NON_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -360,10 +360,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </a>
           <a
             class="base left dark image mobile"
-            data-test-ref="test_3_MOBILE_THUMBNAIL"
+            data-test-ref="1_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -396,7 +396,7 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
     >
       <div
         class="base"
-        id="test_1"
+        id="4"
       >
         <div
           class="category"
@@ -406,14 +406,14 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         <div>
           <a
             class="base left dark title"
-            data-test-ref="test_1_TITLE"
+            data-test-ref="4_TITLE"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="1. Senorial consectetur adipiscing elit."
+            title="4. Senorial consectetur adipiscing elit."
           >
             <h1>
               <span>
-                1. Senorial consectetur adipiscing elit.
+                4. Senorial consectetur adipiscing elit.
               </span>
             </h1>
           </a>
@@ -427,10 +427,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         </div>
         <a
           class="base left dark image nonMobile"
-          data-test-ref="test_1_NON_MOBILE_THUMBNAIL"
+          data-test-ref="4_NON_MOBILE_THUMBNAIL"
           href="https://www.aesop.com/au/r/careers"
           target="_self"
-          title="1. Senorial consectetur adipiscing elit."
+          title="4. Senorial consectetur adipiscing elit."
         >
           <div>
             <picture
@@ -457,10 +457,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         </a>
         <a
           class="base left dark image mobile"
-          data-test-ref="test_1_MOBILE_THUMBNAIL"
+          data-test-ref="4_MOBILE_THUMBNAIL"
           href="https://www.aesop.com/au/r/careers"
           target="_self"
-          title="1. Senorial consectetur adipiscing elit."
+          title="4. Senorial consectetur adipiscing elit."
         >
           <div>
             <picture
@@ -494,24 +494,24 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         >
           <div
             class="base leftMiddleArticle"
-            id="test_4"
+            id="2"
           >
             <div
               class="category"
             >
-              Aesop Spotify
+              Culture
             </div>
             <div>
               <a
                 class="base left dark title"
-                data-test-ref="test_4_TITLE"
+                data-test-ref="2_TITLE"
                 href="https://www.aesop.com/au/r/careers"
                 target="_self"
-                title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+                title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
               >
                 <h1>
                   <span>
-                    4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                    2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
                   </span>
                 </h1>
               </a>
@@ -525,10 +525,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             </div>
             <a
               class="base left dark image nonMobile"
-              data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
+              data-test-ref="2_NON_MOBILE_THUMBNAIL"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
             >
               <div>
                 <picture
@@ -555,10 +555,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             </a>
             <a
               class="base left dark image mobile"
-              data-test-ref="test_4_MOBILE_THUMBNAIL"
+              data-test-ref="2_MOBILE_THUMBNAIL"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
             >
               <div>
                 <picture
@@ -590,7 +590,7 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         >
           <div
             class="base rightMiddleArticle"
-            id="test_2"
+            id="3"
           >
             <div
               class="category"
@@ -600,14 +600,14 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             <div>
               <a
                 class="base left dark title"
-                data-test-ref="test_2_TITLE"
+                data-test-ref="3_TITLE"
                 href="https://www.aesop.com/au/r/careers"
                 target="_self"
-                title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+                title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
               >
                 <h1>
                   <span>
-                    2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+                    3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
                   </span>
                 </h1>
               </a>
@@ -621,10 +621,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             </div>
             <a
               class="base left dark image nonMobile"
-              data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
+              data-test-ref="3_NON_MOBILE_THUMBNAIL"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
             >
               <div>
                 <picture
@@ -651,10 +651,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             </a>
             <a
               class="base left dark image mobile"
-              data-test-ref="test_2_MOBILE_THUMBNAIL"
+              data-test-ref="3_MOBILE_THUMBNAIL"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
             >
               <div>
                 <picture
@@ -684,24 +684,24 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
       </div>
       <div
         class="base"
-        id="test_3"
+        id="1"
       >
         <div
           class="category"
         >
-          Culture
+          Aesop Spotify
         </div>
         <div>
           <a
             class="base left dark title"
-            data-test-ref="test_3_TITLE"
+            data-test-ref="1_TITLE"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
             <h1>
               <span>
-                3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
               </span>
             </h1>
           </a>
@@ -715,10 +715,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         </div>
         <a
           class="base left dark image nonMobile"
-          data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
+          data-test-ref="1_NON_MOBILE_THUMBNAIL"
           href="https://www.aesop.com/au/r/careers"
           target="_self"
-          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
         >
           <div>
             <picture
@@ -745,10 +745,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         </a>
         <a
           class="base left dark image mobile"
-          data-test-ref="test_3_MOBILE_THUMBNAIL"
+          data-test-ref="1_MOBILE_THUMBNAIL"
           href="https://www.aesop.com/au/r/careers"
           target="_self"
-          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
         >
           <div>
             <picture
@@ -790,7 +790,7 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
       >
         <div
           class="base fadeEnter fadeEnterActive"
-          id="test_1"
+          id="4"
         >
           <div
             class="category"
@@ -800,14 +800,14 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           <div>
             <a
               class="base left dark title"
-              data-test-ref="test_1_TITLE"
+              data-test-ref="4_TITLE"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="1. Senorial consectetur adipiscing elit."
+              title="4. Senorial consectetur adipiscing elit."
             >
               <h1>
                 <span>
-                  1. Senorial consectetur adipiscing elit.
+                  4. Senorial consectetur adipiscing elit.
                 </span>
               </h1>
             </a>
@@ -821,10 +821,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </div>
           <a
             class="base left dark image nonMobile"
-            data-test-ref="test_1_NON_MOBILE_THUMBNAIL"
+            data-test-ref="4_NON_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="1. Senorial consectetur adipiscing elit."
+            title="4. Senorial consectetur adipiscing elit."
           >
             <div>
               <picture
@@ -851,10 +851,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </a>
           <a
             class="base left dark image mobile"
-            data-test-ref="test_1_MOBILE_THUMBNAIL"
+            data-test-ref="4_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="1. Senorial consectetur adipiscing elit."
+            title="4. Senorial consectetur adipiscing elit."
           >
             <div>
               <picture
@@ -886,7 +886,7 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
       >
         <div
           class="base fadeEnter fadeEnterActive"
-          id="test_2"
+          id="3"
         >
           <div
             class="category"
@@ -896,14 +896,14 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           <div>
             <a
               class="base left dark title"
-              data-test-ref="test_2_TITLE"
+              data-test-ref="3_TITLE"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
             >
               <h1>
                 <span>
-                  2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+                  3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
                 </span>
               </h1>
             </a>
@@ -917,10 +917,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </div>
           <a
             class="base left dark image nonMobile"
-            data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
+            data-test-ref="3_NON_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -947,10 +947,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </a>
           <a
             class="base left dark image mobile"
-            data-test-ref="test_2_MOBILE_THUMBNAIL"
+            data-test-ref="3_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -982,24 +982,24 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
       >
         <div
           class="base fadeEnter fadeEnterActive"
-          id="test_4"
+          id="2"
         >
           <div
             class="category"
           >
-            Aesop Spotify
+            Culture
           </div>
           <div>
             <a
               class="base left dark title"
-              data-test-ref="test_4_TITLE"
+              data-test-ref="2_TITLE"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+              title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
             >
               <h1>
                 <span>
-                  4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                  2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
                 </span>
               </h1>
             </a>
@@ -1013,10 +1013,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </div>
           <a
             class="base left dark image nonMobile"
-            data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
+            data-test-ref="2_NON_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -1043,10 +1043,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </a>
           <a
             class="base left dark image mobile"
-            data-test-ref="test_4_MOBILE_THUMBNAIL"
+            data-test-ref="2_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -1078,24 +1078,24 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
       >
         <div
           class="base fadeEnter fadeEnterActive"
-          id="test_3"
+          id="1"
         >
           <div
             class="category"
           >
-            Culture
+            Aesop Spotify
           </div>
           <div>
             <a
               class="base left dark title"
-              data-test-ref="test_3_TITLE"
+              data-test-ref="1_TITLE"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+              title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
             >
               <h1>
                 <span>
-                  3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                  1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
                 </span>
               </h1>
             </a>
@@ -1109,10 +1109,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </div>
           <a
             class="base left dark image nonMobile"
-            data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
+            data-test-ref="1_NON_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -1139,10 +1139,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
           </a>
           <a
             class="base left dark image mobile"
-            data-test-ref="test_3_MOBILE_THUMBNAIL"
+            data-test-ref="1_MOBILE_THUMBNAIL"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
             <div>
               <picture
@@ -1181,7 +1181,7 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         >
           <div
             class="base leftMiddleArticle fadeEnter fadeEnterActive"
-            id="test_1"
+            id="4"
           >
             <div
               class="category"
@@ -1191,14 +1191,14 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             <div>
               <a
                 class="base left dark title"
-                data-test-ref="test_1_TITLE"
+                data-test-ref="4_TITLE"
                 href="https://www.aesop.com/au/r/careers"
                 target="_self"
-                title="1. Senorial consectetur adipiscing elit."
+                title="4. Senorial consectetur adipiscing elit."
               >
                 <h1>
                   <span>
-                    1. Senorial consectetur adipiscing elit.
+                    4. Senorial consectetur adipiscing elit.
                   </span>
                 </h1>
               </a>
@@ -1212,10 +1212,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             </div>
             <a
               class="base left dark image nonMobile"
-              data-test-ref="test_1_NON_MOBILE_THUMBNAIL"
+              data-test-ref="4_NON_MOBILE_THUMBNAIL"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="1. Senorial consectetur adipiscing elit."
+              title="4. Senorial consectetur adipiscing elit."
             >
               <div>
                 <picture
@@ -1242,10 +1242,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             </a>
             <a
               class="base left dark image mobile"
-              data-test-ref="test_1_MOBILE_THUMBNAIL"
+              data-test-ref="4_MOBILE_THUMBNAIL"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="1. Senorial consectetur adipiscing elit."
+              title="4. Senorial consectetur adipiscing elit."
             >
               <div>
                 <picture
@@ -1278,7 +1278,7 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
       </div>
       <div
         class="base fadeEnter fadeEnterActive"
-        id="test_2"
+        id="3"
       >
         <div
           class="category"
@@ -1288,14 +1288,14 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         <div>
           <a
             class="base left dark title"
-            data-test-ref="test_2_TITLE"
+            data-test-ref="3_TITLE"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
           >
             <h1>
               <span>
-                2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+                3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
               </span>
             </h1>
           </a>
@@ -1309,10 +1309,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         </div>
         <a
           class="base left dark image nonMobile"
-          data-test-ref="test_2_NON_MOBILE_THUMBNAIL"
+          data-test-ref="3_NON_MOBILE_THUMBNAIL"
           href="https://www.aesop.com/au/r/careers"
           target="_self"
-          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
         >
           <div>
             <picture
@@ -1339,10 +1339,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         </a>
         <a
           class="base left dark image mobile"
-          data-test-ref="test_2_MOBILE_THUMBNAIL"
+          data-test-ref="3_MOBILE_THUMBNAIL"
           href="https://www.aesop.com/au/r/careers"
           target="_self"
-          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
+          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
         >
           <div>
             <picture
@@ -1370,7 +1370,7 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
       </div>
       <div
         class="base fadeEnter fadeEnterActive"
-        id="test_3"
+        id="2"
       >
         <div
           class="category"
@@ -1380,14 +1380,14 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         <div>
           <a
             class="base left dark title"
-            data-test-ref="test_3_TITLE"
+            data-test-ref="2_TITLE"
             href="https://www.aesop.com/au/r/careers"
             target="_self"
-            title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+            title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
           >
             <h1>
               <span>
-                3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
               </span>
             </h1>
           </a>
@@ -1401,10 +1401,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         </div>
         <a
           class="base left dark image nonMobile"
-          data-test-ref="test_3_NON_MOBILE_THUMBNAIL"
+          data-test-ref="2_NON_MOBILE_THUMBNAIL"
           href="https://www.aesop.com/au/r/careers"
           target="_self"
-          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
         >
           <div>
             <picture
@@ -1431,10 +1431,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         </a>
         <a
           class="base left dark image mobile"
-          data-test-ref="test_3_MOBILE_THUMBNAIL"
+          data-test-ref="2_MOBILE_THUMBNAIL"
           href="https://www.aesop.com/au/r/careers"
           target="_self"
-          title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+          title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
         >
           <div>
             <picture
@@ -1471,7 +1471,7 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
         >
           <div
             class="base rightMiddleArticle fadeEnter fadeEnterActive"
-            id="test_4"
+            id="1"
           >
             <div
               class="category"
@@ -1481,14 +1481,14 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             <div>
               <a
                 class="base left dark title"
-                data-test-ref="test_4_TITLE"
+                data-test-ref="1_TITLE"
                 href="https://www.aesop.com/au/r/careers"
                 target="_self"
-                title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+                title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
               >
                 <h1>
                   <span>
-                    4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+                    1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
                   </span>
                 </h1>
               </a>
@@ -1502,10 +1502,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             </div>
             <a
               class="base left dark image nonMobile"
-              data-test-ref="test_4_NON_MOBILE_THUMBNAIL"
+              data-test-ref="1_NON_MOBILE_THUMBNAIL"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+              title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
             >
               <div>
                 <picture
@@ -1532,10 +1532,10 @@ exports[`<ContentHubArticleList /> should render base component correctly with p
             </a>
             <a
               class="base left dark image mobile"
-              data-test-ref="test_4_MOBILE_THUMBNAIL"
+              data-test-ref="1_MOBILE_THUMBNAIL"
               href="https://www.aesop.com/au/r/careers"
               target="_self"
-              title="4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
+              title="1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
             >
               <div>
                 <picture
