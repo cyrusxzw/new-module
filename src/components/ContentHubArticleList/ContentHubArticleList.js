@@ -29,7 +29,7 @@ const ContentHubArticleList = ({
     styles[`bottom-left-${pattern}`],
     styles[`article`],
     {
-      [styles.nonFirstRow]: count === 1 && pattern === 1,
+      [styles.nonFirstRow]: count === 1,
     },
   );
   const bottomRightClassSet = cx(
@@ -39,87 +39,82 @@ const ContentHubArticleList = ({
   const leftMiddleArticleClassSet = cx(styles.leftMiddleArticle);
   const middleArticleClassSet = cx(styles.middleArticle);
   const rightMiddleArticleClassSet = cx(styles.rightMiddleArticle);
-  let articleNo = -1;
-  const increaseArticleNo = () => {
-    articleNo++;
-    return true;
-  };
 
   return (
     <section>
       <Fragment>
         <div className={classSet}>
           <div className={topLeftClassSet}>
-            {count >= 4 && increaseArticleNo() && (
+            {count >= 4 && (
               <ContentHubArticle
-                articleRef={articles[articleNo].articleRef}
-                category={articles[articleNo].category}
-                dataTestRef={articles[articleNo].id}
-                horizontalThumbnail={articles[articleNo].horizontalThumbnail}
-                id={articles[articleNo].id}
+                articleRef={articles[count - 4].articleRef}
+                category={articles[count - 4].category}
+                dataTestRef={articles[count - 4].id}
+                horizontalThumbnail={articles[count - 4].horizontalThumbnail}
+                id={articles[count - 4].id}
                 isHorizontal={Boolean(!pattern)}
                 isInFirstGroup={isFirstGroup}
-                key={articles[articleNo].id}
-                longTitle={articles[articleNo].longTitle}
-                onClick={articles[articleNo].onClick}
-                readingTime={articles[articleNo].readingTime}
-                uri={articles[articleNo].uri}
-                verticalThumbnail={articles[articleNo].verticalThumbnail}
+                key={articles[count - 4].id}
+                longTitle={articles[count - 4].longTitle}
+                onClick={articles[count - 4].onClick}
+                readingTime={articles[count - 4].readingTime}
+                uri={articles[count - 4].uri}
+                verticalThumbnail={articles[count - 4].verticalThumbnail}
               />
             )}
           </div>
           <div className={topRightClassSet}>
-            {count >= 3 && increaseArticleNo() && (
+            {count >= 3 && (
               <ContentHubArticle
-                articleRef={articles[articleNo].articleRef}
-                category={articles[articleNo].category}
-                dataTestRef={articles[articleNo].id}
-                horizontalThumbnail={articles[articleNo].horizontalThumbnail}
-                id={articles[articleNo].id}
+                articleRef={articles[count - 3].articleRef}
+                category={articles[count - 3].category}
+                dataTestRef={articles[count - 3].id}
+                horizontalThumbnail={articles[count - 3].horizontalThumbnail}
+                id={articles[count - 3].id}
                 isHorizontal={Boolean(pattern)}
                 isInFirstGroup={isFirstGroup}
-                key={articles[articleNo].id}
-                longTitle={articles[articleNo].longTitle}
-                onClick={articles[articleNo].onClick}
-                readingTime={articles[articleNo].readingTime}
-                uri={articles[articleNo].uri}
-                verticalThumbnail={articles[articleNo].verticalThumbnail}
+                key={articles[count - 3].id}
+                longTitle={articles[count - 3].longTitle}
+                onClick={articles[count - 3].onClick}
+                readingTime={articles[count - 3].readingTime}
+                uri={articles[count - 3].uri}
+                verticalThumbnail={articles[count - 3].verticalThumbnail}
               />
             )}
           </div>
           <div className={bottomLeftClassSet}>
-            {count >= 1 && increaseArticleNo() && (
+            {count >= 2 && (
               <ContentHubArticle
-                articleRef={articles[articleNo].articleRef}
-                category={articles[articleNo].category}
-                dataTestRef={articles[articleNo].id}
-                horizontalThumbnail={articles[articleNo].horizontalThumbnail}
-                id={articles[articleNo].id}
+                articleRef={articles[count - 2].articleRef}
+                category={articles[count - 2].category}
+                dataTestRef={articles[count - 2].id}
+                horizontalThumbnail={articles[count - 2].horizontalThumbnail}
+                id={articles[count - 2].id}
                 isHorizontal={Boolean(pattern)}
                 isInFirstGroup={isFirstGroup}
-                longTitle={articles[articleNo].longTitle}
-                onClick={articles[articleNo].onClick}
-                readingTime={articles[articleNo].readingTime}
-                uri={articles[articleNo].uri}
-                verticalThumbnail={articles[articleNo].verticalThumbnail}
+                longTitle={articles[count - 2].longTitle}
+                onClick={articles[count - 2].onClick}
+                readingTime={articles[count - 2].readingTime}
+                uri={articles[count - 2].uri}
+                verticalThumbnail={articles[count - 2].verticalThumbnail}
               />
             )}
           </div>
           <div className={bottomRightClassSet}>
-            {count >= 2 && increaseArticleNo() && (
+            {count >= 1 && (
               <ContentHubArticle
-                articleRef={articles[articleNo].articleRef}
-                category={articles[articleNo].category}
-                dataTestRef={articles[articleNo].id}
-                horizontalThumbnail={articles[articleNo].horizontalThumbnail}
-                id={articles[articleNo].id}
+                articleRef={articles[count - 1].articleRef}
+                category={articles[count - 1].category}
+                dataTestRef={articles[count - 1].id}
+                horizontalThumbnail={articles[count - 1].horizontalThumbnail}
+                id={articles[count - 1].id}
                 isHorizontal={Boolean(!pattern)}
                 isInFirstGroup={isFirstGroup}
-                longTitle={articles[articleNo].longTitle}
-                onClick={articles[articleNo].onClick}
-                readingTime={articles[articleNo].readingTime}
-                uri={articles[articleNo].uri}
-                verticalThumbnail={articles[articleNo].verticalThumbnail}
+                longTitle={articles[count - 1].longTitle}
+                onClick={articles[count - 1].onClick}
+                readingTime={articles[count - 1].readingTime}
+                uri={articles[count - 1].uri}
+                verticalThumbnail={articles[count - 1].verticalThumbnail}
               />
             )}
           </div>

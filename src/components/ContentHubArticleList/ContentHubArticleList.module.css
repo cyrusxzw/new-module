@@ -52,6 +52,7 @@
 }
 
 .nonFirstRow {
+  display: none;
   grid-row: 1 / 3;
 }
 

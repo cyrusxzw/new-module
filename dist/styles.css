@@ -3557,6 +3557,7 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   }
 .ContentHubArticleList-module_nonFirstRow__39pbZ {
   grid-row: 1 / 3;
+  display: none;
 }
 .ContentHubArticleList-module_top-left-0__18FHD {
   align-self: end;
