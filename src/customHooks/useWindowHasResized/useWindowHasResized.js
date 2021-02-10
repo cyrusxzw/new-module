@@ -22,7 +22,7 @@ const useWindowHasResized = callback => {
       window.addEventListener('resize', handleResize);
     }
 
-    return function cleanup() {
+    return function cleanUp() {
       if (isInBrowser()) {
         window.removeEventListener('resize', handleResize);
       }
