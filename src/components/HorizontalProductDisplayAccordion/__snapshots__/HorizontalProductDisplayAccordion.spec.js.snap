@@ -169,7 +169,7 @@ exports[`<HorizontalProductDisplayAccordion /> should render base component corr
                   class="icon"
                 >
                   <svg
-                    aria-labelledby="rightArrow-1"
+                    aria-labelledby="rightArrow-0"
                     class="base rightArrow dark"
                     data-testid="data-testid-Icon"
                     focusable="false"
@@ -181,7 +181,7 @@ exports[`<HorizontalProductDisplayAccordion /> should render base component corr
                     width="12"
                   >
                     <title
-                      id="rightArrow-1"
+                      id="rightArrow-0"
                     >
                       rightArrow
                     </title>
@@ -367,7 +367,7 @@ exports[`<HorizontalProductDisplayAccordion /> should render base component corr
                   class="icon"
                 >
                   <svg
-                    aria-labelledby="rightArrow-2"
+                    aria-labelledby="rightArrow-1"
                     class="base rightArrow light"
                     data-testid="data-testid-Icon"
                     focusable="false"
@@ -379,7 +379,7 @@ exports[`<HorizontalProductDisplayAccordion /> should render base component corr
                     width="12"
                   >
                     <title
-                      id="rightArrow-2"
+                      id="rightArrow-1"
                     >
                       rightArrow
                     </title>
@@ -565,7 +565,7 @@ exports[`<HorizontalProductDisplayAccordion /> should render base component corr
                   class="icon"
                 >
                   <svg
-                    aria-labelledby="rightArrow-3"
+                    aria-labelledby="rightArrow-2"
                     class="base rightArrow dark"
                     data-testid="data-testid-Icon"
                     focusable="false"
@@ -577,7 +577,7 @@ exports[`<HorizontalProductDisplayAccordion /> should render base component corr
                     width="12"
                   >
                     <title
-                      id="rightArrow-3"
+                      id="rightArrow-2"
                     >
                       rightArrow
                     </title>

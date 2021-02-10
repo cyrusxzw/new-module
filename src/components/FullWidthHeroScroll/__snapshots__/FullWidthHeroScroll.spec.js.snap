@@ -109,7 +109,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
               class="icon"
             >
               <svg
-                aria-labelledby="rightArrow-1"
+                aria-labelledby="rightArrow-0"
                 class="base rightArrow light"
                 data-testid="data-testid-Icon"
                 focusable="false"
@@ -121,7 +121,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
                 width="12"
               >
                 <title
-                  id="rightArrow-1"
+                  id="rightArrow-0"
                 >
                   rightArrow
                 </title>
@@ -139,7 +139,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
           type="button"
         >
           <svg
-            aria-labelledby="scrolldown-2"
+            aria-labelledby="scrolldown-1"
             class="base scrolldown light"
             data-testid="data-testid-Icon"
             focusable="false"
@@ -151,7 +151,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
             width="12"
           >
             <title
-              id="scrolldown-2"
+              id="scrolldown-1"
             >
               scrolldown
             </title>

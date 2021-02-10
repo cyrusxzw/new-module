@@ -34,6 +34,16 @@ Object.defineProperty(HTMLMediaElement.prototype, 'muted', {
 });
 
 /**
+ * Globally mock the `uuid` package
+ */
+jest.mock('uuid', () => {
+  let value = 0;
+  return {
+    v4: () => value++,
+  };
+});
+
+/**
  *  https://github.com/jsdom/jsdom/issues/2155
  */
 window.HTMLMediaElement.prototype.load = () => {};

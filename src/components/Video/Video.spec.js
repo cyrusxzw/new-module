@@ -8,7 +8,7 @@ describe('<Video />', () => {
     expect(Video).toBeDefined();
   });
 
-  it('should not with no props', () => {
+  it('should not crash application when rendered with no props', () => {
     render(<Video />);
   });
 

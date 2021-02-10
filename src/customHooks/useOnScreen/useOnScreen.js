@@ -45,7 +45,7 @@ const useOnScreen = (
       observer.observe(currentRef);
     }
 
-    return function cleanup() {
+    return function cleanUp() {
       if (hasIntersectionObserver) {
         observer.unobserve(currentRef);
       }

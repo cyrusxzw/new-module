@@ -41,7 +41,7 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
           disabled=""
         >
           <svg
-            aria-labelledby="rightArrow-1"
+            aria-labelledby="rightArrow-0"
             class="base rightArrow light signUpIcon light"
             data-testid="data-testid-Icon"
             focusable="false"
@@ -53,7 +53,7 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
             width="12"
           >
             <title
-              id="rightArrow-1"
+              id="rightArrow-0"
             >
               rightArrow
             </title>

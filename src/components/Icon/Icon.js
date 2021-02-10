@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useUID } from 'react-uid';
+import { v4 as uuidv4 } from 'uuid';
 import find from 'lodash/find';
 import { svgs } from './Icon.svgs';
 import { generateSvgBlueprint } from './Icon.utils';
@@ -19,14 +19,14 @@ const Icon = ({
   width,
 }) => {
   const svg = find(svgs, { name });
-  const uid = useUID();
 
   if (svg === undefined) {
     return null;
   }
 
-  const ariaLabel = `${name}-${uid}`;
-  const svgBlueprint = generateSvgBlueprint(svg, ariaLabel);
+  const uuidKey = uuidv4();
+  const uuidAriaLabellBy = `${name}-${uuidKey}`;
+  const svgBlueprint = generateSvgBlueprint(svg, uuidKey);
   const classSet = cx(
     styles.base,
     styles[name],
@@ -41,7 +41,7 @@ const Icon = ({
 
   return (
     <svg
-      aria-labelledby={ariaLabel}
+      aria-labelledby={uuidAriaLabellBy}
       className={classSet}
       data-ref={dataRef}
       data-testid="data-testid-Icon"
@@ -53,7 +53,7 @@ const Icon = ({
       viewBox={svg.viewBox}
       width={width}
     >
-      <title id={ariaLabel}>{ariaTitle}</title>
+      <title id={uuidAriaLabellBy}>{ariaTitle}</title>
       <g>{svgBlueprint}</g>
     </svg>
   );

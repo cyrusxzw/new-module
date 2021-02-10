@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useUID } from 'react-uid';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './Checkbox.module.css';
 
 const Checkbox = forwardRef(
@@ -21,7 +21,6 @@ const Checkbox = forwardRef(
     },
     ref,
   ) => {
-    const uid = useUID();
     const baseClassSet = cx(styles.base, className);
     const checkboxClassSet = cx(
       styles.checkBox,
@@ -31,7 +30,7 @@ const Checkbox = forwardRef(
     );
     const contentClassSet = cx(styles.content, styles[theme], contentClassName);
 
-    const inputId = idProp || uid;
+    const inputId = idProp || uuidv4();
     const errorMessageId = `${inputId}-error-message`;
 
     return (

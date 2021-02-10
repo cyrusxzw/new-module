@@ -1,7 +1,8 @@
 import React, { forwardRef, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useUID } from 'react-uid';
+import { v4 as uuidv4 } from 'uuid';
+
 import styles from './TextInputV2.module.css';
 
 const TextInputV2 = forwardRef(
@@ -26,7 +27,6 @@ const TextInputV2 = forwardRef(
     },
     ref,
   ) => {
-    const uid = useUID();
     const [value, setValue] = useState(valueProp || '');
     const handleOnChange = useCallback(
       event => {
@@ -35,7 +35,7 @@ const TextInputV2 = forwardRef(
       },
       [onChange, setValue],
     );
-    const inputId = idProp || uid;
+    const inputId = idProp || uuidv4();
     const errorMessageId = `${inputId}-error-message`;
 
     return (

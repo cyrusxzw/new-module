@@ -15,7 +15,7 @@ exports[`<ImageCarousel /> should render base component correctly 1`] = `
         type="button"
       >
         <svg
-          aria-labelledby="chevron-1"
+          aria-labelledby="chevron-0"
           class="base chevron dark"
           data-testid="data-testid-Icon"
           focusable="false"
@@ -27,7 +27,7 @@ exports[`<ImageCarousel /> should render base component correctly 1`] = `
           width="16"
         >
           <title
-            id="chevron-1"
+            id="chevron-0"
           >
             chevron
           </title>
@@ -274,7 +274,7 @@ exports[`<ImageCarousel /> should render base component correctly 1`] = `
         type="button"
       >
         <svg
-          aria-labelledby="chevron-2"
+          aria-labelledby="chevron-1"
           class="base chevron dark"
           data-testid="data-testid-Icon"
           focusable="false"
@@ -286,7 +286,7 @@ exports[`<ImageCarousel /> should render base component correctly 1`] = `
           width="16"
         >
           <title
-            id="chevron-2"
+            id="chevron-1"
           >
             chevron
           </title>

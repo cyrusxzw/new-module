@@ -20,7 +20,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
         tabindex="-1"
       >
         <svg
-          aria-labelledby="close-1"
+          aria-labelledby="close-0"
           class="base close dark"
           data-testid="data-testid-Icon"
           focusable="false"
@@ -32,7 +32,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
           width="15"
         >
           <title
-            id="close-1"
+            id="close-0"
           >
             close
           </title>
@@ -90,7 +90,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 disabled=""
               >
                 <svg
-                  aria-labelledby="rightArrow-2"
+                  aria-labelledby="rightArrow-1"
                   class="base rightArrow light signUpIcon light"
                   data-testid="data-testid-Icon"
                   focusable="false"
@@ -102,7 +102,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   width="12"
                 >
                   <title
-                    id="rightArrow-2"
+                    id="rightArrow-1"
                   >
                     rightArrow
                   </title>
@@ -200,7 +200,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
-                  aria-labelledby="rightUpArrow-5"
+                  aria-labelledby="rightUpArrow-2"
                   class="base rightUpArrow light"
                   data-testid="data-testid-Icon"
                   focusable="false"
@@ -212,7 +212,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   width="12"
                 >
                   <title
-                    id="rightUpArrow-5"
+                    id="rightUpArrow-2"
                   >
                     rightUpArrow
                   </title>
@@ -240,7 +240,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
-                  aria-labelledby="rightUpArrow-6"
+                  aria-labelledby="rightUpArrow-3"
                   class="base rightUpArrow light"
                   data-testid="data-testid-Icon"
                   focusable="false"
@@ -252,7 +252,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   width="12"
                 >
                   <title
-                    id="rightUpArrow-6"
+                    id="rightUpArrow-3"
                   >
                     rightUpArrow
                   </title>
@@ -280,7 +280,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
-                  aria-labelledby="rightUpArrow-7"
+                  aria-labelledby="rightUpArrow-4"
                   class="base rightUpArrow light"
                   data-testid="data-testid-Icon"
                   focusable="false"
@@ -292,7 +292,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   width="12"
                 >
                   <title
-                    id="rightUpArrow-7"
+                    id="rightUpArrow-4"
                   >
                     rightUpArrow
                   </title>
@@ -562,7 +562,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
-                  aria-labelledby="rightUpArrow-8"
+                  aria-labelledby="rightUpArrow-5"
                   class="base rightUpArrow light"
                   data-testid="data-testid-Icon"
                   focusable="false"
@@ -574,7 +574,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   width="12"
                 >
                   <title
-                    id="rightUpArrow-8"
+                    id="rightUpArrow-5"
                   >
                     rightUpArrow
                   </title>
@@ -602,7 +602,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
-                  aria-labelledby="rightUpArrow-9"
+                  aria-labelledby="rightUpArrow-6"
                   class="base rightUpArrow light"
                   data-testid="data-testid-Icon"
                   focusable="false"
@@ -614,7 +614,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   width="12"
                 >
                   <title
-                    id="rightUpArrow-9"
+                    id="rightUpArrow-6"
                   >
                     rightUpArrow
                   </title>
@@ -642,7 +642,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
-                  aria-labelledby="rightUpArrow-10"
+                  aria-labelledby="rightUpArrow-7"
                   class="base rightUpArrow light"
                   data-testid="data-testid-Icon"
                   focusable="false"
@@ -654,7 +654,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   width="12"
                 >
                   <title
-                    id="rightUpArrow-10"
+                    id="rightUpArrow-7"
                   >
                     rightUpArrow
                   </title>
@@ -682,7 +682,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
-                  aria-labelledby="rightUpArrow-11"
+                  aria-labelledby="rightUpArrow-8"
                   class="base rightUpArrow light"
                   data-testid="data-testid-Icon"
                   focusable="false"
@@ -694,7 +694,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   width="12"
                 >
                   <title
-                    id="rightUpArrow-11"
+                    id="rightUpArrow-8"
                   >
                     rightUpArrow
                   </title>
