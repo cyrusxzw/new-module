@@ -42,7 +42,7 @@ exports[`<StoreDetailHeader /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
-                  aria-labelledby="rightUpArrow-0"
+                  aria-labelledby="rightUpArrow-1"
                   class="base rightUpArrow dark"
                   data-testid="data-testid-Icon"
                   focusable="false"
@@ -54,7 +54,7 @@ exports[`<StoreDetailHeader /> should render base component correctly 1`] = `
                   width="12"
                 >
                   <title
-                    id="rightUpArrow-0"
+                    id="rightUpArrow-1"
                   >
                     rightUpArrow
                   </title>
@@ -93,7 +93,7 @@ exports[`<StoreDetailHeader /> should render base component correctly 1`] = `
                 class="icon"
               >
                 <svg
-                  aria-labelledby="rightUpArrow-1"
+                  aria-labelledby="rightUpArrow-2"
                   class="base rightUpArrow dark"
                   data-testid="data-testid-Icon"
                   focusable="false"
@@ -105,7 +105,7 @@ exports[`<StoreDetailHeader /> should render base component correctly 1`] = `
                   width="12"
                 >
                   <title
-                    id="rightUpArrow-1"
+                    id="rightUpArrow-2"
                   >
                     rightUpArrow
                   </title>
