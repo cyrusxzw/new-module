@@ -77,7 +77,7 @@ exports[`<SubNav isSelect /> should render base component correctly 1`] = `
         </option>
       </select>
       <svg
-        aria-labelledby="chevron-0"
+        aria-labelledby="chevron-1"
         class="base chevron dark icon"
         data-testid="data-testid-Icon"
         focusable="false"
@@ -89,7 +89,7 @@ exports[`<SubNav isSelect /> should render base component correctly 1`] = `
         width="15"
       >
         <title
-          id="chevron-0"
+          id="chevron-1"
         >
           chevron
         </title>

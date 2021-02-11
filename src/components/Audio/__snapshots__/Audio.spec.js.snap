@@ -65,7 +65,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
           type="button"
         >
           <svg
-            aria-labelledby="seek-0"
+            aria-labelledby="seek-1"
             class="base seek dark icon disabled"
             data-testid="data-testid-Icon"
             focusable="false"
@@ -77,7 +77,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
             width="20"
           >
             <title
-              id="seek-0"
+              id="seek-1"
             >
               seek
             </title>
@@ -98,7 +98,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
           type="button"
         >
           <svg
-            aria-labelledby="play-1"
+            aria-labelledby="play-2"
             class="base play dark iconPlay disabled"
             data-testid="data-testid-Icon"
             focusable="false"
@@ -110,7 +110,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
             width="15"
           >
             <title
-              id="play-1"
+              id="play-2"
             >
               play
             </title>
@@ -122,7 +122,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
             </g>
           </svg>
           <svg
-            aria-labelledby="pause-2"
+            aria-labelledby="pause-3"
             class="base pause dark iconPause hidden disabled"
             data-testid="data-testid-Icon"
             focusable="false"
@@ -134,7 +134,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
             width="15"
           >
             <title
-              id="pause-2"
+              id="pause-3"
             >
               pause
             </title>
@@ -157,7 +157,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
           type="button"
         >
           <svg
-            aria-labelledby="seek-3"
+            aria-labelledby="seek-4"
             class="base seek dark icon disabled"
             data-testid="data-testid-Icon"
             focusable="false"
@@ -169,7 +169,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
             width="20"
           >
             <title
-              id="seek-3"
+              id="seek-4"
             >
               seek
             </title>
@@ -196,7 +196,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
         >
           Download Music 
           <svg
-            aria-labelledby="download-4"
+            aria-labelledby="download-5"
             class="base download dark downloadButtonIcon"
             data-testid="data-testid-Icon"
             focusable="false"
@@ -208,7 +208,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
             width="13"
           >
             <title
-              id="download-4"
+              id="download-5"
             >
               download
             </title>

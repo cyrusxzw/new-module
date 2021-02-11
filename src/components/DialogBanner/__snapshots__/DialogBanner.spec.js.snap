@@ -16,7 +16,7 @@ exports[`<DialogBanner /> should render base component correctly 1`] = `
       class="iconContainer"
     >
       <svg
-        aria-labelledby="warning-2"
+        aria-labelledby="warning-1"
         class="base warning light warningIcon"
         data-testid="data-testid-Icon"
         focusable="false"
@@ -28,7 +28,7 @@ exports[`<DialogBanner /> should render base component correctly 1`] = `
         width="22"
       >
         <title
-          id="warning-2"
+          id="warning-1"
         >
           warning
         </title>
@@ -65,7 +65,7 @@ exports[`<DialogBanner /> should render base component correctly 1`] = `
         type="button"
       >
         <svg
-          aria-labelledby="close-3"
+          aria-labelledby="close-2"
           class="base close light closeIcon"
           data-testid="data-testid-Icon"
           focusable="false"
@@ -77,7 +77,7 @@ exports[`<DialogBanner /> should render base component correctly 1`] = `
           width="12"
         >
           <title
-            id="close-3"
+            id="close-2"
           >
             close
           </title>

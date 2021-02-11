@@ -29,46 +29,6 @@ exports[`<FooterBlock /> renders block navigation component correctly 1`] = `
             class="icon"
           >
             <svg
-              aria-labelledby="rightUpArrow-0"
-              class="base rightUpArrow dark"
-              data-testid="data-testid-Icon"
-              focusable="false"
-              height="12"
-              role="img"
-              style="height: 12px; width: 12px;"
-              tabindex="-1"
-              viewBox="0 0 50 50"
-              width="12"
-            >
-              <title
-                id="rightUpArrow-0"
-              >
-                rightUpArrow
-              </title>
-              <g>
-                <path
-                  d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
-                />
-              </g>
-            </svg>
-          </i>
-        </a>
-      </li>
-      <li>
-        <a
-          class="base hasIcon hasExternalIcon left dark listItem"
-          data-test-ref="FOOTER_LINK"
-          href="https://www.aesop.com/au/r/shipping/"
-          target="_blank"
-          title="Delivery and returns"
-        >
-          Delivery and returns
-           
-          <i
-            aria-hidden="true"
-            class="icon"
-          >
-            <svg
               aria-labelledby="rightUpArrow-1"
               class="base rightUpArrow dark"
               data-testid="data-testid-Icon"
@@ -98,11 +58,11 @@ exports[`<FooterBlock /> renders block navigation component correctly 1`] = `
         <a
           class="base hasIcon hasExternalIcon left dark listItem"
           data-test-ref="FOOTER_LINK"
-          href="https://www.aesop.com/au/r/contact-us"
+          href="https://www.aesop.com/au/r/shipping/"
           target="_blank"
-          title="Click And Collect"
+          title="Delivery and returns"
         >
-          Click And Collect
+          Delivery and returns
            
           <i
             aria-hidden="true"
@@ -122,6 +82,46 @@ exports[`<FooterBlock /> renders block navigation component correctly 1`] = `
             >
               <title
                 id="rightUpArrow-2"
+              >
+                rightUpArrow
+              </title>
+              <g>
+                <path
+                  d="M21.8,0.2l28.1-0.1v28.1l-4.5,0l0.1-20.5L16.2,37.1l-3.4-3.4L42.1,4.4L21.8,4.4L21.8,0.2L21.8,0.2z"
+                />
+              </g>
+            </svg>
+          </i>
+        </a>
+      </li>
+      <li>
+        <a
+          class="base hasIcon hasExternalIcon left dark listItem"
+          data-test-ref="FOOTER_LINK"
+          href="https://www.aesop.com/au/r/contact-us"
+          target="_blank"
+          title="Click And Collect"
+        >
+          Click And Collect
+           
+          <i
+            aria-hidden="true"
+            class="icon"
+          >
+            <svg
+              aria-labelledby="rightUpArrow-3"
+              class="base rightUpArrow dark"
+              data-testid="data-testid-Icon"
+              focusable="false"
+              height="12"
+              role="img"
+              style="height: 12px; width: 12px;"
+              tabindex="-1"
+              viewBox="0 0 50 50"
+              width="12"
+            >
+              <title
+                id="rightUpArrow-3"
               >
                 rightUpArrow
               </title>

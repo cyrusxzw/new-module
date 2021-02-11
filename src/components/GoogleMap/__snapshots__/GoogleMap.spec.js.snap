@@ -37,7 +37,7 @@ exports[`<GoogleMap /> should render base component correctly 1`] = `
             class="icon"
           >
             <svg
-              aria-labelledby="rightArrow-0"
+              aria-labelledby="rightArrow-1"
               class="base rightArrow dark"
               data-testid="data-testid-Icon"
               focusable="false"
@@ -49,7 +49,7 @@ exports[`<GoogleMap /> should render base component correctly 1`] = `
               width="12"
             >
               <title
-                id="rightArrow-0"
+                id="rightArrow-1"
               >
                 rightArrow
               </title>

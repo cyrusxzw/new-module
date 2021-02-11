@@ -1,37 +1,37 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { v4 as uuidv4 } from 'uuid';
+import { useUID } from 'react-uid';
 import styles from './Checkbox.module.css';
 
 const Checkbox = forwardRef(
   (
     {
-      className,
       checkboxClassName,
+      className,
       content,
       contentClassName,
       dataTestRef,
       errorMessage,
       id: idProp,
-      isEnabled,
+      isEnabled = true,
       name,
       onChange,
-      theme,
+      theme = 'dark',
     },
     ref,
   ) => {
+    const uid = useUID();
+    const inputId = idProp || uid;
+    const errorMessageId = `${inputId}-error-message`;
     const baseClassSet = cx(styles.base, className);
+    const contentClassSet = cx(styles.content, styles[theme], contentClassName);
     const checkboxClassSet = cx(
       styles.checkBox,
       styles[theme],
       { [styles.hasError]: errorMessage },
       checkboxClassName,
     );
-    const contentClassSet = cx(styles.content, styles[theme], contentClassName);
-
-    const inputId = idProp || uuidv4();
-    const errorMessageId = `${inputId}-error-message`;
 
     return (
       <div>
@@ -61,8 +61,8 @@ const Checkbox = forwardRef(
 );
 
 Checkbox.propTypes = {
-  className: PropTypes.string,
   checkboxClassName: PropTypes.string,
+  className: PropTypes.string,
   content: PropTypes.string.isRequired,
   contentClassName: PropTypes.string,
   dataTestRef: PropTypes.string,
@@ -72,19 +72,6 @@ Checkbox.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
   theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-Checkbox.defaultProps = {
-  className: undefined,
-  checkboxClassName: undefined,
-  content: undefined,
-  contentClassName: undefined,
-  dataTestRef: undefined,
-  id: undefined,
-  isEnabled: true,
-  name: undefined,
-  onChange: undefined,
-  theme: 'dark',
 };
 
 export { Checkbox };
