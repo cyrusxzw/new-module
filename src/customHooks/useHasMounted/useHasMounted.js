@@ -6,7 +6,7 @@ const useHasMounted = () => {
   useEffect(() => {
     setHasMounted(true);
 
-    return function cleanUp() {
+    return function cleanup() {
       setHasMounted(false);
     };
   }, [hasMounted]);
