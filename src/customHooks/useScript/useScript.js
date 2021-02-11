@@ -63,7 +63,7 @@ const useScript = ({
 
     document.body.appendChild(script);
 
-    return function cleanUp() {
+    return function cleanup() {
       script.removeEventListener('load', handleLoad);
       script.removeEventListener('error', handleError);
       document.body.removeChild(script);
