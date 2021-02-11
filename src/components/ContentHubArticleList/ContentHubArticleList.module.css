@@ -27,6 +27,9 @@
 .mobileMiddleRow {
   display: flex;
   flex: 2;
+}
+
+.reverseColumn {
   flex-direction: row-reverse;
 }
 

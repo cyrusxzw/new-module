@@ -14,7 +14,11 @@ const ContentHubArticleList = ({
 
   const classSet = cx(styles.base, className);
   const mobileSet = cx(styles.mobile, className);
-  const mobileMiddleSet = cx(styles.mobileMiddleRow, className);
+  const mobileMiddleSet = cx(
+    styles.mobileMiddleRow,
+    { [styles.reverseColumn]: pattern === 0 },
+    className,
+  );
   const topLeftClassSet = cx(styles[`top-left-${pattern}`], styles[`article`], {
     [styles.nonFirstRow]: (count < 3 && pattern === 0) || count < 2,
   });
@@ -42,7 +46,7 @@ const ContentHubArticleList = ({
   const leftMiddleArticleClassSet = cx(styles.leftMiddleArticle);
   const middleArticleClassSet = cx(styles.middleArticle);
   const rightMiddleArticleClassSet = cx(styles.rightMiddleArticle);
-  let articleNo = -1;
+  let articleNo = -1; // article index for mobile
   const increaseArticleNo = () => {
     articleNo++;
     return true;
