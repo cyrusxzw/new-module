@@ -3529,10 +3529,12 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
+}
+.ContentHubArticleList-module_reverseColumn__212f8 {
   -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 .ContentHubArticleList-module_middleArticle__1AR-b {
   -webkit-box-flex: 1;
