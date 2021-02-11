@@ -42,6 +42,11 @@ const ContentHubArticleList = ({
   const leftMiddleArticleClassSet = cx(styles.leftMiddleArticle);
   const middleArticleClassSet = cx(styles.middleArticle);
   const rightMiddleArticleClassSet = cx(styles.rightMiddleArticle);
+  let articleNo = -1;
+  const increaseArticleNo = () => {
+    articleNo++;
+    return true;
+  };
 
   const getArticleIndex = (isOnTop, isOnLeft) => {
     const indexArray = isOnTop ? [4, 3] : [2, 1];
@@ -144,102 +149,84 @@ const ContentHubArticleList = ({
 
         {pattern === 0 && (
           <div className={mobileSet}>
-            {count >= 4 && (
+            {count >= 4 && increaseArticleNo() && (
               <ContentHubArticle
-                articleRef={articles[0].mobileArticleRef}
-                category={articles[0].category}
-                dataTestRef={articles[0].id}
-                horizontalThumbnail={articles[0].horizontalThumbnail}
-                id={articles[0].id}
+                articleRef={articles[articleNo].mobileArticleRef}
+                category={articles[articleNo].category}
+                dataTestRef={articles[articleNo].id}
+                horizontalThumbnail={articles[articleNo].horizontalThumbnail}
+                id={articles[articleNo].id}
                 isHorizontal={true}
                 isInFirstGroup={isFirstGroup}
-                key={articles[0].id}
-                longTitle={articles[0].longTitle}
-                onClick={articles[0].onClick}
-                readingTime={articles[0].readingTime}
-                uri={articles[0].uri}
-                verticalThumbnail={articles[0].verticalThumbnail}
+                key={articles[articleNo].id}
+                longTitle={articles[articleNo].longTitle}
+                onClick={articles[articleNo].onClick}
+                readingTime={articles[articleNo].readingTime}
+                uri={articles[articleNo].uri}
+                verticalThumbnail={articles[articleNo].verticalThumbnail}
               />
             )}
             <div className={mobileMiddleSet}>
               <div className={middleArticleClassSet}>
-                {count >= 3 && (
+                {count >= 2 && increaseArticleNo() && (
                   <ContentHubArticle
-                    articleRef={articles[count - 2].mobileArticleRef}
-                    category={articles[count - 2].category}
-                    className={leftMiddleArticleClassSet}
-                    dataTestRef={articles[count - 2].id}
+                    articleRef={articles[articleNo].mobileArticleRef}
+                    category={articles[articleNo].category}
+                    className={rightMiddleArticleClassSet}
+                    dataTestRef={articles[articleNo].id}
                     horizontalThumbnail={
-                      articles[count - 2].horizontalThumbnail
+                      articles[articleNo].horizontalThumbnail
                     }
-                    id={articles[count - 2].id}
+                    id={articles[articleNo].id}
                     isHorizontal={false}
                     isInFirstGroup={isFirstGroup}
-                    key={articles[count - 2].id}
-                    longTitle={articles[count - 2].longTitle}
-                    onClick={articles[count - 2].onClick}
-                    readingTime={articles[count - 2].readingTime}
-                    uri={articles[count - 2].uri}
-                    verticalThumbnail={articles[count - 2].verticalThumbnail}
+                    key={articles[articleNo].id}
+                    longTitle={articles[articleNo].longTitle}
+                    onClick={articles[articleNo].onClick}
+                    readingTime={articles[articleNo].readingTime}
+                    uri={articles[articleNo].uri}
+                    verticalThumbnail={articles[articleNo].verticalThumbnail}
                   />
                 )}
               </div>
               <div className={middleArticleClassSet}>
-                {count >= 2 && (
+                {count >= 3 && increaseArticleNo() && (
                   <ContentHubArticle
-                    articleRef={
-                      (count > 2 ? articles[count - 3] : articles[0])
-                        .mobileArticleRef
-                    }
-                    category={
-                      (count > 2 ? articles[count - 3] : articles[0]).category
-                    }
-                    className={rightMiddleArticleClassSet}
-                    dataTestRef={
-                      (count > 2 ? articles[count - 3] : articles[0]).id
-                    }
+                    articleRef={articles[articleNo].mobileArticleRef}
+                    category={articles[articleNo].category}
+                    className={leftMiddleArticleClassSet}
+                    dataTestRef={articles[articleNo].id}
                     horizontalThumbnail={
-                      (count > 2 ? articles[count - 3] : articles[0])
-                        .horizontalThumbnail
+                      articles[articleNo].horizontalThumbnail
                     }
-                    id={(count > 2 ? articles[count - 3] : articles[0]).id}
+                    id={articles[articleNo].id}
                     isHorizontal={false}
                     isInFirstGroup={isFirstGroup}
-                    key={(count > 2 ? articles[count - 3] : articles[0]).id}
-                    longTitle={
-                      (count > 2 ? articles[count - 3] : articles[0]).longTitle
-                    }
-                    onClick={
-                      (count > 2 ? articles[count - 3] : articles[0]).onClick
-                    }
-                    readingTime={
-                      (count > 2 ? articles[count - 3] : articles[0])
-                        .readingTime
-                    }
-                    uri={(count > 2 ? articles[count - 3] : articles[0]).uri}
-                    verticalThumbnail={
-                      (count > 2 ? articles[count - 3] : articles[0])
-                        .verticalThumbnail
-                    }
+                    key={articles[articleNo].id}
+                    longTitle={articles[articleNo].longTitle}
+                    onClick={articles[articleNo].onClick}
+                    readingTime={articles[articleNo].readingTime}
+                    uri={articles[articleNo].uri}
+                    verticalThumbnail={articles[articleNo].verticalThumbnail}
                   />
                 )}
               </div>
             </div>
-            {count >= 1 && (
+            {count >= 1 && increaseArticleNo() && (
               <ContentHubArticle
-                articleRef={articles[count - 1].mobileArticleRef}
-                category={articles[count - 1].category}
-                dataTestRef={articles[count - 1].id}
-                horizontalThumbnail={articles[count - 1].horizontalThumbnail}
-                id={articles[count - 1].id}
+                articleRef={articles[articleNo].mobileArticleRef}
+                category={articles[articleNo].category}
+                dataTestRef={articles[articleNo].id}
+                horizontalThumbnail={articles[articleNo].horizontalThumbnail}
+                id={articles[articleNo].id}
                 isHorizontal={true}
                 isInFirstGroup={isFirstGroup}
-                key={articles[count - 1].id}
-                longTitle={articles[count - 1].longTitle}
-                onClick={articles[count - 1].onClick}
-                readingTime={articles[count - 1].readingTime}
-                uri={articles[count - 1].uri}
-                verticalThumbnail={articles[count - 1].verticalThumbnail}
+                key={articles[articleNo].id}
+                longTitle={articles[articleNo].longTitle}
+                onClick={articles[articleNo].onClick}
+                readingTime={articles[articleNo].readingTime}
+                uri={articles[articleNo].uri}
+                verticalThumbnail={articles[articleNo].verticalThumbnail}
               />
             )}
           </div>
@@ -248,88 +235,84 @@ const ContentHubArticleList = ({
           <div className={mobileSet}>
             <div className={mobileMiddleSet}>
               <div className={middleArticleClassSet}>
-                {count >= 4 && (
+                {count >= 4 && increaseArticleNo() && (
                   <ContentHubArticle
-                    articleRef={articles[0].mobileArticleRef}
-                    category={articles[0].category}
+                    articleRef={articles[articleNo].mobileArticleRef}
+                    category={articles[articleNo].category}
                     className={leftMiddleArticleClassSet}
-                    dataTestRef={articles[0].id}
-                    horizontalThumbnail={articles[0].horizontalThumbnail}
-                    id={articles[0].id}
+                    dataTestRef={articles[articleNo].id}
+                    horizontalThumbnail={
+                      articles[articleNo].horizontalThumbnail
+                    }
+                    id={articles[articleNo].id}
                     isHorizontal={false}
                     isInFirstGroup={isFirstGroup}
-                    key={articles[0].id}
-                    longTitle={articles[0].longTitle}
-                    onClick={articles[0].onClick}
-                    readingTime={articles[0].readingTime}
-                    uri={articles[0].uri}
-                    verticalThumbnail={articles[0].verticalThumbnail}
+                    key={articles[articleNo].id}
+                    longTitle={articles[articleNo].longTitle}
+                    onClick={articles[articleNo].onClick}
+                    readingTime={articles[articleNo].readingTime}
+                    uri={articles[articleNo].uri}
+                    verticalThumbnail={articles[articleNo].verticalThumbnail}
                   />
                 )}
               </div>
               <div className={middleArticleClassSet} />
             </div>
-            {count >= 3 && (
+            {count >= 3 && increaseArticleNo() && (
               <ContentHubArticle
-                articleRef={
-                  (articles[count - 3] || articles[0]).mobileArticleRef
-                }
-                category={(articles[count - 3] || articles[0]).category}
-                dataTestRef={(articles[count - 3] || articles[0]).id}
-                horizontalThumbnail={
-                  (articles[count - 3] || articles[0]).horizontalThumbnail
-                }
-                id={(articles[count - 3] || articles[0]).id}
+                articleRef={articles[articleNo].mobileArticleRef}
+                category={articles[articleNo].category}
+                dataTestRef={articles[articleNo].id}
+                horizontalThumbnail={articles[articleNo].horizontalThumbnail}
+                id={articles[articleNo].id}
                 isHorizontal={true}
                 isInFirstGroup={isFirstGroup}
-                key={(articles[count - 3] || articles[0]).id}
-                longTitle={(articles[count - 3] || articles[0]).longTitle}
-                onClick={(articles[count - 3] || articles[0]).onClick}
-                readingTime={(articles[count - 3] || articles[0]).readingTime}
-                uri={(articles[count - 3] || articles[0]).uri}
-                verticalThumbnail={
-                  (articles[count - 3] || articles[0]).verticalThumbnail
-                }
+                key={articles[articleNo].id}
+                longTitle={articles[articleNo].longTitle}
+                onClick={articles[articleNo].onClick}
+                readingTime={articles[articleNo].readingTime}
+                uri={articles[articleNo].uri}
+                verticalThumbnail={articles[articleNo].verticalThumbnail}
               />
             )}
-            {count >= 2 && (
+            {count >= 2 && increaseArticleNo() && (
               <ContentHubArticle
-                articleRef={articles[count - 2].mobileArticleRef}
-                category={articles[count - 2].category}
-                dataTestRef={articles[count - 2].id}
-                horizontalThumbnail={articles[count - 2].horizontalThumbnail}
-                id={articles[count - 2].id}
+                articleRef={articles[articleNo].mobileArticleRef}
+                category={articles[articleNo].category}
+                dataTestRef={articles[articleNo].id}
+                horizontalThumbnail={articles[articleNo].horizontalThumbnail}
+                id={articles[articleNo].id}
                 isHorizontal={true}
                 isInFirstGroup={isFirstGroup}
-                key={articles[count - 2].id}
-                longTitle={articles[count - 2].longTitle}
-                onClick={articles[count - 2].onClick}
-                readingTime={articles[count - 2].readingTime}
-                uri={articles[count - 2].uri}
-                verticalThumbnail={articles[count - 2].verticalThumbnail}
+                key={articles[articleNo].id}
+                longTitle={articles[articleNo].longTitle}
+                onClick={articles[articleNo].onClick}
+                readingTime={articles[articleNo].readingTime}
+                uri={articles[articleNo].uri}
+                verticalThumbnail={articles[articleNo].verticalThumbnail}
               />
             )}
             <div className={mobileMiddleSet}>
               <div className={middleArticleClassSet} />
               <div className={middleArticleClassSet}>
-                {count >= 1 && (
+                {count >= 1 && increaseArticleNo() && (
                   <ContentHubArticle
-                    articleRef={articles[count - 1].mobileArticleRef}
-                    category={articles[count - 1].category}
+                    articleRef={articles[articleNo].mobileArticleRef}
+                    category={articles[articleNo].category}
                     className={rightMiddleArticleClassSet}
-                    dataTestRef={articles[count - 1].id}
+                    dataTestRef={articles[articleNo].id}
                     horizontalThumbnail={
-                      articles[count - 1].horizontalThumbnail
+                      articles[articleNo].horizontalThumbnail
                     }
-                    id={articles[count - 1].id}
+                    id={articles[articleNo].id}
                     isHorizontal={false}
                     isInFirstGroup={isFirstGroup}
-                    key={articles[count - 1].id}
-                    longTitle={articles[count - 1].longTitle}
-                    onClick={articles[count - 1].onClick}
-                    readingTime={articles[count - 1].readingTime}
-                    uri={articles[count - 1].uri}
-                    verticalThumbnail={articles[count - 1].verticalThumbnail}
+                    key={articles[articleNo].id}
+                    longTitle={articles[articleNo].longTitle}
+                    onClick={articles[articleNo].onClick}
+                    readingTime={articles[articleNo].readingTime}
+                    uri={articles[articleNo].uri}
+                    verticalThumbnail={articles[articleNo].verticalThumbnail}
                   />
                 )}
               </div>
