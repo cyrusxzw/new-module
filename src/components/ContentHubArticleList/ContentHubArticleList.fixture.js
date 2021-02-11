@@ -1,9 +1,9 @@
 const ContentHubArticleListFixture = {
   articles: [
     {
-      id: 'test_1',
+      id: '4',
       category: 'Product',
-      longTitle: '1. Senorial consectetur adipiscing elit.',
+      longTitle: '4. Senorial consectetur adipiscing elit.',
       uri: 'https://www.aesop.com/au/r/careers',
       verticalThumbnail: {
         altText: 'vertical_hub',
@@ -23,10 +23,10 @@ const ContentHubArticleListFixture = {
       },
     },
     {
-      id: 'test_2',
+      id: '3',
       category: 'Product',
       longTitle:
-        '2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.',
+        '3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.',
       uri: 'https://www.aesop.com/au/r/careers',
       verticalThumbnail: {
         altText: 'vertical_hub',
@@ -46,10 +46,10 @@ const ContentHubArticleListFixture = {
       },
     },
     {
-      id: 'test_3',
+      id: '2',
       category: 'Culture',
       longTitle:
-        '3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.',
+        '2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.',
       uri: 'https://www.aesop.com/au/r/careers',
       verticalThumbnail: {
         altText: 'vertical_hub',
@@ -69,10 +69,10 @@ const ContentHubArticleListFixture = {
       },
     },
     {
-      id: 'test_4',
+      id: '1',
       category: 'Aesop Spotify',
       longTitle:
-        '4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.',
+        '1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante. Suspendisse et ornare mauris, id dictum ante.',
       uri: 'https://www.aesop.com/au/r/careers',
       verticalThumbnail: {
         altText: 'vertical_hub',

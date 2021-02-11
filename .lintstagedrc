@@ -7,6 +7,6 @@
     "jest --findRelatedTests --coverageThreshold '{}'"
   ],
   "**/*.css": [
-    "stylelint --fix"
+    "stylelint --fix --allow-empty-input"
   ]
 }
