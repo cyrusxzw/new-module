@@ -3,7 +3,7 @@
 exports[`<Icon /> should render SVG that has nested \`g\` tags correctly 1`] = `
 <div>
   <svg
-    aria-labelledby="muted-2"
+    aria-labelledby="muted-3"
     class="base muted dark"
     data-testid="data-testid-Icon"
     focusable="false"
@@ -15,7 +15,7 @@ exports[`<Icon /> should render SVG that has nested \`g\` tags correctly 1`] = `
     width="12"
   >
     <title
-      id="muted-2"
+      id="muted-3"
     >
       title
     </title>
@@ -66,7 +66,7 @@ exports[`<Icon /> should render SVG that has nested \`g\` tags correctly 1`] = `
 exports[`<Icon /> should render render base component correctly 1`] = `
 <div>
   <svg
-    aria-labelledby="rightArrow-0"
+    aria-labelledby="rightArrow-1"
     class="base rightArrow dark"
     data-testid="data-testid-Icon"
     focusable="false"
@@ -78,7 +78,7 @@ exports[`<Icon /> should render render base component correctly 1`] = `
     width="12"
   >
     <title
-      id="rightArrow-0"
+      id="rightArrow-1"
     >
       rightArrow
     </title>
