@@ -7,7 +7,7 @@ import {
   useWindowHasResized,
 } from '~/customHooks';
 import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
-import { isSafari, isChrome } from '~/utils/environment';
+import { isFirefox, isSafari, isChrome } from '~/utils/environment';
 import { Image } from '~/components/Image';
 import { Controls } from './components/Controls';
 import { Poster } from './components/Poster';
@@ -59,12 +59,15 @@ const Video = forwardRef(function VideoRef(
   const handleAudioButtonClick = () => setIsMuted(!isMuted);
   const handleOnCaptionsToggleClick = () => setHasCaptions(state => !state);
 
+  // console.log('isSafari, isChrome', isSafari, isChrome, isFirefox);
+
   const classSet = cx(styles.base, className, {
     [styles.spanContent]: hasSpanContent,
     [styles.heroFullWidth]: isHeroFullWidth,
     [styles.fullWidth]: isFullWidth,
     [styles.safari]: isSafari,
     [styles.chrome]: isChrome,
+    [styles.firefox]: isFirefox,
   });
 
   function pauseVideo() {
