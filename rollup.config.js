@@ -6,13 +6,9 @@ import del from 'rollup-plugin-delete';
 import json from '@rollup/plugin-json';
 import path from 'path';
 import postcss from 'rollup-plugin-postcss';
-import replace from '@rollup/plugin-replace';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
-
-/** @TODO set up actual env vars */
-const NODE_ENV = 'development';
 
 /* eslint-disable-next-line import/no-default-export */
 export default {
@@ -45,11 +41,8 @@ export default {
     postcss({
       modules: true,
       extract: 'styles.css',
-      sourceMap: NODE_ENV === 'development' ? true : false,
-      minimize: NODE_ENV === 'development' ? false : true,
-    }),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+      sourceMap: true,
+      minimize: false,
     }),
     babel({
       babelHelpers: 'bundled',
