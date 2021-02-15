@@ -14,6 +14,7 @@ describe('<FlyinPanel />', () => {
     render(
       <FlyinPanel
         copy={{ close: 'close flyin panel button' }}
+        heading="Ingredients"
         isVisible={true}
         onClose={handleOnClose}
       >
@@ -21,6 +22,7 @@ describe('<FlyinPanel />', () => {
       </FlyinPanel>,
     );
 
+    expect(screen.getByText(/ingredients/i)).toBeTruthy();
     expect(screen.getByText(/flyin panel/i)).toBeTruthy();
     expect(screen.getByRole('note')).toBeTruthy();
 
