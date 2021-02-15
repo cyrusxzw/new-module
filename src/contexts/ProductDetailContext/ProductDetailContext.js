@@ -24,6 +24,7 @@ ProductDetailContextProvider.propTypes = {
       }),
     ),
     flyinPanel: PropTypes.string,
+    hasFlyinPanelHeading: PropTypes.bool,
     productName: PropTypes.string.isRequired,
     imageSize: PropTypes.string,
   }),

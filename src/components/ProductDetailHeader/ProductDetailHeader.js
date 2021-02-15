@@ -32,6 +32,7 @@ const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
               addToCart: copy?.addToCart,
               size: copy?.size,
               upSellProductLabel: copy?.upSellProductLabel,
+              flyinPanelHeading: copy?.flyinPanelHeading,
             }}
             theme={currentTheme}
           />
@@ -85,6 +86,7 @@ ProductDetailHeader.propTypes = {
       plural: PropTypes.string,
     }),
     upSellProductLabel: PropTypes.string,
+    flyinPanelHeading: PropTypes.string,
   }),
   theme: PropTypes.oneOf(['dark', 'light']),
 };
@@ -103,6 +105,7 @@ ProductDetailHeader.defaultProps = {
       plural: undefined,
     },
     upSellProductLabel: undefined,
+    flyinPanelHeading: undefined,
   },
   theme: undefined,
 };
