@@ -7,6 +7,7 @@ import {
   useWindowHasResized,
 } from '~/customHooks';
 import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
+import { isSafari, isChrome } from '~/utils/environment';
 import { Image } from '~/components/Image';
 import { Controls } from './components/Controls';
 import { Poster } from './components/Poster';
@@ -62,6 +63,8 @@ const Video = forwardRef(function VideoRef(
     [styles.spanContent]: hasSpanContent,
     [styles.heroFullWidth]: isHeroFullWidth,
     [styles.fullWidth]: isFullWidth,
+    [styles.safari]: isSafari,
+    [styles.chrome]: isChrome,
   });
 
   function pauseVideo() {
@@ -104,7 +107,8 @@ const Video = forwardRef(function VideoRef(
       <VideoPlayer
         captions={{
           fileUrl: captions?.fileUrl,
-          language: captions?.language,
+          languageCode: captions?.languageCode,
+          languageLabel: captions?.languageLabel,
           isActive: captions?.isActive && hasCaptions,
         }}
         hasActiveVideo={hasActiveVideo}
@@ -147,7 +151,7 @@ const Video = forwardRef(function VideoRef(
             onToggleClick: handleOnCaptionsToggleClick,
             shouldShowToggleButton:
               !!captions?.fileUrl &&
-              !!captions?.language &&
+              !!captions?.languageCode &&
               captions?.shouldShowToggleButton,
             toggleButtonTitle: captions?.toggleButtonTitle,
           }}
@@ -178,7 +182,8 @@ Video.propTypes = {
   captions: PropTypes.shape({
     fileUrl: PropTypes.string,
     isActive: PropTypes.bool,
-    language: PropTypes.string,
+    languageCode: PropTypes.string,
+    languageLabel: PropTypes.string,
     shouldShowToggleButton: PropTypes.bool,
     toggleButtonTitle: PropTypes.string,
   }),

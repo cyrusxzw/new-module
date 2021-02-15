@@ -3,7 +3,7 @@
 exports[`<Video /> should render base component correctly 1`] = `
 <div>
   <div
-    class="base fullWidth"
+    class="base fullWidth safari"
     id="video"
     role="group"
   >

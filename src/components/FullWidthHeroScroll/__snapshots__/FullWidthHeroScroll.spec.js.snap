@@ -9,7 +9,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
       class="scrollLockMedia"
     >
       <div
-        class="base base backgroundElement fullWidth"
+        class="base base backgroundElement fullWidth safari"
         role="group"
       >
         <figure

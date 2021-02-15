@@ -8,17 +8,20 @@
   margin: 0;
   object-fit: cover;
 
-  video::cue {
+  /* video::cue {
+    background: var(--color-secondary);
     font: 14px/14px;
     font-size: 14px;
     line-height: 14px;
     opacity: 1;
+
     transform: translateY(-30px) !important;
 
     @media (--viewport-md) {
       font: 16px/16px;
       font-size: 16px;
       line-height: 16px;
+
       transform: translateY(-40px) !important;
     }
 
@@ -27,17 +30,103 @@
     }
   }
 
+  video::-webkit-media-text-track-display {
+    overflow: visible !important;
+    -webkit-box-sizing: border-box;
+    padding: 10px;
+    background: var(--color-secondary);
+    border-radius: 16px;
+  }
+
   video::-webkit-media-text-track-container {
+    position: relative;
+    overflow: visible !important;
     line-height: 14px;
+
     transform: translateY(-30px) !important;
 
     @media (--viewport-md) {
       line-height: 16px;
+
       transform: translateY(-40px) !important;
     }
 
     @media (--viewport-lg) {
       transform: translateY(-60px) !important;
+    }
+  } */
+
+  &.chrome {
+    video::cue {
+      background-color: var(--color-secondary);
+      font-size: 14px;
+      line-height: 14px;
+      opacity: 1;
+      transform: translateY(-30px) !important;
+
+      @media (--viewport-md) {
+        font-size: 16px;
+        line-height: 16px;
+        transform: translateY(-40px) !important;
+      }
+
+      @media (--viewport-lg) {
+        transform: translateY(-60px) !important;
+      }
+    }
+
+    video::-webkit-media-text-track-display {
+      overflow: visible !important;
+      box-sizing: border-box;
+      padding: 8px;
+      background: var(--color-secondary);
+    }
+
+    video::-webkit-media-text-track-container {
+      position: relative;
+      overflow: visible !important;
+      line-height: 14px;
+      transform: translateY(-30px) !important;
+
+      @media (--viewport-md) {
+        line-height: 16px;
+        transform: translateY(-40px) !important;
+      }
+
+      @media (--viewport-lg) {
+        transform: translateY(-60px) !important;
+      }
+    }
+  }
+
+  &.safari {
+    video::cue {
+      background-color: var(--color-secondary);
+      font-size: 14px;
+      line-height: 14px;
+      opacity: 1;
+    }
+
+    video::-webkit-media-text-track-container {
+      position: absolute;
+      overflow: visible !important;
+
+      @media (--viewport-md) {
+        line-height: 16px;
+      }
+    }
+
+    video::-webkit-media-text-track-display-backdrop {
+      overflow: visible !important;
+      padding: 10px;
+      background-color: var(--color-secondary);
+      border-radius: 0;
+      line-height: 1px;
+    }
+
+    video::-webkit-media-text-track-display {
+      overflow: visible !important;
+      -webkit-box-sizing: border-box;
     }
   }
 
