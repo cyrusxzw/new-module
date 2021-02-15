@@ -9,11 +9,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run build:dev",
+    "build": "NODE_ENV=development rollup -c",
     "build-storybook": "build-storybook -s ./public",
-    "build:dev": "NODE_ENV=development rollup -c",
-    "build:prod": "NODE_ENV=production rollup -c",
-    "build:watch": "NODE_ENV=production rollup -c -w",
+    "build-watch": "NODE_ENV=development rollup -c -w",
     "deploy-storybook": "gh-pages -d storybook-static",
     "eslint": "eslint \"**/*.js\" --ignore-path .eslintignore --config .eslintrc",
     "format": "prettier --write \"**/*.{js,json,md}\" --loglevel \"error\"",
@@ -25,8 +23,8 @@
     "start": "start-storybook -p 6006  -s ./public",
     "stylelint": "stylelint \"**/*.css\" --fix",
     "test": "jest",
-    "test:coverage": "open coverage/lcov-report/index.html",
-    "test:watch": "jest --watch"
+    "test-coverage": "open coverage/lcov-report/index.html",
+    "test-watch": "jest --watch"
   },
   "repository": {
     "type": "git",
