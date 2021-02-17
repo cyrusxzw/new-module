@@ -7,7 +7,6 @@ const defaultState = {
   cartDisclaimer: '',
   definitionList: [],
   flyinPanel: '',
-  hasFlyinPanelHeading: false,
   productName: '',
   upSellProduct: null,
   imageSize: 'Small',

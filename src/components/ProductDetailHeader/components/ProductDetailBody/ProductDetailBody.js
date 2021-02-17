@@ -42,7 +42,6 @@ const ProductDetailBody = ({ className, copy, theme }) => {
   const {
     definitionList,
     flyinPanel,
-    hasFlyinPanelHeading,
     productName,
     description,
     upSellProduct,
@@ -233,7 +232,7 @@ const ProductDetailBody = ({ className, copy, theme }) => {
 
       {flyinPanel && (
         <FlyinPanel
-          heading={hasFlyinPanelHeading && copy.flyinPanelHeading}
+          heading={copy.flyinPanelHeading}
           isVisible={isFlyinPanelVisible}
           onClose={handleOnCloseClick}
         >
