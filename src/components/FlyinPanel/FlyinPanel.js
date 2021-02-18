@@ -56,12 +56,20 @@ const FlyinPanel = ({
               >
                 <Icon height={12} name="close" theme={theme} width={12} />
               </Button>
-              {heading && (
-                <Heading level="2" size="small" theme={theme}>
-                  {heading}
-                </Heading>
-              )}
-              <div className={styles.content}>{children}</div>
+              <div className={styles.content}>
+                {heading && (
+                  <Heading
+                    className={styles.heading}
+                    hasMediumWeightFont={true}
+                    level="3"
+                    size="xXSmall"
+                    theme={theme}
+                  >
+                    {heading}
+                  </Heading>
+                )}
+                {children}
+              </div>
             </aside>
           </Transition>
         </>,
