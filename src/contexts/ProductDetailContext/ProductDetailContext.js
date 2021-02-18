@@ -23,7 +23,7 @@ ProductDetailContextProvider.propTypes = {
         description: PropTypes.node,
       }),
     ),
-    flyinPanel: PropTypes.object,
+    flyinPanel: PropTypes.node,
     productName: PropTypes.string.isRequired,
     imageSize: PropTypes.string,
   }),
