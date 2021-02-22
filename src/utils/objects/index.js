@@ -1,1 +1,1 @@
-export { isObjectPopulatedArray } from './objects';
+export { isObjectPopulatedArray } from './objects.ts';

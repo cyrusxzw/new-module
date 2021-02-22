@@ -5,10 +5,11 @@ import copy from 'rollup-plugin-copy-assets';
 import del from 'rollup-plugin-delete';
 import json from '@rollup/plugin-json';
 import path from 'path';
-import postcss from 'rollup-plugin-postcss';
+import postcss from 'rollup-plugin-postcss-modules';
 import replace from '@rollup/plugin-replace';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 import pkg from './package.json';
 
 /** @TODO set up actual env vars */
@@ -16,6 +17,7 @@ const NODE_ENV = 'development';
 
 /* eslint-disable-next-line import/no-default-export */
 export default {
+  moduleResolution: true,
   input: 'src/index.js',
   output: [
     {
@@ -43,10 +45,12 @@ export default {
       entries: [{ find: '~', replacement: path.resolve(__dirname, 'src') }],
     }),
     postcss({
-      modules: true,
+      modules: {
+        sourceMap: NODE_ENV === 'development' ? true : false,
+        minimize: NODE_ENV === 'development' ? false : true,
+      },
       extract: 'styles.css',
-      sourceMap: NODE_ENV === 'development' ? true : false,
-      minimize: NODE_ENV === 'development' ? false : true,
+      // writeDefinitions: true,
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
@@ -55,6 +59,7 @@ export default {
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
     }),
+    typescript(),
     json(),
     commonjs(),
     nodeResolve(),

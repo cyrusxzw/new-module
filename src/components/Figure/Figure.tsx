@@ -1,7 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import cx from 'classnames';
 import styles from './Figure.module.css';
+
+interface FigureProps {
+  caption?: string;
+  children?: React.ReactNode;
+  className?: string;
+  hasCaptionBorder?: boolean;
+  hasCaptionOffset?: boolean;
+  id?: string;
+  theme?: string;
+  foo?: boolean;
+}
 
 const Figure = ({
   caption,
@@ -10,8 +20,8 @@ const Figure = ({
   hasCaptionBorder,
   hasCaptionOffset,
   id,
-  theme,
-}) => {
+  theme = 'dark',
+}: FigureProps) => {
   const classSet = cx(styles.base, styles[theme], className);
 
   const captionWrapperClassSet = cx(styles.captionWrapper, {
@@ -29,26 +39,6 @@ const Figure = ({
       )}
     </figure>
   );
-};
-
-Figure.propTypes = {
-  caption: PropTypes.any,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  hasCaptionBorder: PropTypes.bool,
-  hasCaptionOffset: PropTypes.bool,
-  id: PropTypes.string,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-Figure.defaultProps = {
-  caption: undefined,
-  children: undefined,
-  className: undefined,
-  hasCaptionBorder: true,
-  hasCaptionOffset: true,
-  id: undefined,
-  theme: 'dark',
 };
 
 export { Figure };

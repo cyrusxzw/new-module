@@ -7,7 +7,7 @@
     "import/resolver": {
       "alias": {
         "map": [["~", "./src"]],
-        "extensions": [".js", ".json"]
+        "extensions": [".js", ".ts", ".tsx", ".json"]
       }
     }
   },
@@ -17,7 +17,14 @@
     "es6": true,
     "jest": true
   },
-  "plugins": ["import", "react", "react-hooks", "jsx-a11y", "testing-library", "jest-dom"],
+  "plugins": [
+    "import",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "testing-library",
+    "jest-dom"
+  ],
   "extends": [
     "eslint:recommended",
     "eslint-config-prettier",
@@ -27,10 +34,10 @@
     "plugin:jsx-a11y/recommended",
     "plugin:testing-library/recommended",
     "plugin:testing-library/react",
-    "plugin:jest-dom/recommended",
+    "plugin:jest-dom/recommended"
   ],
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2020,
     "sourceType": "module",
     "ecmaFeatures": {
       "arrowFunctions": true,
@@ -92,7 +99,10 @@
     "no-irregular-whitespace": "error",
     "no-lonely-if": "off",
     "no-mixed-spaces-and-tabs": "error",
-    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0, "maxBOF": 0 }],
+    "no-multiple-empty-lines": [
+      "error",
+      { "max": 1, "maxEOF": 0, "maxBOF": 0 }
+    ],
     "no-new": "warn",
     "no-self-compare": "error",
     "no-shadow": "off",
@@ -110,7 +120,10 @@
     "react/display-name": "off",
     "react/jsx-boolean-value": ["error", "always"],
     "react/jsx-closing-bracket-location": "error",
-    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [
+      "warn",
+      { "extensions": [".js", ".jsx", ".tsx"] }
+    ],
     "react/jsx-no-duplicate-props": "error",
     "react/jsx-no-undef": "error",
     "react/jsx-sort-props": [
@@ -161,5 +174,17 @@
     "spaced-comment": ["error", "always"],
     "strict": ["error", "never"],
     "vars-on-top": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"]
+    }
+  ]
 }

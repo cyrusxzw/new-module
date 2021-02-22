@@ -1,25 +1,42 @@
 import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import get from 'lodash/get';
 import { constraintsByViewport } from '~/utils/viewports';
 import { Hyperlink } from '~/components/Hyperlink';
 import styles from './Image.module.css';
 
+interface ImageProps {
+  altText?: string;
+  className?: string;
+  cta?: {
+    openInANewWindow?: boolean;
+    url?: string;
+  };
+  id?: string;
+  isFullBleedImage?: boolean;
+  isLazyLoaded?: boolean;
+  large?: string;
+  medium?: string;
+  small?: string;
+  style?: any;
+  type?: string;
+  theme?: 'dark' | 'light';
+}
+
 const Image = forwardRef(function ImageRef(
   {
     altText,
     className,
     cta,
-    isLazyLoaded,
+    isLazyLoaded = true,
     large,
     medium,
     small,
     style,
     type,
-    theme,
-  },
-  ref,
+    theme = 'dark',
+  }: ImageProps,
+  ref: React.LegacyRef<HTMLImageElement>,
 ) {
   const fullBleedImage = type === 'componentFullBleedImage';
   const isRightAligned = type === 'componentSquareImage';
@@ -82,35 +99,5 @@ const Image = forwardRef(function ImageRef(
     picture
   );
 });
-
-Image.propTypes = {
-  altText: PropTypes.string,
-  className: PropTypes.string,
-  cta: PropTypes.object,
-  id: PropTypes.string,
-  isFullBleedImage: PropTypes.bool,
-  isLazyLoaded: PropTypes.bool,
-  large: PropTypes.string,
-  medium: PropTypes.string,
-  small: PropTypes.string,
-  style: PropTypes.object,
-  type: PropTypes.string,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-Image.defaultProps = {
-  altText: undefined,
-  className: undefined,
-  cta: undefined,
-  id: undefined,
-  isFullBleedImage: undefined,
-  isLazyLoaded: true,
-  large: undefined,
-  medium: undefined,
-  small: undefined,
-  style: undefined,
-  theme: 'dark',
-  type: undefined,
-};
 
 export { Image };
