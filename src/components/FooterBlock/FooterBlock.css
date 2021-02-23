@@ -15,9 +15,9 @@
 .heading {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: var(--font-family-sans-serif-medium);
   font-size: rem(15px);
   line-height: 2;
+
   @media (--viewport-sm-only) {
     font-size: rem(13px);
   }
