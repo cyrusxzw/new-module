@@ -4595,47 +4595,105 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -o-object-fit: cover;
      object-fit: cover;
 }
-.Video-module_base__3wxiY video::cue {
-    font: 14px/14px;
-    font-size: 14px;
-    line-height: 14px;
-    opacity: 1;
-    -webkit-transform: translateY(-30px) !important;
-            transform: translateY(-30px) !important;
-  }
+.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::cue {
+      background-color: #333;
+      font-size: 14px;
+      line-height: 14px;
+      opacity: 1;
+      -webkit-transform: translateY(-30px) !important;
+              transform: translateY(-30px) !important;
+    }
 @media (min-width: 640px) {
-.Video-module_base__3wxiY video::cue {
-      font: 16px/16px;
-      font-size: 16px;
-      line-height: 16px;
-      -webkit-transform: translateY(-40px) !important;
-              transform: translateY(-40px) !important
-  }
+.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::cue {
+        font-size: 16px;
+        line-height: 16px;
+        -webkit-transform: translateY(-40px) !important;
+                transform: translateY(-40px) !important
     }
+      }
 @media (min-width: 1025px) {
-.Video-module_base__3wxiY video::cue {
-      -webkit-transform: translateY(-60px) !important;
-              transform: translateY(-60px) !important
-  }
+.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::cue {
+        -webkit-transform: translateY(-60px) !important;
+                transform: translateY(-60px) !important
     }
-.Video-module_base__3wxiY video::-webkit-media-text-track-container {
-    line-height: 14px;
-    -webkit-transform: translateY(-30px) !important;
-            transform: translateY(-30px) !important;
-  }
+      }
+.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::-webkit-media-text-track-display {
+      overflow: visible !important;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 8px;
+      background: #333;
+    }
+.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::-webkit-media-text-track-container {
+      position: relative;
+      overflow: visible !important;
+      line-height: 14px;
+      -webkit-transform: translateY(-30px) !important;
+              transform: translateY(-30px) !important;
+    }
 @media (min-width: 640px) {
-.Video-module_base__3wxiY video::-webkit-media-text-track-container {
-      line-height: 16px;
-      -webkit-transform: translateY(-40px) !important;
-              transform: translateY(-40px) !important
-  }
+.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::-webkit-media-text-track-container {
+        line-height: 16px;
+        -webkit-transform: translateY(-40px) !important;
+                transform: translateY(-40px) !important
     }
+      }
 @media (min-width: 1025px) {
-.Video-module_base__3wxiY video::-webkit-media-text-track-container {
-      -webkit-transform: translateY(-60px) !important;
-              transform: translateY(-60px) !important
-  }
+.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::-webkit-media-text-track-container {
+        -webkit-transform: translateY(-60px) !important;
+                transform: translateY(-60px) !important
     }
+      }
+.Video-module_base__3wxiY.Video-module_safari__2J0o8 video::cue {
+      background-color: #333;
+      font-size: 14px;
+      line-height: 14px;
+      opacity: 1;
+    }
+@media (min-width: 640px) {
+.Video-module_base__3wxiY.Video-module_safari__2J0o8 video::cue {
+        font-size: 16px;
+        line-height: 16px
+    }
+      }
+.Video-module_base__3wxiY.Video-module_safari__2J0o8 video::-webkit-media-text-track-container {
+      position: absolute;
+      overflow: visible !important;
+    }
+.Video-module_base__3wxiY.Video-module_safari__2J0o8 video::-webkit-media-text-track-display-backdrop {
+      overflow: visible !important;
+      padding: 8px;
+      background-color: #333;
+      border-radius: 0;
+      line-height: 1px;
+    }
+.Video-module_base__3wxiY.Video-module_safari__2J0o8 video::-webkit-media-text-track-display {
+      overflow: visible !important;
+      -webkit-box-sizing: border-box;
+    }
+.Video-module_base__3wxiY.Video-module_firefox__1YOae video::cue {
+      padding: 8px;
+      background-color: #333;
+      font-size: 14px;
+      line-height: 14px;
+      opacity: 1;
+      -webkit-transform: translateY(0) !important;
+              transform: translateY(0) !important;
+    }
+@media (min-width: 640px) {
+.Video-module_base__3wxiY.Video-module_firefox__1YOae video::cue {
+        font-size: 16px;
+        line-height: 16px;
+        -webkit-transform: translateY(20px) !important;
+                transform: translateY(20px) !important
+    }
+      }
+@media (min-width: 1025px) {
+.Video-module_base__3wxiY.Video-module_firefox__1YOae video::cue {
+        -webkit-transform: translateY(20px) !important;
+                transform: translateY(20px) !important
+    }
+      }
 @media (max-width: 1024px) {
 .Video-module_base__3wxiY {
     height: 0;
