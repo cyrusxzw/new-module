@@ -174,11 +174,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
       <section
         class="base light item"
       >
-        <h1
-          class="heading"
+        <h3
+          class="base mediumWeightFont xXSmall light heading"
         >
           Orders & Support
-        </h1>
+        </h3>
         <div
           class="divider light"
         />
@@ -321,11 +321,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
       <section
         class="base light item"
       >
-        <h1
-          class="heading"
+        <h3
+          class="base mediumWeightFont xXSmall light heading"
         >
           Services
-        </h1>
+        </h3>
         <div
           class="divider light"
         />
@@ -392,11 +392,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
       <section
         class="base light item"
       >
-        <h1
-          class="heading"
+        <h3
+          class="base mediumWeightFont xXSmall light heading"
         >
           Shipping to
-        </h1>
+        </h3>
         <div
           class="divider light"
         />
@@ -409,11 +409,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
       <section
         class="base light item"
       >
-        <h1
-          class="heading"
+        <h3
+          class="base mediumWeightFont xXSmall light heading"
         >
           Acknowledgment of Country
-        </h1>
+        </h3>
         <div
           class="divider light"
         />
@@ -426,11 +426,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
       <section
         class="base light item"
       >
-        <h1
-          class="heading"
+        <h3
+          class="base mediumWeightFont xXSmall light heading"
         >
           Sustainability
-        </h1>
+        </h3>
         <div
           class="divider light"
         />
@@ -443,11 +443,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
       <section
         class="base light item"
       >
-        <h1
-          class="heading"
+        <h3
+          class="base mediumWeightFont xXSmall light heading"
         >
           About
-        </h1>
+        </h3>
         <div
           class="divider light"
         />
@@ -536,11 +536,11 @@ exports[`<Footer /> should render base component correctly 1`] = `
       <section
         class="base light item"
       >
-        <h1
-          class="heading"
+        <h3
+          class="base mediumWeightFont xXSmall light heading"
         >
           Social Media
-        </h1>
+        </h3>
         <div
           class="divider light"
         />
