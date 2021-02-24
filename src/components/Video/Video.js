@@ -59,32 +59,6 @@ const Video = forwardRef(function VideoRef(
   const handleAudioButtonClick = () => setIsMuted(!isMuted);
   const handleOnCaptionsToggleClick = () => setHasCaptions(state => !state);
 
-  /** @TODO remove debug */
-  console.log('isSafari, isChrome', isSafari, isChrome, isFirefox); // eslint-disable-line
-  // eslint-disable-next-line
-  console.log('Video Props', {
-    captions,
-    className,
-    copy,
-    fallbackImage,
-    hasAllowAudio,
-    hasAutoplay,
-    hasControls,
-    hasLoop,
-    hasNativeControls,
-    hasPlayInFullScreen,
-    hasSpanContent,
-    id,
-    isBackground,
-    isFullWidth,
-    isHeroFullWidth,
-    isScrollBasedVideo,
-    large,
-    medium,
-    poster,
-    small,
-  });
-
   const classSet = cx(styles.base, className, {
     [styles.spanContent]: hasSpanContent,
     [styles.heroFullWidth]: isHeroFullWidth,

@@ -45,6 +45,7 @@ const VideoPlayer = forwardRef(function VideoPlayerRef(
         autoPlay={hasAutoplay}
         className={classSet}
         controls={hasNativeControls}
+        crossOrigin="true"
         data-testid="data-testid-VideoPlayer"
         loop={hasLoop}
         muted={!hasAllowAudio || (hasAllowAudio && isMuted)}

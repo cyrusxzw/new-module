@@ -39,6 +39,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
         <video
           autoplay=""
           class="base background"
+          crossorigin="true"
           data-testid="data-testid-VideoPlayer"
           loop=""
           playsinline=""
