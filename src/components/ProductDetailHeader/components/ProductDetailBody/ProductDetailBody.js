@@ -232,6 +232,7 @@ const ProductDetailBody = ({ className, copy, theme }) => {
 
       {flyinPanel && (
         <FlyinPanel
+          heading={copy.flyinPanelHeading}
           isVisible={isFlyinPanelVisible}
           onClose={handleOnCloseClick}
         >
@@ -258,6 +259,7 @@ ProductDetailBody.propTypes = {
       plural: PropTypes.string,
     }),
     upSellProductLabel: PropTypes.string,
+    flyinPanelHeading: PropTypes.string,
   }),
   theme: PropTypes.oneOf(['dark', 'light']),
 };
@@ -278,6 +280,7 @@ ProductDetailBody.defaultProps = {
       plural: undefined,
     },
     upSellProductLabel: undefined,
+    flyinPanelHeading: undefined,
   },
   theme: undefined,
 };

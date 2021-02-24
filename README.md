@@ -47,7 +47,7 @@ npm link ../aesop-web-ui/node_modules/react
 npm link aesop-gel
 
 # finally run this to update the built files on changes
-npm run build:watch
+npm run build-watch
 ```
 
 ### VS Code
@@ -72,7 +72,7 @@ To address this you can use a `jsconfig.json` with a sample shown below. More in
 Rollup buils ES Modules for this project
 
 ```bash
-npm run build:prod
+npm run build
 ```
 
 ## Git Workflow

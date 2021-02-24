@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Heading } from '~/components/Heading';
 import { Hidden } from '~/components/Hidden';
 import { Hyperlink } from '~/components/Hyperlink';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
@@ -35,7 +36,17 @@ const FooterBlock = ({
       isSmall={!isVisibleOnTabletAndMobile}
     >
       <section className={baseClassSet}>
-        <h1 className={headingClassSet}>{heading}</h1>
+        {heading && (
+          <Heading
+            className={headingClassSet}
+            hasMediumWeightFont={true}
+            level="3"
+            size="xXSmall"
+            theme="light"
+          >
+            {heading}
+          </Heading>
+        )}
         <div className={dividerClassSet} />
         {links?.length && (
           <ul className={listClassSet}>
