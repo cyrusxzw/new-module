@@ -10,96 +10,25 @@
 
   &.chrome {
     video::cue {
-      background-color: var(--color-secondary);
-      font-size: 14px;
-      line-height: 14px;
       opacity: 1;
-      transform: translateY(-30px) !important;
-
-      @media (--viewport-md) {
-        font-size: 16px;
-        line-height: 16px;
-        transform: translateY(-40px) !important;
-      }
 
       @media (--viewport-lg) {
-        transform: translateY(-60px) !important;
+        font-size: 18px;
+        line-height: 18px;
       }
     }
 
     video::-webkit-media-text-track-display {
       overflow: visible !important;
       box-sizing: border-box;
-      padding: 8px;
-      background: var(--color-secondary);
     }
 
     video::-webkit-media-text-track-container {
       position: relative;
       overflow: visible !important;
-      line-height: 14px;
-      transform: translateY(-30px) !important;
-
-      @media (--viewport-md) {
-        line-height: 16px;
-        transform: translateY(-40px) !important;
-      }
 
       @media (--viewport-lg) {
-        transform: translateY(-60px) !important;
-      }
-    }
-  }
-
-  &.safari {
-    video::cue {
-      background-color: var(--color-secondary);
-      font-size: 14px;
-      line-height: 14px;
-      opacity: 1;
-
-      @media (--viewport-md) {
-        font-size: 16px;
-        line-height: 16px;
-      }
-    }
-
-    video::-webkit-media-text-track-container {
-      position: absolute;
-      overflow: visible !important;
-    }
-
-    video::-webkit-media-text-track-display-backdrop {
-      overflow: visible !important;
-      padding: 8px;
-      background-color: var(--color-secondary);
-      border-radius: 0;
-      line-height: 1px;
-    }
-
-    video::-webkit-media-text-track-display {
-      overflow: visible !important;
-      -webkit-box-sizing: border-box;
-    }
-  }
-
-  &.firefox {
-    video::cue {
-      padding: 8px;
-      background-color: var(--color-secondary);
-      font-size: 14px;
-      line-height: 14px;
-      opacity: 1;
-      transform: translateY(0) !important;
-
-      @media (--viewport-md) {
-        font-size: 16px;
-        line-height: 16px;
-        transform: translateY(20px) !important;
-      }
-
-      @media (--viewport-lg) {
-        transform: translateY(20px) !important;
+        line-height: 4px;
       }
     }
   }

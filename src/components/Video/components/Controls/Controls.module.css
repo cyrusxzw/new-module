@@ -84,7 +84,7 @@
   color: var(--color-light-link);
   font-size: rem(17px);
   opacity: 0.8;
-  transition: opacity 200ms var(--easing-ease-in-sine);
+  transition: opacity 500ms var(--easing-ease-in-sine);
 
   &:hover,
   &:focus {
@@ -156,7 +156,7 @@
   font-size: rem(14px);
   line-height: 0;
   opacity: 0.8;
-  transition: opacity 200ms var(--easing-ease-in-sine);
+  transition: opacity 500ms var(--easing-ease-in-sine);
 
   &:hover,
   &:focus {
@@ -170,12 +170,12 @@
 
   @media (--viewport-md) {
     top: calc(var(--layout-md-spacing) * 2);
-    left: calc(var(--layout-md-spacing) * 2 + 50px);
+    left: calc(var(--layout-md-spacing) * 2 + 45px);
   }
 
   @media (--viewport-lg) {
     top: calc(var(--layout-lg-spacing) * 2);
-    left: calc(var(--layout-lg-spacing) * 2 + 60px);
+    left: calc(var(--layout-lg-spacing) * 2 + 50px);
   }
 }
 
@@ -189,7 +189,7 @@
   border-radius: 100%;
   line-height: 0;
   opacity: 0.8;
-  transition: opacity 200ms var(--easing-ease-in-sine);
+  transition: opacity 500ms var(--easing-ease-in-sine);
 
   svg {
     fill: var(--color-light-link);
@@ -229,23 +229,25 @@
   position: absolute;
   z-index: var(--z-index-fixed-full-screen-video);
   right: calc(var(--layout-lg-spacing) * 2);
-  bottom: 90px;
+  bottom: 30px;
   left: calc(var(--layout-lg-spacing) * 2);
   display: block;
   overflow: hidden;
   height: 3px;
   margin: 0;
   background-color: var(--color-white-rgba-20);
+  opacity: 1;
+  transition: opacity 500ms var(--easing-ease-in-sine);
 
   @media (--viewport-sm-only) {
     right: calc(var(--layout-sm-spacing) * 2);
-    bottom: 30px;
+    bottom: 20px;
     left: calc(var(--layout-sm-spacing) * 2);
   }
 
   @media (--viewport-md-only) {
     right: calc(var(--layout-md-spacing) * 2);
-    bottom: 48px;
+    bottom: 20px;
     left: calc(var(--layout-md-spacing) * 2);
   }
 }

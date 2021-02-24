@@ -84,6 +84,7 @@ const Controls = ({
 
   const progressBarClassSet = cx(styles.progressBar, className, {
     [styles.fullScreenProgressBar]: hasPlayInFullScreen,
+    [styles.hidden]: !isActiveVideoControlActive && isPlaying,
   });
 
   const fullScreenControlsClassSet = cx({
