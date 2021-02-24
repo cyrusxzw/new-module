@@ -17,8 +17,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v2
         with:
-          # need at least 10.18.0 for semantic release
-          node-version: '10.18.0'
+          node-version: '14.15.4'
 
       - name: Install
         run: npm ci
