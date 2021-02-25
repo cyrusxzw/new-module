@@ -108,7 +108,7 @@ const Video = forwardRef(function VideoRef(
           fileUrl: captions?.fileUrl,
           languageCode: captions?.languageCode,
           languageLabel: captions?.languageLabel,
-          isActive: captions?.isActive && hasCaptions,
+          isActive: hasCaptions,
         }}
         hasActiveVideo={hasActiveVideo}
         hasAllowAudio={hasAllowAudio}
