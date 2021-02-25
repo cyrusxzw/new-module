@@ -4181,7 +4181,6 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
 }
 .Controls-module_mute__Zo2HR {
   position: absolute;
-  z-index: calc(1900 + 1);
   top: calc(16px * 2);
   left: calc(16px * 2);
   padding: 7px;
@@ -4192,6 +4191,9 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   -webkit-transition: opacity 800ms cubic-bezier(0.47, 0, 0.745, 0.715);
   transition: opacity 800ms cubic-bezier(0.47, 0, 0.745, 0.715);
 }
+.Controls-module_fullScreenControls__2TWMJ .Controls-module_mute__Zo2HR {
+    z-index: calc(1900 + 1);
+  }
 .Controls-module_mute__Zo2HR:hover,
   .Controls-module_mute__Zo2HR:focus {
     opacity: 1;
@@ -4276,7 +4278,6 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
 }
 .Controls-module_captionsToggle__3mVCg {
   position: absolute;
-  z-index: calc(1900 + 1);
   top: calc(16px * 2);
   left: calc(16px * 2 + 40px);
   padding: 15px 5px;
@@ -4290,6 +4291,9 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   -webkit-transition: opacity 500ms cubic-bezier(0.47, 0, 0.745, 0.715);
   transition: opacity 500ms cubic-bezier(0.47, 0, 0.745, 0.715);
 }
+.Controls-module_fullScreenControls__2TWMJ .Controls-module_captionsToggle__3mVCg {
+    z-index: calc(1900 + 1);
+  }
 .Controls-module_captionsToggle__3mVCg:hover,
   .Controls-module_captionsToggle__3mVCg:focus {
     color: #fffef2;
@@ -4312,7 +4316,6 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   }
 .Controls-module_fullScreenPlayPauseButton__2qnFo.Controls-module_fullScreenPlayPauseButton__2qnFo {
   position: absolute;
-  z-index: 1900;
   top: calc(50vh - 40px - 13px);
   left: calc(50% - 13px);
   padding: 10px;
@@ -4323,6 +4326,9 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   -webkit-transition: opacity 500ms cubic-bezier(0.47, 0, 0.745, 0.715);
   transition: opacity 500ms cubic-bezier(0.47, 0, 0.745, 0.715);
 }
+.Controls-module_fullScreenControls__2TWMJ .Controls-module_fullScreenPlayPauseButton__2qnFo.Controls-module_fullScreenPlayPauseButton__2qnFo {
+    z-index: calc(1900 + 1);
+  }
 .Controls-module_fullScreenPlayPauseButton__2qnFo.Controls-module_fullScreenPlayPauseButton__2qnFo svg {
     fill: #fffef2;
   }
@@ -4359,7 +4365,6 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
 }
 .Controls-module_progressBar__2qSO3 {
   position: absolute;
-  z-index: 1900;
   right: calc(40px * 2);
   bottom: 25px;
   left: calc(40px * 2);
@@ -4386,6 +4391,9 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
     left: calc(34px * 2)
 }
   }
+.Controls-module_fullScreenProgressBar__1O_yi {
+  z-index: calc(1900 + 1);
+}
 @media (min-width: 1025px) {
 .Controls-module_fullScreenProgressBar__1O_yi {
     position: fixed
