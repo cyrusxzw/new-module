@@ -7,7 +7,7 @@ import {
   useWindowHasResized,
 } from '~/customHooks';
 import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
-import { isFirefox, isSafari, isChrome } from '~/utils/environment';
+import { isIE, isChrome } from '~/utils/environment';
 import { Image } from '~/components/Image';
 import { Controls } from './components/Controls';
 import { Poster } from './components/Poster';
@@ -63,9 +63,7 @@ const Video = forwardRef(function VideoRef(
     [styles.spanContent]: hasSpanContent,
     [styles.heroFullWidth]: isHeroFullWidth,
     [styles.fullWidth]: isFullWidth,
-    [styles.safari]: isSafari,
     [styles.chrome]: isChrome,
-    [styles.firefox]: isFirefox,
   });
 
   function pauseVideo() {
@@ -153,7 +151,8 @@ const Video = forwardRef(function VideoRef(
             shouldShowToggleButton:
               !!captions?.fileUrl &&
               !!captions?.languageCode &&
-              captions?.shouldShowToggleButton,
+              captions?.shouldShowToggleButton &&
+              !isIE,
             toggleButtonTitle: captions?.toggleButtonTitle,
           }}
           copy={{

@@ -4361,7 +4361,7 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   position: absolute;
   z-index: 1900;
   right: calc(40px * 2);
-  bottom: 30px;
+  bottom: 25px;
   left: calc(40px * 2);
   display: block;
   overflow: hidden;
@@ -4375,14 +4375,14 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
 @media (max-width: 639px) {
 .Controls-module_progressBar__2qSO3 {
     right: calc(16px * 2);
-    bottom: 20px;
+    bottom: 15px;
     left: calc(16px * 2)
 }
   }
 @media (min-width: 640px) and (max-width: 1024px) {
 .Controls-module_progressBar__2qSO3 {
     right: calc(34px * 2);
-    bottom: 20px;
+    bottom: 15px;
     left: calc(34px * 2)
 }
   }
@@ -4598,27 +4598,40 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -o-object-fit: cover;
      object-fit: cover;
 }
-.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::cue {
-      opacity: 1;
+.Video-module_base__3wxiY video::cue {
+    font: 14px/14px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+@media (min-width: 640px) {
+.Video-module_base__3wxiY video::cue {
+      font: 16px/16px;
+      font-size: 16px;
+      line-height: 16px
+  }
     }
 @media (min-width: 1025px) {
-.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::cue {
-        font-size: 18px;
-        line-height: 18px
+.Video-module_base__3wxiY video::cue {
+      font: 18px/9px;
+      font-size: 18px;
+      line-height: 1
+  }
+    }
+.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::-webkit-media-text-track-container {
+      line-height: 1px;
+      -webkit-transform: translateY(-30px) !important;
+              transform: translateY(-30px) !important;
+    }
+@media (min-width: 640px) {
+.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::-webkit-media-text-track-container {
+        line-height: 1px;
+        -webkit-transform: translateY(-40px) !important;
+                transform: translateY(-40px) !important
     }
       }
-.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::-webkit-media-text-track-display {
-      overflow: visible !important;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-    }
-.Video-module_base__3wxiY.Video-module_chrome__1r5ou video::-webkit-media-text-track-container {
-      position: relative;
-      overflow: visible !important;
-    }
 @media (min-width: 1025px) {
 .Video-module_base__3wxiY.Video-module_chrome__1r5ou video::-webkit-media-text-track-container {
-        line-height: 4px
+        line-height: 1px
     }
       }
 @media (max-width: 1024px) {

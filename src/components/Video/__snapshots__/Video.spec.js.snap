@@ -3,7 +3,7 @@
 exports[`<Video /> should render base component correctly 1`] = `
 <div>
   <div
-    class="base fullWidth safari"
+    class="base fullWidth"
     id="video"
     role="group"
   >
@@ -34,7 +34,7 @@ exports[`<Video /> should render base component correctly 1`] = `
     <video
       autoplay=""
       class="base"
-      crossorigin="true"
+      crossorigin="anonymous"
       data-testid="data-testid-VideoPlayer"
       loop=""
       playsinline=""

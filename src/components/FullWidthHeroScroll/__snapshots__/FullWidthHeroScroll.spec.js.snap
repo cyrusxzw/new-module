@@ -9,7 +9,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
       class="scrollLockMedia"
     >
       <div
-        class="base base backgroundElement fullWidth safari"
+        class="base base backgroundElement fullWidth"
         role="group"
       >
         <figure
@@ -39,7 +39,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
         <video
           autoplay=""
           class="base background"
-          crossorigin="true"
+          crossorigin="anonymous"
           data-testid="data-testid-VideoPlayer"
           loop=""
           playsinline=""
