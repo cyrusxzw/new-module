@@ -120,6 +120,10 @@ const Controls = ({
     (!isSmallMediumViewport && !hasActiveVideo) ||
     (!isSmallMediumViewport && !hasPlayInFullScreen);
 
+  const captionsToggleButtonTitle = !captions?.isActive
+    ? captions?.copy?.toggleButtonTitleOn
+    : captions?.copy?.toggleButtonTitleOff;
+
   return (
     <div className={classSet}>
       {isInlineMuteActive && (
@@ -148,7 +152,7 @@ const Controls = ({
           })}
           isInline={true}
           onClick={handleOnCaptionsToggleClick}
-          title={captions?.toggleButtonTitle}
+          title={captionsToggleButtonTitle}
         >
           CC
         </Button>
@@ -193,7 +197,7 @@ const Controls = ({
                 })}
                 isInline={true}
                 onClick={handleOnCaptionsToggleClick}
-                title={captions?.toggleButtonTitle}
+                title={captionsToggleButtonTitle}
               >
                 CC
               </Button>
@@ -260,7 +264,10 @@ Controls.propTypes = {
     isActive: PropTypes.bool,
     onToggleClick: PropTypes.func,
     shouldShowToggleButton: PropTypes.bool,
-    toggleButtonTitle: PropTypes.string,
+    copy: PropTypes.shape({
+      toggleButtonTitleOn: PropTypes.string,
+      toggleButtonTitleOff: PropTypes.string,
+    }),
   }),
   className: PropTypes.string,
   copy: PropTypes.shape({

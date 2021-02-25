@@ -146,6 +146,7 @@ const Video = forwardRef(function VideoRef(
       {hasControls && !hasNativeControls && (
         <Controls
           captions={{
+            copy: captions?.copy,
             isActive: hasCaptions,
             onToggleClick: handleOnCaptionsToggleClick,
             shouldShowToggleButton:
@@ -153,7 +154,6 @@ const Video = forwardRef(function VideoRef(
               !!captions?.languageCode &&
               captions?.shouldShowToggleButton &&
               !isIE,
-            toggleButtonTitle: captions?.toggleButtonTitle,
           }}
           copy={{
             closeButtonTitle: copy?.closeButtonTitle,
@@ -180,12 +180,15 @@ const Video = forwardRef(function VideoRef(
 
 Video.propTypes = {
   captions: PropTypes.shape({
+    copy: PropTypes.shape({
+      toggleButtonTitleOn: PropTypes.string,
+      toggleButtonTitleOff: PropTypes.string,
+    }),
     fileUrl: PropTypes.string,
     isActive: PropTypes.bool,
     languageCode: PropTypes.string,
     languageLabel: PropTypes.string,
     shouldShowToggleButton: PropTypes.bool,
-    toggleButtonTitle: PropTypes.string,
   }),
   className: PropTypes.string,
   copy: PropTypes.shape({
