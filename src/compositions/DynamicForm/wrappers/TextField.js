@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Controller } from 'react-hook-form';
+import { Controller } from 'react-hook-form/dist/index.ie11';
 import { TextInputV2 } from '~/components/TextInputV2';
 
 export const TextFieldWrapper = ({
