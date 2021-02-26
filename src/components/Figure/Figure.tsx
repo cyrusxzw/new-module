@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FunctionComponent } from 'react';
 import cx from 'classnames';
 import styles from './Figure.module.css';
 
@@ -13,7 +13,7 @@ interface FigureProps {
   foo?: boolean;
 }
 
-const Figure = ({
+const Figure: FunctionComponent<FigureProps> = ({
   caption,
   children,
   className,
@@ -21,7 +21,7 @@ const Figure = ({
   hasCaptionOffset,
   id,
   theme = 'dark',
-}: FigureProps) => {
+}) => {
   const classSet = cx(styles.base, styles[theme], className);
 
   const captionWrapperClassSet = cx(styles.captionWrapper, {

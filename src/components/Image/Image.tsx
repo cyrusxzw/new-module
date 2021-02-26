@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, FunctionComponent, CSSProperties } from 'react';
 import cx from 'classnames';
 import get from 'lodash/get';
 import { constraintsByViewport } from '~/utils/viewports';
@@ -18,12 +18,12 @@ interface ImageProps {
   large?: string;
   medium?: string;
   small?: string;
-  style?: any;
+  style?: CSSProperties;
   type?: string;
   theme?: 'dark' | 'light';
 }
 
-const Image = forwardRef(function ImageRef(
+const Image: FunctionComponent<ImageProps> = forwardRef(function ImageRef(
   {
     altText,
     className,
@@ -35,7 +35,7 @@ const Image = forwardRef(function ImageRef(
     style,
     type,
     theme = 'dark',
-  }: ImageProps,
+  },
   ref: React.LegacyRef<HTMLImageElement>,
 ) {
   const fullBleedImage = type === 'componentFullBleedImage';
