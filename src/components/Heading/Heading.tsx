@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+import React, { FunctionComponent } from 'react';
 import cx from 'classnames';
 import styles from './Heading.module.css';
 
@@ -14,7 +15,7 @@ interface HeadingProps {
   theme?: 'dark' | 'light';
 }
 
-const Heading = ({
+const Heading: FunctionComponent<HeadingProps> = ({
   children,
   className,
   hasMediumWeightFont = false,
@@ -24,7 +25,7 @@ const Heading = ({
   level,
   size,
   theme = 'dark',
-}: HeadingProps) => {
+}) => {
   if (!children) return null;
 
   const classSet = cx(
