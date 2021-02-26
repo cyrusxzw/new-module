@@ -3,7 +3,7 @@
     "prettier --write"
   ],
   "**/*.{js,ts,tsx}": [
-    "eslint --ignore-path .eslintignore --config .eslintrc",
+    "eslint --fix --ignore-path .eslintignore --config .eslintrc",
     "jest --findRelatedTests --coverageThreshold '{}'"
   ],
   "**/*.css": [
