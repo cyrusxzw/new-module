@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { FunctionComponent } from 'react';
 import cx from 'classnames';
 import styles from './Heading.module.css';

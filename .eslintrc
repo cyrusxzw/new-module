@@ -184,7 +184,10 @@
         "prettier/@typescript-eslint"
       ],
       "parser": "@typescript-eslint/parser",
-      "plugins": ["@typescript-eslint"]
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "react/prop-types": "off"
+      }
     }
   ]
 }
