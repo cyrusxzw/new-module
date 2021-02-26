@@ -5,9 +5,6 @@ exports[`<FooterBlock /> renders block navigation component correctly 1`] = `
   <section
     class="base dark"
   >
-    <h1
-      class="heading"
-    />
     <div
       class="divider dark"
     />
@@ -155,9 +152,6 @@ exports[`<FooterBlock /> should render base component correctly 1`] = `
   <section
     class="base dark"
   >
-    <h1
-      class="heading"
-    />
     <div
       class="divider dark"
     />

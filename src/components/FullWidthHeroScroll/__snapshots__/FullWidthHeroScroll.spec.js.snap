@@ -39,6 +39,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
         <video
           autoplay=""
           class="base background"
+          crossorigin="anonymous"
           data-testid="data-testid-VideoPlayer"
           loop=""
           playsinline=""
@@ -50,7 +51,6 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
         </video>
         <button
           class="base dark base fadeEnter"
-          title="View video"
           type="button"
         >
           <picture

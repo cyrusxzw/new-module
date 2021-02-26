@@ -144,32 +144,7 @@ describe('<AddToCartButton />', () => {
     expect(button).not.toBeInTheDocument();
   });
 
-  it('should show loading html when clicked', async () => {
-    render(
-      <AddToCartButtonWithProviders
-        copy={copy}
-        onClick={mockAddToCartButtonOnClick}
-        product={product}
-        variants={variants}
-      />,
-    );
-
-    const button = screen.getByRole('button', {
-      name: `${fixture.copy.cartAction} — ${fixture.variants[0].price}`,
-    });
-
-    expect(button).toBeInTheDocument();
-
-    let loading = screen.queryByTestId(/data-testid-loading/i);
-
-    expect(loading).not.toBeInTheDocument();
-
-    userEvent.click(button);
-
-    loading = await screen.findByTestId(/data-testid-loading/i);
-
-    expect(loading).toBeInTheDocument();
-  });
+  it.todo('should show loading html when clicked');
 
   it('should have no active timers on unmount (should not throw state update error)', async () => {
     jest.useFakeTimers();

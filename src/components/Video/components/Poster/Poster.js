@@ -6,15 +6,7 @@ import { Image } from '~/components/Image';
 import { Transition } from '~/components/Transition';
 import styles from './Poster.module.css';
 
-const Poster = ({
-  className,
-  copy,
-  isActive,
-  large,
-  medium,
-  onClick,
-  small,
-}) => {
+const Poster = ({ className, copy, isActive, onClick, sizes }) => {
   const classSet = cx(styles.base, { [styles.isActive]: isActive }, className);
 
   return (
@@ -23,13 +15,13 @@ const Poster = ({
         className={classSet}
         isInline={true}
         onClick={onClick}
-        title={copy.playButtonTitle}
+        title={copy?.playButtonTitle}
       >
         <Image
-          altText={copy.altText}
-          large={large}
-          medium={medium}
-          small={small}
+          altText={copy?.altText}
+          large={sizes?.large}
+          medium={sizes?.medium}
+          small={sizes?.small}
         />
       </Button>
     </Transition>
@@ -43,23 +35,12 @@ Poster.propTypes = {
     altText: PropTypes.string,
   }),
   isActive: PropTypes.bool,
-  large: PropTypes.string,
-  medium: PropTypes.string,
   onClick: PropTypes.func,
-  small: PropTypes.string,
-};
-
-Poster.defaultProps = {
-  className: undefined,
-  copy: {
-    playButtonTitle: undefined,
-    altText: undefined,
-  },
-  isActive: undefined,
-  large: undefined,
-  medium: undefined,
-  onClick: undefined,
-  small: undefined,
+  sizes: PropTypes.shape({
+    large: PropTypes.string,
+    medium: PropTypes.string,
+    small: PropTypes.string,
+  }),
 };
 
 export { Poster };
