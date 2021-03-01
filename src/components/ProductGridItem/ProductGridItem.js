@@ -2,7 +2,10 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { HEADING } from '~/constants';
-import { useProductDetailContext, useVariantSelectContext } from '~/contexts';
+import {
+  useProductDetailContext,
+  useVariantSelectContext,
+} from '~/contexts/index.ts';
 import { useImageTransition } from '~/customHooks';
 import { getVariantRadioOptions } from '~/utils/product';
 import { AddToCartButton } from '~/components/AddToCartButton';

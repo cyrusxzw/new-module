@@ -1,24 +1,30 @@
-import React, { createContext, useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, {
+  createContext,
+  useContext,
+  FunctionComponent,
+  MouseEventHandler,
+} from 'react';
 import { useAddToCartStore } from './AddToCartStore';
 
-const AddToCartContext = createContext();
-
-const AddToCartContextProvider = ({ children, onClick }) => (
-  <AddToCartContext.Provider value={useAddToCartStore(onClick)}>
-    {children}
-  </AddToCartContext.Provider>
-);
-
-AddToCartContextProvider.propTypes = {
-  children: PropTypes.any,
+interface AddToCartContextProviderProps {
   /**
     A callback function that takes `sku<string>`, `addToCartDispatch<function>`, `ADD_TO_CART_ACTION_TYPES<array[string]>`
     as arguments. See [AddToCartButton.onClick.js mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/AddToCartButton/__mocks__/AddToCartButton.onClick.js)
     for an example. ___Required___
    */
-  onClick: PropTypes.func,
-};
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+}
+
+const AddToCartContext = createContext(undefined);
+
+const AddToCartContextProvider: FunctionComponent<AddToCartContextProviderProps> = ({
+  children,
+  onClick,
+}) => (
+  <AddToCartContext.Provider value={useAddToCartStore(onClick)}>
+    {children}
+  </AddToCartContext.Provider>
+);
 
 const useAddToCartContext = () => {
   const context = useContext(AddToCartContext);

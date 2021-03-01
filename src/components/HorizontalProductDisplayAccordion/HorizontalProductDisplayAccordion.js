@@ -6,7 +6,7 @@ import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
   VariantSelectContextProvider,
-} from '~/contexts';
+} from '~/contexts/index.ts';
 import { useWindowHasResized } from '~/customHooks';
 import { ascertainIsSmallOnlyViewport } from '~/utils/viewports';
 import { AccordionProduct } from './components/AccordionProduct';

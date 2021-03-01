@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import cx from 'classnames';
 import { HEADING } from '~/constants';
-import { useThemeContext } from '~/contexts';
+import { useThemeContext } from '~/contexts/index.ts';
 import { ConditionalWrapper } from '~/components/ConditionalWrapper';
 import { Heading } from '~/components/Heading';
 import { Hyperlink } from '~/components/Hyperlink';

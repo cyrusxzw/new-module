@@ -6,7 +6,15 @@ const initialState = {
   showModal: false,
 };
 
-const reducer = (state, action) => {
+interface State {
+  showModal: boolean;
+}
+
+interface Action {
+  type: typeof SHOW_NOTIFICATION | '';
+}
+
+const reducer = (state: State, action: Action) => {
   if (action.type === SHOW_NOTIFICATION) {
     return {
       showModal: !state.showModal,

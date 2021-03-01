@@ -71,7 +71,7 @@ export { DynamicForm } from './compositions';
 import * as constants from './constants';
 export { constants };
 
-import * as contexts from './contexts';
+import * as contexts from './contexts/index.ts';
 export { contexts };
 export {
   AddToCartContextProvider,
@@ -90,7 +90,7 @@ export {
   useThemeContext,
   VariantSelectContextProvider,
   useVariantSelectContext,
-} from './contexts';
+} from './contexts/index.ts';
 
 import * as customHooks from './customHooks';
 export { customHooks };

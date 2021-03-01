@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useForm } from 'react-hook-form/dist/index.ie11';
 
-import { useThemeContext } from '~/contexts';
+import { useThemeContext } from '~/contexts/index.ts';
 import { componentMap } from './component-map';
 import { getValidationRules } from './validators/validators';
 

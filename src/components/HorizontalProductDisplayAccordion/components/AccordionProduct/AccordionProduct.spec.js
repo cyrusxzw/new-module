@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import {
   AddToCartContextProvider,
   VariantSelectContextProvider,
-} from '~/contexts';
+} from '~/contexts/index.ts';
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
 import { AccordionProductFixture } from './AccordionProduct.fixture.js';
 import { AccordionProduct } from './AccordionProduct';

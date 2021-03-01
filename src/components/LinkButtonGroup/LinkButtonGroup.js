@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useThemeContext } from '~/contexts';
+import { useThemeContext } from '~/contexts/index.ts';
 import styles from './LinkButtonGroup.module.css';
 
 const isReactFragment = component => {

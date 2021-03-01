@@ -6,7 +6,7 @@ import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
   VariantSelectContextProvider,
-} from '~/contexts';
+} from '~/contexts/index.ts';
 import { AddToCartButton } from './AddToCartButton';
 import { AddToCartButtonFixture as fixture } from './AddToCartButton.fixture';
 import { mockAddToCartButtonOnClick } from './__mocks__/AddToCartButton.onClick';

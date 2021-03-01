@@ -1,10 +1,14 @@
-import React, { createContext, useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, { createContext, useContext, FunctionComponent } from 'react';
 import { useNavBarThemeStore } from './NavBarThemeStore';
 
-const NavBarThemeContext = createContext();
+interface NavBarThemeContextProviderProps {
+  loginAndCartTheme?: string;
+  navigationAndLogoTheme?: string;
+}
 
-const NavBarThemeContextProvider = ({
+const NavBarThemeContext = createContext(undefined);
+
+const NavBarThemeContextProvider: FunctionComponent<NavBarThemeContextProviderProps> = ({
   children,
   loginAndCartTheme,
   navigationAndLogoTheme,
@@ -15,12 +19,6 @@ const NavBarThemeContextProvider = ({
     {children}
   </NavBarThemeContext.Provider>
 );
-
-NavBarThemeContextProvider.propTypes = {
-  children: PropTypes.any,
-  loginAndCartTheme: PropTypes.string,
-  navigationAndLogoTheme: PropTypes.string,
-};
 
 const useNavBarThemeContext = () => {
   const context = useContext(NavBarThemeContext);

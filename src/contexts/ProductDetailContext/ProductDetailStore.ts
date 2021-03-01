@@ -1,18 +1,7 @@
 import { useEffect, useState } from 'react';
+import { ProductProps } from './ProductDetailContext';
 
-const defaultState = {
-  description: '',
-  id: '',
-  variantOptions: [],
-  cartDisclaimer: '',
-  definitionList: [],
-  flyinPanel: '',
-  productName: '',
-  upSellProduct: null,
-  imageSize: 'Small',
-};
-
-const useProductDetailStore = (product = defaultState) => {
+const useProductDetailStore = (product: ProductProps) => {
   const [productDetail, setProductDetail] = useState(product);
 
   useEffect(() => {

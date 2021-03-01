@@ -1,29 +1,33 @@
-import React, { createContext, useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, { createContext, useContext, FunctionComponent } from 'react';
 import { useGoogleMapsStore } from './GoogleMapsStore';
 
+interface Options {
+  libraries?: Array<string>;
+  regionCode?: string;
+  languageCode?: string;
+}
+
+interface GoogleMapsContextProviderProps {
+  apiKey?: string;
+  options?: Options;
+}
+
 const defaultValues = {
-  googleMaps: null,
+  googleMap: null,
   isLoading: false,
 };
 
 const GoogleMapsContext = createContext(defaultValues);
 
-const GoogleMapsContextProvider = ({ apiKey, children, options }) => (
+const GoogleMapsContextProvider: FunctionComponent<GoogleMapsContextProviderProps> = ({
+  apiKey,
+  children,
+  options,
+}) => (
   <GoogleMapsContext.Provider value={useGoogleMapsStore(apiKey, options)}>
     {children}
   </GoogleMapsContext.Provider>
 );
-
-GoogleMapsContextProvider.propTypes = {
-  apiKey: PropTypes.string,
-  children: PropTypes.any,
-  options: PropTypes.shape({
-    libraries: PropTypes.arrayOf(PropTypes.string),
-    regionCode: PropTypes.string,
-    languageCode: PropTypes.string,
-  }),
-};
 
 const useGoogleMapsContext = () => {
   const context = useContext(GoogleMapsContext);
@@ -37,4 +41,4 @@ const useGoogleMapsContext = () => {
   return context;
 };
 
-export { GoogleMapsContextProvider, useGoogleMapsContext };
+export { GoogleMapsContextProvider, useGoogleMapsContext, Options };

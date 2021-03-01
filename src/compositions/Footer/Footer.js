@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { NotificationContextProvider } from '~/contexts';
+import { NotificationContextProvider } from '~/contexts/index.ts';
 import { NewsletterSignUp } from '~/compositions/NewsletterSignUp';
 import { FooterBlock } from '~/components/FooterBlock';
 import { Hidden } from '~/components/Hidden';

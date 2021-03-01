@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useLoadMoreContext } from '~/contexts';
+import { useLoadMoreContext } from '~/contexts/index.ts';
 import { Button } from '~/components/Button';
 import { Loading } from '~/components/Loading';
 import styles from './LoadMoreButton.module.css';

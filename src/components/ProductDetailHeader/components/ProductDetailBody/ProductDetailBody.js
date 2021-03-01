@@ -6,7 +6,7 @@ import {
   useProductDetailContext,
   useThemeContext,
   useVariantSelectContext,
-} from '~/contexts';
+} from '~/contexts/index.ts';
 import { useWindowHasResized } from '~/customHooks/useWindowHasResized';
 import { getVariantRadioOptions } from '~/utils/product';
 import { AddToCartButton } from '~/components/AddToCartButton';

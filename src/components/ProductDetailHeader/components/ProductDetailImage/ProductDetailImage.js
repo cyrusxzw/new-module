@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useThemeContext, useVariantSelectContext } from '~/contexts';
+import { useThemeContext, useVariantSelectContext } from '~/contexts/index.ts';
 import { useImageTransition } from '~/customHooks';
 import { Figure } from '~/components/Figure';
 import { Hidden } from '~/components/Hidden';

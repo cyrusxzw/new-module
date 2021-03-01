@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useThemeContext } from '~/contexts';
+import { useThemeContext } from '~/contexts/index.ts';
 import { SectionHeading } from '~/components/SectionHeading';
 import styles from './BodyCopy.module.css';
 

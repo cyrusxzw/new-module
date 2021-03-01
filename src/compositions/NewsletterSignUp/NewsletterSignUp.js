@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useNotificationContext } from '~/contexts';
+import { useNotificationContext } from '~/contexts/index.ts';
 import { Icon } from '~/components/Icon';
 import { Loading } from '~/components/Loading';
 import { Checkbox } from '~/components/Checkbox';

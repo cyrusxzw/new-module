@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import styles from './Heading.module.css';
 
 interface HeadingProps {
@@ -25,6 +26,8 @@ const Heading: FunctionComponent<HeadingProps> = ({
   size,
   theme = 'dark',
 }) => {
+  const currentTheme = useThemeContext(theme, 'dark');
+
   if (!children) return null;
 
   const classSet = cx(
@@ -33,7 +36,7 @@ const Heading: FunctionComponent<HeadingProps> = ({
     { [styles.serifFont]: hasSerifFont },
     { [styles.mediumWeightFont]: hasMediumWeightFont },
     styles[size],
-    styles[theme],
+    styles[currentTheme],
     className,
   );
 
