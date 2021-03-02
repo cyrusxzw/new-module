@@ -15,6 +15,9 @@ const AccordionProduct = forwardRef(
   (
     {
       addToCartCopy,
+      // TODO: Decide name with team
+      //  Abstracts business logic functions while giving access to context and ref of components
+      callbackWithRef,
       closedState,
       id,
       index,
@@ -24,12 +27,13 @@ const AccordionProduct = forwardRef(
       openState,
       resetAccordion,
       toggleAccordion,
-      impression,
-      trackingProps,
     },
     ref,
   ) => {
-    impression(trackingProps, ref);
+    if (callbackWithRef) {
+      callbackWithRef(ref);
+    }
+
     return (
       <div
         className={cx(
@@ -230,6 +234,7 @@ AccordionProduct.propTypes = {
       title: PropTypes.string,
     }),
   }),
+  callbackWithRef: PropTypes.func,
   closedState: PropTypes.shape({
     background: PropTypes.oneOf(['Colour', 'Image', 'Video']),
     backgroundColour: PropTypes.string,
@@ -247,7 +252,6 @@ AccordionProduct.propTypes = {
   isCompressed: PropTypes.bool,
   isExpanded: PropTypes.bool,
   id: PropTypes.string,
-  impression: PropTypes.func,
   index: PropTypes.number,
   onPromoClick: PropTypes.func,
   openState: PropTypes.shape({
@@ -270,7 +274,6 @@ AccordionProduct.propTypes = {
   }),
   resetAccordion: PropTypes.func,
   toggleAccordion: PropTypes.func,
-  trackingProps: PropTypes.object,
 };
 
 AccordionProduct.defaultProps = {
@@ -297,7 +300,6 @@ AccordionProduct.defaultProps = {
   isCompressed: false,
   isExpanded: false,
   id: undefined,
-  impression: () => {},
   index: undefined,
   onPromoClick: () => {},
   openState: {
