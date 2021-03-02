@@ -68,4 +68,6 @@ describe('<AccordionProduct />', () => {
 
     expect(handleOnClose).toHaveBeenCalledTimes(1);
   });
+
+  // TODO: Test onPromoClick
 });

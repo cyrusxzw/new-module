@@ -12,7 +12,12 @@ import { ascertainIsSmallOnlyViewport } from '~/utils/viewports';
 import { AccordionProduct } from './components/AccordionProduct';
 import styles from './HorizontalProductDisplayAccordion.module.css';
 
-const HorizontalProductDisplayAccordion = ({ id, products, addToCartCopy }) => {
+const HorizontalProductDisplayAccordion = ({
+  id,
+  products,
+  addToCartCopy,
+  onPromoClick,
+}) => {
   const [accordionProducts, toggleAccordionProducts] = useState(products);
   const [accordionActive, toggleAccordionActiveState] = useState(false);
   const isMobile = ascertainIsSmallOnlyViewport();
@@ -112,9 +117,11 @@ const HorizontalProductDisplayAccordion = ({ id, products, addToCartCopy }) => {
                 <AccordionProduct
                   addToCartCopy={addToCartCopy}
                   index={productIndex}
+                  onPromoClick={res => onPromoClick(res)}
                   resetAccordion={resetAccordion}
                   toggleAccordion={toggleAccordion}
                   {...product}
+                  ref={product.ref}
                 />
               </VariantSelectContextProvider>
             </ProductDetailContextProvider>
@@ -136,6 +143,7 @@ HorizontalProductDisplayAccordion.propTypes = {
       title: PropTypes.string,
     }),
   }),
+  onPromoClick: PropTypes.func,
   openIndex: PropTypes.string,
   products: PropTypes.arrayOf(
     PropTypes.shape({
@@ -215,6 +223,7 @@ HorizontalProductDisplayAccordion.defaultProps = {
     isExpanded: undefined,
     id: undefined,
     index: undefined,
+    onPromoClick: () => {},
     openState: {
       background: 'Colour',
       backgroundColour: undefined,
