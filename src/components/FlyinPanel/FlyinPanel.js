@@ -8,12 +8,20 @@ import { Heading } from '~/components/Heading';
 import { Icon } from '~/components/Icon';
 import { Overlay } from '~/components/Overlay';
 import { Transition } from '~/components/Transition';
+import { isInBrowser } from '~/utils/environment';
 import styles from './FlyinPanel.module.css';
 
-/** Set up the Flyin component's anchor point for ReactDOM.createPortal */
-const modalRoot = document.createElement('div');
-modalRoot.setAttribute('id', 'aesop-gel-flyin-root');
-document.body.appendChild(modalRoot);
+let modalRoot = null;
+if (isInBrowser()) {
+  /** Set up the Flyin component's anchor point for ReactDOM.createPortal */
+  modalRoot = document.getElementById('aesop-gel-flyin-root');
+
+  if (!modalRoot) {
+    modalRoot = document.createElement('div');
+    modalRoot.setAttribute('id', 'aesop-gel-flyin-root');
+    document.body.appendChild(modalRoot);
+  }
+}
 
 const FlyinPanel = ({
   children,
