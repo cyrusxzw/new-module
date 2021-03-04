@@ -12,12 +12,7 @@ import { ascertainIsSmallOnlyViewport } from '~/utils/viewports';
 import { AccordionProduct } from './components/AccordionProduct';
 import styles from './HorizontalProductDisplayAccordion.module.css';
 
-const HorizontalProductDisplayAccordion = ({
-  id,
-  products,
-  addToCartCopy,
-  onPromoClick,
-}) => {
+const HorizontalProductDisplayAccordion = ({ id, products, addToCartCopy }) => {
   const [accordionProducts, toggleAccordionProducts] = useState(products);
   const [accordionActive, toggleAccordionActiveState] = useState(false);
   const isMobile = ascertainIsSmallOnlyViewport();
@@ -117,7 +112,6 @@ const HorizontalProductDisplayAccordion = ({
                 <AccordionProduct
                   addToCartCopy={addToCartCopy}
                   index={productIndex}
-                  onPromoClick={res => onPromoClick(res)}
                   resetAccordion={resetAccordion}
                   toggleAccordion={toggleAccordion}
                   {...product}

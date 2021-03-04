@@ -15,8 +15,6 @@ const AccordionProduct = forwardRef(
   (
     {
       addToCartCopy,
-      // TODO: Decide name with team
-      //  Abstracts business logic functions while giving access to context and ref of components
       callbackWithRef,
       closedState,
       id,
@@ -33,7 +31,6 @@ const AccordionProduct = forwardRef(
     if (callbackWithRef) {
       callbackWithRef(ref);
     }
-
     return (
       <div
         className={cx(
@@ -285,6 +282,7 @@ AccordionProduct.defaultProps = {
       title: undefined,
     },
   },
+  callbackWithRef: undefined,
   closedState: {
     background: undefined,
     backgroundColour: undefined,
