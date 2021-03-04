@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import find from 'lodash/find';
+import type { Variant } from '~/types';
 
 const useVariantSelectStore = (variants = []) => {
   const [selectedVariant, setSelectedVariant] = useState({});
@@ -8,7 +9,7 @@ const useVariantSelectStore = (variants = []) => {
     setSelectedVariant(variants[0]);
   }, [variants]);
 
-  const onVariantChange = (event, currentVariants) => {
+  const onVariantChange = (event, currentVariants: Variant[]) => {
     event.persist();
 
     const {

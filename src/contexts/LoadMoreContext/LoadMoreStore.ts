@@ -1,22 +1,19 @@
 import { useReducer, MouseEventHandler } from 'react';
 
-const LOAD_MORE_ACTION_TYPES = {
-  FAIL: 'FAIL',
-  FETCHING: 'FETCHING',
-  SUCCESS: 'SUCCESS',
-};
+enum LOAD_MORE_ACTION_TYPES {
+  FAIL,
+  FETCHING,
+  SUCCESS,
+}
 
-interface State {
+type State = {
   hasError: boolean;
   isLoading: boolean;
-}
+};
 
-interface Action {
-  type:
-    | typeof LOAD_MORE_ACTION_TYPES.SUCCESS
-    | typeof LOAD_MORE_ACTION_TYPES.FAIL
-    | typeof LOAD_MORE_ACTION_TYPES.FETCHING;
-}
+type Action = {
+  type: LOAD_MORE_ACTION_TYPES;
+};
 
 const initialState = {
   hasError: false,
@@ -48,11 +45,13 @@ const reducer = (state: State, action: Action) => {
         isLoading: false,
       };
     }
-  }
 
-  throw new Error(
-    `useLoadMore: Dispatch action type "${action.type}" not found.`,
-  );
+    default: {
+      throw new Error(
+        `useLoadMore: Dispatch action type "${action.type}" not found.`,
+      );
+    }
+  }
 };
 
 const useLoadMoreStore = (onClick: MouseEventHandler<HTMLButtonElement>) => {

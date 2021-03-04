@@ -1,40 +1,10 @@
-import React, { createContext, useContext, FunctionComponent } from 'react';
+import React, { createContext, useContext, FC } from 'react';
 import { useVariantSelectStore } from './VariantSelectStore';
-
-interface Variant {
-  alternateAction: {
-    url: string;
-    label: string;
-  };
-  cartDisclaimer?: string;
-  hasAgeVerificationRequirement?: boolean;
-  id?: string;
-  isInStock: boolean;
-  isSellable?: boolean;
-  image?: {
-    altText?: string;
-    sizes?: {
-      large?: string;
-      medium?: string;
-      small?: string;
-    };
-  };
-  price: string;
-  size: string;
-  sku: string;
-  tracking?: any;
-}
-
-interface VariantSelectContextProviderProps {
-  variants: Array<Variant>;
-}
+import type { Props } from './VariantSelectContext.types';
 
 const VariantSelectContext = createContext(undefined);
 
-const VariantSelectContextProvider: FunctionComponent<VariantSelectContextProviderProps> = ({
-  children,
-  variants,
-}) => (
+const VariantSelectContextProvider: FC<Props> = ({ children, variants }) => (
   <VariantSelectContext.Provider value={useVariantSelectStore(variants)}>
     {children}
   </VariantSelectContext.Provider>
@@ -52,4 +22,4 @@ const useVariantSelectContext = () => {
   return context;
 };
 
-export { VariantSelectContextProvider, useVariantSelectContext, Variant };
+export { VariantSelectContextProvider, useVariantSelectContext };

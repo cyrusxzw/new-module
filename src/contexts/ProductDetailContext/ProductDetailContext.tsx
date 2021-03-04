@@ -1,39 +1,10 @@
-import React, { createContext, useContext, FunctionComponent } from 'react';
-import { Variant } from '~/contexts/VariantSelectContext';
+import React, { createContext, useContext, FC } from 'react';
 import { useProductDetailStore } from './ProductDetailStore';
-
-interface ProductProps {
-  description?: string;
-  id?: string;
-  variantOptions?: Array<Variant>;
-  cartDisclaimer?: string;
-  definitionList?: Array<{
-    term?: JSX.Element;
-    description?: JSX.Element;
-  }>;
-  flyinPanel?: JSX.Element;
-  productName: string;
-  imageSize?: string;
-  upSellProduct?: {
-    image?: {
-      altText?: string;
-      small?: string;
-    };
-    name?: string;
-    url?: string;
-  };
-}
-
-interface ProductDetailContextProviderProps {
-  product?: ProductProps;
-}
+import type { Props } from './ProductDetailContext.types';
 
 const ProductDetailContext = createContext(undefined);
 
-const ProductDetailContextProvider: FunctionComponent<ProductDetailContextProviderProps> = ({
-  children,
-  product,
-}) => (
+const ProductDetailContextProvider: FC<Props> = ({ children, product }) => (
   <ProductDetailContext.Provider value={useProductDetailStore(product)}>
     {children}
   </ProductDetailContext.Provider>
@@ -51,4 +22,4 @@ const useProductDetailContext = () => {
   return context;
 };
 
-export { ProductDetailContextProvider, useProductDetailContext, ProductProps };
+export { ProductDetailContextProvider, useProductDetailContext };

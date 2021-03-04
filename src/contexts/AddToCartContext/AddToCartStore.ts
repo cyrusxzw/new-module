@@ -1,10 +1,10 @@
 import { useReducer } from 'react';
 
-const ADD_TO_CART_ACTION_TYPES = {
-  FAIL: 'FAIL',
-  FETCHING: 'FETCHING',
-  SUCCESS: 'SUCCESS',
-};
+enum ADD_TO_CART_ACTION_TYPES {
+  FAIL,
+  FETCHING,
+  SUCCESS,
+}
 
 const defaultState = {
   actionTypes: {},

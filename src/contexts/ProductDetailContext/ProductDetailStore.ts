@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { ProductProps } from './ProductDetailContext';
+import type { Product } from '~/types';
 
-const useProductDetailStore = (product: ProductProps) => {
+const useProductDetailStore = (product: Product) => {
   const [productDetail, setProductDetail] = useState(product);
 
   useEffect(() => {

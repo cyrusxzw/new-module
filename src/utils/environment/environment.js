@@ -18,7 +18,7 @@ const isFirefox = typeof InstallTrigger !== 'undefined';
 /* Safari 3.0+ "[object HTMLElementConstructor]" */
 const isSafari =
   /constructor/i.test(window.HTMLElement) ||
-  (function(p) {
+  (function (p) {
     return p.toString() === '[object SafariRemoteNotification]';
   })(
     !window['safari'] ||

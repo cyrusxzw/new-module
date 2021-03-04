@@ -105,6 +105,9 @@ export {
   useWindowHasResized,
 } from './customHooks';
 
+import * as types from './types';
+export { types };
+
 import * as utils from './utils';
 export { utils };
 export { environment, objects, product, viewports } from './utils';

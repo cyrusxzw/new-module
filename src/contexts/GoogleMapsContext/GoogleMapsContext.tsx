@@ -1,16 +1,6 @@
-import React, { createContext, useContext, FunctionComponent } from 'react';
+import React, { createContext, useContext, FC } from 'react';
 import { useGoogleMapsStore } from './GoogleMapsStore';
-
-interface Options {
-  libraries?: Array<string>;
-  regionCode?: string;
-  languageCode?: string;
-}
-
-interface GoogleMapsContextProviderProps {
-  apiKey?: string;
-  options?: Options;
-}
+import type { Props } from './GoogleMapsContext.types';
 
 const defaultValues = {
   googleMap: null,
@@ -19,7 +9,7 @@ const defaultValues = {
 
 const GoogleMapsContext = createContext(defaultValues);
 
-const GoogleMapsContextProvider: FunctionComponent<GoogleMapsContextProviderProps> = ({
+const GoogleMapsContextProvider: FC<Props> = ({
   apiKey,
   children,
   options,
@@ -41,4 +31,4 @@ const useGoogleMapsContext = () => {
   return context;
 };
 
-export { GoogleMapsContextProvider, useGoogleMapsContext, Options };
+export { GoogleMapsContextProvider, useGoogleMapsContext };

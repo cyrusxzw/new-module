@@ -1,9 +1,9 @@
-import React, { createContext, useContext, FunctionComponent } from 'react';
+import React, { createContext, useContext, FC } from 'react';
 import { useNotificationStore } from './NotificationStore';
 
 const NotificationContext = createContext(undefined);
 
-const NotificationContextProvider: FunctionComponent = ({ children }) => (
+const NotificationContextProvider: FC = ({ children }) => (
   <NotificationContext.Provider value={useNotificationStore()}>
     {children}
   </NotificationContext.Provider>
