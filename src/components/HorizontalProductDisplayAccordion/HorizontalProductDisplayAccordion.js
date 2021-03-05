@@ -115,7 +115,6 @@ const HorizontalProductDisplayAccordion = ({ id, products, addToCartCopy }) => {
                   resetAccordion={resetAccordion}
                   toggleAccordion={toggleAccordion}
                   {...product}
-                  ref={product.ref}
                 />
               </VariantSelectContextProvider>
             </ProductDetailContextProvider>
@@ -137,7 +136,6 @@ HorizontalProductDisplayAccordion.propTypes = {
       title: PropTypes.string,
     }),
   }),
-  onPromoClick: PropTypes.func,
   openIndex: PropTypes.string,
   products: PropTypes.arrayOf(
     PropTypes.shape({
@@ -217,7 +215,6 @@ HorizontalProductDisplayAccordion.defaultProps = {
     isExpanded: undefined,
     id: undefined,
     index: undefined,
-    onPromoClick: () => {},
     openState: {
       background: 'Colour',
       backgroundColour: undefined,
