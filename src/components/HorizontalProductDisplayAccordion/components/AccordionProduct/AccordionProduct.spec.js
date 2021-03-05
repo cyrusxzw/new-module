@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import {
   AddToCartContextProvider,
@@ -62,10 +62,264 @@ describe('<AccordionProduct />', () => {
       /data-testid-AccordionProduct/i,
     );
 
-    expect(handleOnClose).not.toHaveBeenCalled();
-
     userEvent.click(accordionProduct);
 
     expect(handleOnClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('should fire resetAccordion on keydown press', () => {
+    const handleResetOnKeydownPress = jest.fn();
+
+    render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <VariantSelectContextProvider
+          variants={AccordionProductFixture.openState.product.variants}
+        >
+          <AccordionProduct
+            addToCart={AccordionProductFixture.addToCart}
+            closedState={AccordionProductFixture.closedState}
+            id={AccordionProductFixture.id}
+            isCompressed={true}
+            openState={AccordionProductFixture.openState}
+            resetAccordion={handleResetOnKeydownPress}
+            toggleAccordion={() => {}}
+          />
+        </VariantSelectContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const accordionProduct = screen.getByTestId(
+      /data-testid-AccordionProduct/i,
+    );
+
+    fireEvent.keyDown(accordionProduct, {
+      key: 'Escape',
+      code: 27,
+      charCode: 27,
+    });
+
+    expect(handleResetOnKeydownPress).toHaveBeenCalledTimes(1);
+  });
+
+  it('should fire toggleAccordion if the accordion is compressed', () => {
+    const handleOpenOnClick = jest.fn();
+
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <VariantSelectContextProvider
+          variants={AccordionProductFixture.openState.product.variants}
+        >
+          <AccordionProduct
+            addToCart={AccordionProductFixture.addToCart}
+            closedState={AccordionProductFixture.closedState}
+            id={AccordionProductFixture.id}
+            isCompressed={true}
+            openState={AccordionProductFixture.openState}
+            resetAccordion={() => {}}
+            toggleAccordion={handleOpenOnClick}
+          />
+        </VariantSelectContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const closeStateBtn = container.querySelector('.closeBtn');
+
+    userEvent.click(closeStateBtn);
+
+    expect(handleOpenOnClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('should fire onPromoClick and toggleAccordion if the accordion is uncompressed', () => {
+    const handleCloseOnClick = jest.fn();
+
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <VariantSelectContextProvider
+          variants={AccordionProductFixture.openState.product.variants}
+        >
+          <AccordionProduct
+            addToCart={AccordionProductFixture.addToCart}
+            closedState={AccordionProductFixture.closedState}
+            id={AccordionProductFixture.id}
+            isCompressed={true}
+            onPromoClick={handleCloseOnClick}
+            openState={AccordionProductFixture.openState}
+            resetAccordion={() => {}}
+            toggleAccordion={handleCloseOnClick}
+          />
+        </VariantSelectContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const openStateBtn = container.querySelector('.openBtn');
+
+    userEvent.click(openStateBtn);
+
+    expect(handleCloseOnClick).toHaveBeenCalledTimes(2);
+  });
+
+  it('should fire onPromoClick and toggleAccordion if the foreground image is clicked', () => {
+    const handleForegroundOnClick = jest.fn();
+
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <VariantSelectContextProvider
+          variants={AccordionProductFixture.openState.product.variants}
+        >
+          <AccordionProduct
+            addToCart={AccordionProductFixture.addToCart}
+            closedState={AccordionProductFixture.closedState}
+            id={AccordionProductFixture.id}
+            isCompressed={true}
+            onPromoClick={handleForegroundOnClick}
+            openState={AccordionProductFixture.openState}
+            resetAccordion={() => {}}
+            toggleAccordion={handleForegroundOnClick}
+          />
+        </VariantSelectContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const foregroundBtn = container.querySelector(
+      '.closedStateForegroundImageWrap',
+    );
+
+    userEvent.click(foregroundBtn);
+
+    expect(handleForegroundOnClick).toHaveBeenCalledTimes(2);
+  });
+
+  it('should execute callbackWithRef when initialized', () => {
+    const handleCallbackWithRef = jest.fn();
+
+    render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <VariantSelectContextProvider
+          variants={AccordionProductFixture.openState.product.variants}
+        >
+          <AccordionProduct
+            addToCart={AccordionProductFixture.addToCart}
+            callbackWithRef={handleCallbackWithRef}
+            closedState={AccordionProductFixture.closedState}
+            id={AccordionProductFixture.id}
+            isCompressed={true}
+            openState={AccordionProductFixture.openState}
+            resetAccordion={() => {}}
+            toggleAccordion={() => {}}
+          />
+        </VariantSelectContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    expect(handleCallbackWithRef).toHaveBeenCalledTimes(1);
+  });
+
+  it('should render closedState video', () => {
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <VariantSelectContextProvider
+          variants={AccordionProductFixture.openState.product.variants}
+        >
+          <AccordionProduct
+            addToCart={AccordionProductFixture.addToCart}
+            closedState={AccordionProductFixture.closedStateWithVideo}
+            id={AccordionProductFixture.id}
+            openState={AccordionProductFixture.openStateWithVideo}
+            resetAccordion={() => {}}
+            toggleAccordion={() => {}}
+          />
+        </VariantSelectContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const videos = container.querySelectorAll('.closedBackgroundVideo');
+
+    expect(videos.length).toEqual(1);
+    expect(videos[0]).toBeInTheDocument();
+  });
+
+  it('should render openState video', () => {
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <VariantSelectContextProvider
+          variants={AccordionProductFixture.openState.product.variants}
+        >
+          <AccordionProduct
+            addToCart={AccordionProductFixture.addToCart}
+            closedState={AccordionProductFixture.closedState}
+            id={AccordionProductFixture.id}
+            openState={AccordionProductFixture.openStateWithVideo}
+            resetAccordion={() => {}}
+            toggleAccordion={() => {}}
+          />
+        </VariantSelectContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const videos = container.querySelectorAll('.openBackgroundVideo');
+
+    expect(videos.length).toEqual(1);
+    expect(videos[0]).toBeInTheDocument();
+  });
+
+  it('should apply correct styles when isExpanded is true', () => {
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <VariantSelectContextProvider
+          variants={AccordionProductFixture.openState.product.variants}
+        >
+          <AccordionProduct
+            addToCart={AccordionProductFixture.addToCart}
+            closedState={AccordionProductFixture.closedState}
+            id={AccordionProductFixture.id}
+            isExpanded={true}
+            openState={AccordionProductFixture.openState}
+            resetAccordion={() => {}}
+            toggleAccordion={() => {}}
+          />
+        </VariantSelectContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const parentDiv = container.querySelector('.base');
+    const closedStateDiv = container.querySelector(
+      '.accordionDefaultBackground',
+    );
+    const openStateDiv = container.querySelector('.accordionExpanded');
+
+    expect(parentDiv).toHaveClass('isExpanded');
+    // Note: toBeVisible() not working as expected, so instead asserting by class
+    expect(closedStateDiv).toHaveClass('hidden');
+    expect(openStateDiv).toHaveClass('open');
+  });
+
+  it('should run default onPromoClick function', () => {
+    const defaultOnPromoClickSpy = jest.spyOn(
+      AccordionProduct.defaultProps,
+      'onPromoClick',
+    );
+    const { container } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <VariantSelectContextProvider
+          variants={AccordionProductFixture.openState.product.variants}
+        >
+          <AccordionProduct
+            addToCart={AccordionProductFixture.addToCart}
+            closedState={AccordionProductFixture.closedState}
+            id={AccordionProductFixture.id}
+            isExpanded={true}
+            openState={AccordionProductFixture.openState}
+            resetAccordion={() => {}}
+            toggleAccordion={() => {}}
+          />
+        </VariantSelectContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const openStateBtn = container.querySelector('.openBtn');
+
+    userEvent.click(openStateBtn);
+
+    expect(defaultOnPromoClickSpy).toHaveBeenCalledTimes(1);
   });
 });
