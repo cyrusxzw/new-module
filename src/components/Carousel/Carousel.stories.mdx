@@ -51,13 +51,14 @@ import { CarouselFixture } from './Carousel.fixture';
           description: knobs.text(
             'description',
             'Nunc dignissim quis',
-            'First slide copy',
+            'First slide props',
           ),
           heading: knobs.text(
             'heading',
             'Lorem ipsum dolor sit',
-            'First slide copy',
+            'First slide props',
           ),
+          isLoading: knobs.boolean('isLoading', false, 'First slide props'),
           image: {
             altText: 'Lorem ipsum dolor sit',
             small:
