@@ -19,7 +19,7 @@ exports[`<Figure /> should render base component correctly 1`] = `
       />
     </picture>
     <figcaption
-      class="captionWrapper border captionOffset"
+      class="captionWrapper"
     >
       <div
         class="caption"

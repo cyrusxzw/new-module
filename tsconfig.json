@@ -1,0 +1,13 @@
+{
+  "preset": "ts-jest/presets/js-with-babel",
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "esModuleInterop": true,
+    "jsx": "react",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  }
+}

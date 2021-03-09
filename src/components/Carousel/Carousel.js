@@ -186,7 +186,7 @@ const Carousel = ({
                     title={`Link to ${slide.heading}`}
                     url={url}
                   >
-                    {children}{' '}
+                    {children}
                   </Hyperlink>
                 )}
               >
