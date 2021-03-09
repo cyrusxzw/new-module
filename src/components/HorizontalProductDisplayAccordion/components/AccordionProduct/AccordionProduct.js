@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
@@ -11,193 +11,216 @@ import { LinkButtonGroup } from '~/components/LinkButtonGroup';
 import { Video } from '~/components/Video';
 import styles from './AccordionProduct.module.css';
 
-const AccordionProduct = ({
-  addToCartCopy,
-  closedState,
-  id,
-  index,
-  isCompressed,
-  isExpanded,
-  openState,
-  resetAccordion,
-  toggleAccordion,
-}) => {
-  return (
-    <div
-      className={cx(
-        styles.base,
-        isExpanded && styles.isExpanded,
-        isCompressed && styles.isCompressed,
-      )}
-      data-testid="data-testid-AccordionProduct"
-      id={id}
-      onClick={isCompressed ? () => resetAccordion() : undefined}
-      onKeyDown={isCompressed ? () => resetAccordion() : undefined}
-      role="button"
-      tabIndex={isCompressed ? 0 : -1}
-    >
+const AccordionProduct = forwardRef(
+  (
+    {
+      addToCartCopy,
+      callbackWithRef,
+      closedState,
+      id,
+      index,
+      isCompressed,
+      isExpanded,
+      onPromoClick,
+      openState,
+      resetAccordion,
+      toggleAccordion,
+    },
+    ref,
+  ) => {
+    if (callbackWithRef) {
+      callbackWithRef(ref);
+    }
+    return (
       <div
         className={cx(
-          styles.accordionDefaultBackground,
-          isExpanded && styles.hidden,
+          styles.base,
+          isExpanded && styles.isExpanded,
+          isCompressed && styles.isCompressed,
         )}
-        style={{ backgroundColor: closedState?.backgroundColour }}
+        data-testid="data-testid-AccordionProduct"
+        id={id}
+        onClick={isCompressed ? () => resetAccordion() : undefined}
+        onKeyDown={isCompressed ? () => resetAccordion() : undefined}
+        ref={ref}
+        role="button"
+        tabIndex={isCompressed ? 0 : -1}
       >
-        {closedState.background === 'Video' && (
-          <Video
-            className={cx(styles.closedBackgroundVideo)}
-            hasAllowAudio={false}
-            hasAutoplay={true}
-            hasControls={false}
-            hasLoop={true}
-            isMuted={true}
-            {...closedState.backgroundVideo}
-          />
-        )}
-        {closedState.background === 'Image' && (
-          <Image
-            className={cx(styles.closedBackgroundImage)}
-            {...closedState.backgroundImage}
-          />
-        )}
-      </div>
-
-      <div
-        className={cx(
-          styles.accordionDefaultContent,
-          isExpanded || isCompressed ? styles.hidden : '',
-        )}
-      >
-        <div>
-          {closedState?.title && (
-            <Heading
-              hasSerifFont={closedState.hasSerifFont}
-              level="2"
-              size="xLarge"
-              theme={closedState.theme}
-            >
-              {closedState?.title}
-            </Heading>
+        <div
+          className={cx(
+            styles.accordionDefaultBackground,
+            isExpanded && styles.hidden,
           )}
-          {closedState?.eyebrow && (
-            <Heading
-              hasMediumWeightFont={true}
-              level="4"
-              size="xSmall"
-              theme={closedState.theme}
-            >
-              {closedState?.eyebrow}
-            </Heading>
-          )}
-          <div
-            className={cx(
-              styles.accordionClosedCopy,
-              styles[closedState.theme],
-            )}
-          >
-            {closedState?.copy}
-          </div>
-          <button
-            className={cx(styles.openBtn, styles[closedState.theme])}
-            onClick={() => toggleAccordion(index, true)}
-          >
-            {closedState?.openButtonText}
-          </button>
-          <Button
-            className={cx(styles.closedStateForegroundImageWrap)}
-            isInline={true}
-            onClick={() => toggleAccordion(index, true)}
-          >
-            <Image
-              className={cx(styles.closedForegroundImage)}
-              {...closedState.foregroundImage}
+          style={{ backgroundColor: closedState?.backgroundColour }}
+        >
+          {closedState.background === 'Video' && (
+            <Video
+              className={cx(styles.closedBackgroundVideo)}
+              hasAllowAudio={false}
+              hasAutoplay={true}
+              hasControls={false}
+              hasLoop={true}
+              isMuted={true}
+              {...closedState.backgroundVideo}
             />
-          </Button>
+          )}
+          {closedState.background === 'Image' && (
+            <Image
+              className={cx(styles.closedBackgroundImage)}
+              {...closedState.backgroundImage}
+            />
+          )}
         </div>
-      </div>
 
-      <div
-        className={cx(styles.accordionExpanded, isExpanded ? styles.open : '')}
-        style={{ backgroundColor: openState.backgroundColour }}
-      >
-        {openState.background === 'Video' && (
-          <Video
-            className={cx(styles.openBackgroundVideo)}
-            hasAllowAudio={false}
-            hasAutoplay={true}
-            hasControls={false}
-            hasLoop={true}
-            isMuted={true}
-            {...openState.backgroundVideo}
-          />
-        )}
-        {openState.background === 'Image' && (
-          <Image
-            className={cx(styles.openBackgroundImage)}
-            {...openState.backgroundImage}
-          />
-        )}
-        <div className={cx(styles.accordionExpandedContent)}>
-          <div className={cx(styles.expandedAccordionImage)}>
-            <Image {...openState.foregroundImage} />
-          </div>
-          <div className={cx(styles.expandedAccordionText)}>
-            {openState?.title && (
+        <div
+          className={cx(
+            styles.accordionDefaultContent,
+            isExpanded || isCompressed ? styles.hidden : '',
+          )}
+        >
+          <div>
+            {closedState?.title && (
               <Heading
-                className={styles.openStateHeading}
-                hasSerifFont={openState?.hasSerifFont}
+                hasSerifFont={closedState.hasSerifFont}
                 level="2"
                 size="xLarge"
-                theme={openState.theme}
+                theme={closedState.theme}
               >
-                {openState?.title}
+                {closedState?.title}
               </Heading>
             )}
-            {openState?.eyebrow && (
+            {closedState?.eyebrow && (
               <Heading
-                className={styles.openStateEyebrow}
                 hasMediumWeightFont={true}
                 level="4"
                 size="xSmall"
-                theme={openState.theme}
+                theme={closedState.theme}
               >
-                {openState?.eyebrow}
+                {closedState?.eyebrow}
               </Heading>
             )}
             <div
-              className={cx(styles.accordionOpenCopy, styles[openState.theme])}
-            >
-              {openState?.copy}
-            </div>
-            <LinkButtonGroup
-              isFlush={false}
-              isFullWidth={true}
-              theme={openState.theme}
-            >
-              <AddToCartButton copy={addToCartCopy} theme={openState.theme} />
-              {openState?.cta && (
-                <Hyperlink
-                  isAlternate={false}
-                  style={HYPERLINK_STYLE_TYPES.INTERNAL_BUTTON_LINK}
-                  theme={openState.theme}
-                  url={openState?.cta.url}
-                >
-                  {openState?.cta.text}
-                </Hyperlink>
+              className={cx(
+                styles.accordionClosedCopy,
+                styles[closedState.theme],
               )}
-            </LinkButtonGroup>
+            >
+              {closedState?.copy}
+            </div>
+            <button
+              className={cx(styles.openBtn, styles[closedState.theme])}
+              onClick={() => {
+                toggleAccordion(index, true);
+                onPromoClick();
+              }}
+            >
+              {closedState?.openButtonText}
+            </button>
+            <Button
+              className={cx(styles.closedStateForegroundImageWrap)}
+              isInline={true}
+              onClick={() => {
+                toggleAccordion(index, true);
+                onPromoClick();
+              }}
+            >
+              <Image
+                className={cx(styles.closedForegroundImage)}
+                {...closedState.foregroundImage}
+              />
+            </Button>
           </div>
         </div>
-        <button
-          className={cx(styles.closeBtn, styles[openState.theme])}
-          onClick={() => toggleAccordion(index, false)}
+
+        <div
+          className={cx(
+            styles.accordionExpanded,
+            isExpanded ? styles.open : '',
+          )}
+          style={{ backgroundColor: openState.backgroundColour }}
         >
-          {openState.closeButtonText}
-        </button>
+          {openState.background === 'Video' && (
+            <Video
+              className={cx(styles.openBackgroundVideo)}
+              hasAllowAudio={false}
+              hasAutoplay={true}
+              hasControls={false}
+              hasLoop={true}
+              isMuted={true}
+              {...openState.backgroundVideo}
+            />
+          )}
+          {openState.background === 'Image' && (
+            <Image
+              className={cx(styles.openBackgroundImage)}
+              {...openState.backgroundImage}
+            />
+          )}
+          <div className={cx(styles.accordionExpandedContent)}>
+            <div className={cx(styles.expandedAccordionImage)}>
+              <Image {...openState.foregroundImage} />
+            </div>
+            <div className={cx(styles.expandedAccordionText)}>
+              {openState?.title && (
+                <Heading
+                  className={styles.openStateHeading}
+                  hasSerifFont={openState?.hasSerifFont}
+                  level="2"
+                  size="xLarge"
+                  theme={openState.theme}
+                >
+                  {openState?.title}
+                </Heading>
+              )}
+              {openState?.eyebrow && (
+                <Heading
+                  className={styles.openStateEyebrow}
+                  hasMediumWeightFont={true}
+                  level="4"
+                  size="xSmall"
+                  theme={openState.theme}
+                >
+                  {openState?.eyebrow}
+                </Heading>
+              )}
+              <div
+                className={cx(
+                  styles.accordionOpenCopy,
+                  styles[openState.theme],
+                )}
+              >
+                {openState?.copy}
+              </div>
+              <LinkButtonGroup
+                isFlush={false}
+                isFullWidth={true}
+                theme={openState.theme}
+              >
+                <AddToCartButton copy={addToCartCopy} theme={openState.theme} />
+                {openState?.cta && (
+                  <Hyperlink
+                    isAlternate={false}
+                    style={HYPERLINK_STYLE_TYPES.INTERNAL_BUTTON_LINK}
+                    theme={openState.theme}
+                    url={openState?.cta.url}
+                  >
+                    {openState?.cta.text}
+                  </Hyperlink>
+                )}
+              </LinkButtonGroup>
+            </div>
+          </div>
+          <button
+            className={cx(styles.closeBtn, styles[openState.theme])}
+            onClick={() => toggleAccordion(index, false)}
+          >
+            {openState.closeButtonText}
+          </button>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  },
+);
 
 AccordionProduct.propTypes = {
   addToCartCopy: PropTypes.shape({
@@ -208,6 +231,7 @@ AccordionProduct.propTypes = {
       title: PropTypes.string,
     }),
   }),
+  callbackWithRef: PropTypes.func,
   closedState: PropTypes.shape({
     background: PropTypes.oneOf(['Colour', 'Image', 'Video']),
     backgroundColour: PropTypes.string,
@@ -226,6 +250,7 @@ AccordionProduct.propTypes = {
   isExpanded: PropTypes.bool,
   id: PropTypes.string,
   index: PropTypes.number,
+  onPromoClick: PropTypes.func,
   openState: PropTypes.shape({
     background: PropTypes.oneOf(['Colour', 'Image', 'Video']),
     backgroundColour: PropTypes.string,
@@ -257,6 +282,7 @@ AccordionProduct.defaultProps = {
       title: undefined,
     },
   },
+  callbackWithRef: undefined,
   closedState: {
     background: undefined,
     backgroundColour: undefined,
@@ -273,6 +299,7 @@ AccordionProduct.defaultProps = {
   isExpanded: false,
   id: undefined,
   index: undefined,
+  onPromoClick: () => {},
   openState: {
     background: undefined,
     backgroundColour: undefined,

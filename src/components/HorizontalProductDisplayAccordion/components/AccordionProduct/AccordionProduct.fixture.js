@@ -37,6 +37,52 @@ const AccordionProductFixture = {
     title: 'Ptolemy',
     typeface: 'sans-serif',
   },
+  closedStateWithVideo: {
+    addToCart: {
+      cartAction: 'Add to your cart',
+      updateNotification: 'added to your cart',
+      outOfStock: {
+        label: 'Out of Stock',
+        title: 'Out of stock',
+      },
+    },
+    background: 'Video',
+    backgroundImage: {
+      type: 'image',
+      small:
+        'https://images.ctfassets.net/u1nb1km7t5q7/3qxE1emdFuU76KIucYGnKK/f7d3255816270000ab6a2c0754579f65/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif',
+      medium:
+        'https://images.ctfassets.net/u1nb1km7t5q7/7co3QQhzvXkQNUpik7W6OG/e56006cda4bf43b623687de50e871300/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif',
+      large:
+        'https://images.ctfassets.net/u1nb1km7t5q7/79GVrsv9HLi2IptU2s9DuX/118ba7bc9beb0595f6d50dba55a7cf2c/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif',
+    },
+
+    backgroundVideo: {
+      fallbackImage: {
+        copy: {
+          altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
+        },
+        large: './assets/images/MediaWithContent/video-poster.png',
+        medium: './assets/images/MediaWithContent/video-poster.png',
+        small: './assets/images/MediaWithContent/video-poster.png',
+      },
+      hasAutoplay: true,
+      hasLoop: true,
+      id: 'video',
+      large:
+        'https://player.vimeo.com/external/300219772.hd.mp4?s=981a375b08836e6d99532afaefda0b9a78fbf404&amp;profile_id=174',
+      medium:
+        'https://player.vimeo.com/external/300219772.hd.mp4?s=981a375b08836e6d99532afaefda0b9a78fbf404&amp;profile_id=174',
+      poster: {
+        copy: {
+          altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
+        },
+      },
+      small:
+        'https://player.vimeo.com/external/300219772.hd.mp4?s=981a375b08836e6d99532afaefda0b9a78fbf404&amp;profile_id=174',
+    },
+  },
+
   id: 'Aganice',
   openState: {
     background: 'Image',
@@ -77,6 +123,51 @@ const AccordionProductFixture = {
           },
         },
       ],
+    },
+  },
+  openStateWithVideo: {
+    addToCart: {
+      cartAction: 'Add to your cart',
+      updateNotification: 'added to your cart',
+      outOfStock: {
+        label: 'Out of Stock',
+        title: 'Out of stock',
+      },
+    },
+    background: 'Video',
+    backgroundImage: {
+      type: 'image',
+      small:
+        'https://images.ctfassets.net/u1nb1km7t5q7/3qxE1emdFuU76KIucYGnKK/f7d3255816270000ab6a2c0754579f65/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif',
+      medium:
+        'https://images.ctfassets.net/u1nb1km7t5q7/7co3QQhzvXkQNUpik7W6OG/e56006cda4bf43b623687de50e871300/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif',
+      large:
+        'https://images.ctfassets.net/u1nb1km7t5q7/79GVrsv9HLi2IptU2s9DuX/118ba7bc9beb0595f6d50dba55a7cf2c/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_03_Callipus_Background_648x1080px.gif',
+    },
+
+    backgroundVideo: {
+      fallbackImage: {
+        copy: {
+          altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
+        },
+        large: './assets/images/MediaWithContent/video-poster.png',
+        medium: './assets/images/MediaWithContent/video-poster.png',
+        small: './assets/images/MediaWithContent/video-poster.png',
+      },
+      hasAutoplay: true,
+      hasLoop: true,
+      id: 'video',
+      large:
+        'https://player.vimeo.com/external/300219772.hd.mp4?s=981a375b08836e6d99532afaefda0b9a78fbf404&amp;profile_id=174',
+      medium:
+        'https://player.vimeo.com/external/300219772.hd.mp4?s=981a375b08836e6d99532afaefda0b9a78fbf404&amp;profile_id=174',
+      poster: {
+        copy: {
+          altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
+        },
+      },
+      small:
+        'https://player.vimeo.com/external/300219772.hd.mp4?s=981a375b08836e6d99532afaefda0b9a78fbf404&amp;profile_id=174',
     },
   },
 };

@@ -55,10 +55,6 @@ export default {
     json(),
     commonjs(),
     nodeResolve(),
-    terser({
-      output: {
-        comments: /.*webpack.*/i, // keep webpack magic comments
-      },
-    }),
+    terser(),
   ],
 };
