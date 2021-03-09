@@ -73,6 +73,7 @@ exports[`<Carousel /> renders component correctly if no \`introduction\` prop is
                       />
                     </picture>
                   </div>
+                   
                 </a>
               </div>
             </div>
@@ -134,6 +135,7 @@ exports[`<Carousel /> renders component correctly if no \`introduction\` prop is
                       />
                     </picture>
                   </div>
+                   
                 </a>
               </div>
             </div>
@@ -195,6 +197,7 @@ exports[`<Carousel /> renders component correctly if no \`introduction\` prop is
                       />
                     </picture>
                   </div>
+                   
                 </a>
               </div>
             </div>
@@ -256,6 +259,7 @@ exports[`<Carousel /> renders component correctly if no \`introduction\` prop is
                       />
                     </picture>
                   </div>
+                   
                 </a>
               </div>
             </div>
@@ -529,6 +533,7 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                       />
                     </picture>
                   </div>
+                   
                 </a>
               </div>
             </div>
@@ -590,6 +595,7 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                       />
                     </picture>
                   </div>
+                   
                 </a>
               </div>
             </div>
@@ -651,6 +657,7 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                       />
                     </picture>
                   </div>
+                   
                 </a>
               </div>
             </div>
@@ -712,6 +719,7 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                       />
                     </picture>
                   </div>
+                   
                 </a>
               </div>
             </div>

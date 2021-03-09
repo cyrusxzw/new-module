@@ -11,7 +11,9 @@ import {
   ascertainIsLargeOrXLargeOnlyViewport,
   ascertainIsSmallOrMediumOnlyViewport,
 } from '~/utils/viewports';
+import { ConditionalWrapper } from '~/components/ConditionalWrapper';
 import { Hyperlink } from '~/components/Hyperlink';
+import { Loading } from '~/components/Loading';
 import { Transition } from '~/components/Transition';
 import { getCarouselSettings } from './Carousel.utils';
 import { CarouselIntroduction } from './components/CarouselIntroduction';
@@ -165,27 +167,35 @@ const Carousel = ({
             key={index}
             ref={slideRefs[index]}
           >
-            {url ? (
-              <Hyperlink
-                className={cx(styles.item, styles.link)}
-                theme={currentTheme}
-                title={`Link to ${slide.heading}`}
-                url={url}
+            {slide.isLoading ? (
+              <Loading
+                className={styles.loading}
+                isLoading={true}
+                shouldFillSpace={true}
+              />
+            ) : (
+              <ConditionalWrapper
+                alternateWrapper={children => (
+                  <div className={styles.item}>{children}</div>
+                )}
+                condition={!!url}
+                wrapper={children => (
+                  <Hyperlink
+                    className={cx(styles.item, styles.link)}
+                    theme={currentTheme}
+                    title={`Link to ${slide.heading}`}
+                    url={url}
+                  >
+                    {children}{' '}
+                  </Hyperlink>
+                )}
               >
                 <Slide
                   {...slide}
                   isFullWidthSlide={hasFullWidthSlides}
                   theme={currentTheme}
                 />
-              </Hyperlink>
-            ) : (
-              <div className={styles.item} key={index}>
-                <Slide
-                  {...slide}
-                  isFullWidthSlide={hasFullWidthSlides}
-                  theme={currentTheme}
-                />
-              </div>
+              </ConditionalWrapper>
             )}
           </div>
         ))}
@@ -244,6 +254,7 @@ Carousel.propTypes = {
       description: PropTypes.string,
       heading: PropTypes.string,
       id: PropTypes.string,
+      isLoading: PropTypes.bool,
       image: PropTypes.object.isRequired,
       url: PropTypes.string,
     }),

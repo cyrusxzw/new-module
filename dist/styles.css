@@ -488,6 +488,9 @@
   -webkit-transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+.Loading-module_fullSize__1h4Cr {
+  height: 100%;
+}
 .Loading-module_dot__2jmbK {
   display: block;
   margin: 0 3px;
@@ -3148,6 +3151,9 @@ a:hover .Slide-module_heading__2KIs0,
     padding-right: 0;
     padding-left: 0;
   }
+.Carousel-module_loading__1PDBz {
+  min-height: 400px;
+}
 
 /* @import './key-frame.css'; */
 /* @import './font-face.css'; */
