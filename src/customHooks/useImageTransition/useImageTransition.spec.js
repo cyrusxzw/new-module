@@ -6,7 +6,7 @@ describe('useImageTransition', () => {
   let result = {};
 
   beforeAll(() => {
-    jest.spyOn(global.console, 'error').mockImplementation(() => {});
+    jest.spyOn(global.console, 'error').mockImplementation(() => {}); // eslint-disable-line @typescript-eslint/no-empty-function
   });
 
   afterAll(() => {

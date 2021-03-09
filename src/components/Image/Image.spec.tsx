@@ -13,7 +13,6 @@ describe('<Image />', () => {
       <Image
         altText="Image of Milk Cleansing Campaign Aesop 2019"
         cta={{
-          id: 'milk-cleansing,jpg',
           url: 'https://www.aesop.com/au/r/philosophy-to-products',
         }}
         large="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_large.png 2x"

@@ -5,9 +5,10 @@ import copy from 'rollup-plugin-copy-assets';
 import del from 'rollup-plugin-delete';
 import json from '@rollup/plugin-json';
 import path from 'path';
-import postcss from 'rollup-plugin-postcss';
+import postcss from 'rollup-plugin-postcss-modules';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 import pkg from './package.json';
 
 /* eslint-disable-next-line import/no-default-export */
@@ -39,15 +40,18 @@ export default {
       entries: [{ find: '~', replacement: path.resolve(__dirname, 'src') }],
     }),
     postcss({
-      modules: true,
+      modules: {
+        sourceMap: true,
+        minimize: true,
+      },
       extract: 'styles.css',
-      sourceMap: true,
-      minimize: false,
+      // writeDefinitions: true,
     }),
     babel({
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
     }),
+    typescript(),
     json(),
     commonjs(),
     nodeResolve(),
