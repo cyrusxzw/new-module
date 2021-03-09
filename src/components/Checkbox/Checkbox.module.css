@@ -56,22 +56,29 @@
   &:hover {
     cursor: pointer;
   }
-
-  &.hasError {
-    border-color: var(--color-error);
-  }
 }
 
 .content {
   margin-left: 10px;
   font-size: rem(14px);
   line-height: 2;
+
+  a {
+    font-weight: var(--font-weight-bold);
+  }
+
   &.dark {
     color: var(--color-dark-copy);
+    a {
+      color: var(--color-dark-copy);
+    }
   }
 
   &.light {
     color: var(--color-light-copy);
+    a {
+      color: var(--color-light-copy);
+    }
   }
 
   @media (--viewport-sm-only) {
@@ -80,7 +87,8 @@
 }
 
 .errorMessage {
-  margin-left: 23px; /* box width + left margin */
+  display: inline-block;
+  padding-left: 23px; /* box width + left margin */
   color: var(--color-error);
   font-family: var(--font-family-sans-serif-regular);
   font-size: rem(14px);

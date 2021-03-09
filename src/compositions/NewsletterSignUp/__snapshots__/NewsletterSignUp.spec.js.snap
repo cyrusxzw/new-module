@@ -85,7 +85,16 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
             <span
               class="content light"
             >
-              Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.
+              <span>
+                By subscribing, you agree to receive email marketing from Aesop about our products and services, and accept our
+                 
+                <a
+                  href="https://www.aesop.com/au/r/privacy/"
+                >
+                  privacy policy
+                </a>
+                .
+              </span>
             </span>
           </label>
         </div>
