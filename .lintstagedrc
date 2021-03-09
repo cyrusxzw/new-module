@@ -1,9 +1,9 @@
 {
-  "**/*.{js,json,md}": [
+  "**/*.{js,ts,tsx,json,md}": [
     "prettier --write"
   ],
-  "**/*.js": [
-    "eslint --ignore-path .eslintignore --config .eslintrc",
+  "**/*.{js,ts,tsx}": [
+    "eslint --fix --ignore-path .eslintignore --config .eslintrc",
     "jest --findRelatedTests --coverageThreshold '{}'"
   ],
   "**/*.css": [

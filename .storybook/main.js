@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   stories: [
-    '../src/**/*.stories.@(js|mdx)',
+    '../src/**/*.stories.@(js|ts|tsx|mdx)',
     '../documentation/**/*.stories.mdx',
   ],
   addons: [
@@ -13,6 +13,16 @@ module.exports = {
     '@storybook/addon-docs/preset',
     '@storybook/addon-backgrounds',
   ],
+  typescript: {
+    check: false,
+    checkOptions: {},
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: prop =>
+        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
+    },
+  },
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
@@ -27,6 +37,8 @@ module.exports = {
     config.module.rules = config.module.rules.filter(
       f => f.test.toString() !== '/\\.css$/',
     );
+
+    config.resolve.extensions.push('.ts', '.tsx');
 
     // Reapply css loaders
     config.module.rules.push({
