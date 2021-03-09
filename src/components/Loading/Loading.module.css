@@ -33,6 +33,10 @@
   transition: opacity 200ms var(--easing-ease-in-out-cubic);
 }
 
+.fullSize {
+  height: 100%;
+}
+
 .dot {
   display: block;
   margin: 0 3px;

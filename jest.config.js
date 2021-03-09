@@ -21,7 +21,11 @@ module.exports = {
     },
   },
   coverageReporters: ['lcov', 'text', 'text-summary'],
-  moduleFileExtensions: ['js', 'json', 'node'],
+  moduleFileExtensions: ['js', 'json', 'node', 'ts', 'tsx'],
+  testMatch: [
+    '**/__tests__/**/*.+(ts|tsx|js)',
+    '**/?(*.)+(spec|test).+(ts|tsx|js)',
+  ],
   testPathIgnorePatterns: [
     '<rootDir>/(dist|docs|node_modules|.cache)/',
     '.storybook',
@@ -38,6 +42,7 @@ module.exports = {
   },
   transform: {
     '^.+\\.js?$': 'babel-jest',
+    '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   watchPlugins: [
     'jest-watch-typeahead/filename',

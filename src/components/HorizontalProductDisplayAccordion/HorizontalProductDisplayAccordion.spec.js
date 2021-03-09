@@ -16,6 +16,7 @@ describe('<HorizontalProductDisplayAccordion />', () => {
       />,
     );
 
+    // TODO: Test onPromoClick
     expect(container).toMatchSnapshot();
   });
 });

@@ -8,12 +8,16 @@ const ADD_TO_CART_ACTION_TYPES = {
 
 const defaultState = {
   actionTypes: {},
-  dispatch: () => {},
+  dispatch: () => {
+    return;
+  },
   errorMessage: '',
   hasError: false,
   isLoading: false,
   isUpdateSuccessful: false,
-  onClick: () => {},
+  onClick: () => {
+    return;
+  },
 };
 
 const reducer = (state, action) => {
