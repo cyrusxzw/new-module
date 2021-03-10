@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import styles from './Heading.module.css';
-import type { Props } from './Heading.types';
+import type { HeadingProps } from './Heading.types';
 
-const Heading: FC<Props> = ({
+const Heading: FC<HeadingProps> = ({
   children,
   className,
   hasMediumWeightFont = false,

@@ -11,9 +11,9 @@ import { Collapse } from 'react-collapse';
 import { Icon } from '~/components/Icon';
 import { isObjectPopulatedArray } from '~/utils/objects';
 import styles from './Accordion.module.css';
-import type { Props } from './Accordion.types';
+import type { AccordionProps } from './Accordion.types';
 
-const Accordion = forwardRef<HTMLDivElement, Props>(
+const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
   ({ className, id, items, theme = 'dark', wrapperClass }, ref) => {
     const [activeNodes, setIsActiveNodes] = React.useState([]);
 
