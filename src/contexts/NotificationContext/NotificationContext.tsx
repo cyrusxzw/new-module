@@ -1,18 +1,13 @@
-import React, { createContext, useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, { createContext, useContext, FC } from 'react';
 import { useNotificationStore } from './NotificationStore';
 
-const NotificationContext = createContext();
+const NotificationContext = createContext(undefined);
 
-const NotificationContextProvider = ({ children }) => (
+const NotificationContextProvider: FC = ({ children }) => (
   <NotificationContext.Provider value={useNotificationStore()}>
     {children}
   </NotificationContext.Provider>
 );
-
-NotificationContextProvider.propTypes = {
-  children: PropTypes.any,
-};
 
 const useNotificationContext = () => {
   const context = useContext(NotificationContext);

@@ -1,20 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import styles from './Heading.module.css';
+import type { Props } from './Heading.types';
 
-interface HeadingProps {
-  children: React.ReactNode;
-  className?: string;
-  hasMediumWeightFont?: boolean;
-  hasSerifFont?: boolean;
-  id?: string;
-  isFlush?: boolean;
-  level: '1' | '2' | '3' | '4' | '5' | '6';
-  size: 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
-  theme?: 'dark' | 'light';
-}
-
-const Heading: FunctionComponent<HeadingProps> = ({
+const Heading: FC<Props> = ({
   children,
   className,
   hasMediumWeightFont = false,
@@ -25,6 +15,8 @@ const Heading: FunctionComponent<HeadingProps> = ({
   size,
   theme = 'dark',
 }) => {
+  const currentTheme = useThemeContext(theme, 'dark');
+
   if (!children) return null;
 
   const classSet = cx(
@@ -33,7 +25,7 @@ const Heading: FunctionComponent<HeadingProps> = ({
     { [styles.serifFont]: hasSerifFont },
     { [styles.mediumWeightFont]: hasMediumWeightFont },
     styles[size],
-    styles[theme],
+    styles[currentTheme],
     className,
   );
 

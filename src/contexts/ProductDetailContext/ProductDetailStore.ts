@@ -1,18 +1,7 @@
 import { useEffect, useState } from 'react';
+import type { Product } from '~/types';
 
-const defaultState = {
-  description: '',
-  id: '',
-  variantOptions: [],
-  cartDisclaimer: '',
-  definitionList: [],
-  flyinPanel: '',
-  productName: '',
-  upSellProduct: null,
-  imageSize: 'Small',
-};
-
-const useProductDetailStore = (product = defaultState) => {
+const useProductDetailStore = (product: Product) => {
   const [productDetail, setProductDetail] = useState(product);
 
   useEffect(() => {

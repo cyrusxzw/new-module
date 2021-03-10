@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import type { Options } from './GoogleMapsContext.types';
 
 const loadGoogleMapsAsync = loader =>
   new Promise(resolve => {
@@ -7,7 +8,10 @@ const loadGoogleMapsAsync = loader =>
     });
   });
 
-const useGoogleMapsStore = (apiKey, options = { libraries: ['places'] }) => {
+const useGoogleMapsStore = (
+  apiKey: string,
+  options: Options = { libraries: ['places'] },
+) => {
   const [googleMap, setGoogleMap] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
