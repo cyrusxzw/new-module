@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import get from 'lodash/get';
 import Slider from 'react-slick';
-import { useThemeContext } from '~/contexts/index.ts';
+import { useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
 import {
   ascertainIsSmallOnlyViewport,

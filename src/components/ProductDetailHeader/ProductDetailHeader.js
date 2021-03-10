@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useProductDetailContext, useThemeContext } from '~/contexts/index.ts';
+import { useProductDetailContext, useThemeContext } from '~/contexts';
 import { Breadcrumbs } from '~/components/Breadcrumbs';
 import { Hidden } from '~/components/Hidden';
 import { ProductDetailBody } from './components/ProductDetailBody';

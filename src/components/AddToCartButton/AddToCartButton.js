@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import {
-  useAddToCartContext,
-  useVariantSelectContext,
-} from '~/contexts/index.ts';
+import { useAddToCartContext, useVariantSelectContext } from '~/contexts';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import { Button } from '~/components/Button';
 import { Loading } from '~/components/Loading';

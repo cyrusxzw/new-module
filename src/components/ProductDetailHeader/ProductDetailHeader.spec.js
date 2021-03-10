@@ -4,7 +4,7 @@ import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
   VariantSelectContextProvider,
-} from '~/contexts/index.ts';
+} from '~/contexts';
 import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
 import { ProductDetailBodyFixture } from '~/components/ProductDetailHeader/components/ProductDetailBody/ProductDetailBody.fixture';
 import { ProductDetailHeaderFixture } from './ProductDetailHeader.fixture';

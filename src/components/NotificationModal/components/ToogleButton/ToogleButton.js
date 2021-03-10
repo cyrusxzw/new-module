@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '~/components/Button';
-import { useNotificationContext } from '~/contexts/index.ts';
+import { useNotificationContext } from '~/contexts';
 
 const ToogleButton = () => {
   const footerSuccessModal = useNotificationContext();

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useThemeContext } from '~/contexts/index.ts';
+import { useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
 import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
 import { List } from '~/components/List';
