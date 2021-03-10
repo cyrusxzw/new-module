@@ -12,11 +12,7 @@ describe('<Accordion />', () => {
 
   it('should render base component correctly', () => {
     const { container } = render(
-      <Accordion
-        id={AccordionFixture.id}
-        items={AccordionFixture.items}
-        theme={AccordionFixture.theme}
-      />,
+      <Accordion id={AccordionFixture.id} items={AccordionFixture.items} />,
     );
 
     const accordion = screen.getByTestId(/data-testid-Accordion/i);
