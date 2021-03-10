@@ -1,13 +1,23 @@
 import { useReducer } from 'react';
 
-const SHOW_NOTIFICATION = 'SHOW_NOTIFICATION';
+enum NOTIFICATION_ACTION_TYPES {
+  SHOW_NOTIFICATION,
+}
 
 const initialState = {
   showModal: false,
 };
 
-const reducer = (state, action) => {
-  if (action.type === SHOW_NOTIFICATION) {
+type State = {
+  showModal: boolean;
+};
+
+type Action = {
+  type: NOTIFICATION_ACTION_TYPES;
+};
+
+const reducer = (state: State, action: Action) => {
+  if (action.type === NOTIFICATION_ACTION_TYPES.SHOW_NOTIFICATION) {
     return {
       showModal: !state.showModal,
     };
@@ -23,10 +33,10 @@ const useNotificationStore = () => {
   const { showModal } = state;
 
   return {
-    actionType: SHOW_NOTIFICATION,
+    actionType: NOTIFICATION_ACTION_TYPES,
     dispatch,
     showModal,
   };
 };
 
-export { useNotificationStore, SHOW_NOTIFICATION };
+export { useNotificationStore, NOTIFICATION_ACTION_TYPES };

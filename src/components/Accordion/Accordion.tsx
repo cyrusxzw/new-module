@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
   Accordion as AccessibleAccordion,
@@ -12,9 +11,10 @@ import { Collapse } from 'react-collapse';
 import { Icon } from '~/components/Icon';
 import { isObjectPopulatedArray } from '~/utils/objects';
 import styles from './Accordion.module.css';
+import type { Props } from './Accordion.types';
 
-const Accordion = forwardRef(
-  ({ className, id, items, theme, wrapperClass }, ref) => {
+const Accordion = forwardRef<HTMLDivElement, Props>(
+  ({ className, id, items, theme = 'dark', wrapperClass }, ref) => {
     const [activeNodes, setIsActiveNodes] = React.useState([]);
 
     if (!isObjectPopulatedArray(items)) {
@@ -73,27 +73,5 @@ const Accordion = forwardRef(
     );
   },
 );
-
-Accordion.propTypes = {
-  className: PropTypes.string,
-  id: PropTypes.string,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      content: PropTypes.node.isRequired,
-      heading: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
-    }),
-  ),
-  theme: PropTypes.oneOf(['dark', 'light']),
-  wrapperClass: PropTypes.string,
-};
-
-Accordion.defaultProps = {
-  className: undefined,
-  id: undefined,
-  items: undefined,
-  theme: 'dark',
-  wrapperClass: undefined,
-};
 
 export { Accordion };

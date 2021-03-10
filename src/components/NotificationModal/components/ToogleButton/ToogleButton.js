@@ -8,7 +8,7 @@ const ToogleButton = () => {
 
   const handleOnClick = e => {
     e.preventDefault();
-    dispatch({ type: actionType });
+    dispatch({ type: actionType.SHOW_NOTIFICATION });
   };
 
   return (

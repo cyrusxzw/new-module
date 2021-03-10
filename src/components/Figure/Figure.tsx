@@ -1,19 +1,9 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import cx from 'classnames';
+import type { Props } from './Figure.types';
 import styles from './Figure.module.css';
 
-interface FigureProps {
-  caption?: string;
-  children?: React.ReactNode;
-  className?: string;
-  hasCaptionBorder?: boolean;
-  hasCaptionOffset?: boolean;
-  id?: string;
-  theme?: string;
-  foo?: boolean;
-}
-
-const Figure: FunctionComponent<FigureProps> = ({
+const Figure: FC<Props> = ({
   caption,
   children,
   className,

@@ -1,29 +1,12 @@
-import React, { forwardRef, FunctionComponent, CSSProperties } from 'react';
+import React, { forwardRef, FC } from 'react';
 import cx from 'classnames';
 import get from 'lodash/get';
 import { constraintsByViewport } from '~/utils/viewports';
 import { Hyperlink } from '~/components/Hyperlink';
+import type { Props } from './Image.types';
 import styles from './Image.module.css';
 
-interface ImageProps {
-  altText?: string;
-  className?: string;
-  cta?: {
-    openInANewWindow?: boolean;
-    url?: string;
-  };
-  id?: string;
-  isFullBleedImage?: boolean;
-  isLazyLoaded?: boolean;
-  large?: string;
-  medium?: string;
-  small?: string;
-  style?: CSSProperties;
-  type?: string;
-  theme?: 'dark' | 'light';
-}
-
-const Image: FunctionComponent<ImageProps> = forwardRef(function ImageRef(
+const Image: FC<Props> = forwardRef(function ImageRef(
   {
     altText,
     className,

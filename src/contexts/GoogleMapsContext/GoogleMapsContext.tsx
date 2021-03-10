@@ -1,29 +1,23 @@
-import React, { createContext, useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, { createContext, useContext, FC } from 'react';
 import { useGoogleMapsStore } from './GoogleMapsStore';
+import type { Props } from './GoogleMapsContext.types';
 
 const defaultValues = {
-  googleMaps: null,
+  googleMap: null,
   isLoading: false,
 };
 
 const GoogleMapsContext = createContext(defaultValues);
 
-const GoogleMapsContextProvider = ({ apiKey, children, options }) => (
+const GoogleMapsContextProvider: FC<Props> = ({
+  apiKey,
+  children,
+  options,
+}) => (
   <GoogleMapsContext.Provider value={useGoogleMapsStore(apiKey, options)}>
     {children}
   </GoogleMapsContext.Provider>
 );
-
-GoogleMapsContextProvider.propTypes = {
-  apiKey: PropTypes.string,
-  children: PropTypes.any,
-  options: PropTypes.shape({
-    libraries: PropTypes.arrayOf(PropTypes.string),
-    regionCode: PropTypes.string,
-    languageCode: PropTypes.string,
-  }),
-};
 
 const useGoogleMapsContext = () => {
   const context = useContext(GoogleMapsContext);
