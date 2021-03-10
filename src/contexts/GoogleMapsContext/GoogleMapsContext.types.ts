@@ -4,9 +4,9 @@ type Options = {
   languageCode?: string;
 };
 
-type Props = {
+type GoogleMapsContextProps = {
   apiKey?: string;
   options?: Options;
 };
 
-export type { Props, Options };
+export type { GoogleMapsContextProps, Options };

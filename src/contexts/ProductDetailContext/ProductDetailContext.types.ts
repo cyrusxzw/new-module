@@ -1,7 +1,7 @@
 import { Product } from '~/types';
 
-type Props = {
+type ProductDetailContextProps = {
   product?: Product;
 };
 
-export { Props };
+export { ProductDetailContextProps };

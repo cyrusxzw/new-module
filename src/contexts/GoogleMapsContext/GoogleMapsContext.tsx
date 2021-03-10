@@ -1,6 +1,6 @@
 import React, { createContext, useContext, FC } from 'react';
 import { useGoogleMapsStore } from './GoogleMapsStore';
-import type { Props } from './GoogleMapsContext.types';
+import type { GoogleMapsContextProps } from './GoogleMapsContext.types';
 
 const defaultValues = {
   googleMap: null,
@@ -9,7 +9,7 @@ const defaultValues = {
 
 const GoogleMapsContext = createContext(defaultValues);
 
-const GoogleMapsContextProvider: FC<Props> = ({
+const GoogleMapsContextProvider: FC<GoogleMapsContextProps> = ({
   apiKey,
   children,
   options,
