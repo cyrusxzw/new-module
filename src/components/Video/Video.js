@@ -42,7 +42,9 @@ const Video = forwardRef(function VideoRef(
 ) {
   const videoRef = useRef();
   const [isPlaying, setIsPlaying] = useState(hasAutoplay);
-  const [hasCaptions, setHasCaptions] = useState(captions?.isActive);
+  const [hasActiveCaptions, setHasActiveCaptions] = useState(
+    !!captions?.isActiveOnLoad,
+  );
   const [hasActiveVideo, setHasActiveVideo] = useState(hasAutoplay);
   const [isMuted, setIsMuted] = useState(!hasAllowAudio);
   const isMobileOrTablet = ascertainIsSmallOrMediumOnlyViewport();
@@ -53,11 +55,22 @@ const Video = forwardRef(function VideoRef(
   useOverflowHidden(hasActiveVideo && hasPlayInFullScreen && !isMobileOrTablet);
   useEscapeKeyListener(stopVideo);
 
+  const captionsTrack = videoRef.current?.textTracks[0];
+
+  if (!!captionsTrack && !isIE) {
+    if (hasActiveCaptions) {
+      captionsTrack.mode = 'showing';
+    } else {
+      captionsTrack.mode = 'hidden';
+    }
+  }
+
   const hasVideo = large || medium || small;
   const handleOnPosterClick = () => playVideo();
   const handlePlayPauseButtonOnClick = isPlaying ? pauseVideo : playVideo;
   const handleAudioButtonClick = () => setIsMuted(!isMuted);
-  const handleOnCaptionsToggleClick = () => setHasCaptions(state => !state);
+  const handleOnCaptionsToggleClick = () =>
+    setHasActiveCaptions(state => !state);
 
   const classSet = cx(styles.base, className, {
     [styles.spanContent]: hasSpanContent,
@@ -108,7 +121,6 @@ const Video = forwardRef(function VideoRef(
           fileUrl: captions?.fileUrl,
           languageCode: captions?.languageCode,
           languageLabel: captions?.languageLabel,
-          isActive: hasCaptions,
         }}
         hasActiveVideo={hasActiveVideo}
         hasAllowAudio={hasAllowAudio}
@@ -147,7 +159,7 @@ const Video = forwardRef(function VideoRef(
         <Controls
           captions={{
             copy: captions?.copy,
-            isActive: hasCaptions,
+            isActive: hasActiveCaptions,
             onToggleClick: handleOnCaptionsToggleClick,
             shouldShowToggleButton:
               !!captions?.fileUrl &&
@@ -185,7 +197,7 @@ Video.propTypes = {
       toggleButtonTitleOff: PropTypes.string,
     }),
     fileUrl: PropTypes.string,
-    isActive: PropTypes.bool,
+    isActiveOnLoad: PropTypes.bool,
     languageCode: PropTypes.string,
     languageLabel: PropTypes.string,
     shouldShowToggleButton: PropTypes.bool,

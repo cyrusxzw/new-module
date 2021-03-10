@@ -203,3 +203,7 @@
     padding-left: 0;
   }
 }
+
+.loading {
+  min-height: 400px;
+}

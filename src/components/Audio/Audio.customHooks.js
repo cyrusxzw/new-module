@@ -13,10 +13,7 @@ const useWaveSurfer = (progressColor, hasAutoPlay) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    import(
-      /* webpackMode: "eager" */
-      'wavesurfer.js'
-    ).then(module => {
+    import('wavesurfer.js').then(module => {
       const WaveSurfer = module.default || module;
 
       if (waveformRef.current) {

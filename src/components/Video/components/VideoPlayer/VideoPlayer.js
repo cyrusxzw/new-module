@@ -26,8 +26,7 @@ const VideoPlayer = forwardRef(function VideoPlayerRef(
   useWindowHasResized();
 
   const src = getVideoSrc(sizes);
-  const shouldShowCaptions =
-    captions && captions.isActive && captions.fileUrl && captions.languageCode;
+  const shouldShowCaptions = captions?.fileUrl && captions?.languageCode;
 
   const classSet = cx(
     styles.base,
@@ -58,7 +57,7 @@ const VideoPlayer = forwardRef(function VideoPlayerRef(
           <track
             default={true}
             kind="subtitles"
-            label={captions.languageLabel}
+            label={captions?.languageLabel}
             src={captions.fileUrl}
             srcLang={captions.languageCode}
           />
@@ -71,7 +70,6 @@ const VideoPlayer = forwardRef(function VideoPlayerRef(
 VideoPlayer.propTypes = {
   captions: PropTypes.shape({
     fileUrl: PropTypes.string,
-    isActive: PropTypes.bool,
     languageCode: PropTypes.string,
     languageLabel: PropTypes.string,
   }),

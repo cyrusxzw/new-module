@@ -71,7 +71,7 @@ import { Video } from './Video';
   <Story name="Video with Captions Track">
     <Video
       captions={{
-        isActive: knobs.boolean('isActive', true, 'Captions'),
+        isActiveOnLoad: knobs.boolean('isActiveOnLoad', false, 'Captions'),
         shouldShowToggleButton: knobs.boolean(
           'shouldShowToggleButton',
           true,
@@ -82,11 +82,24 @@ import { Video } from './Video';
           'toggle captions',
           'Captions',
         ),
+        copy: {
+          toggleButtonTitleOn: knobs.text(
+            'copy.toggleButtonTitleOn',
+            'toggle captions on',
+            'Captions',
+          ),
+          toggleButtonTitleOff: knobs.text(
+            'copy.toggleButtonTitleOff',
+            'toggle captions off',
+            'Captions',
+          ),
+        },
         languageCode: knobs.text('languageCode', 'en', 'Captions'),
         languageLabel: knobs.text('languageLabel', 'English', 'Captions'),
         fileUrl: knobs.text(
           'fileUrl',
           './assets/captions/Raeburn-How-to-Full-ENG.vtt',
+          'Captions',
         ),
       }}
       hasAllowAudio={true}

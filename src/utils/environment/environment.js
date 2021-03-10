@@ -8,35 +8,39 @@ const isInBrowser = () => typeof window !== 'undefined';
 
 /* Opera 8.0+ */
 const isOpera =
-  (!!window.opr && !!opr.addons) || // eslint-disable-line no-undef
-  !!window.opera ||
-  navigator.userAgent.indexOf(' OPR/') >= 0;
+  isInBrowser() &&
+  ((!!window.opr && !!opr.addons) || // eslint-disable-line no-undef
+    !!window.opera ||
+    navigator.userAgent.indexOf(' OPR/') >= 0);
 
 /* Firefox 1.0+ */
-const isFirefox = typeof InstallTrigger !== 'undefined';
+const isFirefox = isInBrowser() && typeof InstallTrigger !== 'undefined';
 
 /* Safari 3.0+ "[object HTMLElementConstructor]" */
 const isSafari =
-  /constructor/i.test(window.HTMLElement) ||
-  (function (p) {
-    return p.toString() === '[object SafariRemoteNotification]';
-  })(
-    !window['safari'] ||
-      (typeof safari !== 'undefined' && safari.pushNotification), // eslint-disable-line no-undef
-  );
+  isInBrowser() &&
+  (/constructor/i.test(window.HTMLElement) ||
+    (function (p) {
+      return p.toString() === '[object SafariRemoteNotification]';
+    })(
+      !window['safari'] ||
+        (typeof safari !== 'undefined' && safari.pushNotification), // eslint-disable-line no-undef
+    ));
 
 /* Internet Explorer 6-11 */
-const isIE = /* @cc_on!@*/ false || !!document.documentMode;
+const isIE = isInBrowser() && !!document.documentMode;
 
 /* dge 20+ */
-const isEdge = !isIE && !!window.StyleMedia;
+const isEdge = isInBrowser() && !isIE && !!window.StyleMedia;
 
 /* Chrome 1+ */
 const isChrome =
-  !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+  isInBrowser() &&
+  !!window.chrome &&
+  (!!window.chrome.webstore || !!window.chrome.runtime);
 
 /* Blink engine detection */
-const isBlink = (isChrome || isOpera) && !!window.CSS;
+const isBlink = isInBrowser() && (isChrome || isOpera) && !!window.CSS;
 
 export { isInBrowser };
 export { isOpera };

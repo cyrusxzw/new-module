@@ -17,7 +17,7 @@ const useGoogleMapsStore = (
 
   useEffect(() => {
     const loadGoogleMap = async () => {
-      const module = await import(/* webpackMode: "eager" */ 'google-maps');
+      const module = await import('google-maps');
       const Loader = module.default || module;
 
       setIsLoading(true);
