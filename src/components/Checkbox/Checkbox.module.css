@@ -63,10 +63,6 @@
   font-size: rem(14px);
   line-height: 2;
 
-  a {
-    font-weight: var(--font-weight-bold);
-  }
-
   &.dark {
     color: var(--color-dark-copy);
     a {
