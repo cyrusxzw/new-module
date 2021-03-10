@@ -10,8 +10,8 @@ import {
 import { Collapse } from 'react-collapse';
 import { Icon } from '~/components/Icon';
 import { isObjectPopulatedArray } from '~/utils/objects';
-import styles from './Accordion.module.css';
 import type { AccordionProps } from './Accordion.types';
+import styles from './Accordion.module.css';
 
 const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
   ({ className, id, items, theme = 'dark', wrapperClass }, ref) => {
