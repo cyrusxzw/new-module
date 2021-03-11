@@ -17,6 +17,7 @@
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\" --loglevel \"error\"",
     "generate-component": "./scripts/componentBoilerplate/create.sh $element",
     "lint": "npm run eslint && npm run stylelint",
+    "list-js-files": "node ./list-js-files.js",
     "prepublishOnly": "npm run release",
     "release": "npm run build",
     "sanity-check": "npm run format && npm run lint && npm test",
