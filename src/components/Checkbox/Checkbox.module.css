@@ -63,18 +63,16 @@
   font-size: rem(14px);
   line-height: 2;
 
+  a {
+    color: currentColor;
+  }
+
   &.dark {
     color: var(--color-dark-copy);
-    a {
-      color: var(--color-dark-copy);
-    }
   }
 
   &.light {
     color: var(--color-light-copy);
-    a {
-      color: var(--color-light-copy);
-    }
   }
 
   @media (--viewport-sm-only) {

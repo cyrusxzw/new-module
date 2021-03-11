@@ -3266,18 +3266,15 @@ a:hover .Slide-module_heading__2KIs0,
   font-size: 14px;
   line-height: 2;
 }
+.Checkbox-module_content__3PAQK a {
+    color: currentColor;
+  }
 .Checkbox-module_content__3PAQK.Checkbox-module_dark__1059P {
     color: #333;
   }
-.Checkbox-module_content__3PAQK.Checkbox-module_dark__1059P a {
-      color: #333;
-    }
 .Checkbox-module_content__3PAQK.Checkbox-module_light__3-69P {
     color: #fffef2;
   }
-.Checkbox-module_content__3PAQK.Checkbox-module_light__3-69P a {
-      color: #fffef2;
-    }
 @media (max-width: 639px) {
 .Checkbox-module_content__3PAQK {
     font-size: 12px
