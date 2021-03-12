@@ -1,7 +1,7 @@
 import type { Variant } from '~/types';
 
-type Props = {
+type VariantSelectContextProps = {
   variants: Variant[];
 };
 
-export type { Props };
+export type { VariantSelectContextProps };

@@ -1,10 +1,13 @@
 import React, { createContext, useContext, FC } from 'react';
 import { useProductDetailStore } from './ProductDetailStore';
-import type { Props } from './ProductDetailContext.types';
+import type { ProductDetailContextProps } from './ProductDetailContext.types';
 
 const ProductDetailContext = createContext(undefined);
 
-const ProductDetailContextProvider: FC<Props> = ({ children, product }) => (
+const ProductDetailContextProvider: FC<ProductDetailContextProps> = ({
+  children,
+  product,
+}) => (
   <ProductDetailContext.Provider value={useProductDetailStore(product)}>
     {children}
   </ProductDetailContext.Provider>

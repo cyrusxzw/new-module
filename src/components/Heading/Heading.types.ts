@@ -4,7 +4,7 @@ type Levels = '1' | '2' | '3' | '4' | '5' | '6';
 
 type Sizes = 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
 
-type Props = {
+type HeadingProps = {
   children: React.ReactNode;
   className?: string;
   hasMediumWeightFont?: boolean;
@@ -16,4 +16,4 @@ type Props = {
   theme?: Themes;
 };
 
-export type { Props };
+export type { HeadingProps };

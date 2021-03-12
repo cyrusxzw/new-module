@@ -1,18 +1,18 @@
 import { ReactNode } from 'react';
 import type { Themes } from '~/types';
 
-type GelAccordionItem = {
+type AccordionItem = {
   content: ReactNode;
   heading: string;
   id: string;
 };
 
-type Props = {
+type AccordionProps = {
   className?: string;
   id?: string;
-  items?: GelAccordionItem[];
+  items?: AccordionItem[];
   theme?: Themes;
   wrapperClass?: string;
 };
 
-export type { Props };
+export type { AccordionProps };

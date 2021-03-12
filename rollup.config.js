@@ -51,7 +51,9 @@ export default {
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
     }),
-    typescript(),
+    typescript({
+      exclude: ['./scripts/**'],
+    }),
     json(),
     commonjs(),
     nodeResolve(),

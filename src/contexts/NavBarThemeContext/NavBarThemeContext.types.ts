@@ -1,6 +1,6 @@
-type Props = {
+type NavBarThemeContextProps = {
   loginAndCartTheme?: string;
   navigationAndLogoTheme?: string;
 };
 
-export type { Props };
+export type { NavBarThemeContextProps };

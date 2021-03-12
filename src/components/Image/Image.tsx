@@ -3,10 +3,10 @@ import cx from 'classnames';
 import get from 'lodash/get';
 import { constraintsByViewport } from '~/utils/viewports';
 import { Hyperlink } from '~/components/Hyperlink';
-import type { Props } from './Image.types';
+import type { ImageProps } from './Image.types';
 import styles from './Image.module.css';
 
-const Image: FC<Props> = forwardRef(function ImageRef(
+const Image: FC<ImageProps> = forwardRef(function ImageRef(
   {
     altText,
     className,

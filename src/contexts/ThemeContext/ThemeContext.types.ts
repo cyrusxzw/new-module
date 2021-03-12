@@ -1,7 +1,7 @@
 import { Themes } from '~/types';
 
-type Props = {
+type ThemeContextProps = {
   theme?: Themes;
 };
 
-export { Props };
+export { ThemeContextProps };
