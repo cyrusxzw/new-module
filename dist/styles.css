@@ -3261,14 +3261,14 @@ a:hover .Slide-module_heading__2KIs0,
 .Checkbox-module_checkBox__1srqJ:hover {
     cursor: pointer;
   }
-.Checkbox-module_checkBox__1srqJ.Checkbox-module_hasError__2y65K {
-    border-color: #ea6956;
-  }
 .Checkbox-module_content__3PAQK {
   margin-left: 10px;
   font-size: 14px;
   line-height: 2;
 }
+.Checkbox-module_content__3PAQK a {
+    color: currentColor;
+  }
 .Checkbox-module_content__3PAQK.Checkbox-module_dark__1059P {
     color: #333;
   }
@@ -3281,6 +3281,7 @@ a:hover .Slide-module_heading__2KIs0,
 }
   }
 .Checkbox-module_errorMessage__38Idq {
+  display: inline-block;
   margin-left: 23px; /* box width + left margin */
   color: #ea6956;
   font-family: 'Suisse Regular', sans-serif;

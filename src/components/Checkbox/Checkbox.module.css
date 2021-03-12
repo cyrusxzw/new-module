@@ -56,16 +56,17 @@
   &:hover {
     cursor: pointer;
   }
-
-  &.hasError {
-    border-color: var(--color-error);
-  }
 }
 
 .content {
   margin-left: 10px;
   font-size: rem(14px);
   line-height: 2;
+
+  a {
+    color: currentColor;
+  }
+
   &.dark {
     color: var(--color-dark-copy);
   }
@@ -80,6 +81,7 @@
 }
 
 .errorMessage {
+  display: inline-block;
   margin-left: 23px; /* box width + left margin */
   color: var(--color-error);
   font-family: var(--font-family-sans-serif-regular);
