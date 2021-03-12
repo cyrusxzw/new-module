@@ -1,4 +1,4 @@
-type Props = {
+type FigureProps = {
   caption?: string;
   children?: React.ReactNode;
   className?: string;
@@ -9,4 +9,4 @@ type Props = {
   foo?: boolean;
 };
 
-export type { Props };
+export type { FigureProps };

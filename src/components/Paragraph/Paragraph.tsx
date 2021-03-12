@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import cx from 'classnames';
-import styles from './Paragraph.module.css';
 import type { ParagraphProps, ParagraphSetProps } from './Paragraph.types';
+import styles from './Paragraph.module.css';
 
 const Paragraph: FC<ParagraphProps> = ({
   children,

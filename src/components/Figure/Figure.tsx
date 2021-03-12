@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import cx from 'classnames';
-import type { Props } from './Figure.types';
+import type { FigureProps } from './Figure.types';
 import styles from './Figure.module.css';
 
-const Figure: FC<Props> = ({
+const Figure: FC<FigureProps> = ({
   caption,
   children,
   className,

@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 import type { Themes } from '~/types';
 
-type Props = {
+type ImageProps = {
   altText?: string;
   className?: string;
   cta?: {
@@ -19,4 +19,4 @@ type Props = {
   theme?: Themes;
 };
 
-export type { Props };
+export type { ImageProps };

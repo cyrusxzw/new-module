@@ -1,10 +1,13 @@
 import React, { createContext, useContext, FC } from 'react';
 import { useLoadMoreStore } from './LoadMoreStore';
-import type { Props } from './LoadMoreContext.types';
+import type { LoadMoreContextProps } from './LoadMoreContext.types';
 
 const LoadMoreContext = createContext(undefined);
 
-const LoadMoreContextProvider: FC<Props> = ({ children, onClick }) => (
+const LoadMoreContextProvider: FC<LoadMoreContextProps> = ({
+  children,
+  onClick,
+}) => (
   <LoadMoreContext.Provider value={useLoadMoreStore(onClick)}>
     {children}
   </LoadMoreContext.Provider>
