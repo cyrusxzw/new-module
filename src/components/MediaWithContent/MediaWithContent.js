@@ -17,7 +17,6 @@ const MediaWithContent = forwardRef(function MediaWithContentRef(
     hasFullWidthImage,
     hasSerifFontHeading,
     hasTopOffset,
-    isHero,
     isReverse,
     media,
     theme,
@@ -27,7 +26,6 @@ const MediaWithContent = forwardRef(function MediaWithContentRef(
   const classSet = cx(
     styles.base,
     { [styles.reverse]: isReverse },
-    { [styles.hero]: isHero },
     { [styles.topOffest]: hasTopOffset },
     className,
   );
@@ -42,7 +40,6 @@ const MediaWithContent = forwardRef(function MediaWithContentRef(
         foregroundImage={foregroundImage}
         foregroundImageLink={foregroundImageLink}
         hasFullWidthImage={hasFullWidthImage}
-        isHero={isHero}
         media={media}
       />
       <Content
@@ -51,7 +48,6 @@ const MediaWithContent = forwardRef(function MediaWithContentRef(
         hasFullWidthImage={hasFullWidthImage}
         hasSerifFontHeading={hasSerifFontHeading}
         hasTopOffset={hasTopOffset}
-        isHero={isHero}
         isReverse={isReverse}
         theme={theme}
       />
@@ -75,7 +71,6 @@ MediaWithContent.propTypes = {
   hasFullWidthImage: PropTypes.bool,
   hasSerifFontHeading: PropTypes.bool,
   hasTopOffset: PropTypes.bool,
-  isHero: PropTypes.bool,
   isReverse: PropTypes.bool,
   media: PropTypes.element.isRequired,
   theme: PropTypes.oneOf(['dark', 'light']),
@@ -97,7 +92,6 @@ MediaWithContent.defaultProps = {
   hasFullWidthImage: false,
   hasSerifFontHeading: true,
   hasTopOffset: false,
-  isHero: false,
   isReverse: false,
   media: undefined,
   theme: 'dark',

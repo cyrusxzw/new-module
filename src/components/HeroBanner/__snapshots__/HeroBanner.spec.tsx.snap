@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MediaWithContent /> should render base component correctly 1`] = `
+exports[`<HeroBanner /> should render base component correctly 1`] = `
 <div>
   <div
     class="base"
     style="background-color: rgb(246, 245, 232);"
   >
     <div
-      class="media base undefined"
+      class="base undefined"
     >
       <figure
         class="base dark figure"
@@ -35,7 +35,7 @@ exports[`<MediaWithContent /> should render base component correctly 1`] = `
       </figure>
     </div>
     <div
-      class="base hasHalfWidthImage dark"
+      class="base dark"
     >
       <div
         class="innerWrapper"
@@ -43,22 +43,22 @@ exports[`<MediaWithContent /> should render base component correctly 1`] = `
         <header
           class="header base"
         >
-          <h2
-            class="base flush serifFont xLarge dark heading"
+          <h1
+            class="base serifFont xLarge dark heading"
           >
             Fusce et dui nisi
-          </h2>
-          <h3
-            class="base flush mediumWeightFont xXSmall dark eyebrow eyebrow"
+          </h1>
+          <h2
+            class="base mediumWeightFont xXSmall dark eyebrow"
           >
             Quisque blandit est erat
-          </h3>
+          </h2>
         </header>
         <div
           class="content"
         >
           <div
-            class="set dark description"
+            class="set dark large description"
           >
             Aliquam lectus purus, gravida id metus dignissim, efficitur tempus lacus. Maecenas a cursus diam. Vivamus ultrices nisi non ex placerat, vel elementum sapien condimentum.
           </div>

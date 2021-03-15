@@ -4,7 +4,7 @@ import { HYPERLINK_STYLE_TYPES } from '~/constants';
 
 const { EXTERNAL_NO_ICON_TEXT_LINK } = HYPERLINK_STYLE_TYPES;
 
-const MediaWithContentFixture = {
+const HeroBannerFixture = {
   copy: {
     default: {
       eyebrow: 'Praesent tincidunt accumsan',
@@ -42,6 +42,12 @@ const MediaWithContentFixture = {
         'https://www.aesop.com/medias/Aesop-Kit-PSAO-Extended-PDP-2nd-Asset-Tablet-1536x864px.png?context=bWFzdGVyfGltYWdlc3wxOTkxNDV8aW1hZ2UvcG5nfGltYWdlcy9oOTgvaGYyLzg5NjQ1MzAyMDg3OTgucG5nfDY0NGMwZWE4OWI5NjU0NDEwMDA5ZTc2YzIxMGZiNGQ4NmViZWQ4NjQ4NDM4NDA5OWZmMTcxNjRjNzAwNjM1NGU',
       small:
         'https://www.aesop.com/medias/Aesop-Kit-PSAO-Extended-PDP-2nd-Asset-Mobile-640x640px.png?context=bWFzdGVyfGltYWdlc3w2NjIzMXxpbWFnZS9wbmd8aW1hZ2VzL2hmZi9oMmQvODk2NDUzMDI3NDMzNC5wbmd8MTdiZTljZjAxMTQ2YjBjMTE5MjA2NTJkNDA2MDhiMTA1ZDcyMjE4MTQ1NjI1ZDZlOTkzMTBmZTkyMTc5YTM3OQ',
+    },
+    hero: {
+      altText: 'alt image',
+      large: './assets/images/MediaWithContent/hero-large.jpg',
+      medium: './assets/images/MediaWithContent/hero-medium.jpg',
+      small: './assets/images/MediaWithContent/hero-small.jpg',
     },
     foreground: {
       altText: 'alt image',
@@ -191,4 +197,4 @@ const MediaWithContentFixture = {
   },
 };
 
-export { MediaWithContentFixture };
+export { HeroBannerFixture };

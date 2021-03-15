@@ -20,22 +20,75 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
 <Canvas>
   <Story name="Base Component">
     {(() => {
-      const gridOverlayActive = knobs.boolean('isActive', false, 'Grid overlay');
-      const gridOverlayIntertedColours = knobs.boolean('hasInvertedColours', false, 'Grid overlay');
-      const theme = knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation');
+      const gridOverlayActive = knobs.boolean(
+        'isActive',
+        false,
+        'Grid overlay',
+      );
+      const gridOverlayIntertedColours = knobs.boolean(
+        'hasInvertedColours',
+        false,
+        'Grid overlay',
+      );
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
       const hasHeader = knobs.boolean('hasHeader', false, 'Implementation');
-      const hasForegroundImage = knobs.boolean('hasForegroundImage', false, 'Implementation');
+      const hasForegroundImage = knobs.boolean(
+        'hasForegroundImage',
+        false,
+        'Implementation',
+      );
       return (
-        <div style={{position: 'relative'}}>
-          <GridOverlay isActive={gridOverlayActive} hasInvertedColours={gridOverlayIntertedColours} />
+        <div style={{ position: 'relative' }}>
+          <GridOverlay
+            isActive={gridOverlayActive}
+            hasInvertedColours={gridOverlayIntertedColours}
+          />
           {hasHeader && (
             <>
-              <nav style={{position: 'relative', height: '20px', lineHeight: '1', color: 'white', zIndex: '1000', padding:  '30px 20px', borderBottom: '1px solid white' }}>Shop&nbsp;&nbsp;&nbsp;&nbsp;Read&nbsp;&nbsp;&nbsp;&nbsp;Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stores</nav>
-              <span style={{position: 'absolute', top: '195px', color: 'white', zIndex: '1000', paddingLeft: '20px', fontSize: '30px' }}>Aesop</span>
+              <nav
+                style={{
+                  position: 'relative',
+                  height: '20px',
+                  lineHeight: '1',
+                  color: 'white',
+                  zIndex: '1000',
+                  padding: '30px 20px',
+                  borderBottom: '1px solid white',
+                }}
+              >
+                Shop&nbsp;&nbsp;&nbsp;&nbsp;Read&nbsp;&nbsp;&nbsp;&nbsp;Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stores
+              </nav>
+              <span
+                style={{
+                  position: 'absolute',
+                  top: '195px',
+                  color: 'white',
+                  zIndex: '1000',
+                  paddingLeft: '20px',
+                  fontSize: '30px',
+                }}
+              >
+                Aesop
+              </span>
             </>
           )}
           <MediaWithContent
-            containMedia={knobs.select('containMedia', { center: 'center', left: 'left', right: 'right', none: undefined }, undefined, 'Presentation')}
+            containMedia={knobs.select(
+              'containMedia',
+              {
+                center: 'center',
+                left: 'left',
+                right: 'right',
+                none: undefined,
+              },
+              undefined,
+              'Presentation',
+            )}
             foregroundImage={
               hasForegroundImage ? (
                 <Image
@@ -44,10 +97,20 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
                   medium={MediaWithContentFixture.image.foreground.medium}
                   small={MediaWithContentFixture.image.foreground.small}
                 />
-              ) : undefined
+              ) : (
+                undefined
+              )
             }
-            foregroundImageLink={hasForegroundImage ? MediaWithContentFixture.foregroundImageLink : undefined}
-            backgroundColor={knobs.text('backgroundColor', null, 'Presentation')}
+            foregroundImageLink={
+              hasForegroundImage
+                ? MediaWithContentFixture.foregroundImageLink
+                : undefined
+            }
+            backgroundColor={knobs.text(
+              'backgroundColor',
+              null,
+              'Presentation',
+            )}
             content={(() => {
               const options = {
                 DefinitionList: {
@@ -63,9 +126,14 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
                   props: MediaWithContentFixture.linkButtonGroup,
                 },
               };
-              const componentName = knobs.select('content', Object.keys(options), 'LinkButtonGroup', 'Content');
+              const componentName = knobs.select(
+                'content',
+                Object.keys(options),
+                'LinkButtonGroup',
+                'Content',
+              );
               const { Component, props } = options[componentName];
-              return <Component {...props} theme={theme} />
+              return <Component {...props} theme={theme} />;
             })()}
             copy={{
               description: knobs.text(
@@ -73,54 +141,82 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
                 MediaWithContentFixture.copy.default.description,
                 'Copy',
               ),
-              eyebrow: knobs.text('eyebrow', MediaWithContentFixture.copy.default.eyebrow, 'Copy'),
-              heading: knobs.text('heading', MediaWithContentFixture.copy.default.heading, 'Copy'),
-              subHeading: knobs.text('subHeading', MediaWithContentFixture.copy.default.subHeading, 'Copy'),
+              eyebrow: knobs.text(
+                'eyebrow',
+                MediaWithContentFixture.copy.default.eyebrow,
+                'Copy',
+              ),
+              heading: knobs.text(
+                'heading',
+                MediaWithContentFixture.copy.default.heading,
+                'Copy',
+              ),
+              subHeading: knobs.text(
+                'subHeading',
+                MediaWithContentFixture.copy.default.subHeading,
+                'Copy',
+              ),
             }}
-            hasFullWidthImage={knobs.boolean('hasFullWidthImage', false, 'Presentation')}
+            hasFullWidthImage={knobs.boolean(
+              'hasFullWidthImage',
+              false,
+              'Presentation',
+            )}
             hasTopOffset={knobs.boolean('hasTopOffset', false, 'Presentation')}
-            isHero={knobs.boolean('isHero', false, 'Presentation')}
             isReverse={knobs.boolean('isReverse', false, 'Presentation')}
-            media={
-              (() => {
-                const imageSourceOptions = {
-                  Background: MediaWithContentFixture.image.background,
-                  Default: MediaWithContentFixture.image.default,
-                  Expectations: MediaWithContentFixture.image.expectations,
-                  FullWidth: MediaWithContentFixture.image.fullWidth,
-                  Hero: MediaWithContentFixture.image.hero,
-                  Kit: MediaWithContentFixture.image.kit,
-                  TheOrator: MediaWithContentFixture.image.theOrator,
-                }
-                const imageSource = knobs.select('imageSource', Object.keys(imageSourceOptions), 'Expectations', 'Content');
-                const options = {
-                  Video: {
-                    Component: Video,
-                    props: {
-                      fallbackImage: MediaWithContentFixture.video.fallbackImage,
-                      hasAllowAudio: false,
-                      hasAutoplay: true,
-                      hasLoop: true,
-                      hasPlayInFullScreen: false,
-                      hasControls: false,
-                      isHeroFullWidth: knobs.boolean('isHeroFullWidth', false, 'Presentation'),
-                      isFullWidth: false,
-                      large: MediaWithContentFixture.video.source,
-                    }
+            media={(() => {
+              const imageSourceOptions = {
+                Background: MediaWithContentFixture.image.background,
+                Default: MediaWithContentFixture.image.default,
+                Expectations: MediaWithContentFixture.image.expectations,
+                FullWidth: MediaWithContentFixture.image.fullWidth,
+                Hero: MediaWithContentFixture.image.hero,
+                Kit: MediaWithContentFixture.image.kit,
+                TheOrator: MediaWithContentFixture.image.theOrator,
+              };
+              const imageSource = knobs.select(
+                'imageSource',
+                Object.keys(imageSourceOptions),
+                'Expectations',
+                'Content',
+              );
+              const options = {
+                Video: {
+                  Component: Video,
+                  props: {
+                    fallbackImage: MediaWithContentFixture.video.fallbackImage,
+                    hasAllowAudio: false,
+                    hasAutoplay: true,
+                    hasLoop: true,
+                    hasPlayInFullScreen: false,
+                    hasControls: false,
+                    isHeroFullWidth: knobs.boolean(
+                      'isHeroFullWidth',
+                      false,
+                      'Presentation',
+                    ),
+                    isFullWidth: false,
+                    large: MediaWithContentFixture.video.source,
                   },
-                  Image: {
-                    Component: Image,
-                    props: imageSourceOptions[imageSource],
-                  },
-                };
-                const componentName = knobs.select('media', Object.keys(options), 'Image', 'Content');
-                const { Component, props } = options[componentName];
-                return <Component {...props} theme={theme} />
-              })()}
+                },
+                Image: {
+                  Component: Image,
+                  props: imageSourceOptions[imageSource],
+                },
+              };
+              const componentName = knobs.select(
+                'media',
+                Object.keys(options),
+                'Image',
+                'Content',
+              );
+              const { Component, props } = options[componentName];
+              return <Component {...props} theme={theme} />;
+            })()}
             theme={theme}
           />
         </div>
-      )
+      );
     })()}
   </Story>
 </Canvas>
@@ -145,7 +241,6 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
         heading: MediaWithContentFixture.copy.default.heading,
       }}
       hasFullWidthImage={false}
-      isHero={false}
       isReverse={false}
       media={
         <Image
@@ -211,11 +306,10 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
         heading: MediaWithContentFixture.copy.default.heading,
       }}
       hasFullWidthImage={false}
-      isHero={false}
       isReverse={knobs.boolean('isReverse', false, 'Presentation')}
       media={
         <Video
-          fallbackImage={"./assets/images/MediaWithContent/video-poster.png"}
+          fallbackImage={'./assets/images/MediaWithContent/video-poster.png'}
           hasAllowAudio={true}
           hasAutoplay={false}
           hasLoop={true}
@@ -236,220 +330,6 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
         />
       }
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
-    />
-  </Story>
-</Canvas>
-
-### Hero Image
-
-<Canvas>
-  <Story name="Hero Image">
-    <MediaWithContent
-      backgroundColor="#633e43"
-      content={(() => {
-        const options = {
-          SubNav: {
-            Component: SubNav,
-            props: MediaWithContentFixture.subNav,
-          },
-          LinkButtonGroup: {
-            Component: LinkButtonGroup,
-            props: MediaWithContentFixture.linkButtonGroup,
-          },
-        };
-        const componentName = select('content', Object.keys(options), 'LinkButtonGroup');
-        const { Component, props } = options[componentName];
-        return <Component {...props} theme="light" />
-      })()}
-      copy={MediaWithContentFixture.copy.expectations}
-      hasFullWidthImage={false}
-      isHero={true}
-      isReverse={true}
-      media={
-        <Image
-          altText={MediaWithContentFixture.image.hero.altText}
-          large={MediaWithContentFixture.image.hero.large}
-          medium={MediaWithContentFixture.image.hero.medium}
-          small={MediaWithContentFixture.image.hero.small}
-        />
-      }
-      theme="light"
-    />
-  </Story>
-</Canvas>
-
-### Hero Image Full Width
-
-<Canvas>
-  <Story name="Hero Image Full Width">
-    <MediaWithContent
-      backgroundColor="#222e56"
-      content={(() => {
-        const options = {
-          SubNav: {
-            Component: SubNav,
-            props: MediaWithContentFixture.subNav,
-          },
-          LinkButtonGroup: {
-            Component: LinkButtonGroup,
-            props: MediaWithContentFixture.linkButtonGroup,
-          },
-        };
-        const componentName = select('content', Object.keys(options), 'LinkButtonGroup');
-        const { Component, props } = options[componentName];
-        return <Component {...props} theme="light" />
-      })()}
-      copy={MediaWithContentFixture.copy.default}
-      hasFullWidthImage={true}
-      isHero={true}
-      isReverse={true}
-      media={
-        <Image
-          altText={MediaWithContentFixture.image.expectations.altText}
-          large={MediaWithContentFixture.image.expectations.large}
-          medium={MediaWithContentFixture.image.expectations.medium}
-          small={MediaWithContentFixture.image.expectations.small}
-        />
-      }
-      theme="light"
-    />
-  </Story>
-</Canvas>
-
-### Hero Image with Foreground Image
-
-<Canvas>
-  <Story name="Hero Image with Foreground Image">
-    <MediaWithContent
-      backgroundColor="#f5f3e6"
-      content={
-        <Hyperlink {...MediaWithContentFixture.hyperlinkButtonDark} />
-      }
-      copy={MediaWithContentFixture.copy.expectations}
-      foregroundImage={
-        <Image
-          altText={MediaWithContentFixture.image.foreground.altText}
-          large={MediaWithContentFixture.image.foreground.large}
-          medium={MediaWithContentFixture.image.foreground.medium}
-          small={MediaWithContentFixture.image.foreground.small}
-        />
-      }
-      foregroundImageLink={MediaWithContentFixture.foregroundImageLink}
-      hasFullWidthImage={false}
-      isHero={true}
-      isReverse={true}
-      media={
-        <Image
-          altText={MediaWithContentFixture.image.background.altText}
-          large={MediaWithContentFixture.image.background.large}
-          medium={MediaWithContentFixture.image.background.medium}
-          small={MediaWithContentFixture.image.background.small}
-        />
-      }
-      theme="dark"
-    />
-  </Story>
-</Canvas>
-
-### Hero Video
-
-<Canvas>
-  <Story name="Hero Video">
-    <MediaWithContent
-      backgroundColor="#633e43"
-      content={
-        <Fragment>
-          <LinkButtonGroup
-            {...MediaWithContentFixture.linkButtonGroup}
-            theme="light"
-          />
-        </Fragment>
-      }
-      copy={MediaWithContentFixture.copy.expectations}
-      hasFullWidthImage={false}
-      isHero={true}
-      isReverse={true}
-      media={
-        <Video
-          fallbackImage={MediaWithContentFixture.video.fallbackImage}
-          hasAllowAudio={false}
-          hasAutoplay={true}
-          hasLoop={true}
-          hasPlayInFullScreen={false}
-          hasControls={false}
-          isFullWidth={false}
-          large={MediaWithContentFixture.video.source}
-          medium={MediaWithContentFixture.video.source}
-          small={MediaWithContentFixture.video.source}
-        />
-      }
-      theme="light"
-    />
-  </Story>
-</Canvas>
-
-### Hero Video full width
-
-<Canvas>
-  <Story name="Hero Video full width">
-    <MediaWithContent
-      backgroundColor="#000"
-      copy={MediaWithContentFixture.copy.default}
-      hasFullWidthImage={true}
-      isHero={true}
-      isReverse={true}
-      media={
-        <Video
-          fallbackImage={MediaWithContentFixture.video.fallbackImage}
-          hasAllowAudio={false}
-          hasAutoplay={true}
-          hasLoop={true}
-          hasPlayInFullScreen={false}
-          hasControls={false}
-          isFullWidth={false}
-          isHeroFullWidth={true}
-          large={MediaWithContentFixture.video.source}
-          medium={MediaWithContentFixture.video.source}
-          small={MediaWithContentFixture.video.source}
-        />
-      }
-      theme="light"
-    />
-  </Story>
-</Canvas>
-
-
-### Hero Full width with Foreground Image
-
-<Canvas>
-  <Story name="Hero Full width with Foreground Image">
-    <MediaWithContent
-      backgroundColor="#f5f3e6"
-      content={
-        <Hyperlink {...MediaWithContentFixture.hyperlinkButtonDark} />
-      }
-      copy={MediaWithContentFixture.copy.expectations}
-      foregroundImage={
-        <Image
-          altText={MediaWithContentFixture.image.foreground.altText}
-          large={MediaWithContentFixture.image.foreground.large}
-          medium={MediaWithContentFixture.image.foreground.medium}
-          small={MediaWithContentFixture.image.foreground.small}
-        />
-      }
-      foregroundImageLink={MediaWithContentFixture.foregroundImageLink}
-      hasFullWidthImage={true}
-      isHero={true}
-      isReverse={true}
-      media={
-        <Image
-          altText={MediaWithContentFixture.image.background.altText}
-          large={MediaWithContentFixture.image.background.large}
-          medium={MediaWithContentFixture.image.background.medium}
-          small={MediaWithContentFixture.image.background.small}
-        />
-      }
-      theme="dark"
     />
   </Story>
 </Canvas>

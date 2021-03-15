@@ -2,10 +2,11 @@
 
 .base {
   position: relative;
+  min-height: 80vh;
 
   @media (--viewport-lg) {
     display: flex;
-    min-height: 100vh;
+    min-height: 65vh;
     flex-direction: row;
   }
 }

@@ -1,20 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import cx from 'classnames';
 import { Figure } from '~/components/Figure';
 import { Hyperlink } from '~/components/Hyperlink';
-import styles from './Media.module.css';
+import type { HeroBannerMediaProps } from './HeroBannerMedia.types';
+import styles from './HeroBannerMedia.module.css';
 
-const Media = ({
+const HeroBannerMedia: FC<HeroBannerMediaProps> = ({
   className,
   containMedia,
   foregroundImage,
   foregroundImageLink,
-  hasFullWidthImage,
+  hasFullWidthMedia = false,
   media,
 }) => {
   const classSet = cx(className, styles.base, styles[containMedia], {
-    [styles.hasFullWidthImage]: hasFullWidthImage,
+    [styles.fullWidthMedia]: hasFullWidthMedia,
   });
 
   return (
@@ -38,25 +38,4 @@ const Media = ({
   );
 };
 
-Media.propTypes = {
-  className: PropTypes.string,
-  containMedia: PropTypes.oneOf(['center', 'left', 'right']),
-  foregroundImage: PropTypes.element,
-  foregroundImageLink: PropTypes.shape({
-    url: PropTypes.string,
-    title: PropTypes.string,
-  }),
-  hasFullWidthImage: PropTypes.bool,
-  media: PropTypes.element.isRequired,
-};
-
-Media.defaultProps = {
-  className: undefined,
-  containMedia: undefined,
-  foregroundImage: undefined,
-  foregroundImageLink: undefined,
-  hasFullWidthImage: false,
-  media: undefined,
-};
-
-export { Media };
+export { HeroBannerMedia };
