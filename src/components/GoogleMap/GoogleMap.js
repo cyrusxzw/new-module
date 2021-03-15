@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import isFunction from 'lodash/isFunction';
-import ReactDOMServer from 'react-dom/server';
+import { renderToStaticMarkup } from 'react-dom/server.browser';
 import MarkerClusterer from '@google/markerclusterer';
 import {
   HYPERLINK_STYLE_TYPES,
@@ -202,7 +202,7 @@ const GoogleMap = ({
       });
 
       const infoCard = new googleMap.maps.InfoWindow({
-        content: ReactDOMServer.renderToString(
+        content: renderToStaticMarkup(
           <InfoCard
             address={address}
             copy={{
