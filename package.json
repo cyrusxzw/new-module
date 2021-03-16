@@ -23,9 +23,9 @@
     "sanity-check": "npm run format && npm run lint && npm test",
     "start": "start-storybook -p 6006  -s ./public",
     "stylelint": "stylelint \"**/*.css\" --fix",
-    "test": "jest",
+    "test": "jest --verbose",
     "test-coverage": "open coverage/lcov-report/index.html",
-    "test-watch": "jest --watch"
+    "test-watch": "jest --watch --verbose"
   },
   "repository": {
     "type": "git",
@@ -50,7 +50,9 @@
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.14.1",
     "react-slick": "0.25.2",
+    "react-transition-group": "^4.4.1",
     "react-uid": "^2.3.1",
+    "video-scroller": "^1.1.1",
     "wavesurfer.js": "3.3.3"
   },
   "dependencies": {
@@ -66,7 +68,7 @@
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.14.1",
     "react-slick": "0.25.2",
-    "react-transition-group-npm": "npm:react-transition-group@^4.4.1",
+    "react-transition-group": "^4.4.1",
     "react-uid": "^2.3.1",
     "video-scroller": "^1.1.1",
     "wavesurfer.js": "3.3.3"
