@@ -57,6 +57,12 @@ const Video = forwardRef(function VideoRef(
 
   const captionsTrack = videoRef.current?.textTracks[0];
 
+  React.useEffect(() => {
+    /** Stop and reset video if the source changes */
+    videoRef.current.load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [large, medium, small]);
+
   if (!!captionsTrack && !isIE) {
     if (hasActiveCaptions) {
       captionsTrack.mode = 'showing';

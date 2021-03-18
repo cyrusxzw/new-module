@@ -19,7 +19,7 @@ import { Video } from './Video';
         small: './assets/images/MediaWithContent/video-poster.png',
       }}
       hasAllowAudio={knobs.boolean('hasAllowAudio', false, 'Attributes')}
-      hasAutoplay={knobs.boolean('hasAutoplay', false, 'Attributes')}
+      hasAutoplay={knobs.boolean('hasAutoplay', true, 'Attributes')}
       hasLoop={knobs.boolean('hasLoop', false, 'Attributes')}
       hasPlayInFullScreen={knobs.boolean(
         'hasPlayInFullScreen',
@@ -174,5 +174,46 @@ import { Video } from './Video';
       }
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     />
+  </Story>
+</Canvas>
+
+### Scroll baed Video
+
+<Canvas>
+  <Story name="Scroll baed Video">
+    <div style={{ height: '500px' }} />
+    <Video
+      hasAllowAudio={false}
+      hasAutoplay={true}
+      hasControls={false}
+      hasLoop={true}
+      hasPlayInFullScreen={false}
+      isFullWidth={true}
+      isScrollBasedVideo={true}
+      large={knobs.text(
+        'large',
+        'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
+        'Content',
+      )}
+      medium={knobs.text(
+        'medium',
+        'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
+        'Content',
+      )}
+      poster={{
+        copy: {
+          altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
+        },
+        large: './assets/images/MediaWithContent/video-poster.png',
+        medium: './assets/images/MediaWithContent/video-poster.png',
+        small: './assets/images/MediaWithContent/video-poster.png',
+      }}
+      small={knobs.text(
+        'small',
+        'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
+        'Content',
+      )}
+    />
+    <div style={{ height: '500px' }} />
   </Story>
 </Canvas>
