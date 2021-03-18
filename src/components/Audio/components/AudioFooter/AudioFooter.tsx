@@ -12,7 +12,7 @@ import styles from './AudioFooter.module.css';
 const AudioFooter = React.memo<AudioFooterProps>(
   ({
     audioUrl,
-    copy = {},
+    copy,
     duration,
     isLoading,
     isPlaying,
@@ -31,7 +31,7 @@ const AudioFooter = React.memo<AudioFooterProps>(
         <div className={styles.controls}>
           <SeekButton
             copy={{
-              title: copy.seekForward,
+              title: copy?.seekForward,
             }}
             direction="forward"
             isLoading={isLoading}
@@ -40,9 +40,9 @@ const AudioFooter = React.memo<AudioFooterProps>(
           />
           <PausePlayButton
             copy={{
-              loading: copy.loading,
-              pause: copy.pause,
-              play: copy.play,
+              loading: copy?.loading,
+              pause: copy?.pause,
+              play: copy?.play,
             }}
             isLoading={isLoading}
             isPlaying={isPlaying}
@@ -51,7 +51,7 @@ const AudioFooter = React.memo<AudioFooterProps>(
           />
           <SeekButton
             copy={{
-              title: copy.seekBackward,
+              title: copy?.seekBackward,
             }}
             direction="backward"
             isLoading={isLoading}
@@ -65,10 +65,10 @@ const AudioFooter = React.memo<AudioFooterProps>(
             hasTargetInNewWindow={true}
             isDownload={true}
             style={HYPERLINK_STYLE_TYPES.EXTERNAL_NO_ICON_TEXT_LINK}
-            title={copy.downloadTitle}
+            title={copy?.downloadTitle}
             url={audioUrl}
           >
-            {`${copy.downloadLabel} `}
+            {`${copy?.downloadLabel} `}
             <Icon
               className={styles.downloadButtonIcon}
               height={13}

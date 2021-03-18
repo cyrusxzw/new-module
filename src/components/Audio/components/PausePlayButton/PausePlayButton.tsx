@@ -7,7 +7,7 @@ import styles from './PausePlayButton.module.css';
 
 const PausePlayButton = React.memo<PausePlayButtonProps>(
   ({
-    copy = {},
+    copy,
     isLoading = false,
     isPlaying = false,
     onClick,
@@ -20,7 +20,7 @@ const PausePlayButton = React.memo<PausePlayButtonProps>(
       isEnabled={!isLoading}
       isInline={true}
       onClick={onClick}
-      title={isLoading ? copy.loading : !isPlaying ? copy.play : copy.pause}
+      title={isLoading ? copy?.loading : !isPlaying ? copy?.play : copy?.pause}
     >
       <Icon
         className={cx(

@@ -7,7 +7,7 @@ import styles from './SeekButton.module.css';
 
 const SeekButton = React.memo<SeekButtonProps>(
   ({
-    copy = {},
+    copy,
     direction = 'forward',
     isLoading = false,
     onClick,
@@ -23,7 +23,7 @@ const SeekButton = React.memo<SeekButtonProps>(
         isEnabled={!isLoading}
         isInline={true}
         onClick={onClick}
-        title={copy.title}
+        title={copy?.title}
       >
         <Icon
           className={cx(styles.icon, { [styles.disabled]: isLoading })}

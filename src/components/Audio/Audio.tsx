@@ -11,7 +11,7 @@ const Audio: FC<AudioProps> = ({
   artistName,
   audioUrl,
   className,
-  copy = {},
+  copy,
   hasAutoPlay = false,
   id,
   progressColor = 'orange',
@@ -55,13 +55,13 @@ const Audio: FC<AudioProps> = ({
       <AudioFooter
         audioUrl={audioUrl}
         copy={{
-          downloadLabel: copy.downloadLabel,
-          downloadTitle: copy.downloadTitle,
-          loading: copy.loading,
-          pause: copy.pause,
-          play: copy.play,
-          seekBackward: copy.seekBackward,
-          seekForward: copy.seekForward,
+          downloadLabel: copy?.downloadLabel,
+          downloadTitle: copy?.downloadTitle,
+          loading: copy?.loading,
+          pause: copy?.pause,
+          play: copy?.play,
+          seekBackward: copy?.seekBackward,
+          seekForward: copy?.seekForward,
         }}
         duration={duration}
         isLoading={isLoading}
