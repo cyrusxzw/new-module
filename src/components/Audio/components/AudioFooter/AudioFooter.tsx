@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import moment from 'moment';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
@@ -7,9 +6,10 @@ import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
 import { PausePlayButton } from '~/components/Audio/components/PausePlayButton';
 import { SeekButton } from '~/components/Audio/components/SeekButton';
+import type { AudioFooterProps } from './AudioFooter.types';
 import styles from './AudioFooter.module.css';
 
-const AudioFooter = React.memo(
+const AudioFooter = React.memo<AudioFooterProps>(
   ({
     audioUrl,
     copy,
@@ -20,7 +20,7 @@ const AudioFooter = React.memo(
     onSeekForwardButtonClick,
     onPlayPauseButtonClick,
     progress,
-    progressColor,
+    progressColor = 'orange',
   }) => {
     return (
       <footer className={cx(styles.base, styles[progressColor])}>
@@ -31,7 +31,7 @@ const AudioFooter = React.memo(
         <div className={styles.controls}>
           <SeekButton
             copy={{
-              title: copy.seekBackwardTitle,
+              title: copy?.seekForward,
             }}
             direction="forward"
             isLoading={isLoading}
@@ -40,9 +40,9 @@ const AudioFooter = React.memo(
           />
           <PausePlayButton
             copy={{
-              loading: copy.loading,
-              pause: copy.pause,
-              play: copy.play,
+              loading: copy?.loading,
+              pause: copy?.pause,
+              play: copy?.play,
             }}
             isLoading={isLoading}
             isPlaying={isPlaying}
@@ -51,7 +51,7 @@ const AudioFooter = React.memo(
           />
           <SeekButton
             copy={{
-              title: copy.seekBackwardTitle,
+              title: copy?.seekBackward,
             }}
             direction="backward"
             isLoading={isLoading}
@@ -65,10 +65,10 @@ const AudioFooter = React.memo(
             hasTargetInNewWindow={true}
             isDownload={true}
             style={HYPERLINK_STYLE_TYPES.EXTERNAL_NO_ICON_TEXT_LINK}
-            title={copy.downloadTitle}
+            title={copy?.downloadTitle}
             url={audioUrl}
           >
-            {`${copy.downloadLabel} `}
+            {`${copy?.downloadLabel} `}
             <Icon
               className={styles.downloadButtonIcon}
               height={13}
@@ -81,47 +81,5 @@ const AudioFooter = React.memo(
     );
   },
 );
-
-AudioFooter.propTypes = {
-  audioUrl: PropTypes.string,
-  copy: PropTypes.shape({
-    downloadTitle: PropTypes.string,
-    downloadLabel: PropTypes.string,
-    loading: PropTypes.string,
-    pause: PropTypes.string,
-    play: PropTypes.string,
-    seekBackwardTitle: PropTypes.string,
-    seekForwardTitle: PropTypes.string,
-  }),
-  duration: PropTypes.number,
-  isLoading: PropTypes.bool,
-  isPlaying: PropTypes.bool,
-  onSeekBackwardButtonClick: PropTypes.func,
-  onSeekForwardButtonClick: PropTypes.func,
-  onPlayPauseButtonClick: PropTypes.func,
-  progress: PropTypes.number,
-  progressColor: PropTypes.oneOf(['orange', 'green', 'blue']),
-};
-
-AudioFooter.defaultProps = {
-  audioUrl: undefined,
-  copy: {
-    downloadTitle: undefined,
-    downloadLabel: undefined,
-    loading: undefined,
-    pause: undefined,
-    play: undefined,
-    seekBackwardTitle: undefined,
-    seekForwardTitle: undefined,
-  },
-  duration: undefined,
-  isLoading: undefined,
-  isPlaying: undefined,
-  onSeekBackwardButtonClick: undefined,
-  onSeekForwardButtonClick: undefined,
-  onPlayPauseButtonClick: undefined,
-  progress: undefined,
-  progressColor: 'orange',
-};
 
 export { AudioFooter };
