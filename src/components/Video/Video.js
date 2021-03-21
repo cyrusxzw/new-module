@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
   useEscapeKeyListener,
+  useHasMounted,
   useOverflowHidden,
   useWindowHasResized,
 } from '~/customHooks';
@@ -49,6 +50,7 @@ const Video = forwardRef(function VideoRef(
   const [isMuted, setIsMuted] = useState(!hasAllowAudio);
   const isMobileOrTablet = ascertainIsSmallOrMediumOnlyViewport();
   const { progress, setProgress } = useProgress(videoRef);
+  const hasMounted = useHasMounted();
 
   useWindowHasResized();
   useVideoScroller(videoRef, isScrollBasedVideo);
@@ -59,7 +61,9 @@ const Video = forwardRef(function VideoRef(
 
   React.useEffect(() => {
     /** Stop and reset video if the source changes */
-    videoRef.current.load();
+    if (hasMounted && videoRef.current) {
+      videoRef.current.load();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [large, medium, small]);
 
