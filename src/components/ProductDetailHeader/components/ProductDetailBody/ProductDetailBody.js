@@ -7,6 +7,7 @@ import {
   useThemeContext,
   useVariantSelectContext,
 } from '~/contexts';
+import { useWindowHasResized } from '~/customHooks/useWindowHasResized';
 import { getVariantRadioOptions } from '~/utils/product';
 import { AddToCartButton } from '~/components/AddToCartButton';
 import { Button } from '~/components/Button';
@@ -20,6 +21,10 @@ import { ProductExtract } from '~/components/ProductExtract/ProductExtract.js';
 import { RadioGroup } from '~/components/RadioGroup';
 import { Transition } from '~/components/Transition';
 import styles from './ProductDetailBody.module.css';
+import {
+  ascertainIsLargeViewport,
+  ascertainIsSmallOrMediumOnlyViewport,
+} from '~/utils/viewports/viewports';
 
 const ProductDetailBody = ({ className, copy, theme }) => {
   const currentTheme = useThemeContext(theme, 'dark');
@@ -30,62 +35,62 @@ const ProductDetailBody = ({ className, copy, theme }) => {
     onVariantChange,
     variants,
   } = useVariantSelectContext();
+  useWindowHasResized();
 
   if (!productDetail) return null;
 
   const {
     definitionList,
-    ingredients,
-    keyIngredient,
+    flyinPanel,
     productName,
     description,
-    cartDisclaimer,
     upSellProduct,
   } = productDetail;
 
   const variantRadioOptions = getVariantRadioOptions(variants);
   const handleOnVariantChange = e => onVariantChange(e, variants);
-  const handleOnIngredientsTriggerClick = () => setIsFlyinPanelVisible(true);
+  const handleOnFlyinPanelTriggerClick = () => setIsFlyinPanelVisible(true);
   const handleOnCloseClick = () => setIsFlyinPanelVisible(false);
   const classSet = cx(styles.base, styles[currentTheme], className);
-  const ingredientsTriggerClassSet = cx(styles.ingredientsTrigger, {
+  const flyinPanelTriggerClassSet = cx(styles.flyinPanelTrigger, {
     [styles.isActiveButton]: isFlyinPanelVisible,
   });
   const RADIO_GROUP_NAME = 'sku';
   const RADIO_GROUP_DATA_TEST_REF = 'PRODUCT_DETAIL_VARIANT_SELECT';
   const PRODUCT_UP_SELL = 'PRODUCT_UP_SELL';
 
-  const ingredientsItem = {
-    term: (
-      <>
-        <span>{copy.ingredients.label}</span>
-        {ingredients && (
-          <Button
-            className={ingredientsTriggerClassSet}
-            isInline={true}
-            onClick={handleOnIngredientsTriggerClick}
-            theme={currentTheme}
-            title={copy.ingredients.title}
-          >
-            <Icon
-              height={22}
-              isActive={isFlyinPanelVisible}
-              name="plusAndCloseWithCircle"
+  const flyinPanelItem = item => {
+    return {
+      term: (
+        <>
+          <span>{item.term}</span>
+          {flyinPanel && (
+            <Button
+              className={flyinPanelTriggerClassSet}
+              isInline={true}
+              onClick={handleOnFlyinPanelTriggerClick}
               theme={currentTheme}
-              width={22}
-            />
-          </Button>
-        )}
-      </>
-    ),
-    description: keyIngredient,
-    id: 'ingredients',
+              title={item.term}
+            >
+              <Icon
+                height={22}
+                isActive={isFlyinPanelVisible}
+                name="plusAndCloseWithCircle"
+                theme={currentTheme}
+                width={22}
+              />
+            </Button>
+          )}
+        </>
+      ),
+      description: item.description,
+      id: item.id,
+    };
   };
 
-  const definitionListItems = [
-    ...definitionList,
-    copy.ingredients.label ? ingredientsItem : {},
-  ];
+  const definitionListItems = definitionList.map(item =>
+    !item.isExpandable ? item : flyinPanelItem(item),
+  );
 
   return (
     <div className={classSet}>
@@ -123,20 +128,24 @@ const ProductDetailBody = ({ className, copy, theme }) => {
         )}
 
         <div className={styles.purchase}>
-          <Transition
-            isActiveOnMount={true}
-            type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
-          >
-            <Heading
-              hasMediumWeightFont={true}
-              isFlush={true}
-              level={HEADING.LEVEL.FOUR}
-              size={HEADING.SIZE.X_X_SMALL}
-              theme={currentTheme}
+          {!!variantRadioOptions.length && (
+            <Transition
+              isActiveOnMount={true}
+              type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
             >
-              {variants.length > 1 ? copy?.size?.plural : copy?.size?.singular}
-            </Heading>
-          </Transition>
+              <Heading
+                hasMediumWeightFont={true}
+                isFlush={true}
+                level={HEADING.LEVEL.FOUR}
+                size={HEADING.SIZE.X_X_SMALL}
+                theme={currentTheme}
+              >
+                {variants.length > 1
+                  ? copy?.size?.plural
+                  : copy?.size?.singular}
+              </Heading>
+            </Transition>
+          )}
           <Transition
             isActiveOnMount={true}
             type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
@@ -151,12 +160,15 @@ const ProductDetailBody = ({ className, copy, theme }) => {
               value={selectedVariant.sku}
             />
           </Transition>
-
           <AddToCartButton copy={copy?.addToCart} theme={currentTheme} />
         </div>
 
         <Hidden isLarge={true} isMedium={true} isXLarge={true}>
-          <div className={styles.cartDisclaimer}>{cartDisclaimer}</div>
+          {selectedVariant?.cartDisclaimer && (
+            <div className={styles.cartDisclaimer}>
+              <span>{selectedVariant.cartDisclaimer}</span>
+            </div>
+          )}
         </Hidden>
 
         <div className={styles.details}>
@@ -166,7 +178,10 @@ const ProductDetailBody = ({ className, copy, theme }) => {
           >
             <DefinitionList
               className={styles.definitionList}
-              hasBottomBorder={true}
+              hasBottomBorder={
+                (!!variantRadioOptions.length && ascertainIsLargeViewport()) ||
+                (ascertainIsSmallOrMediumOnlyViewport() && upSellProduct)
+              }
               items={definitionListItems}
               theme={currentTheme}
             />
@@ -206,18 +221,22 @@ const ProductDetailBody = ({ className, copy, theme }) => {
             >
               {description}
             </Paragraph>
-            <div className={styles.cartDisclaimer}>{cartDisclaimer}</div>
+            {selectedVariant?.cartDisclaimer && (
+              <div className={styles.cartDisclaimer}>
+                <span>{selectedVariant.cartDisclaimer}</span>
+              </div>
+            )}
           </header>
         </div>
       </Hidden>
 
-      {ingredients && (
+      {flyinPanel && (
         <FlyinPanel
-          heading={copy.ingredients.heading}
+          heading={copy.flyinPanelHeading}
           isVisible={isFlyinPanelVisible}
           onClose={handleOnCloseClick}
         >
-          {ingredients}
+          {flyinPanel}
         </FlyinPanel>
       )}
     </div>
@@ -239,12 +258,8 @@ ProductDetailBody.propTypes = {
       singular: PropTypes.string,
       plural: PropTypes.string,
     }),
-    ingredients: PropTypes.shape({
-      heading: PropTypes.string,
-      label: PropTypes.string,
-      title: PropTypes.string,
-    }),
     upSellProductLabel: PropTypes.string,
+    flyinPanelHeading: PropTypes.string,
   }),
   theme: PropTypes.oneOf(['dark', 'light']),
 };
@@ -264,12 +279,8 @@ ProductDetailBody.defaultProps = {
       singular: undefined,
       plural: undefined,
     },
-    ingredients: {
-      heading: undefined,
-      label: undefined,
-      title: undefined,
-    },
     upSellProductLabel: undefined,
+    flyinPanelHeading: undefined,
   },
   theme: undefined,
 };

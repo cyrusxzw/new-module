@@ -40,11 +40,18 @@ import { SecondaryMessageFixture } from '~/components/SecondaryMessage/Secondary
       const {
         productName,
         description,
+        imageSize,
         ...productRest
       } = ProductDetailHeaderFixture.product;
       const productDetails = {
         productName: knobs.text('productName', productName, 'Content'),
         description: knobs.text('description', description, 'Content'),
+        imageSize: knobs.select(
+          'imageSize',
+          ['Small', 'Large'],
+          imageSize,
+          'Content'
+        ),
         ...productRest,
       };
       return (
@@ -64,9 +71,10 @@ import { SecondaryMessageFixture } from '~/components/SecondaryMessage/Secondary
                   copy={{
                     addToCart: AddToCartButtonFixture.copy,
                     size: ProductDetailBodyFixture.copy.size,
-                    ingredients: ProductDetailBodyFixture.copy.ingredients,
                     upSellProductLabel:
                       ProductDetailBodyFixture.copy.upSellProductLabel,
+                    flyinPanelHeading:
+                      ProductDetailBodyFixture.copy.flyinPanelHeading,
                   }}
                   theme={theme}
                 />

@@ -131,9 +131,6 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
                     </span>
                   </label>
                 </li>
-                <div
-                  class="errorMessage"
-                />
               </ul>
               <button
                 class="base alternate blockStyle dark base fullWidth"
@@ -145,7 +142,7 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
                   class="label"
                 >
                   <span>
-                    Added to your cart
+                     
                   </span>
                   <span>
                     Add to your cart — $26.45
@@ -156,13 +153,15 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
             <div
               class="cartDisclaimer"
             >
-              Quisque in felis id tellus condimentum scelerisque. Aliquam quis vestibulum felis, quis porta tellus
+              <span>
+                Praesent rhoncus ex quis elit vehicula
+              </span>
             </div>
             <div
               class="details"
             >
               <dl
-                class="base dark hasBottomBorder definitionList shiftInDownEnter shiftInDownEnterActive"
+                class="base dark definitionList shiftInDownEnter shiftInDownEnterActive"
                 data-testid="data-testid-DefinitionList"
               >
                 <dt
@@ -192,13 +191,13 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
                     Pellentesque tristique
                   </span>
                   <button
-                    class="base dark ingredientsTrigger"
-                    title="Pellentesque tristique iaculis ipsum"
+                    class="base dark flyinPanelTrigger"
+                    title="Pellentesque tristique"
                     type="button"
                   >
                     <svg
+                      aria-labelledby="plusAndCloseWithCircle-1"
                       class="base plusAndCloseWithCircle dark"
-                      data-ref=""
                       data-testid="data-testid-Icon"
                       focusable="false"
                       height="22"
@@ -208,6 +207,11 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
                       viewBox="0 0 50 50"
                       width="22"
                     >
+                      <title
+                        id="plusAndCloseWithCircle-1"
+                      >
+                        plusAndCloseWithCircle
+                      </title>
                       <g>
                         <circle
                           class="circle"
@@ -312,7 +316,9 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
               <div
                 class="cartDisclaimer"
               >
-                Quisque in felis id tellus condimentum scelerisque. Aliquam quis vestibulum felis, quis porta tellus
+                <span>
+                  Praesent rhoncus ex quis elit vehicula
+                </span>
               </div>
             </header>
           </div>
@@ -365,9 +371,6 @@ exports[`<ProductDetailHeader /> should render base component correctly 1`] = `
                 loading="lazy"
               />
             </picture>
-            <div
-              class="cartDisclaimer"
-            />
           </figure>
         </div>
       </div>

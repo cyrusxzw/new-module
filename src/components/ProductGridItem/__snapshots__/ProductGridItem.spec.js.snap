@@ -125,9 +125,6 @@ exports[`<ProductGridItem /> should render base component correctly 1`] = `
             </span>
           </label>
         </li>
-        <div
-          class="errorMessage"
-        />
       </ul>
     </div>
     <button
@@ -140,7 +137,7 @@ exports[`<ProductGridItem /> should render base component correctly 1`] = `
         class="label"
       >
         <span>
-          Added to your cart
+           
         </span>
         <span>
           Add to your cart — $26.45
@@ -170,6 +167,16 @@ exports[`<ProductGridItem /> should render base component correctly 1`] = `
         class="description slideIn"
       >
         Ut consectetur, vitae libero imperdiet id.
+      </dd>
+      <dt
+        class="term slideIn"
+      >
+        Pellentesque tristique
+      </dt>
+      <dd
+        class="description slideIn"
+      >
+        Maecenas mattis, urna vel commodo vehicula
       </dd>
     </dl>
   </div>

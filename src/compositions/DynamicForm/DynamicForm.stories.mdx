@@ -1,0 +1,110 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as knobs from '@storybook/addon-knobs';
+import { DynamicForm } from './DynamicForm';
+import { FieldTypes } from './DynamicForm.constants';
+import { DynamicFormFixture } from './DynamicForm.fixture';
+import { Button } from '../../components/Button';
+
+<Meta title="Compositions/DynamicForm" component={DynamicForm} />
+
+# DynamicForm
+
+<Canvas>
+  <Story name="Base component">
+    <DynamicForm
+      formSchema={knobs.select('formSchema', {
+        'None': null,
+        'Au Sign up form': DynamicFormFixture.auSignUp,
+        'Korean Sign up form': DynamicFormFixture.krSignUp,
+      }, DynamicFormFixture.auSignUp, 'Content')}
+      onSubmit={DynamicFormFixture.onSubmit}
+      theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
+    >
+      <Button theme="dark" type="submit">
+        Submit
+      </Button>
+    </DynamicForm>
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of={DynamicForm} />
+
+## formSchema
+
+This prop defines the structure of the form in terms of elements to render, in addition to layout
+and validation.
+
+The schema has the following shape
+```js
+formSchema = [
+  [form elements], // each array is displayed inline (row) on large viewports
+  // ...
+  [form elements],
+];
+```
+
+### Form element definition
+
+Each form element is defined by an object with the following properties
+
+| key          | type   | required | description                                                                                               |
+| ------------ | ------ | -------- | --------------------------------------------------------------------------------------------------------- |
+| defaultValue | string | No       | An initial value for the field. The value in `defaultValues` prop for the same field will take presedence |
+| id           | string | No       | The field's HTML id attribute                                                                             |
+| label        | string | No       | The field's label, often used for accessibility                                                           |
+| name         | string | **Yes**  | An identifier of the field to the form                                                                    |
+| options      | array  | No       | Needed for the Select field type, passed on as the drop down options                                      |
+| styling      | object | No       | Contains properties relating to the field's appearance                                                    |
+| subtype      | string | No       | Used as the type for the TextField field type                                                             |
+| testRef      | string | No       | Passed to fields as `dataTestRef`                                                                         |
+| type         | string | **Yes**  | Defines the field type. **Must** be one of the fields registered `DynamicForm.constants.js`               |
+| validation   | object | No       | Contains validation rules for the form field                                                              |
+
+### Styling
+
+The `styling` object has the following properties
+
+| key  | type   | required | description                                                         |
+| ---- | ------ | -------- | ------------------------------------------------------------------- |
+| flex | number | No       | Corrosponds to the css `flex` property. Can be a value of 1, 2 or 3 |
+
+### Validation
+
+The `validation` object can contain one or more of the following rules.
+
+#### Required
+
+This rule is applicaple to **all** fields. It indicates that the field must have a value or be checked in the case of a Checkobx.
+It is defined as follows
+
+```json
+"isRequired": {
+  "message": "Error message to show when the field is empty/unchecked",
+}
+```
+
+#### Maximum length
+
+This rule is only applicaple to the **`TextField`** field type. It will show an error message if the value in the field exceeds the length
+specified by the rule. It is defined as follows
+
+```json
+"maxLength": {
+  "value": 30,
+  "message": "Error message to show when more than 30 characters are entered",
+}
+```
+
+#### Pattern (Regex)
+
+This rule is only applicaple to the **`TextField`** field type. It will show an error message if the value in the field does not match the
+pattern specified by the rule. It is defined as follows
+
+```json
+"pattern": {
+  "value": "^bruce@batcave.com$",
+  "message": "Error message to show when the value in the field is not bruce@batcave.com",
+}
+```

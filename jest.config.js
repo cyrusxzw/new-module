@@ -14,13 +14,18 @@ module.exports = {
   ],
   coverageThreshold: {
     global: {
-      statements: 82,
-      branches: 65,
-      functions: 68,
-      lines: 83,
+      statements: 83,
+      branches: 66,
+      functions: 69,
+      lines: 84,
     },
   },
-  moduleFileExtensions: ['js', 'json', 'node'],
+  coverageReporters: ['lcov', 'text', 'text-summary'],
+  moduleFileExtensions: ['js', 'json', 'node', 'ts', 'tsx'],
+  testMatch: [
+    '**/__tests__/**/*.+(ts|tsx|js)',
+    '**/?(*.)+(spec|test).+(ts|tsx|js)',
+  ],
   testPathIgnorePatterns: [
     '<rootDir>/(dist|docs|node_modules|.cache)/',
     '.storybook',
@@ -37,6 +42,7 @@ module.exports = {
   },
   transform: {
     '^.+\\.js?$': 'babel-jest',
+    '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   watchPlugins: [
     'jest-watch-typeahead/filename',

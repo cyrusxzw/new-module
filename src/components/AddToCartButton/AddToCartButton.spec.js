@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { render, screen } from '@testing-library/react';
+import { render, act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import {
   AddToCartContextProvider,
@@ -37,6 +37,19 @@ describe('<AddToCartButton />', () => {
   const outOfStockVariant = fixture.outOfStockVariant;
   const alternateActionVariant = fixture.alternateActionVariant;
   const copy = fixture.copy;
+
+  beforeAll(() => {
+    jest.spyOn(global.console, 'error').mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    global.console.error.mockRestore(); // eslint-disable-line no-console
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+    jest.useRealTimers();
+  });
 
   it('should be defined', () => {
     expect(AddToCartButton).toBeDefined();
@@ -131,8 +144,12 @@ describe('<AddToCartButton />', () => {
     expect(button).not.toBeInTheDocument();
   });
 
-  it('should show laoding html when clicked', async () => {
-    render(
+  it.todo('should show loading html when clicked');
+
+  it('should have no active timers on unmount (should not throw state update error)', async () => {
+    jest.useFakeTimers();
+
+    const { unmount } = render(
       <AddToCartButtonWithProviders
         copy={copy}
         onClick={mockAddToCartButtonOnClick}
@@ -145,16 +162,16 @@ describe('<AddToCartButton />', () => {
       name: `${fixture.copy.cartAction} — ${fixture.variants[0].price}`,
     });
 
-    expect(button).toBeInTheDocument();
-
-    let breadcrumbs = screen.queryByTestId('data-testid-loading');
-
-    expect(breadcrumbs).not.toBeInTheDocument();
-
     userEvent.click(button);
 
-    breadcrumbs = await screen.findByTestId('data-testid-loading');
+    const successMessage = await screen.findByText(/added to your cart/i);
 
-    expect(breadcrumbs).toBeInTheDocument();
+    expect(successMessage).toBeInTheDocument();
+
+    unmount();
+
+    act(() => jest.runOnlyPendingTimers());
+
+    expect(console.error).not.toHaveBeenCalled(); // eslint-disable-line no-console
   });
 });

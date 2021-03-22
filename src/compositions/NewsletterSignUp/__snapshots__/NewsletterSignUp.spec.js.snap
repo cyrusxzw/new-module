@@ -24,7 +24,6 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
                 id="newsletter-email"
                 name="newsletter-email"
                 novalidate=""
-                placeholder=""
                 type="text"
                 value=""
               />
@@ -42,8 +41,8 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
           disabled=""
         >
           <svg
+            aria-labelledby="rightArrow-1"
             class="base rightArrow light signUpIcon light"
-            data-ref=""
             data-testid="data-testid-Icon"
             focusable="false"
             height="12"
@@ -53,6 +52,11 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
             viewBox="0 0 50 50"
             width="12"
           >
+            <title
+              id="rightArrow-1"
+            >
+              rightArrow
+            </title>
             <g>
               <path
                 d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
@@ -65,42 +69,55 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
         class="footerNewsletterErrorMessage"
       />
       <section>
-        <label
-          class="base"
-          for="subscription"
-        >
-          <input
-            aria-describedby="subscription-error-message"
-            aria-invalid="false"
-            class="checkBox light"
-            data-test-ref="EMAIL_SIGN_UP_SUBSCRIPTION_CHECKBOX"
-            id="subscription"
-            type="checkbox"
-          />
-          <span
-            class="content light"
+        <div>
+          <label
+            class="base"
+            for="subscription"
           >
-            Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.
-          </span>
-        </label>
-        <label
-          class="base"
-          for="terms"
-        >
-          <input
-            aria-describedby="terms-error-message"
-            aria-invalid="false"
-            class="checkBox light"
-            data-test-ref="EMAIL_SIGN_UP_TERMS_AND_CONDITIONS_CHECKBOX"
-            id="terms"
-            type="checkbox"
-          />
-          <span
-            class="content light"
+            <input
+              aria-describedby="subscription-error-message"
+              aria-invalid="false"
+              class="checkBox light"
+              data-test-ref="EMAIL_SIGN_UP_SUBSCRIPTION_CHECKBOX"
+              id="subscription"
+              type="checkbox"
+            />
+            <span
+              class="content light"
+            >
+              <span>
+                By subscribing, you agree to receive email marketing from Aesop about our products and services, and accept our
+                 
+                <a
+                  href="https://www.aesop.com/au/r/privacy/"
+                >
+                  privacy policy
+                </a>
+                .
+              </span>
+            </span>
+          </label>
+        </div>
+        <div>
+          <label
+            class="base"
+            for="terms"
           >
-            I accept the Terms & Conditions 
-          </span>
-        </label>
+            <input
+              aria-describedby="terms-error-message"
+              aria-invalid="false"
+              class="checkBox light"
+              data-test-ref="EMAIL_SIGN_UP_TERMS_AND_CONDITIONS_CHECKBOX"
+              id="terms"
+              type="checkbox"
+            />
+            <span
+              class="content light"
+            >
+              I accept the Terms & Conditions 
+            </span>
+          </label>
+        </div>
         <div
           class="termsAndConditionWrapper"
         >

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
 import { useEscapeKeyListener } from '~/customHooks';
-import { isInBrowser } from '~/utils/environment';
 import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
@@ -11,18 +10,19 @@ import { Transition } from '~/components/Transition';
 import styles from './Controls.module.css';
 
 const Controls = ({
+  captions,
   className,
   copy,
-  hasActiveVideo,
-  hasAllowAudio,
-  hasPlayInFullScreen,
-  isMobileOrTablet,
-  isMuted,
-  isPlaying,
+  hasActiveVideo = false,
+  hasAllowAudio = false,
+  hasPlayInFullScreen = false,
+  isMobileOrTablet = false,
+  isMuted = true,
+  isPlaying = false,
   onAudioButtonClick,
   onCloseButtonClick,
   onPlayPauseButtonClick,
-  progress,
+  progress = 0,
 }) => {
   const [isActiveVideoControlActive, setIsActiveVideoControlActive] = useState(
     true,
@@ -34,25 +34,19 @@ const Controls = ({
   });
 
   const eventTimeout = useRef(null);
-  const windowIsDefined = isInBrowser();
   const TIMEOUT = 3000;
 
   useEffect(() => {
-    // TODO: wrapping calls inside a useEffect in window presence checks may be redundant
-    if (windowIsDefined) {
-      window.clearTimeout(eventTimeout.current);
-    }
+    clearTimeout(eventTimeout.current);
 
     const startTimeout = () => {
       setIsActiveVideoControlActive(true);
 
-      if (windowIsDefined) {
-        window.clearTimeout(eventTimeout.current);
+      clearTimeout(eventTimeout.current);
 
-        eventTimeout.current = window.setTimeout(() => {
-          setIsActiveVideoControlActive(false);
-        }, TIMEOUT);
-      }
+      eventTimeout.current = setTimeout(() => {
+        setIsActiveVideoControlActive(false);
+      }, TIMEOUT);
     };
 
     if (hasActiveVideo) {
@@ -65,29 +59,32 @@ const Controls = ({
       }
     }, 10);
 
-    if (windowIsDefined) {
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('touchstart', handleMouseMove);
-    }
+    addEventListener('mousemove', handleMouseMove);
+    addEventListener('touchstart', handleMouseMove);
 
     return function cleanup() {
-      if (windowIsDefined) {
-        window.removeEventListener('mousemove', handleMouseMove);
-        window.removeEventListener('touchstart', handleMouseMove);
-        window.clearTimeout(eventTimeout.current);
-      }
+      removeEventListener('mousemove', handleMouseMove);
+      removeEventListener('touchstart', handleMouseMove);
+      clearTimeout(eventTimeout.current);
     };
-  }, [windowIsDefined, hasActiveVideo, hasPlayInFullScreen]);
+  }, [hasActiveVideo, hasPlayInFullScreen]);
 
   const handleCloseButtonClick = () => {
     setIsActiveVideoControlActive(true);
     onCloseButtonClick();
   };
 
+  const handleOnCaptionsToggleClick = () => {
+    if (captions?.onToggleClick) {
+      captions.onToggleClick();
+    }
+  };
+
   const classSet = cx(styles.base, className);
 
   const progressBarClassSet = cx(styles.progressBar, className, {
-    [styles.fullScreenProgressBar]: hasPlayInFullScreen,
+    [styles.fullScreenProgressBar]: hasActiveVideo && hasPlayInFullScreen,
+    [styles.hidden]: !isActiveVideoControlActive && isPlaying,
   });
 
   const fullScreenControlsClassSet = cx({
@@ -101,8 +98,8 @@ const Controls = ({
     !hasPlayInFullScreen;
 
   const playPauseButtonTitle = isPlaying
-    ? copy.pauseButtonTitle
-    : copy.playButtonTitle;
+    ? copy?.pauseButtonTitle
+    : copy?.playButtonTitle;
 
   const playPauseButtonIconName = isPlaying ? 'pause' : 'play';
 
@@ -113,10 +110,19 @@ const Controls = ({
     hasActiveVideo &&
     (!hasPlayInFullScreen || isSmallMediumViewport);
 
+  const isInlineCaptionsToggleActive =
+    captions?.shouldShowToggleButton &&
+    hasActiveVideo &&
+    (!hasPlayInFullScreen || isSmallMediumViewport);
+
   const isInlinePlayPauseButtonActive =
     isSmallMediumViewport ||
     (!isSmallMediumViewport && !hasActiveVideo) ||
     (!isSmallMediumViewport && !hasPlayInFullScreen);
+
+  const captionsToggleButtonTitle = !captions?.isActive
+    ? captions?.copy?.toggleButtonTitleOn
+    : captions?.copy?.toggleButtonTitleOff;
 
   return (
     <div className={classSet}>
@@ -127,7 +133,7 @@ const Controls = ({
           })}
           isInline={true}
           onClick={onAudioButtonClick}
-          title={isMuted ? copy.unmuteButtonTitle : copy.muteButtonTitle}
+          title={isMuted ? copy?.unmuteButtonTitle : copy?.muteButtonTitle}
         >
           <Icon
             height={16}
@@ -135,6 +141,20 @@ const Controls = ({
             theme="light"
             width={16}
           />
+        </Button>
+      )}
+
+      {isInlineCaptionsToggleActive && (
+        <Button
+          className={cx(styles.captionsToggle, {
+            [styles.hidden]: !isActiveVideoControlActive && isPlaying,
+            [styles.isActive]: captions?.isActive,
+          })}
+          isInline={true}
+          onClick={handleOnCaptionsToggleClick}
+          title={captionsToggleButtonTitle}
+        >
+          CC
         </Button>
       )}
 
@@ -153,7 +173,9 @@ const Controls = ({
                 className={styles.mute}
                 isInline={true}
                 onClick={onAudioButtonClick}
-                title={isMuted ? copy.unmuteButtonTitle : copy.muteButtonTitle}
+                title={
+                  isMuted ? copy?.unmuteButtonTitle : copy?.muteButtonTitle
+                }
               >
                 <Icon
                   height={16}
@@ -164,11 +186,28 @@ const Controls = ({
               </Button>
             )}
 
+            <Transition
+              isActive={captions?.shouldShowToggleButton && hasActiveVideo}
+              type="fade"
+            >
+              <Button
+                className={cx(styles.captionsToggle, {
+                  [styles.hidden]: !isActiveVideoControlActive && isPlaying,
+                  [styles.isActive]: captions?.isActive,
+                })}
+                isInline={true}
+                onClick={handleOnCaptionsToggleClick}
+                title={captionsToggleButtonTitle}
+              >
+                CC
+              </Button>
+            </Transition>
+
             <Button
               className={styles.close}
               isInline={true}
               onClick={handleCloseButtonClick}
-              title={copy.closeButtonTitle}
+              title={copy?.closeButtonTitle}
             >
               <Icon height={16} name="close" theme="light" width={16} />
             </Button>
@@ -221,6 +260,15 @@ const Controls = ({
 };
 
 Controls.propTypes = {
+  captions: PropTypes.shape({
+    isActive: PropTypes.bool,
+    onToggleClick: PropTypes.func,
+    shouldShowToggleButton: PropTypes.bool,
+    copy: PropTypes.shape({
+      toggleButtonTitleOn: PropTypes.string,
+      toggleButtonTitleOff: PropTypes.string,
+    }),
+  }),
   className: PropTypes.string,
   copy: PropTypes.shape({
     closeButtonTitle: PropTypes.string,
@@ -239,27 +287,6 @@ Controls.propTypes = {
   onCloseButtonClick: PropTypes.func,
   onPlayPauseButtonClick: PropTypes.func,
   progress: PropTypes.number,
-};
-
-Controls.defaultProps = {
-  className: undefined,
-  copy: {
-    closeButtonTitle: 'Close',
-    muteButtonTitle: 'Mute video',
-    pauseButtonTitle: 'View video',
-    playButtonTitle: 'Pause video',
-    unmuteButtonTitle: 'Unmute video',
-  },
-  hasActiveVideo: false,
-  hasAllowAudio: false,
-  hasPlayInFullScreen: false,
-  isMobileOrTablet: false,
-  isMuted: true,
-  isPlaying: false,
-  onAudioButtonClick: undefined,
-  onCloseButtonClick: undefined,
-  onPlayPauseButtonClick: undefined,
-  progress: 0,
 };
 
 export { Controls };

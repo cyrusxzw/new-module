@@ -27,7 +27,7 @@ describe('<ProductExtract />', () => {
       />,
     );
 
-    const child = screen.queryByTestId('data-testid-ProductExtract');
+    const child = screen.queryByTestId(/data-testid-ProductExtract/i);
 
     expect(child).not.toBeInTheDocument();
   });

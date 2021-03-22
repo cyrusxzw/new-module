@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Heading /> should render base component correctly 1`] = `
+<div>
+  <h1
+    class="base large dark"
+  >
+    test heading
+  </h1>
+</div>
+`;

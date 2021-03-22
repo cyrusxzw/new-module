@@ -27,7 +27,10 @@
 .mobileMiddleRow {
   display: flex;
   flex: 2;
-  flex-direction: row;
+}
+
+.reverseColumn {
+  flex-direction: row-reverse;
 }
 
 .middleArticle {
@@ -52,6 +55,7 @@
 }
 
 .nonFirstRow {
+  display: none;
   grid-row: 1 / 3;
 }
 

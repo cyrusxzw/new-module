@@ -9,6 +9,7 @@ const useImageTransition = (image, ref, duration = 600, attributes = {}) => {
 
   useEffect(() => {
     const currentRef = ref.current || null;
+
     setIsImageActive(false);
 
     const handleOnImageLoad = () => {

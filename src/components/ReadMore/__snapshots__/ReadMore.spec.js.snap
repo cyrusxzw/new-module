@@ -12,7 +12,7 @@ exports[`<ReadMore /> should render base component correctly 1`] = `
       <a
         class="base left dark image"
         data-test-ref="test_1_READMORE_THUMBNAIL"
-        href="https://www.aesop.com/au/r/careers?contentful=true"
+        href="https://www.aesop.com/au/r/careers"
         target="_self"
         title="1. Senorial consectetur adipiscing elit."
       >
@@ -48,7 +48,7 @@ exports[`<ReadMore /> should render base component correctly 1`] = `
         <a
           class="base left dark title readMoreTitle"
           data-test-ref="test_1_TITLE"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
+          href="https://www.aesop.com/au/r/careers"
           target="_self"
           title="1. Senorial consectetur adipiscing elit."
         >
@@ -74,7 +74,7 @@ exports[`<ReadMore /> should render base component correctly 1`] = `
       <a
         class="base left dark image"
         data-test-ref="test_2_READMORE_THUMBNAIL"
-        href="https://www.aesop.com/au/r/careers?contentful=true"
+        href="https://www.aesop.com/au/r/careers"
         target="_self"
         title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
       >
@@ -110,7 +110,7 @@ exports[`<ReadMore /> should render base component correctly 1`] = `
         <a
           class="base left dark title readMoreTitle"
           data-test-ref="test_2_TITLE"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
+          href="https://www.aesop.com/au/r/careers"
           target="_self"
           title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
         >
@@ -136,7 +136,7 @@ exports[`<ReadMore /> should render base component correctly 1`] = `
       <a
         class="base left dark image"
         data-test-ref="test_3_READMORE_THUMBNAIL"
-        href="https://www.aesop.com/au/r/careers?contentful=true"
+        href="https://www.aesop.com/au/r/careers"
         target="_self"
         title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
       >
@@ -172,7 +172,7 @@ exports[`<ReadMore /> should render base component correctly 1`] = `
         <a
           class="base left dark title readMoreTitle"
           data-test-ref="test_3_TITLE"
-          href="https://www.aesop.com/au/r/careers?contentful=true"
+          href="https://www.aesop.com/au/r/careers"
           target="_self"
           title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
         >

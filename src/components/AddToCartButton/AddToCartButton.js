@@ -6,6 +6,7 @@ import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import { Button } from '~/components/Button';
 import { Loading } from '~/components/Loading';
 import { Hyperlink } from '~/components/Hyperlink';
+import { useDelayedDisabled } from './AddToCartButton.utils';
 import styles from './AddToCartButton.module.css';
 
 const AddToCartButton = ({
@@ -18,6 +19,15 @@ const AddToCartButton = ({
 }) => {
   const addToCartContext = useAddToCartContext();
   const { selectedVariant } = useVariantSelectContext();
+  const {
+    errorMessage,
+    hasError,
+    isLoading,
+    isUpdateSuccessful,
+  } = addToCartContext;
+  const shouldShowUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
+  const isDelayedDisabled = useDelayedDisabled(shouldShowUpdateSuccessMessage);
+  const updateNotificationLabel = copy.updateNotification;
 
   if (!selectedVariant) return null;
 
@@ -28,6 +38,7 @@ const AddToCartButton = ({
     price,
     sku,
   } = selectedVariant;
+  const cartActionLabel = `${copy.cartAction} — ${price}`;
 
   const classSet = cx(
     styles.base,
@@ -57,21 +68,10 @@ const AddToCartButton = ({
     );
   }
 
-  const {
-    errorMessage,
-    hasError,
-    isLoading,
-    isUpdateSuccessful,
-  } = addToCartContext;
-
   if (hasError) {
     /** @TODO Handle errors thrown by handleOnClick */
     console.error('Add To Cart button updateError: ', errorMessage); // eslint-disable-line
   }
-
-  const cartActionLabel = `${copy.cartAction} — ${price}`;
-  const updateNotificationLabel = copy.updateNotification;
-  const shouldShowUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
 
   const isButtonEnabled =
     !isLoading &&
@@ -81,6 +81,7 @@ const AddToCartButton = ({
     !!sku &&
     isEnabled &&
     !hasError &&
+    !isDelayedDisabled &&
     isSellable;
 
   const labelClassName = cx(
@@ -113,7 +114,11 @@ const AddToCartButton = ({
           shouldShowUpdateSuccessMessage ? `${dataTestRef}_SUCCESS` : undefined
         }
       >
-        <span>{updateNotificationLabel}</span>
+        {shouldShowUpdateSuccessMessage ? (
+          <span>{updateNotificationLabel}</span>
+        ) : (
+          <span> </span>
+        )}
         <span>{isInStock ? cartActionLabel : copy.outOfStock?.label}</span>
       </span>
     </Button>

@@ -1,8 +1,7 @@
 import React, { forwardRef, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { v4 as uuidv4 } from 'uuid';
-
+import { useUID } from 'react-uid';
 import styles from './TextInputV2.module.css';
 
 const TextInputV2 = forwardRef(
@@ -27,7 +26,9 @@ const TextInputV2 = forwardRef(
     },
     ref,
   ) => {
+    const uid = useUID();
     const [value, setValue] = useState(valueProp || '');
+    const inputId = idProp || uid;
     const handleOnChange = useCallback(
       event => {
         setValue(event.target.value);
@@ -35,7 +36,6 @@ const TextInputV2 = forwardRef(
       },
       [onChange, setValue],
     );
-    const inputId = idProp || uuidv4();
     const errorMessageId = `${inputId}-error-message`;
 
     return (
@@ -93,6 +93,7 @@ const TextInputV2 = forwardRef(
 
 TextInputV2.propTypes = {
   autoComplete: PropTypes.string,
+  /* @TODO change api to classNames */
   classes: PropTypes.shape({
     errorMessage: PropTypes.string,
     input: PropTypes.string,
@@ -102,7 +103,7 @@ TextInputV2.propTypes = {
   dataTestRef: PropTypes.string,
   errorMessage: PropTypes.string,
   id: PropTypes.string,
-  isDisabled: PropTypes.bool,
+  isDisabled: PropTypes.bool /* @TODO can we please make this isEnabled */,
   label: PropTypes.string.isRequired,
   max: PropTypes.number,
   maxLength: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),

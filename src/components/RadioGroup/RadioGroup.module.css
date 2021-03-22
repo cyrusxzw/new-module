@@ -86,7 +86,7 @@
   font-size: rem(14px);
 
   &.dark {
-    color: var(--color-dark-copy);
+    color: var(--color-dark-label);
   }
 
   &.light {

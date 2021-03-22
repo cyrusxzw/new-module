@@ -25,7 +25,7 @@ const useOverflowHidden = isVisible => {
       reset();
     }
 
-    return function cleanUp() {
+    return function cleanup() {
       reset();
     };
   }, [hidden, isVisible, reset]);

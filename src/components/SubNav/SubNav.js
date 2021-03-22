@@ -15,16 +15,19 @@ const SubNav = forwardRef(
     { className, heading, headingClassName, id, isSelect, links, theme },
     ref,
   ) => {
+    const currentTheme = useThemeContext(theme, 'dark');
+
     useWindowHasResized();
 
-    const currentTheme = useThemeContext(theme, 'dark');
     const classSet = cx(
       styles.base,
       styles[currentTheme],
       { [styles.select]: isSelect },
       className,
     );
+
     const isSmallOrMediumViewport = ascertainIsSmallOrMediumOnlyViewport();
+
     const onChange = event => {
       window.location.href = event.target.value;
     };
@@ -90,8 +93,7 @@ SubNav.propTypes = {
   className: PropTypes.string,
   id: PropTypes.string,
   isSelect: PropTypes.bool,
-  links: PropTypes.arrayOf(PropTypes.object)
-    .isRequired /** @TODO hyperlink type */,
+  links: PropTypes.arrayOf(PropTypes.object).isRequired,
   heading: PropTypes.string,
   headingClassName: PropTypes.string,
   theme: PropTypes.oneOf(['dark', 'light']),

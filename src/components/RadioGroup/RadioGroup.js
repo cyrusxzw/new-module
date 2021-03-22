@@ -21,40 +21,52 @@ const RadioGroup = ({
 
   if (options.length === 1) {
     return (
-      <div className={classSet}>
-        <span className={cx(styles.singleLabel, styles[theme])}>
-          {options[0].label}
-        </span>
-      </div>
+      <>
+        <div className={classSet}>
+          <span className={cx(styles.singleLabel, styles[theme])}>
+            {options[0].label}
+          </span>
+        </div>
+        {errorMessage && (
+          <div className={styles.errorMessage}>{errorMessage}</div>
+        )}
+      </>
     );
   }
 
   return (
-    <ul className={classSet}>
-      {options.map(({ label: optionLabel, value: optionValue }) => (
-        <li className={styles.radio} key={optionValue}>
-          <label className={cx(styles.label)} htmlFor={`option-${optionValue}`}>
-            <input
-              aria-checked={optionValue === value}
-              checked={optionValue === value}
-              className={styles.input}
-              data-test-ref={dataTestRef}
-              id={`option-${optionValue}`}
-              name={name}
-              onChange={onChange}
-              tabIndex={0}
-              type="radio"
-              value={optionValue}
-            />
-            <span className={cx(styles.pot, styles[theme])} />
-            <span className={cx(styles.labelContent, styles[theme])}>
-              {optionLabel}
-            </span>
-          </label>
-        </li>
-      ))}
-      <div className={styles.errorMessage}>{errorMessage}</div>
-    </ul>
+    <>
+      <ul className={classSet}>
+        {options.map(({ label: optionLabel, value: optionValue }) => (
+          <li className={styles.radio} key={optionValue}>
+            <label
+              className={cx(styles.label)}
+              htmlFor={`option-${optionValue}`}
+            >
+              <input
+                aria-checked={optionValue === value}
+                checked={optionValue === value}
+                className={styles.input}
+                data-test-ref={dataTestRef}
+                id={`option-${optionValue}`}
+                name={name}
+                onChange={onChange}
+                tabIndex={0}
+                type="radio"
+                value={optionValue}
+              />
+              <span className={cx(styles.pot, styles[theme])} />
+              <span className={cx(styles.labelContent, styles[theme])}>
+                {optionLabel}
+              </span>
+            </label>
+          </li>
+        ))}
+      </ul>
+      {errorMessage && (
+        <div className={styles.errorMessage}>{errorMessage}</div>
+      )}
+    </>
   );
 };
 
@@ -77,7 +89,7 @@ RadioGroup.propTypes = {
 RadioGroup.defaultProps = {
   className: undefined,
   dataTestRef: undefined,
-  errorMessage: '',
+  errorMessage: undefined,
   name: undefined,
   onChange: undefined,
   options: [],

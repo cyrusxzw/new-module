@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { v4 as uuidv4 } from 'uuid';
+import { useUID } from 'react-uid';
 import find from 'lodash/find';
 import { svgs } from './Icon.svgs';
 import { generateSvgBlueprint } from './Icon.utils';
@@ -10,23 +10,24 @@ import styles from './Icon.module.css';
 const Icon = ({
   className,
   dataRef,
-  height,
-  isActive,
+  height = 12,
+  isActive = false,
   name,
-  tabIndex,
-  theme,
+  tabIndex = -1,
+  theme = 'dark',
   title,
-  width,
+  width = 12,
 }) => {
+  const uid = useUID();
   const svg = find(svgs, { name });
 
   if (svg === undefined) {
     return null;
   }
 
-  const uuidKey = uuidv4();
-  const uuidAriaLabellBy = `${name}-${uuidKey}`;
-  const svgBlueprint = generateSvgBlueprint(svg, uuidKey);
+  const ariaTitle = title || name;
+  const uidAriaLabellBy = `${name}-${uid}`;
+  const svgBlueprint = generateSvgBlueprint(svg, uid);
   const classSet = cx(
     styles.base,
     styles[name],
@@ -39,7 +40,7 @@ const Icon = ({
 
   return (
     <svg
-      aria-labelledby={title ? uuidAriaLabellBy : undefined}
+      aria-labelledby={uidAriaLabellBy}
       className={classSet}
       data-ref={dataRef}
       data-testid="data-testid-Icon"
@@ -51,7 +52,7 @@ const Icon = ({
       viewBox={svg.viewBox}
       width={width}
     >
-      {title && <title id={uuidAriaLabellBy}>{title}</title>}
+      <title id={uidAriaLabellBy}>{ariaTitle}</title>
       <g>{svgBlueprint}</g>
     </svg>
   );
@@ -67,18 +68,6 @@ Icon.propTypes = {
   theme: PropTypes.oneOf(['dark', 'light']),
   title: PropTypes.string,
   width: PropTypes.number,
-};
-
-Icon.defaultProps = {
-  className: undefined,
-  dataRef: '',
-  height: 12,
-  isActive: false,
-  name: '',
-  tabIndex: -1,
-  theme: 'dark',
-  title: undefined,
-  width: 12,
 };
 
 export { Icon };

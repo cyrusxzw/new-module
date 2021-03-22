@@ -8,12 +8,20 @@ import { Heading } from '~/components/Heading';
 import { Icon } from '~/components/Icon';
 import { Overlay } from '~/components/Overlay';
 import { Transition } from '~/components/Transition';
+import { isInBrowser } from '~/utils/environment';
 import styles from './FlyinPanel.module.css';
 
-/** Set up the Flyin component's anchor point for ReactDOM.createPortal */
-const modalRoot = document.createElement('div');
-modalRoot.setAttribute('id', 'aesop-gel-flyin-root');
-document.body.appendChild(modalRoot);
+let modalRoot = null;
+if (isInBrowser()) {
+  /** Set up the Flyin component's anchor point for ReactDOM.createPortal */
+  modalRoot = document.getElementById('aesop-gel-flyin-root');
+
+  if (!modalRoot) {
+    modalRoot = document.createElement('div');
+    modalRoot.setAttribute('id', 'aesop-gel-flyin-root');
+    document.body.appendChild(modalRoot);
+  }
+}
 
 const FlyinPanel = ({
   children,
@@ -56,12 +64,20 @@ const FlyinPanel = ({
               >
                 <Icon height={12} name="close" theme={theme} width={12} />
               </Button>
-              {heading && (
-                <Heading level="2" size="small" theme={theme}>
-                  {heading}
-                </Heading>
-              )}
-              <div>{children}</div>
+              <div className={styles.content}>
+                {heading && (
+                  <Heading
+                    className={styles.heading}
+                    hasMediumWeightFont={true}
+                    level="3"
+                    size="xXSmall"
+                    theme={theme}
+                  >
+                    {heading}
+                  </Heading>
+                )}
+                {children}
+              </div>
             </aside>
           </Transition>
         </>,

@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { RadioGroup } from './RadioGroup';
 import { RadioGroupFixture } from './RadioGroup.fixture';
 
@@ -22,5 +23,85 @@ describe('<RadioGroup />', () => {
     );
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should return correct number of items', () => {
+    const itemCount = RadioGroupFixture.options.length;
+
+    render(
+      <RadioGroup
+        name={RadioGroupFixture.name}
+        onChange={RadioGroupFixture.onChange}
+        options={RadioGroupFixture.options}
+      />,
+    );
+
+    const list = screen.getByRole('list');
+    const items = screen.getAllByRole('listitem');
+
+    expect(list).toBeInTheDocument();
+    expect(items).toHaveLength(itemCount);
+  });
+
+  it('should return null if there are no radio items', () => {
+    render(
+      <RadioGroup
+        name={RadioGroupFixture.name}
+        onChange={RadioGroupFixture.onChange}
+        options={[]}
+      />,
+    );
+
+    expect(screen.queryByRole('list')).not.toBeInTheDocument();
+  });
+
+  it('should return one item span and not a radio control', () => {
+    render(
+      <RadioGroup
+        name={RadioGroupFixture.name}
+        onChange={RadioGroupFixture.onChange}
+        options={[
+          {
+            value: 'test-label',
+            label: 'test label',
+          },
+        ]}
+      />,
+    );
+
+    expect(screen.queryByRole('list')).not.toBeInTheDocument();
+    expect(screen.getByText(/test label/i)).toBeInTheDocument();
+  });
+
+  it('should show error message on error', () => {
+    render(
+      <RadioGroup
+        errorMessage="error message"
+        name={RadioGroupFixture.name}
+        onChange={RadioGroupFixture.onChange}
+        options={[
+          {
+            value: 'test-label',
+            label: 'test label',
+          },
+        ]}
+      />,
+    );
+
+    expect(screen.getByText(/error message/i)).toBeInTheDocument();
+  });
+
+  it('should be accesible', async () => {
+    const { container } = render(
+      <RadioGroup
+        name={RadioGroupFixture.name}
+        onChange={RadioGroupFixture.onChange}
+        options={RadioGroupFixture.options}
+      />,
+    );
+
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
   });
 });

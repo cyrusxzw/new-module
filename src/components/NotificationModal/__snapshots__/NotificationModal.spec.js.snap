@@ -17,8 +17,8 @@ exports[`<NotificationModal /> should render base component correctly 1`] = `
       tabindex="-1"
     >
       <svg
+        aria-labelledby="close-1"
         class="base close dark"
-        data-ref=""
         data-testid="data-testid-Icon"
         focusable="false"
         height="15"
@@ -28,6 +28,11 @@ exports[`<NotificationModal /> should render base component correctly 1`] = `
         viewBox="0 0 50 50"
         width="15"
       >
+        <title
+          id="close-1"
+        >
+          close
+        </title>
         <g>
           <polygon
             class="close"

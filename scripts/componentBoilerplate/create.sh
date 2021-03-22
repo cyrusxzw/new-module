@@ -12,16 +12,17 @@ else
   if mkdir "$LOCATION/$COMPONENT"; then
     cd "scripts/componentBoilerplate";
 
-    cp "assets/Component.js.txt" "../../$LOCATION/$COMPONENT/$COMPONENT.js";
-    cp "assets/Component.module.css.txt" "../../$LOCATION/$COMPONENT/$COMPONENT.module.css";
-    cp "assets/Component.spec.js.txt" "../../$LOCATION/$COMPONENT/$COMPONENT.spec.js";
-    cp "assets/Component.stories.mdx.txt" "../../$LOCATION/$COMPONENT/$COMPONENT.stories.mdx";
-    cp "assets/Component.fixture.js.txt" "../../$LOCATION/$COMPONENT/$COMPONENT.fixture.js";
-    cp "assets/index.js" "../../$LOCATION/$COMPONENT/index.js";
+    cp "assets/Component.tsx" "../../$LOCATION/$COMPONENT/$COMPONENT.tsx";
+    cp "assets/Component.module.css" "../../$LOCATION/$COMPONENT/$COMPONENT.module.css";
+    cp "assets/Component.spec.tsx" "../../$LOCATION/$COMPONENT/$COMPONENT.spec.tsx";
+    cp "assets/Component.stories.mdx" "../../$LOCATION/$COMPONENT/$COMPONENT.stories.mdx";
+    cp "assets/Component.fixture.ts" "../../$LOCATION/$COMPONENT/$COMPONENT.fixture.ts";
+    cp "assets/Component.types.ts" "../../$LOCATION/$COMPONENT/$COMPONENT.types.ts";
+    cp "assets/index.ts" "../../$LOCATION/$COMPONENT/index.ts";
 
     cd "../../$LOCATION/$COMPONENT/";
 
-    sed -i "" "s/ComponentBoilerplate/$COMPONENT/g" "$COMPONENT.js" "$COMPONENT.module.css" "$COMPONENT.spec.js" "$COMPONENT.stories.mdx" "$COMPONENT.fixture.js" "index.js";
+    sed -i "" "s/ComponentBoilerplate/$COMPONENT/g" "$COMPONENT.tsx" "$COMPONENT.module.css" "$COMPONENT.spec.tsx" "$COMPONENT.stories.mdx" "$COMPONENT.fixture.ts" "index.ts";
 
     echo "-----------------------------------------------------------------------";
     echo "New component '$COMPONENT' created! 🎉 : $LOCATION/$COMPONENT";

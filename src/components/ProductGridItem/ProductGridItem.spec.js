@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
@@ -39,5 +40,92 @@ describe('<ProductGridItem />', () => {
     );
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should render with isBundle being true', () => {
+    const bundleLinkName = "I'll give you an offer you can't refuse";
+    const onCtaClickMock = jest.fn();
+
+    const { getByRole } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <ProductDetailContextProvider
+          product={ProductDetailHeaderFixture.product}
+        >
+          <VariantSelectContextProvider variants={[]}>
+            <ProductGridItem
+              copy={{
+                addToCart: AddToCartButtonFixture.copy,
+                ...ProductGridItemFixture.copy,
+              }}
+              cta={{ text: bundleLinkName, url: 'corleone' }}
+              info={ProductGridItemFixture.info}
+              onCtaClick={onCtaClickMock}
+              url={ProductGridItemFixture.url}
+            />
+          </VariantSelectContextProvider>
+        </ProductDetailContextProvider>
+      </AddToCartContextProvider>,
+    );
+    const link = getByRole('link', { name: bundleLinkName });
+    userEvent.click(link);
+
+    expect(onCtaClickMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('should execute default props version of cta click correctly', () => {
+    const { getAllByRole } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <ProductDetailContextProvider
+          product={ProductDetailHeaderFixture.product}
+        >
+          <VariantSelectContextProvider
+            variants={ProductGridItemFixture.variantOptions}
+          >
+            <ProductGridItem
+              copy={{
+                addToCart: AddToCartButtonFixture.copy,
+                ...ProductGridItemFixture.copy,
+              }}
+              info={ProductGridItemFixture.info}
+              url={ProductGridItemFixture.url}
+            />
+          </VariantSelectContextProvider>
+        </ProductDetailContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const link = getAllByRole('link')[0]; // First Hyperlink with click function
+    userEvent.click(link);
+    // TODO: Assert default function situation
+  });
+
+  it('should execute cta click correctly', () => {
+    const onCtaClickMock = jest.fn();
+    const { getAllByRole } = render(
+      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+        <ProductDetailContextProvider
+          product={ProductDetailHeaderFixture.product}
+        >
+          <VariantSelectContextProvider
+            variants={ProductGridItemFixture.variantOptions}
+          >
+            <ProductGridItem
+              copy={{
+                addToCart: AddToCartButtonFixture.copy,
+                ...ProductGridItemFixture.copy,
+              }}
+              info={ProductGridItemFixture.info}
+              onCtaClick={onCtaClickMock}
+              url={ProductGridItemFixture.url}
+            />
+          </VariantSelectContextProvider>
+        </ProductDetailContextProvider>
+      </AddToCartContextProvider>,
+    );
+
+    const link = getAllByRole('link')[0]; // First Hyperlink with click function
+    userEvent.click(link);
+
+    expect(onCtaClickMock).toHaveBeenCalledTimes(1);
   });
 });

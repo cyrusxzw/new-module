@@ -56,7 +56,12 @@
         ignorePseudoClasses: ["global", "local"]
       }
     ],
-    "selector-pseudo-element-no-unknown": true,
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        ignorePseudoElements: ["cue"]
+      }
+    ],
     "selector-type-no-unknown": true,
     "string-no-newline": true,
     "unit-no-unknown": true,
