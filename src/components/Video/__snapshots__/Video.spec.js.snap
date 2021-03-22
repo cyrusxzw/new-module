@@ -77,7 +77,7 @@ exports[`<Video /> should render base component correctly 1`] = `
             type="button"
           >
             <svg
-              aria-labelledby="close-4"
+              aria-labelledby="close-7"
               class="base close light"
               data-testid="data-testid-Icon"
               focusable="false"
@@ -89,7 +89,7 @@ exports[`<Video /> should render base component correctly 1`] = `
               width="16"
             >
               <title
-                id="close-4"
+                id="close-7"
               >
                 close
               </title>
@@ -106,7 +106,7 @@ exports[`<Video /> should render base component correctly 1`] = `
             type="button"
           >
             <svg
-              aria-labelledby="pause-5"
+              aria-labelledby="pause-8"
               class="base pause light"
               data-testid="data-testid-Icon"
               focusable="false"
@@ -118,7 +118,7 @@ exports[`<Video /> should render base component correctly 1`] = `
               width="10"
             >
               <title
-                id="pause-5"
+                id="pause-8"
               >
                 pause
               </title>
@@ -141,7 +141,7 @@ exports[`<Video /> should render base component correctly 1`] = `
         type="button"
       >
         <svg
-          aria-labelledby="pause-6"
+          aria-labelledby="pause-9"
           class="base pause dark"
           data-testid="data-testid-Icon"
           focusable="false"
@@ -153,7 +153,7 @@ exports[`<Video /> should render base component correctly 1`] = `
           width="10"
         >
           <title
-            id="pause-6"
+            id="pause-9"
           >
             pause
           </title>
