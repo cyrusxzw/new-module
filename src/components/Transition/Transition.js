@@ -2,7 +2,7 @@ import React, { isValidElement } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import get from 'lodash/get';
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group-npm';
 import { useHasMounted } from '~/customHooks';
 import { data } from './Transition.data';
 
