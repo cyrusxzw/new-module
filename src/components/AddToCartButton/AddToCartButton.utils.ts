@@ -1,6 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 
-const useDelayedDisabled = shouldShowUpdateSuccessMessage => {
+const useDelayedDisabled = (
+  shouldShowUpdateSuccessMessage: boolean,
+): boolean => {
   const [isDelayedDisabled, setIsDelayedDisabled] = useState(false);
   const timeout = useRef(null);
 
