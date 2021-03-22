@@ -35,8 +35,5 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Build Storybook
-        run: npm run build-storybook -- --quiet
-
       - name: Deploy to GH Pages
         run: npm run deploy-storybook -- --message "Update GH Pages to Gel version ${GEL_VERSION}"
