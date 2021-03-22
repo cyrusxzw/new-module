@@ -10,9 +10,9 @@ const Transition = ({
   children,
   hasCSSTransitionMountOnEnter,
   hasCSSTransitionUnmountOnExit,
-  isActive,
-  isActiveOnMount,
-  type,
+  isActive = false,
+  isActiveOnMount = false,
+  type = 'fade',
 }) => {
   const hasMounted = useHasMounted();
 
@@ -56,15 +56,6 @@ Transition.propTypes = {
     'slowFade',
     'zoom',
   ]),
-};
-
-Transition.defaultProps = {
-  children: undefined,
-  hasCSSTransitionMountOnEnter: undefined,
-  hasCSSTransitionUnmountOnExit: undefined,
-  isActive: false,
-  isActiveOnMount: false,
-  type: 'fade',
 };
 
 export { Transition };
