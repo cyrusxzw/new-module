@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import cx from 'classnames';
 import { useAddToCartContext, useVariantSelectContext } from '~/contexts';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
@@ -7,15 +6,16 @@ import { Button } from '~/components/Button';
 import { Loading } from '~/components/Loading';
 import { Hyperlink } from '~/components/Hyperlink';
 import { useDelayedDisabled } from './AddToCartButton.utils';
+import type { AddToCartButtonProps } from './AddToCartButton.types';
 import styles from './AddToCartButton.module.css';
 
-const AddToCartButton = ({
+const AddToCartButton: FC<AddToCartButtonProps> = ({
   className,
   copy,
-  dataTestRef,
-  isEnabled,
-  isFullWidth,
-  theme,
+  dataTestRef = 'ADD_TO_CART',
+  isEnabled = true,
+  isFullWidth = true,
+  theme = 'dark',
 }) => {
   const addToCartContext = useAddToCartContext();
   const { selectedVariant } = useVariantSelectContext();
@@ -27,7 +27,7 @@ const AddToCartButton = ({
   } = addToCartContext;
   const shouldShowUpdateSuccessMessage = !isLoading && isUpdateSuccessful;
   const isDelayedDisabled = useDelayedDisabled(shouldShowUpdateSuccessMessage);
-  const updateNotificationLabel = copy.updateNotification;
+  const updateNotificationLabel = copy?.updateNotification;
 
   if (!selectedVariant) return null;
 
@@ -38,7 +38,7 @@ const AddToCartButton = ({
     price,
     sku,
   } = selectedVariant;
-  const cartActionLabel = `${copy.cartAction} — ${price}`;
+  const cartActionLabel = `${copy?.cartAction} — ${price}`;
 
   const classSet = cx(
     styles.base,
@@ -98,7 +98,7 @@ const AddToCartButton = ({
       isEnabled={isButtonEnabled}
       onClick={handleOnClick}
       theme={theme}
-      title={isInStock ? cartActionLabel : copy.outOfStock?.title}
+      title={isInStock ? cartActionLabel : copy?.outOfStock?.title}
     >
       {isLoading && (
         <Loading
@@ -119,42 +119,10 @@ const AddToCartButton = ({
         ) : (
           <span> </span>
         )}
-        <span>{isInStock ? cartActionLabel : copy.outOfStock?.label}</span>
+        <span>{isInStock ? cartActionLabel : copy?.outOfStock?.label}</span>
       </span>
     </Button>
   );
-};
-
-AddToCartButton.propTypes = {
-  className: PropTypes.string,
-  copy: PropTypes.shape({
-    cartAction: PropTypes.string,
-    updateNotification: PropTypes.string,
-    outOfStock: PropTypes.shape({
-      label: PropTypes.string,
-      title: PropTypes.string,
-    }),
-  }),
-  dataTestRef: PropTypes.string.isRequired,
-  isEnabled: PropTypes.bool,
-  isFullWidth: PropTypes.bool,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-AddToCartButton.defaultProps = {
-  className: undefined,
-  copy: {
-    cartAction: undefined,
-    updateNotification: undefined,
-    outOfStock: {
-      label: undefined,
-      title: undefined,
-    },
-  },
-  dataTestRef: 'ADD_TO_CART',
-  isEnabled: true,
-  isFullWidth: true,
-  theme: 'dark',
 };
 
 export { AddToCartButton };

@@ -16,7 +16,7 @@ const AddToCartButtonWithProviders = ({ onClick, product, variants, copy }) => {
     <AddToCartContextProvider onClick={onClick}>
       <ProductDetailContextProvider product={product}>
         <VariantSelectContextProvider variants={variants}>
-          <AddToCartButton copy={copy} />
+          <AddToCartButton copy={copy} dataTestRef="ADD_TO_CART" />
         </VariantSelectContextProvider>
       </ProductDetailContextProvider>
     </AddToCartContextProvider>
@@ -39,11 +39,13 @@ describe('<AddToCartButton />', () => {
   const copy = fixture.copy;
 
   beforeAll(() => {
-    jest.spyOn(global.console, 'error').mockImplementation(() => {});
+    jest.spyOn(global.console, 'error').mockImplementation(() => {
+      return;
+    });
   });
 
   afterAll(() => {
-    global.console.error.mockRestore(); // eslint-disable-line no-console
+    (global.console.error as jest.Mock).mockRestore();
   });
 
   afterEach(() => {
@@ -170,7 +172,9 @@ describe('<AddToCartButton />', () => {
 
     unmount();
 
-    act(() => jest.runOnlyPendingTimers());
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
 
     expect(console.error).not.toHaveBeenCalled(); // eslint-disable-line no-console
   });
