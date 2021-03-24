@@ -1,13 +1,13 @@
 import type { Themes } from '~/types';
 
-type Item = {
+type ListItem = {
   content: React.ReactNode;
   id: string;
 };
 
 type ListProps = {
   className?: string;
-  items: Item[];
+  items: ListItem[];
   listItemClassName?: string;
   theme?: Themes;
 };
