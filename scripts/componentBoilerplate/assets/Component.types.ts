@@ -1,8 +1,8 @@
 import type { Themes } from '~/types';
 
-type Props = {
+type ComponentBoilerplateProps = {
   className?: string;
   theme?: Themes;
 };
 
-export type { Props };
+export type { ComponentBoilerplateProps };
