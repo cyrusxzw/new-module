@@ -1,12 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import cx from 'classnames';
 import { useScript } from '~/customHooks';
 import { Heading } from '~/components/Heading';
 import { Loading } from '~/components/Loading';
+import type { BynderWidgetProps } from './BynderWidget.types';
 import styles from './BynderWidget.module.css';
 
-const BynderWidget = ({ className, heading, id, theme }) => {
+const BynderWidget: FC<BynderWidgetProps> = ({
+  className,
+  heading,
+  id,
+  theme = 'dark',
+}) => {
   const [isLoading, error] = useScript({
     src:
       'https://d8ejoa1fys2rk.cloudfront.net/bynder-embed/latest/bynder-embed.js',
@@ -34,20 +39,6 @@ const BynderWidget = ({ className, heading, id, theme }) => {
       />
     </article>
   );
-};
-
-BynderWidget.propTypes = {
-  className: PropTypes.string,
-  heading: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-BynderWidget.defaultProps = {
-  className: undefined,
-  heading: undefined,
-  id: undefined,
-  theme: 'dark',
 };
 
 export { BynderWidget };
