@@ -1,10 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { forwardRef } from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
+import type { QuoteProps } from './Quote.types';
 import styles from './Quote.module.css';
 
-const Quote = ({ author, className, content, theme }) => {
+const Quote = forwardRef<HTMLDivElement, QuoteProps>(function QuoteRef({
+  author,
+  className,
+  content,
+  theme,
+}) {
   const currentTheme = useThemeContext(theme, 'dark');
   const classSet = cx(styles.base, styles[currentTheme], className);
 
@@ -16,20 +21,6 @@ const Quote = ({ author, className, content, theme }) => {
       </div>
     </div>
   );
-};
-
-Quote.propTypes = {
-  author: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  content: PropTypes.string.isRequired,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-Quote.defaultProps = {
-  author: undefined,
-  className: undefined,
-  content: undefined,
-  theme: undefined,
-};
+});
 
 export { Quote };
