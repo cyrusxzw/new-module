@@ -9,7 +9,9 @@ import { ComponentBoilerplateFixture } from './ComponentBoilerplate.fixture';
 
 <Canvas>
   <Story name="Base component">
-    <ComponentBoilerplate />
+    {(() => {
+      return <ComponentBoilerplate />;
+    })()}
   </Story>
 </Canvas>
 
