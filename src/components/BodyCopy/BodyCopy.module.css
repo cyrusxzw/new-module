@@ -45,6 +45,7 @@
     }
 
     a {
+      display: inline;
       font-weight: var(--font-weight-normal);
     }
   }
