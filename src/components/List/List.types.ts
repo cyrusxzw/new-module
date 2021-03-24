@@ -5,11 +5,11 @@ type Item = {
   id: string;
 };
 
-type Props = {
+type ListProps = {
   className?: string;
   items: Item[];
   listItemClassName?: string;
   theme?: Themes;
 };
 
-export type { Props };
+export type { ListProps };

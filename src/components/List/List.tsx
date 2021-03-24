@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import type { Props } from './List.types';
+import type { ListProps } from './List.types';
 import styles from './List.module.css';
 
-const List = forwardRef<HTMLUListElement, Props>(function ListRef(
+const List = forwardRef<HTMLUListElement, ListProps>(function ListRef(
   { className, items, listItemClassName, theme },
   ref,
 ) {
