@@ -1,4 +1,6 @@
-const ListFixture = {
+import type { ListProps } from './List.types';
+
+const ListFixture: ListProps = {
   items: [
     { content: 'Lorem ipsum dolor sit amet', id: 'Lorem ipsum dolor sit amet' },
     {

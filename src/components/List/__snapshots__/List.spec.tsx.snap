@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List /> should render base component correctly 1`] = `
+<div>
+  <ul
+    class="base dark"
+  >
+    <li
+      class="item"
+    >
+      Lorem ipsum dolor sit amet
+    </li>
+    <li
+      class="item"
+    >
+      Mauris interdum odio at mauris pulvinar
+    </li>
+    <li
+      class="item"
+    >
+      Phasellus tempus consequat erat
+    </li>
+    <li
+      class="item"
+    >
+      Maecenas elementum
+    </li>
+    <li
+      class="item"
+    >
+      Nullam et felis sem
+    </li>
+  </ul>
+</div>
+`;
