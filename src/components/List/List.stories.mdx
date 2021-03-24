@@ -9,10 +9,16 @@ import { ListFixture } from './List.fixture';
 
 <Canvas>
   <Story name="Base component">
-    <List
-      items={knobs.object('items', ListFixture.items, 'Copy')}
-      theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
-    />
+    {(() => {
+      const items = knobs.object('items', ListFixture.items, 'Content');
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      return <List items={items} theme={theme} />;
+    })()}
   </Story>
 </Canvas>
 
