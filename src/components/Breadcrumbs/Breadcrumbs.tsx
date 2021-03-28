@@ -1,11 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import cx from 'classnames';
 import { isObjectPopulatedArray } from '~/utils/objects';
 import { Hyperlink } from '~/components/Hyperlink';
+import type { BreadcrumbsProps } from './Breadcrumbs.types';
 import styles from './Breadcrumbs.module.css';
 
-const Breadcrumbs = ({ className, items, theme }) => {
+const Breadcrumbs: FC<BreadcrumbsProps> = ({
+  className,
+  items,
+  theme = 'dark',
+}) => {
   if (!items || !isObjectPopulatedArray(items)) {
     return null;
   }
@@ -31,25 +35,6 @@ const Breadcrumbs = ({ className, items, theme }) => {
       </ul>
     </nav>
   );
-};
-
-Breadcrumbs.propTypes = {
-  className: PropTypes.string,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      id: PropTypes.string,
-      url: PropTypes.string,
-      title: PropTypes.string,
-    }),
-  ),
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-Breadcrumbs.defaultProps = {
-  className: undefined,
-  items: undefined,
-  theme: 'dark',
 };
 
 export { Breadcrumbs };
