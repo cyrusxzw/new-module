@@ -16,19 +16,13 @@ const MediaWithContent = forwardRef(function MediaWithContentRef(
     foregroundImageLink,
     hasFullWidthImage,
     hasSerifFontHeading,
-    hasTopOffset,
     isReverse,
     media,
     theme,
   },
   ref,
 ) {
-  const classSet = cx(
-    styles.base,
-    { [styles.reverse]: isReverse },
-    { [styles.topOffest]: hasTopOffset },
-    className,
-  );
+  const classSet = cx(styles.base, { [styles.reverse]: isReverse }, className);
 
   const style = backgroundColor ? { backgroundColor } : undefined;
 
@@ -47,7 +41,6 @@ const MediaWithContent = forwardRef(function MediaWithContentRef(
         copy={copy}
         hasFullWidthImage={hasFullWidthImage}
         hasSerifFontHeading={hasSerifFontHeading}
-        hasTopOffset={hasTopOffset}
         isReverse={isReverse}
         theme={theme}
       />
@@ -70,7 +63,6 @@ MediaWithContent.propTypes = {
   foregroundImageLink: PropTypes.object,
   hasFullWidthImage: PropTypes.bool,
   hasSerifFontHeading: PropTypes.bool,
-  hasTopOffset: PropTypes.bool,
   isReverse: PropTypes.bool,
   media: PropTypes.element.isRequired,
   theme: PropTypes.oneOf(['dark', 'light']),
@@ -91,7 +83,6 @@ MediaWithContent.defaultProps = {
   foregroundImageLink: undefined,
   hasFullWidthImage: false,
   hasSerifFontHeading: true,
-  hasTopOffset: false,
   isReverse: false,
   media: undefined,
   theme: 'dark',

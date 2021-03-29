@@ -11,7 +11,6 @@ const Content = ({
   copy,
   hasFullWidthImage,
   hasSerifFontHeading,
-  hasTopOffset,
   isReverse,
   theme,
 }) => {
@@ -21,7 +20,6 @@ const Content = ({
     { [styles.reverse]: isReverse },
     { [styles.hasFullWidthImage]: hasFullWidthImage },
     { [styles.hasHalfWidthImage]: !hasFullWidthImage },
-    { [styles.topOffest]: hasTopOffset },
     styles[theme.toLowerCase()],
   );
 
@@ -69,7 +67,6 @@ Content.propTypes = {
   }).isRequired,
   hasFullWidthImage: PropTypes.bool,
   hasSerifFontHeading: PropTypes.bool,
-  hasTopOffset: PropTypes.bool,
   isReverse: PropTypes.bool,
   theme: PropTypes.oneOf(['dark', 'light']),
 };
@@ -85,7 +82,6 @@ Content.defaultProps = {
   },
   hasFullWidthImage: false,
   hasSerifFontHeading: true,
-  hasTopOffset: false,
   isReverse: false,
   theme: 'dark',
 };

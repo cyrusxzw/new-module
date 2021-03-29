@@ -125,7 +125,6 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
               false,
               'Presentation',
             )}
-            hasTopOffset={knobs.boolean('hasTopOffset', false, 'Presentation')}
             isReverse={knobs.boolean('isReverse', false, 'Presentation')}
             media={(() => {
               const imageSourceOptions = {
@@ -133,7 +132,6 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
                 Default: MediaWithContentFixture.image.default,
                 Expectations: MediaWithContentFixture.image.expectations,
                 FullWidth: MediaWithContentFixture.image.fullWidth,
-                Hero: MediaWithContentFixture.image.hero,
                 Kit: MediaWithContentFixture.image.kit,
                 TheOrator: MediaWithContentFixture.image.theOrator,
               };
@@ -153,11 +151,6 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
                     hasLoop: true,
                     hasPlayInFullScreen: false,
                     hasControls: false,
-                    isHeroFullWidth: knobs.boolean(
-                      'isHeroFullWidth',
-                      false,
-                      'Presentation',
-                    ),
                     isFullWidth: false,
                     large: MediaWithContentFixture.video.source,
                   },

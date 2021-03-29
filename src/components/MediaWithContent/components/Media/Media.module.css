@@ -31,10 +31,12 @@
     height: calc(100% - 80px);
     max-height: 300px;
   }
+
   @media (--viewport-md-only) {
     height: 70%;
     max-height: 335px;
   }
+
   @media (--viewport-lg) {
     height: 60%;
     max-height: 350px;

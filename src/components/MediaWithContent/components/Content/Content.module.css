@@ -29,10 +29,6 @@
   }
 }
 
-.topOffest.topOffest {
-  margin-top: 0;
-}
-
 .innerWrapper {
   justify-content: space-between;
   padding: 40px var(--layout-sm-margin);
@@ -55,29 +51,8 @@
     margin-left: auto;
   }
 
-  .topOffest & {
-    @media (--viewport-md) {
-      padding-top: 80px;
-    }
-
-    @media (--viewport-lg) {
-      padding-top: var(--layout-logo-vertical-offset-lg);
-      margin-top: 0;
-    }
-  }
-
   .hasFullWidthImage & {
     height: 100%;
-  }
-
-  .topOffest.hasFullWidthImage & {
-    @media (--viewport-md) {
-      padding-top: var(--layout-logo-vertical-offset-md);
-    }
-
-    @media (--viewport-lg) {
-      padding-top: var(--layout-logo-vertical-offset-lg);
-    }
   }
 }
 
