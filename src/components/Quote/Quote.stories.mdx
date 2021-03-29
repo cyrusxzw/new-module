@@ -10,18 +10,16 @@ import { QuoteFixture } from './Quote.fixture';
 <Canvas>
   <Story name="Base component">
     {(() => {
-      const author = knobs.text('author', QuoteFixture.author, 'Copy')
-      const content = knobs.text('children', QuoteFixture.content, 'Copy')
-      const theme = knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')
-      return (
-        <Quote
-          author={author}
-          content={content}
-          theme={theme}
-        />
-      )
+      const author = knobs.text('author', QuoteFixture.author, 'Copy');
+      const content = knobs.text('children', QuoteFixture.content, 'Copy');
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      return <Quote author={author} content={content} theme={theme} />;
     })()}
-
   </Story>
 </Canvas>
 

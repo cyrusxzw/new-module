@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import { useEscapeKeyListener, useOverflowHidden } from '~/customHooks';
+import { isInBrowser } from '~/utils/environment';
 import { ModalBody } from './components/ModalBody';
 import { Overlay } from '~/components/Overlay';
 import { Transition } from '~/components/Transition';
-import { isInBrowser } from '~/utils/environment';
+import type { ModalProps } from './Modal.types';
 import styles from './Modal.module.css';
 
 let modalRoot = null;
@@ -21,11 +22,19 @@ if (isInBrowser()) {
   }
 }
 
-const Modal = ({ children, className, copy, isVisible, onClose, theme }) => {
+const Modal: FC<ModalProps> = ({
+  children,
+  className,
+  copy,
+  isVisible,
+  onClose,
+  theme,
+}) => {
   useEscapeKeyListener(onClose);
   useOverflowHidden(isVisible);
 
-  const classSet = cx(styles.base, styles[theme], className);
+  const currentTheme = useThemeContext(theme, 'dark');
+  const classSet = cx(styles.base, styles[currentTheme], className);
 
   return (
     <>
@@ -62,28 +71,6 @@ const Modal = ({ children, className, copy, isVisible, onClose, theme }) => {
       )}
     </>
   );
-};
-
-Modal.propTypes = {
-  children: PropTypes.any,
-  className: PropTypes.string,
-  copy: PropTypes.shape({
-    close: PropTypes.string,
-  }),
-  isVisible: PropTypes.bool,
-  onClose: PropTypes.func,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-Modal.defaultProps = {
-  children: undefined,
-  className: undefined,
-  copy: {
-    close: undefined,
-  },
-  isVisible: undefined,
-  onClose: undefined,
-  theme: 'dark',
 };
 
 export { Modal };

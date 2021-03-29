@@ -14,7 +14,7 @@ describe('<ModalBody />', () => {
 
     const { container } = render(
       <ModalBody copy={ModalBodyFixture.copy} isVisible={true} onClose={mockFn}>
-        Body Content
+        modal body test
       </ModalBody>,
     );
 

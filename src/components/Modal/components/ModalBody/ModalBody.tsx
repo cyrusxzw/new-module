@@ -1,11 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
+import type { ModalBodyProps } from './ModalBody.types';
 import styles from './ModalBody.module.css';
 
-const ModalBody = ({
+const ModalBody: FC<ModalBodyProps> = ({
   children,
   className,
   copy,
@@ -13,10 +14,11 @@ const ModalBody = ({
   isVisible,
   theme,
 }) => {
+  const currentTheme = useThemeContext(theme, 'dark');
   const classSet = cx(
     styles.base,
     { [styles.isVisible]: isVisible },
-    styles[theme],
+    styles[currentTheme],
     className,
   );
 
@@ -41,28 +43,6 @@ const ModalBody = ({
       </Button>
     </div>
   );
-};
-
-ModalBody.propTypes = {
-  children: PropTypes.any,
-  className: PropTypes.string,
-  copy: PropTypes.shape({
-    close: PropTypes.string,
-  }).isRequired,
-  onClose: PropTypes.func.isRequired,
-  isVisible: PropTypes.bool.isRequired,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-ModalBody.defaultProps = {
-  children: undefined,
-  className: undefined,
-  copy: {
-    close: undefined,
-  },
-  onClose: undefined,
-  isVisible: undefined,
-  theme: 'dark',
 };
 
 export { ModalBody };
