@@ -1,13 +1,11 @@
-import type { Themes } from '~/types';
+import { ModalAndModalBodyProps } from '../../Modal.types';
 
-type ModalBodyProps = {
-  className?: string;
+type ModalBodyCopy = {
   copy?: {
     close?: string;
   };
-  isVisible: boolean;
-  onClose: () => void;
-  theme?: Themes;
 };
 
-export type { ModalBodyProps };
+type ModalBodyProps = ModalBodyCopy & ModalAndModalBodyProps;
+
+export type { ModalBodyProps, ModalBodyCopy };
