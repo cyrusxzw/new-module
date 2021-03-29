@@ -7,7 +7,10 @@ const useVideoScroller = (videoRef, isScrollBasedVideo) => {
 
     if (isScrollBasedVideo && videoRefCurrent) {
       // eslint-disable-next-line no-new
-      new VideoScroller({ el: videoRefCurrent });
+      new VideoScroller({
+        el: videoRefCurrent,
+        invert: true,
+      });
     }
   }, [isScrollBasedVideo, videoRef]);
 };

@@ -1628,6 +1628,7 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
       margin-bottom: 0;
     }
 .BodyCopy-module_copy__2K-qP a, .BodyCopy-module_copy__2K-qP p a {
+      display: inline;
       font-weight: 400;
     }
 .BodyCopy-module_dark__1kIgR .BodyCopy-module_copy__2K-qP,
