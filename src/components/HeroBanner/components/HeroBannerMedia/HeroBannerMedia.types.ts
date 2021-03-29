@@ -1,6 +1,12 @@
 import { ReactElement } from 'react';
 
 type MediaAnchorPoints = 'center' | 'left' | 'right';
+type PresentaionVariations =
+  | 'default'
+  | 'fifty-fifty'
+  | 'wide-header'
+  | 'article-header'
+  | 'full-display';
 
 type HeroBannerMediaProps = {
   className?: string;
@@ -10,8 +16,8 @@ type HeroBannerMediaProps = {
     url?: string;
     title?: string;
   };
-  hasFullWidthMedia?: boolean;
   media: ReactElement;
+  variation?: PresentaionVariations;
 };
 
 export type { HeroBannerMediaProps };

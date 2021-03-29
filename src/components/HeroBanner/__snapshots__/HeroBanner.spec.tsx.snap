@@ -7,7 +7,7 @@ exports[`<HeroBanner /> should render base component correctly 1`] = `
     style="background-color: rgb(246, 245, 232);"
   >
     <div
-      class="base undefined"
+      class="base undefined fullWidth"
     >
       <figure
         class="base dark figure"
@@ -17,15 +17,15 @@ exports[`<HeroBanner /> should render base component correctly 1`] = `
         >
           <source
             media="(min-width: 1025px)"
-            srcset="https://www.aesop.com/medias/Aesop-Skin-Classic-Purifying-Facial-Exfoliant-Paste-Texture-50-50-Mobile-640x640px.jpg?context=bWFzdGVyfGltYWdlc3wyNDg1OHxpbWFnZS9qcGVnfGltYWdlcy9oMjIvaDBkLzkxMTYyMjg1MTc5MTguanBnfDJjZDUzMjI4N2EzZDgyYzE1ZTk3MTM4OWFjODU5N2Q2NjQ4YTAxNzcwZmE4YjBlZDQ2YTJmYTRhOTI5ZWQyY2I"
+            srcset="./assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Desktop_2880x1044px.jpg"
           />
           <source
             media="(min-width: 640px)"
-            srcset="https://www.aesop.com/medias/Aesop-Skin-Classic-Purifying-Facial-Exfoliant-Paste-Texture-50-50-Mobile-640x640px.jpg?context=bWFzdGVyfGltYWdlc3wyNDg1OHxpbWFnZS9qcGVnfGltYWdlcy9oMjIvaDBkLzkxMTYyMjg1MTc5MTguanBnfDJjZDUzMjI4N2EzZDgyYzE1ZTk3MTM4OWFjODU5N2Q2NjQ4YTAxNzcwZmE4YjBlZDQ2YTJmYTRhOTI5ZWQyY2I"
+            srcset="./assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Tablet_1536x1730px.jpg"
           />
           <source
             media="(min-width: 0px)"
-            srcset="https://www.aesop.com/medias/Aesop-Skin-Classic-Purifying-Facial-Exfoliant-Paste-Texture-50-50-Mobile-640x640px.jpg?context=bWFzdGVyfGltYWdlc3wyNDg1OHxpbWFnZS9qcGVnfGltYWdlcy9oMjIvaDBkLzkxMTYyMjg1MTc5MTguanBnfDJjZDUzMjI4N2EzZDgyYzE1ZTk3MTM4OWFjODU5N2Q2NjQ4YTAxNzcwZmE4YjBlZDQ2YTJmYTRhOTI5ZWQyY2I"
+            srcset="./assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Mobile_640x640px.jpg"
           />
           <img
             alt="alt image"
@@ -35,24 +35,25 @@ exports[`<HeroBanner /> should render base component correctly 1`] = `
       </figure>
     </div>
     <div
-      class="base dark"
+      class="base fullWidth dark"
     >
       <div
         class="innerWrapper"
       >
         <header
-          class="header base"
+          class="header base heroHeading"
         >
           <h1
             class="base serifFont xLarge dark heading"
           >
-            Fusce et dui nisi
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </h1>
           <h2
             class="base mediumWeightFont xXSmall dark eyebrow"
           >
-            Quisque blandit est erat
+            Praesent tincidunt accumsan
           </h2>
+          
         </header>
         <div
           class="content"
@@ -60,43 +61,8 @@ exports[`<HeroBanner /> should render base component correctly 1`] = `
           <div
             class="set dark large description"
           >
-            Aliquam lectus purus, gravida id metus dignissim, efficitur tempus lacus. Maecenas a cursus diam. Vivamus ultrices nisi non ex placerat, vel elementum sapien condimentum.
+            Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.
           </div>
-          <dl
-            class="base dark"
-            data-testid="data-testid-DefinitionList"
-          >
-            <dt
-              class="term slideIn"
-            >
-              Aliquam
-            </dt>
-            <dd
-              class="description slideIn"
-            >
-              Proin vulputate eros quis lectus pretium gravida.
-            </dd>
-            <dt
-              class="term slideIn"
-            >
-              Etiam eu augue quam
-            </dt>
-            <dd
-              class="description slideIn"
-            >
-              Pulvinar nulla enim, eu elementum lacus vehicula sed.
-            </dd>
-            <dt
-              class="term slideIn"
-            >
-              Duis at elit
-            </dt>
-            <dd
-              class="description slideIn"
-            >
-              Sed ac ipsum vel risus aliquam rutrum.
-            </dd>
-          </dl>
         </div>
       </div>
     </div>

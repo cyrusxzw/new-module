@@ -18,6 +18,25 @@
   order: 3;
 }
 
+.heroHeading {
+  .eyebrow {
+    margin-bottom: 20px;
+  }
+
+  .heading,
+  .subHeading {
+    margin-bottom: 5px;
+  }
+
+  @media (--viewport-md) {
+    .eyebrow,
+    .heading,
+    .subHeading {
+      margin-bottom: 15px;
+    }
+  }
+}
+
 .offsetPageHeading {
   padding-top: 160px;
   padding-right: 20px;

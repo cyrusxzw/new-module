@@ -10,11 +10,17 @@ const HeroBannerMedia: FC<HeroBannerMediaProps> = ({
   containMedia,
   foregroundImage,
   foregroundImageLink,
-  hasFullWidthMedia = false,
   media,
+  variation = 'default',
 }) => {
+  const isFullHeight = variation === 'full-display';
+  const isOffsetX = variation === 'article-header';
+  const isFullWidth = variation.match(/^(default|wide-header|full-display)$/);
+
   const classSet = cx(className, styles.base, styles[containMedia], {
-    [styles.fullWidthMedia]: hasFullWidthMedia,
+    [styles.fullHeight]: isFullHeight,
+    [styles.fullWidth]: isFullWidth,
+    [styles.offsetX]: isOffsetX,
   });
 
   return (

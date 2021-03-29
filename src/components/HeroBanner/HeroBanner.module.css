@@ -2,17 +2,13 @@
 
 .base {
   position: relative;
-  min-height: 80vh;
+
+  /* min-height: 80vh; */
 
   @media (--viewport-lg) {
     display: flex;
-    min-height: 65vh;
-    flex-direction: row;
-  }
-}
 
-.reverse {
-  @media (--viewport-lg) {
+    /* min-height: 65vh; */
     flex-direction: row-reverse;
   }
 }

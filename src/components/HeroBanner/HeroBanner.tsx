@@ -1,5 +1,6 @@
 import React, { forwardRef, FC } from 'react';
 import cx from 'classnames';
+import { ThemeContextProvider } from '~/contexts';
 import { HeroBannerMedia } from './components/HeroBannerMedia';
 import { HeroBannerContent } from './components/HeroBannerContent';
 import type { HeroBannerProps } from './HeroBanner.types';
@@ -14,18 +15,16 @@ const HeroBanner: FC<HeroBannerProps> = forwardRef(function HeroBannerRef(
     copy,
     foregroundImage,
     foregroundImageLink,
-    hasFullWidthMedia = false,
     hasSerifFontHeading = true,
     hasTopOffset = false,
-    isReverse = false,
     media,
     theme = 'dark',
+    variation = 'default',
   },
-  ref: React.LegacyRef<HTMLImageElement>,
+  ref: React.Ref<HTMLDivElement>,
 ) {
   const classSet = cx(
     styles.base,
-    { [styles.reverse]: isReverse },
     { [styles.topOffest]: hasTopOffset },
     className,
   );
@@ -33,24 +32,24 @@ const HeroBanner: FC<HeroBannerProps> = forwardRef(function HeroBannerRef(
   const style = backgroundColor ? { backgroundColor } : undefined;
 
   return (
-    <div className={classSet} ref={ref} style={style}>
-      <HeroBannerMedia
-        containMedia={containMedia}
-        foregroundImage={foregroundImage}
-        foregroundImageLink={foregroundImageLink}
-        hasFullWidthMedia={hasFullWidthMedia}
-        media={media}
-      />
-      <HeroBannerContent
-        content={content}
-        copy={copy}
-        hasFullWidthMedia={hasFullWidthMedia}
-        hasSerifFontHeading={hasSerifFontHeading}
-        hasTopOffset={hasTopOffset}
-        isReverse={isReverse}
-        theme={theme}
-      />
-    </div>
+    <ThemeContextProvider theme={theme}>
+      <div className={classSet} ref={ref} style={style}>
+        <HeroBannerMedia
+          containMedia={containMedia}
+          foregroundImage={foregroundImage}
+          foregroundImageLink={foregroundImageLink}
+          media={media}
+          variation={variation}
+        />
+        <HeroBannerContent
+          content={content}
+          copy={copy}
+          hasSerifFontHeading={hasSerifFontHeading}
+          hasTopOffset={hasTopOffset}
+          variation={variation}
+        />
+      </div>
+    </ThemeContextProvider>
   );
 });
 

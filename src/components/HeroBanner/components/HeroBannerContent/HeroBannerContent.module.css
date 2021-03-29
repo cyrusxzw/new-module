@@ -3,39 +3,59 @@
 .base {
   z-index: var(--z-index-forground-content);
   font-family: var(--font-family-sans-serif-regular);
-  font-size: rem(14px);
+  font-size: rem(16px);
   line-height: 1.6;
+
+  @media (--viewport-md) {
+    width: calc(100% * 6 / 12);
+    margin-left: calc(100% * 3 / 12);
+  }
 
   @media (--viewport-lg) {
     display: flex;
-    width: 50%;
+    width: calc(100% * 4 / 12 - var(--layout-lg-margin));
     flex-basis: auto;
-  }
-}
-
-.fullWidthMedia {
-  @media (--viewport-md-only) {
-    position: relative;
     margin-right: auto;
-    margin-left: 0;
-  }
-  @media (--viewport-lg) {
-    width: 100%;
-    margin-top: auto;
-    margin-right: 0;
-    margin-bottom: auto;
-    margin-left: 0;
+    margin-left: calc(100% * 2 / 12);
   }
 }
 
-.fullWidthMedia.reverse {
-  pointer-events: none;
+.fullHeight {
+  min-height: 100vh;
+
+  @media (--viewport-md) {
+    width: calc(100% * 8 / 12);
+    margin-left: calc(100% * 1 / 12);
+  }
 
   @media (--viewport-lg) {
-    width: 100%;
-    margin-right: 0;
-    margin-left: 0;
+    width: calc(100% * 4 / 12 - var(--layout-lg-margin));
+    margin-right: auto;
+    margin-left: calc(100% * 2 / 12);
   }
+}
+
+.wide {
+  @media (--viewport-md) {
+    width: calc(100% * 8 / 12);
+    margin-left: calc(100% * 1 / 12);
+  }
+
+  @media (--viewport-lg) {
+    width: calc(100% * 5 / 12);
+    margin-left: calc(100% * 3 / 12);
+  }
+}
+
+.offsetX {
+  @media (--viewport-lg) {
+    width: calc(100% * 4 / 12);
+    margin-left: calc(100% * 5 / 12);
+  }
+}
+
+.fullWidth {
+  position: relative;
 }
 
 .topOffest.topOffest {
@@ -43,86 +63,67 @@
 }
 
 .innerWrapper {
-  justify-content: space-between;
-  padding: 40px var(--layout-sm-margin);
-  pointer-events: auto;
+  padding-top: 40px;
+  padding-right: var(--layout-sm-margin);
+  padding-bottom: 40px;
+  padding-left: var(--layout-sm-margin);
 
-  @media (--viewport-md-only) {
-    width: 60%;
-    margin-right: auto;
-    margin-left: auto;
+  .fullHeight &,
+  .wide & {
+    max-width: none;
   }
 
   @media (--viewport-md) {
-    display: flex;
-    flex-basis: auto;
-    flex-direction: column;
-    padding: 90px var(--layout-md-margin);
+    padding-top: 50px;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   @media (--viewport-lg) {
-    width: calc(100% * 8 / 12);
-    max-width: 780px;
-    flex-basis: auto;
-    flex-direction: column;
-    padding: 115px 0;
-    margin-top: auto;
-    margin-right: 34%;
-    margin-bottom: auto;
-    margin-left: 15%;
+    padding-top: 200px;
+    padding-bottom: 100px;
   }
 
-  .topOffest & {
-    @media (--viewport-md) {
-      padding-top: 80px;
-    }
-
-    @media (--viewport-lg) {
-      padding-top: var(--layout-logo-vertical-offset-lg);
-      margin-top: 0;
-    }
+  @media (--viewport-lg) {
+    padding-top: var(--layout-logo-vertical-offset-lg);
+    padding-bottom: 100px;
   }
 
-  .fullWidthMedia & {
-    height: 100%;
-
-    @media (--viewport-md) {
-      width: calc(100% * 6 / 12);
-      padding-right: 0;
-      padding-left: 0;
-      margin-right: 40px;
-      margin-left: calc(100% * 4 / 12);
-    }
-
-    @media (--viewport-lg) {
-      width: calc(100% * 5 / 12);
-      max-width: 680px;
-      margin-right: calc(100% * 3 / 12);
-      margin-left: auto;
-    }
-  }
-
-  .reverse & {
-    @media (--viewport-lg) {
-      margin-right: 15%;
-      margin-left: 34%;
-    }
-  }
-
-  .topOffest.fullWidthMedia & {
+  .fullWidth & {
     @media (--viewport-md) {
       padding-top: var(--layout-logo-vertical-offset-md);
+      padding-bottom: 150px;
     }
 
     @media (--viewport-lg) {
-      padding-top: var(--layout-logo-vertical-offset-lg);
+      padding-top: 200px;
+      padding-bottom: 100px;
     }
   }
 
-  .fullWidthMedia.reverse & {
+  .fullHeight & {
+    padding-top: 180px;
+
+    @media (--viewport-md) {
+      padding-top: 300px;
+      padding-bottom: 150px;
+    }
+
     @media (--viewport-lg) {
-      margin-right: 0;
-      margin-left: calc(100% * 3 / 12);
+      padding-top: 200px;
+      padding-bottom: 100px;
+    }
+  }
+
+  .wide & {
+    @media (--viewport-md) {
+      padding-top: 300px;
+      padding-bottom: 150px;
+    }
+
+    @media (--viewport-lg) {
+      padding-top: 200px;
+      padding-bottom: 100px;
     }
   }
 }
@@ -141,8 +142,6 @@
 }
 
 .content {
-  font-size: rem(16px);
-
   @media (--viewport-sm-only) {
     margin-top: 15px;
   }

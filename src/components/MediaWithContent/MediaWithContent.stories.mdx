@@ -1,10 +1,9 @@
 import { Fragment } from 'react';
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import { GridOverlay } from '~.storybook/GridOverlay.js';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { boolean, select, text, radios } from '@storybook/addon-knobs';
 import { DefinitionList } from '~/components/DefinitionList';
-import { Hyperlink } from '~/components/Hyperlink';
 import { Image } from '~/components/Image';
 import { KitList } from '~/components/KitList';
 import { LinkButtonGroup } from '~/components/LinkButtonGroup';
@@ -20,63 +19,29 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
 <Canvas>
   <Story name="Base Component">
     {(() => {
-      const gridOverlayActive = knobs.boolean(
-        'isActive',
-        false,
-        'Grid overlay',
-      );
-      const gridOverlayIntertedColours = knobs.boolean(
-        'hasInvertedColours',
-        false,
-        'Grid overlay',
-      );
       const theme = knobs.select(
         'theme',
         ['dark', 'light'],
         'dark',
         'Presentation',
       );
-      const hasHeader = knobs.boolean('hasHeader', false, 'Implementation');
       const hasForegroundImage = knobs.boolean(
         'hasForegroundImage',
         false,
         'Implementation',
       );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
       return (
         <div style={{ position: 'relative' }}>
-          <GridOverlay
-            isActive={gridOverlayActive}
-            hasInvertedColours={gridOverlayIntertedColours}
-          />
-          {hasHeader && (
-            <>
-              <nav
-                style={{
-                  position: 'relative',
-                  height: '20px',
-                  lineHeight: '1',
-                  color: 'white',
-                  zIndex: '1000',
-                  padding: '30px 20px',
-                  borderBottom: '1px solid white',
-                }}
-              >
-                Shop&nbsp;&nbsp;&nbsp;&nbsp;Read&nbsp;&nbsp;&nbsp;&nbsp;Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stores
-              </nav>
-              <span
-                style={{
-                  position: 'absolute',
-                  top: '195px',
-                  color: 'white',
-                  zIndex: '1000',
-                  paddingLeft: '20px',
-                  fontSize: '30px',
-                }}
-              >
-                Aesop
-              </span>
-            </>
-          )}
           <MediaWithContent
             containMedia={knobs.select(
               'containMedia',
@@ -97,9 +62,7 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
                   medium={MediaWithContentFixture.image.foreground.medium}
                   small={MediaWithContentFixture.image.foreground.small}
                 />
-              ) : (
-                undefined
-              )
+              ) : undefined
             }
             foregroundImageLink={
               hasForegroundImage
@@ -214,6 +177,10 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
               return <Component {...props} theme={theme} />;
             })()}
             theme={theme}
+          />
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
           />
         </div>
       );

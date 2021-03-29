@@ -13,10 +13,7 @@ describe('<HeroBanner />', () => {
   it('should render base component correctly', () => {
     const { container } = render(
       <HeroBanner
-        content={
-          <DefinitionList items={HeroBannerFixture.definitionList.items} />
-        }
-        copy={HeroBannerFixture.copy.expectations}
+        copy={HeroBannerFixture.copy.default}
         media={<Image {...HeroBannerFixture.image.default} />}
       />,
     );

@@ -2,6 +2,12 @@ import { ReactElement, ReactNode } from 'react';
 import type { Themes } from '~/types';
 
 type AnchorPoints = 'center' | 'left' | 'right';
+type PresentaionVariations =
+  | 'default'
+  | 'fifty-fifty'
+  | 'wide-header'
+  | 'article-header'
+  | 'full-display';
 
 type HeroBannerProps = {
   backgroundColor?: string;
@@ -9,7 +15,7 @@ type HeroBannerProps = {
   containMedia?: AnchorPoints;
   content?: ReactNode;
   copy?: {
-    description?: string;
+    description?: ReactNode;
     eyebrow?: string;
     heading?: string;
     subHeading?: string;
@@ -19,12 +25,11 @@ type HeroBannerProps = {
     url?: string;
     title?: string;
   };
-  hasFullWidthMedia?: boolean;
   hasSerifFontHeading?: boolean;
   hasTopOffset?: boolean;
-  isReverse?: boolean;
   media: ReactElement;
   theme?: Themes;
+  variation?: PresentaionVariations;
 };
 
 export type { HeroBannerProps };

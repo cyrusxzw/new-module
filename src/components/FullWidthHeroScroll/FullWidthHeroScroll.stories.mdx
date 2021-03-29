@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import { GridOverlay } from '~.storybook/GridOverlay.js';
+import { StorybookGridOverlay } from '~.storybook/components/StorybookGridOverlay';
 import { FullWidthHeroScroll } from './FullWidthHeroScroll';
 import { FullWidthHeroScrollFixture } from './FullWidthHeroScroll.fixture';
 
@@ -11,7 +11,7 @@ import { FullWidthHeroScrollFixture } from './FullWidthHeroScroll.fixture';
 
 <Canvas>
   <Story name="Full Width Hero Scroll">
-    <GridOverlay
+    <StorybookGridOverlay
       isActive={knobs.boolean('isActive', false, 'Grid overlay')}
       hasInvertedColours={knobs.boolean(
         'hasInvertedColours',

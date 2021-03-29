@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import { ParagraphSet } from '~/components/Paragraph';
 import { SectionHeading } from '~/components/SectionHeading';
 import type { HeroBannerContentProps } from './HeroBannerContent.types';
@@ -9,19 +10,26 @@ const HeroBannerContent: FC<HeroBannerContentProps> = ({
   className,
   content,
   copy,
-  hasFullWidthMedia = false,
   hasSerifFontHeading = true,
   hasTopOffset = false,
-  isReverse = false,
-  theme = 'dark',
+  theme,
+  variation = 'default',
 }) => {
+  const currentTheme = useThemeContext(theme, 'dark');
+  const isFullWidth = variation.match(/^(default|wide-header|full-display)$/);
+  const isFullHeight = variation === 'full-display';
+  const isWide = variation === 'wide-header';
+  const isOffsetX = variation === 'article-header';
+
   const classSet = cx(
     className,
     styles.base,
-    { [styles.reverse]: isReverse },
-    { [styles.fullWidthMedia]: hasFullWidthMedia },
+    { [styles.fullWidth]: isFullWidth },
+    { [styles.fullHeight]: isFullHeight },
+    { [styles.wide]: isWide },
+    { [styles.offsetX]: isOffsetX },
     { [styles.topOffest]: hasTopOffset },
-    styles[theme],
+    styles[currentTheme],
   );
 
   return (
@@ -33,16 +41,17 @@ const HeroBannerContent: FC<HeroBannerContentProps> = ({
           hasSerifFontHeading={hasSerifFontHeading}
           heading={copy?.heading}
           isFlush={false}
+          isHeroHeading={true}
           isPageHeading={true}
           subHeading={copy.subHeading}
-          theme={theme}
+          theme={currentTheme}
         />
         <div className={styles.content}>
           {copy?.description && (
             <ParagraphSet
               className={styles.description}
               isLarge={true}
-              theme={theme}
+              theme={currentTheme}
             >
               {copy?.description}
             </ParagraphSet>

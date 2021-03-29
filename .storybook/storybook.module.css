@@ -1,50 +1,50 @@
 @font-face {
   font-family: 'Portrait Web';
   src:
-    url('/aesop-gel/assets/fonts/Portrait/Portrait-Regular-Web.woff2') format('woff2'),
-    url('/aesop-gel/assets/fonts/Portrait/Portrait-Regular-Web.woff') format('woff'),
-    url('/aesop-gel/assets/fonts/Portrait/Portrait-Regular-Web.eot');
+    url('/assets/fonts/Portrait/Portrait-Regular-Web.woff2') format('woff2'),
+    url('/assets/fonts/Portrait/Portrait-Regular-Web.woff') format('woff'),
+    url('/assets/fonts/Portrait/Portrait-Regular-Web.eot');
 }
 
 @font-face {
   font-family: 'Suisse Regular';
   src:
-    url('/aesop-gel/assets/fonts/Suisse/SuisseIntl-Regular-WebS.woff2') format('woff2'),
-    url('/aesop-gel/assets/fonts/Suisse/SuisseIntl-Regular-WebS.woff') format('woff'),
-    url('/aesop-gel/assets/fonts/Suisse/SuisseIntl-Regular-WebS.ttf') format('truetype');
+    url('/assets/fonts/Suisse/SuisseIntl-Regular-WebS.woff2') format('woff2'),
+    url('/assets/fonts/Suisse/SuisseIntl-Regular-WebS.woff') format('woff'),
+    url('/assets/fonts/Suisse/SuisseIntl-Regular-WebS.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Suisse Medium';
   src:
-    url('/aesop-gel/assets/fonts/Suisse/SuisseIntl-Medium-WebS.woff2') format('woff2'),
-    url('/aesop-gel/assets/fonts/Suisse/SuisseIntl-Medium-WebS.woff') format('woff'),
-    url('/aesop-gel/assets/fonts/Suisse/SuisseIntl-Medium-WebS.ttf') format('truetype');
+    url('/assets/fonts/Suisse/SuisseIntl-Medium-WebS.woff2') format('woff2'),
+    url('/assets/fonts/Suisse/SuisseIntl-Medium-WebS.woff') format('woff'),
+    url('/assets/fonts/Suisse/SuisseIntl-Medium-WebS.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Suisse SemiBold';
   src:
-    url('/aesop-gel/assets/fonts/Suisse/SuisseIntl-SemiBold-WebS.woff2')
+    url('/assets/fonts/Suisse/SuisseIntl-SemiBold-WebS.woff2')
     format('woff2'),
-    url('/aesop-gel/assets/fonts/Suisse/SuisseIntl-SemiBold-WebS.woff') format('woff'),
-    url('/aesop-gel/assets/fonts/Suisse/SuisseIntl-SemiBold-WebS.ttf') format('truetype');
+    url('/assets/fonts/Suisse/SuisseIntl-SemiBold-WebS.woff') format('woff'),
+    url('/assets/fonts/Suisse/SuisseIntl-SemiBold-WebS.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Zapf Humanist';
   src:
-    url('/aesop-gel/assets/fonts/Zapf/324B1A_0_0.woff2') format('woff2'),
-    url('/aesop-gel/assets/fonts/Zapf/324B1A_0_0.woff') format('woff'),
-    url('/aesop-gel/assets/fonts/Zapf/324B1A_0_0.ttf') format('truetype');
+    url('/assets/fonts/Zapf/324B1A_0_0.woff2') format('woff2'),
+    url('/assets/fonts/Zapf/324B1A_0_0.woff') format('woff'),
+    url('/assets/fonts/Zapf/324B1A_0_0.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Canela Light';
   src:
-    url('/aesop-gel/assets/fonts/Canela/Canela-Light-Web.woff2') format('woff2'),
-    url('/aesop-gel/assets/fonts/Canela/Canela-Light-Web.woff') format('woff'),
-    url('/aesop-gel/assets/fonts/Canela/Canela-Light-Web.eot');
+    url('/assets/fonts/Canela/Canela-Light-Web.woff2') format('woff2'),
+    url('/assets/fonts/Canela/Canela-Light-Web.woff') format('woff'),
+    url('/assets/fonts/Canela/Canela-Light-Web.eot');
 }
 
 :global {
