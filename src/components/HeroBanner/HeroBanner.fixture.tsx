@@ -108,7 +108,7 @@ const HeroBannerFixture = {
   video: {
     fallbackImage: {
       copy: {
-        altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
+        altText: 'Aliquam turpis libero',
       },
       large: './assets/images/MediaWithContent/video-poster.png',
       medium: './assets/images/MediaWithContent/video-poster.png',
@@ -116,7 +116,7 @@ const HeroBannerFixture = {
     },
     poster: {
       copy: {
-        altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
+        altText: 'Aliquam turpis libero',
       },
       large: './assets/images/MediaWithContent/video-poster.png',
       medium: './assets/images/MediaWithContent/video-poster.png',
