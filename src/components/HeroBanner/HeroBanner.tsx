@@ -1,4 +1,4 @@
-import React, { forwardRef, FC } from 'react';
+import React, { forwardRef } from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider } from '~/contexts';
 import { HeroBannerMedia } from './components/HeroBannerMedia';
