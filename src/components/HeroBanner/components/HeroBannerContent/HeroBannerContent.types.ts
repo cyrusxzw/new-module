@@ -1,27 +1,19 @@
 import { ReactNode } from 'react';
 import type { Themes } from '~/types';
-
-type PresentaionVariations =
-  | 'default'
-  | 'fifty-fifty'
-  | 'wide-header'
-  | 'article-header'
-  | 'full-display';
+import type {
+  HeroBannerCopy,
+  HeroBannerVariations,
+} from '../../HeroBanner.types';
 
 type HeroBannerContentProps = {
   className?: string;
   content?: ReactNode;
-  copy?: {
-    description?: ReactNode;
-    eyebrow?: string;
-    heading?: string;
-    subHeading?: string;
-  };
+  copy?: HeroBannerCopy;
   hasFullWidthMedia?: boolean;
   hasSerifFontHeading?: boolean;
   hasTopOffset?: boolean;
   theme?: Themes;
-  variation?: PresentaionVariations;
+  variation?: HeroBannerVariations;
 };
 
 export type { HeroBannerContentProps };

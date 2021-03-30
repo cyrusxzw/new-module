@@ -1,25 +1,27 @@
 import { ReactElement, ReactNode } from 'react';
 import type { Themes } from '~/types';
 
-type AnchorPoints = 'center' | 'left' | 'right';
-type PresentaionVariations =
+type HeroBannerMediaAnchorPoints = 'center' | 'left' | 'right';
+type HeroBannerVariations =
   | 'default'
   | 'fifty-fifty'
   | 'wide-header'
   | 'article-header'
   | 'full-display';
 
+type HeroBannerCopy = {
+  description?: ReactNode;
+  eyebrow?: string;
+  heading?: string;
+  subHeading?: string;
+};
+
 type HeroBannerProps = {
   backgroundColor?: string;
   className?: string;
-  containMedia?: AnchorPoints;
+  containMedia?: HeroBannerMediaAnchorPoints;
   content?: ReactNode;
-  copy?: {
-    description?: ReactNode;
-    eyebrow?: string;
-    heading?: string;
-    subHeading?: string;
-  };
+  copy?: HeroBannerCopy;
   foregroundImage?: ReactElement;
   foregroundImageLink?: {
     url?: string;
@@ -29,7 +31,12 @@ type HeroBannerProps = {
   hasTopOffset?: boolean;
   media: ReactElement;
   theme?: Themes;
-  variation?: PresentaionVariations;
+  variation?: HeroBannerVariations;
 };
 
-export type { HeroBannerProps };
+export type {
+  HeroBannerProps,
+  HeroBannerCopy,
+  HeroBannerVariations,
+  HeroBannerMediaAnchorPoints,
+};

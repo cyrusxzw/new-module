@@ -8,13 +8,13 @@ const StorybookNavHeader = ({ isActive = false, theme = 'dark' }) => {
 
   return (
     <div className={cx(styles[theme])}>
-      <nav className={styles.nav}>
+      <menu className={styles.menu}>
         <li>Shop</li>
         <li>Read</li>
         <li>Search</li>
         <li>Stores</li>
         <li className={styles.mobile}>Cart</li>
-      </nav>
+      </menu>
       <span className={styles.logo}>Aēsop</span>
     </div>
   );

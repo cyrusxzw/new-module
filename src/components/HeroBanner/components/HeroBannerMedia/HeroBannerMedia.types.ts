@@ -1,23 +1,19 @@
 import { ReactElement } from 'react';
-
-type MediaAnchorPoints = 'center' | 'left' | 'right';
-type PresentaionVariations =
-  | 'default'
-  | 'fifty-fifty'
-  | 'wide-header'
-  | 'article-header'
-  | 'full-display';
+import type {
+  HeroBannerVariations,
+  HeroBannerMediaAnchorPoints,
+} from '../../HeroBanner.types';
 
 type HeroBannerMediaProps = {
   className?: string;
-  containMedia?: MediaAnchorPoints;
+  containMedia?: HeroBannerMediaAnchorPoints;
   foregroundImage?: ReactElement;
   foregroundImageLink?: {
     url?: string;
     title?: string;
   };
   media: ReactElement;
-  variation?: PresentaionVariations;
+  variation?: HeroBannerVariations;
 };
 
 export type { HeroBannerMediaProps };
