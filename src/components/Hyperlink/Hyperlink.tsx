@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Icon } from '~/components/Icon';
 import {
@@ -8,21 +7,22 @@ import {
   getTargetType,
   hasIconFromStyle,
 } from './Hyperlink.utils';
+import type { HyperlinkProps } from './Hyperlink.types';
 import styles from './Hyperlink.module.css';
 
-const Hyperlink = forwardRef(
+const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
   (
     {
       children,
       className,
       dataTestRef,
-      hasTargetInNewWindow,
+      hasTargetInNewWindow = false,
       isAlternate,
       isDownload,
       onClick,
-      style,
-      textAlign,
-      theme,
+      style = 'Internal No Icon Link',
+      textAlign = 'left',
+      theme = 'dark',
       title,
       url,
     },
@@ -75,48 +75,5 @@ const Hyperlink = forwardRef(
     );
   },
 );
-
-Hyperlink.propTypes = {
-  children: PropTypes.any.isRequired,
-  className: PropTypes.string,
-  dataTestRef: PropTypes.string,
-  hasTargetInNewWindow: PropTypes.bool,
-  id: PropTypes.string,
-  isAlternate: PropTypes.bool,
-  isDownload: PropTypes.bool,
-  onClick: PropTypes.func,
-  style: PropTypes.oneOf([
-    'External Button Link',
-    'External No Icon Button Link',
-    'External No Icon Link',
-    'External Text Link',
-    'Internal Button Link',
-    'Internal No Icon Button Link',
-    'Internal No Icon Link',
-    'Internal Text Link',
-  ]),
-  textAlign: PropTypes.oneOf(['center', 'left', 'right']),
-  theme: PropTypes.oneOf(['dark', 'light']),
-  title: PropTypes.string,
-  type: PropTypes.oneOf(['Relative', 'Absolute']),
-  url: PropTypes.string.isRequired,
-};
-
-Hyperlink.defaultProps = {
-  children: undefined,
-  className: undefined,
-  dataTestRef: undefined,
-  hasTargetInNewWindow: false,
-  id: undefined,
-  isAlternate: undefined,
-  isDownload: undefined,
-  onClick: undefined,
-  style: 'Internal No Icon Link',
-  textAlign: 'left',
-  theme: 'dark',
-  title: undefined,
-  type: undefined,
-  url: undefined,
-};
 
 export { Hyperlink };

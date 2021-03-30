@@ -23,9 +23,7 @@ describe('<Hyperlink />', () => {
 
   it('should render base component correctly', () => {
     const { container } = render(
-      <Hyperlink text="Aesop" url="https://aesop.com">
-        Aesop
-      </Hyperlink>,
+      <Hyperlink url="https://aesop.com">Aesop</Hyperlink>,
     );
 
     expect(container).toMatchSnapshot();
