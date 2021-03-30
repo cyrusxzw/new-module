@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { FC } from 'react';
 import cx from 'classnames';
-import PropTypes from 'prop-types';
 import { Heading } from '~/components/Heading';
 import { Image } from '~/components/Image';
+import type { SlideProps } from './Slide.types';
 import styles from './Slide.module.css';
 
-const Slide = ({
+const Slide: FC<SlideProps> = ({
   description,
   heading,
   id,
   image,
-  isFullWidthSlide,
-  theme,
+  isFullWidthSlide = false,
+  theme = 'dark',
 }) => (
   <>
     {(heading || description) && (
@@ -43,23 +43,5 @@ const Slide = ({
     </div>
   </>
 );
-
-Slide.propTypes = {
-  description: PropTypes.string,
-  heading: PropTypes.string,
-  id: PropTypes.string,
-  image: PropTypes.object.isRequired,
-  isFullWidthSlide: PropTypes.bool,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-Slide.defaultProps = {
-  description: undefined,
-  heading: undefined,
-  id: undefined,
-  image: undefined,
-  isFullWidthSlide: false,
-  theme: 'dark',
-};
 
 export { Slide };

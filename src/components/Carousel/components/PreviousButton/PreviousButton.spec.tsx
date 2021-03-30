@@ -8,7 +8,13 @@ describe('<Carousel.PreviousButton />', () => {
   });
 
   it('should render base component correctly', () => {
-    const { container } = render(<PreviousButton onClick={() => {}} />);
+    const { container } = render(
+      <PreviousButton
+        onClick={() => {
+          return;
+        }}
+      />,
+    );
 
     expect(container).toMatchSnapshot();
   });

@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import cx from 'classnames';
 import { Hyperlink } from '~/components/Hyperlink';
 import { SectionHeading } from '~/components/SectionHeading';
 import { Paragraph } from '~/components/Paragraph';
+import type { CarouselIntroductionProps } from './CarouselIntroduction.types';
 import styles from './CarouselIntroduction.module.css';
 
-const CarouselIntroduction = ({
+const CarouselIntroduction: FC<CarouselIntroductionProps> = ({
   cta,
   description,
   eyebrow,
   heading,
-  theme,
+  theme = 'dark',
 }) => {
   const classSet = cx(styles.base, styles[theme]);
 
@@ -47,27 +47,6 @@ const CarouselIntroduction = ({
       )}
     </div>
   );
-};
-
-CarouselIntroduction.propTypes = {
-  cta: PropTypes.shape({
-    style: PropTypes.string,
-    title: PropTypes.string,
-    url: PropTypes.string,
-    text: PropTypes.string,
-  }),
-  description: PropTypes.node,
-  heading: PropTypes.string,
-  theme: PropTypes.oneOf(['dark', 'light']),
-  eyebrow: PropTypes.string,
-};
-
-CarouselIntroduction.defaultProps = {
-  cta: undefined,
-  description: undefined,
-  heading: undefined,
-  theme: 'dark',
-  eyebrow: undefined,
 };
 
 export { CarouselIntroduction };
