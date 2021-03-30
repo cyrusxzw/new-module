@@ -1,5 +1,6 @@
 import includes from 'lodash/includes';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
+import type { LinkStyle } from './Hyperlink.types';
 
 const {
   EXTERNAL_BUTTON_LINK,
@@ -11,7 +12,7 @@ const {
   INTERNAL_TEXT_LINK,
 } = HYPERLINK_STYLE_TYPES;
 
-const checkIsInlineFromStyle = style => {
+const checkIsInlineFromStyle = (style: LinkStyle): boolean => {
   const styleRepresentsInline = includes(
     [
       EXTERNAL_NO_ICON_TEXT_LINK,
@@ -25,7 +26,7 @@ const checkIsInlineFromStyle = style => {
   return styleRepresentsInline ? true : false;
 };
 
-const checkIsExternalFromStyle = style => {
+const checkIsExternalFromStyle = (style: LinkStyle): boolean => {
   const styleRepresentsAbsoluteLink = includes(
     [
       EXTERNAL_BUTTON_LINK,
@@ -39,7 +40,7 @@ const checkIsExternalFromStyle = style => {
   return styleRepresentsAbsoluteLink ? true : false;
 };
 
-const hasIconFromStyle = style =>
+const hasIconFromStyle = (style: LinkStyle): boolean =>
   includes(
     [
       EXTERNAL_BUTTON_LINK,
@@ -52,7 +53,7 @@ const hasIconFromStyle = style =>
     ? true
     : false;
 
-const getTargetType = openInANewWindow =>
+const getTargetType = (openInANewWindow: boolean): string =>
   openInANewWindow ? '_blank' : '_self';
 
 export {
