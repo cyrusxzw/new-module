@@ -2313,7 +2313,7 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 --color-dark-decoration: var(--color-grey-30);
 --color-dark-disabled: var(--color-grey-60);
 */
-.Paragraph-module_paragraph__3AXc0 {
+.Paragraph-module_base__2wcSK {
   margin: 0;
   margin-bottom: 30px;
   font-size: 14px;
@@ -2375,6 +2375,10 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
   color: #fffef2;
   }
 .Paragraph-module_set__wOcFC p {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.6;
   }
 
 /* @import './key-frame.css'; */
