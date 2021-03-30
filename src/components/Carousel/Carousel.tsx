@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, useState } from 'react';
 import cx from 'classnames';
 import get from 'lodash/get';
 import Slider from 'react-slick';
@@ -21,22 +20,23 @@ import { NextButton } from './components/NextButton/NextButton';
 import { Pagination } from './components/Pagination';
 import { PreviousButton } from './components/PreviousButton';
 import { Slide } from './components/Slide';
+import type { CarouselProps } from './Carousel.types';
 import styles from './Carousel.module.css';
 
-const Carousel = ({
-  autoplaySpeed,
+const Carousel: FC<CarouselProps> = ({
+  autoplaySpeed = 3000,
   className,
-  hasAutoplay,
-  hasFlushPagination,
-  hasFullWidthSlides,
-  hasShowCaption,
-  hasSlideCounter,
+  hasAutoplay = false,
+  hasFlushPagination = false,
+  hasFullWidthSlides = false,
+  hasShowCaption = false,
+  hasSlideCounter = false,
   id,
-  initialSlideIndex,
+  initialSlideIndex = 0,
   introduction,
-  isCompact,
-  slides,
-  slideRefs,
+  isCompact = false,
+  slides = [],
+  slideRefs = [],
   theme,
 }) => {
   const slidesLength = slides.length;
@@ -224,60 +224,6 @@ const Carousel = ({
       )}
     </div>
   );
-};
-
-Carousel.propTypes = {
-  autoplaySpeed: PropTypes.number,
-  className: PropTypes.string,
-  hasAutoplay: PropTypes.bool,
-  hasFlushPagination: PropTypes.bool,
-  hasFullWidthSlides: PropTypes.bool,
-  hasShowCaption: PropTypes.bool,
-  hasSlideCounter: PropTypes.bool,
-  id: PropTypes.string,
-  initialSlideIndex: PropTypes.number,
-  introduction: PropTypes.shape({
-    cta: PropTypes.shape({
-      style: PropTypes.string,
-      title: PropTypes.string,
-      url: PropTypes.string,
-      text: PropTypes.string,
-    }),
-    description: PropTypes.node,
-    eyebrow: PropTypes.string,
-    heading: PropTypes.string,
-  }),
-  isCompact: PropTypes.bool,
-  slides: PropTypes.arrayOf(
-    PropTypes.shape({
-      caption: PropTypes.string,
-      description: PropTypes.string,
-      heading: PropTypes.string,
-      id: PropTypes.string,
-      isLoading: PropTypes.bool,
-      image: PropTypes.object.isRequired,
-      url: PropTypes.string,
-    }),
-  ),
-  slideRefs: PropTypes.array,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-Carousel.defaultProps = {
-  autoplaySpeed: 3000,
-  className: undefined,
-  hasAutoplay: false,
-  hasFlushPagination: false,
-  hasFullWidthSlides: false,
-  hasShowCaption: false,
-  hasSlideCounter: false,
-  id: undefined,
-  initialSlideIndex: 0,
-  introduction: undefined,
-  isCompact: false,
-  slides: [],
-  slideRefs: [],
-  theme: undefined,
 };
 
 export { Carousel };

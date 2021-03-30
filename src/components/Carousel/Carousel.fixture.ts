@@ -1,4 +1,6 @@
-const CarouselFixture = {
+import type { CarouselProps } from './Carousel.types';
+
+const CarouselFixture: CarouselProps = {
   autoplaySpeed: 3000,
   hasAutoplay: false,
   introduction: {

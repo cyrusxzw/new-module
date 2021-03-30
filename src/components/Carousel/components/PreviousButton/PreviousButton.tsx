@@ -1,15 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import cx from 'classnames';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
+import type { PreviousButtonProps } from './PreviousButton.types';
 import styles from './PreviousButton.module.css';
 
 /**
  * The onClick callback for the PreviousButton
  * components are provided through react-slick
  */
-const PreviousButton = ({ isActive, onClick, theme }) => (
+const PreviousButton: FC<PreviousButtonProps> = ({
+  isActive = true,
+  onClick,
+  theme = 'dark',
+}) => (
   <Button
     className={cx(styles.base, { [styles.hidden]: !isActive })}
     isInline={true}
@@ -20,17 +24,5 @@ const PreviousButton = ({ isActive, onClick, theme }) => (
     <Icon height={16} name="chevron" theme={theme} width={16} />
   </Button>
 );
-
-PreviousButton.propTypes = {
-  isActive: PropTypes.bool,
-  onClick: PropTypes.func,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-PreviousButton.defaultProps = {
-  isActive: true,
-  onClick: undefined,
-  theme: 'dark',
-};
 
 export { PreviousButton };

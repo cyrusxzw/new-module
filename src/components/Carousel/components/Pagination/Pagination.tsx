@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 import cx from 'classnames';
-import PropTypes from 'prop-types';
+import type { PaginationProps } from './Pagination.types';
 import styles from './Pagination.module.css';
 
-const Pagination = ({ dots, hasFlushPagination, progressIndex, theme }) => {
+const Pagination: FC<PaginationProps> = ({
+  dots = [],
+  hasFlushPagination = false,
+  progressIndex = 0,
+  theme = 'dark',
+}) => {
   if (!dots.length) return null;
 
   const dotsLength = dots.length;
@@ -22,20 +27,6 @@ const Pagination = ({ dots, hasFlushPagination, progressIndex, theme }) => {
       </div>
     </div>
   );
-};
-
-Pagination.propTypes = {
-  dots: PropTypes.array,
-  hasFlushPagination: PropTypes.bool,
-  progressIndex: PropTypes.number,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-Pagination.defaultProps = {
-  dots: [],
-  hasFlushPagination: false,
-  progressIndex: 0,
-  theme: 'dark',
 };
 
 export { Pagination };
