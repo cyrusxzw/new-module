@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useUID } from 'react-uid';
 import styles from './Checkbox.module.css';
+import type { CheckboxProps } from './Checkbox.types';
 
-const Checkbox = forwardRef(
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   (
     {
       checkboxClassName,
@@ -59,19 +59,5 @@ const Checkbox = forwardRef(
     );
   },
 );
-
-Checkbox.propTypes = {
-  checkboxClassName: PropTypes.string,
-  className: PropTypes.string,
-  content: PropTypes.string.isRequired,
-  contentClassName: PropTypes.string,
-  dataTestRef: PropTypes.string,
-  errorMessage: PropTypes.string,
-  id: PropTypes.string,
-  isEnabled: PropTypes.bool,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
 
 export { Checkbox };
