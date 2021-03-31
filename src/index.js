@@ -23,6 +23,7 @@ export {
   FullWidthHeroScroll,
   GoogleMap,
   Heading,
+  HeroBanner,
   Hidden,
   HorizontalProductDisplayAccordion,
   Hyperlink,
