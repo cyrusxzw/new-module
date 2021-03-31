@@ -11,7 +11,7 @@ describe('<LinkButtonGroup />', () => {
   it('renders children correctly', () => {
     const { container } = render(
       <LinkButtonGroup theme="light">
-        <Button onClick={() => {}} title="test button">
+        <Button onClick={() => undefined} title="test button">
           Test
         </Button>
       </LinkButtonGroup>,
@@ -48,7 +48,7 @@ describe('<LinkButtonGroup />', () => {
     render(
       <LinkButtonGroup textAlign="right" theme="light">
         <>
-          <Button onClick={() => {}} title="test button">
+          <Button onClick={() => undefined} title="test button">
             Test
           </Button>
         </>

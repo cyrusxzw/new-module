@@ -82,7 +82,7 @@ describe('<AccordionProduct />', () => {
             isCompressed={true}
             openState={AccordionProductFixture.openState}
             resetAccordion={handleResetOnKeydownPress}
-            toggleAccordion={() => {}}
+            toggleAccordion={() => undefined}
           />
         </VariantSelectContextProvider>
       </AddToCartContextProvider>,
@@ -115,7 +115,7 @@ describe('<AccordionProduct />', () => {
             id={AccordionProductFixture.id}
             isCompressed={true}
             openState={AccordionProductFixture.openState}
-            resetAccordion={() => {}}
+            resetAccordion={() => undefined}
             toggleAccordion={handleOpenOnClick}
           />
         </VariantSelectContextProvider>
@@ -144,7 +144,7 @@ describe('<AccordionProduct />', () => {
             isCompressed={true}
             onPromoClick={handleCloseOnClick}
             openState={AccordionProductFixture.openState}
-            resetAccordion={() => {}}
+            resetAccordion={() => undefined}
             toggleAccordion={handleCloseOnClick}
           />
         </VariantSelectContextProvider>
@@ -173,7 +173,7 @@ describe('<AccordionProduct />', () => {
             isCompressed={true}
             onPromoClick={handleForegroundOnClick}
             openState={AccordionProductFixture.openState}
-            resetAccordion={() => {}}
+            resetAccordion={() => undefined}
             toggleAccordion={handleForegroundOnClick}
           />
         </VariantSelectContextProvider>
@@ -204,8 +204,8 @@ describe('<AccordionProduct />', () => {
             id={AccordionProductFixture.id}
             isCompressed={true}
             openState={AccordionProductFixture.openState}
-            resetAccordion={() => {}}
-            toggleAccordion={() => {}}
+            resetAccordion={() => undefined}
+            toggleAccordion={() => undefined}
           />
         </VariantSelectContextProvider>
       </AddToCartContextProvider>,
@@ -225,8 +225,8 @@ describe('<AccordionProduct />', () => {
             closedState={AccordionProductFixture.closedStateWithVideo}
             id={AccordionProductFixture.id}
             openState={AccordionProductFixture.openStateWithVideo}
-            resetAccordion={() => {}}
-            toggleAccordion={() => {}}
+            resetAccordion={() => undefined}
+            toggleAccordion={() => undefined}
           />
         </VariantSelectContextProvider>
       </AddToCartContextProvider>,
@@ -249,8 +249,8 @@ describe('<AccordionProduct />', () => {
             closedState={AccordionProductFixture.closedState}
             id={AccordionProductFixture.id}
             openState={AccordionProductFixture.openStateWithVideo}
-            resetAccordion={() => {}}
-            toggleAccordion={() => {}}
+            resetAccordion={() => undefined}
+            toggleAccordion={() => undefined}
           />
         </VariantSelectContextProvider>
       </AddToCartContextProvider>,
@@ -274,8 +274,8 @@ describe('<AccordionProduct />', () => {
             id={AccordionProductFixture.id}
             isExpanded={true}
             openState={AccordionProductFixture.openState}
-            resetAccordion={() => {}}
-            toggleAccordion={() => {}}
+            resetAccordion={() => undefined}
+            toggleAccordion={() => undefined}
           />
         </VariantSelectContextProvider>
       </AddToCartContextProvider>,
@@ -309,8 +309,8 @@ describe('<AccordionProduct />', () => {
             id={AccordionProductFixture.id}
             isExpanded={true}
             openState={AccordionProductFixture.openState}
-            resetAccordion={() => {}}
-            toggleAccordion={() => {}}
+            resetAccordion={() => undefined}
+            toggleAccordion={() => undefined}
           />
         </VariantSelectContextProvider>
       </AddToCartContextProvider>,

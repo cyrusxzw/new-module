@@ -190,7 +190,7 @@ ProductCommerce.defaultProps = {
   eyebrow: undefined,
   heading: undefined,
   id: undefined,
-  onCtaClick: () => {},
+  onCtaClick: () => undefined,
   size: undefined,
   isActive: true,
   theme: 'dark',
