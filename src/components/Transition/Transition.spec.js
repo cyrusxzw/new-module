@@ -20,7 +20,7 @@ describe('<Transition />', () => {
 
 describe('<Transition /> required props', () => {
   beforeAll(() => {
-    jest.spyOn(global.console, 'error').mockImplementation(() => {});
+    jest.spyOn(global.console, 'error').mockImplementation(() => undefined);
   });
 
   afterAll(() => {

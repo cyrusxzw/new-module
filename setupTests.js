@@ -30,13 +30,13 @@ Object.defineProperty(window, 'matchMedia', {
  * and the following lines removes the warning.
  */
 Object.defineProperty(HTMLMediaElement.prototype, 'muted', {
-  set: () => {},
+  set: () => undefined,
 });
 
 /**
  *  https://github.com/jsdom/jsdom/issues/2155
  */
-window.HTMLMediaElement.prototype.load = () => {};
-window.HTMLMediaElement.prototype.play = () => {};
-window.HTMLMediaElement.prototype.pause = () => {};
-window.HTMLMediaElement.prototype.addTextTrack = () => {};
+window.HTMLMediaElement.prototype.load = () => undefined;
+window.HTMLMediaElement.prototype.play = () => undefined;
+window.HTMLMediaElement.prototype.pause = () => undefined;
+window.HTMLMediaElement.prototype.addTextTrack = () => undefined;

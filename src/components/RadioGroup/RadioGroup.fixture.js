@@ -3,7 +3,7 @@ const RadioGroupFixture = {
   dataTestRef: 'RADIO_GROUP_TEST_REF',
   errorMessage: 'Test Error Messsage',
   name: 'radio-group',
-  onChange: () => {},
+  onChange: () => undefined,
   options: [
     {
       value: 'morbi-id-nulla',
