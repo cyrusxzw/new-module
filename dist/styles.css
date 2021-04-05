@@ -6140,6 +6140,18 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     margin-left: calc(100% * 5 / 12)
 }
   }
+@media (min-width: 640px) {
+.HeroBannerContent-module_offsetXFullWidthMedia__Ue5Pg {
+    width: calc(100% * 6 / 12);
+    margin-left: calc(100% * 6 / 12)
+}
+  }
+@media (min-width: 1025px) {
+.HeroBannerContent-module_offsetXFullWidthMedia__Ue5Pg {
+    width: calc(100% * 4 / 12);
+    margin-left: calc(100% * 5 / 12)
+}
+  }
 .HeroBannerContent-module_fullWidth__2e8Gy {
   position: relative;
 }
@@ -6212,6 +6224,11 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 .HeroBannerContent-module_wide__1-6q8 .HeroBannerContent-module_innerWrapper__1Ct-Z {
       padding-top: 200px;
       padding-bottom: 100px
+  }
+    }
+@media (min-width: 640px) {
+.HeroBannerContent-module_offsetXFullWidthMedia__Ue5Pg .HeroBannerContent-module_innerWrapper__1Ct-Z {
+      padding-right: 34px
   }
     }
 @media (min-width: 640px) and (max-width: 1024px) {
