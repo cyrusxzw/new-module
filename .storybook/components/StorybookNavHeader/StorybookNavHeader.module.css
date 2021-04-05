@@ -6,6 +6,7 @@
   flex-direction: row-reverse;
   align-items: flex-end;
   padding: 30px 20px;
+  margin: 0;
   font-family: 'Suisse Regular', sans-serif;
 
   &,

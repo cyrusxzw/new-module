@@ -15,12 +15,16 @@ const HeroBannerMedia: FC<HeroBannerMediaProps> = ({
 }) => {
   const isFullHeight = variation === 'full-display';
   const isOffsetX = variation === 'article-header';
-  const isFullWidth = variation.match(/^(default|wide-header|full-display)$/);
+  const isLanding = variation === 'landing-header';
+  const isFullWidth = variation.match(
+    /^(default|full-display|landing-header|wide-header)$/,
+  );
 
   const classSet = cx(className, styles.base, styles[containMedia], {
     [styles.fullHeight]: isFullHeight,
     [styles.fullWidth]: isFullWidth,
     [styles.offsetX]: isOffsetX,
+    [styles.landing]: isLanding,
   });
 
   return (

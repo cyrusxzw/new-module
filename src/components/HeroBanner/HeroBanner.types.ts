@@ -3,11 +3,12 @@ import type { Themes } from '~/types';
 
 type HeroBannerMediaAnchorPoints = 'center' | 'left' | 'right';
 type HeroBannerVariations =
+  | 'article-header'
   | 'default'
   | 'fifty-fifty'
-  | 'wide-header'
-  | 'article-header'
-  | 'full-display';
+  | 'full-display'
+  | 'landing-header'
+  | 'wide-header';
 
 type HeroBannerCopy = {
   description?: ReactNode;

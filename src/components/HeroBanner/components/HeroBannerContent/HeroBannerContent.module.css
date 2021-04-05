@@ -54,6 +54,18 @@
   }
 }
 
+.offsetXFullWidthMedia {
+  @media (--viewport-md) {
+    width: calc(100% * 6 / 12);
+    margin-left: calc(100% * 6 / 12);
+  }
+
+  @media (--viewport-lg) {
+    width: calc(100% * 4 / 12);
+    margin-left: calc(100% * 5 / 12);
+  }
+}
+
 .fullWidth {
   position: relative;
 }
@@ -124,6 +136,12 @@
     @media (--viewport-lg) {
       padding-top: 200px;
       padding-bottom: 100px;
+    }
+  }
+
+  .offsetXFullWidthMedia & {
+    @media (--viewport-md) {
+      padding-right: var(--layout-md-margin);
     }
   }
 }

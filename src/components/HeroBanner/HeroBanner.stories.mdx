@@ -60,11 +60,12 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       const variation = knobs.select(
         'variation',
         [
+          'article-header',
           'default',
           'fifty-fifty',
-          'wide-header',
-          'article-header',
           'full-display',
+          'landing-header',
+          'wide-header',
         ],
         'default',
         'Presentation',
@@ -89,13 +90,10 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
         props: contentComponentProps,
       } = contentComponentOptions[contentComponentName];
       const imageSourceOptions = {
-        Background: HeroBannerFixture.image.background,
         Default: HeroBannerFixture.image.default,
-        Expectations: HeroBannerFixture.image.expectations,
-        FullWidth: HeroBannerFixture.image.fullWidth,
-        Hero: HeroBannerFixture.image.hero,
-        Kit: HeroBannerFixture.image.kit,
-        TheOrator: HeroBannerFixture.image.theOrator,
+        FiftyFifty: HeroBannerFixture.image.fiftyFifty,
+        ArticleHeader: HeroBannerFixture.image.articleHeader,
+        WideHeader: HeroBannerFixture.image.wideHeader,
       };
       const imageSource = knobs.select(
         'imageSource',
@@ -330,6 +328,40 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       copy={HeroBannerFixture.copy.default}
       backgroundColor="#b3001b"
       variation="full-display"
+      hasSerifFontHeading={false}
+      hasTopOffset={false}
+      isReverse={false}
+      media={
+        <Image
+          altText={HeroBannerFixture.image.default.altText}
+          large={HeroBannerFixture.image.default.large}
+          medium={HeroBannerFixture.image.default.medium}
+          small={HeroBannerFixture.image.default.small}
+        />
+      }
+      theme="light"
+    />
+  </Story>
+</Canvas>
+
+### Hero Banner Landing Header
+
+<Canvas>
+  <Story name="Hero Banner Landing Header">
+    <HeroBanner
+      content={
+        <Hyperlink
+          style="External Button Link"
+          theme="light"
+          title="Hyperlink Title"
+          url="/"
+        >
+          Lorem ipsum dolor sit amet
+        </Hyperlink>
+      }
+      copy={HeroBannerFixture.copy.default}
+      backgroundColor="#b3001b"
+      variation="landing-header"
       hasSerifFontHeading={false}
       hasTopOffset={false}
       isReverse={false}

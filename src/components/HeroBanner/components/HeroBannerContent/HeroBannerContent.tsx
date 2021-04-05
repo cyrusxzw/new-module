@@ -16,19 +16,25 @@ const HeroBannerContent: FC<HeroBannerContentProps> = ({
   variation = 'default',
 }) => {
   const currentTheme = useThemeContext(theme, 'dark');
-  const isFullWidth = variation.match(/^(default|wide-header|full-display)$/);
+  const isFullWidth = variation.match(
+    /^(default|full-display|landing-header|wide-header)$/,
+  );
   const isFullHeight = variation === 'full-display';
+  const isOffsetXFullWidthMedia = variation === 'landing-header';
   const isWide = variation === 'wide-header';
   const isOffsetX = variation === 'article-header';
 
   const classSet = cx(
     className,
     styles.base,
-    { [styles.fullWidth]: isFullWidth },
-    { [styles.fullHeight]: isFullHeight },
-    { [styles.wide]: isWide },
-    { [styles.offsetX]: isOffsetX },
-    { [styles.topOffest]: hasTopOffset },
+    {
+      [styles.fullWidth]: isFullWidth,
+      [styles.fullHeight]: isFullHeight,
+      [styles.wide]: isWide,
+      [styles.offsetX]: isOffsetX,
+      [styles.offsetXFullWidthMedia]: isOffsetXFullWidthMedia,
+      [styles.topOffest]: hasTopOffset,
+    },
     styles[currentTheme],
   );
 
