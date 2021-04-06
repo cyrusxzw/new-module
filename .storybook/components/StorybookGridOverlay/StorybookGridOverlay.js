@@ -7,7 +7,7 @@ const generateColumns = () => {
   const columns = [];
 
   for (let columnCount = 12; columnCount > 0; columnCount--) {
-    columns.push(<li className={styles.column} />);
+    columns.push(<li key={columnCount} className={styles.column} />);
   }
 
   return columns;

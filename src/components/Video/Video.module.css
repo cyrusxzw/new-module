@@ -56,6 +56,14 @@
     }
   }
 
+  &.heroFullWidthMobile {
+    @media (--viewport-sm-only) {
+      height: 100%;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
   @media (--viewport-lg) {
     height: 100%;
     padding-top: 0;

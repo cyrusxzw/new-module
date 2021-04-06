@@ -84,6 +84,7 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
         'content',
         Object.keys(contentComponentOptions),
         'LinkButtonGroup',
+        'Content',
       );
       const {
         Component: ContentComponent,
@@ -105,16 +106,20 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
         Video: {
           Component: Video,
           props: {
-            fallbackImage: HeroBannerFixture.video.fallbackImage,
             hasAllowAudio: false,
             hasAutoplay: true,
             hasLoop: true,
             hasPlayInFullScreen: false,
             hasControls: false,
             isHeroFullWidth: knobs.boolean(
-              'isHeroFullWidth',
+              'video.isHeroFullWidth',
               false,
-              'Presentation',
+              'Content',
+            ),
+            isHeroFullWidthMobile: knobs.boolean(
+              'video.isHeroFullWidthMobile',
+              false,
+              'Content',
             ),
             isFullWidth: false,
             large: HeroBannerFixture.video.source,
@@ -228,7 +233,6 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       variation="fifty-fifty"
       hasSerifFontHeading={false}
       hasTopOffset={false}
-      isReverse={false}
       media={
         <Image
           altText={HeroBannerFixture.image.fiftyFifty.altText}
@@ -262,7 +266,6 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       variation="wide-header"
       hasSerifFontHeading={false}
       hasTopOffset={false}
-      isReverse={false}
       media={
         <Image
           altText={HeroBannerFixture.image.wideHeader.altText}
@@ -296,7 +299,6 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       variation="article-header"
       hasSerifFontHeading={false}
       hasTopOffset={false}
-      isReverse={false}
       media={
         <Image
           altText={HeroBannerFixture.image.articleHeader.altText}
@@ -330,7 +332,6 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       variation="full-display"
       hasSerifFontHeading={false}
       hasTopOffset={false}
-      isReverse={false}
       media={
         <Image
           altText={HeroBannerFixture.image.default.altText}
@@ -364,7 +365,6 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       variation="landing-header"
       hasSerifFontHeading={false}
       hasTopOffset={false}
-      isReverse={false}
       media={
         <Image
           altText={HeroBannerFixture.image.default.altText}

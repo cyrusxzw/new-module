@@ -12,7 +12,7 @@ type HeroBannerMediaProps = {
     url?: string;
     title?: string;
   };
-  media: ReactElement;
+  media?: ReactElement;
   variation?: HeroBannerVariations;
 };
 

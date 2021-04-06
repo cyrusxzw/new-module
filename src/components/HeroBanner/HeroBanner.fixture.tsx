@@ -62,6 +62,12 @@ const HeroBannerFixture = {
       medium: './assets/images/HeroBanner/wide-header-medium.webp',
       small: './assets/images/HeroBanner/wide-header-small.webp',
     },
+    foreground: {
+      altText: 'alt image',
+      large: './assets/images/MediaWithContent/foreground-large.jpg',
+      medium: './assets/images/MediaWithContent/foreground-large.jpg',
+      small: './assets/images/MediaWithContent/foreground-large.jpg',
+    },
   },
   linkButtonGroup: {
     textAlign: 'left',
@@ -106,24 +112,8 @@ const HeroBannerFixture = {
     ],
   },
   video: {
-    fallbackImage: {
-      copy: {
-        altText: 'Aliquam turpis libero',
-      },
-      large: './assets/images/MediaWithContent/video-poster.png',
-      medium: './assets/images/MediaWithContent/video-poster.png',
-      small: './assets/images/MediaWithContent/video-poster.png',
-    },
-    poster: {
-      copy: {
-        altText: 'Aliquam turpis libero',
-      },
-      large: './assets/images/MediaWithContent/video-poster.png',
-      medium: './assets/images/MediaWithContent/video-poster.png',
-      small: './assets/images/MediaWithContent/video-poster.png',
-    },
     source:
-      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+      'https://player.vimeo.com/external/462935380.hd.mp4?s=01e048a4b5942b2c6648ffe9965ac5c79ebfc545&profile_id=169',
   },
 };
 

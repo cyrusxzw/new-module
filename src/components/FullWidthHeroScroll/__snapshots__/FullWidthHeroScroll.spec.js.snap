@@ -45,7 +45,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
           playsinline=""
         >
           <source
-            src="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
+            src="https://player.vimeo.com/external/462935380.hd.mp4?s=01e048a4b5942b2c6648ffe9965ac5c79ebfc545&profile_id=169"
             type="video/mp4"
           />
         </video>
@@ -85,55 +85,68 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
         <div
           class="innerWrapper"
         >
-          <article
-            class="base light"
+          <div
+            class="base"
+            style="background-color: transparent;"
           >
-            <header
-              class="base"
+            <div
+              class="base fullWidth fullHeight light"
             >
-              <h1
-                class="base xLarge light heading heading"
+              <div
+                class="innerWrapper"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              </h1>
-            </header>
-          </article>
-          <a
-            class="base blockStyle hasIcon left light"
-            href="/"
-            target="_self"
-          >
-            Lorem ipsum dolor
-             
-            <i
-              aria-hidden="true"
-              class="icon"
-            >
-              <svg
-                aria-labelledby="rightArrow-1"
-                class="base rightArrow light"
-                data-testid="data-testid-Icon"
-                focusable="false"
-                height="12"
-                role="img"
-                style="height: 12px; width: 12px;"
-                tabindex="-1"
-                viewBox="0 0 50 50"
-                width="12"
-              >
-                <title
-                  id="rightArrow-1"
+                <header
+                  class="header base heroHeading"
                 >
-                  rightArrow
-                </title>
-                <g>
-                  <path
-                    d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
-                  />
-                </g>
-              </svg>
-            </i>
-          </a>
+                  <h1
+                    class="base xLarge light heading"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </h1>
+                </header>
+                <div
+                  class="content"
+                >
+                  <a
+                    class="base blockStyle hasIcon left light"
+                    href="/"
+                    target="_self"
+                  >
+                    Lorem ipsum dolor
+                     
+                    <i
+                      aria-hidden="true"
+                      class="icon"
+                    >
+                      <svg
+                        aria-labelledby="rightArrow-1"
+                        class="base rightArrow light"
+                        data-testid="data-testid-Icon"
+                        focusable="false"
+                        height="12"
+                        role="img"
+                        style="height: 12px; width: 12px;"
+                        tabindex="-1"
+                        viewBox="0 0 50 50"
+                        width="12"
+                      >
+                        <title
+                          id="rightArrow-1"
+                        >
+                          rightArrow
+                        </title>
+                        <g>
+                          <path
+                            d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
+                          />
+                        </g>
+                      </svg>
+                    </i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <button
           class="scrollIndicator"

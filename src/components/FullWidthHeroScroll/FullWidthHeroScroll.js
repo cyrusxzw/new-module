@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import { isInBrowser } from '~/utils/environment';
-import { BodyCopy } from '~/components/BodyCopy';
+import { HeroBanner } from '~/components/HeroBanner';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
 import { BackgroundElement } from './components/BackgroundElement';
@@ -25,7 +25,7 @@ const FullWidthHeroScroll = ({
   theme,
 }) => {
   const scrollButton = useRef();
-  const offset = 120;
+  const OFFSET = 120;
 
   useEffect(() => {
     const scrollButtonCurrent = scrollButton.current;
@@ -48,7 +48,7 @@ const FullWidthHeroScroll = ({
   const handleScrollDown = () => {
     if (isInBrowser()) {
       window.scroll({
-        top: window.innerHeight - offset,
+        top: window.innerHeight - OFFSET,
         left: 0,
         behavior: 'smooth',
       });
@@ -72,24 +72,30 @@ const FullWidthHeroScroll = ({
       <div className={styles.scrollingContent}>
         <div className={styles.fullscreenHero}>
           <div className={styles.innerWrapper}>
-            <BodyCopy
-              copy={copy}
-              eyebrow={eyebrow}
+            <HeroBanner
+              backgroundColor="transparent"
+              content={
+                cta && (
+                  <Hyperlink
+                    isAlternate={false}
+                    style={HYPERLINK_STYLE_TYPES.INTERNAL_BUTTON_LINK}
+                    theme={theme}
+                    url={cta.url}
+                  >
+                    {cta.text}
+                  </Hyperlink>
+                )
+              }
+              copy={{
+                eyebrow,
+                heading,
+                description: copy,
+              }}
               hasSerifFontHeading={hasSerifFontHeading}
-              heading={heading}
-              isHeroArticle={true}
+              hasTopOffset={hasTopOffset}
               theme={theme}
+              variation="full-display"
             />
-            {cta && (
-              <Hyperlink
-                isAlternate={false}
-                style={HYPERLINK_STYLE_TYPES.INTERNAL_BUTTON_LINK}
-                theme={theme}
-                url={cta.url}
-              >
-                {cta.text}
-              </Hyperlink>
-            )}
           </div>
           <button
             className={styles.scrollIndicator}
@@ -132,9 +138,9 @@ FullWidthHeroScroll.propTypes = {
 };
 
 FullWidthHeroScroll.defaultProps = {
-  backgroundVideo: undefined,
-  backgroundMediaType: undefined,
   backgroundImage: undefined,
+  backgroundMediaType: undefined,
+  backgroundVideo: undefined,
   copy: undefined,
   cta: undefined,
   eyebrow: undefined,
@@ -142,8 +148,8 @@ FullWidthHeroScroll.defaultProps = {
   hasTopOffset: false,
   heading: undefined,
   id: undefined,
-  theme: 'light',
   textBlocks: [],
+  theme: 'light',
 };
 
 export { FullWidthHeroScroll };
