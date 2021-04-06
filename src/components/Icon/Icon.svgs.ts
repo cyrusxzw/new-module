@@ -1,4 +1,6 @@
-const svgs = [
+import type { Svg } from './Icon.types';
+
+const svgs: Svg[] = [
   {
     name: 'rightArrow',
     data: [

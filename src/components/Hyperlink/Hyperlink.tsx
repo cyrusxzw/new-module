@@ -8,6 +8,7 @@ import {
   hasIconFromStyle,
 } from './Hyperlink.utils';
 import type { HyperlinkProps } from './Hyperlink.types';
+import type { SvgName } from '../Icon/Icon.types';
 import styles from './Hyperlink.module.css';
 
 const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
@@ -43,7 +44,7 @@ const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
       className,
     );
 
-    let iconName = '';
+    let iconName: SvgName = '';
 
     if (isExternal) {
       iconName = 'rightUpArrow';
