@@ -109,7 +109,9 @@
 
     .left &,
     .center &,
-    .right & {
+    .right &,
+    .top &,
+    .bottom & {
       object-fit: contain;
     }
 
@@ -119,6 +121,14 @@
 
     .right & {
       object-position: right;
+    }
+
+    .top & {
+      object-position: top;
+    }
+
+    .bottom & {
+      object-position: bottom;
     }
 
     .fullWidth & {

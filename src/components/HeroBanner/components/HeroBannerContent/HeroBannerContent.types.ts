@@ -9,7 +9,7 @@ type HeroBannerContentProps = {
   className?: string;
   content?: ReactNode;
   copy?: HeroBannerCopy;
-  hasFullWidthMedia?: boolean;
+  hasNoMedia?: boolean;
   hasSerifFontHeading?: boolean;
   hasTopOffset?: boolean;
   theme?: Themes;

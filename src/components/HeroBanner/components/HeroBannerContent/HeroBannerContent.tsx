@@ -10,6 +10,7 @@ const HeroBannerContent: FC<HeroBannerContentProps> = ({
   className,
   content,
   copy,
+  hasNoMedia,
   hasSerifFontHeading = true,
   hasTopOffset = false,
   theme,
@@ -34,6 +35,7 @@ const HeroBannerContent: FC<HeroBannerContentProps> = ({
       [styles.offsetX]: isOffsetX,
       [styles.offsetXFullWidthMedia]: isOffsetXFullWidthMedia,
       [styles.topOffest]: hasTopOffset,
+      [styles.noMedia]: hasNoMedia && variation !== 'full-display',
     },
     styles[currentTheme],
   );

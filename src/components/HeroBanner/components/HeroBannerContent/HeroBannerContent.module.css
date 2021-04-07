@@ -127,6 +127,16 @@
     }
   }
 
+  .noMedia & {
+    @media (--viewport-sm-only) {
+      padding-top: 180px;
+    }
+
+    @media (--viewport-md-only) {
+      padding-top: var(--layout-logo-vertical-offset-md);
+    }
+  }
+
   .wide & {
     @media (--viewport-md) {
       padding-top: 300px;

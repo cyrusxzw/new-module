@@ -1,7 +1,12 @@
 import { ReactElement, ReactNode } from 'react';
 import type { Themes } from '~/types';
 
-type HeroBannerMediaAnchorPoints = 'center' | 'left' | 'right';
+type HeroBannerMediaAnchorPoints =
+  | 'center'
+  | 'left'
+  | 'right'
+  | 'bottom'
+  | 'top';
 type HeroBannerVariations =
   | 'article-header'
   | 'default'

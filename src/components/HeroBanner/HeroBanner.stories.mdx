@@ -35,6 +35,8 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
           center: 'center',
           left: 'left',
           right: 'right',
+          top: 'top',
+          bottom: 'bottom',
           none: undefined,
         },
         undefined,
@@ -79,11 +81,15 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
           Component: LinkButtonGroup,
           props: HeroBannerFixture.linkButtonGroup,
         },
+        Hyperlink: {
+          Component: Hyperlink,
+          props: HeroBannerFixture.hyperlink,
+        },
       };
       const contentComponentName = select(
         'content',
         Object.keys(contentComponentOptions),
-        'LinkButtonGroup',
+        'Hyperlink',
         'Content',
       );
       const {
@@ -103,6 +109,10 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
         'Content',
       );
       const mediaComponentOptions = {
+        None: {
+          Component: null,
+          props: null,
+        },
         Video: {
           Component: Video,
           props: {
@@ -193,7 +203,11 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
             }
             hasSerifFontHeading={hasSerifFontHeading}
             hasTopOffset={hasTopOffset}
-            media={<MediaComponent {...mediaComponentProps} theme={theme} />}
+            media={
+              MediaComponent ? (
+                <MediaComponent {...mediaComponentProps} theme={theme} />
+              ) : undefined
+            }
             theme={theme}
             variation={variation}
           />

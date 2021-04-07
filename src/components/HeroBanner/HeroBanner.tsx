@@ -45,6 +45,7 @@ const HeroBanner = forwardRef<HTMLDivElement, HeroBannerProps>(
           <HeroBannerContent
             content={content}
             copy={copy}
+            hasNoMedia={!media}
             hasSerifFontHeading={hasSerifFontHeading}
             hasTopOffset={hasTopOffset}
             variation={variation}

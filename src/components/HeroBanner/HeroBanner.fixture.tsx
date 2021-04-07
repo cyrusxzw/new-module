@@ -83,6 +83,12 @@ const HeroBannerFixture = {
       </>
     ),
   },
+  hyperlink: {
+    style: 'External Button Link',
+    title: 'Hyperlink Title',
+    url: '/',
+    children: 'Lorem ipsum dolor',
+  },
   subNav: {
     links: [
       {
