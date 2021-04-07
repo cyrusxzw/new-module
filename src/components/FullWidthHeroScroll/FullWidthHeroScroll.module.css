@@ -36,6 +36,25 @@
   margin: 0 auto auto;
 }
 
+.innerWrapper {
+  width: 100%;
+  padding: 90px 20px 20px;
+  margin-left: 0;
+
+  @media (--viewport-md) {
+    width: calc(100% * 7 / 12);
+    padding: 94px 0 0;
+    margin-left: 33.33332%;
+  }
+
+  @media (--viewport-lg) {
+    width: calc(100% * 5 / 12);
+    max-width: 590px;
+    padding: 120px 0 0;
+    margin-left: 15%;
+  }
+}
+
 .scrollIndicator {
   display: flex;
   width: 60px;

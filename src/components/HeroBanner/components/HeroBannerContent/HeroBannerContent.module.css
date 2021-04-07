@@ -21,7 +21,7 @@
 }
 
 .fullHeight {
-  min-height: 90vh;
+  min-height: 100vh;
 
   @media (--viewport-md) {
     width: calc(100% * 8 / 12);
