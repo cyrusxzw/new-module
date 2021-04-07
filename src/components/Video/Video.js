@@ -33,6 +33,7 @@ const Video = forwardRef(function VideoRef(
     isBackground = false,
     isFullWidth = true,
     isHeroFullWidth = false,
+    isHeroFullWidthMobile = false,
     isScrollBasedVideo = false,
     large,
     medium,
@@ -85,6 +86,7 @@ const Video = forwardRef(function VideoRef(
   const classSet = cx(styles.base, className, {
     [styles.spanContent]: hasSpanContent,
     [styles.heroFullWidth]: isHeroFullWidth,
+    [styles.heroFullWidthMobile]: isHeroFullWidthMobile,
     [styles.fullWidth]: isFullWidth,
     [styles.chrome]: isChrome,
   });
@@ -248,6 +250,7 @@ Video.propTypes = {
     This prop negates the 16:9 aspect ratio on tablet so Full Width Hero Videos fill any avaliable space.
    */
   isHeroFullWidth: PropTypes.bool,
+  isHeroFullWidthMobile: PropTypes.bool,
   isScrollBasedVideo: PropTypes.bool,
   large: PropTypes.string,
   medium: PropTypes.string,

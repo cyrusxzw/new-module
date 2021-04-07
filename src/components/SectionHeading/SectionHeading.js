@@ -14,6 +14,7 @@ const SectionHeading = ({
   id,
   isFlush,
   isOffsetPageHeading,
+  isHeroHeading,
   isPageHeading,
   subHeading,
   theme,
@@ -21,6 +22,7 @@ const SectionHeading = ({
 }) => {
   const classSet = cx(className, styles.base, {
     [styles.offsetPageHeading]: isOffsetPageHeading,
+    [styles.heroHeading]: isHeroHeading,
   });
   const eyebrowClassSet = cx(styles.eyebrow, childrenClassNames.eyebrow);
   const headingClassSet = cx(
@@ -88,6 +90,7 @@ SectionHeading.propTypes = {
   id: PropTypes.string,
   isFlush: PropTypes.bool,
   isOffsetPageHeading: PropTypes.bool,
+  isHeroHeading: PropTypes.bool,
   isPageHeading: PropTypes.bool,
   subHeading: PropTypes.string,
   theme: PropTypes.oneOf(['dark', 'light']),
@@ -107,6 +110,7 @@ SectionHeading.defaultProps = {
   id: undefined,
   isFlush: false,
   isOffsetPageHeading: false,
+  isHeroHeading: false,
   isPageHeading: false,
   subHeading: undefined,
   theme: 'dark',

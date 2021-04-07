@@ -1,19 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import styles from './GridOverlay.module.css';
+import styles from './StorybookGridOverlay.module.css';
 
 const generateColumns = () => {
   const columns = [];
 
   for (let columnCount = 12; columnCount > 0; columnCount--) {
-    columns.push(<li className={styles.column} />);
+    columns.push(<li key={columnCount} className={styles.column} />);
   }
 
   return columns;
 };
 
-const GridOverlay = ({ hasInvertedColours = false, isActive = false }) => {
+const StorybookGridOverlay = ({
+  hasInvertedColours = false,
+  isActive = false,
+}) => {
   if (!isActive) return false;
 
   return (
@@ -27,9 +30,9 @@ const GridOverlay = ({ hasInvertedColours = false, isActive = false }) => {
   );
 };
 
-GridOverlay.propTypes = {
+StorybookGridOverlay.propTypes = {
   hasInvertedColours: PropTypes.bool,
   isActive: PropTypes.bool,
 };
 
-export { GridOverlay };
+export { StorybookGridOverlay };

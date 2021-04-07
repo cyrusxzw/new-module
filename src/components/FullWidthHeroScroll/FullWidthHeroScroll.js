@@ -132,9 +132,9 @@ FullWidthHeroScroll.propTypes = {
 };
 
 FullWidthHeroScroll.defaultProps = {
-  backgroundVideo: undefined,
-  backgroundMediaType: undefined,
   backgroundImage: undefined,
+  backgroundMediaType: undefined,
+  backgroundVideo: undefined,
   copy: undefined,
   cta: undefined,
   eyebrow: undefined,
@@ -142,8 +142,8 @@ FullWidthHeroScroll.defaultProps = {
   hasTopOffset: false,
   heading: undefined,
   id: undefined,
-  theme: 'light',
   textBlocks: [],
+  theme: 'light',
 };
 
 export { FullWidthHeroScroll };

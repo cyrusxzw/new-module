@@ -21,16 +21,6 @@
   }
 }
 
-.hasFullWidthImage.hero {
-  @media (--viewport-md) {
-    position: absolute;
-    z-index: var(--z-index-background-image);
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-}
-
 .foregroundImage {
   position: absolute;
   right: 0;
@@ -41,21 +31,15 @@
     height: calc(100% - 80px);
     max-height: 300px;
   }
+
   @media (--viewport-md-only) {
     height: 70%;
     max-height: 335px;
-
-    .hasFullWidthImage.hero & {
-      height: 40%;
-    }
   }
+
   @media (--viewport-lg) {
     height: 60%;
     max-height: 350px;
-
-    .hasFullWidthImage.hero & {
-      width: 35%;
-    }
   }
 
   a {
@@ -100,12 +84,6 @@
 
     .right & {
       object-position: right;
-    }
-
-    .hasFullWidthImage.hero & {
-      @media (--viewport-md-only) {
-        max-height: none;
-      }
     }
 
     @media (--viewport-lg) {

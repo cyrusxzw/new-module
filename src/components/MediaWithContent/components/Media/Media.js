@@ -11,16 +11,11 @@ const Media = ({
   foregroundImage,
   foregroundImageLink,
   hasFullWidthImage,
-  isHero,
   media,
 }) => {
-  const classSet = cx(
-    className,
-    styles.base,
-    styles[containMedia],
-    { [styles.hero]: isHero },
-    { [styles.hasFullWidthImage]: hasFullWidthImage },
-  );
+  const classSet = cx(className, styles.base, styles[containMedia], {
+    [styles.hasFullWidthImage]: hasFullWidthImage,
+  });
 
   return (
     <div className={classSet}>
@@ -52,7 +47,6 @@ Media.propTypes = {
     title: PropTypes.string,
   }),
   hasFullWidthImage: PropTypes.bool,
-  isHero: PropTypes.bool,
   media: PropTypes.element.isRequired,
 };
 
@@ -62,7 +56,6 @@ Media.defaultProps = {
   foregroundImage: undefined,
   foregroundImageLink: undefined,
   hasFullWidthImage: false,
-  isHero: false,
   media: undefined,
 };
 

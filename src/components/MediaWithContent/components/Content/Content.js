@@ -11,8 +11,6 @@ const Content = ({
   copy,
   hasFullWidthImage,
   hasSerifFontHeading,
-  hasTopOffset,
-  isHero,
   isReverse,
   theme,
 }) => {
@@ -20,11 +18,8 @@ const Content = ({
     className,
     styles.base,
     { [styles.reverse]: isReverse },
-    { [styles.hero]: isHero },
-    { [styles.notHero]: !isHero },
     { [styles.hasFullWidthImage]: hasFullWidthImage },
     { [styles.hasHalfWidthImage]: !hasFullWidthImage },
-    { [styles.topOffest]: hasTopOffset },
     styles[theme.toLowerCase()],
   );
 
@@ -39,8 +34,8 @@ const Content = ({
           eyebrow={copy.eyebrow}
           hasSerifFontHeading={hasSerifFontHeading}
           heading={copy.heading}
-          isFlush={!isHero}
-          isPageHeading={isHero}
+          isFlush={true}
+          isPageHeading={false}
           subHeading={copy.subHeading}
           theme={theme}
         />
@@ -48,7 +43,7 @@ const Content = ({
           {copy.description && (
             <ParagraphSet
               className={styles.description}
-              isLarge={isHero}
+              isLarge={false}
               theme={theme}
             >
               {copy.description}
@@ -72,8 +67,6 @@ Content.propTypes = {
   }).isRequired,
   hasFullWidthImage: PropTypes.bool,
   hasSerifFontHeading: PropTypes.bool,
-  hasTopOffset: PropTypes.bool,
-  isHero: PropTypes.bool,
   isReverse: PropTypes.bool,
   theme: PropTypes.oneOf(['dark', 'light']),
 };
@@ -89,8 +82,6 @@ Content.defaultProps = {
   },
   hasFullWidthImage: false,
   hasSerifFontHeading: true,
-  hasTopOffset: false,
-  isHero: false,
   isReverse: false,
   theme: 'dark',
 };

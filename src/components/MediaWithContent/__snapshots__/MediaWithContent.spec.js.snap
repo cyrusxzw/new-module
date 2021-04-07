@@ -35,7 +35,7 @@ exports[`<MediaWithContent /> should render base component correctly 1`] = `
       </figure>
     </div>
     <div
-      class="base notHero hasHalfWidthImage dark"
+      class="base hasHalfWidthImage dark"
     >
       <div
         class="innerWrapper"

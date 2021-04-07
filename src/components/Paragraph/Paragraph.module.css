@@ -14,8 +14,11 @@
 }
 
 .large {
-  font-size: 16px;
-  line-height: 1.7;
+  &,
+  & p {
+    font-size: rem(16px);
+    line-height: 1.7;
+  }
 }
 
 .serifFont {
@@ -68,5 +71,13 @@
 .set {
   p {
     @extend %paragraph;
+  }
+
+  &.large {
+    &,
+    & p {
+      font-size: rem(16px);
+      line-height: 1.7;
+    }
   }
 }
