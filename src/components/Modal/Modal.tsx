@@ -10,6 +10,8 @@ import { Transition } from '~/components/Transition';
 import type { ModalProps } from './Modal.types';
 import styles from './Modal.module.css';
 
+const modalRoot = getPortalRoot('aesop-gel-modal-root');
+
 const Modal: FC<ModalProps> = ({
   children,
   className,
@@ -55,7 +57,7 @@ const Modal: FC<ModalProps> = ({
             </aside>
           </Transition>
         </>,
-        getPortalRoot('aesop-gel-modal-root'),
+        modalRoot,
       )}
     </>
   );
