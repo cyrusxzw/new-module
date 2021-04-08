@@ -1,0 +1,1 @@
+export { getPortalRoot } from './portal';

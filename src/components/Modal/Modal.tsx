@@ -3,24 +3,14 @@ import { createPortal } from 'react-dom';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { useEscapeKeyListener, useOverflowHidden } from '~/customHooks';
-import { isInBrowser } from '~/utils/environment';
+import { getPortalRoot } from '~/utils/portal';
 import { ModalBody } from './components/ModalBody';
 import { Overlay } from '~/components/Overlay';
 import { Transition } from '~/components/Transition';
 import type { ModalProps } from './Modal.types';
 import styles from './Modal.module.css';
 
-let modalRoot = null;
-if (isInBrowser()) {
-  /** Set up the Modal component's anchor point for ReactDOM.createPortal */
-  modalRoot = document.getElementById('aesop-gel-modal-root');
-
-  if (!modalRoot) {
-    modalRoot = document.createElement('div');
-    modalRoot.setAttribute('id', 'aesop-gel-modal-root');
-    document.body.appendChild(modalRoot);
-  }
-}
+const modalRoot = getPortalRoot('aesop-gel-modal-root');
 
 const Modal: FC<ModalProps> = ({
   children,

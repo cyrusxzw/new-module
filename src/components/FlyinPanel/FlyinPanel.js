@@ -3,25 +3,15 @@ import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useEscapeKeyListener, useOverflowHidden } from '~/customHooks';
+import { getPortalRoot } from '~/utils/portal';
 import { Button } from '~/components/Button';
 import { Heading } from '~/components/Heading';
 import { Icon } from '~/components/Icon';
 import { Overlay } from '~/components/Overlay';
 import { Transition } from '~/components/Transition';
-import { isInBrowser } from '~/utils/environment';
 import styles from './FlyinPanel.module.css';
 
-let modalRoot = null;
-if (isInBrowser()) {
-  /** Set up the Flyin component's anchor point for ReactDOM.createPortal */
-  modalRoot = document.getElementById('aesop-gel-flyin-root');
-
-  if (!modalRoot) {
-    modalRoot = document.createElement('div');
-    modalRoot.setAttribute('id', 'aesop-gel-flyin-root');
-    document.body.appendChild(modalRoot);
-  }
-}
+const flyinRoot = getPortalRoot('aesop-gel-flyin-root');
 
 const FlyinPanel = ({
   children,
@@ -81,7 +71,7 @@ const FlyinPanel = ({
             </aside>
           </Transition>
         </>,
-        modalRoot,
+        flyinRoot,
       )}
     </>
   );
