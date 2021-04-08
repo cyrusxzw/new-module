@@ -11,9 +11,7 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  opacity: 0;
   pointer-events: none;
-  transition: opacity 50ms var(--easing-ease-in-out-cubic);
 }
 
 .small {
@@ -26,11 +24,6 @@
 
 .large {
   height: var(--loading-size-large);
-}
-
-.isLoading {
-  opacity: 1;
-  transition: opacity 200ms var(--easing-ease-in-out-cubic);
 }
 
 .fullSize {
