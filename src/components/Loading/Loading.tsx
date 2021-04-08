@@ -1,16 +1,16 @@
-import React, { forwardRef } from 'react';
+import React, { FC } from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import type { LoadingProps } from './Loading.types';
 import styles from './Loading.module.css';
 
-const Loading = forwardRef<HTMLDivElement, LoadingProps>(function LoadingRef({
+const Loading: FC<LoadingProps> = ({
   className,
   isLoading,
   shouldFillSpace = false,
   size = 'medium',
   theme,
-}) {
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
 
   if (!isLoading) return null;
@@ -33,6 +33,6 @@ const Loading = forwardRef<HTMLDivElement, LoadingProps>(function LoadingRef({
       <span className={styles.dot} />
     </span>
   );
-});
+};
 
 export { Loading };
