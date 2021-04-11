@@ -12,12 +12,14 @@ const useEscapeKeyListener = onKeyPress => {
     };
 
     if (typeof document !== 'undefined') {
-      document.addEventListener('keydown', detectEscapeKey, true);
+      document.addEventListener('keydown', detectEscapeKey, { capture: true });
     }
 
     return function cleanup() {
       if (typeof document !== 'undefined') {
-        document.removeEventListener('keydown', detectEscapeKey, true);
+        document.removeEventListener('keydown', detectEscapeKey, {
+          capture: true,
+        });
       }
     };
   }, [onKeyPress]);
