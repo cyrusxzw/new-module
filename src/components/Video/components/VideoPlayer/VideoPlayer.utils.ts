@@ -3,8 +3,9 @@ import {
   ascertainIsMediumOnlyViewport,
   ascertainIsLargeViewport,
 } from '~/utils/viewports';
+import type { VideoPlayerProps } from './VideoPlayer.types';
 
-const getVideoSrc = sizes => {
+const getVideoSrc = (sizes: VideoPlayerProps['sizes']): string => {
   const { small, medium, large } = sizes || {};
 
   if (small && ascertainIsSmallOnlyViewport()) return small;

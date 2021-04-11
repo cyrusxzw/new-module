@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import cx from 'classnames';
-import PropTypes from 'prop-types';
 import { Button } from '~/components/Button';
 import { Image } from '~/components/Image';
 import { Transition } from '~/components/Transition';
+import type { PosterProps } from './Poster.types';
 import styles from './Poster.module.css';
 
-const Poster = ({ className, copy, isActive, onClick, sizes }) => {
+const Poster: FC<PosterProps> = ({
+  className,
+  copy,
+  isActive,
+  onClick,
+  sizes,
+}) => {
   const classSet = cx(styles.base, { [styles.isActive]: isActive }, className);
 
   return (
@@ -26,21 +32,6 @@ const Poster = ({ className, copy, isActive, onClick, sizes }) => {
       </Button>
     </Transition>
   );
-};
-
-Poster.propTypes = {
-  className: PropTypes.string,
-  copy: PropTypes.shape({
-    playButtonTitle: PropTypes.string,
-    altText: PropTypes.string,
-  }),
-  isActive: PropTypes.bool,
-  onClick: PropTypes.func,
-  sizes: PropTypes.shape({
-    large: PropTypes.string,
-    medium: PropTypes.string,
-    small: PropTypes.string,
-  }),
 };
 
 export { Poster };
