@@ -1,5 +1,4 @@
 import { MouseEvent } from 'react';
-import type { ImageProps } from '~/components/Image/Image.types';
 
 type PosterProps = {
   className?: string;
@@ -9,7 +8,11 @@ type PosterProps = {
   };
   isActive?: boolean;
   onClick?: (event: MouseEvent) => void;
-  sizes?: Pick<ImageProps, 'small' | 'medium' | 'large'>;
+  sizes?: {
+    small?: string;
+    medium?: string;
+    large?: string;
+  };
 };
 
 export type { PosterProps };

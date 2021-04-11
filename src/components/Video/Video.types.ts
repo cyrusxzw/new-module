@@ -1,4 +1,3 @@
-import type { ImageProps } from '../Image/Image.types';
 import type { ControlsProps } from './components/Controls/Controls.types';
 import type { PosterProps } from './components/Poster/Poster.types';
 
@@ -12,8 +11,13 @@ type VideoProps = Pick<ControlsProps, 'copy'> & {
     shouldShowToggleButton?: boolean;
   };
   className?: string;
-  fallbackImage?: Pick<ImageProps, 'large' | 'medium' | 'small'> & {
-    copy?: Pick<ImageProps, 'altText'>;
+  fallbackImage?: {
+    copy?: {
+      altText?: string;
+    };
+    small?: string;
+    medium?: string;
+    large?: string;
     className?: string;
   };
   hasControls?: boolean;
