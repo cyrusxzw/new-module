@@ -8,11 +8,11 @@ const FullWidthHeroScrollFixture = {
   },
   backgroundVideo: {
     large:
-      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+      'https://player.vimeo.com/external/462935380.hd.mp4?s=01e048a4b5942b2c6648ffe9965ac5c79ebfc545&profile_id=169',
     medium:
-      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+      'https://player.vimeo.com/external/462935380.hd.mp4?s=01e048a4b5942b2c6648ffe9965ac5c79ebfc545&profile_id=169',
     small:
-      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+      'https://player.vimeo.com/external/462935380.hd.mp4?s=01e048a4b5942b2c6648ffe9965ac5c79ebfc545&profile_id=169',
     poster: {
       copy: {
         altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',

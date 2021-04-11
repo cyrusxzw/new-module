@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "settings": {
     "react": {
       "version": "detect"
@@ -17,13 +17,18 @@
     "es6": true,
     "jest": true
   },
+  "globals": {
+    "JSX": true,
+    "React": true
+  },
   "plugins": [
     "import",
     "react",
     "react-hooks",
     "jsx-a11y",
     "testing-library",
-    "jest-dom"
+    "jest-dom",
+    "@typescript-eslint"
   ],
   "extends": [
     "eslint:recommended",
@@ -34,7 +39,9 @@
     "plugin:jsx-a11y/recommended",
     "plugin:testing-library/recommended",
     "plugin:testing-library/react",
-    "plugin:jest-dom/recommended"
+    "plugin:jest-dom/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -59,6 +66,7 @@
     }
   },
   "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
     "block-scoped-var": "error",
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
     "camelcase": "error",
@@ -110,7 +118,7 @@
     "no-undef": "error",
     "no-underscore-dangle": "off",
     "no-unused-expressions": "warn",
-    "no-unused-vars": ["error", { "vars": "local", "args": "after-used" }],
+    "no-unused-vars": "off",
     "no-var": "error",
     "object-curly-spacing": ["error", "always"],
     "one-var": ["error", "never"],
@@ -178,14 +186,21 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": [
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
-      ],
-      "parser": "@typescript-eslint/parser",
-      "plugins": ["@typescript-eslint"],
       "rules": {
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "@typescript-eslint/no-unused-vars": "error"
+      }
+    },
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    },
+    {
+      "files": ["list-js-files.js", "postcss.config.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
       }
     }
   ]

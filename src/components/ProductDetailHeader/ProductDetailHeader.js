@@ -33,6 +33,10 @@ const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
               size: copy?.size,
               upSellProductLabel: copy?.upSellProductLabel,
               flyinPanelHeading: copy?.flyinPanelHeading,
+              ingredientsFlyoutBoilerplateOne:
+                copy?.ingredientsFlyoutBoilerplateOne,
+              ingredientsFlyoutBoilerplateTwo:
+                copy?.ingredientsFlyoutBoilerplateTwo,
             }}
             theme={currentTheme}
           />
@@ -87,6 +91,8 @@ ProductDetailHeader.propTypes = {
     }),
     upSellProductLabel: PropTypes.string,
     flyinPanelHeading: PropTypes.string,
+    ingredientsFlyoutBoilerplateOne: PropTypes.string,
+    ingredientsFlyoutBoilerplateTwo: PropTypes.string,
   }),
   theme: PropTypes.oneOf(['dark', 'light']),
 };
@@ -100,6 +106,8 @@ ProductDetailHeader.defaultProps = {
   className: undefined,
   copy: {
     addToCart: undefined,
+    ingredientsFlyoutBoilerplateOne: undefined,
+    ingredientsFlyoutBoilerplateTwo: undefined,
     size: {
       singular: undefined,
       plural: undefined,

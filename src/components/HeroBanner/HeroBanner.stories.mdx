@@ -1,0 +1,393 @@
+import { Fragment } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as knobs from '@storybook/addon-knobs';
+import {
+  StorybookGridOverlay,
+  StorybookNavHeader,
+} from '~.storybook/components';
+import { boolean, select, text, radios } from '@storybook/addon-knobs';
+import { DefinitionList } from '~/components/DefinitionList';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Image } from '~/components/Image';
+import { KitList } from '~/components/KitList';
+import { Button } from '~/components/Button';
+import { LinkButtonGroup } from '~/components/LinkButtonGroup';
+import { SubNav } from '~/components/SubNav';
+import { Video } from '~/components/Video';
+import { HeroBanner } from './HeroBanner';
+import { HeroBannerFixture } from './HeroBanner.fixture';
+
+<Meta title="Components/HeroBanner" component={HeroBanner} />
+
+# Hero Banner
+
+<Canvas>
+  <Story name="Base component">
+    {(() => {
+      const backgroundColor = knobs.text(
+        'backgroundColor',
+        '#b3001b',
+        'Presentation',
+      );
+      const containMedia = knobs.select(
+        'containMedia',
+        {
+          center: 'center',
+          left: 'left',
+          right: 'right',
+          top: 'top',
+          bottom: 'bottom',
+          none: undefined,
+        },
+        undefined,
+        'Presentation',
+      );
+      const hasForegroundImage = knobs.boolean(
+        'hasForegroundImage',
+        false,
+        'Implementation',
+      );
+      const hasSerifFontHeading = knobs.boolean(
+        'hasSerifFontHeading',
+        false,
+        'Presentation',
+      );
+      const hasTopOffset = knobs.boolean('hasTopOffset', false, 'Presentation');
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'light',
+        'Presentation',
+      );
+      const variation = knobs.select(
+        'variation',
+        [
+          'article-header',
+          'default',
+          'fifty-fifty',
+          'full-display',
+          'landing-header',
+          'wide-header',
+        ],
+        'default',
+        'Presentation',
+      );
+      const contentComponentOptions = {
+        SubNav: {
+          Component: SubNav,
+          props: HeroBannerFixture.subNav,
+        },
+        LinkButtonGroup: {
+          Component: LinkButtonGroup,
+          props: HeroBannerFixture.linkButtonGroup,
+        },
+        Hyperlink: {
+          Component: Hyperlink,
+          props: HeroBannerFixture.hyperlink,
+        },
+      };
+      const contentComponentName = select(
+        'content',
+        Object.keys(contentComponentOptions),
+        'Hyperlink',
+        'Content',
+      );
+      const {
+        Component: ContentComponent,
+        props: contentComponentProps,
+      } = contentComponentOptions[contentComponentName];
+      const imageSourceOptions = {
+        Default: HeroBannerFixture.image.default,
+        FiftyFifty: HeroBannerFixture.image.fiftyFifty,
+        ArticleHeader: HeroBannerFixture.image.articleHeader,
+        WideHeader: HeroBannerFixture.image.wideHeader,
+      };
+      const imageSource = knobs.select(
+        'imageSource',
+        Object.keys(imageSourceOptions),
+        'Default',
+        'Content',
+      );
+      const mediaComponentOptions = {
+        None: {
+          Component: null,
+          props: null,
+        },
+        Video: {
+          Component: Video,
+          props: {
+            hasAllowAudio: false,
+            hasAutoplay: true,
+            hasLoop: true,
+            hasPlayInFullScreen: false,
+            hasControls: false,
+            isHeroFullWidth: knobs.boolean(
+              'video.isHeroFullWidth',
+              false,
+              'Content',
+            ),
+            isHeroFullWidthMobile: knobs.boolean(
+              'video.isHeroFullWidthMobile',
+              false,
+              'Content',
+            ),
+            isFullWidth: false,
+            large: HeroBannerFixture.video.source,
+          },
+        },
+        Image: {
+          Component: Image,
+          props: imageSourceOptions[imageSource],
+        },
+      };
+      const mediaComponentName = knobs.select(
+        'media',
+        Object.keys(mediaComponentOptions),
+        'Image',
+        'Content',
+      );
+      const {
+        Component: MediaComponent,
+        props: mediaComponentProps,
+      } = mediaComponentOptions[mediaComponentName];
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+        navHeader: {
+          isActive: knobs.boolean(
+            'Show navigation header',
+            false,
+            'Implementation',
+          ),
+          theme: knobs.select(
+            'Navigation header theme',
+            ['dark', 'light'],
+            'dark',
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <StorybookNavHeader
+            theme={implementation.navHeader.theme}
+            isActive={implementation.navHeader.isActive}
+          />
+          <HeroBanner
+            backgroundColor={backgroundColor}
+            containMedia={containMedia}
+            content={
+              <ContentComponent {...contentComponentProps} theme={theme} />
+            }
+            copy={HeroBannerFixture.copy.default}
+            foregroundImage={
+              hasForegroundImage ? (
+                <Image
+                  altText={HeroBannerFixture.image.foreground.altText}
+                  large={HeroBannerFixture.image.foreground.large}
+                  medium={HeroBannerFixture.image.foreground.medium}
+                  small={HeroBannerFixture.image.foreground.small}
+                />
+              ) : undefined
+            }
+            foregroundImageLink={
+              hasForegroundImage
+                ? HeroBannerFixture.foregroundImageLink
+                : undefined
+            }
+            hasSerifFontHeading={hasSerifFontHeading}
+            hasTopOffset={hasTopOffset}
+            media={
+              MediaComponent ? (
+                <MediaComponent {...mediaComponentProps} theme={theme} />
+              ) : undefined
+            }
+            theme={theme}
+            variation={variation}
+          />
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of={HeroBanner} />
+
+## Variations
+
+### Hero Banner Fifty Fifty
+
+<Canvas>
+  <Story name="Hero Banner Fifty Fifty">
+    <HeroBanner
+      content={
+        <Hyperlink
+          style="External Button Link"
+          theme="dark"
+          title="Hyperlink Title"
+          url="/"
+        >
+          Lorem ipsum dolor
+        </Hyperlink>
+      }
+      copy={HeroBannerFixture.copy.default}
+      backgroundColor="#b7b8b3"
+      variation="fifty-fifty"
+      hasSerifFontHeading={false}
+      hasTopOffset={false}
+      media={
+        <Image
+          altText={HeroBannerFixture.image.fiftyFifty.altText}
+          large={HeroBannerFixture.image.fiftyFifty.large}
+          medium={HeroBannerFixture.image.fiftyFifty.medium}
+          small={HeroBannerFixture.image.fiftyFifty.small}
+        />
+      }
+      theme="dark"
+    />
+  </Story>
+</Canvas>
+
+### Hero Banner Wide Header
+
+<Canvas>
+  <Story name="Hero Banner Wide Header">
+    <HeroBanner
+      content={
+        <Hyperlink
+          style="External Button Link"
+          theme="light"
+          title="Hyperlink Title"
+          url="/"
+        >
+          Lorem ipsum
+        </Hyperlink>
+      }
+      copy={HeroBannerFixture.copy.wideHeader}
+      backgroundColor="#443a32"
+      variation="wide-header"
+      hasSerifFontHeading={false}
+      hasTopOffset={false}
+      media={
+        <Image
+          altText={HeroBannerFixture.image.wideHeader.altText}
+          large={HeroBannerFixture.image.wideHeader.large}
+          medium={HeroBannerFixture.image.wideHeader.medium}
+          small={HeroBannerFixture.image.wideHeader.small}
+        />
+      }
+      theme="light"
+    />
+  </Story>
+</Canvas>
+
+### Hero Banner Article Header
+
+<Canvas>
+  <Story name="Hero Banner Article Header">
+    <HeroBanner
+      content={
+        <Hyperlink
+          style="External Button Link"
+          theme="dark"
+          title="Hyperlink Title"
+          url="/"
+        >
+          Lorem ipsum dolor sit amet
+        </Hyperlink>
+      }
+      copy={HeroBannerFixture.copy.default}
+      backgroundColor="#f1efe1"
+      variation="article-header"
+      hasSerifFontHeading={false}
+      hasTopOffset={false}
+      media={
+        <Image
+          altText={HeroBannerFixture.image.articleHeader.altText}
+          large={HeroBannerFixture.image.articleHeader.large}
+          medium={HeroBannerFixture.image.articleHeader.medium}
+          small={HeroBannerFixture.image.articleHeader.small}
+        />
+      }
+      theme="dark"
+    />
+  </Story>
+</Canvas>
+
+### Hero Banner Full Display
+
+<Canvas>
+  <Story name="Hero Banner Full Display">
+    <HeroBanner
+      content={
+        <Hyperlink
+          style="External Button Link"
+          theme="light"
+          title="Hyperlink Title"
+          url="/"
+        >
+          Lorem ipsum dolor sit amet
+        </Hyperlink>
+      }
+      copy={HeroBannerFixture.copy.default}
+      backgroundColor="#b3001b"
+      variation="full-display"
+      hasSerifFontHeading={false}
+      hasTopOffset={false}
+      media={
+        <Image
+          altText={HeroBannerFixture.image.default.altText}
+          large={HeroBannerFixture.image.default.large}
+          medium={HeroBannerFixture.image.default.medium}
+          small={HeroBannerFixture.image.default.small}
+        />
+      }
+      theme="light"
+    />
+  </Story>
+</Canvas>
+
+### Hero Banner Landing Header
+
+<Canvas>
+  <Story name="Hero Banner Landing Header">
+    <HeroBanner
+      content={
+        <Hyperlink
+          style="External Button Link"
+          theme="light"
+          title="Hyperlink Title"
+          url="/"
+        >
+          Lorem ipsum dolor sit amet
+        </Hyperlink>
+      }
+      copy={HeroBannerFixture.copy.default}
+      backgroundColor="#b3001b"
+      variation="landing-header"
+      hasSerifFontHeading={false}
+      hasTopOffset={false}
+      media={
+        <Image
+          altText={HeroBannerFixture.image.default.altText}
+          large={HeroBannerFixture.image.default.large}
+          medium={HeroBannerFixture.image.default.medium}
+          small={HeroBannerFixture.image.default.small}
+        />
+      }
+      theme="light"
+    />
+  </Story>
+</Canvas>

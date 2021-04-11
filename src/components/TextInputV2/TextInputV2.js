@@ -126,7 +126,7 @@ TextInputV2.propTypes = {
 TextInputV2.defaultProps = {
   classes: {},
   isDisabled: false,
-  onChange: () => {},
+  onChange: () => undefined,
   theme: 'dark',
   type: 'text',
 };

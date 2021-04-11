@@ -60,7 +60,7 @@ describe('<TextOverFullWidthAsset />', () => {
 
 describe('<TextOverFullWidthAsset /> required props', () => {
   beforeAll(() => {
-    jest.spyOn(global.console, 'error').mockImplementation(() => {});
+    jest.spyOn(global.console, 'error').mockImplementation(() => undefined);
   });
 
   afterAll(() => {

@@ -62,8 +62,8 @@ describe('<SubNav isSelect />', () => {
     // Force matchMedia to evaluate to true
     window.matchMedia = () => ({
       matches: true,
-      addListener: () => {},
-      removeListener: () => {},
+      addListener: () => undefined,
+      removeListener: () => undefined,
     });
   });
 
@@ -123,13 +123,13 @@ describe('<SubNav isSelect />', () => {
 describe('<SubNav isSelect /> Accessibility', () => {
   beforeAll(() => {
     // https://github.com/nickcolley/jest-axe/issues/147
-    window.getComputedStyle = () => {};
+    window.getComputedStyle = () => undefined;
 
     // Force matchMedia to evaluate to true
     window.matchMedia = () => ({
       matches: true,
-      addListener: () => {},
-      removeListener: () => {},
+      addListener: () => undefined,
+      removeListener: () => undefined,
     });
   });
 

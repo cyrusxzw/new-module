@@ -3,50 +3,34 @@ import * as knobs from '@storybook/addon-knobs';
 import { State } from '~.storybook/State';
 import { Button } from '~/components/Button';
 import { Modal } from './Modal';
-import { ModalBodyFixture } from './components/ModalBody/ModalBody.fixture';
+import { ModalFixture } from './Modal.fixture';
 
-<Meta
-  title="Components/Modal"
-  component={Modal}
-/>
+<Meta title="Components/Modal" component={Modal} />
 
 # Modal
-
-```
-<Modal portalId="uniqueID" ... />
-
-...
-
-<div id="uniqueID" />
-```
 
 <Canvas>
   <Story name="Base component">
     <State initialState={{ isVisible: false }}>
       {(state, setState) => {
+        const handleOnClick = () => {
+          setState(() => ({ ...state, isVisible: true }));
+        };
+        const handleOnClose = () => {
+          setState(() => ({ ...state, isVisible: false }));
+        };
         return (
           <React.Fragment>
             <Modal
-              copy={ModalBodyFixture.copy}
+              copy={ModalFixture.copy}
               isVisible={state.isVisible}
-              onClose={() => {
-                setState(() => ({ ...state, isVisible: false }));
-              }}
+              onClose={handleOnClose}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id mauris
-              lacinia, sollicitudin dolor quis, pellentesque nibh. Integer pharetra
-              ullamcorper leo sit amet dictum. Phasellus in pellentesque augue.
+              {ModalFixture.children}
             </Modal>
-            <Button
-              onClick={() => {
-                setState(() => ({ ...state, isVisible: true }));
-              }}
-              title="Open Modal"
-            >
-              Open Modal
-            </Button>
+            <Button onClick={handleOnClick}>Open Modal</Button>
           </React.Fragment>
-        )
+        );
       }}
     </State>
   </Story>

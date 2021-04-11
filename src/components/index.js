@@ -20,6 +20,7 @@ export { TextInputV2 } from './TextInputV2';
 export { FullWidthHeroScroll } from './FullWidthHeroScroll';
 export { GoogleMap } from './GoogleMap';
 export { Heading } from './Heading';
+export { HeroBanner } from './HeroBanner';
 export { Hidden } from './Hidden';
 export { HorizontalProductDisplayAccordion } from './HorizontalProductDisplayAccordion';
 export { Hyperlink } from './Hyperlink';

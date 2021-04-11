@@ -1,6 +1,6 @@
 @import 'styles/index';
 
-.paragraph {
+%paragraph {
   margin: 0;
   margin-bottom: 30px;
   font-size: rem(14px);
@@ -8,14 +8,17 @@
 }
 
 .base {
-  @extend .paragraph;
+  @extend %paragraph;
 
   font-family: var(--font-family-sans-serif-regular);
 }
 
 .large {
-  font-size: 16px;
-  line-height: 1.7;
+  &,
+  & p {
+    font-size: rem(16px);
+    line-height: 1.7;
+  }
 }
 
 .serifFont {
@@ -67,6 +70,14 @@
 
 .set {
   p {
-    @extend .paragraph;
+    @extend %paragraph;
+  }
+
+  &.large {
+    &,
+    & p {
+      font-size: rem(16px);
+      line-height: 1.7;
+    }
   }
 }

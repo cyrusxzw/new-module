@@ -43,12 +43,6 @@ const MediaWithContentFixture = {
       small:
         'https://www.aesop.com/medias/Aesop-Kit-PSAO-Extended-PDP-2nd-Asset-Mobile-640x640px.png?context=bWFzdGVyfGltYWdlc3w2NjIzMXxpbWFnZS9wbmd8aW1hZ2VzL2hmZi9oMmQvODk2NDUzMDI3NDMzNC5wbmd8MTdiZTljZjAxMTQ2YjBjMTE5MjA2NTJkNDA2MDhiMTA1ZDcyMjE4MTQ1NjI1ZDZlOTkzMTBmZTkyMTc5YTM3OQ',
     },
-    hero: {
-      altText: 'alt image',
-      large: './assets/images/MediaWithContent/hero-large.jpg',
-      medium: './assets/images/MediaWithContent/hero-medium.jpg',
-      small: './assets/images/MediaWithContent/hero-small.jpg',
-    },
     foreground: {
       altText: 'alt image',
       large: './assets/images/MediaWithContent/foreground-large.jpg',

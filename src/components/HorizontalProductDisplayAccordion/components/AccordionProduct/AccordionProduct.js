@@ -299,7 +299,7 @@ AccordionProduct.defaultProps = {
   isExpanded: false,
   id: undefined,
   index: undefined,
-  onPromoClick: () => {},
+  onPromoClick: () => undefined,
   openState: {
     background: undefined,
     backgroundColour: undefined,
