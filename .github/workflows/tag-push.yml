@@ -10,6 +10,7 @@ env:
 
 jobs:
   update_web_ui:
+    if: ${{ false }}
     name: Update Web UI
     runs-on: ubuntu-latest
     steps:
