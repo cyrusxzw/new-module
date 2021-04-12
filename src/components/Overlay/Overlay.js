@@ -18,9 +18,9 @@ const Overlay = ({ className, isVisible, onClose }) => {
 
   return (
     <Transition
-      hasCSSTransitionMountOnEnter={true}
-      hasCSSTransitionUnmountOnExit={true}
       isActive={!!isVisible}
+      shouldMountOnEnter={true}
+      shouldUnmountOnExit={true}
       type="fade"
     >
       <div
