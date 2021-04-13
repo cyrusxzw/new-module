@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
 import { useEscapeKeyListener } from '~/customHooks';
-import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewports';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
 import { Transition } from '~/components/Transition';
@@ -103,7 +103,7 @@ const Controls = ({
 
   const playPauseButtonIconName = isPlaying ? 'pause' : 'play';
 
-  const isSmallMediumViewport = ascertainIsSmallOrMediumOnlyViewport();
+  const isSmallMediumViewport = isViewport('xs to md only');
 
   const isInlineMuteActive =
     hasAllowAudio &&

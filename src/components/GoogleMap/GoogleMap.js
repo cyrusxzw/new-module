@@ -12,10 +12,7 @@ import {
 } from '~/constants';
 import { useGoogleMapsContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import {
-  ascertainIsSmallOnlyViewport,
-  ascertainIsMediumViewport,
-} from '~/utils/viewports';
+import { isViewport } from '~/utils/viewports';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Loading } from '~/components/Loading';
 import { Transition } from '~/components/Transition';
@@ -38,8 +35,8 @@ const GoogleMap = ({
   const mapRef = useRef();
   const activeInfoCard = useRef(null);
   const handleMapClick = useRef(null);
-  const isIsSmallOnlyViewport = useRef(ascertainIsSmallOnlyViewport());
-  const isIsMediumViewport = useRef(ascertainIsMediumViewport());
+  const isIsSmallOnlyViewport = useRef(isViewport('xs to sm only'));
+  const isIsMediumViewport = useRef(isViewport('md'));
   const [activeInfoBlockData, setActiveInfoBlockData] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [markerCluster, setMarkerCluster] = useState([]);
@@ -65,8 +62,8 @@ const GoogleMap = ({
     }
   }, [center, initialZoom, googleMap]);
 
-  isIsSmallOnlyViewport.current = ascertainIsSmallOnlyViewport();
-  isIsMediumViewport.current = ascertainIsMediumViewport();
+  isIsSmallOnlyViewport.current = isViewport('xs to sm only');
+  isIsMediumViewport.current = isViewport('md');
 
   const clearMapMarkers = () => {
     markers.forEach(marker => marker.setMap(null));

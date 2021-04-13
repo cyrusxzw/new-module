@@ -7,7 +7,7 @@ import {
   useOverflowHidden,
   useWindowHasResized,
 } from '~/customHooks';
-import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewports';
 import { isIE, isChrome } from '~/utils/environment';
 import { Image } from '~/components/Image';
 import { Controls } from './components/Controls';
@@ -49,7 +49,7 @@ const Video = forwardRef(function VideoRef(
   );
   const [hasActiveVideo, setHasActiveVideo] = useState(hasAutoplay);
   const [isMuted, setIsMuted] = useState(!hasAllowAudio);
-  const isMobileOrTablet = ascertainIsSmallOrMediumOnlyViewport();
+  const isMobileOrTablet = isViewport('xs to md only');
   const { progress, setProgress } = useProgress(videoRef);
   const hasMounted = useHasMounted();
 

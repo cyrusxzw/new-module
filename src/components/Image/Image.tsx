@@ -1,7 +1,6 @@
 import React, { forwardRef, FC } from 'react';
 import cx from 'classnames';
-import get from 'lodash/get';
-import { constraintsByViewport } from '~/utils/viewports';
+import { BREAKPOINTS } from '~/constants';
 import { Hyperlink } from '~/components/Hyperlink';
 import type { ImageProps } from './Image.types';
 import styles from './Image.module.css';
@@ -37,30 +36,21 @@ const Image: FC<ImageProps> = forwardRef(function ImageRef(
     <picture className={classSet} style={style}>
       {large && (
         <source
-          media={`(min-width: ${get(
-            constraintsByViewport,
-            'large.minWidth',
-          )}px)`}
+          media={`(min-width: ${BREAKPOINTS.get('lg').minWidth}px)`}
           srcSet={large}
         />
       )}
 
       {medium && (
         <source
-          media={`(min-width: ${get(
-            constraintsByViewport,
-            'medium.minWidth',
-          )}px)`}
+          media={`(min-width: ${BREAKPOINTS.get('md').minWidth}px)`}
           srcSet={medium}
         />
       )}
 
       {small && (
         <source
-          media={`(min-width: ${get(
-            constraintsByViewport,
-            'small.minWidth',
-          )}px)`}
+          media={`(min-width: ${BREAKPOINTS.get('xs').minWidth}px)`}
           srcSet={small}
         />
       )}

@@ -19,15 +19,15 @@
     width: 10%;
     cursor: pointer;
 
-    @media (--viewport-xxl) {
+    @media (--viewport-x2l) {
       width: 20%;
     }
 
-    @media (--viewport-xxxl) {
+    @media (--viewport-x3l) {
       width: 33.33%;
     }
 
-    @media (--viewport-xxxxl) {
+    @media (--viewport-x4l) {
       width: 41%;
     }
   }

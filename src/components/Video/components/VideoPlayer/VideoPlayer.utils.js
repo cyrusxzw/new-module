@@ -1,17 +1,13 @@
-import {
-  ascertainIsSmallOnlyViewport,
-  ascertainIsMediumOnlyViewport,
-  ascertainIsLargeViewport,
-} from '~/utils/viewports';
+import { isViewport } from '~/utils/viewports';
 
 const getVideoSrc = sizes => {
   const { small, medium, large } = sizes || {};
 
-  if (small && ascertainIsSmallOnlyViewport()) return small;
+  if (small && isViewport('xs to sm only')) return small;
 
-  if (medium && ascertainIsMediumOnlyViewport()) return medium;
+  if (medium && isViewport('md only')) return medium;
 
-  if (large && ascertainIsLargeViewport()) return large;
+  if (large && isViewport('lg')) return large;
 
   return small || medium || large || '';
 };

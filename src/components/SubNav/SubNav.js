@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewports';
 import { List } from '~/components/List';
 import { Select } from '~/components/Select';
 import { Heading } from '~/components/Heading';
@@ -26,7 +26,7 @@ const SubNav = forwardRef(
       className,
     );
 
-    const isSmallOrMediumViewport = ascertainIsSmallOrMediumOnlyViewport();
+    const isSmallOrMediumViewport = isViewport('xs to md only');
 
     const onChange = event => {
       window.location.href = event.target.value;
