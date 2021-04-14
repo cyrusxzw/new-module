@@ -14,10 +14,6 @@ import { ProductCommerce } from './ProductCommerce';
 import { ProductCommerceFixture } from './ProductCommerce.fixture';
 
 describe('<ProductCommerce />', () => {
-  it('should be defined', () => {
-    expect(ProductCommerce).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const product = ProductDetailHeaderFixture.product;
     const variants = ProductDetailHeaderFixture.product.variantOptions;

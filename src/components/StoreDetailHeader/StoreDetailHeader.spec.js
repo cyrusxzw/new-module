@@ -5,10 +5,6 @@ import { StoreDetailHeader } from './StoreDetailHeader';
 import { StoreDetailHeaderFixture } from './StoreDetailHeader.fixture';
 
 describe('<StoreDetailHeader />', () => {
-  it('should be defined', () => {
-    expect(StoreDetailHeader).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <StoreDetailHeader

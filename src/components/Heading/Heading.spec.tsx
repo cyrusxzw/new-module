@@ -3,10 +3,6 @@ import { render, screen } from '@testing-library/react';
 import { Heading } from './Heading';
 
 describe('<Heading />', () => {
-  it('should be defined', () => {
-    expect(Heading).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Heading level="1" size="large">

@@ -13,10 +13,6 @@ import { ProductGridItem } from './ProductGridItem';
 import { ProductGridItemFixture } from './ProductGridItem.fixture';
 
 describe('<ProductGridItem />', () => {
-  it('should be defined', () => {
-    expect(ProductGridItem).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>

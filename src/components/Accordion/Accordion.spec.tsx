@@ -6,10 +6,6 @@ import { Accordion } from './Accordion';
 jest.mock('react-accessible-accordion');
 
 describe('<Accordion />', () => {
-  it('should be defined', () => {
-    expect(Accordion).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Accordion id={AccordionFixture.id} items={AccordionFixture.items} />,

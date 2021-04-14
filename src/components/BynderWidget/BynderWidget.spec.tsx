@@ -4,10 +4,6 @@ import { render, screen } from '@testing-library/react';
 import { BynderWidget } from './BynderWidget';
 
 describe('<BynderWidget />', () => {
-  it('should be defined', () => {
-    expect(BynderWidget).toBeDefined();
-  });
-
   it('should render base component correctly', async () => {
     const { container } = render(
       <BynderWidget

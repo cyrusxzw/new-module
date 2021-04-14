@@ -4,10 +4,6 @@ import { DefinitionList } from './DefinitionList';
 import { DefinitionListFixture } from './DefinitionList.fixture';
 
 describe('<DefinitionList />', () => {
-  it('should be defined', () => {
-    expect(DefinitionList).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <DefinitionList items={DefinitionListFixture.items} />,

@@ -5,10 +5,6 @@ import { ModalBody } from './ModalBody';
 import { ModalBodyFixture } from './ModalBody.fixture';
 
 describe('<ModalBody />', () => {
-  it('should be defined', () => {
-    expect(ModalBody).toBeDefined();
-  });
-
   it('should render component correctly and match html snapshot', () => {
     const mockFn = jest.fn();
 

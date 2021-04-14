@@ -12,10 +12,6 @@ import { ProductDetailBodyFixture } from './ProductDetailBody.fixture';
 import { ProductDetailBody } from './ProductDetailBody';
 
 describe('<ProductDetailBody />', () => {
-  it('should be defined', () => {
-    expect(ProductDetailBody).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const product = ProductDetailHeaderFixture.product;
     const variants = ProductDetailHeaderFixture.product.variantOptions;
