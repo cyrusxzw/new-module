@@ -4,10 +4,6 @@ import { DoubleMediaFixture } from './DoubleMedia.fixture';
 import { DoubleMedia } from './DoubleMedia';
 
 describe('<DoubleMedia />', () => {
-  it('should be defined', () => {
-    expect(DoubleMedia).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <DoubleMedia

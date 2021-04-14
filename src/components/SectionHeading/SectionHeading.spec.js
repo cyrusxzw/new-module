@@ -4,10 +4,6 @@ import { getEyebrowLevel, getSubHeadingLevel } from './SectionHeading.utils';
 import { SectionHeading } from './SectionHeading';
 
 describe('<SectionHeading />', () => {
-  it('should be defined', () => {
-    expect(SectionHeading).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <SectionHeading

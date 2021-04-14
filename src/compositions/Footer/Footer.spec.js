@@ -6,10 +6,6 @@ import { NewsletterSignUpFixture } from '../NewsletterSignUp/NewsletterSignUp.fi
 import { NotificationModalFixture } from '~/components/NotificationModal/NotificationModal.fixture';
 
 describe('<Footer />', () => {
-  it('should be defined', () => {
-    expect(Footer).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Footer

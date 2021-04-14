@@ -10,10 +10,6 @@ describe('<Overlay />', () => {
     jest.clearAllMocks();
   });
 
-  it('should be defined', () => {
-    expect(Overlay).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Overlay isVisible={true} onClose={handleOnClose} />,

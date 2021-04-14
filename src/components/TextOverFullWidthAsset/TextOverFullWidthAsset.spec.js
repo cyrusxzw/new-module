@@ -4,10 +4,6 @@ import { TextOverFullWidthAsset } from './TextOverFullWidthAsset';
 import { TextOverFullWidthAssetFixture } from './TextOverFullWidthAsset.fixture';
 
 describe('<TextOverFullWidthAsset />', () => {
-  it('should be defined', () => {
-    expect(TextOverFullWidthAsset).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <TextOverFullWidthAsset

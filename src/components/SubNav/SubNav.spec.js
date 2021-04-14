@@ -6,10 +6,6 @@ import { SubNav } from './SubNav';
 import { SubNavFixture } from './SubNav.fixture';
 
 describe('<SubNav />', () => {
-  it('should be defined', () => {
-    expect(SubNav).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <SubNav

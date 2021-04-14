@@ -17,10 +17,6 @@ const {
 } = HYPERLINK_STYLE_TYPES;
 
 describe('<Hyperlink />', () => {
-  it('should be defined', () => {
-    expect(Hyperlink).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Hyperlink url="https://aesop.com">Aesop</Hyperlink>,
