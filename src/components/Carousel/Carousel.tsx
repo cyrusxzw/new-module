@@ -77,8 +77,6 @@ const Carousel: FC<CarouselProps> = ({
     return null;
   }
 
-  const isMobileOrTablet = isViewport('xs to md only');
-
   const classSet = cx(
     styles.base,
     { [styles.fullWidthSlides]: hasFullWidthSlides },
@@ -103,7 +101,7 @@ const Carousel: FC<CarouselProps> = ({
   });
 
   const hasIntroSlide =
-    introduction && !isMobileOrTablet && !hasFullWidthSlides;
+    introduction && !isViewport('xs to md only') && !hasFullWidthSlides;
 
   const totalSlidesCount = hasIntroSlide ? slidesLength + 1 : slidesLength;
 

@@ -103,22 +103,22 @@ const Controls: FC<ControlsProps> = ({
 
   const playPauseButtonIconName = isPlaying ? 'pause' : 'play';
 
-  const isSmallMediumViewport = isViewport('xs to md only');
+  const isMobileOrTabletViewport = isViewport('xs to md only');
 
   const isInlineMuteActive =
     hasAllowAudio &&
     hasActiveVideo &&
-    (!hasPlayInFullScreen || isSmallMediumViewport);
+    (!hasPlayInFullScreen || isMobileOrTabletViewport);
 
   const isInlineCaptionsToggleActive =
     captions?.shouldShowToggleButton &&
     hasActiveVideo &&
-    (!hasPlayInFullScreen || isSmallMediumViewport);
+    (!hasPlayInFullScreen || isMobileOrTabletViewport);
 
   const isInlinePlayPauseButtonActive =
-    isSmallMediumViewport ||
-    (!isSmallMediumViewport && !hasActiveVideo) ||
-    (!isSmallMediumViewport && !hasPlayInFullScreen);
+    isMobileOrTabletViewport ||
+    (!isMobileOrTabletViewport && !hasActiveVideo) ||
+    (!isMobileOrTabletViewport && !hasPlayInFullScreen);
 
   const captionsToggleButtonTitle = !captions?.isActive
     ? captions?.copy?.toggleButtonTitleOn

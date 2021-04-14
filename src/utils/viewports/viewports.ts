@@ -2,10 +2,10 @@ import { isInBrowser } from '~/utils/environment';
 import { VIEWPORTS } from '~/constants';
 import type { ViewportNames } from '~/types';
 
-const isViewport = (viewport: ViewportNames): boolean | Error => {
+const isViewport = (viewport: ViewportNames): boolean => {
   /** @TODO remove this once TypeScript migration is complete */
   if (!VIEWPORTS.get(viewport)) {
-    return new Error(`The viewport '${viewport}' does not exist`);
+    throw new Error(`The viewport '${viewport}' does not exist`);
   }
 
   return isInBrowser()

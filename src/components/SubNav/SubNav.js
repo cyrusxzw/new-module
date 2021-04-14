@@ -26,8 +26,6 @@ const SubNav = forwardRef(
       className,
     );
 
-    const isSmallOrMediumViewport = isViewport('xs to md only');
-
     const onChange = event => {
       window.location.href = event.target.value;
     };
@@ -45,7 +43,7 @@ const SubNav = forwardRef(
             {heading}
           </Heading>
         )}
-        {isSelect && isSmallOrMediumViewport ? (
+        {isSelect && isViewport('xs to md only') ? (
           <Select
             isBlock={isSelect}
             name={id}
