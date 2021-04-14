@@ -4,10 +4,6 @@ import { HorizontalProductDisplayAccordionFixture } from './HorizontalProductDis
 import { HorizontalProductDisplayAccordion } from './HorizontalProductDisplayAccordion';
 
 describe('<HorizontalProductDisplayAccordion />', () => {
-  it('should be defined', () => {
-    expect(HorizontalProductDisplayAccordion).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <HorizontalProductDisplayAccordion
@@ -16,7 +12,8 @@ describe('<HorizontalProductDisplayAccordion />', () => {
       />,
     );
 
-    // TODO: Test onPromoClick
     expect(container).toMatchSnapshot();
   });
+
+  it.todo('Test onPromoClick');
 });

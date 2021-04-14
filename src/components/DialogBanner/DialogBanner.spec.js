@@ -5,10 +5,6 @@ import { DialogBanner } from './DialogBanner';
 const mockFn = jest.fn();
 
 describe('<DialogBanner />', () => {
-  it('should be defined', () => {
-    expect(DialogBanner).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <DialogBanner

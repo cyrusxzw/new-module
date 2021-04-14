@@ -4,10 +4,6 @@ import { BodyCopy } from './BodyCopy';
 import { BodyCopyFixture } from './BodyCopy.fixture';
 
 describe('<BodyCopy />', () => {
-  it('should be defined', () => {
-    expect(BodyCopy).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <BodyCopy

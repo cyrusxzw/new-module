@@ -3,10 +3,6 @@ import { render } from '@testing-library/react';
 import { NextButton } from './NextButton';
 
 describe('<Carousel.NextButton />', () => {
-  it('should be defined', () => {
-    expect(NextButton).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <NextButton

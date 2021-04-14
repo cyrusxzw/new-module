@@ -53,10 +53,6 @@ describe('<AddToCartButton />', () => {
     jest.useRealTimers();
   });
 
-  it('should be defined', () => {
-    expect(AddToCartButton).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <AddToCartButtonWithProviders

@@ -4,10 +4,6 @@ import { TwoColumnLayout } from './TwoColumnLayout';
 import { TwoColumnLayoutFixture } from './TwoColumnLayout.fixture';
 
 describe('<TwoColumnLayout />', () => {
-  it('should be defined', () => {
-    expect(TwoColumnLayout).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <TwoColumnLayout

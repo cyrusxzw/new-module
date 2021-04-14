@@ -4,10 +4,6 @@ import { ImageCarousel } from './ImageCarousel';
 import { ImageCarouselFixture } from './ImageCarousel.fixture';
 
 describe('<ImageCarousel />', () => {
-  it('should be defined', () => {
-    expect(ImageCarousel).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <ImageCarousel slides={ImageCarouselFixture.slides} />,

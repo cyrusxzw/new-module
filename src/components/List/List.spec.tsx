@@ -4,10 +4,6 @@ import { List } from './List';
 import { ListFixture } from './List.fixture';
 
 describe('<List />', () => {
-  it('should be defined', () => {
-    expect(List).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <List items={ListFixture.items} theme="dark" />,

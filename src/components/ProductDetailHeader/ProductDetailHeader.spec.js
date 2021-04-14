@@ -12,10 +12,6 @@ import { ProductDetailHeader } from './ProductDetailHeader';
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
 
 describe('<ProductDetailHeader />', () => {
-  it('should be defined', () => {
-    expect(ProductDetailHeader).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const product = ProductDetailHeaderFixture.product;
     const variants = ProductDetailHeaderFixture.product.variantOptions;

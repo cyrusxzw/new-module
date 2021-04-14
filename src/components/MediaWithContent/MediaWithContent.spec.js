@@ -6,10 +6,6 @@ import { MediaWithContent } from './MediaWithContent';
 import { MediaWithContentFixture } from './MediaWithContent.fixture';
 
 describe('<MediaWithContent />', () => {
-  it('should be defined', () => {
-    expect(MediaWithContent).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <MediaWithContent
