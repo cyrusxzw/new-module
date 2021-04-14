@@ -1,7 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, MutableRefObject } from 'react';
 import VideoScroller from 'video-scroller';
 
-const useVideoScroller = (videoRef, isScrollBasedVideo) => {
+type VideoRef = MutableRefObject<HTMLVideoElement>;
+type UseProgressReturn = {
+  progress: number;
+  setProgress: (progress: number) => void;
+};
+
+const useVideoScroller = (
+  videoRef: VideoRef,
+  isScrollBasedVideo: boolean,
+): void => {
   useEffect(() => {
     const videoRefCurrent = videoRef.current;
 
@@ -15,7 +24,7 @@ const useVideoScroller = (videoRef, isScrollBasedVideo) => {
   }, [isScrollBasedVideo, videoRef]);
 };
 
-const useProgress = videoRef => {
+const useProgress = (videoRef: VideoRef): UseProgressReturn => {
   const [progress, setProgress] = useState(0);
   const videoRefCurrent = videoRef.current;
 

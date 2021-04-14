@@ -1,6 +1,7 @@
 import { isViewport } from '~/utils/viewports';
+import type { VideoPlayerProps } from './VideoPlayer.types';
 
-const getVideoSrc = sizes => {
+const getVideoSrc = (sizes: VideoPlayerProps['sizes']): string => {
   const { small, medium, large } = sizes || {};
 
   if (small && isViewport('xs to sm only')) return small;

@@ -234,16 +234,6 @@ const ProductDetailBody = ({ className, copy, theme }) => {
           onClose={handleOnCloseClick}
         >
           {flyinPanel}
-          {copy.ingredientsFlyoutBoilerplateOne && (
-            <Paragraph className={styles.descriptionCopy} theme={currentTheme}>
-              {copy.ingredientsFlyoutBoilerplateOne}
-            </Paragraph>
-          )}
-          {copy.ingredientsFlyoutBoilerplateTwo && (
-            <Paragraph className={styles.descriptionCopy} theme={currentTheme}>
-              {copy.ingredientsFlyoutBoilerplateTwo}
-            </Paragraph>
-          )}
         </FlyinPanel>
       )}
     </div>
@@ -261,8 +251,6 @@ ProductDetailBody.propTypes = {
         title: PropTypes.string,
       }),
     }),
-    ingredientsFlyoutBoilerplateOne: PropTypes.string,
-    ingredientsFlyoutBoilerplateTwo: PropTypes.string,
     size: PropTypes.shape({
       singular: PropTypes.string,
       plural: PropTypes.string,
@@ -284,8 +272,6 @@ ProductDetailBody.defaultProps = {
         title: undefined,
       },
     },
-    ingredientsFlyoutBoilerplateOne: undefined,
-    ingredientsFlyoutBoilerplateTwo: undefined,
     size: {
       singular: undefined,
       plural: undefined,

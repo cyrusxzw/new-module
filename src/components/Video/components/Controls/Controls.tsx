@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState, useRef, FC } from 'react';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
 import { useEscapeKeyListener } from '~/customHooks';
@@ -7,9 +6,10 @@ import { isViewport } from '~/utils/viewports';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
 import { Transition } from '~/components/Transition';
+import type { ControlsProps } from './Controls.types';
 import styles from './Controls.module.css';
 
-const Controls = ({
+const Controls: FC<ControlsProps> = ({
   captions,
   className,
   copy,
@@ -257,36 +257,6 @@ const Controls = ({
       </Transition>
     </div>
   );
-};
-
-Controls.propTypes = {
-  captions: PropTypes.shape({
-    isActive: PropTypes.bool,
-    onToggleClick: PropTypes.func,
-    shouldShowToggleButton: PropTypes.bool,
-    copy: PropTypes.shape({
-      toggleButtonTitleOn: PropTypes.string,
-      toggleButtonTitleOff: PropTypes.string,
-    }),
-  }),
-  className: PropTypes.string,
-  copy: PropTypes.shape({
-    closeButtonTitle: PropTypes.string,
-    muteButtonTitle: PropTypes.string,
-    pauseButtonTitle: PropTypes.string,
-    playButtonTitle: PropTypes.string,
-    unmuteButtonTitle: PropTypes.string,
-  }),
-  hasActiveVideo: PropTypes.bool,
-  hasAllowAudio: PropTypes.bool,
-  hasPlayInFullScreen: PropTypes.bool,
-  isMobileOrTablet: PropTypes.bool,
-  isMuted: PropTypes.bool,
-  isPlaying: PropTypes.bool,
-  onAudioButtonClick: PropTypes.func,
-  onCloseButtonClick: PropTypes.func,
-  onPlayPauseButtonClick: PropTypes.func,
-  progress: PropTypes.number,
 };
 
 export { Controls };

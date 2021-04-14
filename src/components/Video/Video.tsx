@@ -1,5 +1,4 @@
 import React, { forwardRef, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
   useEscapeKeyListener,
@@ -14,9 +13,10 @@ import { Controls } from './components/Controls';
 import { Poster } from './components/Poster';
 import { VideoPlayer } from './components/VideoPlayer';
 import { useVideoScroller, useProgress } from './Video.customHooks';
+import type { VideoProps } from './Video.types';
 import styles from './Video.module.css';
 
-const Video = forwardRef(function VideoRef(
+const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
   {
     captions,
     className,
@@ -42,7 +42,7 @@ const Video = forwardRef(function VideoRef(
   },
   ref,
 ) {
-  const videoRef = useRef();
+  const videoRef = useRef<HTMLVideoElement>();
   const [isPlaying, setIsPlaying] = useState(hasAutoplay);
   const [hasActiveCaptions, setHasActiveCaptions] = useState(
     !!captions?.isActiveOnLoad,
@@ -201,72 +201,5 @@ const Video = forwardRef(function VideoRef(
     </div>
   );
 });
-
-Video.propTypes = {
-  captions: PropTypes.shape({
-    copy: PropTypes.shape({
-      toggleButtonTitleOn: PropTypes.string,
-      toggleButtonTitleOff: PropTypes.string,
-    }),
-    fileUrl: PropTypes.string,
-    isActiveOnLoad: PropTypes.bool,
-    languageCode: PropTypes.string,
-    languageLabel: PropTypes.string,
-    shouldShowToggleButton: PropTypes.bool,
-  }),
-  className: PropTypes.string,
-  copy: PropTypes.shape({
-    closeButtonTitle: PropTypes.string,
-    muteButtonTitle: PropTypes.string,
-    playButtonTitle: PropTypes.string,
-    pauseButtonTitle: PropTypes.string,
-    unmuteButtonTitle: PropTypes.string,
-  }),
-  fallbackImage: PropTypes.shape({
-    className: PropTypes.string,
-    copy: PropTypes.shape({
-      altText: PropTypes.string,
-    }),
-    large: PropTypes.string,
-    medium: PropTypes.string,
-    small: PropTypes.string,
-  }),
-  hasControls: PropTypes.bool,
-  hasNativeControls: PropTypes.bool,
-  hasAllowAudio: PropTypes.bool,
-  hasAutoplay: PropTypes.bool,
-  hasLoop: PropTypes.bool,
-  hasSpanContent: PropTypes.bool,
-  hasPlayInFullScreen: PropTypes.bool,
-  id: PropTypes.string,
-  isBackground: PropTypes.bool,
-  /**
-    `isFullWidth` is set true by default and this will allow videos to display at the correct aspect ratio.
-    In the event that a different, more fluid ratio is required, set this prop to false, this will collase the hieght of th Video,
-    but it will react to the height of the surrounding element.
-  */
-  isFullWidth: PropTypes.bool,
-  /**
-    This prop negates the 16:9 aspect ratio on tablet so Full Width Hero Videos fill any avaliable space.
-   */
-  isHeroFullWidth: PropTypes.bool,
-  isHeroFullWidthMobile: PropTypes.bool,
-  isScrollBasedVideo: PropTypes.bool,
-  large: PropTypes.string,
-  medium: PropTypes.string,
-  poster: PropTypes.shape({
-    className: PropTypes.string,
-    copy: PropTypes.shape({
-      playButtonTitle: PropTypes.string,
-      altText: PropTypes.string,
-    }),
-    isActive: PropTypes.string,
-    large: PropTypes.string,
-    medium: PropTypes.string,
-    onClick: PropTypes.func,
-    small: PropTypes.string,
-  }),
-  small: PropTypes.string,
-};
 
 export { Video };
