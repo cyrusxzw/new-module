@@ -5,10 +5,6 @@ import { NewsletterSignUp } from './NewsletterSignUp';
 import { NewsletterSignUpFixture } from './NewsletterSignUp.fixture';
 
 describe('<NewsletterSignUp />', () => {
-  it('should be defined', () => {
-    expect(NewsletterSignUp).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <NotificationContextProvider>

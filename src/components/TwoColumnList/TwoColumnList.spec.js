@@ -4,10 +4,6 @@ import { TwoColumnList } from './TwoColumnList';
 import { TwoColumnListFixture } from './TwoColumnList.fixture';
 
 describe('<TwoColumnList />', () => {
-  it('should be defined', () => {
-    expect(TwoColumnList).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <TwoColumnList

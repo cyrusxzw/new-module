@@ -4,10 +4,6 @@ import { LinkButtonGroup } from './LinkButtonGroup';
 import { Button } from '~/components/Button';
 
 describe('<LinkButtonGroup />', () => {
-  it('should be defined', () => {
-    expect(LinkButtonGroup).toBeDefined();
-  });
-
   it('renders children correctly', () => {
     const { container } = render(
       <LinkButtonGroup theme="light">

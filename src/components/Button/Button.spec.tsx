@@ -7,10 +7,6 @@ describe('<Button />', () => {
   const handleOnClick = jest.fn();
   const buttonText = 'button';
 
-  it('should be defined', () => {
-    expect(Button).toBeDefined();
-  });
-
   it('should render base component correctly with `onClick` prop', () => {
     const { container } = render(
       <Button className="class" onClick={handleOnClick} title="button-title">

@@ -10,10 +10,6 @@ import { AccordionProductFixture } from './AccordionProduct.fixture.js';
 import { AccordionProduct } from './AccordionProduct';
 
 describe('<AccordionProduct />', () => {
-  it('should be defined', () => {
-    expect(AccordionProduct).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>

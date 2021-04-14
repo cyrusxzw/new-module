@@ -3,10 +3,6 @@ import { render } from '@testing-library/react';
 import { Checkbox } from './Checkbox';
 
 describe('<Checkbox />', () => {
-  it('should be defined', () => {
-    expect(Checkbox).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Checkbox

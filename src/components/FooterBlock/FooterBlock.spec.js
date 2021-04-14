@@ -4,10 +4,6 @@ import { FooterBlock } from './FooterBlock';
 import { FooterBlockFixture } from './FooterBlock.fixture';
 
 describe('<FooterBlock />', () => {
-  it('should be defined', () => {
-    expect(FooterBlock).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <FooterBlock

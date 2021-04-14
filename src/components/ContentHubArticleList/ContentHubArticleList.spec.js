@@ -4,10 +4,6 @@ import { ContentHubArticleList } from './ContentHubArticleList';
 import { ContentHubArticleListFixture } from './ContentHubArticleList.fixture';
 
 describe('<ContentHubArticleList />', () => {
-  it('should be defined', () => {
-    expect(ContentHubArticleList).toBeDefined();
-  });
-
   it('should render base component correctly with pattern 1', () => {
     const { container } = render(
       <ContentHubArticleList

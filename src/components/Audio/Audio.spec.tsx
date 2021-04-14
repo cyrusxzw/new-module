@@ -4,10 +4,6 @@ import { Audio } from './Audio';
 import { AudioFixture } from './Audio.fixture';
 
 describe('<Audio />', () => {
-  it('should be defined', () => {
-    expect(Audio).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Audio

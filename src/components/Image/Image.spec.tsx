@@ -4,10 +4,6 @@ import { axe } from 'jest-axe';
 import { Image } from './Image';
 
 describe('<Image />', () => {
-  it('should be defined', () => {
-    expect(Image).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Image

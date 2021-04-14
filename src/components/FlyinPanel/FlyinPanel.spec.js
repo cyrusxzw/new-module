@@ -13,10 +13,6 @@ describe('<FlyinPanel />', () => {
     onClose: handleOnClose,
   };
 
-  it('should be defined', () => {
-    expect(FlyinPanel).toBeDefined();
-  });
-
   it('renders component correctly and fires the close button on click', () => {
     render(<FlyinPanel {...props}>flyin panel</FlyinPanel>);
 
