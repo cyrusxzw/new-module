@@ -6,10 +6,6 @@ import { LoadMoreButtonFixture } from './LoadMoreButton.fixture';
 import { mockOnClick as mockLoadMoreButtonOnClick } from './__mocks__/LoadMoreButton.onClick';
 
 describe('<LoadMoreButton />', () => {
-  it('should be defined', () => {
-    expect(LoadMoreButton).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <LoadMoreContextProvider onClick={mockLoadMoreButtonOnClick}>

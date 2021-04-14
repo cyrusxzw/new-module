@@ -4,10 +4,6 @@ import { CarouselFixture } from '~/components/Carousel/Carousel.fixture';
 import { Slide } from './Slide';
 
 describe('<Carousel.Slide />', () => {
-  it('should be defined', () => {
-    expect(Slide).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Slide

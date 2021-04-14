@@ -4,10 +4,6 @@ import { axe } from 'jest-axe';
 import { TextInput } from './TextInput';
 
 describe('<TextInput />', () => {
-  it('should be defined', () => {
-    expect(TextInput).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <TextInput data-test-ref="test-data-ref" id="test-textinput" />,

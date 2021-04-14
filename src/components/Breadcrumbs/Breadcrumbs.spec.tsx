@@ -4,10 +4,6 @@ import { Breadcrumbs } from './Breadcrumbs';
 import { BreadcrumbsFixture } from './Breadcrumbs.fixture';
 
 describe('<Breadcrumbs />', () => {
-  it('should be defined', () => {
-    expect(Breadcrumbs).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Breadcrumbs

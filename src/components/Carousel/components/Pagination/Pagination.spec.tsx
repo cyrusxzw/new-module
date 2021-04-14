@@ -3,10 +3,6 @@ import { render, screen } from '@testing-library/react';
 import { Pagination } from './Pagination';
 
 describe('<Carousel.Pagination />', () => {
-  it('should be defined', () => {
-    expect(Pagination).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(<Pagination dots={[0]} />);
 
