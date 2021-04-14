@@ -1,3 +1,0 @@
-const TransitionFixture = {};
-
-export { TransitionFixture };
