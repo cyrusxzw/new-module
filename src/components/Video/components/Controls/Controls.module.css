@@ -247,7 +247,7 @@
   opacity: 1;
   transition: opacity 500ms var(--easing-ease-in-sine);
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     right: calc(var(--layout-sm-spacing) * 2);
     bottom: 15px;
     left: calc(var(--layout-sm-spacing) * 2);

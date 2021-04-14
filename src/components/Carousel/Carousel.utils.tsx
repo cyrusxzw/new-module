@@ -75,7 +75,7 @@ const getCarouselSettings = ({
   prevArrow: <PreviousButton isActive={isPreviousButtonActive} theme={theme} />,
   responsive: [
     {
-      breakpoint: BREAKPOINTS.get('xs').maxWidth,
+      breakpoint: BREAKPOINTS.get('sm').maxWidth,
       settings: {
         slidesToShow: 1,
       },
