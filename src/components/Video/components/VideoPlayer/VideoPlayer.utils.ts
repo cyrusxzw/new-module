@@ -1,4 +1,4 @@
-import { isViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import type { VideoPlayerProps } from './VideoPlayer.types';
 
 const getVideoSrc = (sizes: VideoPlayerProps['sizes']): string => {

@@ -1,11 +1,11 @@
 import type { BreakpointNames } from '~/types';
 
-type BreakpointValues = {
+type BreakpointValue = {
   minWidth?: number;
   maxWidth?: number;
 };
 
-const BREAKPOINTS: Map<BreakpointNames, BreakpointValues> = new Map([
+const BREAKPOINTS: Map<BreakpointNames, BreakpointValue> = new Map([
   ['xs', { minWidth: 0, maxWidth: 320 }],
   ['sm', { minWidth: 321, maxWidth: 639 }],
   ['md', { minWidth: 640, maxWidth: 1024 }],

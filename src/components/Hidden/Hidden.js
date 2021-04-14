@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import cx from 'classnames';
 import { useWindowHasResized } from '~/customHooks';
-import { isViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 //
 // import styles from './Hidden.module.css';
 

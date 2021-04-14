@@ -6,7 +6,7 @@ import {
   useOverflowHidden,
   useWindowHasResized,
 } from '~/customHooks';
-import { isViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import { isIE, isChrome } from '~/utils/environment';
 import { Image } from '~/components/Image';
 import { Controls } from './components/Controls';

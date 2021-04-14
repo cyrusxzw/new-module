@@ -1,1 +1,0 @@
-export { isViewport } from './viewports';

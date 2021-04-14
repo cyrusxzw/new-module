@@ -9,7 +9,7 @@ import {
 } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks/useWindowHasResized';
 import { getVariantRadioOptions } from '~/utils/product';
-import { isViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import { AddToCartButton } from '~/components/AddToCartButton';
 import { Button } from '~/components/Button';
 import { DefinitionList } from '~/components/DefinitionList';

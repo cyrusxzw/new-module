@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import { isViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import { List } from '~/components/List';
 import { Select } from '~/components/Select';
 import { Heading } from '~/components/Heading';

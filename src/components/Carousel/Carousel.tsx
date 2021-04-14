@@ -4,7 +4,7 @@ import get from 'lodash/get';
 import Slider from 'react-slick';
 import { useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import { isViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import { ConditionalWrapper } from '~/components/ConditionalWrapper';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Loading } from '~/components/Loading';

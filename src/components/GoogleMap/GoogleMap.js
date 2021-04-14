@@ -12,7 +12,7 @@ import {
 } from '~/constants';
 import { useGoogleMapsContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import { isViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Loading } from '~/components/Loading';
 import { Transition } from '~/components/Transition';

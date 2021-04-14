@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, FC } from 'react';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
 import { useEscapeKeyListener } from '~/customHooks';
-import { isViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
 import { Transition } from '~/components/Transition';
