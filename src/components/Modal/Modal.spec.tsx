@@ -6,10 +6,6 @@ import { Modal } from './Modal';
 describe('<Modal />', () => {
   const handleOnClose = jest.fn();
 
-  it('should be defined', () => {
-    expect(Modal).toBeDefined();
-  });
-
   it('renders component correctly and fires the close button on click', () => {
     const closeCopy = 'close modal copy';
 

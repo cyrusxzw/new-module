@@ -4,10 +4,6 @@ import { StoreHoursList } from './StoreHoursList';
 import { StoreHoursListFixture } from './StoreHoursList.fixture';
 
 describe('<StoreHoursList />', () => {
-  it('should be defined', () => {
-    expect(StoreHoursList).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <StoreHoursList

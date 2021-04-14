@@ -4,10 +4,6 @@ import { CarouselFixture } from '~/components/Carousel/Carousel.fixture';
 import { CarouselIntroduction } from './CarouselIntroduction';
 
 describe('<Carousel.CarouselIntroduction />', () => {
-  it('should be defined', () => {
-    expect(CarouselIntroduction).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <CarouselIntroduction

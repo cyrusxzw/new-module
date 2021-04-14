@@ -9,10 +9,6 @@ import { ProductDetailImageFixture } from './ProductDetailImage.fixture';
 import { ProductDetailImage } from './ProductDetailImage';
 
 describe('<ProductDetailImage />', () => {
-  it('should be defined', () => {
-    expect(ProductDetailImage).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const product = ProductDetailHeaderFixture.product;
     const variants = ProductDetailHeaderFixture.product.variantOptions;

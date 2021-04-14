@@ -4,10 +4,6 @@ import { ProductExtract } from './ProductExtract';
 import { ProductExtractFixture } from './ProductExtract.fixture';
 
 describe('<ProductExtract />', () => {
-  it('should be defined', () => {
-    expect(ProductExtract).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <ProductExtract

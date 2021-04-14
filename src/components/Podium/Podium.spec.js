@@ -4,10 +4,6 @@ import { Podium } from './Podium';
 import { PodiumFixture } from './Podium.fixture';
 
 describe('<Podium />', () => {
-  it('should be defined', () => {
-    expect(Podium).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Podium

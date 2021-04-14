@@ -3,10 +3,6 @@ import { render, screen } from '@testing-library/react';
 import { Icon } from './Icon';
 
 describe('<Icon />', () => {
-  it('should be defined', () => {
-    expect(Icon).toBeDefined();
-  });
-
   it('should render render base component correctly', () => {
     const { container } = render(<Icon name="rightArrow" />);
 

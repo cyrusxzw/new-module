@@ -4,10 +4,6 @@ import { IconLink } from './IconLink';
 import { IconLinkFixture } from './IconLink.fixture';
 
 describe('<IconLink />', () => {
-  it('should be defined', () => {
-    expect(IconLink).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <IconLink

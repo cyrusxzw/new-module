@@ -3,10 +3,6 @@ import { render } from '@testing-library/react';
 import { ConditionalWrapper } from './ConditionalWrapper';
 
 describe('<ConditionalWrapper />', () => {
-  it('should be defined', () => {
-    expect(ConditionalWrapper).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <ConditionalWrapper

@@ -4,10 +4,6 @@ import { Select } from './Select';
 import { SelectFixture } from './Select.fixture';
 
 describe('<Select />', () => {
-  it('should be defined', () => {
-    expect(Select).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Select

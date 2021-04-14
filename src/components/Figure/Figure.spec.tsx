@@ -4,10 +4,6 @@ import { Figure } from './Figure';
 import { Image } from '~/components/Image';
 
 describe('<Figure />', () => {
-  it('should be defined', () => {
-    expect(Figure).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Figure caption="About Aesop" id="about">

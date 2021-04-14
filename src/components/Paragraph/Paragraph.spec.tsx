@@ -3,10 +3,6 @@ import { render } from '@testing-library/react';
 import { Paragraph, ParagraphSet } from './Paragraph';
 
 describe('<Paragraph />', () => {
-  it('should be defined', () => {
-    expect(Paragraph).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Paragraph>
