@@ -3867,28 +3867,6 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
 
   /* Secondary Message background colour */
 }
-/* Dark theme UI elements */
-/* Light theme UI elements */
-/* UI colours light theme */
-/*
---color-light-copy: var(--color-primary);
---color-light-copy-alternate: var(--color-white-darker);
---color-light-label: var(--color-white-darker);
---color-light-link: var(--color-primary);
---color-light-link-hover: var(--color-white-darker);
---color-light-decoration: var(--color-white-darker);
---color-light-disabled: var(--color-grey-60);
-*/
-/* UI colours dark theme */
-/*
---color-dark-copy: var(--color-secondary);
---color-dark-copy-alternate: var(--color-grey-63);
---color-dark-label: var(--color-grey-30);
---color-dark-link: var(--color-grey-20);
---color-dark-link-hover: var(--color-grey-10);
---color-dark-decoration: var(--color-grey-30);
---color-dark-disabled: var(--color-grey-60);
-*/
 .Overlay-module_base__21l1K {
   position: fixed;
   z-index: 1200;
