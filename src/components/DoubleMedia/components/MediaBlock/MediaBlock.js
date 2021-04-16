@@ -12,11 +12,9 @@ const MediaBlock = ({
   caption,
   fallbackImage,
   heading,
-  large,
   link,
-  medium,
   poster,
-  small,
+  sizes,
   theme,
   type,
 }) => {
@@ -33,13 +31,11 @@ const MediaBlock = ({
         hasPlayInFullScreen={false}
         isFullWidth={true}
         isScrollBasedVideo={isScrollBasedVideo}
-        large={large}
-        medium={medium}
         poster={poster}
-        small={small}
+        sizes={sizes}
       />
     ) : (
-      <Image altText={altText} large={large} medium={medium} small={small} />
+      <Image altText={altText} sizes={sizes} />
     );
   };
 
@@ -90,16 +86,18 @@ MediaBlock.propTypes = {
   caption: PropTypes.node,
   fallbackImage: PropTypes.object,
   heading: PropTypes.string,
-  large: PropTypes.string,
   link: PropTypes.shape({
     hasTargetInNewWindow: PropTypes.bool,
     text: PropTypes.string,
     type: PropTypes.string,
     url: PropTypes.string,
   }),
-  medium: PropTypes.string,
+  sizes: PropTypes.shape({
+    large: PropTypes.string,
+    medium: PropTypes.string,
+    small: PropTypes.string,
+  }),
   poster: PropTypes.object,
-  small: PropTypes.string,
   type: PropTypes.oneOf(['video', 'image', 'scrollbasedvideo']),
   theme: PropTypes.oneOf(['dark', 'light']),
 };
@@ -109,11 +107,9 @@ MediaBlock.defaultProps = {
   caption: undefined,
   fallbackImage: undefined,
   heading: undefined,
-  large: undefined,
+  sizes: undefined,
   link: undefined,
-  medium: undefined,
   poster: undefined,
-  small: undefined,
   type: 'image',
   theme: 'dark',
 };

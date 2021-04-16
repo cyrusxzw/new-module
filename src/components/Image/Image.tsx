@@ -1,7 +1,7 @@
 import React, { forwardRef, FC } from 'react';
 import cx from 'classnames';
-import { BREAKPOINTS } from '~/constants';
 import { Hyperlink } from '~/components/Hyperlink';
+import { getImageSourcesBySize } from './Image.utils';
 import type { ImageProps } from './Image.types';
 import styles from './Image.module.css';
 
@@ -11,9 +11,7 @@ const Image: FC<ImageProps> = forwardRef(function ImageRef(
     className,
     cta,
     isLazyLoaded = true,
-    large,
-    medium,
-    small,
+    sizes,
     style,
     type,
     theme = 'dark',
@@ -34,26 +32,7 @@ const Image: FC<ImageProps> = forwardRef(function ImageRef(
 
   const picture = (
     <picture className={classSet} style={style}>
-      {large && (
-        <source
-          media={`(min-width: ${BREAKPOINTS.get('lg').minWidth}px)`}
-          srcSet={large}
-        />
-      )}
-
-      {medium && (
-        <source
-          media={`(min-width: ${BREAKPOINTS.get('md').minWidth}px)`}
-          srcSet={medium}
-        />
-      )}
-
-      {small && (
-        <source
-          media={`(min-width: ${BREAKPOINTS.get('xs').minWidth}px)`}
-          srcSet={small}
-        />
-      )}
+      {getImageSourcesBySize(sizes)}
 
       <img alt={altText} loading={isLazyLoaded ? 'lazy' : 'eager'} ref={ref} />
     </picture>

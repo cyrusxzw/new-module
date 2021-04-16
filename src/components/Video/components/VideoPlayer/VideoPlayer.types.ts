@@ -18,6 +18,8 @@ type VideoPlayerProps = {
     large?: string;
     medium?: string;
     small?: string;
+    xLarge?: string;
+    xSmall?: string;
   };
 };
 

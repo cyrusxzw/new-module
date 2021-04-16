@@ -3,7 +3,19 @@ import type { ViewportNames } from '~/types';
 
 const VIEWPORTS: Map<ViewportNames, string> = new Map([
   ['xs', `(min-width: ${BREAKPOINTS.get('xs').minWidth}px)`],
+  [
+    'xs only',
+    `(min-width: ${BREAKPOINTS.get('xs').minWidth}px) and (max-width: ${
+      BREAKPOINTS.get('xs').maxWidth
+    }px)`,
+  ],
   ['sm', `(min-width: ${BREAKPOINTS.get('sm').minWidth}px)`],
+  [
+    'sm only',
+    `(min-width: ${BREAKPOINTS.get('sm').minWidth}px) and (max-width: ${
+      BREAKPOINTS.get('sm').maxWidth
+    }px)`,
+  ],
   [
     'xs to sm only',
     `(min-width: ${BREAKPOINTS.get('xs').minWidth}px) and (max-width: ${
