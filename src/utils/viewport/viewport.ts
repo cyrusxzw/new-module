@@ -3,7 +3,6 @@ import { VIEWPORTS } from '~/constants';
 import type { ViewportNames } from '~/types';
 
 const isViewport = (viewport: ViewportNames): boolean => {
-  /** @TODO remove this once TypeScript migration is complete */
   if (!VIEWPORTS.get(viewport)) {
     throw new Error(`The viewport '${viewport}' does not exist`);
   }
