@@ -1,4 +1,4 @@
-import React, { isValidElement } from 'react';
+import React, { isValidElement, ReactElement } from 'react';
 import cx from 'classnames';
 import get from 'lodash/get';
 import { CSSTransition } from 'react-transition-group-npm';
@@ -13,7 +13,7 @@ const Transition = ({
   shouldMountOnEnter,
   shouldUnmountOnExit,
   type = 'fade',
-}: TransitionProps) => {
+}: TransitionProps): ReactElement | null => {
   const hasMounted = useHasMounted();
 
   if (!isValidElement(children)) {
@@ -34,7 +34,7 @@ const Transition = ({
       timeout={get(data[type], 'timeout', 300)}
       unmountOnExit={!!shouldUnmountOnExit}
     >
-      {React.cloneElement(children as React.ReactElement<any>, {
+      {React.cloneElement(children as ReactElement, {
         className: classSet,
       })}
     </CSSTransition>
