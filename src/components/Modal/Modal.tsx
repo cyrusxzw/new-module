@@ -32,9 +32,9 @@ const Modal: FC<ModalProps> = ({
         <>
           <Overlay isVisible={isVisible} onClose={onClose} />
           <Transition
-            hasCSSTransitionMountOnEnter={true}
-            hasCSSTransitionUnmountOnExit={true}
             isActive={isVisible}
+            shouldMountOnEnter={true}
+            shouldUnmountOnExit={true}
             type="zoom"
           >
             <aside
