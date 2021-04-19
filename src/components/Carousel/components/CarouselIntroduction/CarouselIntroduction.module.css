@@ -8,6 +8,7 @@
   font-size: rem(15px);
 
   @media (--viewport-md-only) {
+    flex-direction: row;
     justify-content: space-between;
   }
 }
@@ -17,40 +18,35 @@
   margin-bottom: 9px;
 
   @media (--viewport-md-only) {
-    position: absolute;
-    left: 0;
-    width: 48%;
+    width: 50%;
+  }
+}
+
+.offsetHeading {
+  @media (--viewport-md-only) {
     padding-right: var(--layout-md-spacing);
   }
 }
 
-.description {
-  max-width: 85%;
+.content {
+  @media (--viewport-md-only) {
+    width: 50%;
+  }
+}
 
+.description {
   &,
   & p {
     font-size: rem(14px);
     font-weight: 400;
     line-height: 1.7;
   }
-
-  @media (--viewport-md-only) {
-    width: 48%;
-    max-width: 100%;
-    margin-left: 52%;
-  }
 }
 
-.hasFooter.hasFooter {
+.hasCta.hasCta {
   margin-bottom: 20px;
 }
 
 .ctaWrapper {
   margin-top: auto;
-
-  @media (--viewport-md-only) {
-    width: 48%;
-    max-width: 100%;
-    margin-left: 52%;
-  }
 }

@@ -6,7 +6,7 @@ exports[`<Carousel.CarouselIntroduction /> should render base component correctl
     class="base dark"
   >
     <header
-      class="heading base"
+      class="heading offsetHeading base"
     >
       <h2
         class="base flush serifFont xLarge dark heading"
@@ -14,11 +14,15 @@ exports[`<Carousel.CarouselIntroduction /> should render base component correctl
         Maecenas elementum
       </h2>
     </header>
-    <p
-      class="base dark description"
+    <div
+      class="content"
     >
-      Maecenas elementum, metus id facilisis placerat, turpis diam sodales velit, quis sodales ipsum nunc nec velit. Aenean ac tortor consectetur, volutpat massa sed, ultricies orci.
-    </p>
+      <p
+        class="base dark description"
+      >
+        Maecenas elementum, metus id facilisis placerat, turpis diam sodales velit, quis sodales ipsum nunc nec velit. Aenean ac tortor consectetur, volutpat massa sed, ultricies orci.
+      </p>
+    </div>
   </div>
 </div>
 `;
