@@ -20,7 +20,7 @@ const Transition = ({
     return null;
   }
 
-  const isVisible: boolean = isActiveOnMount ? !!hasMounted : !!isActive;
+  const isVisible = isActiveOnMount ? !!hasMounted : !!isActive;
   const classSet = cx(
     get(children, 'props.className', ''),
     isVisible ? '' : get(data[type], 'classNames.enter', ''),
