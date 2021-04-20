@@ -12,40 +12,48 @@ const CarouselIntroduction: FC<CarouselIntroductionProps> = ({
   heading,
   theme = 'dark',
 }) => {
+  const hasCta = !!cta?.text;
   const classSet = cx(styles.base, styles[theme]);
+  const headingClassSet = cx(styles.heading, {
+    [styles.offsetHeading]: !!description || hasCta,
+  });
 
   return (
     <div className={classSet}>
       <SectionHeading
-        className={styles.heading}
+        className={headingClassSet}
         eyebrow={eyebrow}
         hasSerifFontHeading={true}
         heading={heading}
         isFlush={true}
         theme={theme}
       />
-      {description && (
-        <div
-          className={cx(
-            styles.description,
-            { [styles.hasFooter]: cta },
-            styles[theme],
+      {(!!description || hasCta) && (
+        <div className={styles.content}>
+          {description && (
+            <div
+              className={cx(
+                styles.description,
+                { [styles.hasCta]: hasCta },
+                styles[theme],
+              )}
+            >
+              {description}
+            </div>
           )}
-        >
-          {description}
+          {hasCta && (
+            <div className={styles.ctaWrapper}>
+              <Hyperlink
+                style={cta.style}
+                theme={theme}
+                title={cta.title}
+                url={cta.url}
+              >
+                {cta.text}
+              </Hyperlink>
+            </div>
+          )}
         </div>
-      )}
-      {cta && (
-        <footer className={styles.ctaWrapper}>
-          <Hyperlink
-            style={cta.style}
-            theme={theme}
-            title={cta.title}
-            url={cta.url}
-          >
-            {cta.text}
-          </Hyperlink>
-        </footer>
       )}
     </div>
   );

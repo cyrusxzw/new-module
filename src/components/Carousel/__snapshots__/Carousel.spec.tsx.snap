@@ -410,7 +410,7 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                 class="base dark"
               >
                 <header
-                  class="heading base"
+                  class="heading offsetHeading base"
                 >
                   <h2
                     class="base flush serifFont xLarge dark heading"
@@ -424,51 +424,55 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                   </h3>
                 </header>
                 <div
-                  class="description hasFooter dark"
+                  class="content"
                 >
-                  Maecenas elementum, metus id facilisis placerat, turpis diam sodales velit, quis sodales ipsum nunc nec velit. Aenean ac tortor consectetur, volutpat massa sed, ultricies orci.
-                </div>
-                <footer
-                  class="ctaWrapper"
-                >
-                  <a
-                    class="base hasIcon left dark"
-                    href="/"
-                    target="_self"
-                    title="Aenean ac tortor"
+                  <div
+                    class="description hasCta dark"
                   >
-                    Aenean ac tortor
-                     
-                    <i
-                      aria-hidden="true"
-                      class="icon"
+                    Maecenas elementum, metus id facilisis placerat, turpis diam sodales velit, quis sodales ipsum nunc nec velit. Aenean ac tortor consectetur, volutpat massa sed, ultricies orci.
+                  </div>
+                  <div
+                    class="ctaWrapper"
+                  >
+                    <a
+                      class="base hasIcon left dark"
+                      href="/"
+                      target="_self"
+                      title="Aenean ac tortor"
                     >
-                      <svg
-                        aria-labelledby="rightArrow-2"
-                        class="base rightArrow dark"
-                        data-testid="data-testid-Icon"
-                        focusable="false"
-                        height="12"
-                        role="img"
-                        style="height: 12px; width: 12px;"
-                        tabindex="-1"
-                        viewBox="0 0 50 50"
-                        width="12"
+                      Aenean ac tortor
+                       
+                      <i
+                        aria-hidden="true"
+                        class="icon"
                       >
-                        <title
-                          id="rightArrow-2"
+                        <svg
+                          aria-labelledby="rightArrow-2"
+                          class="base rightArrow dark"
+                          data-testid="data-testid-Icon"
+                          focusable="false"
+                          height="12"
+                          role="img"
+                          style="height: 12px; width: 12px;"
+                          tabindex="-1"
+                          viewBox="0 0 50 50"
+                          width="12"
                         >
-                          rightArrow
-                        </title>
-                        <g>
-                          <path
-                            d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
-                          />
-                        </g>
-                      </svg>
-                    </i>
-                  </a>
-                </footer>
+                          <title
+                            id="rightArrow-2"
+                          >
+                            rightArrow
+                          </title>
+                          <g>
+                            <path
+                              d="M30.1,5.3L50,25.1L30.1,45h-6.6l18-17.6H0v-4.8h41.5l-18-17.6h6.6V5.3z"
+                            />
+                          </g>
+                        </svg>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
