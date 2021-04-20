@@ -34,6 +34,20 @@
     line-height: 1.7;
   }
 
+  &.dark {
+    &,
+    & p {
+      color: var(--color-dark-copy);
+    }
+  }
+
+  &.light {
+    &,
+    & p {
+      color: var(--color-light-copy);
+    }
+  }
+
   @media (--viewport-md-only) {
     width: 48%;
     max-width: 100%;
