@@ -12,7 +12,7 @@ const CarouselIntroduction: FC<CarouselIntroductionProps> = ({
   heading,
   theme = 'dark',
 }) => {
-  const hasCta = !!cta && !!cta.text;
+  const hasCta = !!cta?.text;
   const classSet = cx(styles.base, styles[theme]);
   const headingClassSet = cx(styles.heading, {
     [styles.offsetHeading]: !!description || hasCta,
