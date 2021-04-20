@@ -41,6 +41,20 @@
     font-weight: 400;
     line-height: 1.7;
   }
+
+  &.dark {
+    &,
+    & p {
+      color: var(--color-dark-copy);
+    }
+  }
+
+  &.light {
+    &,
+    & p {
+      color: var(--color-light-copy);
+    }
+  }
 }
 
 .hasCta.hasCta {

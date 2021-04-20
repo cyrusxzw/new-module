@@ -426,11 +426,11 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                 <div
                   class="content"
                 >
-                  <p
-                    class="base dark description hasCta"
+                  <div
+                    class="description hasCta dark"
                   >
                     Maecenas elementum, metus id facilisis placerat, turpis diam sodales velit, quis sodales ipsum nunc nec velit. Aenean ac tortor consectetur, volutpat massa sed, ultricies orci.
-                  </p>
+                  </div>
                   <div
                     class="ctaWrapper"
                   >

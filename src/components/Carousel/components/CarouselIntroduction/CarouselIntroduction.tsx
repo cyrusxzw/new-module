@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import cx from 'classnames';
 import { Hyperlink } from '~/components/Hyperlink';
 import { SectionHeading } from '~/components/SectionHeading';
-import { Paragraph } from '~/components/Paragraph';
 import type { CarouselIntroductionProps } from './CarouselIntroduction.types';
 import styles from './CarouselIntroduction.module.css';
 
@@ -32,12 +31,15 @@ const CarouselIntroduction: FC<CarouselIntroductionProps> = ({
       {(!!description || hasCta) && (
         <div className={styles.content}>
           {description && (
-            <Paragraph
-              className={cx(styles.description, { [styles.hasCta]: hasCta })}
-              theme={theme}
+            <div
+              className={cx(
+                styles.description,
+                { [styles.hasCta]: hasCta },
+                styles[theme],
+              )}
             >
               {description}
-            </Paragraph>
+            </div>
           )}
           {hasCta && (
             <div className={styles.ctaWrapper}>
