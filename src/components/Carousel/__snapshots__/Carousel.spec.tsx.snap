@@ -423,11 +423,11 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                     Aenean ac tortor consectetur
                   </h3>
                 </header>
-                <p
-                  class="base dark description hasFooter"
+                <div
+                  class="description hasFooter dark"
                 >
                   Maecenas elementum, metus id facilisis placerat, turpis diam sodales velit, quis sodales ipsum nunc nec velit. Aenean ac tortor consectetur, volutpat massa sed, ultricies orci.
-                </p>
+                </div>
                 <footer
                   class="ctaWrapper"
                 >
