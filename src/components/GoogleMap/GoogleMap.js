@@ -256,9 +256,9 @@ const GoogleMap = ({
         <div className={styles.map} id={id} ref={mapContainerRef} />
       </div>
       <Transition
-        hasCSSTransitionMountOnEnter={true}
-        hasCSSTransitionUnmountOnExit={true}
         isActive={!!activeInfoBlockData}
+        shouldMountOnEnter={true}
+        shouldUnmountOnExit={true}
         type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
       >
         <InfoCard

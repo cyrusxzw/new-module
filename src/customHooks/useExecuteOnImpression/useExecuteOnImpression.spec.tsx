@@ -7,8 +7,7 @@ describe('useExecuteOnImpression', () => {
   const callback = jest.fn();
   const useOnScreenSpy = jest.spyOn(useOnScreenHook, 'useOnScreen');
 
-  // eslint-disable-next-line react/prop-types
-  const TestRig = ({ options }) => {
+  const TestRig = ({ options }: { options? }) => {
     const ref = useRef(null);
     useExecuteOnImpression(ref, callback, options);
 

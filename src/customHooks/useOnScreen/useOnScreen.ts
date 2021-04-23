@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { isInBrowser } from '~/utils/environment';
+import type { UseOnScreen } from './useOnScreen.types';
 
 const hasIntersectionObserver =
   isInBrowser() &&
@@ -8,7 +9,7 @@ const hasIntersectionObserver =
     ('IntersectionObserverEntry' in window &&
       'intersectionRatio' in window.IntersectionObserverEntry.prototype));
 
-const useOnScreen = (
+const useOnScreen: UseOnScreen = (
   ref,
   threshold = 0,
   rootMargin = '0px',
@@ -19,7 +20,7 @@ const useOnScreen = (
   useEffect(() => {
     if (!ref?.current) return;
 
-    let observer = null;
+    let observer: IntersectionObserver = null;
     const currentRef = ref.current;
 
     if (!hasIntersectionObserver) {

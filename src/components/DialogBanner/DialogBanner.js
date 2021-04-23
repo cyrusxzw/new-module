@@ -38,9 +38,9 @@ const DialogBanner = ({
     <>
       <Overlay isVisible={isVisible} onClose={onClose} />
       <Transition
-        hasCSSTransitionMountOnEnter={true}
-        hasCSSTransitionUnmountOnExit={true}
         isActive={isVisible}
+        shouldMountOnEnter={true}
+        shouldUnmountOnExit={true}
         type="slideDown"
       >
         <aside className={classSet}>

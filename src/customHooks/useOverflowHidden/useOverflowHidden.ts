@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-const useOverflowHidden = isVisible => {
+const useOverflowHidden = (isVisible: boolean): void => {
   const [isOverflowHidden, setIsOverflowHidden] = useState(false);
 
   const hidden = useCallback(() => {

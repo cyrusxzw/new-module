@@ -2291,113 +2291,6 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 } */
 /* Dark theme UI elements */
 /* Light theme UI elements */
-.Paragraph-module_base__2wcSK {
-  margin: 0;
-  margin-bottom: 30px;
-  font-size: 14px;
-  line-height: 1.6;
-}
-.Paragraph-module_base__2wcSK {
-
-  font-family: 'Suisse Regular', sans-serif;
-}
-.Paragraph-module_large__Mkm1j,
-  .Paragraph-module_large__Mkm1j p {
-    font-size: 16px;
-    line-height: 1.7;
-  }
-.Paragraph-module_serifFont__30f9k {
-  font-family: 'Zapf Humanist', serif;
-}
-/**
-   * Override for Korean region translation
-   */
-html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
-  html[lang*='KO'] .Paragraph-module_serifFont__30f9k {
-    font-family: 'Suisse Regular', sans-serif;
-    font-weight: 400;
-  }
-.Paragraph-module_hero__8rK9i {
-  font-size: 24px;
-  line-height: 1.33;
-}
-.Paragraph-module_hero__8rK9i.Paragraph-module_serifFont__30f9k {
-    font-size: 25px;
-  }
-@media (min-width: 640px) {
-.Paragraph-module_hero__8rK9i {
-    font-size: 26px
-}
-
-    .Paragraph-module_hero__8rK9i.Paragraph-module_serifFont__30f9k {
-      font-size: 30px;
-    }
-  }
-@media (min-width: 1025px) {
-.Paragraph-module_hero__8rK9i {
-    font-size: 30px
-}
-
-    .Paragraph-module_hero__8rK9i.Paragraph-module_serifFont__30f9k {
-      font-size: 30px;
-    }
-  }
-.Paragraph-module_flush__3vEyT {
-  margin-bottom: 10px;
-}
-.Paragraph-module_dark__GxvVO,
-  .Paragraph-module_dark__GxvVO p {
-  color: #333;
-  }
-.Paragraph-module_light__yJGX7,
-  .Paragraph-module_light__yJGX7 p {
-  color: #fffef2;
-  }
-.Paragraph-module_set__wOcFC p {
-  margin: 0;
-  margin-bottom: 30px;
-  font-size: 14px;
-  line-height: 1.6;
-  }
-.Paragraph-module_set__wOcFC.Paragraph-module_large__Mkm1j,
-    .Paragraph-module_set__wOcFC.Paragraph-module_large__Mkm1j p {
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-:root {
-  /* Base colours */
-
-  /* UI colours light theme */
-
-  /* UI colours dark theme */
-
-  /* Background colours */
-
-  /* System colours */
-
-  /* Secondary Message background colour */
-}
-/** https://github.com/postcss/postcss-custom-properties/issues/24
- :root {
-  --breakpoint-xs-min: 0;
-  --breakpoint-xs-max: 320px;
-  --breakpoint-sm-min: 321px;
-  --breakpoint-sm-max: 639px;
-  --breakpoint-md-min: 640px;
-  --breakpoint-md-max: 1024px;
-  --breakpoint-lg-min: 1025px;
-  --breakpoint-lg-max: 1219px;
-  --breakpoint-xl-min: 1220px;
-  --breakpoint-xl-max: 1599px;
-  --breakpoint-x2l-min: 1600px;
-  --breakpoint-x2l-max: 1919px;
-  --breakpoint-x3l-min: 1920px;
-  --breakpoint-x3l-max: 2399px;
-  --breakpoint-x4l-min: 2400px;
-} */
-/* Dark theme UI elements */
-/* Light theme UI elements */
 .CarouselIntroduction-module_base__2sFJp {
   position: relative;
   display: -webkit-box;
@@ -2412,6 +2305,10 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
 }
 @media (min-width: 640px) and (max-width: 1024px) {
 .CarouselIntroduction-module_base__2sFJp {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between
@@ -2423,41 +2320,39 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
 }
 @media (min-width: 640px) and (max-width: 1024px) {
 .CarouselIntroduction-module_heading__tajC7 {
-    position: absolute;
-    left: 0;
-    width: 48%;
+    width: 50%
+}
+  }
+@media (min-width: 640px) and (max-width: 1024px) {
+.CarouselIntroduction-module_offsetHeading__1GzQP {
     padding-right: 34px
 }
   }
-.CarouselIntroduction-module_description__XxH4y {
-  max-width: 85%;
+@media (min-width: 640px) and (max-width: 1024px) {
+.CarouselIntroduction-module_content__qY3Ua {
+    width: 50%
 }
+  }
 .CarouselIntroduction-module_description__XxH4y,
   .CarouselIntroduction-module_description__XxH4y p {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.7;
   }
-@media (min-width: 640px) and (max-width: 1024px) {
-.CarouselIntroduction-module_description__XxH4y {
-    width: 48%;
-    max-width: 100%;
-    margin-left: 52%
-}
-  }
-.CarouselIntroduction-module_hasFooter__27iRg.CarouselIntroduction-module_hasFooter__27iRg {
+.CarouselIntroduction-module_description__XxH4y.CarouselIntroduction-module_dark__1Hajy,
+    .CarouselIntroduction-module_description__XxH4y.CarouselIntroduction-module_dark__1Hajy p {
+      color: #333;
+    }
+.CarouselIntroduction-module_description__XxH4y.CarouselIntroduction-module_light__QB9Ny,
+    .CarouselIntroduction-module_description__XxH4y.CarouselIntroduction-module_light__QB9Ny p {
+      color: #fffef2;
+    }
+.CarouselIntroduction-module_hasCta__2c1X4.CarouselIntroduction-module_hasCta__2c1X4 {
   margin-bottom: 20px;
 }
 .CarouselIntroduction-module_ctaWrapper__3dGj2 {
   margin-top: auto;
 }
-@media (min-width: 640px) and (max-width: 1024px) {
-.CarouselIntroduction-module_ctaWrapper__3dGj2 {
-    width: 48%;
-    max-width: 100%;
-    margin-left: 52%
-}
-  }
 
 :root {
   /* Base colours */
@@ -3781,6 +3676,113 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
 .DefinitionList-module_hasBottomBorder__3ILvy .DefinitionList-module_description__1hVLl:last-child {
     border-bottom: 1px solid #d5d4c9;
   }
+
+:root {
+  /* Base colours */
+
+  /* UI colours light theme */
+
+  /* UI colours dark theme */
+
+  /* Background colours */
+
+  /* System colours */
+
+  /* Secondary Message background colour */
+}
+/** https://github.com/postcss/postcss-custom-properties/issues/24
+ :root {
+  --breakpoint-xs-min: 0;
+  --breakpoint-xs-max: 320px;
+  --breakpoint-sm-min: 321px;
+  --breakpoint-sm-max: 639px;
+  --breakpoint-md-min: 640px;
+  --breakpoint-md-max: 1024px;
+  --breakpoint-lg-min: 1025px;
+  --breakpoint-lg-max: 1219px;
+  --breakpoint-xl-min: 1220px;
+  --breakpoint-xl-max: 1599px;
+  --breakpoint-x2l-min: 1600px;
+  --breakpoint-x2l-max: 1919px;
+  --breakpoint-x3l-min: 1920px;
+  --breakpoint-x3l-max: 2399px;
+  --breakpoint-x4l-min: 2400px;
+} */
+/* Dark theme UI elements */
+/* Light theme UI elements */
+.Paragraph-module_base__2wcSK {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.Paragraph-module_base__2wcSK {
+
+  font-family: 'Suisse Regular', sans-serif;
+}
+.Paragraph-module_large__Mkm1j,
+  .Paragraph-module_large__Mkm1j p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+.Paragraph-module_serifFont__30f9k {
+  font-family: 'Zapf Humanist', serif;
+}
+/**
+   * Override for Korean region translation
+   */
+html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
+  html[lang*='KO'] .Paragraph-module_serifFont__30f9k {
+    font-family: 'Suisse Regular', sans-serif;
+    font-weight: 400;
+  }
+.Paragraph-module_hero__8rK9i {
+  font-size: 24px;
+  line-height: 1.33;
+}
+.Paragraph-module_hero__8rK9i.Paragraph-module_serifFont__30f9k {
+    font-size: 25px;
+  }
+@media (min-width: 640px) {
+.Paragraph-module_hero__8rK9i {
+    font-size: 26px
+}
+
+    .Paragraph-module_hero__8rK9i.Paragraph-module_serifFont__30f9k {
+      font-size: 30px;
+    }
+  }
+@media (min-width: 1025px) {
+.Paragraph-module_hero__8rK9i {
+    font-size: 30px
+}
+
+    .Paragraph-module_hero__8rK9i.Paragraph-module_serifFont__30f9k {
+      font-size: 30px;
+    }
+  }
+.Paragraph-module_flush__3vEyT {
+  margin-bottom: 10px;
+}
+.Paragraph-module_dark__GxvVO,
+  .Paragraph-module_dark__GxvVO p {
+  color: #333;
+  }
+.Paragraph-module_light__yJGX7,
+  .Paragraph-module_light__yJGX7 p {
+  color: #fffef2;
+  }
+.Paragraph-module_set__wOcFC p {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.6;
+  }
+.Paragraph-module_set__wOcFC.Paragraph-module_large__Mkm1j,
+    .Paragraph-module_set__wOcFC.Paragraph-module_large__Mkm1j p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
 
 :root {
   /* Base colours */
