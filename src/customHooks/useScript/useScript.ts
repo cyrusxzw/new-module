@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { isInBrowser } from '~/utils/environment';
+import type { UseScript } from './useScript.types';
 
-const useScript = ({
+const useScript: UseScript = ({
   async = true,
   dataSet,
   defer = false,
@@ -11,7 +12,7 @@ const useScript = ({
   src,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<ErrorEvent>(null);
 
   useEffect(() => {
     if (!src) {
@@ -53,7 +54,7 @@ const useScript = ({
       }
     };
 
-    const handleError = error => {
+    const handleError = (error: ErrorEvent) => {
       setError(error);
       setIsLoading(false);
     };

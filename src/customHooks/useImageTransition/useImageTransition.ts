@@ -1,8 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
+import type { UseImageTransition } from './useImageTransition.types';
 
 const windowIsDefined = typeof window !== 'undefined';
 
-const useImageTransition = (image, ref, duration = 600, attributes = {}) => {
+const useImageTransition: UseImageTransition = (
+  image,
+  ref,
+  duration = 600,
+  attributes = {},
+) => {
   const [currentImage, setCurrentImage] = useState({});
   const [isImageActive, setIsImageActive] = useState(false);
   const timeout = useRef(null);

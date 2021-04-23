@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Figure } from '~/components/Figure';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Image } from '~/components/Image';
 import { Video } from '~/components/Video';
+import type { MediaBlockProps } from './MediaBlock.types';
 import styles from './MediaBlock.module.css';
 
 const MediaBlock = ({
@@ -17,9 +17,9 @@ const MediaBlock = ({
   medium,
   poster,
   small,
-  theme,
-  type,
-}) => {
+  theme = 'dark',
+  type = 'image',
+}: MediaBlockProps) => {
   const Media = () => {
     const isScrollBasedVideo = type === 'scrollbasedvideo' ? true : false;
 
@@ -83,39 +83,6 @@ const MediaBlock = ({
       )}
     </Figure>
   );
-};
-
-MediaBlock.propTypes = {
-  altText: PropTypes.string,
-  caption: PropTypes.node,
-  fallbackImage: PropTypes.object,
-  heading: PropTypes.string,
-  large: PropTypes.string,
-  link: PropTypes.shape({
-    hasTargetInNewWindow: PropTypes.bool,
-    text: PropTypes.string,
-    type: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  medium: PropTypes.string,
-  poster: PropTypes.object,
-  small: PropTypes.string,
-  type: PropTypes.oneOf(['video', 'image', 'scrollbasedvideo']),
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-MediaBlock.defaultProps = {
-  altText: undefined,
-  caption: undefined,
-  fallbackImage: undefined,
-  heading: undefined,
-  large: undefined,
-  link: undefined,
-  medium: undefined,
-  poster: undefined,
-  small: undefined,
-  type: 'image',
-  theme: 'dark',
 };
 
 export { MediaBlock };

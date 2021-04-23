@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useEscapeKeyListener } from '~/customHooks';
 import { Transition } from '~/components/Transition';
+import type { OverlayProps } from './Overlay.types';
 import styles from './Overlay.module.css';
 
-const Overlay = ({ className, isVisible, onClose }) => {
+const Overlay = ({ className, isVisible, onClose }: OverlayProps) => {
   useEscapeKeyListener(onClose);
 
   const classSet = cx(
@@ -18,9 +18,9 @@ const Overlay = ({ className, isVisible, onClose }) => {
 
   return (
     <Transition
-      hasCSSTransitionMountOnEnter={true}
-      hasCSSTransitionUnmountOnExit={true}
       isActive={!!isVisible}
+      shouldMountOnEnter={true}
+      shouldUnmountOnExit={true}
       type="fade"
     >
       <div
@@ -33,18 +33,6 @@ const Overlay = ({ className, isVisible, onClose }) => {
       />
     </Transition>
   );
-};
-
-Overlay.propTypes = {
-  className: PropTypes.string,
-  isVisible: PropTypes.bool,
-  onClose: PropTypes.func.isRequired,
-};
-
-Overlay.defaultProps = {
-  className: undefined,
-  isVisible: false,
-  onClose: undefined,
 };
 
 export { Overlay };
