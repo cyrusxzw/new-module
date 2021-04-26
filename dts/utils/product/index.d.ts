@@ -1,1 +1,0 @@
-export { getVariantRadioOptions } from './product';

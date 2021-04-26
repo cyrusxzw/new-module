@@ -1,1 +1,0 @@
-export { useWindowHasResized } from './useWindowHasResized';
