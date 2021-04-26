@@ -1,6 +1,8 @@
 {
   "preset": "ts-jest/presets/js-with-babel",
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist/dts",
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {

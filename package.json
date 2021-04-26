@@ -155,6 +155,7 @@
     "rollup": "^2.38.1",
     "rollup-plugin-copy-assets": "^2.0.3",
     "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dts": "^3.0.1",
     "rollup-plugin-postcss-modules": "^2.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "semantic-release": "^17.0.4",

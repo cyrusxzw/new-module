@@ -9,54 +9,62 @@ import postcss from 'rollup-plugin-postcss-modules';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
+// import dts from 'rollup-plugin-dts';
 import pkg from './package.json';
 
 /* eslint-disable-next-line import/no-default-export */
-export default {
-  input: 'src/index.js',
-  output: [
-    {
-      file: pkg.module,
-      format: 'esm',
-      sourcemap: true,
-    },
-    {
-      exports: 'named',
-      file: pkg.main,
-      format: 'cjs',
-      sourcemap: true,
-    },
-  ],
-  external: [...Object.keys(pkg.peerDependencies || {})],
-  plugins: [
-    del({
-      targets: 'dist/*',
-      verbose: false,
-    }),
-    copy({
-      assets: ['src/assets'],
-    }),
-    alias({
-      entries: [{ find: '~', replacement: path.resolve(__dirname, 'src') }],
-    }),
-    postcss({
-      modules: {
-        sourceMap: true,
-        minimize: true,
+export default [
+  {
+    input: 'src/index.js',
+    output: [
+      {
+        file: pkg.module,
+        format: 'esm',
+        sourcemap: true,
       },
-      extract: 'styles.css',
-      // writeDefinitions: true,
-    }),
-    babel({
-      babelHelpers: 'bundled',
-      exclude: 'node_modules/**',
-    }),
-    typescript({
-      exclude: ['./scripts/**'],
-    }),
-    json(),
-    commonjs(),
-    nodeResolve(),
-    terser(),
-  ],
-};
+      {
+        exports: 'named',
+        file: pkg.main,
+        format: 'cjs',
+        sourcemap: true,
+      },
+    ],
+    external: [...Object.keys(pkg.peerDependencies || {})],
+    plugins: [
+      del({
+        targets: 'dist/*',
+        verbose: false,
+      }),
+      copy({
+        assets: ['src/assets'],
+      }),
+      alias({
+        entries: [{ find: '~', replacement: path.resolve(__dirname, 'src') }],
+      }),
+      postcss({
+        modules: {
+          sourceMap: true,
+          minimize: true,
+        },
+        extract: 'styles.css',
+        // writeDefinitions: true,
+      }),
+      babel({
+        babelHelpers: 'bundled',
+        exclude: 'node_modules/**',
+      }),
+      typescript({
+        exclude: ['./scripts/**'],
+      }),
+      json(),
+      commonjs(),
+      nodeResolve(),
+      terser(),
+    ],
+  },
+  // {
+  //   input: './dist/dts/index.d.ts',
+  //   output: [{ file: 'dist/index.d.ts', format: 'es' }],
+  //   plugins: [dts()],
+  // },
+];
