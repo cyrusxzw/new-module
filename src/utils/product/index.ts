@@ -1,0 +1,1 @@
+export { getVariantRadioOptions } from './product';

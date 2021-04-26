@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import find from 'lodash/find';
 import { HEADING } from '~/constants';
-import { Heading } from '~/components/Heading';
+import { Heading } from '~/components/Heading/index.ts';
 import styles from './StoreHoursList.module.css';
 
 const StoreHoursList = ({

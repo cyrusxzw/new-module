@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Controller } from 'react-hook-form/dist/index.ie11';
-import { Select } from '~/components/Select';
+import { Select } from '~/components/Select/index.ts';
 
 export const SelectWrapper = ({
   className,

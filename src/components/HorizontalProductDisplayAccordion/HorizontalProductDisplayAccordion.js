@@ -8,7 +8,7 @@ import {
   VariantSelectContextProvider,
 } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import { ascertainIsSmallOnlyViewport } from '~/utils/viewports';
+import { ascertainIsSmallOnlyViewport } from '~/utils/viewports/index.ts';
 import { AccordionProduct } from './components/AccordionProduct';
 import styles from './HorizontalProductDisplayAccordion.module.css';
 

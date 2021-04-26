@@ -9,9 +9,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "npm run type-definitions && rollup -c",
     "build-storybook": "build-storybook -s ./public",
-    "build-watch": "rollup -c -w",
+    "build-watch": "npm run type-definitions && rollup -c -w",
     "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
     "eslint": "eslint \"**/*.{js,ts,tsx}\" --ignore-path .eslintignore --config .eslintrc",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\" --loglevel \"error\"",
@@ -23,9 +23,10 @@
     "sanity-check": "npm run format && npm run lint && npm test",
     "start": "start-storybook -p 6006  -s ./public",
     "stylelint": "stylelint \"**/*.css\" --fix",
-    "test": "jest --verbose",
+    "test": "jest",
     "test-coverage": "open coverage/lcov-report/index.html",
-    "test-watch": "jest --watch --verbose"
+    "test-watch": "jest --watch --verbose",
+    "type-definitions": "tsc --declaration --emitDeclarationOnly --allowJs"
   },
   "repository": {
     "type": "git",

@@ -9,13 +9,13 @@ import postcss from 'rollup-plugin-postcss-modules';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
-// import dts from 'rollup-plugin-dts';
+import dts from 'rollup-plugin-dts';
 import pkg from './package.json';
 
 /* eslint-disable-next-line import/no-default-export */
 export default [
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: [
       {
         file: pkg.module,
@@ -62,9 +62,9 @@ export default [
       terser(),
     ],
   },
-  // {
-  //   input: './dist/dts/index.d.ts',
-  //   output: [{ file: 'dist/index.d.ts', format: 'es' }],
-  //   plugins: [dts()],
-  // },
+  {
+    input: './dts/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'es' }],
+    plugins: [dts()],
+  },
 ];

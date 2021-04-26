@@ -8,17 +8,17 @@ import {
   useVariantSelectContext,
 } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks/useWindowHasResized';
-import { getVariantRadioOptions } from '~/utils/product';
+import { getVariantRadioOptions } from '~/utils/product/index.ts';
 import { AddToCartButton } from '~/components/AddToCartButton';
 import { Button } from '~/components/Button';
-import { DefinitionList } from '~/components/DefinitionList';
-import { FlyinPanel } from '~/components/FlyinPanel';
-import { Heading } from '~/components/Heading';
-import { Hidden } from '~/components/Hidden';
+import { DefinitionList } from '~/components/DefinitionList/index.ts';
+import { FlyinPanel } from '~/components/FlyinPanel/index.ts';
+import { Heading } from '~/components/Heading/index.ts';
+import { Hidden } from '~/components/Hidden/index.ts';
 import { Icon } from '~/components/Icon';
 import { Paragraph } from '~/components/Paragraph';
 import { ProductExtract } from '~/components/ProductExtract/ProductExtract.js';
-import { RadioGroup } from '~/components/RadioGroup';
+import { RadioGroup } from '~/components/RadioGroup/index.ts';
 import { Transition } from '~/components/Transition';
 import styles from './ProductDetailBody.module.css';
 import {

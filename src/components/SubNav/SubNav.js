@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
+import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports/index.ts';
 import { List } from '~/components/List';
-import { Select } from '~/components/Select';
-import { Heading } from '~/components/Heading';
+import { Select } from '~/components/Select/index.ts';
+import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import styles from './SubNav.module.css';
 

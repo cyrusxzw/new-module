@@ -7,7 +7,7 @@ import {
   ascertainIsMediumOnlyViewport,
   ascertainIsLargeOnlyViewport,
   ascertainIsXLargeViewport,
-} from '~/utils/viewports';
+} from '~/utils/viewports/index.ts';
 //
 // import styles from './Hidden.module.css';
 
