@@ -5,7 +5,7 @@ import cx from 'classnames';
 import { useEscapeKeyListener, useOverflowHidden } from '~/customHooks';
 import { getPortalRoot } from '~/utils/portal';
 import { Button } from '~/components/Button';
-import { Heading } from '~/components/Heading';
+import { Heading } from '~/components/Heading/index.ts';
 import { Icon } from '~/components/Icon';
 import { Overlay } from '~/components/Overlay';
 import { Transition } from '~/components/Transition';

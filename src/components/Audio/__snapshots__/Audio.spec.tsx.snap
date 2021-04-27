@@ -59,7 +59,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
         class="controls"
       >
         <button
-          class="base dark disabled base orange forward"
+          class="base dark disabled orange forward"
           disabled=""
           title="Seek Forward"
           type="button"
@@ -151,7 +151,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
           </svg>
         </button>
         <button
-          class="base dark disabled base orange"
+          class="base dark disabled orange"
           disabled=""
           title="Seek Backward"
           type="button"

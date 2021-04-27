@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { HEADING } from '~/constants';
 import { ConditionalWrapper } from '~/components/ConditionalWrapper';
-import { Heading } from '~/components/Heading';
+import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import styles from './Message.module.css';
 

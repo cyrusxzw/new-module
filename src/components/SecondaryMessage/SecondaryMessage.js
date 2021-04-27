@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { arrayOfLength } from './SecondaryMessage.utils';
-import { Message } from './components/Message';
+import { Message } from './components/Message/index.ts';
 import styles from './SecondaryMessage.module.css';
 
 const SecondaryMessage = ({ className, id, items }) => {

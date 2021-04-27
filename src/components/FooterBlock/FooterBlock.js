@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Heading } from '~/components/Heading';
-import { Hidden } from '~/components/Hidden';
+import { Heading } from '~/components/Heading/index.ts';
+import { Hidden } from '~/components/Hidden/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import cx from 'classnames';

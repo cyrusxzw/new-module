@@ -5,8 +5,8 @@ import { useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
 import { isViewport } from '~/utils/viewport';
 import { List } from '~/components/List';
-import { Select } from '~/components/Select';
-import { Heading } from '~/components/Heading';
+import { Select } from '~/components/Select/index.ts';
+import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import styles from './SubNav.module.css';
 

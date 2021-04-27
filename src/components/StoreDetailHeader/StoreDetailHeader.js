@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { HEADING, HYPERLINK_STYLE_TYPES, GOOGLE_MAPS } from '~/constants';
-import { Heading } from '~/components/Heading';
+import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
-import { StoreHoursList } from '~/components/StoreHoursList';
-import { TwoColumnLayout } from '~/components/TwoColumnLayout';
+import { StoreHoursList } from '~/components/StoreHoursList/index.ts';
+import { TwoColumnLayout } from '~/components/TwoColumnLayout/index.ts';
 import styles from './StoreDetailHeader.module.css';
 
 const DATA_TEST_REF_LOCATION = 'STORE_DETAILS_DIRECTION_LINK';

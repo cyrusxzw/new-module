@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { NotificationContextProvider } from '~/contexts';
-import { NewsletterSignUp } from '~/compositions/NewsletterSignUp';
-import { FooterBlock } from '~/components/FooterBlock';
-import { Hidden } from '~/components/Hidden';
-import { IconLink } from '~/components/IconLink';
-import { NotificationModal } from '~/components/NotificationModal';
+import { NewsletterSignUp } from '~/compositions/NewsletterSignUp/index.ts';
+import { FooterBlock } from '~/components/FooterBlock/index.ts';
+import { Hidden } from '~/components/Hidden/index.ts';
+import { IconLink } from '~/components/IconLink/index.ts';
+import { NotificationModal } from '~/components/NotificationModal/index.ts';
 import styles from './Footer.css';
 
 const Footer = ({

@@ -5,13 +5,14 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "style": "dist/styles.css",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "npm run type-definitions && rollup -c",
     "build-storybook": "build-storybook -s ./public",
-    "build-watch": "rollup -c -w",
+    "build-watch": "npm run type-definitions && rollup -c -w",
     "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
     "eslint": "eslint \"**/*.{js,ts,tsx}\" --ignore-path .eslintignore --config .eslintrc",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\" --loglevel \"error\"",
@@ -23,9 +24,10 @@
     "sanity-check": "npm run format && npm run lint && npm test",
     "start": "start-storybook -p 6006  -s ./public",
     "stylelint": "stylelint \"**/*.css\" --fix",
-    "test": "jest --verbose",
+    "test": "jest",
     "test-coverage": "open coverage/lcov-report/index.html",
-    "test-watch": "jest --watch --verbose"
+    "test-watch": "jest --watch --verbose",
+    "type-definitions": "tsc --declaration --emitDeclarationOnly --allowJs"
   },
   "repository": {
     "type": "git",
@@ -155,6 +157,7 @@
     "rollup": "^2.38.1",
     "rollup-plugin-copy-assets": "^2.0.3",
     "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dts": "^3.0.1",
     "rollup-plugin-postcss-modules": "^2.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "semantic-release": "^17.0.4",

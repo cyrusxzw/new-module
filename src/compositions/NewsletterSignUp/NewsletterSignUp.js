@@ -5,7 +5,7 @@ import { useNotificationContext } from '~/contexts';
 import { Icon } from '~/components/Icon';
 import { Loading } from '~/components/Loading';
 import { Checkbox } from '~/components/Checkbox';
-import { TextInput } from '~/components/TextInput';
+import { TextInput } from '~/components/TextInput/index.ts';
 import styles from './NewsletterSignUp.css';
 
 const NewsletterSignUp = ({

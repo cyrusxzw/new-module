@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useProductDetailContext, useThemeContext } from '~/contexts';
 import { Breadcrumbs } from '~/components/Breadcrumbs';
-import { Hidden } from '~/components/Hidden';
+import { Hidden } from '~/components/Hidden/index.ts';
 import { ProductDetailBody } from './components/ProductDetailBody';
 import { ProductDetailImage } from './components/ProductDetailImage';
 import styles from './ProductDetailHeader.module.css';

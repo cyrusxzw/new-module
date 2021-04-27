@@ -30,9 +30,9 @@ const BodyCopy = forwardRef<HTMLElement, BodyCopyProps>(
       <article className={classSet} id={id} ref={ref}>
         <SectionHeading
           childrenClassNames={{
-            eyebrow: cx(styles.eyebrow, childrenClassNames?.eyebrow),
-            heading: cx(styles.heading, childrenClassNames?.heading),
-            subHeading: cx(styles.subHeading, childrenClassNames?.subHeading),
+            eyebrow: childrenClassNames?.eyebrow,
+            heading: childrenClassNames?.heading,
+            subHeading: childrenClassNames?.subHeading,
           }}
           eyebrow={eyebrow}
           hasSerifFontHeading={hasSerifFontHeading}
