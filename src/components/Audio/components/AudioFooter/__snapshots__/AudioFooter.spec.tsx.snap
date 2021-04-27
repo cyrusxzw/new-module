@@ -17,7 +17,7 @@ exports[`<Audio.AudioFooter /> should render base component correctly 1`] = `
       class="controls"
     >
       <button
-        class="base dark base orange forward"
+        class="base dark orange forward"
         type="button"
       >
         <svg
@@ -105,7 +105,7 @@ exports[`<Audio.AudioFooter /> should render base component correctly 1`] = `
         </svg>
       </button>
       <button
-        class="base dark base orange"
+        class="base dark orange"
         type="button"
       >
         <svg

@@ -13,12 +13,5 @@
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": ["src"],
-  "exclude": [
-    "**/*.spec.*",
-    "**/*.spec.*",
-    "**/*.module.css",
-    "**/*.stories.*",
-    "**/*.md",
-    "**/*.mdx"
-  ]
+  "exclude": ["**/*.spec.*", "**/*.stories.*", "**/*.md*"]
 }
