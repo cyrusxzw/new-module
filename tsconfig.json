@@ -1,6 +1,8 @@
 {
   "preset": "ts-jest/presets/js-with-babel",
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dts",
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
@@ -9,5 +11,7 @@
     "esModuleInterop": true,
     "jsx": "react",
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
-  }
+  },
+  "include": ["src"],
+  "exclude": ["**/*.spec.*", "**/*.stories.*", "**/*.md*"]
 }

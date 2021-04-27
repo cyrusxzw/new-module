@@ -11,17 +11,17 @@ exports[`<BodyCopy /> does not render content when no \`content\` prop supplied 
       id="Anti-Oxidant"
     >
       <h2
-        class="base xLarge dark heading heading"
+        class="base xLarge dark heading"
       >
         Aesop & The Paris Review: A Partnership Extended
       </h2>
       <h3
-        class="base mediumWeightFont xXSmall dark eyebrow eyebrow"
+        class="base mediumWeightFont xXSmall dark eyebrow"
       >
         Recommended Nearby
       </h3>
       <h4
-        class="base mediumWeightFont xSmall dark subHeading subHeading"
+        class="base mediumWeightFont xSmall dark subHeading"
       >
         Active Nutrients
       </h4>
@@ -31,6 +31,42 @@ exports[`<BodyCopy /> does not render content when no \`content\` prop supplied 
     >
       Parsley Seed Cream. [The Paris Review](http://theparisreview.org) Intensely soothing, nourishing and hydrating, this elegant formulation contains a potent blend of botanicals that offer fortification of the highest order against free radicals.
     </div>
+  </article>
+</div>
+`;
+
+exports[`<BodyCopy /> renders promary title as an \`h2\` if no \`eyebrow\` or \`primaryTitle\` prop are passed 1`] = `
+<div>
+  <article
+    class="base dark"
+  >
+    <header
+      class="base"
+    >
+      <h2
+        class="base mediumWeightFont xSmall dark subHeading"
+      >
+        Aesop & The Paris Review: A Partnership Extended
+      </h2>
+    </header>
+  </article>
+</div>
+`;
+
+exports[`<BodyCopy /> renders promary title as an \`h2\` if no \`eyebrow\` prop is passed 1`] = `
+<div>
+  <article
+    class="base dark"
+  >
+    <header
+      class="base"
+    >
+      <h2
+        class="base xLarge dark heading"
+      >
+        Aesop & The Paris Review: A Partnership Extended
+      </h2>
+    </header>
   </article>
 </div>
 `;
@@ -46,17 +82,17 @@ exports[`<BodyCopy /> should render base component correctly 1`] = `
       id="Anti-Oxidant"
     >
       <h2
-        class="base xLarge dark heading heading"
+        class="base xLarge dark heading"
       >
         Aesop & The Paris Review: A Partnership Extended
       </h2>
       <h3
-        class="base mediumWeightFont xXSmall dark eyebrow eyebrow"
+        class="base mediumWeightFont xXSmall dark eyebrow"
       >
         Recommended Nearby
       </h3>
       <h4
-        class="base mediumWeightFont xSmall dark subHeading subHeading"
+        class="base mediumWeightFont xSmall dark subHeading"
       >
         Active Nutrients
       </h4>
@@ -86,42 +122,6 @@ exports[`<BodyCopy /> should render base component correctly 1`] = `
         </a>
       </div>
     </div>
-  </article>
-</div>
-`;
-
-exports[`<BodyCopy /> renders promary title as an \`h2\` if no \`eyebrow\` or \`primaryTitle\` prop are passed 1`] = `
-<div>
-  <article
-    class="base dark"
-  >
-    <header
-      class="base"
-    >
-      <h2
-        class="base mediumWeightFont xSmall dark subHeading subHeading"
-      >
-        Aesop & The Paris Review: A Partnership Extended
-      </h2>
-    </header>
-  </article>
-</div>
-`;
-
-exports[`<BodyCopy /> renders promary title as an \`h2\` if no \`eyebrow\` prop is passed 1`] = `
-<div>
-  <article
-    class="base dark"
-  >
-    <header
-      class="base"
-    >
-      <h2
-        class="base xLarge dark heading heading"
-      >
-        Aesop & The Paris Review: A Partnership Extended
-      </h2>
-    </header>
   </article>
 </div>
 `;

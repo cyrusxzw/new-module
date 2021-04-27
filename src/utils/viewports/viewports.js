@@ -1,5 +1,5 @@
 import { BREAKPOINTS } from '~/constants';
-import { isInBrowser } from '~/utils/environment';
+import { isInBrowser } from '~/utils/environment/index.ts';
 
 const { LARGE, MEDIUM, SMALL } = BREAKPOINTS;
 

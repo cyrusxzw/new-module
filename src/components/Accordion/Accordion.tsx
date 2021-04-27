@@ -42,9 +42,7 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
         >
           {items.map(({ content, heading, id }) => (
             <AccordionItem className={styles.item} key={id} uuid={id}>
-              <AccordionItemHeading
-                className={cx(styles.heading, styles[theme])}
-              >
+              <AccordionItemHeading className={styles[theme]}>
                 <AccordionItemButton className={styles.button}>
                   <span className={styles.headingCopy}>{heading}</span>
                   <Icon

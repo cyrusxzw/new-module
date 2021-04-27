@@ -15,12 +15,12 @@ import { useWindowHasResized } from '~/customHooks';
 import {
   ascertainIsSmallOnlyViewport,
   ascertainIsMediumViewport,
-} from '~/utils/viewports';
+} from '~/utils/viewports/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Loading } from '~/components/Loading';
 import { Transition } from '~/components/Transition';
 import { GoogleMapOptions } from './GoogleMap.options';
-import { InfoCard } from './components/InfoCard';
+import { InfoCard } from './components/InfoCard/index.ts';
 import styles from './GoogleMap.module.css';
 
 const GoogleMap = ({
