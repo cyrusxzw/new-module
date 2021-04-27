@@ -25,9 +25,7 @@ const IconLink = ({
       <Image
         altText={altText}
         className={iconImageClassName}
-        large={icon.large}
-        medium={icon.medium}
-        small={icon.small}
+        sizes={icon.sizes}
         style={{ height: `${height}px`, width: `${width}px` }}
       />
     </Hyperlink>

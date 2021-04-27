@@ -128,7 +128,7 @@
   }
 
   .noMedia & {
-    @media (--viewport-sm-only) {
+    @media (--viewport-xs-sm-only) {
       padding-top: 180px;
     }
 
@@ -170,7 +170,7 @@
 }
 
 .content {
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     margin-top: 15px;
   }
 }

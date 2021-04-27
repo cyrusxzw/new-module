@@ -23,12 +23,7 @@ const Poster: FC<PosterProps> = ({
         onClick={onClick}
         title={copy?.playButtonTitle}
       >
-        <Image
-          altText={copy?.altText}
-          large={sizes?.large}
-          medium={sizes?.medium}
-          small={sizes?.small}
-        />
+        <Image altText={copy?.altText} sizes={sizes} />
       </Button>
     </Transition>
   );

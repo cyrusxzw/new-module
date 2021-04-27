@@ -19,20 +19,20 @@
     width: 10%;
     cursor: pointer;
 
-    @media (--viewport-xxl) {
+    @media (--viewport-x2l) {
       width: 20%;
     }
 
-    @media (--viewport-xxxl) {
+    @media (--viewport-x3l) {
       width: 33.33%;
     }
 
-    @media (--viewport-xxxxl) {
+    @media (--viewport-x4l) {
       width: 41%;
     }
   }
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     padding: 0 20px;
 
     &.isCompressed {
@@ -155,7 +155,7 @@
     var(--easing-ease-out-cubic),
     var(--easing-ease-out-cubic);
 
-  @media (--viewport-sm-md-only) {
+  @media (--viewport-xs-sm-md-only) {
     flex-direction: column;
   }
 
@@ -179,7 +179,7 @@
   min-height: 100px;
   max-height: 280px;
 
-  @media (--viewport-sm-md-only) {
+  @media (--viewport-xs-sm-md-only) {
     width: 100%;
     flex: 1;
     margin-top: 60px;

@@ -64,7 +64,7 @@
     padding-left: var(--layout-sm-spacing);
   }
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     &.fullWidth.flushOnSmall,
     .reverse &.fullWidth.flushOnSmall {
       padding-right: 0;

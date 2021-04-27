@@ -4,12 +4,7 @@ import get from 'lodash/get';
 import Slider from 'react-slick';
 import { useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import {
-  ascertainIsSmallOnlyViewport,
-  ascertainIsMediumOnlyViewport,
-  ascertainIsLargeOrXLargeOnlyViewport,
-  ascertainIsSmallOrMediumOnlyViewport,
-} from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import { ConditionalWrapper } from '~/components/ConditionalWrapper';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Loading } from '~/components/Loading';
@@ -65,11 +60,11 @@ const Carousel: FC<CarouselProps> = ({
    * and effects the offset position and Next Arrow display
    */
   if (!hasFullWidthSlides) {
-    if (ascertainIsSmallOnlyViewport()) {
+    if (isViewport('xs to sm only')) {
       slideOffset = 1;
-    } else if (ascertainIsMediumOnlyViewport()) {
+    } else if (isViewport('md only')) {
       slideOffset = 2;
-    } else if (ascertainIsLargeOrXLargeOnlyViewport()) {
+    } else if (isViewport('lg to xl only')) {
       slideOffset = 3;
     } else {
       slideOffset = 4;
@@ -81,8 +76,6 @@ const Carousel: FC<CarouselProps> = ({
   if (slidesLength === 0) {
     return null;
   }
-
-  const isMobileOrTablet = ascertainIsSmallOrMediumOnlyViewport();
 
   const classSet = cx(
     styles.base,
@@ -108,7 +101,7 @@ const Carousel: FC<CarouselProps> = ({
   });
 
   const hasIntroSlide =
-    introduction && !isMobileOrTablet && !hasFullWidthSlides;
+    introduction && !isViewport('xs to md only') && !hasFullWidthSlides;
 
   const totalSlidesCount = hasIntroSlide ? slidesLength + 1 : slidesLength;
 

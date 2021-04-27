@@ -17,7 +17,7 @@
 */
 
 .small {
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     &.hidden {
       @extend %hidden;
     }

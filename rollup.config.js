@@ -45,7 +45,6 @@ export default {
         minimize: true,
       },
       extract: 'styles.css',
-      // writeDefinitions: true,
     }),
     babel({
       babelHelpers: 'bundled',

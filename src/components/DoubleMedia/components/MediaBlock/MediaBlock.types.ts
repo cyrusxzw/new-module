@@ -9,18 +9,22 @@ type MediaBlockProps = {
   caption?: ReactNode;
   fallbackImage?: VideoProps['fallbackImage'];
   heading?: string;
-  large?: string;
   link?: {
     hasTargetInNewWindow?: boolean;
     text?: string;
     type?: string;
     url: string;
   };
-  medium?: string;
   poster?: VideoProps['poster'];
-  small?: string;
   type?: MediaType;
   theme?: Themes;
+  sizes: {
+    large?: string;
+    medium?: string;
+    small?: string;
+    xLarge?: string;
+    xSmall?: string;
+  };
 };
 
 export type { MediaBlockProps };

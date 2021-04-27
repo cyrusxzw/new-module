@@ -94,7 +94,7 @@
 }
 
 .horizontalFlushOnSmall {
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     padding-right: 0;
     padding-left: 0;
   }
