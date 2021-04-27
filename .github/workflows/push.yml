@@ -26,6 +26,10 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
+      - name: Store branch name
+        run: |
+          echo "BRANCH_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
       - name: Install
         run: npm ci
 
@@ -40,6 +44,8 @@ jobs:
       - name: Test
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          GIT_COMMIT_SHA: ${{ github.sha }}
+          GIT_BRANCH: ${{ env.BRANCH_NAME }}
         run: |
           ./cc-test-reporter before-build
           npm run test
