@@ -20,6 +20,7 @@ const DefinitionListWithProductExtract: FC<DefinitionListWithProductExtractProps
   theme = 'dark',
   works = 'Works well with',
 }) => {
+  /** @TODO Remove @ts-ignore and eslint-disable once ProductExtract is migrated to TS */
   /* eslint-disable @typescript-eslint/ban-ts-comment */
   return (
     <Fragment>
