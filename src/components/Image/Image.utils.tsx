@@ -32,15 +32,7 @@ function getImageSourcesBySize(
   /**
    * Ensure that there is a base / mobile first image if xSmall size prop is absent
    */
-  let hasMobileFirstImage = false;
-
-  if (!!Object.keys(sizes).indexOf('xSmall') && !!sizes['xSmall']) {
-    hasMobileFirstImage = true;
-  }
-
-  const hasXSmallSizesKeys = !!Object.keys(sizes).indexOf('xSmall');
-  const hasXSmallValue = !!sizes['xSmall'];
-
+  const hasMobileFirstImage = !!sizes?.xSmall;
   const IMAGE_SOURCES = getReorderedSizes(sizes);
   const imageSources = [];
 
@@ -50,9 +42,6 @@ function getImageSourcesBySize(
 
     if (!code || !source) return null;
 
-    // eslint-disable-next-line
-    console.log({ source, name, code });
-
     imageSources.push(
       <source
         key={uid(code)}
@@ -60,15 +49,6 @@ function getImageSourcesBySize(
         srcSet={source}
       />,
     );
-  });
-
-  // eslint-disable-next-line
-  console.log({
-    imageSources,
-    hasMobileFirstImage,
-    sizes,
-    hasXSmallSizesKeys,
-    hasXSmallValue,
   });
 
   return imageSources;
