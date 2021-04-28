@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TextInputV2 } from './';
 
@@ -8,10 +8,8 @@ describe('<TextInputV2 />', () => {
     it('should call the onChange function when the input changes', () => {
       const emailAddress = 'bruce@batcave.com';
       const onChangeFunction = jest.fn();
-      const { getByRole } = render(
-        <TextInputV2 label="Email" onChange={onChangeFunction} />,
-      );
-      const inputElement = getByRole('textbox', { name: 'Email' });
+      render(<TextInputV2 label="Email" onChange={onChangeFunction} />);
+      const inputElement = screen.getByRole('textbox', { name: 'Email' });
 
       userEvent.type(inputElement, emailAddress);
 
@@ -21,8 +19,8 @@ describe('<TextInputV2 />', () => {
 
     it('should function normally without an onChange function', () => {
       // covers the default noop onChange function
-      const { getByRole } = render(<TextInputV2 label="Email" />);
-      const inputElement = getByRole('textbox', { name: 'Email' });
+      render(<TextInputV2 label="Email" />);
+      const inputElement = screen.getByRole('textbox', { name: 'Email' });
 
       userEvent.type(inputElement, 'test');
 
@@ -31,28 +29,20 @@ describe('<TextInputV2 />', () => {
   });
 
   describe('Error state', () => {
-    let getByRole = undefined;
-    let getByText = undefined;
-
     const errorMessage = 'bruce@batcave.com';
 
     beforeEach(() => {
-      const renderResult = render(
-        <TextInputV2 errorMessage={errorMessage} label="Email" />,
-      );
-
-      getByRole = renderResult.getByRole;
-      getByText = renderResult.getByText;
+      render(<TextInputV2 errorMessage={errorMessage} label="Email" />);
     });
 
     it('should style the input field if an error message is provided', () => {
-      const inputElement = getByRole('textbox', { name: 'Email' });
+      const inputElement = screen.getByRole('textbox', { name: 'Email' });
 
       expect(inputElement).toHaveClass('hasError');
     });
 
     it('should render the error message if it is provided', () => {
-      const errorMessageElement = getByText(errorMessage);
+      const errorMessageElement = screen.getByText(errorMessage);
 
       expect(errorMessageElement).toBeInTheDocument();
       expect(errorMessageElement).toHaveClass('errorMessage');
@@ -61,14 +51,14 @@ describe('<TextInputV2 />', () => {
 
   it('should not allow user input if the component is disabled', () => {
     const onChangeFunction = jest.fn();
-    const { getByRole } = render(
+    render(
       <TextInputV2
         isDisabled={true}
         label="Email"
         onChange={onChangeFunction}
       />,
     );
-    const inputElement = getByRole('textbox', { name: 'Email' });
+    const inputElement = screen.getByRole('textbox', { name: 'Email' });
 
     userEvent.type(inputElement, 'test');
 
@@ -78,10 +68,8 @@ describe('<TextInputV2 />', () => {
 
   it('should render the predefined value if it is provided', () => {
     const emailAddress = 'bruce@batcave.com';
-    const { getByRole } = render(
-      <TextInputV2 label="Email" value={emailAddress} />,
-    );
-    const inputElement = getByRole('textbox', { name: 'Email' });
+    render(<TextInputV2 label="Email" value={emailAddress} />);
+    const inputElement = screen.getByRole('textbox', { name: 'Email' });
 
     expect(inputElement).toHaveValue(emailAddress);
   });

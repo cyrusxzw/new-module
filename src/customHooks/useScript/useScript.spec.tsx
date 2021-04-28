@@ -1,3 +1,7 @@
+// TODO: refactor to address eslint violations
+/* eslint-disable testing-library/render-result-naming-convention */
+/* eslint-disable testing-library/no-node-access */
+
 import { act, renderHook } from '@testing-library/react-hooks';
 import { useScript } from './useScript';
 
