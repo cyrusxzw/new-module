@@ -2,7 +2,7 @@ import { CSSProperties } from 'react';
 import type { Themes } from '~/types';
 
 type ImageSizeName = 'large' | 'medium' | 'small' | 'xLarge' | 'xSmall';
-type ImageSizeCode = 'lg' | 'md' | 'sm' | 'xl' | 'xs';
+type ImageSizeCode = 'lg' | 'md' | 'sm' | 'x3l' | 'xs';
 
 type ImageProps = {
   altText?: string;

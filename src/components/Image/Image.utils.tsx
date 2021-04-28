@@ -1,5 +1,6 @@
 import React from 'react';
 import { BREAKPOINTS } from '~/constants';
+import { uid } from 'react-uid';
 import type { BreakpointNames } from '~/types';
 import type { ImageProps, ImageSizeName, ImageSizeCode } from './Image.types';
 
@@ -8,8 +9,21 @@ const IMAGE_SIZES: Map<ImageSizeName, ImageSizeCode> = new Map([
   ['small', 'sm'],
   ['medium', 'md'],
   ['large', 'lg'],
-  ['xLarge', 'xl'],
+  ['xLarge', 'x3l'],
 ]);
+
+function getReorderedSizes(sizes: ImageProps['sizes']) {
+  /** Reorder props */
+  const IMAGE_SOURCES: Map<ImageSizeName, string> = new Map([
+    ['xLarge', sizes.xLarge],
+    ['large', sizes.large],
+    ['medium', sizes.medium],
+    ['small', sizes.small],
+    ['xSmall', sizes.xSmall],
+  ]);
+
+  return IMAGE_SOURCES;
+}
 
 function getImageSourcesBySize(
   sizes: ImageProps['sizes'],
@@ -24,15 +38,7 @@ function getImageSourcesBySize(
     hasMobileFirstImage = true;
   }
 
-  /** Reorder props */
-  const IMAGE_SOURCES: Map<ImageSizeName, string> = new Map([
-    ['xLarge', sizes.xLarge],
-    ['large', sizes.large],
-    ['medium', sizes.medium],
-    ['small', sizes.small],
-    ['xSmall', sizes.xSmall],
-  ]);
-
+  const IMAGE_SOURCES = getReorderedSizes(sizes);
   const imageSources = [];
 
   IMAGE_SOURCES.forEach((source, name) => {
@@ -41,14 +47,20 @@ function getImageSourcesBySize(
 
     if (!code || !source) return null;
 
+    // eslint-disable-next-line
+    console.log({ source, name, code });
+
     imageSources.push(
       <source
-        key={code}
+        key={uid(code)}
         media={`(min-width: ${BREAKPOINTS.get(code).minWidth}px)`}
         srcSet={source}
       />,
     );
   });
+
+  // eslint-disable-next-line
+  console.log({ imageSources, hasMobileFirstImage });
 
   return imageSources;
 }

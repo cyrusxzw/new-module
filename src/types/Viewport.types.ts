@@ -10,6 +10,7 @@ type ViewportNames =
   | 'md only'
   | 'lg only'
   | 'lg to xl only'
+  | 'lg to x2l only'
   | 'xl only';
 
 export type { ViewportNames, BreakpointNames };

@@ -10,9 +10,9 @@ const getVideoSrc = (sizes: VideoPlayerProps['sizes']): string => {
 
   if (isViewport('md only') && medium) return medium;
 
-  if (isViewport('lg only') && large) return large;
+  if (isViewport('lg to x2l only') && large) return large;
 
-  if (isViewport('xl') && (xLarge || large)) return xLarge || large;
+  if (isViewport('x3l') && (xLarge || large)) return xLarge || large;
 
   return small || medium || large || '';
 };

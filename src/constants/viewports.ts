@@ -56,6 +56,13 @@ const VIEWPORTS: Map<ViewportNames, string> = new Map([
     }px)`,
   ],
   [
+    'lg to x2l only',
+    `(min-width: ${BREAKPOINTS.get('lg').minWidth}px) and (max-width: ${
+      BREAKPOINTS.get('x2l').maxWidth
+    }px)`,
+  ],
+
+  [
     'xs to xl only',
     `(min-width: ${BREAKPOINTS.get('xs').minWidth}px) && (max-width: ${
       BREAKPOINTS.get('xl').maxWidth
