@@ -38,6 +38,9 @@ function getImageSourcesBySize(
     hasMobileFirstImage = true;
   }
 
+  const hasXSmallSizesKeys = !!Object.keys(sizes).indexOf('xSmall');
+  const hasXSmallValue = !!sizes['xSmall'];
+
   const IMAGE_SOURCES = getReorderedSizes(sizes);
   const imageSources = [];
 
@@ -60,7 +63,13 @@ function getImageSourcesBySize(
   });
 
   // eslint-disable-next-line
-  console.log({ imageSources, hasMobileFirstImage });
+  console.log({
+    imageSources,
+    hasMobileFirstImage,
+    sizes,
+    hasXSmallSizesKeys,
+    hasXSmallValue,
+  });
 
   return imageSources;
 }
