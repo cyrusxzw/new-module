@@ -8,6 +8,7 @@ import styles from './Breadcrumbs.module.css';
 const Breadcrumbs: FC<BreadcrumbsProps> = ({
   className,
   items,
+  onHyperlinkClick,
   theme = 'dark',
 }) => {
   if (!items || !isObjectPopulatedArray(items)) {
@@ -24,6 +25,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
             <Hyperlink
               className={styles.link}
               id={item.id}
+              onClick={() => onHyperlinkClick(item)}
               theme={theme}
               title={item.title}
               url={item.url}

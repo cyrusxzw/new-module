@@ -8,7 +8,13 @@ import { ProductDetailBody } from './components/ProductDetailBody';
 import { ProductDetailImage } from './components/ProductDetailImage';
 import styles from './ProductDetailHeader.module.css';
 
-const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
+const ProductDetailHeader = ({
+  breadcrumbs,
+  className,
+  copy,
+  onBreadcrumbClick,
+  theme,
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const { productDetail } = useProductDetailContext();
   const classSet = cx(styles.base, className);
@@ -24,6 +30,7 @@ const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}
+              onHyperlinkClick={item => onBreadcrumbClick(item)}
               theme={currentTheme}
             />
           </Hidden>
@@ -43,6 +50,7 @@ const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}
+              onHyperlinkClick={item => onBreadcrumbClick(item)}
               theme={currentTheme}
             />
           </Hidden>
@@ -88,6 +96,7 @@ ProductDetailHeader.propTypes = {
     upSellProductLabel: PropTypes.string,
     flyinPanelHeading: PropTypes.string,
   }),
+  onBreadcrumbClick: PropTypes.func,
   theme: PropTypes.oneOf(['dark', 'light']),
 };
 
@@ -107,6 +116,7 @@ ProductDetailHeader.defaultProps = {
     upSellProductLabel: undefined,
     flyinPanelHeading: undefined,
   },
+  onBreadcrumbClick: undefined,
   theme: undefined,
 };
 
