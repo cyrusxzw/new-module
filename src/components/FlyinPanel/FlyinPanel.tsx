@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import { useEscapeKeyListener, useOverflowHidden } from '~/customHooks';
 import { getPortalRoot } from '~/utils/portal';
 import { Button } from '~/components/Button';
@@ -9,6 +9,7 @@ import { Heading } from '~/components/Heading/index.ts';
 import { Icon } from '~/components/Icon';
 import { Overlay } from '~/components/Overlay';
 import { Transition } from '~/components/Transition';
+import type { FlyinPanelProps } from './FlyinPanel.types';
 import styles from './FlyinPanel.module.css';
 
 const flyinRoot = getPortalRoot('aesop-gel-flyin-root');
@@ -18,13 +19,14 @@ const FlyinPanel = ({
   className,
   copy,
   heading,
-  isVisible,
+  isVisible = false,
   onClose,
   theme,
-}) => {
+}: FlyinPanelProps): ReactElement | null => {
   useEscapeKeyListener(onClose);
   useOverflowHidden(isVisible);
 
+  const currentTheme = useThemeContext(theme, 'dark');
   const classSet = cx(styles.base, styles[theme], className);
   const asideRole = 'note';
 
@@ -49,10 +51,15 @@ const FlyinPanel = ({
                 isInline={true}
                 onClick={onClose}
                 tabIndex={0}
-                theme={theme}
-                title={copy.close}
+                theme={currentTheme}
+                title={copy?.close}
               >
-                <Icon height={12} name="close" theme={theme} width={12} />
+                <Icon
+                  height={12}
+                  name="close"
+                  theme={currentTheme}
+                  width={12}
+                />
               </Button>
               <div className={styles.content}>
                 {heading && (
@@ -61,7 +68,7 @@ const FlyinPanel = ({
                     hasMediumWeightFont={true}
                     level="3"
                     size="xXSmall"
-                    theme={theme}
+                    theme={currentTheme}
                   >
                     {heading}
                   </Heading>
@@ -75,30 +82,6 @@ const FlyinPanel = ({
       )}
     </>
   );
-};
-
-FlyinPanel.propTypes = {
-  children: PropTypes.any.isRequired,
-  className: PropTypes.string,
-  copy: PropTypes.shape({
-    close: PropTypes.string,
-  }),
-  heading: PropTypes.string,
-  isVisible: PropTypes.bool,
-  onClose: PropTypes.func.isRequired,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-FlyinPanel.defaultProps = {
-  children: undefined,
-  className: undefined,
-  copy: {
-    close: undefined,
-  },
-  heading: undefined,
-  isVisible: false,
-  onClose: undefined,
-  theme: 'dark',
 };
 
 export { FlyinPanel };
