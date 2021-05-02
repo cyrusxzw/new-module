@@ -7,6 +7,7 @@ describe('<BodyCopy />', () => {
   it('should render base component correctly', () => {
     const { container } = render(
       <BodyCopy
+        // eslint-disable-next-line testing-library/no-node-access
         content={<div>{BodyCopyFixture.linkButtonGroup.children}</div>}
         copy="Parsley Seed Cream. [The Paris Review](http://theparisreview.org) Intensely soothing, nourishing and hydrating, this elegant formulation contains a potent blend of botanicals that offer fortification of the highest order against free radicals."
         eyebrow="Recommended Nearby"
