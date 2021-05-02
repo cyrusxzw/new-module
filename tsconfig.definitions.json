@@ -1,8 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "allowJs": true,
     "declaration": true,
     "declarationDir": "./dts",
+    "emitDeclarationOnly": true,
     "plugins": [
       {
         "transform": "typescript-transform-paths",

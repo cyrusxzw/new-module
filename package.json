@@ -27,7 +27,7 @@
     "test": "jest",
     "test-coverage": "open coverage/lcov-report/index.html",
     "test-watch": "jest --watch --verbose",
-    "type-definitions": "ttsc --project tsconfig.definitions.json --declaration --emitDeclarationOnly --allowJs"
+    "type-definitions": "ttsc --project tsconfig.definitions.json"
   },
   "repository": {
     "type": "git",
