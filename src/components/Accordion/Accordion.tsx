@@ -23,7 +23,6 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
 
     const classSet = cx(styles.base, styles[theme], className);
     /** handleOnChange gets passed to the AccessibleAccordion dependency */
-    /* istanbul ignore next */
     const handleOnChange = nodes => setIsActiveNodes(nodes);
     const checkIsActive = (id: string) => activeNodes.includes(id);
 
@@ -59,7 +58,10 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
                   isOpened={checkIsActive(id)}
                   theme={{ collapse: styles.collapse }}
                 >
-                  <div className={cx(styles.content, styles[theme])}>
+                  <div
+                    className={cx(styles.content, styles[theme])}
+                    data-testid="Accordion-content-section"
+                  >
                     {content}
                   </div>
                 </Collapse>
