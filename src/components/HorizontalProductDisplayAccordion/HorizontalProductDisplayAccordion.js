@@ -8,26 +8,26 @@ import {
   VariantSelectContextProvider,
 } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import { ascertainIsSmallOnlyViewport } from '~/utils/viewports/index.ts';
+import { isViewport } from '~/utils/viewport';
 import { AccordionProduct } from './components/AccordionProduct';
 import styles from './HorizontalProductDisplayAccordion.module.css';
 
 const HorizontalProductDisplayAccordion = ({ id, products, addToCartCopy }) => {
   const [accordionProducts, toggleAccordionProducts] = useState(products);
   const [accordionActive, toggleAccordionActiveState] = useState(false);
-  const isMobile = ascertainIsSmallOnlyViewport();
+  const isMobile = isViewport('xs to sm only');
 
   useEffect(() => {
-    let currentSize = ascertainIsSmallOnlyViewport();
+    let currentSize = isViewport('xs to sm only');
 
     const resetAccordionOnResize = debounce(() => {
-      if (ascertainIsSmallOnlyViewport() !== currentSize) {
+      if (isViewport('xs to sm only') !== currentSize) {
         accordionProducts.map(product => {
           product.isExpanded = false;
           product.isCompressed = false;
         });
 
-        currentSize = ascertainIsSmallOnlyViewport();
+        currentSize = isViewport('xs to sm only');
       }
     }, 200);
 

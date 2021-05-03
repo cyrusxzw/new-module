@@ -14,18 +14,22 @@ import { Image } from './Image';
       cta={{
         url: knobs.text('hyperlink.url', '/'),
       }}
-      large={knobs.text(
-        'large',
-        'https://www.aesop.com/medias/GelCleanser-640x640.png?context=bWFzdGVyfGltYWdlc3w1MzE5NTl8aW1hZ2UvcG5nfGltYWdlcy9oOTUvaGNkLzg4MDc3OTc4NTAxNDIucG5nfGM3NTNhYjdkMWNiOTRhNWZhNDA0NWExZWJiODMxN2VhNzEyY2ZkNGUyYzc4ZWVkZDRjYTIzMzZmZTRlOGYxNjM',
-      )}
-      medium={knobs.text(
-        'medium',
-        'https://www.aesop.com/medias/GelCleanser-640x640.png?context=bWFzdGVyfGltYWdlc3w1MzE5NTl8aW1hZ2UvcG5nfGltYWdlcy9oOTUvaGNkLzg4MDc3OTc4NTAxNDIucG5nfGM3NTNhYjdkMWNiOTRhNWZhNDA0NWExZWJiODMxN2VhNzEyY2ZkNGUyYzc4ZWVkZDRjYTIzMzZmZTRlOGYxNjM',
-      )}
-      small={knobs.text(
-        'small',
-        'https://www.aesop.com/medias/GelCleanser-640x640.png?context=bWFzdGVyfGltYWdlc3w1MzE5NTl8aW1hZ2UvcG5nfGltYWdlcy9oOTUvaGNkLzg4MDc3OTc4NTAxNDIucG5nfGM3NTNhYjdkMWNiOTRhNWZhNDA0NWExZWJiODMxN2VhNzEyY2ZkNGUyYzc4ZWVkZDRjYTIzMzZmZTRlOGYxNjM',
-      )}
+      sizes={{
+        large: knobs.text(
+          'large',
+          'https://www.aesop.com/medias/GelCleanser-640x640.png?context=bWFzdGVyfGltYWdlc3w1MzE5NTl8aW1hZ2UvcG5nfGltYWdlcy9oOTUvaGNkLzg4MDc3OTc4NTAxNDIucG5nfGM3NTNhYjdkMWNiOTRhNWZhNDA0NWExZWJiODMxN2VhNzEyY2ZkNGUyYzc4ZWVkZDRjYTIzMzZmZTRlOGYxNjM',
+        ),
+        medium: knobs.text(
+          'medium',
+          'https://www.aesop.com/medias/GelCleanser-640x640.png?context=bWFzdGVyfGltYWdlc3w1MzE5NTl8aW1hZ2UvcG5nfGltYWdlcy9oOTUvaGNkLzg4MDc3OTc4NTAxNDIucG5nfGM3NTNhYjdkMWNiOTRhNWZhNDA0NWExZWJiODMxN2VhNzEyY2ZkNGUyYzc4ZWVkZDRjYTIzMzZmZTRlOGYxNjM',
+        ),
+        small: knobs.text(
+          'small',
+          'https://www.aesop.com/medias/GelCleanser-640x640.png?context=bWFzdGVyfGltYWdlc3w1MzE5NTl8aW1hZ2UvcG5nfGltYWdlcy9oOTUvaGNkLzg4MDc3OTc4NTAxNDIucG5nfGM3NTNhYjdkMWNiOTRhNWZhNDA0NWExZWJiODMxN2VhNzEyY2ZkNGUyYzc4ZWVkZDRjYTIzMzZmZTRlOGYxNjM',
+        ),
+        xSmall: knobs.text('xSmall', ''),
+        xLarge: knobs.text('xLarge', ''),
+      }}
     />
   </Story>
 </Canvas>

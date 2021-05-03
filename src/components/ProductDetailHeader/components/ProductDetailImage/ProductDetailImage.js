@@ -40,10 +40,8 @@ const ProductDetailImage = ({ className, theme }) => {
             <Image
               altText={altText}
               className={styles.image}
-              large={sizes?.large}
-              medium={sizes?.medium}
               ref={imageRef}
-              small={sizes?.small}
+              sizes={sizes}
             />
             {currentCartDisclaimer && (
               <Hidden isMedium={true} isSmall={true}>

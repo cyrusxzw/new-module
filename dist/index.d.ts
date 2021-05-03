@@ -24,6 +24,8 @@ declare type Product = {
     };
 };
 
+declare type Themes = 'dark' | 'light';
+
 declare type Variant = {
     alternateAction: {
         url: string;
@@ -48,16 +50,21 @@ declare type Variant = {
     tracking?: any;
 };
 
-declare type Themes = 'dark' | 'light';
+declare type BreakpointNames = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'x2l' | 'x3l' | 'x4l';
+declare type ViewportNames = BreakpointNames | 'xs only' | 'xs to sm only' | 'xs to md only' | 'xs to xl only' | 'sm only' | 'md only' | 'lg only' | 'lg to xl only' | 'lg to x2l only' | 'xl only';
 
 type index_d_Product = Product;
-type index_d_Variant = Variant;
 type index_d_Themes = Themes;
+type index_d_Variant = Variant;
+type index_d_ViewportNames = ViewportNames;
+type index_d_BreakpointNames = BreakpointNames;
 declare namespace index_d {
   export {
     index_d_Product as Product,
-    index_d_Variant as Variant,
     index_d_Themes as Themes,
+    index_d_Variant as Variant,
+    index_d_ViewportNames as ViewportNames,
+    index_d_BreakpointNames as BreakpointNames,
   };
 }
 
@@ -189,9 +196,13 @@ declare type ImageProps = {
     id?: string;
     isFullBleedImage?: boolean;
     isLazyLoaded?: boolean;
-    large?: string;
-    medium?: string;
-    small?: string;
+    sizes: {
+        large?: string;
+        medium?: string;
+        small?: string;
+        xLarge?: string;
+        xSmall?: string;
+    };
     style?: CSSProperties;
     type?: string;
     theme?: Themes;
@@ -494,6 +505,8 @@ declare type PosterProps = {
         small?: string;
         medium?: string;
         large?: string;
+        xLarge?: string;
+        xSmall?: string;
     };
 };
 
@@ -508,21 +521,23 @@ declare type VideoProps = Pick<ControlsProps, 'copy'> & {
     };
     className?: string;
     fallbackImage?: {
+        className?: string;
         copy?: {
             altText?: string;
         };
-        small?: string;
-        medium?: string;
-        large?: string;
-        className?: string;
+        sizes?: {
+            large?: string;
+            medium?: string;
+            small?: string;
+        };
     };
-    hasControls?: boolean;
-    hasNativeControls?: boolean;
     hasAllowAudio?: boolean;
     hasAutoplay?: boolean;
+    hasControls?: boolean;
     hasLoop?: boolean;
-    hasSpanContent?: boolean;
+    hasNativeControls?: boolean;
     hasPlayInFullScreen?: boolean;
+    hasSpanContent?: boolean;
     id?: string;
     isBackground?: boolean;
     /**
@@ -537,10 +552,14 @@ declare type VideoProps = Pick<ControlsProps, 'copy'> & {
     isHeroFullWidth?: boolean;
     isHeroFullWidthMobile?: boolean;
     isScrollBasedVideo?: boolean;
-    large?: string;
-    medium?: string;
-    poster?: Omit<PosterProps, 'sizes'> & Pick<PosterProps['sizes'], 'small' | 'medium' | 'large'>;
-    small?: string;
+    poster?: PosterProps;
+    sizes?: {
+        large?: string;
+        medium?: string;
+        small?: string;
+        xLarge?: string;
+        xSmall?: string;
+    };
 };
 
 declare type MediaType = 'video' | 'image' | 'scrollbasedvideo';
@@ -549,18 +568,22 @@ declare type MediaBlockProps = {
     caption?: ReactNode;
     fallbackImage?: VideoProps['fallbackImage'];
     heading?: string;
-    large?: string;
     link?: {
         hasTargetInNewWindow?: boolean;
         text?: string;
         type?: string;
         url: string;
     };
-    medium?: string;
     poster?: VideoProps['poster'];
-    small?: string;
     type?: MediaType;
     theme?: Themes;
+    sizes: {
+        large?: string;
+        medium?: string;
+        small?: string;
+        xLarge?: string;
+        xSmall?: string;
+    };
 };
 
 declare type DoubleMediaProps = {
@@ -1903,35 +1926,37 @@ declare const Video: React$1.ForwardRefExoticComponent<Pick<ControlsProps, "copy
     };
     className?: string;
     fallbackImage?: {
+        className?: string;
         copy?: {
             altText?: string;
         };
-        small?: string;
-        medium?: string;
-        large?: string;
-        className?: string;
+        sizes?: {
+            large?: string;
+            medium?: string;
+            small?: string;
+        };
     };
-    hasControls?: boolean;
-    hasNativeControls?: boolean;
     hasAllowAudio?: boolean;
     hasAutoplay?: boolean;
+    hasControls?: boolean;
     hasLoop?: boolean;
-    hasSpanContent?: boolean;
+    hasNativeControls?: boolean;
     hasPlayInFullScreen?: boolean;
+    hasSpanContent?: boolean;
     id?: string;
     isBackground?: boolean;
     isFullWidth?: boolean;
     isHeroFullWidth?: boolean;
     isHeroFullWidthMobile?: boolean;
     isScrollBasedVideo?: boolean;
-    large?: string;
-    medium?: string;
-    poster?: Pick<PosterProps, "copy" | "className" | "onClick" | "isActive"> & Pick<{
-        small?: string;
-        medium?: string;
+    poster?: PosterProps;
+    sizes?: {
         large?: string;
-    }, "small" | "medium" | "large">;
-    small?: string;
+        medium?: string;
+        small?: string;
+        xLarge?: string;
+        xSmall?: string;
+    };
 } & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const index_d$1_Accordion: typeof Accordion;
@@ -2068,45 +2093,11 @@ declare namespace index_d$1 {
 
 declare const DynamicForm: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
-declare const SMALL: {
-    MIN_WIDTH: number;
-    MAX_WIDTH: number;
-    VIEWPORT: string;
+declare type BreakpointValue = {
+    minWidth?: number;
+    maxWidth?: number;
 };
-declare const MEDIUM: {
-    MIN_WIDTH: number;
-    MAX_WIDTH: number;
-    VIEWPORT: string;
-};
-declare const LARGE: {
-    MIN_WIDTH: number;
-    MAX_WIDTH: number;
-    VIEWPORT: string;
-};
-declare const XLARGE: {
-    MIN_WIDTH: number;
-    MAX_WIDTH: number;
-    VIEWPORT: string;
-};
-declare const XXLARGE: {
-    MIN_WIDTH: number;
-    VIEWPORT: string;
-};
-
-declare const breakpoints_d_SMALL: typeof SMALL;
-declare const breakpoints_d_MEDIUM: typeof MEDIUM;
-declare const breakpoints_d_LARGE: typeof LARGE;
-declare const breakpoints_d_XLARGE: typeof XLARGE;
-declare const breakpoints_d_XXLARGE: typeof XXLARGE;
-declare namespace breakpoints_d {
-  export {
-    breakpoints_d_SMALL as SMALL,
-    breakpoints_d_MEDIUM as MEDIUM,
-    breakpoints_d_LARGE as LARGE,
-    breakpoints_d_XLARGE as XLARGE,
-    breakpoints_d_XXLARGE as XXLARGE,
-  };
-}
+declare const BREAKPOINTS: Map<BreakpointNames, BreakpointValue>;
 
 declare const GREY_60 = "#b3ada5";
 declare const HIGHLIGHT_GREEN = "#007544";
@@ -2171,6 +2162,15 @@ declare namespace heading_d {
   };
 }
 
+declare const A = "a";
+
+declare const html_d_A: typeof A;
+declare namespace html_d {
+  export {
+    html_d_A as A,
+  };
+}
+
 declare const EXTERNAL_BUTTON_LINK = "External Button Link";
 declare const EXTERNAL_NO_ICON_BUTTON_LINK = "External No Icon Button Link";
 declare const EXTERNAL_NO_ICON_TEXT_LINK = "External No Icon Link";
@@ -2198,6 +2198,27 @@ declare namespace hyperlinkStyleTypes_d {
     hyperlinkStyleTypes_d_INTERNAL_NO_ICON_BUTTON_LINK as INTERNAL_NO_ICON_BUTTON_LINK,
     hyperlinkStyleTypes_d_INTERNAL_NO_ICON_TEXT_LINK as INTERNAL_NO_ICON_TEXT_LINK,
     hyperlinkStyleTypes_d_INTERNAL_TEXT_LINK as INTERNAL_TEXT_LINK,
+  };
+}
+
+declare const ENTER = 13;
+declare const ESCAPE = 27;
+
+declare const keyboardCodes_d_ENTER: typeof ENTER;
+declare const keyboardCodes_d_ESCAPE: typeof ESCAPE;
+declare namespace keyboardCodes_d {
+  export {
+    keyboardCodes_d_ENTER as ENTER,
+    keyboardCodes_d_ESCAPE as ESCAPE,
+  };
+}
+
+declare const AESOP = "Aesop";
+
+declare const labels_d_AESOP: typeof AESOP;
+declare namespace labels_d {
+  export {
+    labels_d_AESOP as AESOP,
   };
 }
 
@@ -2426,49 +2447,24 @@ declare namespace transitions_d {
   };
 }
 
-declare const A = "a";
+declare const VIEWPORTS: Map<ViewportNames, string>;
 
-declare const html_d_A: typeof A;
-declare namespace html_d {
-  export {
-    html_d_A as A,
-  };
-}
-
-declare const ENTER = 13;
-declare const ESCAPE = 27;
-
-declare const keyboardCodes_d_ENTER: typeof ENTER;
-declare const keyboardCodes_d_ESCAPE: typeof ESCAPE;
-declare namespace keyboardCodes_d {
-  export {
-    keyboardCodes_d_ENTER as ENTER,
-    keyboardCodes_d_ESCAPE as ESCAPE,
-  };
-}
-
-declare const AESOP = "Aesop";
-
-declare const labels_d_AESOP: typeof AESOP;
-declare namespace labels_d {
-  export {
-    labels_d_AESOP as AESOP,
-  };
-}
-
+declare const index_d$2_BREAKPOINTS: typeof BREAKPOINTS;
+declare const index_d$2_VIEWPORTS: typeof VIEWPORTS;
 declare namespace index_d$2 {
   export {
-    breakpoints_d as BREAKPOINTS,
+    index_d$2_BREAKPOINTS as BREAKPOINTS,
     colors_d as COLORS,
     googleMaps_d as GOOGLE_MAPS,
     heading_d as HEADING,
+    html_d as HTML,
     hyperlinkStyleTypes_d as HYPERLINK_STYLE_TYPES,
+    keyboardCodes_d as KEYBOARD_CODES,
+    labels_d as LABELS,
     stores_d as STORES,
     test_refs_d as TEST_REFS,
     transitions_d as TRANSITIONS,
-    html_d as HTML,
-    keyboardCodes_d as KEYBOARD_CODES,
-    labels_d as LABELS,
+    index_d$2_VIEWPORTS as VIEWPORTS,
   };
 }
 
@@ -2727,59 +2723,12 @@ declare namespace index_d$8 {
   };
 }
 
-declare namespace CONSTRAINT_KEYS {
-    const MIN_WIDTH: string;
-    const VIEWPORT: string;
-}
-declare const constraints: {
-    [x: string]: string | number;
-}[];
-declare const constraintsByViewport: {};
-declare function getViewportForWidth(width: any): string | number;
-declare function ascertainIsSmallOnlyViewport(): boolean;
-declare function ascertainIsSmallOrMediumOnlyViewport(): boolean;
-declare function ascertainIsMediumViewport(): boolean;
-declare function ascertainIsMediumOnlyViewport(): boolean;
-declare function ascertainIsLargeViewport(): boolean;
-declare function ascertainIsLargeOnlyViewport(): boolean;
-declare function ascertainIsLargeOrXLargeOnlyViewport(): boolean;
-declare function ascertainIsXLargeViewport(): boolean;
-declare function ascertainIsSmallToXLargeViewport(): boolean;
-declare function ascertainIsXLargeOnlyViewport(): boolean;
-declare function ascertainIsXXLargeViewport(): boolean;
+declare const isViewport: (viewport: ViewportNames) => boolean;
 
-declare const index_d$9_CONSTRAINT_KEYS: typeof CONSTRAINT_KEYS;
-declare const index_d$9_constraints: typeof constraints;
-declare const index_d$9_constraintsByViewport: typeof constraintsByViewport;
-declare const index_d$9_getViewportForWidth: typeof getViewportForWidth;
-declare const index_d$9_ascertainIsSmallOnlyViewport: typeof ascertainIsSmallOnlyViewport;
-declare const index_d$9_ascertainIsSmallOrMediumOnlyViewport: typeof ascertainIsSmallOrMediumOnlyViewport;
-declare const index_d$9_ascertainIsMediumViewport: typeof ascertainIsMediumViewport;
-declare const index_d$9_ascertainIsMediumOnlyViewport: typeof ascertainIsMediumOnlyViewport;
-declare const index_d$9_ascertainIsLargeViewport: typeof ascertainIsLargeViewport;
-declare const index_d$9_ascertainIsLargeOnlyViewport: typeof ascertainIsLargeOnlyViewport;
-declare const index_d$9_ascertainIsLargeOrXLargeOnlyViewport: typeof ascertainIsLargeOrXLargeOnlyViewport;
-declare const index_d$9_ascertainIsXLargeViewport: typeof ascertainIsXLargeViewport;
-declare const index_d$9_ascertainIsSmallToXLargeViewport: typeof ascertainIsSmallToXLargeViewport;
-declare const index_d$9_ascertainIsXLargeOnlyViewport: typeof ascertainIsXLargeOnlyViewport;
-declare const index_d$9_ascertainIsXXLargeViewport: typeof ascertainIsXXLargeViewport;
+declare const index_d$9_isViewport: typeof isViewport;
 declare namespace index_d$9 {
   export {
-    index_d$9_CONSTRAINT_KEYS as CONSTRAINT_KEYS,
-    index_d$9_constraints as constraints,
-    index_d$9_constraintsByViewport as constraintsByViewport,
-    index_d$9_getViewportForWidth as getViewportForWidth,
-    index_d$9_ascertainIsSmallOnlyViewport as ascertainIsSmallOnlyViewport,
-    index_d$9_ascertainIsSmallOrMediumOnlyViewport as ascertainIsSmallOrMediumOnlyViewport,
-    index_d$9_ascertainIsMediumViewport as ascertainIsMediumViewport,
-    index_d$9_ascertainIsMediumOnlyViewport as ascertainIsMediumOnlyViewport,
-    index_d$9_ascertainIsLargeViewport as ascertainIsLargeViewport,
-    index_d$9_ascertainIsLargeOnlyViewport as ascertainIsLargeOnlyViewport,
-    index_d$9_ascertainIsLargeOrXLargeOnlyViewport as ascertainIsLargeOrXLargeOnlyViewport,
-    index_d$9_ascertainIsXLargeViewport as ascertainIsXLargeViewport,
-    index_d$9_ascertainIsSmallToXLargeViewport as ascertainIsSmallToXLargeViewport,
-    index_d$9_ascertainIsXLargeOnlyViewport as ascertainIsXLargeOnlyViewport,
-    index_d$9_ascertainIsXXLargeViewport as ascertainIsXXLargeViewport,
+    index_d$9_isViewport as isViewport,
   };
 }
 
@@ -2789,8 +2738,8 @@ declare namespace index_d$a {
     index_d$6 as objects,
     index_d$7 as portal,
     index_d$8 as product,
-    index_d$9 as viewports,
+    index_d$9 as viewport,
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs, Button, BynderWidget, Carousel, Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, Podium, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$1 as components, index_d$2 as constants, index_d$3 as contexts, index_d$4 as customHooks, index_d$5 as environment, index_d$6 as objects, index_d$8 as product, index_d as types, useAddToCartContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d$a as utils, index_d$9 as viewports };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs, Button, BynderWidget, Carousel, Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, Podium, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$1 as components, index_d$2 as constants, index_d$3 as contexts, index_d$4 as customHooks, index_d$5 as environment, index_d$6 as objects, index_d$8 as product, index_d as types, useAddToCartContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d$a as utils, index_d$9 as viewport };

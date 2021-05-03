@@ -12,21 +12,23 @@ type VideoProps = Pick<ControlsProps, 'copy'> & {
   };
   className?: string;
   fallbackImage?: {
+    className?: string;
     copy?: {
       altText?: string;
     };
-    small?: string;
-    medium?: string;
-    large?: string;
-    className?: string;
+    sizes?: {
+      large?: string;
+      medium?: string;
+      small?: string;
+    };
   };
-  hasControls?: boolean;
-  hasNativeControls?: boolean;
   hasAllowAudio?: boolean;
   hasAutoplay?: boolean;
+  hasControls?: boolean;
   hasLoop?: boolean;
-  hasSpanContent?: boolean;
+  hasNativeControls?: boolean;
   hasPlayInFullScreen?: boolean;
+  hasSpanContent?: boolean;
   id?: string;
   isBackground?: boolean;
   /**
@@ -41,11 +43,14 @@ type VideoProps = Pick<ControlsProps, 'copy'> & {
   isHeroFullWidth?: boolean;
   isHeroFullWidthMobile?: boolean;
   isScrollBasedVideo?: boolean;
-  large?: string;
-  medium?: string;
-  poster?: Omit<PosterProps, 'sizes'> &
-    Pick<PosterProps['sizes'], 'small' | 'medium' | 'large'>;
-  small?: string;
+  poster?: PosterProps;
+  sizes?: {
+    large?: string;
+    medium?: string;
+    small?: string;
+    xLarge?: string;
+    xSmall?: string;
+  };
 };
 
 export type { VideoProps };

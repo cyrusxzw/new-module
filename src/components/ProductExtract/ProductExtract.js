@@ -117,9 +117,7 @@ const ProductExtract = forwardRef(function ProductExtractRef(
           <div className={productImageClassSet}>
             <Image
               altText={product.image.altText}
-              large={product.image.large}
-              medium={product.image.medium}
-              small={product.image.small}
+              sizes={product.image.sizes}
             />
           </div>
         </div>

@@ -32,7 +32,7 @@
   font-size: rem(14px);
   line-height: 1.4;
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     width: auto;
     max-width: 100%;
   }

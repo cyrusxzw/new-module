@@ -111,4 +111,4 @@ export { types };
 
 import * as utils from './utils';
 export { utils };
-export { environment, objects, product, viewports } from './utils';
+export { environment, objects, product, viewport } from './utils';

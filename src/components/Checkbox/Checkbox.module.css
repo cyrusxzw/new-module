@@ -22,7 +22,7 @@
   font-size: rem(14px);
   line-height: 2;
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     margin: 6px 0 0 0;
     font-size: rem(12px);
   }
@@ -41,7 +41,7 @@
     position: relative;
     top: -7px;
     content: '\2713'; /* Glyph: ✓ (check mark) */
-    @media (--viewport-sm-only) {
+    @media (--viewport-xs-sm-only) {
       top: -6px;
     }
     @media (--viewport-md-only) {
@@ -75,7 +75,7 @@
     color: var(--color-light-copy);
   }
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     font-size: rem(12px);
   }
 }
@@ -87,7 +87,7 @@
   font-family: var(--font-family-sans-serif-regular);
   font-size: rem(14px);
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     font-size: rem(12px);
   }
 }

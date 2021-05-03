@@ -44,8 +44,10 @@ const ProductDetailHeaderFixture = {
     upSellProduct: {
       image: {
         altText: 'Product Extract',
-        small:
-          'https://www.aesop.com/medias/Aesop-Kits-Gift-Kits-2019-20-The-Reveller-with-Product-Small-781x524px.png?context=bWFzdGVyfGltYWdlc3wxMTMwMjN8aW1hZ2UvcG5nfGltYWdlcy9oZjgvaDI1LzkxNTAzNjg5NDAwNjIucG5nfDllZjNkMjBkNjZhZTI0OGRhZWZhOGJlMzA5NDM3OTg4ZGFlNjE1MWY1ZDg2ZmU4MjUwZmEwOWMwMmRkNzhmNDg',
+        sizes: {
+          small:
+            'https://www.aesop.com/medias/Aesop-Kits-Gift-Kits-2019-20-The-Reveller-with-Product-Small-781x524px.png?context=bWFzdGVyfGltYWdlc3wxMTMwMjN8aW1hZ2UvcG5nfGltYWdlcy9oZjgvaDI1LzkxNTAzNjg5NDAwNjIucG5nfDllZjNkMjBkNjZhZTI0OGRhZWZhOGJlMzA5NDM3OTg4ZGFlNjE1MWY1ZDg2ZmU4MjUwZmEwOWMwMmRkNzhmNDg',
+        },
       },
       name: 'The Reveller Fragrant hand and body care',
       url: '/',

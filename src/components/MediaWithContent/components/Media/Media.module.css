@@ -27,7 +27,7 @@
   bottom: -30px;
   width: 70%;
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     height: calc(100% - 80px);
     max-height: 300px;
   }
