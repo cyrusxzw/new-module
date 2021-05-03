@@ -31,42 +31,52 @@ const HeroBannerFixture = {
   image: {
     default: {
       altText: 'alt image',
-      large:
-        './assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Desktop_2880x1044px.jpg',
-      medium:
-        './assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Tablet_1536x1730px.jpg',
-      small:
-        './assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Mobile_640x640px.jpg',
+      sizes: {
+        large:
+          './assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Desktop_2880x1044px.jpg',
+        medium:
+          './assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Tablet_1536x1730px.jpg',
+        small:
+          './assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Mobile_640x640px.jpg',
+      },
     },
     fiftyFifty: {
       altText: 'alt image',
-      large:
-        './assets/images/HeroBanner/Aesop_Redemption_Body_Scrub_2021_Homepage_Primary_50-50_Desktop_1440x1500px.jpg',
-      medium:
-        './assets/images/HeroBanner/Aesop_Redemption_Body_Scrub_2021_Homepage_Primary_50-50_Tablet_1536x950px.jpg',
-      small:
-        './assets/images/HeroBanner/Aesop_Redemption_Body_Scrub_2021_Homepage_Primary_50-50_Mobile_640x640px.jpg',
+      sizes: {
+        large:
+          './assets/images/HeroBanner/Aesop_Redemption_Body_Scrub_2021_Homepage_Primary_50-50_Desktop_1440x1500px.jpg',
+        medium:
+          './assets/images/HeroBanner/Aesop_Redemption_Body_Scrub_2021_Homepage_Primary_50-50_Tablet_1536x950px.jpg',
+        small:
+          './assets/images/HeroBanner/Aesop_Redemption_Body_Scrub_2021_Homepage_Primary_50-50_Mobile_640x640px.jpg',
+      },
     },
     articleHeader: {
       altText: 'alt image',
-      large:
-        './assets/images/HeroBanner/Aesop_A_Guide_to_Caring_for_Oily_Skin_Web_Primary_Full_Bleed_Desktop_2880x580px.jpg',
-      medium:
-        './assets/images/HeroBanner/Aesop_A_Guide_to_Caring_for_Oily_Skin_Web_Primary_Full_Bleed_Tablet_1536x520px.jpg',
-      small:
-        './assets/images/HeroBanner/Aesop_A_Guide_to_Caring_for_Oily_Skin_Web_Primary_Full_Bleed_Mobile_640x640px.jpg',
+      sizes: {
+        large:
+          './assets/images/HeroBanner/Aesop_A_Guide_to_Caring_for_Oily_Skin_Web_Primary_Full_Bleed_Desktop_2880x580px.jpg',
+        medium:
+          './assets/images/HeroBanner/Aesop_A_Guide_to_Caring_for_Oily_Skin_Web_Primary_Full_Bleed_Tablet_1536x520px.jpg',
+        small:
+          './assets/images/HeroBanner/Aesop_A_Guide_to_Caring_for_Oily_Skin_Web_Primary_Full_Bleed_Mobile_640x640px.jpg',
+      },
     },
     wideHeader: {
       altText: 'alt image',
-      large: './assets/images/HeroBanner/wide-header-large.webp',
-      medium: './assets/images/HeroBanner/wide-header-medium.webp',
-      small: './assets/images/HeroBanner/wide-header-small.webp',
+      sizes: {
+        large: './assets/images/HeroBanner/wide-header-large.webp',
+        medium: './assets/images/HeroBanner/wide-header-medium.webp',
+        small: './assets/images/HeroBanner/wide-header-small.webp',
+      },
     },
     foreground: {
       altText: 'alt image',
-      large: './assets/images/MediaWithContent/foreground-large.jpg',
-      medium: './assets/images/MediaWithContent/foreground-large.jpg',
-      small: './assets/images/MediaWithContent/foreground-large.jpg',
+      sizes: {
+        large: './assets/images/MediaWithContent/foreground-large.jpg',
+        medium: './assets/images/MediaWithContent/foreground-large.jpg',
+        small: './assets/images/MediaWithContent/foreground-large.jpg',
+      },
     },
   },
   linkButtonGroup: {

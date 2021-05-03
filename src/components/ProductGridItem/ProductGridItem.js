@@ -61,10 +61,8 @@ const ProductGridItem = React.forwardRef(
             <Image
               altText={currentImage.altText}
               className={styles.image}
-              large={currentImage.sizes?.large}
-              medium={currentImage.sizes?.medium}
               ref={imageRef}
-              small={currentImage.sizes?.small}
+              sizes={currentImage.sizes}
             />
           </Hyperlink>
         </Transition>

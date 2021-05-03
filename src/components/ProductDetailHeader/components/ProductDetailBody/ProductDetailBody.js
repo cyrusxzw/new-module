@@ -9,6 +9,7 @@ import {
 } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks/useWindowHasResized';
 import { getVariantRadioOptions } from '~/utils/product/index.ts';
+import { isViewport } from '~/utils/viewport';
 import { AddToCartButton } from '~/components/AddToCartButton';
 import { Button } from '~/components/Button';
 import { DefinitionList } from '~/components/DefinitionList/index.ts';
@@ -21,10 +22,6 @@ import { ProductExtract } from '~/components/ProductExtract/ProductExtract.js';
 import { RadioGroup } from '~/components/RadioGroup/index.ts';
 import { Transition } from '~/components/Transition';
 import styles from './ProductDetailBody.module.css';
-import {
-  ascertainIsLargeViewport,
-  ascertainIsSmallOrMediumOnlyViewport,
-} from '~/utils/viewports/viewports';
 
 const ProductDetailBody = ({ className, copy, theme }) => {
   const currentTheme = useThemeContext(theme, 'dark');
@@ -179,8 +176,8 @@ const ProductDetailBody = ({ className, copy, theme }) => {
             <DefinitionList
               className={styles.definitionList}
               hasBottomBorder={
-                (!!variantRadioOptions.length && ascertainIsLargeViewport()) ||
-                (ascertainIsSmallOrMediumOnlyViewport() && upSellProduct)
+                (!!variantRadioOptions.length && isViewport('lg')) ||
+                (isViewport('xs to md only') && upSellProduct)
               }
               items={definitionListItems}
               theme={currentTheme}

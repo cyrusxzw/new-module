@@ -132,7 +132,9 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
               'Content',
             ),
             isFullWidth: false,
-            large: HeroBannerFixture.video.source,
+            sizes: {
+              large: HeroBannerFixture.video.source,
+            },
           },
         },
         Image: {
@@ -190,9 +192,7 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
               hasForegroundImage ? (
                 <Image
                   altText={HeroBannerFixture.image.foreground.altText}
-                  large={HeroBannerFixture.image.foreground.large}
-                  medium={HeroBannerFixture.image.foreground.medium}
-                  small={HeroBannerFixture.image.foreground.small}
+                  sizes={HeroBannerFixture.image.foreground.sizes}
                 />
               ) : undefined
             }
@@ -250,9 +250,7 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       media={
         <Image
           altText={HeroBannerFixture.image.fiftyFifty.altText}
-          large={HeroBannerFixture.image.fiftyFifty.large}
-          medium={HeroBannerFixture.image.fiftyFifty.medium}
-          small={HeroBannerFixture.image.fiftyFifty.small}
+          sizes={HeroBannerFixture.image.fiftyFifty.sizes}
         />
       }
       theme="dark"
@@ -283,9 +281,7 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       media={
         <Image
           altText={HeroBannerFixture.image.wideHeader.altText}
-          large={HeroBannerFixture.image.wideHeader.large}
-          medium={HeroBannerFixture.image.wideHeader.medium}
-          small={HeroBannerFixture.image.wideHeader.small}
+          sizes={HeroBannerFixture.image.wideHeader.sizes}
         />
       }
       theme="light"
@@ -316,9 +312,7 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       media={
         <Image
           altText={HeroBannerFixture.image.articleHeader.altText}
-          large={HeroBannerFixture.image.articleHeader.large}
-          medium={HeroBannerFixture.image.articleHeader.medium}
-          small={HeroBannerFixture.image.articleHeader.small}
+          sizes={HeroBannerFixture.image.articleHeader.sizes}
         />
       }
       theme="dark"
@@ -349,9 +343,7 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       media={
         <Image
           altText={HeroBannerFixture.image.default.altText}
-          large={HeroBannerFixture.image.default.large}
-          medium={HeroBannerFixture.image.default.medium}
-          small={HeroBannerFixture.image.default.small}
+          sizes={HeroBannerFixture.image.default.sizes}
         />
       }
       theme="light"
@@ -382,9 +374,7 @@ import { HeroBannerFixture } from './HeroBanner.fixture';
       media={
         <Image
           altText={HeroBannerFixture.image.default.altText}
-          large={HeroBannerFixture.image.default.large}
-          medium={HeroBannerFixture.image.default.medium}
-          small={HeroBannerFixture.image.default.small}
+          sizes={HeroBannerFixture.image.default.sizes}
         />
       }
       theme="light"

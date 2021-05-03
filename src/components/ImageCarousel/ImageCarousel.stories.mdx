@@ -35,9 +35,11 @@ import { ImageCarouselFixture } from './ImageCarousel.fixture';
           ),
           image: {
             altText: 'Lorem ipsum dolor sit amet',
-            small: './assets/images/ImageCarousel/image-one-small.jpg',
-            medium: './assets/images/ImageCarousel/image-one-medium.jpg',
-            large: './assets/images/ImageCarousel/image-one-large.jpg',
+            sizes: {
+              small: './assets/images/ImageCarousel/image-one-small.jpg',
+              medium: './assets/images/ImageCarousel/image-one-medium.jpg',
+              large: './assets/images/ImageCarousel/image-one-large.jpg',
+            },
           },
         },
         ...ImageCarouselFixture.slides,

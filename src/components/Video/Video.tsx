@@ -6,7 +6,7 @@ import {
   useOverflowHidden,
   useWindowHasResized,
 } from '~/customHooks';
-import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import { isIE, isChrome } from '~/utils/environment';
 import { Image } from '~/components/Image';
 import { Controls } from './components/Controls';
@@ -35,10 +35,8 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
     isHeroFullWidth = false,
     isHeroFullWidthMobile = false,
     isScrollBasedVideo = false,
-    large,
-    medium,
+    sizes,
     poster,
-    small,
   },
   ref,
 ) {
@@ -49,7 +47,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
   );
   const [hasActiveVideo, setHasActiveVideo] = useState(hasAutoplay);
   const [isMuted, setIsMuted] = useState(!hasAllowAudio);
-  const isMobileOrTablet = ascertainIsSmallOrMediumOnlyViewport();
+  const isMobileOrTablet = isViewport('xs to md only');
   const { progress, setProgress } = useProgress(videoRef);
   const hasMounted = useHasMounted();
 
@@ -66,7 +64,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
       videoRef.current.load();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [large, medium, small]);
+  }, [sizes]);
 
   if (!!captionsTrack && !isIE) {
     if (hasActiveCaptions) {
@@ -76,7 +74,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
     }
   }
 
-  const hasVideo = large || medium || small;
+  const hasVideo = !!sizes;
   const handleOnPosterClick = () => playVideo();
   const handlePlayPauseButtonOnClick = isPlaying ? pauseVideo : playVideo;
   const handleAudioButtonClick = () => setIsMuted(!isMuted);
@@ -121,9 +119,9 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
           <Image
             altText={fallbackImage.copy?.altText}
             className={cx(styles.fallbackImage, fallbackImage.className)}
-            large={fallbackImage.large}
-            medium={fallbackImage.medium}
-            small={fallbackImage.small}
+            sizes={{
+              ...fallbackImage.sizes,
+            }}
           />
         </figure>
       )}
@@ -144,11 +142,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
         isBackground={isBackground}
         isMuted={isMuted}
         ref={videoRef}
-        sizes={{
-          large,
-          medium,
-          small,
-        }}
+        sizes={sizes}
       />
 
       {!isScrollBasedVideo && (
@@ -159,11 +153,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
           }}
           isActive={!hasActiveVideo}
           onClick={handleOnPosterClick}
-          sizes={{
-            large: poster?.large,
-            medium: poster?.medium,
-            small: poster?.small,
-          }}
+          sizes={{ ...poster?.sizes }}
         />
       )}
 

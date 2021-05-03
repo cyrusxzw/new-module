@@ -74,7 +74,7 @@
 
 /* Handle the grid css to support IE */
 @media all and (-ms-high-contrast: none) {
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     .block {
       -ms-grid-columns: 1fr 20px 1fr;
       -ms-grid-rows: 1fr 50px 1fr 50px 1fr 50px 1fr;

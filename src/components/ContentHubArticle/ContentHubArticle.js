@@ -95,10 +95,8 @@ const ContentHubArticle = ({
             >
               <Image
                 altText={currentImage.altText}
-                large={currentImage.large}
-                medium={currentImage.medium}
                 ref={readMoreThumbnailRef}
-                small={currentImage.small}
+                sizes={currentImage.sizes}
               />
             </div>
           </Hyperlink>
@@ -142,10 +140,8 @@ const ContentHubArticle = ({
               <Image
                 altText={currentImage.altText}
                 className={styles.image}
-                large={currentImage.large}
-                medium={currentImage.medium}
                 ref={nonMobileThumbnailRef}
-                small={currentImage.small}
+                sizes={currentImage.sizes}
               />
             </div>
           </Hyperlink>
@@ -165,10 +161,8 @@ const ContentHubArticle = ({
               <Image
                 altText={currentImage.altText}
                 className={styles.image}
-                large={currentImage.large}
-                medium={currentImage.medium}
                 ref={mobileThumbnailRef}
-                small={currentImage.small}
+                sizes={currentImage.sizes}
               />
             </div>
           </Hyperlink>

@@ -12,11 +12,9 @@ const MediaBlock = ({
   caption,
   fallbackImage,
   heading,
-  large,
   link,
-  medium,
   poster,
-  small,
+  sizes,
   theme = 'dark',
   type = 'image',
 }: MediaBlockProps) => {
@@ -33,13 +31,11 @@ const MediaBlock = ({
         hasPlayInFullScreen={false}
         isFullWidth={true}
         isScrollBasedVideo={isScrollBasedVideo}
-        large={large}
-        medium={medium}
         poster={poster}
-        small={small}
+        sizes={sizes}
       />
     ) : (
-      <Image altText={altText} large={large} medium={medium} small={small} />
+      <Image altText={altText} sizes={sizes} />
     );
   };
 

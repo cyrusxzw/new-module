@@ -61,7 +61,7 @@
   }
 
   picture {
-    @media (--viewport-sm-only) {
+    @media (--viewport-xs-sm-only) {
       margin-bottom: 30px;
     }
     @media (--viewport-md-only) {

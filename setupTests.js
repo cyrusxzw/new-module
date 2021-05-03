@@ -30,6 +30,7 @@ Object.defineProperty(window, 'matchMedia', {
  * and the following lines removes the warning.
  */
 Object.defineProperty(HTMLMediaElement.prototype, 'muted', {
+  // eslint-disable-next-line no-setter-return
   set: () => undefined,
 });
 

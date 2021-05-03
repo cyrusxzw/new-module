@@ -15,9 +15,7 @@ describe('<DoubleMedia />', () => {
           altText: DoubleMediaFixture.imageOne.altText,
           caption: DoubleMediaFixture.imageOne.caption,
           fallbackImage: DoubleMediaFixture.video.fallbackImage,
-          large: DoubleMediaFixture.imageOne.large,
-          medium: DoubleMediaFixture.imageOne.medium,
-          small: DoubleMediaFixture.imageOne.small,
+          sizes: DoubleMediaFixture.imageOne.sizes,
         }}
         mediaTwo={{
           heading: DoubleMediaFixture.title,
@@ -27,9 +25,7 @@ describe('<DoubleMedia />', () => {
           altText: DoubleMediaFixture.imageTwo.altText,
           caption: DoubleMediaFixture.imageTwo.caption,
           fallbackImage: DoubleMediaFixture.video.fallbackImage,
-          large: DoubleMediaFixture.imageTwo.large,
-          medium: DoubleMediaFixture.imageTwo.medium,
-          small: DoubleMediaFixture.imageTwo.small,
+          sizes: DoubleMediaFixture.imageTwo.sizes,
         }}
       />,
     );

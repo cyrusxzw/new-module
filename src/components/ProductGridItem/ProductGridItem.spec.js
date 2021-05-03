@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import {
   AddToCartContextProvider,
@@ -42,7 +42,7 @@ describe('<ProductGridItem />', () => {
     const bundleLinkName = "I'll give you an offer you can't refuse";
     const onCtaClickMock = jest.fn();
 
-    const { getByRole } = render(
+    render(
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
         <ProductDetailContextProvider
           product={ProductDetailHeaderFixture.product}
@@ -62,14 +62,14 @@ describe('<ProductGridItem />', () => {
         </ProductDetailContextProvider>
       </AddToCartContextProvider>,
     );
-    const link = getByRole('link', { name: bundleLinkName });
+    const link = screen.getByRole('link', { name: bundleLinkName });
     userEvent.click(link);
 
     expect(onCtaClickMock).toHaveBeenCalledTimes(1);
   });
 
   it('should execute default props version of cta click correctly', () => {
-    const { getAllByRole } = render(
+    render(
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
         <ProductDetailContextProvider
           product={ProductDetailHeaderFixture.product}
@@ -90,14 +90,14 @@ describe('<ProductGridItem />', () => {
       </AddToCartContextProvider>,
     );
 
-    const link = getAllByRole('link')[0]; // First Hyperlink with click function
+    const link = screen.getAllByRole('link')[0]; // First Hyperlink with click function
     userEvent.click(link);
     // TODO: Assert default function situation
   });
 
   it('should execute cta click correctly', () => {
     const onCtaClickMock = jest.fn();
-    const { getAllByRole } = render(
+    render(
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
         <ProductDetailContextProvider
           product={ProductDetailHeaderFixture.product}
@@ -119,7 +119,7 @@ describe('<ProductGridItem />', () => {
       </AddToCartContextProvider>,
     );
 
-    const link = getAllByRole('link')[0]; // First Hyperlink with click function
+    const link = screen.getAllByRole('link')[0]; // First Hyperlink with click function
     userEvent.click(link);
 
     expect(onCtaClickMock).toHaveBeenCalledTimes(1);
