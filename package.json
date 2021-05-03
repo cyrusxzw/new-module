@@ -139,7 +139,6 @@
     "jest-cli": "^26.0.1",
     "jest-watch-typeahead": "^0.6.1",
     "lint-staged": "^10.5.3",
-    "npm-merge-driver": "^2.3.6",
     "postcss": "^8.2.4",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-custom-properties": "^9.0.2",
