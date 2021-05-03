@@ -25,7 +25,7 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
     /** handleOnChange gets passed to the AccessibleAccordion dependency */
     /* istanbul ignore next */
     const handleOnChange = nodes => setIsActiveNodes(nodes);
-    const checkIsActive = id => activeNodes.includes(id);
+    const checkIsActive = (id: string) => activeNodes.includes(id);
 
     return (
       <div
