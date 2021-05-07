@@ -1290,7 +1290,40 @@ declare type ParagraphSetProps = {
 declare const Paragraph: FC<ParagraphProps>;
 declare const ParagraphSet: FC<ParagraphSetProps>;
 
-declare const Podium: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type TransitionType = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
+declare type TransitionProps = {
+    children: JSX.Element;
+    isActive?: boolean;
+    isActiveOnMount?: boolean;
+    shouldMountOnEnter?: boolean;
+    shouldUnmountOnExit?: boolean;
+    type?: TransitionType;
+};
+
+declare type HorizontalPadding = 'none' | 'small';
+declare type VerticalPadding = 'none' | 'small' | 'medium' | 'large';
+declare type PodiumProps = {
+    backgroundColor?: string;
+    children?: React.ReactNode;
+    className?: string;
+    'data-test-ref'?: string;
+    horizontalPadding?: HorizontalPadding;
+    id?: string;
+    isActive?: boolean;
+    isActiveOnMount?: boolean;
+    isHorizontalFlushOnLarge?: boolean;
+    isHorizontalFlushOnMedium?: boolean;
+    isHorizontalFlushOnSmall?: boolean;
+    paddingBottom?: VerticalPadding;
+    paddingLeft?: HorizontalPadding;
+    paddingRight?: HorizontalPadding;
+    paddingTop?: VerticalPadding;
+    theme?: Themes;
+    transition?: TransitionType;
+    verticalPadding?: VerticalPadding;
+};
+
+declare const Podium: React$1.ForwardRefExoticComponent<PodiumProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const ProductCommerce: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
@@ -1793,16 +1826,6 @@ declare namespace TextOverFullWidthAsset {
         export { mediaType_1 as mediaType };
     }
 }
-
-declare type TransitionType = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
-declare type TransitionProps = {
-    children: JSX.Element;
-    isActive?: boolean;
-    isActiveOnMount?: boolean;
-    shouldMountOnEnter?: boolean;
-    shouldUnmountOnExit?: boolean;
-    type?: TransitionType;
-};
 
 declare const Transition: ({ children, isActive, isActiveOnMount, shouldMountOnEnter, shouldUnmountOnExit, type, }: TransitionProps) => ReactElement | null;
 
