@@ -617,7 +617,7 @@ declare type FlyinPanelProps = {
     heading?: string;
     isVisible?: boolean;
     onClose: () => void;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const FlyinPanel: ({ children, className, copy, heading, isVisible, onClose, theme, }: FlyinPanelProps) => ReactElement | null;
@@ -1083,46 +1083,22 @@ declare namespace IconLink {
 
 declare const Image: FC<ImageProps>;
 
-declare function ImageCarousel({ autoplaySpeed, className, hasAutoplay, hasFlushPagination, isCompact, slides, theme, }: {
-    autoplaySpeed: any;
-    className: any;
-    hasAutoplay: any;
-    hasFlushPagination: any;
-    isCompact: any;
-    slides: any;
-    theme: any;
-}): JSX.Element;
-declare namespace ImageCarousel {
-    namespace propTypes {
-        const autoplaySpeed: PropTypes.Requireable<number>;
-        const className: PropTypes.Requireable<string>;
-        const hasAutoplay: PropTypes.Requireable<boolean>;
-        const hasFlushPagination: PropTypes.Requireable<boolean>;
-        const isCompact: PropTypes.Requireable<boolean>;
-        const slides: PropTypes.Requireable<PropTypes.InferProps<{
-            caption: PropTypes.Requireable<string>;
-            id: PropTypes.Requireable<string>;
-            image: PropTypes.Validator<object>;
-        }>[]>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const autoplaySpeed_1: number;
-        export { autoplaySpeed_1 as autoplaySpeed };
-        const className_1: any;
-        export { className_1 as className };
-        const hasAutoplay_1: boolean;
-        export { hasAutoplay_1 as hasAutoplay };
-        const hasFlushPagination_1: boolean;
-        export { hasFlushPagination_1 as hasFlushPagination };
-        const isCompact_1: boolean;
-        export { isCompact_1 as isCompact };
-        const slides_1: any[];
-        export { slides_1 as slides };
-        const theme_1: string;
-        export { theme_1 as theme };
-    }
-}
+declare type Slide$1 = {
+    caption?: string;
+    id?: string;
+    image: ImageProps;
+};
+declare type ImageCarouselProps = {
+    autoplaySpeed?: number;
+    className?: string;
+    hasAutoplay?: boolean;
+    hasFlushPagination?: boolean;
+    isCompact?: boolean;
+    slides?: Slide$1[];
+    theme?: Themes;
+};
+
+declare const ImageCarousel: ({ autoplaySpeed, className, hasAutoplay, hasFlushPagination, isCompact, slides, theme, }: ImageCarouselProps) => ReactElement | null;
 
 declare const KitList: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
