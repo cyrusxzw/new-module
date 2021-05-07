@@ -92,7 +92,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
               class="base"
             >
               <h1
-                class="base xLarge light heading heading"
+                class="base xLarge light heading"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </h1>

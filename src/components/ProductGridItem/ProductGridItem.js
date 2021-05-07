@@ -4,14 +4,14 @@ import cx from 'classnames';
 import { HEADING } from '~/constants';
 import { useProductDetailContext, useVariantSelectContext } from '~/contexts';
 import { useImageTransition } from '~/customHooks';
-import { getVariantRadioOptions } from '~/utils/product';
+import { getVariantRadioOptions } from '~/utils/product/index.ts';
 import { AddToCartButton } from '~/components/AddToCartButton';
-import { DefinitionList } from '~/components/DefinitionList';
-import { Heading } from '~/components/Heading';
+import { DefinitionList } from '~/components/DefinitionList/index.ts';
+import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Image } from '~/components/Image';
 import { P } from '~/components/Paragraph';
-import { RadioGroup } from '~/components/RadioGroup';
+import { RadioGroup } from '~/components/RadioGroup/index.ts';
 import { Transition } from '~/components/Transition';
 import styles from './ProductGridItem.module.css';
 
@@ -61,10 +61,8 @@ const ProductGridItem = React.forwardRef(
             <Image
               altText={currentImage.altText}
               className={styles.image}
-              large={currentImage.sizes?.large}
-              medium={currentImage.sizes?.medium}
               ref={imageRef}
-              small={currentImage.sizes?.small}
+              sizes={currentImage.sizes}
             />
           </Hyperlink>
         </Transition>

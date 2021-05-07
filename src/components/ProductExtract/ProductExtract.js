@@ -5,7 +5,7 @@ import cx from 'classnames';
 import { HEADING } from '~/constants';
 import { useThemeContext } from '~/contexts';
 import { ConditionalWrapper } from '~/components/ConditionalWrapper';
-import { Heading } from '~/components/Heading';
+import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Image } from '~/components/Image';
 import styles from './ProductExtract.module.css';
@@ -117,9 +117,7 @@ const ProductExtract = forwardRef(function ProductExtractRef(
           <div className={productImageClassSet}>
             <Image
               altText={product.image.altText}
-              large={product.image.large}
-              medium={product.image.medium}
-              small={product.image.small}
+              sizes={product.image.sizes}
             />
           </div>
         </div>

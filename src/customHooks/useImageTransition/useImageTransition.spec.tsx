@@ -3,14 +3,14 @@ import { render, act } from '@testing-library/react';
 import { useImageTransition } from './useImageTransition';
 
 describe('useImageTransition', () => {
-  let result = {};
+  let result: { currentImage?: any; isImageActive?: boolean } = {};
 
   beforeAll(() => {
     jest.spyOn(global.console, 'error').mockImplementation(() => {}); // eslint-disable-line @typescript-eslint/no-empty-function
   });
 
   afterAll(() => {
-    global.console.error.mockRestore(); // eslint-disable-line no-console
+    (global.console.error as jest.Mock).mockRestore();
   });
 
   beforeEach(() => {
@@ -50,7 +50,9 @@ describe('useImageTransition', () => {
     expect(result.currentImage.src).toBeUndefined();
     expect(result.isImageActive).toBe(false);
 
-    act(() => jest.runOnlyPendingTimers());
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
 
     expect(result.currentImage.src).toBe('first-image');
     expect(result.isImageActive).toBe(true);
@@ -59,7 +61,9 @@ describe('useImageTransition', () => {
 
     expect(result.isImageActive).toBe(false);
 
-    act(() => jest.runOnlyPendingTimers());
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
 
     expect(result.currentImage.src).toBe('second-image');
     expect(result.isImageActive).toBe(true);
@@ -72,7 +76,9 @@ describe('useImageTransition', () => {
 
     unmount();
 
-    act(() => jest.runOnlyPendingTimers());
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
 
     expect(console.error).not.toHaveBeenCalled(); // eslint-disable-line no-console
   });

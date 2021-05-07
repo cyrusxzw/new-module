@@ -52,14 +52,17 @@ import { TwoColumnLayout } from './TwoColumnLayout';
                   theme={theme}
                 />
                 <Image
-                  theme={theme}
                   altText="Lorem ipsum dolor sit amet"
                   cta={{
                     url: '/',
                   }}
-                  large="./assets/images/ImageCarousel/image-one-large.jpg"
-                  medium="./assets/images/ImageCarousel/image-one-medium.jpg"
-                  small="./assets/images/ImageCarousel/image-one-small.jpg"
+                  sizes={{
+                    large: './assets/images/ImageCarousel/image-one-large.jpg',
+                    medium:
+                      './assets/images/ImageCarousel/image-one-medium.jpg',
+                    small: './assets/images/ImageCarousel/image-one-small.jpg',
+                  }}
+                  theme={theme}
                 />
                 <TwoColumnList
                   leftColumn={TwoColumnListFixture.leftColumn}
@@ -73,18 +76,28 @@ import { TwoColumnLayout } from './TwoColumnLayout';
                   hasSpanContent={false}
                   hasPlayInFullScreen={false}
                   isFullWidth={true}
-                  large="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
-                  medium="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
                   poster={{
                     copy: {
                       altText:
                         'How to Use Video for Tea Tree Leaf Facial Exfoliant',
                     },
-                    large: './assets/images/MediaWithContent/video-poster.png',
-                    medium: './assets/images/MediaWithContent/video-poster.png',
-                    small: './assets/images/MediaWithContent/video-poster.png',
+                    sizes: {
+                      large:
+                        './assets/images/MediaWithContent/video-poster.png',
+                      medium:
+                        './assets/images/MediaWithContent/video-poster.png',
+                      small:
+                        './assets/images/MediaWithContent/video-poster.png',
+                    },
                   }}
-                  small="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
+                  sizes={{
+                    large:
+                      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+                    medium:
+                      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+                    small:
+                      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+                  }}
                 />
                 <Accordion
                   items={[
@@ -173,14 +186,19 @@ import { TwoColumnLayout } from './TwoColumnLayout';
                   theme={theme}
                 />
                 <Image
-                  theme={theme}
                   altText="Lorem ipsum dolor sit amet"
                   cta={{
                     url: '/',
                   }}
-                  large="./assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg"
-                  medium="./assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg"
-                  small="./assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg"
+                  sizes={{
+                    large:
+                      './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
+                    medium:
+                      './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
+                    small:
+                      './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
+                  }}
+                  theme={theme}
                 />
                 <SubNav
                   theme={theme}

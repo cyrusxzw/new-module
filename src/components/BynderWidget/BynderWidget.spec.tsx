@@ -31,6 +31,7 @@ describe('<BynderWidget />', () => {
     expect(heading).toBeInTheDocument();
 
     act(() => {
+      // eslint-disable-next-line testing-library/no-node-access
       const el = document.querySelector('script');
 
       if (el) {

@@ -6,7 +6,7 @@
 }
 
 .media {
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     height: 80vh;
   }
 
@@ -14,7 +14,7 @@
     object-fit: cover;
     vertical-align: middle;
 
-    @media (--viewport-sm-only) {
+    @media (--viewport-xs-sm-only) {
       height: 80vh;
     }
   }

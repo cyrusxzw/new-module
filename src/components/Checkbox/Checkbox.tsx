@@ -29,7 +29,6 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     const checkboxClassSet = cx(
       styles.checkBox,
       styles[theme],
-      { [styles.hasError]: errorMessage },
       checkboxClassName,
     );
 

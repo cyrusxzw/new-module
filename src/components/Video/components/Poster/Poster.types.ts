@@ -12,6 +12,8 @@ type PosterProps = {
     small?: string;
     medium?: string;
     large?: string;
+    xLarge?: string;
+    xSmall?: string;
   };
 };
 

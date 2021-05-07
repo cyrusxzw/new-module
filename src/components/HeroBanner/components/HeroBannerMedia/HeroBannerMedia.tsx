@@ -18,7 +18,7 @@ const HeroBannerMedia: FC<HeroBannerMediaProps> = ({
 
   const isFullHeight = variation === 'full-display';
   const isOffsetX = variation === 'article-header';
-  const isOffsetXFullWidthMedia = variation === 'landing-header';
+  // const isOffsetXFullWidthMedia = variation === 'landing-header';
   const isFullWidth = variation.match(
     /^(default|full-display|landing-header|wide-header)$/,
   );
@@ -27,7 +27,7 @@ const HeroBannerMedia: FC<HeroBannerMediaProps> = ({
     [styles.fullHeight]: isFullHeight,
     [styles.fullWidth]: isFullWidth,
     [styles.offsetX]: isOffsetX,
-    [styles.offsetXFullWidthMedia]: isOffsetXFullWidthMedia,
+    // [styles.offsetXFullWidthMedia]: isOffsetXFullWidthMedia,
   });
 
   return (

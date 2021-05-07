@@ -4,15 +4,15 @@ import cx from 'classnames';
 import { HEADING, HYPERLINK_STYLE_TYPES, TRANSITIONS } from '~/constants';
 import { useProductDetailContext, useVariantSelectContext } from '~/contexts';
 import { useImageTransition } from '~/customHooks';
-import { getVariantRadioOptions } from '~/utils/product';
+import { getVariantRadioOptions } from '~/utils/product/index.ts';
 import { AddToCartButton } from '~/components/AddToCartButton';
-import { Heading } from '~/components/Heading';
+import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Image } from '~/components/Image';
-import { LinkButtonGroup } from '~/components/LinkButtonGroup';
+import { LinkButtonGroup } from '~/components/LinkButtonGroup/index.ts';
 import { Loading } from '~/components/Loading';
-import { RadioGroup } from '~/components/RadioGroup';
-import { SectionHeading } from '~/components/SectionHeading';
+import { RadioGroup } from '~/components/RadioGroup/index.ts';
+import { SectionHeading } from '~/components/SectionHeading/index.ts';
 import { Transition } from '~/components/Transition';
 
 import styles from './ProductCommerce.module.css';
@@ -80,10 +80,8 @@ const ProductCommerce = React.forwardRef(
               <Image
                 altText={currentImage.altText}
                 className={styles.image}
-                large={currentImage.sizes?.large}
-                medium={currentImage.sizes?.medium}
                 ref={imageRef}
-                small={currentImage.sizes?.small}
+                sizes={currentImage.sizes}
               />
             </Transition>
           </div>

@@ -5,7 +5,7 @@
   font-size: rem(14px);
   font-weight: var(--font-weight-normal);
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     padding-right: 20px;
     padding-left: 20px;
   }

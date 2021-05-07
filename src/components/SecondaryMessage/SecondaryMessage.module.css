@@ -10,7 +10,7 @@
     box-sizing: border-box;
   }
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     background-color: var(--color-secondary-msg-bg);
   }
 }
@@ -30,7 +30,7 @@
   }
 
   &:first-of-type {
-    @media (--viewport-sm-only) {
+    @media (--viewport-xs-sm-only) {
       padding-bottom: 20px;
       border-bottom: 1px solid var(--color-grey-rgba-20);
       margin-bottom: 0;

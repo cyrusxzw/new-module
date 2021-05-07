@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Checkbox } from './Checkbox';
 
 describe('<Checkbox />', () => {
@@ -18,19 +18,17 @@ describe('<Checkbox />', () => {
   });
 
   it('should assign an id value if one is not provided', () => {
-    const { getByRole } = render(<Checkbox content="Check me" />);
+    render(<Checkbox content="Check me" />);
 
-    const checkBox = getByRole('checkbox');
+    const checkBox = screen.getByRole('checkbox');
 
     expect(checkBox.id).toBeDefined();
   });
 
   it('should render the error message if it is provided', () => {
-    const { getByText } = render(
-      <Checkbox content="Check me" errorMessage="ERROR!" />,
-    );
+    render(<Checkbox content="Check me" errorMessage="ERROR!" />);
 
-    const errorMessage = getByText('ERROR!');
+    const errorMessage = screen.getByText('ERROR!');
 
     expect(errorMessage).toHaveClass('errorMessage');
   });

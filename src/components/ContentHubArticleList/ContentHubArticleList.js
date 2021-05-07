@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { ContentHubArticle } from '~/components/ContentHubArticle';
+import { ContentHubArticle } from '~/components/ContentHubArticle/index.ts';
 import styles from './ContentHubArticleList.module.css';
 
 const ContentHubArticleList = ({

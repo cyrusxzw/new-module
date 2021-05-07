@@ -7,15 +7,19 @@ const ReadMoreFixture = {
       uri: 'https://www.aesop.com/au/r/careers',
       verticalThumbnail: {
         altText: 'vertical_hub',
-        large: './assets/images/ContentHubArticle/vertical_hub.jpg',
-        medium: './assets/images/ContentHubArticle/vertical_hub.jpg',
-        small: './assets/images/ContentHubArticle/vertical_hub.jpg',
+        sizes: {
+          large: './assets/images/ContentHubArticle/vertical_hub.jpg',
+          medium: './assets/images/ContentHubArticle/vertical_hub.jpg',
+          small: './assets/images/ContentHubArticle/vertical_hub.jpg',
+        },
       },
       horizontalThumbnail: {
         altText: 'horizontal_hub',
-        large: './assets/images/ContentHubArticle/horizontal_hub.jpg',
-        medium: './assets/images/ContentHubArticle/horizontal_hub.jpg',
-        small: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+        sizes: {
+          large: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+          medium: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+          small: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+        },
       },
       readingTime: '5 minute read',
       onClick: () => {
@@ -30,15 +34,19 @@ const ReadMoreFixture = {
       uri: 'https://www.aesop.com/au/r/careers',
       verticalThumbnail: {
         altText: 'vertical_hub',
-        large: './assets/images/ContentHubArticle/vertical_hub.jpg',
-        medium: './assets/images/ContentHubArticle/vertical_hub.jpg',
-        small: './assets/images/ContentHubArticle/vertical_hub.jpg',
+        sizes: {
+          large: './assets/images/ContentHubArticle/vertical_hub.jpg',
+          medium: './assets/images/ContentHubArticle/vertical_hub.jpg',
+          small: './assets/images/ContentHubArticle/vertical_hub.jpg',
+        },
       },
       horizontalThumbnail: {
         altText: 'horizontal_hub',
-        large: './assets/images/ContentHubArticle/horizontal_hub.jpg',
-        medium: './assets/images/ContentHubArticle/horizontal_hub.jpg',
-        small: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+        sizes: {
+          large: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+          medium: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+          small: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+        },
       },
       readingTime: '5 minute read',
       onClick: () => {
@@ -53,15 +61,19 @@ const ReadMoreFixture = {
       uri: 'https://www.aesop.com/au/r/careers',
       verticalThumbnail: {
         altText: 'vertical_hub',
-        large: './assets/images/ContentHubArticle/vertical_hub.jpg',
-        medium: './assets/images/ContentHubArticle/vertical_hub.jpg',
-        small: './assets/images/ContentHubArticle/vertical_hub.jpg',
+        sizes: {
+          large: './assets/images/ContentHubArticle/vertical_hub.jpg',
+          medium: './assets/images/ContentHubArticle/vertical_hub.jpg',
+          small: './assets/images/ContentHubArticle/vertical_hub.jpg',
+        },
       },
       horizontalThumbnail: {
         altText: 'horizontal_hub',
-        large: './assets/images/ContentHubArticle/horizontal_hub.jpg',
-        medium: './assets/images/ContentHubArticle/horizontal_hub.jpg',
-        small: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+        sizes: {
+          large: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+          medium: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+          small: './assets/images/ContentHubArticle/horizontal_hub.jpg',
+        },
       },
       readingTime: '5 minute read',
       onClick: () => {

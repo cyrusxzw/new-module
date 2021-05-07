@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import { List } from '~/components/List';
-import { Select } from '~/components/Select';
-import { Heading } from '~/components/Heading';
+import { Select } from '~/components/Select/index.ts';
+import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import styles from './SubNav.module.css';
 
@@ -26,8 +26,6 @@ const SubNav = forwardRef(
       className,
     );
 
-    const isSmallOrMediumViewport = ascertainIsSmallOrMediumOnlyViewport();
-
     const onChange = event => {
       window.location.href = event.target.value;
     };
@@ -45,7 +43,7 @@ const SubNav = forwardRef(
             {heading}
           </Heading>
         )}
-        {isSelect && isSmallOrMediumViewport ? (
+        {isSelect && isViewport('xs to md only') ? (
           <Select
             isBlock={isSelect}
             name={id}

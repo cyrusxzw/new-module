@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, FC } from 'react';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
 import { useEscapeKeyListener } from '~/customHooks';
-import { ascertainIsSmallOrMediumOnlyViewport } from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
 import { Transition } from '~/components/Transition';
@@ -103,22 +103,22 @@ const Controls: FC<ControlsProps> = ({
 
   const playPauseButtonIconName = isPlaying ? 'pause' : 'play';
 
-  const isSmallMediumViewport = ascertainIsSmallOrMediumOnlyViewport();
+  const isMobileOrTabletViewport = isViewport('xs to md only');
 
   const isInlineMuteActive =
     hasAllowAudio &&
     hasActiveVideo &&
-    (!hasPlayInFullScreen || isSmallMediumViewport);
+    (!hasPlayInFullScreen || isMobileOrTabletViewport);
 
   const isInlineCaptionsToggleActive =
     captions?.shouldShowToggleButton &&
     hasActiveVideo &&
-    (!hasPlayInFullScreen || isSmallMediumViewport);
+    (!hasPlayInFullScreen || isMobileOrTabletViewport);
 
   const isInlinePlayPauseButtonActive =
-    isSmallMediumViewport ||
-    (!isSmallMediumViewport && !hasActiveVideo) ||
-    (!isSmallMediumViewport && !hasPlayInFullScreen);
+    isMobileOrTabletViewport ||
+    (!isMobileOrTabletViewport && !hasActiveVideo) ||
+    (!isMobileOrTabletViewport && !hasPlayInFullScreen);
 
   const captionsToggleButtonTitle = !captions?.isActive
     ? captions?.copy?.toggleButtonTitleOn
