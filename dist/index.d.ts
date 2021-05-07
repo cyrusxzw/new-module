@@ -1,9 +1,72 @@
 /// <reference types="react" />
 import React$1, { ReactNode, FC, MouseEvent, CSSProperties, LegacyRef, ReactElement, MouseEventHandler, RefObject } from 'react';
-import { Themes as Themes$1, Product as Product$1, Variant as Variant$1 } from '~/types';
-import { LinkStyle as LinkStyle$1 } from '~/components/Hyperlink/Hyperlink.types';
 import PropTypes from 'prop-types';
-import { VideoProps } from '~/components/Video/Video.types';
+
+declare type Product = {
+    description?: string;
+    id?: string;
+    variantOptions?: Variant[];
+    cartDisclaimer?: string;
+    definitionList?: {
+        term?: JSX.Element;
+        description?: JSX.Element;
+    }[];
+    flyinPanel?: JSX.Element;
+    productName: string;
+    imageSize?: string;
+    upSellProduct?: {
+        image?: {
+            altText?: string;
+            small?: string;
+        };
+        name?: string;
+        url?: string;
+    };
+};
+
+declare type Themes = 'dark' | 'light';
+
+declare type Variant = {
+    alternateAction: {
+        url: string;
+        label: string;
+    };
+    cartDisclaimer?: string;
+    hasAgeVerificationRequirement?: boolean;
+    id?: string;
+    isInStock: boolean;
+    isSellable?: boolean;
+    image?: {
+        altText?: string;
+        sizes?: {
+            large?: string;
+            medium?: string;
+            small?: string;
+        };
+    };
+    price: string;
+    size: string;
+    sku: string;
+    tracking?: any;
+};
+
+declare type BreakpointNames = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'x2l' | 'x3l' | 'x4l';
+declare type ViewportNames = BreakpointNames | 'xs only' | 'xs to sm only' | 'xs to md only' | 'xs to xl only' | 'sm only' | 'md only' | 'lg only' | 'lg to xl only' | 'lg to x2l only' | 'xl only';
+
+type index_d_Product = Product;
+type index_d_Themes = Themes;
+type index_d_Variant = Variant;
+type index_d_ViewportNames = ViewportNames;
+type index_d_BreakpointNames = BreakpointNames;
+declare namespace index_d {
+  export {
+    index_d_Product as Product,
+    index_d_Themes as Themes,
+    index_d_Variant as Variant,
+    index_d_ViewportNames as ViewportNames,
+    index_d_BreakpointNames as BreakpointNames,
+  };
+}
 
 declare type AccordionItem = {
     content: ReactNode;
@@ -14,7 +77,7 @@ declare type AccordionProps = {
     className?: string;
     id?: string;
     items?: AccordionItem[];
-    theme?: Themes$1;
+    theme?: Themes;
     wrapperClass?: string;
 };
 
@@ -33,7 +96,7 @@ declare type AddToCartButtonProps = {
     dataTestRef: string;
     isEnabled?: boolean;
     isFullWidth?: boolean;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const AddToCartButton: FC<AddToCartButtonProps>;
@@ -77,7 +140,7 @@ declare type BodyCopyProps = {
     id?: string;
     isHeroArticle?: boolean;
     subHeading?: string;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const BodyCopy: React$1.ForwardRefExoticComponent<BodyCopyProps & React$1.RefAttributes<HTMLElement>>;
@@ -91,7 +154,7 @@ declare type BreadcrumbItem = {
 declare type BreadcrumbsProps = {
     className?: string;
     items?: BreadcrumbItem[];
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const Breadcrumbs: FC<BreadcrumbsProps>;
@@ -109,7 +172,7 @@ declare type ButtonProps = {
     tabIndex?: number;
     title?: string;
     type?: ButtonBehaviourType;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const Button: React$1.ForwardRefExoticComponent<ButtonProps & React$1.RefAttributes<HTMLButtonElement>>;
@@ -118,7 +181,7 @@ declare type BynderWidgetProps = {
     className?: string;
     heading: string;
     id: string;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const BynderWidget: FC<BynderWidgetProps>;
@@ -133,24 +196,46 @@ declare type ImageProps = {
     id?: string;
     isFullBleedImage?: boolean;
     isLazyLoaded?: boolean;
-    large?: string;
-    medium?: string;
-    small?: string;
+    sizes: {
+        large?: string;
+        medium?: string;
+        small?: string;
+        xLarge?: string;
+        xSmall?: string;
+    };
     style?: CSSProperties;
     type?: string;
-    theme?: Themes$1;
+    theme?: Themes;
+};
+
+declare type TextAlign = 'center' | 'left' | 'right';
+declare type LinkStyle = 'External Button Link' | 'External No Icon Button Link' | 'External No Icon Link' | 'External Text Link' | 'Internal Button Link' | 'Internal No Icon Button Link' | 'Internal No Icon Link' | 'Internal Text Link';
+declare type HyperlinkProps = {
+    children: ReactNode;
+    className?: string;
+    dataTestRef?: string;
+    hasTargetInNewWindow?: boolean;
+    id?: string;
+    isAlternate?: boolean;
+    isDownload?: boolean;
+    onClick?: (event: MouseEvent) => void;
+    style?: LinkStyle;
+    textAlign?: TextAlign;
+    theme?: Themes;
+    title?: string;
+    url: string;
 };
 
 declare type CarouselIntroductionProps = {
     cta?: {
-        style?: LinkStyle$1;
+        style?: LinkStyle;
         title?: string;
         url?: string;
         text?: string;
     };
     description?: ReactNode;
     heading?: string;
-    theme?: Themes$1;
+    theme?: Themes;
     eyebrow?: string;
 };
 
@@ -177,7 +262,7 @@ declare type CarouselProps = {
     isCompact?: boolean;
     slides?: Slide[];
     slideRefs?: LegacyRef<HTMLDivElement>[];
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const Carousel: FC<CarouselProps>;
@@ -193,7 +278,7 @@ declare type CheckboxProps = {
     isEnabled?: boolean;
     name?: string;
     onChange?: () => void;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const Checkbox: React$1.ForwardRefExoticComponent<CheckboxProps & React$1.RefAttributes<HTMLInputElement>>;
@@ -320,7 +405,7 @@ declare type DefinitionListProps = {
     hasBottomBorder?: boolean;
     isVisible?: boolean;
     items?: DefinitionListItem[];
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const DefinitionList: React$1.ForwardRefExoticComponent<DefinitionListProps & React$1.RefAttributes<HTMLDListElement>>;
@@ -378,31 +463,134 @@ declare namespace DialogBanner {
     }
 }
 
+declare type ControlsProps = {
+    captions?: {
+        isActive?: boolean;
+        onToggleClick?: () => void;
+        shouldShowToggleButton?: boolean;
+        copy?: {
+            toggleButtonTitleOn?: string;
+            toggleButtonTitleOff?: string;
+        };
+    };
+    className?: string;
+    copy?: {
+        closeButtonTitle?: string;
+        muteButtonTitle?: string;
+        pauseButtonTitle?: string;
+        playButtonTitle?: string;
+        unmuteButtonTitle?: string;
+    };
+    hasActiveVideo?: boolean;
+    hasAllowAudio?: boolean;
+    hasPlayInFullScreen?: boolean;
+    isMobileOrTablet?: boolean;
+    isMuted?: boolean;
+    isPlaying?: boolean;
+    onAudioButtonClick?: (event: MouseEvent) => void;
+    onCloseButtonClick?: (event?: MouseEvent) => void;
+    onPlayPauseButtonClick?: (event: MouseEvent) => void;
+    progress?: number;
+};
+
+declare type PosterProps = {
+    className?: string;
+    copy?: {
+        playButtonTitle?: string;
+        altText?: string;
+    };
+    isActive?: boolean;
+    onClick?: (event: MouseEvent) => void;
+    sizes?: {
+        small?: string;
+        medium?: string;
+        large?: string;
+        xLarge?: string;
+        xSmall?: string;
+    };
+};
+
+declare type VideoProps = Pick<ControlsProps, 'copy'> & {
+    captions?: {
+        copy?: ControlsProps['captions']['copy'];
+        fileUrl?: string;
+        isActiveOnLoad?: boolean;
+        languageCode?: string;
+        languageLabel?: string;
+        shouldShowToggleButton?: boolean;
+    };
+    className?: string;
+    fallbackImage?: {
+        className?: string;
+        copy?: {
+            altText?: string;
+        };
+        sizes?: {
+            large?: string;
+            medium?: string;
+            small?: string;
+        };
+    };
+    hasAllowAudio?: boolean;
+    hasAutoplay?: boolean;
+    hasControls?: boolean;
+    hasLoop?: boolean;
+    hasNativeControls?: boolean;
+    hasPlayInFullScreen?: boolean;
+    hasSpanContent?: boolean;
+    id?: string;
+    isBackground?: boolean;
+    /**
+      `isFullWidth` is set true by default and this will allow videos to display at the correct aspect ratio.
+      In the event that a different, more fluid ratio is required, set this prop to false, this will collapse the hight of the Video,
+      but it will react to the height of the surrounding element.
+    */
+    isFullWidth?: boolean;
+    /**
+      This prop negates the 16:9 aspect ratio on tablet so Full Width Hero Videos fill any available space.
+     */
+    isHeroFullWidth?: boolean;
+    isHeroFullWidthMobile?: boolean;
+    isScrollBasedVideo?: boolean;
+    poster?: PosterProps;
+    sizes?: {
+        large?: string;
+        medium?: string;
+        small?: string;
+        xLarge?: string;
+        xSmall?: string;
+    };
+};
+
 declare type MediaType = 'video' | 'image' | 'scrollbasedvideo';
 declare type MediaBlockProps = {
     altText?: string;
     caption?: ReactNode;
     fallbackImage?: VideoProps['fallbackImage'];
     heading?: string;
-    large?: string;
     link?: {
         hasTargetInNewWindow?: boolean;
         text?: string;
         type?: string;
         url: string;
     };
-    medium?: string;
     poster?: VideoProps['poster'];
-    small?: string;
     type?: MediaType;
-    theme?: Themes$1;
+    theme?: Themes;
+    sizes: {
+        large?: string;
+        medium?: string;
+        small?: string;
+        xLarge?: string;
+        xSmall?: string;
+    };
 };
 
 declare type DoubleMediaProps = {
     className?: string;
     mediaOne?: MediaBlockProps;
     mediaTwo?: MediaBlockProps;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const DoubleMedia: ({ className, mediaOne, mediaTwo, theme, }: DoubleMediaProps) => JSX.Element;
@@ -636,7 +824,7 @@ declare type HeadingProps = {
     isFlush?: boolean;
     level: Levels;
     size: Sizes;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const Heading: FC<HeadingProps>;
@@ -663,7 +851,7 @@ declare type HeroBannerProps = {
     hasSerifFontHeading?: boolean;
     hasTopOffset?: boolean;
     media: ReactElement;
-    theme?: Themes$1;
+    theme?: Themes;
     variation?: HeroBannerVariations;
 };
 
@@ -831,24 +1019,6 @@ declare namespace HorizontalProductDisplayAccordion {
     }
 }
 
-declare type TextAlign = 'center' | 'left' | 'right';
-declare type LinkStyle = 'External Button Link' | 'External No Icon Button Link' | 'External No Icon Link' | 'External Text Link' | 'Internal Button Link' | 'Internal No Icon Button Link' | 'Internal No Icon Link' | 'Internal Text Link';
-declare type HyperlinkProps = {
-    children: ReactNode;
-    className?: string;
-    dataTestRef?: string;
-    hasTargetInNewWindow?: boolean;
-    id?: string;
-    isAlternate?: boolean;
-    isDownload?: boolean;
-    onClick?: (event: MouseEvent) => void;
-    style?: LinkStyle;
-    textAlign?: TextAlign;
-    theme?: Themes$1;
-    title?: string;
-    url: string;
-};
-
 declare const Hyperlink: React$1.ForwardRefExoticComponent<HyperlinkProps & React$1.RefAttributes<HTMLAnchorElement>>;
 
 declare type SvgName = '' | 'rightArrow' | 'warning' | 'rightUpArrow' | 'downArrow' | 'plusAndCloseWithCircle' | 'chevron' | 'close' | 'play' | 'pause' | 'muted' | 'unmuted' | 'aesop' | 'download' | 'seek' | 'scrolldown';
@@ -859,7 +1029,7 @@ declare type IconProps = {
     isActive?: boolean;
     name: SvgName;
     tabIndex?: number;
-    theme?: Themes$1;
+    theme?: Themes;
     title?: string;
     width?: number;
 };
@@ -1001,7 +1171,7 @@ declare type ListProps = {
     className?: string;
     items: ListItem[];
     listItemClassName?: string;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const List: React$1.ForwardRefExoticComponent<ListProps & React$1.RefAttributes<HTMLUListElement>>;
@@ -1041,7 +1211,7 @@ declare type LoadingProps = {
     isLoading: boolean;
     shouldFillSpace?: boolean;
     size?: Sizes$1;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const Loading: FC<LoadingProps>;
@@ -1058,7 +1228,7 @@ declare type ModalAndModalBodyProps = {
     className?: string;
     isVisible: boolean;
     onClose: () => void;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 declare type ModalProps = ModalAndModalBodyProps & ModalBodyCopy;
 
@@ -1133,12 +1303,12 @@ declare type ParagraphProps = {
     isFlush?: boolean;
     isHero?: boolean;
     isLarge?: boolean;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 declare type ParagraphSetProps = {
     className?: string;
     isLarge?: boolean;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const Paragraph: FC<ParagraphProps>;
@@ -1219,7 +1389,7 @@ declare type QuoteProps = {
     author: string;
     className?: string;
     content: string;
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const Quote: React$1.ForwardRefExoticComponent<QuoteProps & React$1.RefAttributes<HTMLDivElement>>;
@@ -1715,51 +1885,6 @@ declare namespace TwoColumnLayout {
 
 declare const TwoColumnList: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
-declare type PosterProps = {
-    className?: string;
-    copy?: {
-        playButtonTitle?: string;
-        altText?: string;
-    };
-    isActive?: boolean;
-    onClick?: (event: MouseEvent) => void;
-    sizes?: {
-        small?: string;
-        medium?: string;
-        large?: string;
-    };
-};
-
-declare type ControlsProps = {
-    captions?: {
-        isActive?: boolean;
-        onToggleClick?: () => void;
-        shouldShowToggleButton?: boolean;
-        copy?: {
-            toggleButtonTitleOn?: string;
-            toggleButtonTitleOff?: string;
-        };
-    };
-    className?: string;
-    copy?: {
-        closeButtonTitle?: string;
-        muteButtonTitle?: string;
-        pauseButtonTitle?: string;
-        playButtonTitle?: string;
-        unmuteButtonTitle?: string;
-    };
-    hasActiveVideo?: boolean;
-    hasAllowAudio?: boolean;
-    hasPlayInFullScreen?: boolean;
-    isMobileOrTablet?: boolean;
-    isMuted?: boolean;
-    isPlaying?: boolean;
-    onAudioButtonClick?: (event: MouseEvent) => void;
-    onCloseButtonClick?: (event?: MouseEvent) => void;
-    onPlayPauseButtonClick?: (event: MouseEvent) => void;
-    progress?: number;
-};
-
 declare const Video: React$1.ForwardRefExoticComponent<Pick<ControlsProps, "copy"> & {
     captions?: {
         copy?: {
@@ -1774,210 +1899,178 @@ declare const Video: React$1.ForwardRefExoticComponent<Pick<ControlsProps, "copy
     };
     className?: string;
     fallbackImage?: {
+        className?: string;
         copy?: {
             altText?: string;
         };
-        small?: string;
-        medium?: string;
-        large?: string;
-        className?: string;
+        sizes?: {
+            large?: string;
+            medium?: string;
+            small?: string;
+        };
     };
-    hasControls?: boolean;
-    hasNativeControls?: boolean;
     hasAllowAudio?: boolean;
     hasAutoplay?: boolean;
+    hasControls?: boolean;
     hasLoop?: boolean;
-    hasSpanContent?: boolean;
+    hasNativeControls?: boolean;
     hasPlayInFullScreen?: boolean;
+    hasSpanContent?: boolean;
     id?: string;
     isBackground?: boolean;
     isFullWidth?: boolean;
     isHeroFullWidth?: boolean;
     isHeroFullWidthMobile?: boolean;
     isScrollBasedVideo?: boolean;
-    large?: string;
-    medium?: string;
-    poster?: Pick<PosterProps, "copy" | "className" | "onClick" | "isActive"> & Pick<{
-        small?: string;
-        medium?: string;
+    poster?: PosterProps;
+    sizes?: {
         large?: string;
-    }, "small" | "medium" | "large">;
-    small?: string;
+        medium?: string;
+        small?: string;
+        xLarge?: string;
+        xSmall?: string;
+    };
 } & React$1.RefAttributes<HTMLDivElement>>;
 
-declare const index_d_Accordion: typeof Accordion;
-declare const index_d_AddToCartButton: typeof AddToCartButton;
-declare const index_d_Audio: typeof Audio;
-declare const index_d_BodyCopy: typeof BodyCopy;
-declare const index_d_Breadcrumbs: typeof Breadcrumbs;
-declare const index_d_Button: typeof Button;
-declare const index_d_BynderWidget: typeof BynderWidget;
-declare const index_d_Carousel: typeof Carousel;
-declare const index_d_Checkbox: typeof Checkbox;
-declare const index_d_ConditionalWrapper: typeof ConditionalWrapper;
-declare const index_d_ContentHubArticle: typeof ContentHubArticle;
-declare const index_d_ContentHubArticleList: typeof ContentHubArticleList;
-declare const index_d_DefinitionList: typeof DefinitionList;
-declare const index_d_DialogBanner: typeof DialogBanner;
-declare const index_d_DoubleMedia: typeof DoubleMedia;
-declare const index_d_Figure: typeof Figure;
-declare const index_d_FlyinPanel: typeof FlyinPanel;
-declare const index_d_FooterBlock: typeof FooterBlock;
-declare const index_d_TextInputV2: typeof TextInputV2;
-declare const index_d_FullWidthHeroScroll: typeof FullWidthHeroScroll;
-declare const index_d_GoogleMap: typeof GoogleMap;
-declare const index_d_Heading: typeof Heading;
-declare const index_d_HeroBanner: typeof HeroBanner;
-declare const index_d_Hidden: typeof Hidden;
-declare const index_d_HorizontalProductDisplayAccordion: typeof HorizontalProductDisplayAccordion;
-declare const index_d_Hyperlink: typeof Hyperlink;
-declare const index_d_Icon: typeof Icon;
-declare const index_d_IconLink: typeof IconLink;
-declare const index_d_Image: typeof Image;
-declare const index_d_ImageCarousel: typeof ImageCarousel;
-declare const index_d_KitList: typeof KitList;
-declare const index_d_LinkButtonGroup: typeof LinkButtonGroup;
-declare const index_d_List: typeof List;
-declare const index_d_LoadMoreButton: typeof LoadMoreButton;
-declare const index_d_Loading: typeof Loading;
-declare const index_d_MediaWithContent: typeof MediaWithContent;
-declare const index_d_Modal: typeof Modal;
-declare const index_d_NavigationBar: typeof NavigationBar;
-declare const index_d_NotificationModal: typeof NotificationModal;
-declare const index_d_Overlay: typeof Overlay;
-declare const index_d_Paragraph: typeof Paragraph;
-declare const index_d_ParagraphSet: typeof ParagraphSet;
-declare const index_d_Podium: typeof Podium;
-declare const index_d_ProductCommerce: typeof ProductCommerce;
-declare const index_d_ProductExtract: typeof ProductExtract;
-declare const index_d_ProductGridItem: typeof ProductGridItem;
-declare const index_d_ProductDetailHeader: typeof ProductDetailHeader;
-declare const index_d_Quote: typeof Quote;
-declare const index_d_RadioGroup: typeof RadioGroup;
-declare const index_d_ReadMore: typeof ReadMore;
-declare const index_d_SecondaryMessage: typeof SecondaryMessage;
-declare const index_d_SectionHeading: typeof SectionHeading;
-declare const index_d_Select: typeof Select;
-declare const index_d_StoreDetailHeader: typeof StoreDetailHeader;
-declare const index_d_StoreHoursList: typeof StoreHoursList;
-declare const index_d_SubNav: typeof SubNav;
-declare const index_d_Textarea: typeof Textarea;
-declare const index_d_TextInput: typeof TextInput;
-declare const index_d_TextOverFullWidthAsset: typeof TextOverFullWidthAsset;
-declare const index_d_Transition: typeof Transition;
-declare const index_d_TwoColumnLayout: typeof TwoColumnLayout;
-declare const index_d_TwoColumnList: typeof TwoColumnList;
-declare const index_d_Video: typeof Video;
-declare namespace index_d {
+declare const index_d$1_Accordion: typeof Accordion;
+declare const index_d$1_AddToCartButton: typeof AddToCartButton;
+declare const index_d$1_Audio: typeof Audio;
+declare const index_d$1_BodyCopy: typeof BodyCopy;
+declare const index_d$1_Breadcrumbs: typeof Breadcrumbs;
+declare const index_d$1_Button: typeof Button;
+declare const index_d$1_BynderWidget: typeof BynderWidget;
+declare const index_d$1_Carousel: typeof Carousel;
+declare const index_d$1_Checkbox: typeof Checkbox;
+declare const index_d$1_ConditionalWrapper: typeof ConditionalWrapper;
+declare const index_d$1_ContentHubArticle: typeof ContentHubArticle;
+declare const index_d$1_ContentHubArticleList: typeof ContentHubArticleList;
+declare const index_d$1_DefinitionList: typeof DefinitionList;
+declare const index_d$1_DialogBanner: typeof DialogBanner;
+declare const index_d$1_DoubleMedia: typeof DoubleMedia;
+declare const index_d$1_Figure: typeof Figure;
+declare const index_d$1_FlyinPanel: typeof FlyinPanel;
+declare const index_d$1_FooterBlock: typeof FooterBlock;
+declare const index_d$1_TextInputV2: typeof TextInputV2;
+declare const index_d$1_FullWidthHeroScroll: typeof FullWidthHeroScroll;
+declare const index_d$1_GoogleMap: typeof GoogleMap;
+declare const index_d$1_Heading: typeof Heading;
+declare const index_d$1_HeroBanner: typeof HeroBanner;
+declare const index_d$1_Hidden: typeof Hidden;
+declare const index_d$1_HorizontalProductDisplayAccordion: typeof HorizontalProductDisplayAccordion;
+declare const index_d$1_Hyperlink: typeof Hyperlink;
+declare const index_d$1_Icon: typeof Icon;
+declare const index_d$1_IconLink: typeof IconLink;
+declare const index_d$1_Image: typeof Image;
+declare const index_d$1_ImageCarousel: typeof ImageCarousel;
+declare const index_d$1_KitList: typeof KitList;
+declare const index_d$1_LinkButtonGroup: typeof LinkButtonGroup;
+declare const index_d$1_List: typeof List;
+declare const index_d$1_LoadMoreButton: typeof LoadMoreButton;
+declare const index_d$1_Loading: typeof Loading;
+declare const index_d$1_MediaWithContent: typeof MediaWithContent;
+declare const index_d$1_Modal: typeof Modal;
+declare const index_d$1_NavigationBar: typeof NavigationBar;
+declare const index_d$1_NotificationModal: typeof NotificationModal;
+declare const index_d$1_Overlay: typeof Overlay;
+declare const index_d$1_Paragraph: typeof Paragraph;
+declare const index_d$1_ParagraphSet: typeof ParagraphSet;
+declare const index_d$1_Podium: typeof Podium;
+declare const index_d$1_ProductCommerce: typeof ProductCommerce;
+declare const index_d$1_ProductExtract: typeof ProductExtract;
+declare const index_d$1_ProductGridItem: typeof ProductGridItem;
+declare const index_d$1_ProductDetailHeader: typeof ProductDetailHeader;
+declare const index_d$1_Quote: typeof Quote;
+declare const index_d$1_RadioGroup: typeof RadioGroup;
+declare const index_d$1_ReadMore: typeof ReadMore;
+declare const index_d$1_SecondaryMessage: typeof SecondaryMessage;
+declare const index_d$1_SectionHeading: typeof SectionHeading;
+declare const index_d$1_Select: typeof Select;
+declare const index_d$1_StoreDetailHeader: typeof StoreDetailHeader;
+declare const index_d$1_StoreHoursList: typeof StoreHoursList;
+declare const index_d$1_SubNav: typeof SubNav;
+declare const index_d$1_Textarea: typeof Textarea;
+declare const index_d$1_TextInput: typeof TextInput;
+declare const index_d$1_TextOverFullWidthAsset: typeof TextOverFullWidthAsset;
+declare const index_d$1_Transition: typeof Transition;
+declare const index_d$1_TwoColumnLayout: typeof TwoColumnLayout;
+declare const index_d$1_TwoColumnList: typeof TwoColumnList;
+declare const index_d$1_Video: typeof Video;
+declare namespace index_d$1 {
   export {
-    index_d_Accordion as Accordion,
-    index_d_AddToCartButton as AddToCartButton,
-    index_d_Audio as Audio,
-    index_d_BodyCopy as BodyCopy,
-    index_d_Breadcrumbs as Breadcrumbs,
-    index_d_Button as Button,
-    index_d_BynderWidget as BynderWidget,
-    index_d_Carousel as Carousel,
-    index_d_Checkbox as Checkbox,
-    index_d_ConditionalWrapper as ConditionalWrapper,
-    index_d_ContentHubArticle as ContentHubArticle,
-    index_d_ContentHubArticleList as ContentHubArticleList,
-    index_d_DefinitionList as DefinitionList,
-    index_d_DialogBanner as DialogBanner,
-    index_d_DoubleMedia as DoubleMedia,
-    index_d_Figure as Figure,
-    index_d_FlyinPanel as FlyinPanel,
-    index_d_FooterBlock as FooterBlock,
-    index_d_TextInputV2 as TextInputV2,
-    index_d_FullWidthHeroScroll as FullWidthHeroScroll,
-    index_d_GoogleMap as GoogleMap,
-    index_d_Heading as Heading,
-    index_d_HeroBanner as HeroBanner,
-    index_d_Hidden as Hidden,
-    index_d_HorizontalProductDisplayAccordion as HorizontalProductDisplayAccordion,
-    index_d_Hyperlink as Hyperlink,
-    index_d_Icon as Icon,
-    index_d_IconLink as IconLink,
-    index_d_Image as Image,
-    index_d_ImageCarousel as ImageCarousel,
-    index_d_KitList as KitList,
-    index_d_LinkButtonGroup as LinkButtonGroup,
-    index_d_List as List,
-    index_d_LoadMoreButton as LoadMoreButton,
-    index_d_Loading as Loading,
-    index_d_MediaWithContent as MediaWithContent,
-    index_d_Modal as Modal,
-    index_d_NavigationBar as NavigationBar,
-    index_d_NotificationModal as NotificationModal,
-    index_d_Overlay as Overlay,
-    index_d_Paragraph as Paragraph,
+    index_d$1_Accordion as Accordion,
+    index_d$1_AddToCartButton as AddToCartButton,
+    index_d$1_Audio as Audio,
+    index_d$1_BodyCopy as BodyCopy,
+    index_d$1_Breadcrumbs as Breadcrumbs,
+    index_d$1_Button as Button,
+    index_d$1_BynderWidget as BynderWidget,
+    index_d$1_Carousel as Carousel,
+    index_d$1_Checkbox as Checkbox,
+    index_d$1_ConditionalWrapper as ConditionalWrapper,
+    index_d$1_ContentHubArticle as ContentHubArticle,
+    index_d$1_ContentHubArticleList as ContentHubArticleList,
+    index_d$1_DefinitionList as DefinitionList,
+    index_d$1_DialogBanner as DialogBanner,
+    index_d$1_DoubleMedia as DoubleMedia,
+    index_d$1_Figure as Figure,
+    index_d$1_FlyinPanel as FlyinPanel,
+    index_d$1_FooterBlock as FooterBlock,
+    index_d$1_TextInputV2 as TextInputV2,
+    index_d$1_FullWidthHeroScroll as FullWidthHeroScroll,
+    index_d$1_GoogleMap as GoogleMap,
+    index_d$1_Heading as Heading,
+    index_d$1_HeroBanner as HeroBanner,
+    index_d$1_Hidden as Hidden,
+    index_d$1_HorizontalProductDisplayAccordion as HorizontalProductDisplayAccordion,
+    index_d$1_Hyperlink as Hyperlink,
+    index_d$1_Icon as Icon,
+    index_d$1_IconLink as IconLink,
+    index_d$1_Image as Image,
+    index_d$1_ImageCarousel as ImageCarousel,
+    index_d$1_KitList as KitList,
+    index_d$1_LinkButtonGroup as LinkButtonGroup,
+    index_d$1_List as List,
+    index_d$1_LoadMoreButton as LoadMoreButton,
+    index_d$1_Loading as Loading,
+    index_d$1_MediaWithContent as MediaWithContent,
+    index_d$1_Modal as Modal,
+    index_d$1_NavigationBar as NavigationBar,
+    index_d$1_NotificationModal as NotificationModal,
+    index_d$1_Overlay as Overlay,
+    index_d$1_Paragraph as Paragraph,
     Paragraph as P,
-    index_d_ParagraphSet as ParagraphSet,
-    index_d_Podium as Podium,
-    index_d_ProductCommerce as ProductCommerce,
-    index_d_ProductExtract as ProductExtract,
-    index_d_ProductGridItem as ProductGridItem,
-    index_d_ProductDetailHeader as ProductDetailHeader,
-    index_d_Quote as Quote,
-    index_d_RadioGroup as RadioGroup,
-    index_d_ReadMore as ReadMore,
-    index_d_SecondaryMessage as SecondaryMessage,
-    index_d_SectionHeading as SectionHeading,
-    index_d_Select as Select,
-    index_d_StoreDetailHeader as StoreDetailHeader,
-    index_d_StoreHoursList as StoreHoursList,
-    index_d_SubNav as SubNav,
-    index_d_Textarea as Textarea,
-    index_d_TextInput as TextInput,
-    index_d_TextOverFullWidthAsset as TextOverFullWidthAsset,
-    index_d_Transition as Transition,
-    index_d_TwoColumnLayout as TwoColumnLayout,
-    index_d_TwoColumnList as TwoColumnList,
-    index_d_Video as Video,
+    index_d$1_ParagraphSet as ParagraphSet,
+    index_d$1_Podium as Podium,
+    index_d$1_ProductCommerce as ProductCommerce,
+    index_d$1_ProductExtract as ProductExtract,
+    index_d$1_ProductGridItem as ProductGridItem,
+    index_d$1_ProductDetailHeader as ProductDetailHeader,
+    index_d$1_Quote as Quote,
+    index_d$1_RadioGroup as RadioGroup,
+    index_d$1_ReadMore as ReadMore,
+    index_d$1_SecondaryMessage as SecondaryMessage,
+    index_d$1_SectionHeading as SectionHeading,
+    index_d$1_Select as Select,
+    index_d$1_StoreDetailHeader as StoreDetailHeader,
+    index_d$1_StoreHoursList as StoreHoursList,
+    index_d$1_SubNav as SubNav,
+    index_d$1_Textarea as Textarea,
+    index_d$1_TextInput as TextInput,
+    index_d$1_TextOverFullWidthAsset as TextOverFullWidthAsset,
+    index_d$1_Transition as Transition,
+    index_d$1_TwoColumnLayout as TwoColumnLayout,
+    index_d$1_TwoColumnList as TwoColumnList,
+    index_d$1_Video as Video,
   };
 }
 
 declare const DynamicForm: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
-declare const SMALL: {
-    MIN_WIDTH: number;
-    MAX_WIDTH: number;
-    VIEWPORT: string;
+declare type BreakpointValue = {
+    minWidth?: number;
+    maxWidth?: number;
 };
-declare const MEDIUM: {
-    MIN_WIDTH: number;
-    MAX_WIDTH: number;
-    VIEWPORT: string;
-};
-declare const LARGE: {
-    MIN_WIDTH: number;
-    MAX_WIDTH: number;
-    VIEWPORT: string;
-};
-declare const XLARGE: {
-    MIN_WIDTH: number;
-    MAX_WIDTH: number;
-    VIEWPORT: string;
-};
-declare const XXLARGE: {
-    MIN_WIDTH: number;
-    VIEWPORT: string;
-};
-
-declare const breakpoints_d_SMALL: typeof SMALL;
-declare const breakpoints_d_MEDIUM: typeof MEDIUM;
-declare const breakpoints_d_LARGE: typeof LARGE;
-declare const breakpoints_d_XLARGE: typeof XLARGE;
-declare const breakpoints_d_XXLARGE: typeof XXLARGE;
-declare namespace breakpoints_d {
-  export {
-    breakpoints_d_SMALL as SMALL,
-    breakpoints_d_MEDIUM as MEDIUM,
-    breakpoints_d_LARGE as LARGE,
-    breakpoints_d_XLARGE as XLARGE,
-    breakpoints_d_XXLARGE as XXLARGE,
-  };
-}
+declare const BREAKPOINTS: Map<BreakpointNames, BreakpointValue>;
 
 declare const GREY_60 = "#b3ada5";
 declare const HIGHLIGHT_GREEN = "#007544";
@@ -2042,6 +2135,15 @@ declare namespace heading_d {
   };
 }
 
+declare const A = "a";
+
+declare const html_d_A: typeof A;
+declare namespace html_d {
+  export {
+    html_d_A as A,
+  };
+}
+
 declare const EXTERNAL_BUTTON_LINK = "External Button Link";
 declare const EXTERNAL_NO_ICON_BUTTON_LINK = "External No Icon Button Link";
 declare const EXTERNAL_NO_ICON_TEXT_LINK = "External No Icon Link";
@@ -2069,6 +2171,27 @@ declare namespace hyperlinkStyleTypes_d {
     hyperlinkStyleTypes_d_INTERNAL_NO_ICON_BUTTON_LINK as INTERNAL_NO_ICON_BUTTON_LINK,
     hyperlinkStyleTypes_d_INTERNAL_NO_ICON_TEXT_LINK as INTERNAL_NO_ICON_TEXT_LINK,
     hyperlinkStyleTypes_d_INTERNAL_TEXT_LINK as INTERNAL_TEXT_LINK,
+  };
+}
+
+declare const ENTER = 13;
+declare const ESCAPE = 27;
+
+declare const keyboardCodes_d_ENTER: typeof ENTER;
+declare const keyboardCodes_d_ESCAPE: typeof ESCAPE;
+declare namespace keyboardCodes_d {
+  export {
+    keyboardCodes_d_ENTER as ENTER,
+    keyboardCodes_d_ESCAPE as ESCAPE,
+  };
+}
+
+declare const AESOP = "Aesop";
+
+declare const labels_d_AESOP: typeof AESOP;
+declare namespace labels_d {
+  export {
+    labels_d_AESOP as AESOP,
   };
 }
 
@@ -2297,49 +2420,24 @@ declare namespace transitions_d {
   };
 }
 
-declare const A = "a";
+declare const VIEWPORTS: Map<ViewportNames, string>;
 
-declare const html_d_A: typeof A;
-declare namespace html_d {
+declare const index_d$2_BREAKPOINTS: typeof BREAKPOINTS;
+declare const index_d$2_VIEWPORTS: typeof VIEWPORTS;
+declare namespace index_d$2 {
   export {
-    html_d_A as A,
-  };
-}
-
-declare const ENTER = 13;
-declare const ESCAPE = 27;
-
-declare const keyboardCodes_d_ENTER: typeof ENTER;
-declare const keyboardCodes_d_ESCAPE: typeof ESCAPE;
-declare namespace keyboardCodes_d {
-  export {
-    keyboardCodes_d_ENTER as ENTER,
-    keyboardCodes_d_ESCAPE as ESCAPE,
-  };
-}
-
-declare const AESOP = "Aesop";
-
-declare const labels_d_AESOP: typeof AESOP;
-declare namespace labels_d {
-  export {
-    labels_d_AESOP as AESOP,
-  };
-}
-
-declare namespace index_d$1 {
-  export {
-    breakpoints_d as BREAKPOINTS,
+    index_d$2_BREAKPOINTS as BREAKPOINTS,
     colors_d as COLORS,
     googleMaps_d as GOOGLE_MAPS,
     heading_d as HEADING,
+    html_d as HTML,
     hyperlinkStyleTypes_d as HYPERLINK_STYLE_TYPES,
+    keyboardCodes_d as KEYBOARD_CODES,
+    labels_d as LABELS,
     stores_d as STORES,
     test_refs_d as TEST_REFS,
     transitions_d as TRANSITIONS,
-    html_d as HTML,
-    keyboardCodes_d as KEYBOARD_CODES,
-    labels_d as LABELS,
+    index_d$2_VIEWPORTS as VIEWPORTS,
   };
 }
 
@@ -2395,60 +2493,60 @@ declare const NotificationContextProvider: FC;
 declare const useNotificationContext: () => any;
 
 declare type ProductDetailContextProps = {
-    product?: Product$1;
+    product?: Product;
 };
 
 declare const ProductDetailContextProvider: FC<ProductDetailContextProps>;
 declare const useProductDetailContext: () => any;
 
 declare type ThemeContextProps = {
-    theme?: Themes$1;
+    theme?: Themes;
 };
 
 declare const ThemeContextProvider: FC<ThemeContextProps>;
 declare const useThemeContext: (propTheme: string, defaultTheme?: string) => any;
 
 declare type VariantSelectContextProps = {
-    variants: Variant$1[];
+    variants: Variant[];
 };
 
 declare const VariantSelectContextProvider: FC<VariantSelectContextProps>;
 declare const useVariantSelectContext: () => any;
 
-declare const index_d$2_AddToCartContextProvider: typeof AddToCartContextProvider;
-declare const index_d$2_useAddToCartContext: typeof useAddToCartContext;
-declare const index_d$2_GoogleMapsContextProvider: typeof GoogleMapsContextProvider;
-declare const index_d$2_useGoogleMapsContext: typeof useGoogleMapsContext;
-declare const index_d$2_LoadMoreContextProvider: typeof LoadMoreContextProvider;
-declare const index_d$2_useLoadMoreContext: typeof useLoadMoreContext;
-declare const index_d$2_NavBarThemeContextProvider: typeof NavBarThemeContextProvider;
-declare const index_d$2_useNavBarThemeContext: typeof useNavBarThemeContext;
-declare const index_d$2_NotificationContextProvider: typeof NotificationContextProvider;
-declare const index_d$2_useNotificationContext: typeof useNotificationContext;
-declare const index_d$2_ProductDetailContextProvider: typeof ProductDetailContextProvider;
-declare const index_d$2_useProductDetailContext: typeof useProductDetailContext;
-declare const index_d$2_ThemeContextProvider: typeof ThemeContextProvider;
-declare const index_d$2_useThemeContext: typeof useThemeContext;
-declare const index_d$2_VariantSelectContextProvider: typeof VariantSelectContextProvider;
-declare const index_d$2_useVariantSelectContext: typeof useVariantSelectContext;
-declare namespace index_d$2 {
+declare const index_d$3_AddToCartContextProvider: typeof AddToCartContextProvider;
+declare const index_d$3_useAddToCartContext: typeof useAddToCartContext;
+declare const index_d$3_GoogleMapsContextProvider: typeof GoogleMapsContextProvider;
+declare const index_d$3_useGoogleMapsContext: typeof useGoogleMapsContext;
+declare const index_d$3_LoadMoreContextProvider: typeof LoadMoreContextProvider;
+declare const index_d$3_useLoadMoreContext: typeof useLoadMoreContext;
+declare const index_d$3_NavBarThemeContextProvider: typeof NavBarThemeContextProvider;
+declare const index_d$3_useNavBarThemeContext: typeof useNavBarThemeContext;
+declare const index_d$3_NotificationContextProvider: typeof NotificationContextProvider;
+declare const index_d$3_useNotificationContext: typeof useNotificationContext;
+declare const index_d$3_ProductDetailContextProvider: typeof ProductDetailContextProvider;
+declare const index_d$3_useProductDetailContext: typeof useProductDetailContext;
+declare const index_d$3_ThemeContextProvider: typeof ThemeContextProvider;
+declare const index_d$3_useThemeContext: typeof useThemeContext;
+declare const index_d$3_VariantSelectContextProvider: typeof VariantSelectContextProvider;
+declare const index_d$3_useVariantSelectContext: typeof useVariantSelectContext;
+declare namespace index_d$3 {
   export {
-    index_d$2_AddToCartContextProvider as AddToCartContextProvider,
-    index_d$2_useAddToCartContext as useAddToCartContext,
-    index_d$2_GoogleMapsContextProvider as GoogleMapsContextProvider,
-    index_d$2_useGoogleMapsContext as useGoogleMapsContext,
-    index_d$2_LoadMoreContextProvider as LoadMoreContextProvider,
-    index_d$2_useLoadMoreContext as useLoadMoreContext,
-    index_d$2_NavBarThemeContextProvider as NavBarThemeContextProvider,
-    index_d$2_useNavBarThemeContext as useNavBarThemeContext,
-    index_d$2_NotificationContextProvider as NotificationContextProvider,
-    index_d$2_useNotificationContext as useNotificationContext,
-    index_d$2_ProductDetailContextProvider as ProductDetailContextProvider,
-    index_d$2_useProductDetailContext as useProductDetailContext,
-    index_d$2_ThemeContextProvider as ThemeContextProvider,
-    index_d$2_useThemeContext as useThemeContext,
-    index_d$2_VariantSelectContextProvider as VariantSelectContextProvider,
-    index_d$2_useVariantSelectContext as useVariantSelectContext,
+    index_d$3_AddToCartContextProvider as AddToCartContextProvider,
+    index_d$3_useAddToCartContext as useAddToCartContext,
+    index_d$3_GoogleMapsContextProvider as GoogleMapsContextProvider,
+    index_d$3_useGoogleMapsContext as useGoogleMapsContext,
+    index_d$3_LoadMoreContextProvider as LoadMoreContextProvider,
+    index_d$3_useLoadMoreContext as useLoadMoreContext,
+    index_d$3_NavBarThemeContextProvider as NavBarThemeContextProvider,
+    index_d$3_useNavBarThemeContext as useNavBarThemeContext,
+    index_d$3_NotificationContextProvider as NotificationContextProvider,
+    index_d$3_useNotificationContext as useNotificationContext,
+    index_d$3_ProductDetailContextProvider as ProductDetailContextProvider,
+    index_d$3_useProductDetailContext as useProductDetailContext,
+    index_d$3_ThemeContextProvider as ThemeContextProvider,
+    index_d$3_useThemeContext as useThemeContext,
+    index_d$3_VariantSelectContextProvider as VariantSelectContextProvider,
+    index_d$3_useVariantSelectContext as useVariantSelectContext,
   };
 }
 
@@ -2515,83 +2613,24 @@ declare type UseWindowHasResized = (callback?: () => void) => WindowSize;
 
 declare const useWindowHasResized: UseWindowHasResized;
 
-declare const index_d$3_useEscapeKeyListener: typeof useEscapeKeyListener;
-declare const index_d$3_useExecuteOnImpression: typeof useExecuteOnImpression;
-declare const index_d$3_useHasMounted: typeof useHasMounted;
-declare const index_d$3_useImageTransition: typeof useImageTransition;
-declare const index_d$3_useOnScreen: typeof useOnScreen;
-declare const index_d$3_useOverflowHidden: typeof useOverflowHidden;
-declare const index_d$3_useScript: typeof useScript;
-declare const index_d$3_useWindowHasResized: typeof useWindowHasResized;
-declare namespace index_d$3 {
-  export {
-    index_d$3_useEscapeKeyListener as useEscapeKeyListener,
-    index_d$3_useExecuteOnImpression as useExecuteOnImpression,
-    index_d$3_useHasMounted as useHasMounted,
-    index_d$3_useImageTransition as useImageTransition,
-    index_d$3_useOnScreen as useOnScreen,
-    index_d$3_useOverflowHidden as useOverflowHidden,
-    index_d$3_useScript as useScript,
-    index_d$3_useWindowHasResized as useWindowHasResized,
-  };
-}
-
-declare type Product = {
-    description?: string;
-    id?: string;
-    variantOptions?: Variant$1[];
-    cartDisclaimer?: string;
-    definitionList?: {
-        term?: JSX.Element;
-        description?: JSX.Element;
-    }[];
-    flyinPanel?: JSX.Element;
-    productName: string;
-    imageSize?: string;
-    upSellProduct?: {
-        image?: {
-            altText?: string;
-            small?: string;
-        };
-        name?: string;
-        url?: string;
-    };
-};
-
-declare type Variant = {
-    alternateAction: {
-        url: string;
-        label: string;
-    };
-    cartDisclaimer?: string;
-    hasAgeVerificationRequirement?: boolean;
-    id?: string;
-    isInStock: boolean;
-    isSellable?: boolean;
-    image?: {
-        altText?: string;
-        sizes?: {
-            large?: string;
-            medium?: string;
-            small?: string;
-        };
-    };
-    price: string;
-    size: string;
-    sku: string;
-    tracking?: any;
-};
-
-declare type Themes = 'dark' | 'light';
-
-type index_d$4_Product = Product;
-type index_d$4_Variant = Variant;
-type index_d$4_Themes = Themes;
+declare const index_d$4_useEscapeKeyListener: typeof useEscapeKeyListener;
+declare const index_d$4_useExecuteOnImpression: typeof useExecuteOnImpression;
+declare const index_d$4_useHasMounted: typeof useHasMounted;
+declare const index_d$4_useImageTransition: typeof useImageTransition;
+declare const index_d$4_useOnScreen: typeof useOnScreen;
+declare const index_d$4_useOverflowHidden: typeof useOverflowHidden;
+declare const index_d$4_useScript: typeof useScript;
+declare const index_d$4_useWindowHasResized: typeof useWindowHasResized;
 declare namespace index_d$4 {
   export {
-    index_d$4_Product as Product,
-    index_d$4_Variant as Variant,
-    index_d$4_Themes as Themes,
+    index_d$4_useEscapeKeyListener as useEscapeKeyListener,
+    index_d$4_useExecuteOnImpression as useExecuteOnImpression,
+    index_d$4_useHasMounted as useHasMounted,
+    index_d$4_useImageTransition as useImageTransition,
+    index_d$4_useOnScreen as useOnScreen,
+    index_d$4_useOverflowHidden as useOverflowHidden,
+    index_d$4_useScript as useScript,
+    index_d$4_useWindowHasResized as useWindowHasResized,
   };
 }
 
@@ -2657,59 +2696,12 @@ declare namespace index_d$8 {
   };
 }
 
-declare namespace CONSTRAINT_KEYS {
-    const MIN_WIDTH: string;
-    const VIEWPORT: string;
-}
-declare const constraints: {
-    [x: string]: string | number;
-}[];
-declare const constraintsByViewport: {};
-declare function getViewportForWidth(width: any): string | number;
-declare function ascertainIsSmallOnlyViewport(): boolean;
-declare function ascertainIsSmallOrMediumOnlyViewport(): boolean;
-declare function ascertainIsMediumViewport(): boolean;
-declare function ascertainIsMediumOnlyViewport(): boolean;
-declare function ascertainIsLargeViewport(): boolean;
-declare function ascertainIsLargeOnlyViewport(): boolean;
-declare function ascertainIsLargeOrXLargeOnlyViewport(): boolean;
-declare function ascertainIsXLargeViewport(): boolean;
-declare function ascertainIsSmallToXLargeViewport(): boolean;
-declare function ascertainIsXLargeOnlyViewport(): boolean;
-declare function ascertainIsXXLargeViewport(): boolean;
+declare const isViewport: (viewport: ViewportNames) => boolean;
 
-declare const index_d$9_CONSTRAINT_KEYS: typeof CONSTRAINT_KEYS;
-declare const index_d$9_constraints: typeof constraints;
-declare const index_d$9_constraintsByViewport: typeof constraintsByViewport;
-declare const index_d$9_getViewportForWidth: typeof getViewportForWidth;
-declare const index_d$9_ascertainIsSmallOnlyViewport: typeof ascertainIsSmallOnlyViewport;
-declare const index_d$9_ascertainIsSmallOrMediumOnlyViewport: typeof ascertainIsSmallOrMediumOnlyViewport;
-declare const index_d$9_ascertainIsMediumViewport: typeof ascertainIsMediumViewport;
-declare const index_d$9_ascertainIsMediumOnlyViewport: typeof ascertainIsMediumOnlyViewport;
-declare const index_d$9_ascertainIsLargeViewport: typeof ascertainIsLargeViewport;
-declare const index_d$9_ascertainIsLargeOnlyViewport: typeof ascertainIsLargeOnlyViewport;
-declare const index_d$9_ascertainIsLargeOrXLargeOnlyViewport: typeof ascertainIsLargeOrXLargeOnlyViewport;
-declare const index_d$9_ascertainIsXLargeViewport: typeof ascertainIsXLargeViewport;
-declare const index_d$9_ascertainIsSmallToXLargeViewport: typeof ascertainIsSmallToXLargeViewport;
-declare const index_d$9_ascertainIsXLargeOnlyViewport: typeof ascertainIsXLargeOnlyViewport;
-declare const index_d$9_ascertainIsXXLargeViewport: typeof ascertainIsXXLargeViewport;
+declare const index_d$9_isViewport: typeof isViewport;
 declare namespace index_d$9 {
   export {
-    index_d$9_CONSTRAINT_KEYS as CONSTRAINT_KEYS,
-    index_d$9_constraints as constraints,
-    index_d$9_constraintsByViewport as constraintsByViewport,
-    index_d$9_getViewportForWidth as getViewportForWidth,
-    index_d$9_ascertainIsSmallOnlyViewport as ascertainIsSmallOnlyViewport,
-    index_d$9_ascertainIsSmallOrMediumOnlyViewport as ascertainIsSmallOrMediumOnlyViewport,
-    index_d$9_ascertainIsMediumViewport as ascertainIsMediumViewport,
-    index_d$9_ascertainIsMediumOnlyViewport as ascertainIsMediumOnlyViewport,
-    index_d$9_ascertainIsLargeViewport as ascertainIsLargeViewport,
-    index_d$9_ascertainIsLargeOnlyViewport as ascertainIsLargeOnlyViewport,
-    index_d$9_ascertainIsLargeOrXLargeOnlyViewport as ascertainIsLargeOrXLargeOnlyViewport,
-    index_d$9_ascertainIsXLargeViewport as ascertainIsXLargeViewport,
-    index_d$9_ascertainIsSmallToXLargeViewport as ascertainIsSmallToXLargeViewport,
-    index_d$9_ascertainIsXLargeOnlyViewport as ascertainIsXLargeOnlyViewport,
-    index_d$9_ascertainIsXXLargeViewport as ascertainIsXXLargeViewport,
+    index_d$9_isViewport as isViewport,
   };
 }
 
@@ -2719,8 +2711,8 @@ declare namespace index_d$a {
     index_d$6 as objects,
     index_d$7 as portal,
     index_d$8 as product,
-    index_d$9 as viewports,
+    index_d$9 as viewport,
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs, Button, BynderWidget, Carousel, Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, Podium, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d as components, index_d$1 as constants, index_d$2 as contexts, index_d$3 as customHooks, index_d$5 as environment, index_d$6 as objects, index_d$8 as product, index_d$4 as types, useAddToCartContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d$a as utils, index_d$9 as viewports };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs, Button, BynderWidget, Carousel, Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, Podium, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$1 as components, index_d$2 as constants, index_d$3 as contexts, index_d$4 as customHooks, index_d$5 as environment, index_d$6 as objects, index_d$8 as product, index_d as types, useAddToCartContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d$a as utils, index_d$9 as viewport };

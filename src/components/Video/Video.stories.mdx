@@ -14,9 +14,11 @@ import { Video } from './Video';
   <Story name="Base component">
     <Video
       fallbackImage={{
-        large: './assets/images/MediaWithContent/video-poster.png',
-        medium: './assets/images/MediaWithContent/video-poster.png',
-        small: './assets/images/MediaWithContent/video-poster.png',
+        sizes: {
+          large: './assets/images/MediaWithContent/video-poster.png',
+          medium: './assets/images/MediaWithContent/video-poster.png',
+          small: './assets/images/MediaWithContent/video-poster.png',
+        },
       }}
       hasAllowAudio={knobs.boolean('hasAllowAudio', false, 'Attributes')}
       hasAutoplay={knobs.boolean('hasAutoplay', false, 'Attributes')}
@@ -32,29 +34,35 @@ import { Video } from './Video';
         false,
         'Attributes',
       )}
-      large={knobs.text(
-        'large',
-        'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174&size=large',
-        'Content',
-      )}
-      medium={knobs.text(
-        'medium',
-        'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174&size=medium',
-        'Content',
-      )}
       poster={{
         copy: {
           altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
         },
-        large: './assets/images/MediaWithContent/video-poster.png',
-        medium: './assets/images/MediaWithContent/video-poster.png',
-        small: './assets/images/MediaWithContent/video-poster.png',
+        sizes: {
+          large: './assets/images/MediaWithContent/video-poster.png',
+          medium: './assets/images/MediaWithContent/video-poster.png',
+          small: './assets/images/MediaWithContent/video-poster.png',
+        },
       }}
-      small={knobs.text(
-        'small',
-        'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174&size=small',
-        'Content',
-      )}
+      sizes={{
+        large: knobs.text(
+          'large',
+          'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174&size=large',
+          'Content',
+        ),
+        medium: knobs.text(
+          'medium',
+          'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174&size=medium',
+          'Content',
+        ),
+        small: knobs.text(
+          'small',
+          'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174&size=small',
+          'Content',
+        ),
+        xLarge: knobs.text('xLarge', '', 'Content'),
+        xSmall: knobs.text('xSmall', '', 'Content'),
+      }}
     />
   </Story>
 </Canvas>
@@ -115,16 +123,23 @@ import { Video } from './Video';
         'Presentation',
       )}
       isFullWidth={true}
-      large="https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175"
-      medium="https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175"
-      small="https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175"
       poster={{
         copy: {
           altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
         },
-        large: './assets/images/MediaWithContent/video-poster.png',
-        medium: './assets/images/MediaWithContent/video-poster.png',
-        small: './assets/images/MediaWithContent/video-poster.png',
+        sizes: {
+          large: './assets/images/MediaWithContent/video-poster.png',
+          medium: './assets/images/MediaWithContent/video-poster.png',
+          small: './assets/images/MediaWithContent/video-poster.png',
+        },
+      }}
+      sizes={{
+        large:
+          'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
+        medium:
+          'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
+        small:
+          'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
       }}
     />
   </Story>
@@ -149,9 +164,11 @@ import { Video } from './Video';
       media={
         <Video
           fallbackImage={{
-            large: './assets/images/MediaWithContent/video-poster.png',
-            medium: './assets/images/MediaWithContent/video-poster.png',
-            small: './assets/images/MediaWithContent/video-poster.png',
+            sizes: {
+              large: './assets/images/MediaWithContent/video-poster.png',
+              medium: './assets/images/MediaWithContent/video-poster.png',
+              small: './assets/images/MediaWithContent/video-poster.png',
+            },
           }}
           hasAllowAudio={true}
           hasAutoplay={false}
@@ -159,17 +176,24 @@ import { Video } from './Video';
           hasPlayInFullScreen={true}
           hasControls={true}
           isFullWidth={false}
-          large="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
-          medium="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
           poster={{
             copy: {
               altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
             },
-            large: './assets/images/MediaWithContent/video-poster.png',
-            medium: './assets/images/MediaWithContent/video-poster.png',
-            small: './assets/images/MediaWithContent/video-poster.png',
+            sizes: {
+              large: './assets/images/MediaWithContent/video-poster.png',
+              medium: './assets/images/MediaWithContent/video-poster.png',
+              small: './assets/images/MediaWithContent/video-poster.png',
+            },
           }}
-          small="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
+          sizes={{
+            large:
+              'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+            medium:
+              'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+            small:
+              'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+          }}
         />
       }
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
@@ -177,7 +201,7 @@ import { Video } from './Video';
   </Story>
 </Canvas>
 
-### Scroll baed Video
+### Scroll based Video
 
 <Canvas>
   <Story name="Scroll baed Video">
@@ -190,16 +214,23 @@ import { Video } from './Video';
       hasPlayInFullScreen={false}
       isFullWidth={true}
       isScrollBasedVideo={true}
-      large={knobs.text(
-        'large',
-        'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
-        'Content',
-      )}
-      medium={knobs.text(
-        'medium',
-        'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
-        'Content',
-      )}
+      sizes={{
+        large: knobs.text(
+          'large',
+          'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
+          'Content',
+        ),
+        medium: knobs.text(
+          'medium',
+          'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
+          'Content',
+        ),
+        small: knobs.text(
+          'small',
+          'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
+          'Content',
+        ),
+      }}
       poster={{
         copy: {
           altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
@@ -208,11 +239,6 @@ import { Video } from './Video';
         medium: './assets/images/MediaWithContent/video-poster.png',
         small: './assets/images/MediaWithContent/video-poster.png',
       }}
-      small={knobs.text(
-        'small',
-        'https://player.vimeo.com/external/507812856.hd.mp4?s=f0cb02e4e0a83d0a036e5955ad2273094294c2fc&profile_id=175',
-        'Content',
-      )}
     />
     <div style={{ height: '500px' }} />
   </Story>

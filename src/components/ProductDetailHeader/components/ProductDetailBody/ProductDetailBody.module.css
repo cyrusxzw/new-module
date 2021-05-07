@@ -38,7 +38,7 @@
   flex-direction: column;
   order: 1;
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     margin-bottom: 5px;
   }
 
@@ -67,7 +67,7 @@
 .description {
   order: 2;
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     margin-bottom: 5px;
   }
 
@@ -163,7 +163,7 @@
     padding-bottom: 24px;
   }
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     button[class*='flyinPanelTrigger'] {
       top: 24px;
     }

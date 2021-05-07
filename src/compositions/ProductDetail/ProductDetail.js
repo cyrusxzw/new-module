@@ -39,9 +39,7 @@ const ProductDetail = ({
         media={
           <Image
             altText={__asideDetails1.image.altText}
-            large={__asideDetails1.image.large}
-            medium={__asideDetails1.image.medium}
-            small={__asideDetails1.image.small}
+            sizes={__asideDetails1.image.sizes}
           />
         }
         theme="dark"
@@ -57,9 +55,7 @@ const ProductDetail = ({
         media={
           <Image
             altText={__asideDetails2.image.altText}
-            large={__asideDetails2.image.large}
-            medium={__asideDetails2.image.medium}
-            small={__asideDetails2.image.small}
+            sizes={__asideDetails2.image.sizes}
           />
         }
         theme="dark"

@@ -44,9 +44,7 @@ const StoreDetail = ({ className }) => {
           cta={{
             url: '',
           }}
-          large={StoreDetailFixture.storeImage.large}
-          medium={StoreDetailFixture.storeImage.medium}
-          small={StoreDetailFixture.storeImage.small}
+          sizes={StoreDetailFixture.storeImage.sizes}
         />
       </Podium>
 
@@ -78,16 +76,12 @@ const StoreDetail = ({ className }) => {
           mediaOne={{
             type: StoreDetailFixture.doubleMedia.imageOne.type,
             altText: StoreDetailFixture.doubleMedia.imageOne.altText,
-            large: StoreDetailFixture.doubleMedia.imageOne.large,
-            medium: StoreDetailFixture.doubleMedia.imageOne.medium,
-            small: StoreDetailFixture.doubleMedia.imageOne.small,
+            sizes: StoreDetailFixture.doubleMedia.imageOne.sizes,
           }}
           mediaTwo={{
             type: StoreDetailFixture.doubleMedia.imageOne.type,
             altText: StoreDetailFixture.doubleMedia.imageTwo.altText,
-            large: StoreDetailFixture.doubleMedia.imageTwo.large,
-            medium: StoreDetailFixture.doubleMedia.imageTwo.medium,
-            small: StoreDetailFixture.doubleMedia.imageTwo.small,
+            sizes: StoreDetailFixture.doubleMedia.imageTwo.sizes,
           }}
         />
       </Podium>

@@ -2,12 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import cx from 'classnames';
 import { useWindowHasResized } from '~/customHooks';
-import {
-  ascertainIsSmallOnlyViewport,
-  ascertainIsMediumOnlyViewport,
-  ascertainIsLargeOnlyViewport,
-  ascertainIsXLargeViewport,
-} from '~/utils/viewports/index.ts';
+import { isViewport } from '~/utils/viewport';
 //
 // import styles from './Hidden.module.css';
 
@@ -27,10 +22,10 @@ const Hidden = ({ children, isLarge, isMedium, isSmall, isXLarge }) => {
 
   useWindowHasResized();
 
-  const isHiddenOnSmall = isSmall && ascertainIsSmallOnlyViewport();
-  const isHiddenOnMedium = isMedium && ascertainIsMediumOnlyViewport();
-  const isHiddenOnLarge = isLarge && ascertainIsLargeOnlyViewport();
-  const isHiddenOnXLarge = isXLarge && ascertainIsXLargeViewport();
+  const isHiddenOnSmall = isSmall && isViewport('xs to sm only');
+  const isHiddenOnMedium = isMedium && isViewport('md only');
+  const isHiddenOnLarge = isLarge && isViewport('lg only');
+  const isHiddenOnXLarge = isXLarge && isViewport('xl');
 
   if (
     isHiddenOnSmall ||

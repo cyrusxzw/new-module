@@ -12,10 +12,7 @@ import {
 } from '~/constants';
 import { useGoogleMapsContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import {
-  ascertainIsSmallOnlyViewport,
-  ascertainIsMediumViewport,
-} from '~/utils/viewports/index.ts';
+import { isViewport } from '~/utils/viewport';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Loading } from '~/components/Loading';
 import { Transition } from '~/components/Transition';
@@ -38,8 +35,8 @@ const GoogleMap = ({
   const mapRef = useRef();
   const activeInfoCard = useRef(null);
   const handleMapClick = useRef(null);
-  const isIsSmallOnlyViewport = useRef(ascertainIsSmallOnlyViewport());
-  const isIsMediumViewport = useRef(ascertainIsMediumViewport());
+  const isXSmallOrSmallOnlyViewport = useRef(isViewport('xs to sm only'));
+  const isMediumViewport = useRef(isViewport('md'));
   const [activeInfoBlockData, setActiveInfoBlockData] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [markerCluster, setMarkerCluster] = useState([]);
@@ -65,8 +62,8 @@ const GoogleMap = ({
     }
   }, [center, initialZoom, googleMap]);
 
-  isIsSmallOnlyViewport.current = ascertainIsSmallOnlyViewport();
-  isIsMediumViewport.current = ascertainIsMediumViewport();
+  isXSmallOrSmallOnlyViewport.current = isViewport('xs to sm only');
+  isMediumViewport.current = isViewport('md');
 
   const clearMapMarkers = () => {
     markers.forEach(marker => marker.setMap(null));
@@ -218,7 +215,7 @@ const GoogleMap = ({
       });
 
       marker.addListener('click', () => {
-        if (isIsMediumViewport.current) {
+        if (isMediumViewport.current) {
           if (activeInfoCard.current) {
             activeInfoCard.current.close();
           }
@@ -227,7 +224,7 @@ const GoogleMap = ({
           activeInfoCard.current.open(mapRef.current, marker);
         }
 
-        if (isIsSmallOnlyViewport.current) {
+        if (isXSmallOrSmallOnlyViewport.current) {
           setActiveInfoBlockData({
             address,
             count: index + 1,
@@ -245,8 +242,8 @@ const GoogleMap = ({
       copy,
       customMarker,
       hasMarkerIndexes,
-      isIsMediumViewport,
-      isIsSmallOnlyViewport,
+      isMediumViewport,
+      isXSmallOrSmallOnlyViewport,
     ],
   );
 

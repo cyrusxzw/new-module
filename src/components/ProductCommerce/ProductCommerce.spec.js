@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import {
@@ -50,7 +50,7 @@ describe('<ProductCommerce />', () => {
 
     const onCtaClickMock = jest.fn();
 
-    const { getAllByRole } = render(
+    render(
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
         <ProductDetailContextProvider product={product}>
           <VariantSelectContextProvider variants={variants}>
@@ -74,7 +74,7 @@ describe('<ProductCommerce />', () => {
       </AddToCartContextProvider>,
     );
 
-    const link = getAllByRole('link')[0]; // First Hyperlink with click function
+    const link = screen.getAllByRole('link')[0]; // First Hyperlink with click function
     userEvent.click(link);
 
     expect(onCtaClickMock).toHaveBeenCalledTimes(1);

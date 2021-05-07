@@ -58,9 +58,7 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
               hasForegroundImage ? (
                 <Image
                   altText={MediaWithContentFixture.image.foreground.altText}
-                  large={MediaWithContentFixture.image.foreground.large}
-                  medium={MediaWithContentFixture.image.foreground.medium}
-                  small={MediaWithContentFixture.image.foreground.small}
+                  sizes={MediaWithContentFixture.image.foreground.sizes}
                 />
               ) : undefined
             }
@@ -152,7 +150,9 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
                     hasPlayInFullScreen: false,
                     hasControls: false,
                     isFullWidth: false,
-                    large: MediaWithContentFixture.video.source,
+                    sizes: {
+                      large: MediaWithContentFixture.video.source,
+                    },
                   },
                 },
                 Image: {
@@ -205,9 +205,7 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
       media={
         <Image
           altText={MediaWithContentFixture.image.default.altText}
-          large={MediaWithContentFixture.image.default.large}
-          medium={MediaWithContentFixture.image.default.medium}
-          small={MediaWithContentFixture.image.default.small}
+          sizes={MediaWithContentFixture.image.default.sizes}
         />
       }
     />
@@ -224,9 +222,7 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
       media={
         <Image
           altText={MediaWithContentFixture.image.kit.altText}
-          large={MediaWithContentFixture.image.kit.large}
-          medium={MediaWithContentFixture.image.kit.medium}
-          small={MediaWithContentFixture.image.kit.small}
+          sizes={MediaWithContentFixture.image.kit.sizes}
         />
       }
     />
@@ -243,16 +239,14 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
       media={
         <Image
           altText={MediaWithContentFixture.image.expectations.altText}
-          large={MediaWithContentFixture.image.expectations.large}
-          medium={MediaWithContentFixture.image.expectations.medium}
-          small={MediaWithContentFixture.image.expectations.small}
+          sizes={MediaWithContentFixture.image.expectations.sizes}
         />
       }
     />
   </Story>
 </Canvas>
 
-### With Video for Media
+### With Video Media
 
 <Canvas>
   <Story name="With Video for Media">
@@ -269,24 +263,30 @@ import { MediaWithContentFixture } from './MediaWithContent.fixture';
       isReverse={knobs.boolean('isReverse', false, 'Presentation')}
       media={
         <Video
-          fallbackImage={'./assets/images/MediaWithContent/video-poster.png'}
           hasAllowAudio={true}
           hasAutoplay={false}
           hasLoop={true}
           hasPlayInFullScreen={true}
           hasControls={true}
           isFullWidth={false}
-          large="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
-          medium="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
           poster={{
             copy: {
               altText: 'How to Use Video for Tea Tree Leaf Facial Exfoliant',
             },
-            large: './assets/images/MediaWithContent/video-poster.png',
-            medium: './assets/images/MediaWithContent/video-poster.png',
-            small: './assets/images/MediaWithContent/video-poster.png',
+            sizes: {
+              large: './assets/images/MediaWithContent/video-poster.png',
+              medium: './assets/images/MediaWithContent/video-poster.png',
+              small: './assets/images/MediaWithContent/video-poster.png',
+            },
           }}
-          small="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
+          sizes={{
+            large:
+              'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+            medium:
+              'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+            small:
+              'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+          }}
         />
       }
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}

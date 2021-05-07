@@ -1,3 +1,7 @@
+// TODO: refactor to address eslint rule violations
+/* eslint-disable testing-library/no-node-access */
+/* eslint-disable testing-library/no-container */
+
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
