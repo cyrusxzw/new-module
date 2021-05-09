@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Hidden /> renders returned component correctly 1`] = `
-<div>
-  <span>
-    Hidden content
-  </span>
-</div>
-`;

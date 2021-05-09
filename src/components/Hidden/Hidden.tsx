@@ -1,12 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactElement } from 'react';
+import type { HiddenProps } from './Hidden.types';
 // import cx from 'classnames';
 import { useWindowHasResized } from '~/customHooks';
 import { isViewport } from '~/utils/viewport';
-//
 // import styles from './Hidden.module.css';
 
-const Hidden = ({ children, isLarge, isMedium, isSmall, isXLarge }) => {
+const Hidden = ({
+  children,
+  isLarge = false,
+  isMedium = false,
+  isSmall = false,
+  isXLarge = false,
+}: HiddenProps): ReactElement | null => {
   // const classSet = cx(
   //   {
   //     [styles.small]: isSmall,
@@ -37,22 +42,6 @@ const Hidden = ({ children, isLarge, isMedium, isSmall, isXLarge }) => {
   }
 
   return <>{children}</>;
-};
-
-Hidden.propTypes = {
-  children: PropTypes.any,
-  isLarge: PropTypes.bool,
-  isMedium: PropTypes.bool,
-  isSmall: PropTypes.bool,
-  isXLarge: PropTypes.bool,
-};
-
-Hidden.defaultProps = {
-  children: undefined,
-  isLarge: false,
-  isMedium: false,
-  isSmall: false,
-  isXLarge: false,
 };
 
 export { Hidden };
