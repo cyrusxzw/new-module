@@ -859,10 +859,10 @@ declare const HeroBanner: React$1.ForwardRefExoticComponent<HeroBannerProps & Re
 
 declare type HiddenProps = {
     children: React.ReactNode;
-    isLarge: boolean;
-    isMedium: boolean;
-    isSmall: boolean;
-    isXLarge: boolean;
+    isLarge?: boolean;
+    isMedium?: boolean;
+    isSmall?: boolean;
+    isXLarge?: boolean;
 };
 
 declare const Hidden: ({ children, isLarge, isMedium, isSmall, isXLarge, }: HiddenProps) => ReactElement | null;
