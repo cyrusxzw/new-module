@@ -816,7 +816,7 @@ declare namespace GoogleMap {
 declare type Levels = '1' | '2' | '3' | '4' | '5' | '6';
 declare type Sizes = 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
 declare type HeadingProps = {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     className?: string;
     hasMediumWeightFont?: boolean;
     hasSerifFont?: boolean;
@@ -1145,7 +1145,7 @@ declare type ListItem = {
 };
 declare type ListProps = {
     className?: string;
-    items: ListItem[];
+    items?: ListItem[];
     listItemClassName?: string;
     theme?: Themes;
 };

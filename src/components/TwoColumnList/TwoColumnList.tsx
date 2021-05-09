@@ -4,6 +4,7 @@ import { useThemeContext } from '~/contexts';
 import { Heading } from '~/components/Heading';
 import { Hyperlink } from '~/components/Hyperlink';
 import { List } from '~/components/List';
+import type { ListItem } from '~/components/List/List.types';
 import type { TwoColumnListProps, ColumnProps } from './TwoColumnList.types';
 import styles from './TwoColumnList.module.css';
 
@@ -28,7 +29,7 @@ export function Column({ lists, theme }: ColumnProps): ReactElement | null {
   return (
     <div className={styles.column}>
       {lists.map(({ heading, id, items, subHeading }) => {
-        const linkItems = items.map(
+        const linkItems: ListItem[] = items.map(
           ({ id, style, text, url, openInANewWindow }) => ({
             content: !url ? (
               text
