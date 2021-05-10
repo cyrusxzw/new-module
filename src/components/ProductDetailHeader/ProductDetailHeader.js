@@ -26,6 +26,8 @@ const ProductDetailHeader = ({
   const imageClassSet = cx(styles.image, {
     [styles.largeImage]: productDetail.imageSize === 'Large',
   });
+  const handleOnBreadcrumbClick = item =>
+    onBreadcrumbClick(item, selectedVariant);
 
   return (
     <div className={classSet}>
@@ -35,9 +37,7 @@ const ProductDetailHeader = ({
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}
-              onHyperlinkClick={item =>
-                onBreadcrumbClick(item, selectedVariant)
-              }
+              onHyperlinkClick={handleOnBreadcrumbClick}
               theme={currentTheme}
             />
           </Hidden>
@@ -57,9 +57,7 @@ const ProductDetailHeader = ({
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}
-              onHyperlinkClick={item =>
-                onBreadcrumbClick(item, selectedVariant)
-              }
+              onHyperlinkClick={handleOnBreadcrumbClick}
               theme={currentTheme}
             />
           </Hidden>
