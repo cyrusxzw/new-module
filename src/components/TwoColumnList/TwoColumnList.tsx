@@ -8,7 +8,7 @@ import type { ListItem } from '~/components/List/List.types';
 import type { TwoColumnListProps, ColumnProps } from './TwoColumnList.types';
 import styles from './TwoColumnList.module.css';
 
-const TwoColumnList = forwardRef<any, TwoColumnListProps>(
+const TwoColumnList = forwardRef<HTMLDivElement, TwoColumnListProps>(
   function TwoColumnListRef(
     { className, leftColumn, rightColumn, theme },
     ref,
