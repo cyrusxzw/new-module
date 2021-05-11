@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
 import * as knobs from '@storybook/addon-knobs';
 import { Breadcrumbs } from './Breadcrumbs';
 import { BreadcrumbsFixture } from './Breadcrumbs.fixture';
@@ -11,6 +12,7 @@ import { BreadcrumbsFixture } from './Breadcrumbs.fixture';
   <Story name="Base component">
     <Breadcrumbs
       items={knobs.object('items', BreadcrumbsFixture.items, 'Copy')}
+      onHyperlinkClick={action('clicked')}
       theme={knobs.select(
         'theme',
         ['dark', 'light'],
