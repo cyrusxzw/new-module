@@ -13,4 +13,4 @@ type BreadcrumbsProps = {
   theme?: Themes;
 };
 
-export type { BreadcrumbsProps };
+export type { BreadcrumbsProps, BreadcrumbItem };

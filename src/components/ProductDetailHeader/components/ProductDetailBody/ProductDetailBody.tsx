@@ -1,29 +1,32 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, ReactElement } from 'react';
 import cx from 'classnames';
-import { HEADING, TRANSITIONS } from '~/constants';
 import {
   useProductDetailContext,
   useThemeContext,
   useVariantSelectContext,
 } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks/useWindowHasResized';
-import { getVariantRadioOptions } from '~/utils/product/index.ts';
+import { getVariantRadioOptions } from '~/utils/product';
 import { isViewport } from '~/utils/viewport';
 import { AddToCartButton } from '~/components/AddToCartButton';
 import { Button } from '~/components/Button';
-import { DefinitionList } from '~/components/DefinitionList/index.ts';
-import { FlyinPanel } from '~/components/FlyinPanel/index.ts';
-import { Heading } from '~/components/Heading/index.ts';
-import { Hidden } from '~/components/Hidden/index.ts';
+import { DefinitionList } from '~/components/DefinitionList';
+import { FlyinPanel } from '~/components/FlyinPanel';
+import { Heading } from '~/components/Heading';
+import { Hidden } from '~/components/Hidden';
 import { Icon } from '~/components/Icon';
 import { Paragraph } from '~/components/Paragraph';
-import { ProductExtract } from '~/components/ProductExtract/ProductExtract.js';
-import { RadioGroup } from '~/components/RadioGroup/index.ts';
+import { ProductExtract } from '~/components/ProductExtract/index.ts';
+import { RadioGroup } from '~/components/RadioGroup';
 import { Transition } from '~/components/Transition';
+import type { ProductDetailBodyProps } from './ProductDetailBody.types';
 import styles from './ProductDetailBody.module.css';
 
-const ProductDetailBody = ({ className, copy, theme }) => {
+const ProductDetailBody = ({
+  className,
+  copy,
+  theme,
+}: ProductDetailBodyProps): ReactElement | null => {
   const currentTheme = useThemeContext(theme, 'dark');
   const [isFlyinPanelVisible, setIsFlyinPanelVisible] = useState(false);
   const { productDetail } = useProductDetailContext();
@@ -32,6 +35,7 @@ const ProductDetailBody = ({ className, copy, theme }) => {
     onVariantChange,
     variants,
   } = useVariantSelectContext();
+
   useWindowHasResized();
 
   if (!productDetail) return null;
@@ -45,7 +49,8 @@ const ProductDetailBody = ({ className, copy, theme }) => {
   } = productDetail;
 
   const variantRadioOptions = getVariantRadioOptions(variants);
-  const handleOnVariantChange = e => onVariantChange(e, variants);
+  const handleOnVariantChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    onVariantChange(e, variants);
   const handleOnFlyinPanelTriggerClick = () => setIsFlyinPanelVisible(true);
   const handleOnCloseClick = () => setIsFlyinPanelVisible(false);
   const classSet = cx(styles.base, styles[currentTheme], className);
@@ -56,50 +61,55 @@ const ProductDetailBody = ({ className, copy, theme }) => {
   const RADIO_GROUP_DATA_TEST_REF = 'PRODUCT_DETAIL_VARIANT_SELECT';
   const PRODUCT_UP_SELL = 'PRODUCT_UP_SELL';
 
-  const flyinPanelItem = item => {
-    return {
-      term: (
-        <>
-          <span>{item.term}</span>
-          {flyinPanel && (
-            <Button
-              className={flyinPanelTriggerClassSet}
-              isInline={true}
-              onClick={handleOnFlyinPanelTriggerClick}
+  const flyinPanelItem = item => ({
+    term: (
+      <>
+        <span>{item.term}</span>
+        {flyinPanel && (
+          <Button
+            className={flyinPanelTriggerClassSet}
+            isInline={true}
+            onClick={handleOnFlyinPanelTriggerClick}
+            theme={currentTheme}
+            title={item.term}
+          >
+            <Icon
+              height={22}
+              isActive={isFlyinPanelVisible}
+              name="plusAndCloseWithCircle"
               theme={currentTheme}
-              title={item.term}
-            >
-              <Icon
-                height={22}
-                isActive={isFlyinPanelVisible}
-                name="plusAndCloseWithCircle"
-                theme={currentTheme}
-                width={22}
-              />
-            </Button>
-          )}
-        </>
-      ),
-      description: item.description,
-      id: item.id,
-    };
-  };
+              width={22}
+            />
+          </Button>
+        )}
+      </>
+    ),
+    description: item.description,
+    id: item.id,
+  });
 
   const definitionListItems = definitionList.map(item =>
     !item.isExpandable ? item : flyinPanelItem(item),
   );
+
+  const variantsHeading =
+    variants.length > 1 ? copy?.size?.plural : copy?.size?.singular;
+
+  const shouldDefinintionHaveBottomBorder =
+    (!!variantRadioOptions.length && isViewport('lg')) ||
+    (isViewport('xs to md only') && upSellProduct);
 
   return (
     <div className={classSet}>
       <div className={styles.content}>
         <Hidden isMedium={true}>
           <header className={styles.header}>
-            <Transition isActiveOnMount={true} type={TRANSITIONS.TYPE.FADE}>
+            <Transition isActiveOnMount={true} type="fade">
               <Heading
                 className={styles.productName}
                 isFlush={true}
-                level={HEADING.LEVEL.ONE}
-                size={HEADING.SIZE.X_LARGE}
+                level="1"
+                size="xLarge"
                 theme={currentTheme}
               >
                 {productName}
@@ -111,7 +121,7 @@ const ProductDetailBody = ({ className, copy, theme }) => {
         {description && (
           <Hidden isMedium={true}>
             <div className={styles.description}>
-              <Transition isActiveOnMount={true} type={TRANSITIONS.TYPE.FADE}>
+              <Transition isActiveOnMount={true} type="fade">
                 <Paragraph
                   className={styles.descriptionCopy}
                   isFlush={true}
@@ -126,27 +136,19 @@ const ProductDetailBody = ({ className, copy, theme }) => {
 
         <div className={styles.purchase}>
           {!!variantRadioOptions.length && (
-            <Transition
-              isActiveOnMount={true}
-              type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
-            >
+            <Transition isActiveOnMount={true} type="shiftInDown">
               <Heading
                 hasMediumWeightFont={true}
                 isFlush={true}
-                level={HEADING.LEVEL.FOUR}
-                size={HEADING.SIZE.X_X_SMALL}
+                level="4"
+                size="xXSmall"
                 theme={currentTheme}
               >
-                {variants.length > 1
-                  ? copy?.size?.plural
-                  : copy?.size?.singular}
+                {variantsHeading}
               </Heading>
             </Transition>
           )}
-          <Transition
-            isActiveOnMount={true}
-            type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
-          >
+          <Transition isActiveOnMount={true} type="shiftInDown">
             <RadioGroup
               className={styles.variants}
               dataTestRef={RADIO_GROUP_DATA_TEST_REF}
@@ -157,7 +159,11 @@ const ProductDetailBody = ({ className, copy, theme }) => {
               value={selectedVariant.sku}
             />
           </Transition>
-          <AddToCartButton copy={copy?.addToCart} theme={currentTheme} />
+          <AddToCartButton
+            copy={copy?.addToCart}
+            dataTestRef="ADD_TO_CART"
+            theme={currentTheme}
+          />
         </div>
 
         <Hidden isLarge={true} isMedium={true} isXLarge={true}>
@@ -169,16 +175,10 @@ const ProductDetailBody = ({ className, copy, theme }) => {
         </Hidden>
 
         <div className={styles.details}>
-          <Transition
-            isActiveOnMount={true}
-            type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
-          >
+          <Transition isActiveOnMount={true} type="shiftInDown">
             <DefinitionList
               className={styles.definitionList}
-              hasBottomBorder={
-                (!!variantRadioOptions.length && isViewport('lg')) ||
-                (isViewport('xs to md only') && upSellProduct)
-              }
+              hasBottomBorder={shouldDefinintionHaveBottomBorder}
               items={definitionListItems}
               theme={currentTheme}
             />
@@ -206,8 +206,8 @@ const ProductDetailBody = ({ className, copy, theme }) => {
           <header className={styles.mediumHeader}>
             <Heading
               className={styles.mediumProductName}
-              level={HEADING.LEVEL.ONE}
-              size={HEADING.SIZE.X_LARGE}
+              level="1"
+              size="xLarge"
               theme={currentTheme}
             >
               {productName}
@@ -238,48 +238,6 @@ const ProductDetailBody = ({ className, copy, theme }) => {
       )}
     </div>
   );
-};
-
-ProductDetailBody.propTypes = {
-  className: PropTypes.string,
-  copy: PropTypes.shape({
-    addToCart: PropTypes.shape({
-      cartAction: PropTypes.string,
-      updateNotification: PropTypes.string,
-      outOfStock: PropTypes.shape({
-        label: PropTypes.string,
-        title: PropTypes.string,
-      }),
-    }),
-    size: PropTypes.shape({
-      singular: PropTypes.string,
-      plural: PropTypes.string,
-    }),
-    upSellProductLabel: PropTypes.string,
-    flyinPanelHeading: PropTypes.string,
-  }),
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-ProductDetailBody.defaultProps = {
-  className: undefined,
-  copy: {
-    addToCart: {
-      cartAction: undefined,
-      updateNotification: undefined,
-      outOfStock: {
-        label: undefined,
-        title: undefined,
-      },
-    },
-    size: {
-      singular: undefined,
-      plural: undefined,
-    },
-    upSellProductLabel: undefined,
-    flyinPanelHeading: undefined,
-  },
-  theme: undefined,
 };
 
 export { ProductDetailBody };
