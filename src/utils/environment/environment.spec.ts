@@ -8,9 +8,7 @@ describe('isInBrowser', () => {
   });
 
   afterEach(() => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    global.window = windowObj;
+    (global as any).window = windowObj;
   });
 
   it('should return false if not running in the browser', () => {
