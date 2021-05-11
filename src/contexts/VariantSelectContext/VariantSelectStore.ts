@@ -2,11 +2,28 @@ import { useEffect, useState } from 'react';
 import find from 'lodash/find';
 import type { Variant } from '~/types';
 
+function getQueryString(name) {
+  const result =
+    location && location.href.match(new RegExp(`[?&]${name}=([^&]+)`, 'i'));
+
+  if (result == null || result.length < 1) return '';
+
+  return decodeURIComponent(result[1]);
+}
+
 const useVariantSelectStore = (variants = []) => {
   const [selectedVariant, setSelectedVariant] = useState({});
 
   useEffect(() => {
-    setSelectedVariant(variants[0]);
+    const queryStringVariant = getQueryString('variant');
+    const getQueryStringVariant = variants.find(
+      variant => variant.sku === queryStringVariant,
+    );
+    if (getQueryStringVariant) {
+      setSelectedVariant(getQueryStringVariant);
+    } else {
+      setSelectedVariant(variants[0]);
+    }
   }, [variants]);
 
   const onVariantChange = (event, currentVariants: Variant[]) => {

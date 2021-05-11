@@ -2596,11 +2596,11 @@ declare namespace index_d$4 {
   };
 }
 
-declare function isInBrowser(): boolean;
+declare const isInBrowser: () => boolean;
 /**
  * Device detection. https://stackoverflow.com/questions/49328382/browser-detection-in-reactjs
  * @TODO consider replacing with https://www.npmjs.com/package/react-device-detect
- * if this helpers are widely required and useVideoScroller
+ * or https://www.npmjs.com/package/bowser
  */
 declare const isOpera: boolean;
 declare const isFirefox: boolean;
@@ -2649,7 +2649,16 @@ declare namespace index_d$7 {
   };
 }
 
-declare function getVariantRadioOptions(variants: any): any;
+declare type Variant$1 = {
+    size?: string;
+    sku?: string;
+};
+declare type RadioOptions = {
+    label: string;
+    value: string;
+};
+
+declare const getVariantRadioOptions: (variants: Variant$1[]) => RadioOptions[];
 
 declare const index_d$8_getVariantRadioOptions: typeof getVariantRadioOptions;
 declare namespace index_d$8 {
