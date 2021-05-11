@@ -118,7 +118,7 @@ const ProductDetailBody = ({
           </header>
         </Hidden>
 
-        {description && (
+        {!!description && (
           <Hidden isMedium={true}>
             <div className={styles.description}>
               <Transition isActiveOnMount={true} type="fade">
@@ -167,7 +167,7 @@ const ProductDetailBody = ({
         </div>
 
         <Hidden isLarge={true} isMedium={true} isXLarge={true}>
-          {selectedVariant?.cartDisclaimer && (
+          {!!selectedVariant?.cartDisclaimer && (
             <div className={styles.cartDisclaimer}>
               <span>{selectedVariant.cartDisclaimer}</span>
             </div>
@@ -185,7 +185,7 @@ const ProductDetailBody = ({
           </Transition>
         </div>
 
-        {upSellProduct && (
+        {!!upSellProduct && (
           <div className={styles.upSell}>
             <ProductExtract
               dataTestRef={PRODUCT_UP_SELL}
@@ -218,7 +218,7 @@ const ProductDetailBody = ({
             >
               {description}
             </Paragraph>
-            {selectedVariant?.cartDisclaimer && (
+            {!!selectedVariant?.cartDisclaimer && (
               <div className={styles.cartDisclaimer}>
                 <span>{selectedVariant.cartDisclaimer}</span>
               </div>
@@ -227,7 +227,7 @@ const ProductDetailBody = ({
         </div>
       </Hidden>
 
-      {flyinPanel && (
+      {!!flyinPanel && (
         <FlyinPanel
           heading={copy.flyinPanelHeading}
           isVisible={isFlyinPanelVisible}
