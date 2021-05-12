@@ -154,6 +154,7 @@ declare type BreadcrumbItem = {
 declare type BreadcrumbsProps = {
     className?: string;
     items?: BreadcrumbItem[];
+    onHyperlinkClick?: (item: BreadcrumbItem) => void;
     theme?: Themes;
 };
 
@@ -1279,10 +1280,11 @@ declare const ProductExtract: React$1.ForwardRefExoticComponent<React$1.RefAttri
 
 declare const ProductGridItem: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
-declare function ProductDetailHeader({ breadcrumbs, className, copy, theme }: {
+declare function ProductDetailHeader({ breadcrumbs, className, copy, onBreadcrumbClick, theme, }: {
     breadcrumbs: any;
     className: any;
     copy: any;
+    onBreadcrumbClick: any;
     theme: any;
 }): JSX.Element;
 declare namespace ProductDetailHeader {
@@ -1314,6 +1316,7 @@ declare namespace ProductDetailHeader {
             upSellProductLabel: PropTypes.Requireable<string>;
             flyinPanelHeading: PropTypes.Requireable<string>;
         }>>;
+        const onBreadcrumbClick: PropTypes.Requireable<(...args: any[]) => any>;
         const theme: PropTypes.Requireable<string>;
     }
     namespace defaultProps {
@@ -1337,6 +1340,8 @@ declare namespace ProductDetailHeader {
             const flyinPanelHeading: any;
         }
         export { copy_1 as copy };
+        const onBreadcrumbClick_1: any;
+        export { onBreadcrumbClick_1 as onBreadcrumbClick };
         const theme_2: any;
         export { theme_2 as theme };
     }
