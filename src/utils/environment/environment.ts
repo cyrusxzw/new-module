@@ -6,39 +6,35 @@ const isInBrowser = (): boolean => typeof window !== 'undefined';
  * or https://www.npmjs.com/package/bowser
  */
 
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 /* Opera 8.0+ */
 const isOpera =
   isInBrowser() &&
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   ((!!window.opr && !!opr.addons) || // eslint-disable-line no-undef
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     !!window.opera ||
     navigator.userAgent.indexOf(' OPR/') >= 0);
 
 /* Firefox 1.0+ */
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const isFirefox = isInBrowser() && typeof InstallTrigger !== 'undefined';
 
 /* Safari 3.0+ "[object HTMLElementConstructor]" */
 const isSafari =
   isInBrowser() &&
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   (/constructor/i.test(window.HTMLElement) ||
     (function (p) {
       return p.toString() === '[object SafariRemoteNotification]';
     })(
       !window['safari'] ||
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         (typeof safari !== 'undefined' && safari.pushNotification), // eslint-disable-line no-undef
     ));
 
 /* Internet Explorer 6-11 */
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const isIE = isInBrowser() && !!document.documentMode;
 
@@ -48,15 +44,15 @@ const isEdge = isInBrowser() && !isIE && !!window.StyleMedia;
 /* Chrome 1+ */
 const isChrome =
   isInBrowser() &&
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   !!window.chrome &&
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   (!!window.chrome.webstore || !!window.chrome.runtime);
 
 /* Blink engine detection */
 const isBlink = isInBrowser() && (isChrome || isOpera) && !!window.CSS;
+
+/* eslint-enable @typescript-eslint/ban-ts-comment */
 
 export { isInBrowser };
 export { isOpera };
