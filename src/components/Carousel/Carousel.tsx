@@ -203,7 +203,7 @@ const Carousel: FC<CarouselProps> = ({
             </div>
           )}
           {hasShowCaption && (
-            <Transition isActive={isCaptionActive} type="fade">
+            <Transition isActive={isCaptionActive && !!caption} type="fade">
               <div
                 className={cx(styles.caption, {
                   [styles.onlyChild]: !hasSlideCounter || isCompact,
