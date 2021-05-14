@@ -1,0 +1,3 @@
+const MediaFixture = {};
+
+export { MediaFixture };
