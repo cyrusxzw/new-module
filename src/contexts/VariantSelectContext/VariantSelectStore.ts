@@ -16,14 +16,10 @@ const useVariantSelectStore = (variants = []) => {
 
   useEffect(() => {
     const queryStringVariant = getQueryString('variant');
-    const getQueryStringVariant = variants.find(
+    const variantFromQueryString = variants.find(
       variant => variant.sku === queryStringVariant,
     );
-    if (getQueryStringVariant) {
-      setSelectedVariant(getQueryStringVariant);
-    } else {
-      setSelectedVariant(variants[0]);
-    }
+    setSelectedVariant(variantFromQueryString ?? variants[0]);
   }, [variants]);
 
   const onVariantChange = (event, currentVariants: Variant[]) => {
