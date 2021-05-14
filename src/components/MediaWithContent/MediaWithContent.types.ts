@@ -1,11 +1,7 @@
 import type { Themes } from '~/types';
+import type { ContentCopy } from './components/Content/Content.types';
 
-type Copy = {
-  description?: React.ReactNode;
-  eyebrow?: string;
-  heading?: string;
-  subHeading?: string;
-};
+type ContainMedia = 'center' | 'left' | 'right';
 
 type ForegroundImageLink = {
   url: string;
@@ -15,9 +11,9 @@ type ForegroundImageLink = {
 type MediaWithContentProps = {
   backgroundColor?: string;
   className?: string;
-  containMedia?: 'center' | 'left' | 'right';
+  containMedia?: ContainMedia;
   content?: React.ReactNode;
-  copy: Copy;
+  copy: ContentCopy;
   foregroundImage?: JSX.Element;
   foregroundImageLink?: ForegroundImageLink;
   hasFullWidthImage?: boolean;
@@ -27,4 +23,4 @@ type MediaWithContentProps = {
   theme?: Themes;
 };
 
-export type { MediaWithContentProps };
+export type { MediaWithContentProps, ContainMedia };

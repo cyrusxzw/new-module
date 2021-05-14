@@ -1,6 +1,6 @@
 import type { Themes } from '~/types';
 
-type Copy = {
+type ContentCopy = {
   description?: React.ReactNode;
   eyebrow?: string;
   heading?: string;
@@ -10,11 +10,11 @@ type Copy = {
 type ContentProps = {
   className?: string;
   content?: React.ReactNode;
-  copy: Copy;
+  copy: ContentCopy;
   hasFullWidthImage?: boolean;
   hasSerifFontHeading?: boolean;
   isReverse?: boolean;
   theme?: Themes;
 };
 
-export type { ContentProps };
+export type { ContentProps, ContentCopy };

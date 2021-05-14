@@ -1,3 +1,5 @@
+import type { ContainMedia } from '~/components/MediaWithContent/MediaWithContent.types';
+
 type ForegroundImageLink = {
   url: string;
   title: string;
@@ -5,7 +7,7 @@ type ForegroundImageLink = {
 
 type MediaProps = {
   className?: string;
-  containMedia?: 'center' | 'left' | 'right';
+  containMedia?: ContainMedia;
   foregroundImage?: JSX.Element;
   foregroundImageLink?: ForegroundImageLink;
   hasFullWidthImage?: boolean;
