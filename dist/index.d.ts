@@ -1174,12 +1174,14 @@ declare type LoadingProps = {
 
 declare const Loading: FC<LoadingProps>;
 
-declare type Copy = {
+declare type ContentCopy = {
     description?: React.ReactNode;
     eyebrow?: string;
     heading?: string;
     subHeading?: string;
 };
+
+declare type ContainMedia = 'center' | 'left' | 'right';
 declare type ForegroundImageLink = {
     url: string;
     title: string;
@@ -1187,9 +1189,9 @@ declare type ForegroundImageLink = {
 declare type MediaWithContentProps = {
     backgroundColor?: string;
     className?: string;
-    containMedia?: 'center' | 'left' | 'right';
+    containMedia?: ContainMedia;
     content?: React.ReactNode;
-    copy: Copy;
+    copy: ContentCopy;
     foregroundImage?: JSX.Element;
     foregroundImageLink?: ForegroundImageLink;
     hasFullWidthImage?: boolean;
