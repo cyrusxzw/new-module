@@ -1,21 +1,14 @@
 import { useEffect, useState } from 'react';
 import find from 'lodash/find';
+import queryString from 'query-string';
 import type { Variant } from '~/types';
-
-function getQueryString(name) {
-  const result =
-    location && location.href.match(new RegExp(`[?&]${name}=([^&]+)`, 'i'));
-
-  if (result == null || result.length < 1) return '';
-
-  return decodeURIComponent(result[1]);
-}
 
 const useVariantSelectStore = (variants = []) => {
   const [selectedVariant, setSelectedVariant] = useState({});
 
   useEffect(() => {
-    const queryStringVariant = getQueryString('variant');
+    const queryStringVariant = queryString.parse(location.search).variant;
+
     const variantFromQueryString = variants.find(
       variant => variant.sku === queryStringVariant,
     );
