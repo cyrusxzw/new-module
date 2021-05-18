@@ -8,9 +8,9 @@ module.exports = {
   collectCoverage: true,
   coveragePathIgnorePatterns: [
     'node_modules',
-    'fixture.js',
+    'fixture.(jsx?|tsx?)',
     '.storybook',
-    'index.js',
+    'index.(js|ts)',
   ],
   coverageThreshold: {
     global: {
