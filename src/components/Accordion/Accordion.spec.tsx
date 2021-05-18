@@ -30,7 +30,7 @@ describe('<Accordion />', () => {
           theme={theme}
           wrapperClass={wrapperClass}
         />,
-      // eslint-disable-next-line testing-library/no-node-access
+        // eslint-disable-next-line testing-library/no-node-access
       ).container.firstChild as HTMLElement; // this is to access the root level element of the component
     });
 
