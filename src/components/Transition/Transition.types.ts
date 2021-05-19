@@ -17,4 +17,4 @@ type TransitionProps = {
   type?: TransitionType;
 };
 
-export type { TransitionProps };
+export type { TransitionProps, TransitionType };
