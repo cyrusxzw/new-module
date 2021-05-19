@@ -1892,7 +1892,7 @@ declare type TwoColumnListProps = {
     theme?: Themes;
 };
 
-declare const TwoColumnList: React$1.ForwardRefExoticComponent<TwoColumnListProps & React$1.RefAttributes<any>>;
+declare const TwoColumnList: React$1.ForwardRefExoticComponent<TwoColumnListProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const Video: React$1.ForwardRefExoticComponent<Pick<ControlsProps, "copy"> & {
     captions?: {
