@@ -14,7 +14,7 @@
     "build-storybook": "build-storybook -s ./public",
     "build-watch": "npm run type-definitions && rollup -c -w",
     "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
-    "eslint": "eslint \"**/*.{js,ts,tsx}\" --ignore-path .eslintignore --config .eslintrc",
+    "eslint": "eslint 'src/**/*.{js,ts,tsx}' --ignore-path .eslintignore",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\" --loglevel \"error\"",
     "generate-component": "./scripts/componentBoilerplate/create.sh $element",
     "lint": "npm run eslint && npm run stylelint",
