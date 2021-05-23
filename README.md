@@ -22,6 +22,28 @@ It is also recommended to install these plugins into your **IDE / Code Editor** 
   ([vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode))
 - StyleLint ([atom](https://atom.io/packages/linter-stylelint)) ([vscode](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint))
 
+## Usage
+
+Install in your application using the following command
+
+```bash
+# will use the main branch (`develop` at the time of writing)
+npm install github:aesop/aesop-gel --save
+```
+
+Import the component/hook/etc that you need in your code
+
+```jsx
+import { Heading } from 'aesop-gel/dist/components/Heading';
+
+// example usage
+const MyAppHeading = () => (
+  <Heading theme="dark" level="1" size="large">
+    This is a large H1
+  </Heading>
+);
+```
+
 ## Application Architecture
 
 TBA

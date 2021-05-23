@@ -12,8 +12,9 @@ import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import pkg from './package.json';
 
-/* eslint-disable-next-line import/no-default-export */
-export default [
+import { splitBundlesRollupConfig } from './rollup-code-split.config';
+
+const oneBundleRollupConfig = [
   {
     input: 'src/index.ts',
     output: [
@@ -32,7 +33,8 @@ export default [
     external: [...Object.keys(pkg.peerDependencies || {})],
     plugins: [
       del({
-        targets: 'dist/*',
+        // delete folders in dist root and assets folder only
+        targets: ['dist/*.*', 'dist/assets'],
         verbose: false,
       }),
       copy({
@@ -68,3 +70,6 @@ export default [
     plugins: [dts()],
   },
 ];
+
+/* eslint-disable-next-line import/no-default-export */
+export default [...oneBundleRollupConfig, ...splitBundlesRollupConfig];
