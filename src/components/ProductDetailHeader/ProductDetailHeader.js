@@ -1,20 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useProductDetailContext, useThemeContext } from '~/contexts';
+import {
+  useProductDetailContext,
+  useThemeContext,
+  useVariantSelectContext,
+} from '~/contexts';
 import { Breadcrumbs } from '~/components/Breadcrumbs';
 import { Hidden } from '~/components/Hidden/index.ts';
 import { ProductDetailBody } from './components/ProductDetailBody';
 import { ProductDetailImage } from './components/ProductDetailImage';
 import styles from './ProductDetailHeader.module.css';
 
-const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
+const ProductDetailHeader = ({
+  breadcrumbs,
+  className,
+  copy,
+  onBreadcrumbClick,
+  theme,
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const { productDetail } = useProductDetailContext();
+  const { selectedVariant } = useVariantSelectContext();
   const classSet = cx(styles.base, className);
   const imageClassSet = cx(styles.image, {
     [styles.largeImage]: productDetail.imageSize === 'Large',
   });
+  const handleOnBreadcrumbClick = item =>
+    onBreadcrumbClick(item, selectedVariant);
 
   return (
     <div className={classSet}>
@@ -24,6 +37,7 @@ const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}
+              onHyperlinkClick={handleOnBreadcrumbClick}
               theme={currentTheme}
             />
           </Hidden>
@@ -43,6 +57,7 @@ const ProductDetailHeader = ({ breadcrumbs, className, copy, theme }) => {
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}
+              onHyperlinkClick={handleOnBreadcrumbClick}
               theme={currentTheme}
             />
           </Hidden>
@@ -88,6 +103,7 @@ ProductDetailHeader.propTypes = {
     upSellProductLabel: PropTypes.string,
     flyinPanelHeading: PropTypes.string,
   }),
+  onBreadcrumbClick: PropTypes.func,
   theme: PropTypes.oneOf(['dark', 'light']),
 };
 
@@ -107,6 +123,7 @@ ProductDetailHeader.defaultProps = {
     upSellProductLabel: undefined,
     flyinPanelHeading: undefined,
   },
+  onBreadcrumbClick: undefined,
   theme: undefined,
 };
 
