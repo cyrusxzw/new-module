@@ -7,9 +7,9 @@ type ListItem = {
 
 type ListProps = {
   className?: string;
-  items: ListItem[];
+  items?: ListItem[];
   listItemClassName?: string;
   theme?: Themes;
 };
 
-export type { ListProps };
+export type { ListProps, ListItem };
