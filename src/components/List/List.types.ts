@@ -12,4 +12,4 @@ type ListProps = {
   theme?: Themes;
 };
 
-export type { ListProps };
+export type { ListProps, ListItem };

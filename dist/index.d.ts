@@ -1100,14 +1100,21 @@ declare type ImageCarouselProps = {
 
 declare const ImageCarousel: ({ autoplaySpeed, className, hasAutoplay, hasFlushPagination, isCompact, slides, theme, }: ImageCarouselProps) => ReactElement | null;
 
-declare type Item = {
-    content: ReactNode;
+declare type ListItem = {
+    content: React.ReactNode;
     id: string;
 };
+declare type ListProps = {
+    className?: string;
+    items: ListItem[];
+    listItemClassName?: string;
+    theme?: Themes;
+};
+
 declare type KitListProps = {
     className?: string;
     isVisible?: boolean;
-    items: Item[];
+    items: ListItem[];
     theme?: Themes;
 };
 
@@ -1154,17 +1161,6 @@ declare namespace LinkButtonGroup {
         export { theme_1 as theme };
     }
 }
-
-declare type ListItem = {
-    content: React.ReactNode;
-    id: string;
-};
-declare type ListProps = {
-    className?: string;
-    items: ListItem[];
-    listItemClassName?: string;
-    theme?: Themes;
-};
 
 declare const List: React$1.ForwardRefExoticComponent<ListProps & React$1.RefAttributes<HTMLUListElement>>;
 

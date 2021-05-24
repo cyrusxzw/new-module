@@ -1,15 +1,10 @@
-import { ReactNode } from 'react';
 import type { Themes } from '~/types';
-
-type Item = {
-  content: ReactNode;
-  id: string;
-};
+import type { ListItem } from '~/components/List/List.types';
 
 type KitListProps = {
   className?: string;
   isVisible?: boolean;
-  items: Item[];
+  items: ListItem[];
   theme?: Themes;
 };
 
