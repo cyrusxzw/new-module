@@ -1174,7 +1174,34 @@ declare type LoadingProps = {
 
 declare const Loading: FC<LoadingProps>;
 
-declare const MediaWithContent: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type ContentCopy = {
+    description?: React.ReactNode;
+    eyebrow?: string;
+    heading?: string;
+    subHeading?: string;
+};
+
+declare type ContainMedia = 'center' | 'left' | 'right';
+declare type ForegroundImageLink = {
+    url: string;
+    title: string;
+};
+declare type MediaWithContentProps = {
+    backgroundColor?: string;
+    className?: string;
+    containMedia?: ContainMedia;
+    content?: React.ReactNode;
+    copy: ContentCopy;
+    foregroundImage?: JSX.Element;
+    foregroundImageLink?: ForegroundImageLink;
+    hasFullWidthImage?: boolean;
+    hasSerifFontHeading?: boolean;
+    isReverse?: boolean;
+    media: JSX.Element;
+    theme?: Themes;
+};
+
+declare const MediaWithContent: React$1.ForwardRefExoticComponent<MediaWithContentProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type ModalBodyCopy = {
     copy?: {
