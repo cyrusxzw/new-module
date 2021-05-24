@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { TwoColumnList } from './TwoColumnList';
 import { TwoColumnListFixture } from './TwoColumnList.fixture';
 
@@ -9,24 +10,47 @@ import { TwoColumnListFixture } from './TwoColumnList.fixture';
 
 <Canvas>
   <Story name="Base component">
-    <TwoColumnList
-      leftColumn={knobs.object(
+    {(() => {
+      const leftColumn = knobs.object(
         'leftColumn',
         TwoColumnListFixture.leftColumn,
         'Content',
-      )}
-      rightColumn={knobs.object(
+      );
+      const rightColumn = knobs.object(
         'rightColumn',
         TwoColumnListFixture.rightColumn,
         'Content',
-      )}
-      theme={knobs.select(
-        'TwoColumnList theme',
+      );
+      const theme = knobs.select(
+        'theme',
         ['dark', 'light'],
         'dark',
         'Presentation',
-      )}
-    />
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <TwoColumnList
+            leftColumn={leftColumn}
+            rightColumn={rightColumn}
+            theme={theme}
+          />
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 

@@ -817,7 +817,7 @@ declare namespace GoogleMap {
 declare type Levels = '1' | '2' | '3' | '4' | '5' | '6';
 declare type Sizes = 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
 declare type HeadingProps = {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     className?: string;
     hasMediumWeightFont?: boolean;
     hasSerifFont?: boolean;
@@ -1127,7 +1127,7 @@ declare type ListItem = {
 };
 declare type ListProps = {
     className?: string;
-    items: ListItem[];
+    items?: ListItem[];
     listItemClassName?: string;
     theme?: Themes;
 };
@@ -1895,7 +1895,31 @@ declare namespace TwoColumnLayout {
     }
 }
 
-declare const TwoColumnList: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+/**
+ * Not using HyperlinkType as url is not required here
+ * @TODO openInANewWindow needs to be updated
+ */
+declare type HyperlinkItem = {
+    id: string;
+    text: string;
+    style?: LinkStyle;
+    url?: string;
+    openInANewWindow?: boolean;
+};
+declare type List$1 = {
+    id: string;
+    heading?: string;
+    subHeading?: string;
+    items?: HyperlinkItem[];
+};
+declare type TwoColumnListProps = {
+    className?: string;
+    leftColumn: List$1[];
+    rightColumn: List$1[];
+    theme?: Themes;
+};
+
+declare const TwoColumnList: React$1.ForwardRefExoticComponent<TwoColumnListProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const Video: React$1.ForwardRefExoticComponent<Pick<ControlsProps, "copy"> & {
     captions?: {

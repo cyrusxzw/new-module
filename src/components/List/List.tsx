@@ -9,6 +9,9 @@ const List = forwardRef<HTMLUListElement, ListProps>(function ListRef(
   ref,
 ) {
   const currentTheme = useThemeContext(theme, 'dark');
+
+  if (items.length === 0) return null;
+
   const classSet = cx(styles.base, styles[currentTheme], className);
   const listItemClassSet = cx(styles.item, listItemClassName);
 
