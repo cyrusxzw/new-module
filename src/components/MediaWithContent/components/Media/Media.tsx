@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactElement } from 'react';
 import cx from 'classnames';
 import { Figure } from '~/components/Figure';
 import { Hyperlink } from '~/components/Hyperlink';
+import type { MediaProps } from './Media.types';
 import styles from './Media.module.css';
 
 const Media = ({
@@ -10,9 +10,9 @@ const Media = ({
   containMedia,
   foregroundImage,
   foregroundImageLink,
-  hasFullWidthImage,
+  hasFullWidthImage = false,
   media,
-}) => {
+}: MediaProps): ReactElement => {
   const classSet = cx(className, styles.base, styles[containMedia], {
     [styles.hasFullWidthImage]: hasFullWidthImage,
   });
@@ -36,27 +36,6 @@ const Media = ({
       )}
     </div>
   );
-};
-
-Media.propTypes = {
-  className: PropTypes.string,
-  containMedia: PropTypes.oneOf(['center', 'left', 'right']),
-  foregroundImage: PropTypes.element,
-  foregroundImageLink: PropTypes.shape({
-    url: PropTypes.string,
-    title: PropTypes.string,
-  }),
-  hasFullWidthImage: PropTypes.bool,
-  media: PropTypes.element.isRequired,
-};
-
-Media.defaultProps = {
-  className: undefined,
-  containMedia: undefined,
-  foregroundImage: undefined,
-  foregroundImageLink: undefined,
-  hasFullWidthImage: false,
-  media: undefined,
 };
 
 export { Media };
