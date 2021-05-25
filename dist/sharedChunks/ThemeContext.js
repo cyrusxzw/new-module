@@ -1,0 +1,1 @@
+"use strict";var e=require("react");function t(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var r=t(e),n=e.createContext(void 0);exports.ThemeContextProvider=function(e){var t=e.children,o=e.theme;return r.default.createElement(n.Provider,{value:o},t)},exports.useThemeContext=function(t,r){void 0===r&&(r="dark");var o=e.useContext(n);return t||o||r};
