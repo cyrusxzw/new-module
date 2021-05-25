@@ -4,7 +4,7 @@ import { getEyebrowLevel, getSubHeadingLevel } from './SectionHeading.utils';
 import { SectionHeading } from './SectionHeading';
 
 describe('<SectionHeading />', () => {
-  it('should show the correct heading text to the user', () => {
+  it('should present the correct heading text to the user', () => {
     render(
       <SectionHeading
         eyebrow="eyebrow-text"
@@ -24,6 +24,14 @@ describe('<SectionHeading />', () => {
     expect(
       screen.getByRole('heading', { name: 'subHeading-text' }),
     ).toBeInTheDocument();
+  });
+
+  it('should not render the UI if the `eyebrow`, `heading` and `subHeading` props are not provided', () => {
+    render(<SectionHeading />);
+
+    expect(
+      screen.queryByTestId(/data-testid-SectionHeading/i),
+    ).not.toBeInTheDocument();
   });
 });
 

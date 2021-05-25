@@ -20,8 +20,13 @@ const SectionHeading = ({
   subHeading,
   theme,
   titleFont,
-}: SectionHeadingProps): ReactElement => {
+}: SectionHeadingProps): ReactElement | null => {
   const currentTheme = useThemeContext(theme, 'dark');
+
+  if (!eyebrow && !heading && !subHeading) {
+    return null;
+  }
+
   const classSet = cx(className, styles.base, {
     [styles.offsetPageHeading]: isOffsetPageHeading,
     [styles.heroHeading]: isHeroHeading,
@@ -38,7 +43,11 @@ const SectionHeading = ({
   );
 
   return (
-    <header className={classSet} id={id}>
+    <header
+      className={classSet}
+      data-testid="data-testid-SectionHeading"
+      id={id}
+    >
       {heading && (
         <Heading
           className={headingClassSet}

@@ -7,6 +7,7 @@ exports[`<Carousel.CarouselIntroduction /> should render base component correctl
   >
     <header
       class="heading offsetHeading base"
+      data-testid="data-testid-SectionHeading"
     >
       <h2
         class="base flush serifFont xLarge dark heading"
