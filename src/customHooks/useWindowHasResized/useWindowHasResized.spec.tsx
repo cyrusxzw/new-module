@@ -8,7 +8,7 @@ let hasDebounced = false;
 jest.mock('lodash/debounce', () => {
   return {
     __esModule: true,
-    default: jest.fn(callback => {
+    default: jest.fn((callback) => {
       if (!hasDebounced) {
         callback();
         hasDebounced = true;

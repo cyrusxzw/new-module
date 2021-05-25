@@ -25,13 +25,13 @@ const generateRollupInputs = () => {
   const rollupBundlingInput = {};
   const rollupTypeDefinitionInput = {};
 
-  gelCategories.forEach(gelCategory => {
-    const isEntryADirectory = entry =>
+  gelCategories.forEach((gelCategory) => {
+    const isEntryADirectory = (entry) =>
       fs.statSync(`./src/${gelCategory}/${entry}`).isDirectory();
 
     fs.readdirSync(`./src/${gelCategory}`)
       .filter(isEntryADirectory)
-      .forEach(folder => {
+      .forEach((folder) => {
         const entry = `${gelCategory}/${folder}`;
 
         rollupBundlingInput[`${entry}/index`] = `./src/${entry}/index.ts`;
@@ -61,7 +61,7 @@ export const splitBundlesRollupConfig = [
     plugins: [
       del({
         targets: [
-          ...gelCategories.map(category => `dist/${category}`),
+          ...gelCategories.map((category) => `dist/${category}`),
           'dist/sharedChunks',
         ],
         verbose: false,

@@ -57,7 +57,7 @@ const getCarouselSettings = ({
 }: GetCarouselSettingsArgs): GetCarouselSettingsReturn => ({
   autoplay: hasAutoplay,
   autoplaySpeed: autoplaySpeed,
-  appendDots: dots => (
+  appendDots: (dots) => (
     <Pagination
       dots={dots}
       hasFlushPagination={hasFlushPagination}

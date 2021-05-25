@@ -31,7 +31,7 @@ const StoreHoursList = ({
       )}
 
       <ul className={styles.list}>
-        {hoursList.map(item => (
+        {hoursList.map((item) => (
           <li className={styles.item} key={item.id}>
             <span className={styles.dayName}>{item.dayName}</span>
             <span

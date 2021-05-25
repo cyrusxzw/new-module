@@ -6,7 +6,7 @@ const ToogleButton = () => {
   const footerSuccessModal = useNotificationContext();
   const { actionType, dispatch } = footerSuccessModal;
 
-  const handleOnClick = e => {
+  const handleOnClick = (e) => {
     e.preventDefault();
     dispatch({ type: actionType.SHOW_NOTIFICATION });
   };

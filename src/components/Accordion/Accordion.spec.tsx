@@ -77,7 +77,7 @@ describe('<Accordion />', () => {
     });
 
     it(`should load with all the content hidden`, () => {
-      contentSections.forEach(contentSection => {
+      contentSections.forEach((contentSection) => {
         expect(contentSection).toBeInTheDocument();
         expect(contentSection).not.toBeVisible();
       });

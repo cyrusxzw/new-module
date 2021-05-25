@@ -50,7 +50,7 @@ const FooterBlock = ({
         <div className={dividerClassSet} />
         {links?.length && (
           <ul className={listClassSet}>
-            {links.map(link => (
+            {links.map((link) => (
               <li key={link.id}>
                 <Hyperlink
                   className={listItemClassSet}

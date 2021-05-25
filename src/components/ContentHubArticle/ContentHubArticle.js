@@ -62,7 +62,7 @@ const ContentHubArticle = ({
 
   const titleMouseEnter = () => {
     [readMoreThumbnailRef, nonMobileThumbnailRef, mobileThumbnailRef].forEach(
-      imageRef => {
+      (imageRef) => {
         if (imageRef.current)
           imageRef.current.className = cx(styles.imageActive);
       },
@@ -71,7 +71,7 @@ const ContentHubArticle = ({
 
   const titleMouseLeave = () => {
     [readMoreThumbnailRef, nonMobileThumbnailRef, mobileThumbnailRef].forEach(
-      imageRef => {
+      (imageRef) => {
         if (imageRef.current)
           imageRef.current.className = cx(styles.imageUnactive);
       },

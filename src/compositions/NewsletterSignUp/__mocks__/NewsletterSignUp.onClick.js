@@ -1,8 +1,8 @@
 /* istanbul ignore file */
-const newsletterSignUpOnClick = async email => {
+const newsletterSignUpOnClick = async (email) => {
   try {
     await (() =>
-      new Promise(resolve => {
+      new Promise((resolve) => {
         setTimeout(() => {
           resolve(email);
         }, 3000);

@@ -23,7 +23,7 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
 
     const classSet = cx(styles.base, styles[theme], className);
     /** handleOnChange gets passed to the AccessibleAccordion dependency */
-    const handleOnChange = nodes => setIsActiveNodes(nodes);
+    const handleOnChange = (nodes) => setIsActiveNodes(nodes);
     const checkIsActive = (id: string) => activeNodes.includes(id);
 
     return (
