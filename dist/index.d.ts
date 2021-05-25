@@ -1394,7 +1394,7 @@ declare type ProductDetailHeaderProps = {
     breadcrumbs?: Breadcrumbs$1;
     className?: string;
     copy?: ProductDetailBodyCopy;
-    onBreadcrumbClick?: (item: any, selectedVariant: any) => void;
+    onBreadcrumbClick?: (item: BreadcrumbItem, selectedVariant: Variant) => void;
     theme?: Themes;
 };
 
