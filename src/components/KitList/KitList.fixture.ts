@@ -1,4 +1,6 @@
-const KitListFixture = {
+import type { KitListProps } from './KitList.types';
+
+const KitListFixture: KitListProps = {
   items: [
     { content: 'Pellentesque vitae sapien leo', id: '1' },
     { content: 'Nunc in euismod lectus', id: '2' },
