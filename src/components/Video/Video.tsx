@@ -79,7 +79,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
   const handlePlayPauseButtonOnClick = isPlaying ? pauseVideo : playVideo;
   const handleAudioButtonClick = () => setIsMuted(!isMuted);
   const handleOnCaptionsToggleClick = () =>
-    setHasActiveCaptions(state => !state);
+    setHasActiveCaptions((state) => !state);
 
   const classSet = cx(styles.base, className, {
     [styles.spanContent]: hasSpanContent,

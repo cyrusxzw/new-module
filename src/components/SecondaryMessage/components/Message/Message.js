@@ -13,7 +13,7 @@ const Message = ({ className, copy, heading, id, link }) => {
     <div className={classSet} id={id}>
       <ConditionalWrapper
         condition={!!link}
-        wrapper={children => (
+        wrapper={(children) => (
           <Hyperlink className={styles.link} {...link}>
             {children}
           </Hyperlink>

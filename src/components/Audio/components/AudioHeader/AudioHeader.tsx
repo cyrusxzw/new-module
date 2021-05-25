@@ -3,7 +3,7 @@ import { Heading } from '~/components/Heading';
 import type { AudioHeaderProps } from './AudioHeader.types';
 import styles from './AudioHeader.module.css';
 
-const AudioHeader = React.memo<AudioHeaderProps>(props => (
+const AudioHeader = React.memo<AudioHeaderProps>((props) => (
   <header className={styles.base}>
     <Heading
       className={styles.artistName}

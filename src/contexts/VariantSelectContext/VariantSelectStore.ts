@@ -10,7 +10,7 @@ const useVariantSelectStore = (variants = []) => {
     const queryStringVariant = queryString.parse(location.search).variant;
 
     const variantFromQueryString = variants.find(
-      variant => variant.sku === queryStringVariant,
+      (variant) => variant.sku === queryStringVariant,
     );
     setSelectedVariant(variantFromQueryString ?? variants[0]);
   }, [variants]);

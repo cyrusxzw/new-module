@@ -14,7 +14,7 @@ const useWaveSurfer = (progressColor: ProgressColor, hasAutoPlay: boolean) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    import('wavesurfer.js').then(module => {
+    import('wavesurfer.js').then((module) => {
       const WaveSurfer = module.default || module;
 
       if (waveformRef.current) {
@@ -34,7 +34,7 @@ const useWaveSurfer = (progressColor: ProgressColor, hasAutoPlay: boolean) => {
 
         wavesurfer.current.load(trackRef.current);
 
-        const updateProgress = throttle(currentProgress => {
+        const updateProgress = throttle((currentProgress) => {
           setProgress(currentProgress);
         }, 1000);
 
@@ -63,7 +63,7 @@ const useWaveSurfer = (progressColor: ProgressColor, hasAutoPlay: boolean) => {
   }, [progressColor, hasAutoPlay]); // eslint-disable-line
 
   function togglePlaying() {
-    setIsPlaying(state => !state);
+    setIsPlaying((state) => !state);
     wavesurfer.current.playPause();
   }
 

@@ -119,7 +119,7 @@ const Carousel: FC<CarouselProps> = ({
     setIsNextButtonActive(currentIndex === slideOffset ? false : true);
   };
 
-  const handleAfterChange = index => {
+  const handleAfterChange = (index) => {
     setIsCaptionActive(true);
     setCaption(slides[index].caption);
     setSlideCounter(`${index + 1} of ${slidesLength}`);
@@ -168,11 +168,11 @@ const Carousel: FC<CarouselProps> = ({
               />
             ) : (
               <ConditionalWrapper
-                alternateWrapper={children => (
+                alternateWrapper={(children) => (
                   <div className={styles.item}>{children}</div>
                 )}
                 condition={!!url}
-                wrapper={children => (
+                wrapper={(children) => (
                   <Hyperlink
                     className={cx(styles.item, styles.link)}
                     theme={currentTheme}

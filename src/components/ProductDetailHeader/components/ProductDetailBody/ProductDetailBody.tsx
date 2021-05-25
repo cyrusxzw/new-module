@@ -61,7 +61,7 @@ const ProductDetailBody = ({
   const RADIO_GROUP_DATA_TEST_REF = 'PRODUCT_DETAIL_VARIANT_SELECT';
   const PRODUCT_UP_SELL = 'PRODUCT_UP_SELL';
 
-  const flyinPanelItem = item => ({
+  const flyinPanelItem = (item) => ({
     term: (
       <>
         <span>{item.term}</span>
@@ -88,7 +88,7 @@ const ProductDetailBody = ({
     id: item.id,
   });
 
-  const definitionListItems = definitionList.map(item =>
+  const definitionListItems = definitionList.map((item) =>
     !item.isExpandable ? item : flyinPanelItem(item),
   );
 

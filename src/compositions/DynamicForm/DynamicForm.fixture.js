@@ -162,7 +162,7 @@ const DynamicFormFixture = {
       },
     ],
   ],
-  onSubmit: formData => {
+  onSubmit: (formData) => {
     // eslint-disable-next-line no-console
     console.log(formData);
     // eslint-disable-next-line no-alert

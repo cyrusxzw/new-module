@@ -6,7 +6,7 @@ import { useEscapeKeyListener } from '~/customHooks';
 storiesOf('Hooks/useEscapeKeyListener', module).add('Base hook', () => {
   const [count, setCount] = useState(0);
 
-  const handleEscapeOnKeyPress = () => setCount(count => count + 1);
+  const handleEscapeOnKeyPress = () => setCount((count) => count + 1);
 
   useEscapeKeyListener(handleEscapeOnKeyPress);
 

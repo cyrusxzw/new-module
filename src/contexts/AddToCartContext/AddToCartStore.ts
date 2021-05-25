@@ -49,7 +49,7 @@ const reducer = (state, action) => {
   );
 };
 
-const useAddToCartStore = onClick => {
+const useAddToCartStore = (onClick) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
   const { errorMessage, hasError, isLoading, isUpdateSuccessful } = state;
 

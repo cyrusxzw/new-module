@@ -62,7 +62,7 @@ describe('useScript', () => {
   });
 
   it('should set loading false on load', async () => {
-    const handle = renderHook(p => useScript(p), {
+    const handle = renderHook((p) => useScript(p), {
       initialProps: { src: 'http://scriptsrc/' },
     });
 
@@ -87,7 +87,7 @@ describe('useScript', () => {
   it('should fire onLoad callback on load', async () => {
     const handleOnLoad = jest.fn();
 
-    const handle = renderHook(p => useScript(p), {
+    const handle = renderHook((p) => useScript(p), {
       initialProps: { src: 'http://scriptsrc/', onLoad: handleOnLoad },
     });
 
@@ -112,7 +112,7 @@ describe('useScript', () => {
   });
 
   it('should set loading false and error to not be null on error', async () => {
-    const handle = renderHook(p => useScript(p), {
+    const handle = renderHook((p) => useScript(p), {
       initialProps: { src: 'http://scriptsrc/' },
     });
 
@@ -143,7 +143,7 @@ describe('useScript', () => {
 
     expect(document.querySelectorAll('script').length).toBe(1);
 
-    const handle = renderHook(p => useScript(p), {
+    const handle = renderHook((p) => useScript(p), {
       initialProps: {
         src: 'http://scriptsrc/',
         shouldCheckForExisting: true,
