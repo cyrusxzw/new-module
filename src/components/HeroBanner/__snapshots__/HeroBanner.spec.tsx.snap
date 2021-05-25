@@ -42,6 +42,7 @@ exports[`<HeroBanner /> should render base component correctly 1`] = `
       >
         <header
           class="header base heroHeading"
+          data-testid="data-testid-SectionHeading"
         >
           <h1
             class="base serifFont xLarge dark heading"

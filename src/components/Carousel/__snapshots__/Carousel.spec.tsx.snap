@@ -411,6 +411,7 @@ exports[`<Carousel /> should render base component correctly 1`] = `
               >
                 <header
                   class="heading offsetHeading base"
+                  data-testid="data-testid-SectionHeading"
                 >
                   <h2
                     class="base flush serifFont xLarge dark heading"
