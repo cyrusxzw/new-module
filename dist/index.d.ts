@@ -1082,7 +1082,30 @@ declare type ImageCarouselProps = {
 
 declare const ImageCarousel: ({ autoplaySpeed, className, hasAutoplay, hasFlushPagination, isCompact, slides, theme, }: ImageCarouselProps) => ReactElement | null;
 
-declare const KitList: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type ListItem = {
+    content: React.ReactNode;
+    id: string;
+};
+declare type ListProps = {
+    className?: string;
+    items?: ListItem[];
+    listItemClassName?: string;
+    theme?: Themes;
+};
+
+declare type KitListProps = {
+    className?: string;
+    isVisible?: boolean;
+    items: ListItem[];
+    theme?: Themes;
+};
+
+/** @TODO replace the `any` in the forwardRef type
+ * Following our forwardRef tyings, this first value should be HTMLUListElement (based on typeof List)
+ * However, due to https://stackoverflow.com/questions/58469229/react-with-typescript-generics-while-using-react-forwardref/58473012
+ * this does not work, and if List's return type changes, this static type will break
+ */
+declare const KitList: React$1.ForwardRefExoticComponent<KitListProps & React$1.RefAttributes<any>>;
 
 declare function LinkButtonGroup({ children, className, hasFitContent, isFlush, isFullWidth, textAlign, theme, }: {
     children: any;
@@ -1120,17 +1143,6 @@ declare namespace LinkButtonGroup {
         export { theme_1 as theme };
     }
 }
-
-declare type ListItem = {
-    content: React.ReactNode;
-    id: string;
-};
-declare type ListProps = {
-    className?: string;
-    items?: ListItem[];
-    listItemClassName?: string;
-    theme?: Themes;
-};
 
 declare const List: React$1.ForwardRefExoticComponent<ListProps & React$1.RefAttributes<HTMLUListElement>>;
 
