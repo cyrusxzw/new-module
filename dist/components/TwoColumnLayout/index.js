@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../sharedChunks/TwoColumnLayout.js");require("../../sharedChunks/_rollupPluginBabelHelpers.js"),require("react"),require("prop-types"),require("classnames"),require("../../sharedChunks/style-inject.es.js"),exports.TwoColumnLayout=e.TwoColumnLayout;

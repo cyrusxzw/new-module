@@ -1,0 +1,1 @@
+"use strict";function e(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var r=e(require("react"));exports.ConditionalWrapper=function(e){var t=e.alternateWrapper,n=e.children,a=e.condition,u=e.wrapper;return a?u(n):t?t(n):r.default.createElement(r.default.Fragment,null,n)};
