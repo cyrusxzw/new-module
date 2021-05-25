@@ -1,6 +1,10 @@
 import React, { ReactElement } from 'react';
 import cx from 'classnames';
-import { useProductDetailContext, useThemeContext } from '~/contexts';
+import {
+  useProductDetailContext,
+  useThemeContext,
+  useVariantSelectContext,
+} from '~/contexts';
 import { Breadcrumbs } from '~/components/Breadcrumbs';
 import { Hidden } from '~/components/Hidden/index.ts';
 import { ProductDetailBody } from './components/ProductDetailBody';
@@ -12,14 +16,18 @@ const ProductDetailHeader = ({
   breadcrumbs,
   className,
   copy,
+  onBreadcrumbClick,
   theme,
 }: ProductDetailHeaderProps): ReactElement => {
   const currentTheme = useThemeContext(theme, 'dark');
   const { productDetail } = useProductDetailContext();
+  const { selectedVariant } = useVariantSelectContext();
   const classSet = cx(styles.base, className);
   const imageClassSet = cx(styles.image, {
     [styles.largeImage]: productDetail.imageSize === 'Large',
   });
+  const handleOnBreadcrumbClick = item =>
+    onBreadcrumbClick(item, selectedVariant);
 
   return (
     <div className={classSet}>
@@ -29,6 +37,7 @@ const ProductDetailHeader = ({
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}
+              onHyperlinkClick={handleOnBreadcrumbClick}
               theme={currentTheme}
             />
           </Hidden>
@@ -48,6 +57,7 @@ const ProductDetailHeader = ({
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}
+              onHyperlinkClick={handleOnBreadcrumbClick}
               theme={currentTheme}
             />
           </Hidden>

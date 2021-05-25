@@ -154,6 +154,7 @@ declare type BreadcrumbItem = {
 declare type BreadcrumbsProps = {
     className?: string;
     items?: BreadcrumbItem[];
+    onHyperlinkClick?: (item: BreadcrumbItem) => void;
     theme?: Themes;
 };
 
@@ -816,7 +817,7 @@ declare namespace GoogleMap {
 declare type Levels = '1' | '2' | '3' | '4' | '5' | '6';
 declare type Sizes = 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
 declare type HeadingProps = {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     className?: string;
     hasMediumWeightFont?: boolean;
     hasSerifFont?: boolean;
@@ -1126,7 +1127,7 @@ declare type ListItem = {
 };
 declare type ListProps = {
     className?: string;
-    items: ListItem[];
+    items?: ListItem[];
     listItemClassName?: string;
     theme?: Themes;
 };
@@ -1173,7 +1174,34 @@ declare type LoadingProps = {
 
 declare const Loading: FC<LoadingProps>;
 
-declare const MediaWithContent: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type ContentCopy = {
+    description?: React.ReactNode;
+    eyebrow?: string;
+    heading?: string;
+    subHeading?: string;
+};
+
+declare type ContainMedia = 'center' | 'left' | 'right';
+declare type ForegroundImageLink = {
+    url: string;
+    title: string;
+};
+declare type MediaWithContentProps = {
+    backgroundColor?: string;
+    className?: string;
+    containMedia?: ContainMedia;
+    content?: React.ReactNode;
+    copy: ContentCopy;
+    foregroundImage?: JSX.Element;
+    foregroundImageLink?: ForegroundImageLink;
+    hasFullWidthImage?: boolean;
+    hasSerifFontHeading?: boolean;
+    isReverse?: boolean;
+    media: JSX.Element;
+    theme?: Themes;
+};
+
+declare const MediaWithContent: React$1.ForwardRefExoticComponent<MediaWithContentProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type ModalBodyCopy = {
     copy?: {
@@ -1271,7 +1299,40 @@ declare type ParagraphSetProps = {
 declare const Paragraph: FC<ParagraphProps>;
 declare const ParagraphSet: FC<ParagraphSetProps>;
 
-declare const Podium: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type TransitionType = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
+declare type TransitionProps = {
+    children: JSX.Element;
+    isActive?: boolean;
+    isActiveOnMount?: boolean;
+    shouldMountOnEnter?: boolean;
+    shouldUnmountOnExit?: boolean;
+    type?: TransitionType;
+};
+
+declare type HorizontalPadding = 'none' | 'small';
+declare type VerticalPadding = 'none' | 'small' | 'medium' | 'large';
+declare type PodiumProps = {
+    backgroundColor?: string;
+    children?: React.ReactNode;
+    className?: string;
+    'data-test-ref'?: string;
+    horizontalPadding?: HorizontalPadding;
+    id?: string;
+    isActive?: boolean;
+    isActiveOnMount?: boolean;
+    isHorizontalFlushOnLarge?: boolean;
+    isHorizontalFlushOnMedium?: boolean;
+    isHorizontalFlushOnSmall?: boolean;
+    paddingBottom?: VerticalPadding;
+    paddingLeft?: HorizontalPadding;
+    paddingRight?: HorizontalPadding;
+    paddingTop?: VerticalPadding;
+    theme?: Themes;
+    transition?: TransitionType;
+    verticalPadding?: VerticalPadding;
+};
+
+declare const Podium: React$1.ForwardRefExoticComponent<PodiumProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const ProductCommerce: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
@@ -1321,10 +1382,11 @@ declare type ProductDetailHeaderProps = {
     breadcrumbs?: Breadcrumbs$1;
     className?: string;
     copy?: ProductDetailBodyCopy;
+    onBreadcrumbClick?: (item: any, selectedVariant: any) => void;
     theme?: Themes;
 };
 
-declare const ProductDetailHeader: ({ breadcrumbs, className, copy, theme, }: ProductDetailHeaderProps) => ReactElement;
+declare const ProductDetailHeader: ({ breadcrumbs, className, copy, onBreadcrumbClick, theme, }: ProductDetailHeaderProps) => ReactElement;
 
 declare type QuoteProps = {
     author: string;
@@ -1759,16 +1821,6 @@ declare namespace TextOverFullWidthAsset {
     }
 }
 
-declare type TransitionType = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
-declare type TransitionProps = {
-    children: JSX.Element;
-    isActive?: boolean;
-    isActiveOnMount?: boolean;
-    shouldMountOnEnter?: boolean;
-    shouldUnmountOnExit?: boolean;
-    type?: TransitionType;
-};
-
 declare const Transition: ({ children, isActive, isActiveOnMount, shouldMountOnEnter, shouldUnmountOnExit, type, }: TransitionProps) => ReactElement | null;
 
 declare function TwoColumnLayout({ childrenClassNames, className, content, hasFullWidthContent, id, isFlushOnSmall, isReversed, sidebar, theme, }: {
@@ -1824,7 +1876,31 @@ declare namespace TwoColumnLayout {
     }
 }
 
-declare const TwoColumnList: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+/**
+ * Not using HyperlinkType as url is not required here
+ * @TODO openInANewWindow needs to be updated
+ */
+declare type HyperlinkItem = {
+    id: string;
+    text: string;
+    style?: LinkStyle;
+    url?: string;
+    openInANewWindow?: boolean;
+};
+declare type List$1 = {
+    id: string;
+    heading?: string;
+    subHeading?: string;
+    items?: HyperlinkItem[];
+};
+declare type TwoColumnListProps = {
+    className?: string;
+    leftColumn: List$1[];
+    rightColumn: List$1[];
+    theme?: Themes;
+};
+
+declare const TwoColumnList: React$1.ForwardRefExoticComponent<TwoColumnListProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const Video: React$1.ForwardRefExoticComponent<Pick<ControlsProps, "copy"> & {
     captions?: {
@@ -2529,11 +2605,11 @@ declare namespace index_d$4 {
   };
 }
 
-declare function isInBrowser(): boolean;
+declare const isInBrowser: () => boolean;
 /**
  * Device detection. https://stackoverflow.com/questions/49328382/browser-detection-in-reactjs
  * @TODO consider replacing with https://www.npmjs.com/package/react-device-detect
- * if this helpers are widely required and useVideoScroller
+ * or https://www.npmjs.com/package/bowser
  */
 declare const isOpera: boolean;
 declare const isFirefox: boolean;
@@ -2582,7 +2658,16 @@ declare namespace index_d$7 {
   };
 }
 
-declare function getVariantRadioOptions(variants: any): any;
+declare type Variant$1 = {
+    size?: string;
+    sku?: string;
+};
+declare type RadioOptions = {
+    label: string;
+    value: string;
+};
+
+declare const getVariantRadioOptions: (variants: Variant$1[]) => RadioOptions[];
 
 declare const index_d$8_getVariantRadioOptions: typeof getVariantRadioOptions;
 declare namespace index_d$8 {

@@ -1,4 +1,6 @@
-const getVariantRadioOptions = variants =>
+import type { Variant, RadioOptions } from './products.types';
+
+const getVariantRadioOptions = (variants: Variant[]): RadioOptions[] =>
   variants
     .filter(({ size, sku }) => size && sku)
     .map(({ size, sku }) => ({
