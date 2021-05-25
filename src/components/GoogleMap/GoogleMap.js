@@ -4,12 +4,7 @@ import cx from 'classnames';
 import isFunction from 'lodash/isFunction';
 import { renderToStaticMarkup } from 'react-dom/server.browser';
 import MarkerClusterer from '@google/markerclusterer';
-import {
-  HYPERLINK_STYLE_TYPES,
-  GOOGLE_MAPS,
-  STORES,
-  TRANSITIONS,
-} from '~/constants';
+import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS, STORES } from '~/constants';
 import { useGoogleMapsContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
 import { isViewport } from '~/utils/viewport';
@@ -259,7 +254,7 @@ const GoogleMap = ({
         isActive={!!activeInfoBlockData}
         shouldMountOnEnter={true}
         shouldUnmountOnExit={true}
-        type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
+        type="shiftInDown"
       >
         <InfoCard
           address={activeInfoBlockData?.address}

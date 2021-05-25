@@ -1063,7 +1063,7 @@ declare namespace IconLink {
     }
 }
 
-declare const Image: FC<ImageProps>;
+declare const Image: React$1.ForwardRefExoticComponent<ImageProps & React$1.RefAttributes<HTMLImageElement>>;
 
 declare type Slide$1 = {
     caption?: string;
@@ -1348,76 +1348,57 @@ declare const Podium: React$1.ForwardRefExoticComponent<PodiumProps & React$1.Re
 
 declare const ProductCommerce: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
-declare const ProductExtract: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type ProductExtractProps = {
+    dataTestRef: string;
+    className?: string;
+    hasBottomBorder?: boolean;
+    hasTopMargin?: boolean;
+    imageSize?: 'small' | 'medium';
+    isVisible?: boolean;
+    itemNum?: number;
+    theme?: Themes;
+    product?: {
+        image?: ImageProps;
+        name?: string;
+        url?: string;
+    };
+    works?: string;
+};
+
+declare const ProductExtract: React$1.ForwardRefExoticComponent<ProductExtractProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const ProductGridItem: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
-declare function ProductDetailHeader({ breadcrumbs, className, copy, onBreadcrumbClick, theme, }: {
-    breadcrumbs: any;
-    className: any;
-    copy: any;
-    onBreadcrumbClick: any;
-    theme: any;
-}): JSX.Element;
-declare namespace ProductDetailHeader {
-    namespace propTypes {
-        const breadcrumbs: PropTypes.Requireable<PropTypes.InferProps<{
-            className: PropTypes.Requireable<string>;
-            items: PropTypes.Requireable<PropTypes.InferProps<{
-                label: PropTypes.Requireable<string>;
-                id: PropTypes.Requireable<string>;
-                url: PropTypes.Requireable<string>;
-                title: PropTypes.Requireable<string>;
-            }>[]>;
-            theme: PropTypes.Requireable<string>;
-        }>>;
-        const className: PropTypes.Requireable<string>;
-        const copy: PropTypes.Requireable<PropTypes.InferProps<{
-            addToCart: PropTypes.Requireable<PropTypes.InferProps<{
-                cartAction: PropTypes.Requireable<string>;
-                updateNotification: PropTypes.Requireable<string>;
-                outOfStock: PropTypes.Requireable<PropTypes.InferProps<{
-                    label: PropTypes.Requireable<string>;
-                    title: PropTypes.Requireable<string>;
-                }>>;
-            }>>;
-            size: PropTypes.Requireable<PropTypes.InferProps<{
-                singular: PropTypes.Requireable<string>;
-                plural: PropTypes.Requireable<string>;
-            }>>;
-            upSellProductLabel: PropTypes.Requireable<string>;
-            flyinPanelHeading: PropTypes.Requireable<string>;
-        }>>;
-        const onBreadcrumbClick: PropTypes.Requireable<(...args: any[]) => any>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        export namespace breadcrumbs_1 {
-            const className_1: any;
-            export { className_1 as className };
-            export const items: any;
-            const theme_1: string;
-            export { theme_1 as theme };
-        }
-        export { breadcrumbs_1 as breadcrumbs };
-        const className_2: any;
-        export { className_2 as className };
-        export namespace copy_1 {
-            const addToCart: any;
-            namespace size {
-                const singular: any;
-                const plural: any;
-            }
-            const upSellProductLabel: any;
-            const flyinPanelHeading: any;
-        }
-        export { copy_1 as copy };
-        const onBreadcrumbClick_1: any;
-        export { onBreadcrumbClick_1 as onBreadcrumbClick };
-        const theme_2: any;
-        export { theme_2 as theme };
-    }
-}
+declare type ProductDetailBodyCopy = {
+    addToCart?: {
+        cartAction?: string;
+        updateNotification?: string;
+        outOfStock?: {
+            label?: string;
+            title?: string;
+        };
+    };
+    size?: {
+        singular?: string;
+        plural?: string;
+    };
+    upSellProductLabel?: string;
+    flyinPanelHeading?: string;
+};
+
+declare type Breadcrumbs$1 = {
+    items?: BreadcrumbItem[];
+    theme?: Themes;
+};
+declare type ProductDetailHeaderProps = {
+    breadcrumbs?: Breadcrumbs$1;
+    className?: string;
+    copy?: ProductDetailBodyCopy;
+    onBreadcrumbClick?: (item: BreadcrumbItem, selectedVariant: Variant) => void;
+    theme?: Themes;
+};
+
+declare const ProductDetailHeader: ({ breadcrumbs, className, copy, onBreadcrumbClick, theme, }: ProductDetailHeaderProps) => ReactElement;
 
 declare type QuoteProps = {
     author: string;
@@ -2156,33 +2137,6 @@ declare namespace googleMaps_d {
   };
 }
 
-declare const LEVEL: {
-    ONE: string;
-    TWO: string;
-    THREE: string;
-    FOUR: string;
-    FIVE: string;
-    SIX: string;
-};
-declare const SIZE: {
-    X_X_LARGE: string;
-    X_LARGE: string;
-    LARGE: string;
-    MEDIUM: string;
-    SMALL: string;
-    X_SMALL: string;
-    X_X_SMALL: string;
-};
-
-declare const heading_d_LEVEL: typeof LEVEL;
-declare const heading_d_SIZE: typeof SIZE;
-declare namespace heading_d {
-  export {
-    heading_d_LEVEL as LEVEL,
-    heading_d_SIZE as SIZE,
-  };
-}
-
 declare const A = "a";
 
 declare const html_d_A: typeof A;
@@ -2451,23 +2405,6 @@ declare namespace test_refs_d {
   };
 }
 
-declare const TYPE: {
-    FADE: string;
-    SHIFT_IN_DOWN: string;
-    SHIFT_IN_LEFT: string;
-    SLIDE_DOWN: string;
-    SLIDE_RIGHT: string;
-    SLOW_FADE: string;
-    ZOOM: string;
-};
-
-declare const transitions_d_TYPE: typeof TYPE;
-declare namespace transitions_d {
-  export {
-    transitions_d_TYPE as TYPE,
-  };
-}
-
 declare const VIEWPORTS: Map<ViewportNames, string>;
 
 declare const index_d$2_BREAKPOINTS: typeof BREAKPOINTS;
@@ -2477,14 +2414,12 @@ declare namespace index_d$2 {
     index_d$2_BREAKPOINTS as BREAKPOINTS,
     colors_d as COLORS,
     googleMaps_d as GOOGLE_MAPS,
-    heading_d as HEADING,
     html_d as HTML,
     hyperlinkStyleTypes_d as HYPERLINK_STYLE_TYPES,
     keyboardCodes_d as KEYBOARD_CODES,
     labels_d as LABELS,
     stores_d as STORES,
     test_refs_d as TEST_REFS,
-    transitions_d as TRANSITIONS,
     index_d$2_VIEWPORTS as VIEWPORTS,
   };
 }
