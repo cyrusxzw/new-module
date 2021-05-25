@@ -22,7 +22,7 @@ const HorizontalProductDisplayAccordion = ({ id, products, addToCartCopy }) => {
 
     const resetAccordionOnResize = debounce(() => {
       if (isViewport('xs to sm only') !== currentSize) {
-        accordionProducts.map(product => {
+        accordionProducts.map((product) => {
           product.isExpanded = false;
           product.isCompressed = false;
         });
@@ -81,7 +81,7 @@ const HorizontalProductDisplayAccordion = ({ id, products, addToCartCopy }) => {
 
   const resetAccordion = () => {
     toggleAccordionProducts(
-      accordionProducts.map(product => {
+      accordionProducts.map((product) => {
         product.isExpanded = false;
         product.isCompressed = false;
         return product;

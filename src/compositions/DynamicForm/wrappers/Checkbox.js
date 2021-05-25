@@ -26,7 +26,7 @@ export const CheckboxWrapper = ({
         dataTestRef={dataTestRef}
         errorMessage={errorMessage}
         id={id}
-        onChange={e => onChange(e.target.checked)}
+        onChange={(e) => onChange(e.target.checked)}
         theme={theme}
       />
     )}

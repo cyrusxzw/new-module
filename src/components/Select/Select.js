@@ -34,7 +34,7 @@ const Select = forwardRef(
     );
     const errorMessageId = `${name}-error-message`;
 
-    const handleFocus = event => {
+    const handleFocus = (event) => {
       if (onFocus) {
         onFocus(event);
       }
@@ -42,7 +42,7 @@ const Select = forwardRef(
       setHasFocus(true);
     };
 
-    const handleBlur = event => {
+    const handleBlur = (event) => {
       if (onBlur) {
         onBlur(event);
       }

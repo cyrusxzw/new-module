@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../sharedChunks/useOnScreen.js");require("react"),require("../../sharedChunks/environment.js"),exports.useOnScreen=e.useOnScreen;

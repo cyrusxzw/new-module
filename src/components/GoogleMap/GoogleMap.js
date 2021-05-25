@@ -61,7 +61,7 @@ const GoogleMap = ({
   isMediumViewport.current = isViewport('md');
 
   const clearMapMarkers = () => {
-    markers.forEach(marker => marker.setMap(null));
+    markers.forEach((marker) => marker.setMap(null));
     setMarkers([]);
   };
 
@@ -89,7 +89,7 @@ const GoogleMap = ({
 
       setMarkers(() =>
         [customMarker, ...places]
-          .filter(item => item?.lat !== undefined && item?.lng !== undefined)
+          .filter((item) => item?.lat !== undefined && item?.lng !== undefined)
           .map((marker, index) =>
             marker.type === GOOGLE_MAPS.MARKER_TYPE.PIN
               ? createPinMarker(marker, index)

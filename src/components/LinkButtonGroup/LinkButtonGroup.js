@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import styles from './LinkButtonGroup.module.css';
 
-const isReactFragment = component => {
+const isReactFragment = (component) => {
   if (component.type) return component.type === Fragment;
 
   return component === Fragment;
@@ -49,7 +49,7 @@ const LinkButtonGroup = ({
   return (
     <div className={classSet} data-testid="data-testid-LinkButtonGroup">
       <>
-        {React.Children.map(childComponents, child => {
+        {React.Children.map(childComponents, (child) => {
           if (child === null) return null;
 
           return React.cloneElement(child, {

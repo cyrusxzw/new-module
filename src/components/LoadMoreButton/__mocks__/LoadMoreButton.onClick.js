@@ -3,7 +3,7 @@ const mockOnClick = async (LoadMoreDispatch, LOAD_MORE_ACTION_TYPES) => {
   LoadMoreDispatch({ type: LOAD_MORE_ACTION_TYPES.FETCHING });
   try {
     const result = await (() =>
-      new Promise(resolve => {
+      new Promise((resolve) => {
         setTimeout(() => {
           resolve(`Load more successfully!`);
         }, 3000);

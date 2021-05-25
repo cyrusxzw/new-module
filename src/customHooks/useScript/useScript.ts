@@ -41,7 +41,7 @@ const useScript: UseScript = ({
     }
 
     if (dataSet) {
-      Object.keys(dataSet).forEach(attr => {
+      Object.keys(dataSet).forEach((attr) => {
         script.dataset[attr] = dataSet[attr];
       });
     }

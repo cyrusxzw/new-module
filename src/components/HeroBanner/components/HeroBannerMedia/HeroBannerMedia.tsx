@@ -37,7 +37,7 @@ const HeroBannerMedia: FC<HeroBannerMediaProps> = ({
         <Figure className={styles.foregroundImage}>
           <ConditionalWrapper
             condition={!!foregroundImageLink}
-            wrapper={children => (
+            wrapper={(children) => (
               <Hyperlink
                 title={foregroundImageLink.title}
                 url={foregroundImageLink.url}

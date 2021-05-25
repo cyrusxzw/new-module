@@ -39,7 +39,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
   return (
     <nav className={classSet} data-testid="data-testid-Breadcrumbs">
       <ul className={styles.list}>
-        {items.map(item => (
+        {items.map((item) => (
           <ListItem item={item} key={item.id} />
         ))}
       </ul>

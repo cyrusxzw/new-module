@@ -102,7 +102,7 @@ const ProductCommerce = React.forwardRef(
                 className={styles.variants}
                 dataTestRef={RADIO_GROUP_DATA_TEST_REF}
                 name={RADIO_GROUP_NAME}
-                onChange={e => onVariantChange(e, variants)}
+                onChange={(e) => onVariantChange(e, variants)}
                 options={variantRadioOptions}
                 theme={theme}
                 value={selectedVariant.sku}

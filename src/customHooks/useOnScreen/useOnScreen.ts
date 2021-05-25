@@ -27,8 +27,8 @@ const useOnScreen: UseOnScreen = (
       setIsOnScreen(true);
     } else {
       observer = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
+        (entries) => {
+          entries.forEach((entry) => {
             if (
               shouldNotifyOnLeavingScreen ||
               (!shouldNotifyOnLeavingScreen && entry.isIntersecting)

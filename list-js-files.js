@@ -8,7 +8,7 @@ const files = [];
 
 // based on https://stackoverflow.com/a/63111390/8459521
 function listFilesInDirectory(directory) {
-  fs.readdirSync(directory).forEach(file => {
+  fs.readdirSync(directory).forEach((file) => {
     const absolutePath = path.join(directory, file);
 
     if (fs.statSync(absolutePath).isDirectory()) {
@@ -29,7 +29,7 @@ function logStats() {
 
   const logWithLineBreaks = (name, array) => {
     console.log(`\n>>> Remaining ${name}:`);
-    array.forEach(file => console.log(file));
+    array.forEach((file) => console.log(file));
   };
 
   const componentRegex = /src\/components\/([\w-]*)\//;
@@ -44,7 +44,7 @@ function logStats() {
   const customHooks = [];
   const utils = [];
 
-  files.forEach(file => {
+  files.forEach((file) => {
     addToArrayIfMatchesRegex(file, components, componentRegex);
     addToArrayIfMatchesRegex(file, compositions, compositionRegex);
     addToArrayIfMatchesRegex(file, constants, constantRegex);

@@ -7,7 +7,7 @@ describe('<ConditionalWrapper />', () => {
     const { container } = render(
       <ConditionalWrapper
         condition={true}
-        wrapper={children => <div className="wrapper">{children}</div>}
+        wrapper={(children) => <div className="wrapper">{children}</div>}
       >
         <span className="children">children</span>
       </ConditionalWrapper>,
@@ -20,7 +20,7 @@ describe('<ConditionalWrapper />', () => {
     const { container } = render(
       <ConditionalWrapper
         condition={false}
-        wrapper={children => <div className="wrapper">{children}</div>}
+        wrapper={(children) => <div className="wrapper">{children}</div>}
       >
         <span className="children">children</span>
       </ConditionalWrapper>,
@@ -32,11 +32,11 @@ describe('<ConditionalWrapper />', () => {
   it('renders alternateWrapper correctly', () => {
     const { container } = render(
       <ConditionalWrapper
-        alternateWrapper={children => (
+        alternateWrapper={(children) => (
           <div className="alternateWrapper">{children}</div>
         )}
         condition={false}
-        wrapper={children => <div className="wrapper">{children}</div>}
+        wrapper={(children) => <div className="wrapper">{children}</div>}
       >
         <span className="children">children</span>
       </ConditionalWrapper>,
