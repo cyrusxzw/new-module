@@ -9,6 +9,7 @@ import { Breadcrumbs } from '~/components/Breadcrumbs';
 import { Hidden } from '~/components/Hidden/index.ts';
 import { ProductDetailBody } from './components/ProductDetailBody';
 import { ProductDetailImage } from './components/ProductDetailImage';
+import type { BreadcrumbItem } from '~/components/Breadcrumbs/Breadcrumbs.types';
 import type { ProductDetailHeaderProps } from './ProductDetailHeader.types';
 import styles from './ProductDetailHeader.module.css';
 
@@ -26,7 +27,7 @@ const ProductDetailHeader = ({
   const imageClassSet = cx(styles.image, {
     [styles.largeImage]: productDetail.imageSize === 'Large',
   });
-  const handleOnBreadcrumbClick = item =>
+  const handleOnBreadcrumbClick = (item: BreadcrumbItem) =>
     onBreadcrumbClick(item, selectedVariant);
 
   return (
