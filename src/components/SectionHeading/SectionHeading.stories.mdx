@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { SectionHeading } from './SectionHeading';
 
 <Meta title="Components/SectionHeading" component={SectionHeading} />
@@ -8,38 +9,75 @@ import { SectionHeading } from './SectionHeading';
 
 <Canvas>
   <Story name="Base component">
-    <SectionHeading
-      eyebrow={knobs.text(
+    {(() => {
+      const eyebrow = knobs.text(
         'eyebrow',
         'Eyebrow: Offers fortification of the highest order against free radicals.',
         'Copy',
-      )}
-      heading={knobs.text(
+      );
+      const heading = knobs.text(
         'heading',
         'Heading: Fortification of the highest order. Parsley Seed Anti-Oxidant Facial Hydrating Cream.',
         'Copy',
-      )}
-      isFlush={knobs.boolean('isFlush', false, 'Presentation')}
-      id="Anti-Oxidant"
-      isOffsetPageHeading={knobs.boolean(
+      );
+      const isFlush = knobs.boolean('isFlush', false, 'Presentation');
+      const isOffsetPageHeading = knobs.boolean(
         'isOffsetPageHeading',
         false,
         'Presentation',
-      )}
-      isPageHeading={knobs.boolean('isPageHeading', false, 'Presentation')}
-      subHeading={knobs.text(
+      );
+      const isPageHeading = knobs.boolean(
+        'isPageHeading',
+        false,
+        'Presentation',
+      );
+      const subHeading = knobs.text(
         'subHeading',
         'SubHeading: Parsley Seed Cream. Intensely soothing, nourishing and hydrating, this elegant formulation contains a potent blend of botanicals that offer fortification of the highest order against free radicals.',
         'Copy',
-      )}
-      theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
-      titleFont={knobs.select(
+      );
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const titleFont = knobs.select(
         'titleFont',
         ['Suisse', 'Zapf'],
         'Zapf',
         'Presentation',
-      )}
-    />
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <SectionHeading
+            eyebrow={eyebrow}
+            heading={heading}
+            isFlush={isFlush}
+            id="SectionHeading-id"
+            isOffsetPageHeading={isOffsetPageHeading}
+            isPageHeading={isPageHeading}
+            subHeading={subHeading}
+            theme={theme}
+            titleFont={titleFont}
+          />
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 

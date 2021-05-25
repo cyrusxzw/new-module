@@ -1,7 +1,7 @@
-const getEyebrowLevel = (heading, isPageHeading) =>
+const getEyebrowLevel = (heading, isPageHeading = false) =>
   heading ? (isPageHeading ? '2' : '3') : isPageHeading ? '1' : '2';
 
-const getSubHeadingLevel = (eyebrow, heading, isPageHeading) => {
+const getSubHeadingLevel = (eyebrow, heading, isPageHeading = false) => {
   if (eyebrow) {
     if (heading) {
       return isPageHeading ? '3' : '4';
