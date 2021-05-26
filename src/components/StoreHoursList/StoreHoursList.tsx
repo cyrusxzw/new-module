@@ -1,30 +1,35 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactElement } from 'react';
 import cx from 'classnames';
 import find from 'lodash/find';
+import { useThemeContext } from '~/contexts';
 import { Heading } from '~/components/Heading/index.ts';
+import type { StoreHoursListProps } from './StoreHoursList.types';
 import styles from './StoreHoursList.module.css';
 
 const StoreHoursList = ({
   alternateHoursNote,
   className,
   heading,
-  hoursList,
+  hoursList = [],
   theme,
-}) => {
-  if (hoursList.length === 0) return null;
+}: StoreHoursListProps): ReactElement | null => {
+  const currentTheme = useThemeContext(theme, 'dark');
 
-  const classSet = cx(styles.base, styles[theme], className);
+  if (hoursList.length === 0) {
+    return null;
+  }
+
+  const classSet = cx(styles.base, styles[currentTheme], className);
   const hasAlternateHours = !!find(hoursList, 'isAlternate');
 
   return (
-    <div className={classSet}>
+    <div className={classSet} data-testid="data-testid-StoreHoursList">
       {heading && (
         <Heading
           className={styles.heading}
           level="4"
           size="xXSmall"
-          theme={theme}
+          theme={currentTheme}
         >
           {heading}
         </Heading>
@@ -49,29 +54,6 @@ const StoreHoursList = ({
       )}
     </div>
   );
-};
-
-StoreHoursList.propTypes = {
-  alternateHoursNote: PropTypes.string,
-  className: PropTypes.string,
-  heading: PropTypes.string,
-  hoursList: PropTypes.arrayOf(
-    PropTypes.shape({
-      dayName: PropTypes.string,
-      hours: PropTypes.string,
-      id: PropTypes.string,
-      isAlternate: PropTypes.bool,
-    }),
-  ),
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-StoreHoursList.defaultProps = {
-  alternateHoursNote: undefined,
-  className: undefined,
-  heading: undefined,
-  hoursList: [],
-  theme: 'dark',
 };
 
 export { StoreHoursList };

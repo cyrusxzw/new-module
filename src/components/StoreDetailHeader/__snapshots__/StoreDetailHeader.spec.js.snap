@@ -154,6 +154,7 @@ exports[`<StoreDetailHeader /> should render base component correctly 1`] = `
           >
             <div
               class="base dark"
+              data-testid="data-testid-StoreHoursList"
             >
               <ul
                 class="list"
