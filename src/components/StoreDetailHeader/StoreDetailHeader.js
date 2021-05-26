@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { HEADING, HYPERLINK_STYLE_TYPES, GOOGLE_MAPS } from '~/constants';
+import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS } from '~/constants';
 import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { StoreHoursList } from '~/components/StoreHoursList/index.ts';
@@ -95,11 +95,7 @@ const StoreDetailHeader = ({
       className={classSet}
       content={
         <>
-          <Heading
-            level={HEADING.LEVEL.ONE}
-            size={HEADING.SIZE.LARGE}
-            theme={theme}
-          >
+          <Heading level="1" size="large" theme={theme}>
             {storeName}
           </Heading>
           <div className={styles.detailBlock}>
@@ -109,8 +105,8 @@ const StoreDetailHeader = ({
                 <div className={styles.detail} key={id}>
                   <Heading
                     className={styles.detailHeading}
-                    level={HEADING.LEVEL.THREE}
-                    size={HEADING.SIZE.X_X_SMALL}
+                    level="3"
+                    size="xXSmall"
                     theme={theme}
                   >
                     {label}

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { HEADING, HYPERLINK_STYLE_TYPES, TRANSITIONS } from '~/constants';
+import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import { useProductDetailContext, useVariantSelectContext } from '~/contexts';
 import { useImageTransition } from '~/customHooks';
 import { getVariantRadioOptions } from '~/utils/product/index.ts';
@@ -62,7 +62,7 @@ const ProductCommerce = React.forwardRef(
 
     return (
       <div className={classSet} id={id} ref={ref}>
-        <Transition isActive={isActive} type={TRANSITIONS.TYPE.SLOW_FADE}>
+        <Transition isActive={isActive} type="slowFade">
           <SectionHeading
             className={styles.header}
             eyebrow={eyebrow}
@@ -71,12 +71,12 @@ const ProductCommerce = React.forwardRef(
             theme={theme}
           />
         </Transition>
-        <Transition isActive={isActive} type={TRANSITIONS.TYPE.SLOW_FADE}>
+        <Transition isActive={isActive} type="slowFade">
           <div className={styles.description}>{description}</div>
         </Transition>
-        <Transition isActive={isActive} type={TRANSITIONS.TYPE.SHIFT_IN_LEFT}>
+        <Transition isActive={isActive} type="shiftInLeft">
           <div className={styles.imageWrapper}>
-            <Transition isActive={isImageActive} type={TRANSITIONS.TYPE.FADE}>
+            <Transition isActive={isImageActive} type="fade">
               <Image
                 altText={currentImage.altText}
                 className={styles.image}
@@ -87,13 +87,13 @@ const ProductCommerce = React.forwardRef(
           </div>
         </Transition>
         {size && !isBundle && (
-          <Transition isActive={isActive} type={TRANSITIONS.TYPE.SLOW_FADE}>
+          <Transition isActive={isActive} type="slowFade">
             <div className={styles.variantsWrapper}>
               <Heading
                 hasMediumWeightFont={true}
                 isFlush={true}
-                level={HEADING.LEVEL.FOUR}
-                size={HEADING.SIZE.X_X_SMALL}
+                level="4"
+                size="xXSmall"
                 theme={theme}
               >
                 {copy?.size}
@@ -102,7 +102,7 @@ const ProductCommerce = React.forwardRef(
                 className={styles.variants}
                 dataTestRef={RADIO_GROUP_DATA_TEST_REF}
                 name={RADIO_GROUP_NAME}
-                onChange={e => onVariantChange(e, variants)}
+                onChange={(e) => onVariantChange(e, variants)}
                 options={variantRadioOptions}
                 theme={theme}
                 value={selectedVariant.sku}
@@ -111,7 +111,7 @@ const ProductCommerce = React.forwardRef(
           </Transition>
         )}
 
-        <Transition isActive={isActive} type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}>
+        <Transition isActive={isActive} type="shiftInDown">
           <LinkButtonGroup
             className={styles.linkButtonGroup}
             hasFitContent={false}

@@ -154,6 +154,7 @@ declare type BreadcrumbItem = {
 declare type BreadcrumbsProps = {
     className?: string;
     items?: BreadcrumbItem[];
+    onHyperlinkClick?: (item: BreadcrumbItem) => void;
     theme?: Themes;
 };
 
@@ -608,46 +609,19 @@ declare type FigureProps = {
 
 declare const Figure: FC<FigureProps>;
 
-declare function FlyinPanel({ children, className, copy, heading, isVisible, onClose, theme, }: {
-    children: any;
-    className: any;
-    copy: any;
-    heading: any;
-    isVisible: any;
-    onClose: any;
-    theme: any;
-}): JSX.Element;
-declare namespace FlyinPanel {
-    namespace propTypes {
-        const children: PropTypes.Validator<any>;
-        const className: PropTypes.Requireable<string>;
-        const copy: PropTypes.Requireable<PropTypes.InferProps<{
-            close: PropTypes.Requireable<string>;
-        }>>;
-        const heading: PropTypes.Requireable<string>;
-        const isVisible: PropTypes.Requireable<boolean>;
-        const onClose: PropTypes.Validator<(...args: any[]) => any>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const children_1: any;
-        export { children_1 as children };
-        const className_1: any;
-        export { className_1 as className };
-        export namespace copy_1 {
-            const close: any;
-        }
-        export { copy_1 as copy };
-        const heading_1: any;
-        export { heading_1 as heading };
-        const isVisible_1: boolean;
-        export { isVisible_1 as isVisible };
-        const onClose_1: any;
-        export { onClose_1 as onClose };
-        const theme_1: string;
-        export { theme_1 as theme };
-    }
-}
+declare type FlyinPanelProps = {
+    children: React.ReactNode;
+    className?: string;
+    copy?: {
+        close?: string;
+    };
+    heading?: string;
+    isVisible?: boolean;
+    onClose: () => void;
+    theme?: Themes;
+};
+
+declare const FlyinPanel: ({ children, className, copy, heading, isVisible, onClose, theme, }: FlyinPanelProps) => ReactElement | null;
 
 declare function FooterBlock({ className, copy, heading, headingClassName, isVisibleOnTabletAndMobile, links, listClassName, listItemClassName, theme, }: {
     className: any;
@@ -843,7 +817,7 @@ declare namespace GoogleMap {
 declare type Levels = '1' | '2' | '3' | '4' | '5' | '6';
 declare type Sizes = 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
 declare type HeadingProps = {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     className?: string;
     hasMediumWeightFont?: boolean;
     hasSerifFont?: boolean;
@@ -884,34 +858,15 @@ declare type HeroBannerProps = {
 
 declare const HeroBanner: React$1.ForwardRefExoticComponent<HeroBannerProps & React$1.RefAttributes<HTMLDivElement>>;
 
-declare function Hidden({ children, isLarge, isMedium, isSmall, isXLarge }: {
-    children: any;
-    isLarge: any;
-    isMedium: any;
-    isSmall: any;
-    isXLarge: any;
-}): JSX.Element;
-declare namespace Hidden {
-    namespace propTypes {
-        const children: PropTypes.Requireable<any>;
-        const isLarge: PropTypes.Requireable<boolean>;
-        const isMedium: PropTypes.Requireable<boolean>;
-        const isSmall: PropTypes.Requireable<boolean>;
-        const isXLarge: PropTypes.Requireable<boolean>;
-    }
-    namespace defaultProps {
-        const children_1: any;
-        export { children_1 as children };
-        const isLarge_1: boolean;
-        export { isLarge_1 as isLarge };
-        const isMedium_1: boolean;
-        export { isMedium_1 as isMedium };
-        const isSmall_1: boolean;
-        export { isSmall_1 as isSmall };
-        const isXLarge_1: boolean;
-        export { isXLarge_1 as isXLarge };
-    }
-}
+declare type HiddenProps = {
+    children: React.ReactNode;
+    isLarge?: boolean;
+    isMedium?: boolean;
+    isSmall?: boolean;
+    isXLarge?: boolean;
+};
+
+declare const Hidden: ({ children, isLarge, isMedium, isSmall, isXLarge, }: HiddenProps) => ReactElement | null;
 
 declare function HorizontalProductDisplayAccordion({ id, products, addToCartCopy }: {
     id: any;
@@ -1108,50 +1063,49 @@ declare namespace IconLink {
     }
 }
 
-declare const Image: FC<ImageProps>;
+declare const Image: React$1.ForwardRefExoticComponent<ImageProps & React$1.RefAttributes<HTMLImageElement>>;
 
-declare function ImageCarousel({ autoplaySpeed, className, hasAutoplay, hasFlushPagination, isCompact, slides, theme, }: {
-    autoplaySpeed: any;
-    className: any;
-    hasAutoplay: any;
-    hasFlushPagination: any;
-    isCompact: any;
-    slides: any;
-    theme: any;
-}): JSX.Element;
-declare namespace ImageCarousel {
-    namespace propTypes {
-        const autoplaySpeed: PropTypes.Requireable<number>;
-        const className: PropTypes.Requireable<string>;
-        const hasAutoplay: PropTypes.Requireable<boolean>;
-        const hasFlushPagination: PropTypes.Requireable<boolean>;
-        const isCompact: PropTypes.Requireable<boolean>;
-        const slides: PropTypes.Requireable<PropTypes.InferProps<{
-            caption: PropTypes.Requireable<string>;
-            id: PropTypes.Requireable<string>;
-            image: PropTypes.Validator<object>;
-        }>[]>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const autoplaySpeed_1: number;
-        export { autoplaySpeed_1 as autoplaySpeed };
-        const className_1: any;
-        export { className_1 as className };
-        const hasAutoplay_1: boolean;
-        export { hasAutoplay_1 as hasAutoplay };
-        const hasFlushPagination_1: boolean;
-        export { hasFlushPagination_1 as hasFlushPagination };
-        const isCompact_1: boolean;
-        export { isCompact_1 as isCompact };
-        const slides_1: any[];
-        export { slides_1 as slides };
-        const theme_1: string;
-        export { theme_1 as theme };
-    }
-}
+declare type Slide$1 = {
+    caption?: string;
+    id?: string;
+    image: ImageProps;
+};
+declare type ImageCarouselProps = {
+    autoplaySpeed?: number;
+    className?: string;
+    hasAutoplay?: boolean;
+    hasFlushPagination?: boolean;
+    isCompact?: boolean;
+    slides?: Slide$1[];
+    theme?: Themes;
+};
 
-declare const KitList: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare const ImageCarousel: ({ autoplaySpeed, className, hasAutoplay, hasFlushPagination, isCompact, slides, theme, }: ImageCarouselProps) => ReactElement | null;
+
+declare type ListItem = {
+    content: React.ReactNode;
+    id: string;
+};
+declare type ListProps = {
+    className?: string;
+    items?: ListItem[];
+    listItemClassName?: string;
+    theme?: Themes;
+};
+
+declare type KitListProps = {
+    className?: string;
+    isVisible?: boolean;
+    items: ListItem[];
+    theme?: Themes;
+};
+
+/** @TODO replace the `any` in the forwardRef type
+ * Following our forwardRef tyings, this first value should be HTMLUListElement (based on typeof List)
+ * However, due to https://stackoverflow.com/questions/58469229/react-with-typescript-generics-while-using-react-forwardref/58473012
+ * this does not work, and if List's return type changes, this static type will break
+ */
+declare const KitList: React$1.ForwardRefExoticComponent<KitListProps & React$1.RefAttributes<any>>;
 
 declare function LinkButtonGroup({ children, className, hasFitContent, isFlush, isFullWidth, textAlign, theme, }: {
     children: any;
@@ -1189,17 +1143,6 @@ declare namespace LinkButtonGroup {
         export { theme_1 as theme };
     }
 }
-
-declare type ListItem = {
-    content: React.ReactNode;
-    id: string;
-};
-declare type ListProps = {
-    className?: string;
-    items: ListItem[];
-    listItemClassName?: string;
-    theme?: Themes;
-};
 
 declare const List: React$1.ForwardRefExoticComponent<ListProps & React$1.RefAttributes<HTMLUListElement>>;
 
@@ -1243,7 +1186,34 @@ declare type LoadingProps = {
 
 declare const Loading: FC<LoadingProps>;
 
-declare const MediaWithContent: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type ContentCopy = {
+    description?: React.ReactNode;
+    eyebrow?: string;
+    heading?: string;
+    subHeading?: string;
+};
+
+declare type ContainMedia = 'center' | 'left' | 'right';
+declare type ForegroundImageLink = {
+    url: string;
+    title: string;
+};
+declare type MediaWithContentProps = {
+    backgroundColor?: string;
+    className?: string;
+    containMedia?: ContainMedia;
+    content?: React.ReactNode;
+    copy: ContentCopy;
+    foregroundImage?: JSX.Element;
+    foregroundImageLink?: ForegroundImageLink;
+    hasFullWidthImage?: boolean;
+    hasSerifFontHeading?: boolean;
+    isReverse?: boolean;
+    media: JSX.Element;
+    theme?: Themes;
+};
+
+declare const MediaWithContent: React$1.ForwardRefExoticComponent<MediaWithContentProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type ModalBodyCopy = {
     copy?: {
@@ -1341,76 +1311,94 @@ declare type ParagraphSetProps = {
 declare const Paragraph: FC<ParagraphProps>;
 declare const ParagraphSet: FC<ParagraphSetProps>;
 
-declare const Podium: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type TransitionType = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
+declare type TransitionProps = {
+    children: JSX.Element;
+    isActive?: boolean;
+    isActiveOnMount?: boolean;
+    shouldMountOnEnter?: boolean;
+    shouldUnmountOnExit?: boolean;
+    type?: TransitionType;
+};
+
+declare type HorizontalPadding = 'none' | 'small';
+declare type VerticalPadding = 'none' | 'small' | 'medium' | 'large';
+declare type PodiumProps = {
+    backgroundColor?: string;
+    children?: React.ReactNode;
+    className?: string;
+    'data-test-ref'?: string;
+    horizontalPadding?: HorizontalPadding;
+    id?: string;
+    isActive?: boolean;
+    isActiveOnMount?: boolean;
+    isHorizontalFlushOnLarge?: boolean;
+    isHorizontalFlushOnMedium?: boolean;
+    isHorizontalFlushOnSmall?: boolean;
+    paddingBottom?: VerticalPadding;
+    paddingLeft?: HorizontalPadding;
+    paddingRight?: HorizontalPadding;
+    paddingTop?: VerticalPadding;
+    theme?: Themes;
+    transition?: TransitionType;
+    verticalPadding?: VerticalPadding;
+};
+
+declare const Podium: React$1.ForwardRefExoticComponent<PodiumProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const ProductCommerce: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
-declare const ProductExtract: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type ProductExtractProps = {
+    dataTestRef: string;
+    className?: string;
+    hasBottomBorder?: boolean;
+    hasTopMargin?: boolean;
+    imageSize?: 'small' | 'medium';
+    isVisible?: boolean;
+    itemNum?: number;
+    theme?: Themes;
+    product?: {
+        image?: ImageProps;
+        name?: string;
+        url?: string;
+    };
+    works?: string;
+};
+
+declare const ProductExtract: React$1.ForwardRefExoticComponent<ProductExtractProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const ProductGridItem: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
-declare function ProductDetailHeader({ breadcrumbs, className, copy, theme }: {
-    breadcrumbs: any;
-    className: any;
-    copy: any;
-    theme: any;
-}): JSX.Element;
-declare namespace ProductDetailHeader {
-    namespace propTypes {
-        const breadcrumbs: PropTypes.Requireable<PropTypes.InferProps<{
-            className: PropTypes.Requireable<string>;
-            items: PropTypes.Requireable<PropTypes.InferProps<{
-                label: PropTypes.Requireable<string>;
-                id: PropTypes.Requireable<string>;
-                url: PropTypes.Requireable<string>;
-                title: PropTypes.Requireable<string>;
-            }>[]>;
-            theme: PropTypes.Requireable<string>;
-        }>>;
-        const className: PropTypes.Requireable<string>;
-        const copy: PropTypes.Requireable<PropTypes.InferProps<{
-            addToCart: PropTypes.Requireable<PropTypes.InferProps<{
-                cartAction: PropTypes.Requireable<string>;
-                updateNotification: PropTypes.Requireable<string>;
-                outOfStock: PropTypes.Requireable<PropTypes.InferProps<{
-                    label: PropTypes.Requireable<string>;
-                    title: PropTypes.Requireable<string>;
-                }>>;
-            }>>;
-            size: PropTypes.Requireable<PropTypes.InferProps<{
-                singular: PropTypes.Requireable<string>;
-                plural: PropTypes.Requireable<string>;
-            }>>;
-            upSellProductLabel: PropTypes.Requireable<string>;
-            flyinPanelHeading: PropTypes.Requireable<string>;
-        }>>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        export namespace breadcrumbs_1 {
-            const className_1: any;
-            export { className_1 as className };
-            export const items: any;
-            const theme_1: string;
-            export { theme_1 as theme };
-        }
-        export { breadcrumbs_1 as breadcrumbs };
-        const className_2: any;
-        export { className_2 as className };
-        export namespace copy_1 {
-            const addToCart: any;
-            namespace size {
-                const singular: any;
-                const plural: any;
-            }
-            const upSellProductLabel: any;
-            const flyinPanelHeading: any;
-        }
-        export { copy_1 as copy };
-        const theme_2: any;
-        export { theme_2 as theme };
-    }
-}
+declare type ProductDetailBodyCopy = {
+    addToCart?: {
+        cartAction?: string;
+        updateNotification?: string;
+        outOfStock?: {
+            label?: string;
+            title?: string;
+        };
+    };
+    size?: {
+        singular?: string;
+        plural?: string;
+    };
+    upSellProductLabel?: string;
+    flyinPanelHeading?: string;
+};
+
+declare type Breadcrumbs$1 = {
+    items?: BreadcrumbItem[];
+    theme?: Themes;
+};
+declare type ProductDetailHeaderProps = {
+    breadcrumbs?: Breadcrumbs$1;
+    className?: string;
+    copy?: ProductDetailBodyCopy;
+    onBreadcrumbClick?: (item: BreadcrumbItem, selectedVariant: Variant) => void;
+    theme?: Themes;
+};
+
+declare const ProductDetailHeader: ({ breadcrumbs, className, copy, onBreadcrumbClick, theme, }: ProductDetailHeaderProps) => ReactElement;
 
 declare type QuoteProps = {
     author: string;
@@ -1503,77 +1491,27 @@ declare namespace SecondaryMessage {
     }
 }
 
-declare function SectionHeading({ childrenClassNames, className, eyebrow, hasSerifFontHeading, heading, id, isFlush, isOffsetPageHeading, isHeroHeading, isPageHeading, subHeading, theme, titleFont, }: {
-    childrenClassNames: any;
-    className: any;
-    eyebrow: any;
-    hasSerifFontHeading: any;
-    heading: any;
-    id: any;
-    isFlush: any;
-    isOffsetPageHeading: any;
-    isHeroHeading: any;
-    isPageHeading: any;
-    subHeading: any;
-    theme: any;
-    titleFont: any;
-}): JSX.Element;
-declare namespace SectionHeading {
-    namespace propTypes {
-        const childrenClassNames: PropTypes.Requireable<PropTypes.InferProps<{
-            eyebrow: PropTypes.Requireable<string>;
-            heading: PropTypes.Requireable<string>;
-            subHeading: PropTypes.Requireable<string>;
-        }>>;
-        const className: PropTypes.Requireable<string>;
-        const eyebrow: PropTypes.Requireable<string>;
-        const hasSerifFontHeading: PropTypes.Requireable<boolean>;
-        const heading: PropTypes.Requireable<string>;
-        const id: PropTypes.Requireable<string>;
-        const isFlush: PropTypes.Requireable<boolean>;
-        const isOffsetPageHeading: PropTypes.Requireable<boolean>;
-        const isHeroHeading: PropTypes.Requireable<boolean>;
-        const isPageHeading: PropTypes.Requireable<boolean>;
-        const subHeading: PropTypes.Requireable<string>;
-        const theme: PropTypes.Requireable<string>;
-        const titleFont: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        export namespace childrenClassNames_1 {
-            const eyebrow_1: any;
-            export { eyebrow_1 as eyebrow };
-            const heading_1: any;
-            export { heading_1 as heading };
-            const subHeading_1: any;
-            export { subHeading_1 as subHeading };
-        }
-        export { childrenClassNames_1 as childrenClassNames };
-        const className_1: any;
-        export { className_1 as className };
-        const eyebrow_2: any;
-        export { eyebrow_2 as eyebrow };
-        const hasSerifFontHeading_1: boolean;
-        export { hasSerifFontHeading_1 as hasSerifFontHeading };
-        const heading_2: any;
-        export { heading_2 as heading };
-        const id_1: any;
-        export { id_1 as id };
-        const isFlush_1: boolean;
-        export { isFlush_1 as isFlush };
-        const isOffsetPageHeading_1: boolean;
-        export { isOffsetPageHeading_1 as isOffsetPageHeading };
-        const isHeroHeading_1: boolean;
-        export { isHeroHeading_1 as isHeroHeading };
-        const isPageHeading_1: boolean;
-        export { isPageHeading_1 as isPageHeading };
-        const subHeading_2: any;
-        export { subHeading_2 as subHeading };
-        const theme_1: string;
-        export { theme_1 as theme };
-        const titleFont_1: any;
-        export { titleFont_1 as titleFont };
-    }
-}
+declare type SectionHeadingProps = {
+    childrenClassNames?: {
+        eyebrow?: string;
+        heading?: string;
+        subHeading?: string;
+    };
+    className?: string;
+    eyebrow?: string;
+    hasSerifFontHeading?: boolean;
+    heading?: string;
+    id?: string;
+    isFlush?: boolean;
+    isOffsetPageHeading?: boolean;
+    isHeroHeading?: boolean;
+    isPageHeading?: boolean;
+    subHeading?: string;
+    theme?: Themes;
+    titleFont?: 'Suisse' | 'Zapf';
+};
+
+declare const SectionHeading: ({ childrenClassNames, className, eyebrow, hasSerifFontHeading, heading, id, isFlush, isOffsetPageHeading, isHeroHeading, isPageHeading, subHeading, theme, titleFont, }: SectionHeadingProps) => ReactElement;
 
 declare const Select: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
@@ -1845,16 +1783,6 @@ declare namespace TextOverFullWidthAsset {
     }
 }
 
-declare type TransitionType = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
-declare type TransitionProps = {
-    children: JSX.Element;
-    isActive?: boolean;
-    isActiveOnMount?: boolean;
-    shouldMountOnEnter?: boolean;
-    shouldUnmountOnExit?: boolean;
-    type?: TransitionType;
-};
-
 declare const Transition: ({ children, isActive, isActiveOnMount, shouldMountOnEnter, shouldUnmountOnExit, type, }: TransitionProps) => ReactElement | null;
 
 declare function TwoColumnLayout({ childrenClassNames, className, content, hasFullWidthContent, id, isFlushOnSmall, isReversed, sidebar, theme, }: {
@@ -1910,7 +1838,31 @@ declare namespace TwoColumnLayout {
     }
 }
 
-declare const TwoColumnList: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+/**
+ * Not using HyperlinkType as url is not required here
+ * @TODO openInANewWindow needs to be updated
+ */
+declare type HyperlinkItem = {
+    id: string;
+    text: string;
+    style?: LinkStyle;
+    url?: string;
+    openInANewWindow?: boolean;
+};
+declare type List$1 = {
+    id: string;
+    heading?: string;
+    subHeading?: string;
+    items?: HyperlinkItem[];
+};
+declare type TwoColumnListProps = {
+    className?: string;
+    leftColumn: List$1[];
+    rightColumn: List$1[];
+    theme?: Themes;
+};
+
+declare const TwoColumnList: React$1.ForwardRefExoticComponent<TwoColumnListProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const Video: React$1.ForwardRefExoticComponent<Pick<ControlsProps, "copy"> & {
     captions?: {
@@ -2132,33 +2084,6 @@ declare namespace googleMaps_d {
     googleMaps_d_CLUSTER_IMAGE_PATH as CLUSTER_IMAGE_PATH,
     googleMaps_d_DIRECTIONS_URL_PREFIX as DIRECTIONS_URL_PREFIX,
     googleMaps_d_MARKER_TYPE as MARKER_TYPE,
-  };
-}
-
-declare const LEVEL: {
-    ONE: string;
-    TWO: string;
-    THREE: string;
-    FOUR: string;
-    FIVE: string;
-    SIX: string;
-};
-declare const SIZE: {
-    X_X_LARGE: string;
-    X_LARGE: string;
-    LARGE: string;
-    MEDIUM: string;
-    SMALL: string;
-    X_SMALL: string;
-    X_X_SMALL: string;
-};
-
-declare const heading_d_LEVEL: typeof LEVEL;
-declare const heading_d_SIZE: typeof SIZE;
-declare namespace heading_d {
-  export {
-    heading_d_LEVEL as LEVEL,
-    heading_d_SIZE as SIZE,
   };
 }
 
@@ -2430,23 +2355,6 @@ declare namespace test_refs_d {
   };
 }
 
-declare const TYPE: {
-    FADE: string;
-    SHIFT_IN_DOWN: string;
-    SHIFT_IN_LEFT: string;
-    SLIDE_DOWN: string;
-    SLIDE_RIGHT: string;
-    SLOW_FADE: string;
-    ZOOM: string;
-};
-
-declare const transitions_d_TYPE: typeof TYPE;
-declare namespace transitions_d {
-  export {
-    transitions_d_TYPE as TYPE,
-  };
-}
-
 declare const VIEWPORTS: Map<ViewportNames, string>;
 
 declare const index_d$2_BREAKPOINTS: typeof BREAKPOINTS;
@@ -2456,14 +2364,12 @@ declare namespace index_d$2 {
     index_d$2_BREAKPOINTS as BREAKPOINTS,
     colors_d as COLORS,
     googleMaps_d as GOOGLE_MAPS,
-    heading_d as HEADING,
     html_d as HTML,
     hyperlinkStyleTypes_d as HYPERLINK_STYLE_TYPES,
     keyboardCodes_d as KEYBOARD_CODES,
     labels_d as LABELS,
     stores_d as STORES,
     test_refs_d as TEST_REFS,
-    transitions_d as TRANSITIONS,
     index_d$2_VIEWPORTS as VIEWPORTS,
   };
 }
@@ -2661,11 +2567,11 @@ declare namespace index_d$4 {
   };
 }
 
-declare function isInBrowser(): boolean;
+declare const isInBrowser: () => boolean;
 /**
  * Device detection. https://stackoverflow.com/questions/49328382/browser-detection-in-reactjs
  * @TODO consider replacing with https://www.npmjs.com/package/react-device-detect
- * if this helpers are widely required and useVideoScroller
+ * or https://www.npmjs.com/package/bowser
  */
 declare const isOpera: boolean;
 declare const isFirefox: boolean;
@@ -2714,7 +2620,16 @@ declare namespace index_d$7 {
   };
 }
 
-declare function getVariantRadioOptions(variants: any): any;
+declare type Variant$1 = {
+    size?: string;
+    sku?: string;
+};
+declare type RadioOptions = {
+    label: string;
+    value: string;
+};
+
+declare const getVariantRadioOptions: (variants: Variant$1[]) => RadioOptions[];
 
 declare const index_d$8_getVariantRadioOptions: typeof getVariantRadioOptions;
 declare namespace index_d$8 {

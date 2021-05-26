@@ -22,6 +22,28 @@ It is also recommended to install these plugins into your **IDE / Code Editor** 
   ([vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode))
 - StyleLint ([atom](https://atom.io/packages/linter-stylelint)) ([vscode](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint))
 
+## Usage
+
+Install in your application using the following command
+
+```bash
+# will use the main branch (`develop` at the time of writing)
+npm install github:aesop/aesop-gel --save
+```
+
+Import the component/hook/etc that you need in your code
+
+```jsx
+import { Heading } from 'aesop-gel/dist/components/Heading';
+
+// example usage
+const MyAppHeading = () => (
+  <Heading theme="dark" level="1" size="large">
+    This is a large H1
+  </Heading>
+);
+```
+
 ## Application Architecture
 
 TBA
@@ -81,19 +103,19 @@ This project adopts a simplified version of the [Gitflow Workflow](https://www.a
 
 `feature` (or `update`, or `bugfix` where appropriate) branches are branched from `develop`, and are merged back into `develop` after an approved Pull Request.
 
-`hotfix` branches can be merged into `master` if they originate from `master`.
+`hotfix` branches can be merged into `main` if they originate from `main`.
 
-`master` is always the updated stable version that truthfully represent production code.
+`main` is always the updated stable version that truthfully represent production code.
 
 ### Releasing code
 
 This project follows the [Semantic Versioning](https://semver.org/) standard or `MAJOR.MINOR.PATCH`. The version number is automatically maintained by the [semantic-release](https://github.com/semantic-release/semantic-release) package.
 
-Commits to the `develop` branch will be released on the `develop` channel. These will be tagged as follows `v1.2.3-develop.4`. These can be thought of as 'beta' builds. The final number `.4` in the example above will be incremented until the `develop` branch is merged into `master`.
+Commits to the `develop` branch will be released on the `develop` channel. These will be tagged as follows `v1.2.3-develop.4`. These can be thought of as 'beta' builds. The final number `.4` in the example above will be incremented until the `develop` branch is merged into `main`.
 
-When `develop` is merged into `master` a release will be created. These will be tagged as `v1.2.3` (Note the `master` should also be merged back into `develop` at this point so both branches contain a 'full' git tag history).
+When `develop` is merged into `main` a release will be created. These will be tagged as `v1.2.3` (Note the `main` should also be merged back into `develop` at this point so both branches contain a 'full' git tag history).
 
-These versions can be refrenced in other projects by adding `"aesop-gel": "github:aesop/aesop-gel#1.2.3",` to the package.json file. Generally the `master` releases should only be used. However during development and testing it may make sense to use the `develop` or 'beta' builds.
+These versions can be refrenced in other projects by adding `"aesop-gel": "github:aesop/aesop-gel#1.2.3",` to the package.json file. Generally the `main` releases should only be used. However during development and testing it may make sense to use the `develop` or 'beta' builds.
 
 Changes to the version number are calculated automatically via the CI flow. In short commits with a `feat` type will increment the `minor` version, commits with a `fix` type will increment the `patch` version.
 

@@ -19,7 +19,7 @@ module.exports = {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
-      propFilter: prop =>
+      propFilter: (prop) =>
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
   },
@@ -35,7 +35,7 @@ module.exports = {
 
     // Remove the existing css rule
     config.module.rules = config.module.rules.filter(
-      f => f.test.toString() !== '/\\.css$/',
+      (f) => f.test.toString() !== '/\\.css$/',
     );
 
     config.resolve.extensions.push('.ts', '.tsx');

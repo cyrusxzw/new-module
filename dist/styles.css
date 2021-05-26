@@ -2946,6 +2946,7 @@ a:hover .Slide-module_heading__2KIs0,
 }
   }
 .Carousel-module_slideCounter__2MHc_ {
+  display: inline-block;
   width: 100%;
   padding-right: 20px;
   padding-left: 20px;
@@ -2974,8 +2975,10 @@ a:hover .Slide-module_heading__2KIs0,
     padding-left: 0;
   }
 .Carousel-module_caption__2q0_n {
+  display: inline-block;
   padding-right: 20px;
   padding-left: 20px;
+  margin-bottom: 10px;
 }
 @media (min-width: 640px) {
 .Carousel-module_caption__2q0_n {
@@ -4542,6 +4545,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -o-object-fit: cover;
      object-fit: cover;
 }
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
 .Video-module_base__3wxiY video::cue {
     font: 14px/14px;
     font-size: 14px;

@@ -1,0 +1,1 @@
+"use strict";var e=require("./environment.js"),r=require("./viewports.js");exports.isViewport=function(t){if(!r.VIEWPORTS.get(t))throw new Error("The viewport '"+t+"' does not exist");return!!e.isInBrowser()&&window.matchMedia(r.VIEWPORTS.get(t)).matches};

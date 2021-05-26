@@ -10,7 +10,8 @@ type BreadcrumbItem = {
 type BreadcrumbsProps = {
   className?: string;
   items?: BreadcrumbItem[];
+  onHyperlinkClick?: (item: BreadcrumbItem) => void;
   theme?: Themes;
 };
 
-export type { BreadcrumbsProps };
+export type { BreadcrumbsProps, BreadcrumbItem };

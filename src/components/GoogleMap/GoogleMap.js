@@ -4,12 +4,7 @@ import cx from 'classnames';
 import isFunction from 'lodash/isFunction';
 import { renderToStaticMarkup } from 'react-dom/server.browser';
 import MarkerClusterer from '@google/markerclusterer';
-import {
-  HYPERLINK_STYLE_TYPES,
-  GOOGLE_MAPS,
-  STORES,
-  TRANSITIONS,
-} from '~/constants';
+import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS, STORES } from '~/constants';
 import { useGoogleMapsContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
 import { isViewport } from '~/utils/viewport';
@@ -66,7 +61,7 @@ const GoogleMap = ({
   isMediumViewport.current = isViewport('md');
 
   const clearMapMarkers = () => {
-    markers.forEach(marker => marker.setMap(null));
+    markers.forEach((marker) => marker.setMap(null));
     setMarkers([]);
   };
 
@@ -94,7 +89,7 @@ const GoogleMap = ({
 
       setMarkers(() =>
         [customMarker, ...places]
-          .filter(item => item?.lat !== undefined && item?.lng !== undefined)
+          .filter((item) => item?.lat !== undefined && item?.lng !== undefined)
           .map((marker, index) =>
             marker.type === GOOGLE_MAPS.MARKER_TYPE.PIN
               ? createPinMarker(marker, index)
@@ -259,7 +254,7 @@ const GoogleMap = ({
         isActive={!!activeInfoBlockData}
         shouldMountOnEnter={true}
         shouldUnmountOnExit={true}
-        type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
+        type="shiftInDown"
       >
         <InfoCard
           address={activeInfoBlockData?.address}

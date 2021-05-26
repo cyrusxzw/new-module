@@ -41,6 +41,7 @@ const VideoPlayer = forwardRef<HTMLVideoElement, VideoPlayerProps>(
 
     return (
       <Transition isActive={isActive} type="fade">
+        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <video
           autoPlay={hasAutoplay}
           className={classSet}

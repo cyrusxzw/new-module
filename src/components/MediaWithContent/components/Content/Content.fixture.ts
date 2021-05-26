@@ -1,0 +1,3 @@
+const ContentFixture = {};
+
+export { ContentFixture };

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { HEADING, HYPERLINK_STYLE_TYPES, GOOGLE_MAPS } from '~/constants';
+import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS } from '~/constants';
 import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { StoreHoursList } from '~/components/StoreHoursList/index.ts';
@@ -24,7 +24,7 @@ const InfoCard = ({
       <div className={styles.markerCount}>
         {hasMarkerIndexes ? <i>{count}</i> : ''}
       </div>
-      <Heading level={HEADING.LEVEL.THREE} size={HEADING.SIZE.X_SMALL}>
+      <Heading level="3" size="xSmall">
         {storeName}
       </Heading>
       {address && (

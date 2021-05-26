@@ -12,7 +12,7 @@ const ReadMore = ({ articles, className }) => {
   return (
     <Transition isActiveOnMount={true} type="fade">
       <section className={classSet}>
-        {articles.map(article => (
+        {articles.map((article) => (
           <ContentHubArticle
             articleRef={article.articleRef}
             category={article.category}

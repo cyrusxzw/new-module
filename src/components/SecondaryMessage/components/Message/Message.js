@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { HEADING } from '~/constants';
 import { ConditionalWrapper } from '~/components/ConditionalWrapper';
 import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
@@ -14,18 +13,14 @@ const Message = ({ className, copy, heading, id, link }) => {
     <div className={classSet} id={id}>
       <ConditionalWrapper
         condition={!!link}
-        wrapper={children => (
+        wrapper={(children) => (
           <Hyperlink className={styles.link} {...link}>
             {children}
           </Hyperlink>
         )}
       >
         <div className={styles.content}>
-          <Heading
-            className={styles.heading}
-            level={HEADING.LEVEL.FOUR}
-            size={HEADING.SIZE.X_X_SMALL}
-          >
+          <Heading className={styles.heading} level="4" size="xXSmall">
             <span>{heading}</span>
           </Heading>
           <div className={styles.copy}>{copy}</div>

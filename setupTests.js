@@ -1,18 +1,18 @@
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom/extend-expect';
-import 'jest-axe/extend-expect'; // eslint-disable-line import/no-unresolved
+import 'jest-axe/extend-expect';
 /**
  * `Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)`
  *  https://stackoverflow.com/questions/48828759/unit-test-raises-error-because-of-getcontext-is-not-implemented
  */
-import 'jest-canvas-mock'; // eslint-disable-line import/no-unresolved
+import 'jest-canvas-mock';
 
 /**
  * matchMedia mock: https://jestjs.io/docs/en/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
  */
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: jest.fn().mockImplementation(query => ({
+  value: jest.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,

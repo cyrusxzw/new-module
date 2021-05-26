@@ -62,7 +62,7 @@ const Footer = ({
           <Hidden isLarge={true} isXLarge={true}>
             <div>
               {iconLinks?.length &&
-                iconLinks.map(icon => (
+                iconLinks.map((icon) => (
                   <IconLink
                     altText={icon.altText}
                     className={styles.iconLinks}

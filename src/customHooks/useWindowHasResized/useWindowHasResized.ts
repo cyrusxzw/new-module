@@ -3,7 +3,7 @@ import debounce from 'lodash/debounce';
 import { isInBrowser } from '~/utils/environment';
 import type { UseWindowHasResized } from './useWindowHasResized.types';
 
-const useWindowHasResized: UseWindowHasResized = callback => {
+const useWindowHasResized: UseWindowHasResized = (callback) => {
   const [windowSize, setWindowSize] = useState({
     height: 0,
     width: 0,

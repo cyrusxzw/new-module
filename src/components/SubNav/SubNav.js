@@ -26,7 +26,7 @@ const SubNav = forwardRef(
       className,
     );
 
-    const onChange = event => {
+    const onChange = (event) => {
       window.location.href = event.target.value;
     };
 

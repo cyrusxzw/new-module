@@ -49,6 +49,7 @@ const Audio: FC<AudioProps> = ({
       <div className={styles.waveContainer}>
         <Loading className={styles.loading} isLoading={isLoading} />
         <figure className={styles.waveform} ref={waveformRef} />
+        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <audio ref={trackRef} src={audioUrl} />
       </div>
 

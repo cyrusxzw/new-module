@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { HEADING } from '~/constants';
 import { useProductDetailContext, useVariantSelectContext } from '~/contexts';
 import { useImageTransition } from '~/customHooks';
 import { getVariantRadioOptions } from '~/utils/product/index.ts';
@@ -70,8 +69,8 @@ const ProductGridItem = React.forwardRef(
         <Heading
           className={styles.productName}
           hasMediumWeightFont={true}
-          level={HEADING.LEVEL.FIVE}
-          size={HEADING.SIZE.X_X_SMALL}
+          level="5"
+          size="xXSmall"
           theme={theme}
         >
           <Hyperlink className={styles.productNameLink} url={url}>
@@ -91,7 +90,7 @@ const ProductGridItem = React.forwardRef(
               className={styles.variants}
               dataTestRef={RADIO_GROUP_DATA_TEST_REF}
               name={RADIO_GROUP_NAME}
-              onChange={e => onVariantChange(e, variants)}
+              onChange={(e) => onVariantChange(e, variants)}
               options={variantRadioOptions}
               theme={theme}
               value={selectedVariant.sku}

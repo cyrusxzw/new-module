@@ -1,194 +1,18 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "settings": {
-    "react": {
-      "version": "detect"
-    },
-    "import/resolver": {
-      "alias": {
-        "map": [["~", "./src"]],
-        "extensions": [".js", ".ts", ".tsx", ".json"]
-      }
-    }
-  },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true,
-    "jest": true
-  },
-  "globals": {
-    "JSX": true,
-    "React": true
-  },
-  "plugins": [
-    "import",
-    "react",
-    "react-hooks",
-    "jsx-a11y",
-    "testing-library",
-    "jest-dom",
-    "@typescript-eslint"
-  ],
+  "plugins": ["testing-library", "jest-dom"],
   "extends": [
-    "eslint:recommended",
-    "eslint-config-prettier",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:testing-library/dom",
+    "./node_modules/aesop-code-styles/eslint/browser-ts.js",
     "plugin:testing-library/react",
-    "plugin:jest-dom/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:jest-dom/recommended"
   ],
-  "parserOptions": {
-    "ecmaVersion": 2020,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "arrowFunctions": true,
-      "blockBindings": true,
-      "classes": true,
-      "defaultParams": true,
-      "destructuring": true,
-      "forOf": true,
-      "generators": false,
-      "jsx": true,
-      "modules": true,
-      "objectLiteralComputedProperties": true,
-      "objectLiteralDuplicateProperties": false,
-      "objectLiteralShorthandMethods": true,
-      "objectLiteralShorthandProperties": true,
-      "spread": true,
-      "superInFunctions": true,
-      "templateStrings": true
-    }
-  },
   "rules": {
-    "@typescript-eslint/no-unused-vars": "error",
-    "block-scoped-var": "error",
-    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
-    "camelcase": "error",
-    "comma-dangle": ["error", "always-multiline"],
-    "comma-spacing": ["error", { "before": false, "after": true }],
-    "comma-style": ["error", "last"],
-    "import/no-unresolved": [
-      "error",
-      {
-        "commonjs": true,
-        "caseSensitive": false,
-        "ignore": ["storybook.module.css$"]
-      }
-    ],
-    "import/no-default-export": "warn",
-    "indent": ["error", 2, { "SwitchCase": 1 }],
-    "init-declarations": ["error", "always"],
-    "jest-dom/prefer-empty": "error",
-    "jsx-a11y/media-has-caption": "off",
-    "jsx-a11y/label-has-associated-control": [
-      "error",
-      {
-        "components": ["Label"],
-        "required": {
-          "every": ["id"]
-        },
-        "allowChildren": false
-      }
-    ],
-    "new-cap": "off",
-    "no-alert": "error",
-    "no-console": "error",
-    "no-debugger": "error",
-    "no-dupe-keys": "error",
-    "no-empty": "error",
-    "no-extra-semi": "error",
-    "no-inline-comments": "off",
-    "no-irregular-whitespace": "error",
-    "no-lonely-if": "off",
-    "no-mixed-spaces-and-tabs": "error",
-    "no-multiple-empty-lines": [
-      "error",
-      { "max": 1, "maxEOF": 0, "maxBOF": 0 }
-    ],
-    "no-new": "warn",
-    "no-self-compare": "error",
-    "no-shadow": "off",
-    "no-trailing-spaces": "error",
-    "no-undef": "error",
-    "no-underscore-dangle": "off",
-    "no-unused-expressions": "warn",
-    "no-unused-vars": "off",
-    "no-var": "error",
-    "object-curly-spacing": ["error", "always"],
-    "one-var": ["error", "never"],
-    "padded-blocks": ["error", "never"],
-    "prefer-const": "error",
-    "radix": "error",
-    "react/display-name": "off",
-    "react/jsx-boolean-value": ["error", "always"],
-    "react/jsx-closing-bracket-location": "error",
-    "react/jsx-filename-extension": [
-      "warn",
-      { "extensions": [".js", ".jsx", ".tsx"] }
-    ],
-    "react/jsx-no-duplicate-props": "error",
-    "react/jsx-no-undef": "error",
-    "react/jsx-sort-props": [
-      "error",
-      {
-        "callbacksLast": false,
-        "ignoreCase": true,
-        "noSortAlphabetically": false,
-        "reservedFirst": false,
-        "shorthandFirst": false
-      }
-    ],
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
-    "react/jsx-wrap-multilines": [
-      "error",
-      { "arrow": true, "return": true, "declaration": true }
-    ],
-    "react/no-did-mount-set-state": "error",
-    "react/no-did-update-set-state": "off",
-    "react/no-multi-comp": "off",
-    "react/no-string-refs": "error",
-    "react/no-unescaped-entities": ["error", { "forbid": [">", "}"] }],
-    "react/no-unknown-property": "error",
-    "react/prop-types": "error",
-    "react/react-in-jsx-scope": "error",
-    "react/require-render-return": "error",
-    "react/self-closing-comp": "error",
-    "react/sort-comp": [
-      "error",
-      { "order": ["lifecycle", "render", "everything-else"] }
-    ],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "semi": ["error", "always"],
-    "space-before-blocks": ["error", "always"],
-    "space-before-function-paren": [
-      "error",
-      {
-        "anonymous": "always",
-        "named": "never",
-        "asyncArrow": "always"
-      }
-    ],
-    "space-in-brackets": "off",
-    "space-in-parens": ["error", "never"],
-    "space-infix-ops": "error",
-    "spaced-comment": ["error", "always"],
-    "strict": ["error", "never"],
-    "vars-on-top": "error"
+    "@typescript-eslint/no-use-before-define": "warn"
   },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
       "rules": {
-        "react/prop-types": "off",
-        "@typescript-eslint/no-unused-vars": "error"
+        "react/prop-types": "off"
       }
     },
     {
@@ -198,7 +22,23 @@
       }
     },
     {
-      "files": ["list-js-files.js", "postcss.config.js"],
+      "files": ["*.spec.js", "*.spec.ts", "*.spec.tsx"],
+      "env": {
+        "jest": true,
+        "node": true
+      }
+    },
+    {
+      "files": [
+        "babel.config.js",
+        "jest.config.js",
+        "list-js-files.js",
+        "postcss.config.js",
+        "rollup.config.js"
+      ],
+      "env": {
+        "node": true
+      },
       "rules": {
         "@typescript-eslint/no-var-requires": "off"
       }
