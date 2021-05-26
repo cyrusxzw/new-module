@@ -21,6 +21,7 @@ type ProductDetailBodyProps = {
   className?: string;
   copy: ProductDetailBodyCopy;
   theme?: Themes;
+  onFlyinOpenCloseClick?: (flyinStatus: 'open' | 'close') => void;
 };
 
 export type { ProductDetailBodyProps, ProductDetailBodyCopy };

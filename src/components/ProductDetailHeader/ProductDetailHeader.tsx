@@ -18,6 +18,7 @@ const ProductDetailHeader = ({
   className,
   copy,
   onBreadcrumbClick,
+  onFlyinOpenCloseClick,
   theme,
 }: ProductDetailHeaderProps): ReactElement => {
   const currentTheme = useThemeContext(theme, 'dark');
@@ -29,6 +30,8 @@ const ProductDetailHeader = ({
   });
   const handleOnBreadcrumbClick = (item: BreadcrumbItem) =>
     onBreadcrumbClick(item, selectedVariant);
+  const handleOnFlyinOpenCloseClick = (flyinState) =>
+    onFlyinOpenCloseClick(flyinState, selectedVariant);
 
   return (
     <div className={classSet}>
@@ -49,6 +52,7 @@ const ProductDetailHeader = ({
               upSellProductLabel: copy?.upSellProductLabel,
               flyinPanelHeading: copy?.flyinPanelHeading,
             }}
+            onFlyinOpenCloseClick={handleOnFlyinOpenCloseClick}
             theme={currentTheme}
           />
         </div>

@@ -12,6 +12,10 @@ type ProductDetailHeaderProps = {
   className?: string;
   copy?: ProductDetailBodyCopy;
   onBreadcrumbClick?: (item: BreadcrumbItem, selectedVariant: Variant) => void;
+  onFlyinOpenCloseClick?: (
+    flyinStatus: 'open' | 'close',
+    selectedVariant: Variant,
+  ) => void;
   theme?: Themes;
 };
 
