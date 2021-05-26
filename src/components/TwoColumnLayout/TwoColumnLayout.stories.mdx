@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import { StorybookGridOverlay } from '~.storybook/components/StorybookGridOverlay';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { Accordion } from '~/components/Accordion';
 import { BodyCopy } from '~/components/BodyCopy';
 import { BynderWidget } from '~/components/BynderWidget';
@@ -9,8 +9,8 @@ import { SubNav } from '~/components/SubNav';
 import { SubNavFixture } from '~/components/SubNav/SubNav.fixture';
 import { TwoColumnList } from '~/components/TwoColumnList';
 import { Video } from '~/components/Video';
-import { TwoColumnListFixture } from '~/components/TwoColumnList/TwoColumnList.fixture';
 import { TwoColumnLayout } from './TwoColumnLayout';
+import { TwoColumnLayoutFixture } from './TwoColumnLayout.fixture';
 
 <Meta title="Components/TwoColumnLayout" component={TwoColumnLayout} />
 
@@ -18,201 +18,196 @@ import { TwoColumnLayout } from './TwoColumnLayout';
 
 <Canvas>
   <Story name="Base component">
-    {() => {
-      const gridOverlayActive = knobs.boolean(
-        'isActive',
-        false,
-        'Grid overlay',
-      );
-      const gridOverlayIntertedColours = knobs.boolean(
-        'hasInvertedColours',
-        false,
-        'Grid overlay',
-      );
+    {(() => {
       const theme = knobs.select(
         'theme',
         ['dark', 'light'],
         'dark',
         'Presentation',
       );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
       return (
-        <div>
+        <>
+        <TwoColumnLayout
+          childrenClassNames={{ sidebar: 'sidebar', content: 'content' }}
+          content={
+            <React.Fragment>
+              <BodyCopy
+                copy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus vulputate, consectetur mauris sit amet, auctor tortor. Nunc at mauris enim. Maecenas tincidunt metus placerat, interdum arcu ac, semper lectus. Quisque venenatis dictum interdum. Maecenas velit tortor, egestas at ornare quis, egestas quis dui. Suspendisse rhoncus sagittis diam"
+                heading="Fusce a sollicitudin lacus"
+                id="Anti-Oxidant"
+                theme={theme}
+              />
+              <Image
+                altText="Lorem ipsum dolor sit amet"
+                cta={{
+                  url: '/',
+                }}
+                sizes={{
+                  large: './assets/images/ImageCarousel/image-one-large.jpg',
+                  medium:
+                    './assets/images/ImageCarousel/image-one-medium.jpg',
+                  small: './assets/images/ImageCarousel/image-one-small.jpg',
+                }}
+                theme={theme}
+              />
+              <TwoColumnList
+                leftColumn={TwoColumnListFixture.leftColumn}
+                rightColumn={TwoColumnListFixture.rightColumn}
+                theme={theme}
+              />
+              <Video
+                hasAllowAudio={false}
+                hasAutoplay={false}
+                hasLoop={false}
+                hasSpanContent={false}
+                hasPlayInFullScreen={false}
+                isFullWidth={true}
+                poster={{
+                  copy: {
+                    altText:
+                      'How to Use Video for Tea Tree Leaf Facial Exfoliant',
+                  },
+                  sizes: {
+                    large:
+                      './assets/images/MediaWithContent/video-poster.png',
+                    medium:
+                      './assets/images/MediaWithContent/video-poster.png',
+                    small:
+                      './assets/images/MediaWithContent/video-poster.png',
+                  },
+                }}
+                sizes={{
+                  large:
+                    'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+                  medium:
+                    'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+                  small:
+                    'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+                }}
+              />
+              <Accordion
+                items={[
+                  {
+                    id: '1',
+                    heading:
+                      'What are the granting programs available for application?',
+                    content:
+                      'The Aesop Foundation will consider support for organisations working in Australia. While the majority of our grants are awarded to organisations that are invited to apply, we remain open to hearing new ideas from potential partners. If you believe your organisation’s project meets the objectives and guidelines of the Foundation we warmly invite you to submit a letter of enquiry.',
+                  },
+                  {
+                    id: '2',
+                    heading:
+                      'What organisations are considered for applications?',
+                    content:
+                      'The Aesop Foundation supports its partners through two granting programs. The Companion Grants program provides up to AUD30,000, usually for a single year. The Partnerships Grants program provides between AUD100,000-300,000 per year for up to five years.',
+                  },
+                  {
+                    id: '3',
+                    heading: 'What are the guidelines for an application?',
+                    content: (
+                      <React.Fragment>
+                        <p>
+                          We respectfully request that you review the
+                          following guidelines to ensure close alignment prior
+                          to submitting a letter of enquiry:
+                        </p>
+                        <p>
+                          Applicant organisations must be a DGR Item 1 entity,
+                          operating in Australia and a charity registered with
+                          the ACNC.
+                        </p>
+                        <p>
+                          The project must meet, or make a contribution to
+                          meeting, one or both of the objectives of the
+                          Foundation, as follows',
+                        </p>
+                      </React.Fragment>
+                    ),
+                  },
+                ]}
+                theme={theme}
+              />
+              <BynderWidget
+                theme={theme}
+                heading="Media Releases"
+                id="6E8E63F9-7A54-442B-861E291124E19D94"
+              />
+            </React.Fragment>
+          }
+          hasFullWidthContent={knobs.boolean(
+            'hasFullWidthContent',
+            false,
+            'Presentation',
+          )}
+          id="TwoColumn-id"
+          isReversed={knobs.boolean('isReversed', true, 'Presentation')}
+          sidebar={
+            <React.Fragment>
+              <BodyCopy
+                copy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus vulputate, consectetur mauris sit amet, auctor tortor. Nunc at mauris enim. Maecenas tincidunt metus placerat, interdum arcu ac, semper lectus. Quisque venenatis dictum interdum. Maecenas velit tortor, egestas at ornare quis, egestas quis dui. Suspendisse rhoncus sagittis diam"
+                cta={{
+                  id: 'button-id',
+                  text: 'Lorem ipsum dolor',
+                  url: '/',
+                  openInANewWindow: true,
+                  style: 'Internal Button Link',
+                }}
+                secondaryCta={{
+                  id: 'button-id',
+                  text: 'Ipsum dolor',
+                  url: '/',
+                  openInANewWindow: true,
+                  style: 'Internal Button Link',
+                }}
+                eyebrow="In a metus vulputate"
+                hasSerifFontHeading={true}
+                heading="Lorem ipsum dolor sit amet"
+                id="Anti-Oxidant"
+                subHeading="Quisque venenatis dictum interdum"
+                theme={theme}
+              />
+              <Image
+                altText="Lorem ipsum dolor sit amet"
+                cta={{
+                  url: '/',
+                }}
+                sizes={{
+                  large:
+                    './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
+                  medium:
+                    './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
+                  small:
+                    './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
+                }}
+                theme={theme}
+              />
+              <SubNav
+                theme={theme}
+                id="Navigation block"
+                isSelect={true}
+                links={SubNavFixture.links}
+              />
+            </React.Fragment>
+          }
+          theme={theme}
+        />
           <StorybookGridOverlay
-            isActive={gridOverlayActive}
-            hasInvertedColours={gridOverlayIntertedColours}
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
           />
-          <TwoColumnLayout
-            childrenClassNames={{ sidebar: 'sidebar', content: 'content' }}
-            content={
-              <React.Fragment>
-                <BodyCopy
-                  copy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus vulputate, consectetur mauris sit amet, auctor tortor. Nunc at mauris enim. Maecenas tincidunt metus placerat, interdum arcu ac, semper lectus. Quisque venenatis dictum interdum. Maecenas velit tortor, egestas at ornare quis, egestas quis dui. Suspendisse rhoncus sagittis diam"
-                  heading="Fusce a sollicitudin lacus"
-                  id="Anti-Oxidant"
-                  theme={theme}
-                />
-                <Image
-                  altText="Lorem ipsum dolor sit amet"
-                  cta={{
-                    url: '/',
-                  }}
-                  sizes={{
-                    large: './assets/images/ImageCarousel/image-one-large.jpg',
-                    medium:
-                      './assets/images/ImageCarousel/image-one-medium.jpg',
-                    small: './assets/images/ImageCarousel/image-one-small.jpg',
-                  }}
-                  theme={theme}
-                />
-                <TwoColumnList
-                  leftColumn={TwoColumnListFixture.leftColumn}
-                  rightColumn={TwoColumnListFixture.rightColumn}
-                  theme={theme}
-                />
-                <Video
-                  hasAllowAudio={false}
-                  hasAutoplay={false}
-                  hasLoop={false}
-                  hasSpanContent={false}
-                  hasPlayInFullScreen={false}
-                  isFullWidth={true}
-                  poster={{
-                    copy: {
-                      altText:
-                        'How to Use Video for Tea Tree Leaf Facial Exfoliant',
-                    },
-                    sizes: {
-                      large:
-                        './assets/images/MediaWithContent/video-poster.png',
-                      medium:
-                        './assets/images/MediaWithContent/video-poster.png',
-                      small:
-                        './assets/images/MediaWithContent/video-poster.png',
-                    },
-                  }}
-                  sizes={{
-                    large:
-                      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
-                    medium:
-                      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
-                    small:
-                      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
-                  }}
-                />
-                <Accordion
-                  items={[
-                    {
-                      id: '1',
-                      heading:
-                        'What are the granting programs available for application?',
-                      content:
-                        'The Aesop Foundation will consider support for organisations working in Australia. While the majority of our grants are awarded to organisations that are invited to apply, we remain open to hearing new ideas from potential partners. If you believe your organisation’s project meets the objectives and guidelines of the Foundation we warmly invite you to submit a letter of enquiry.',
-                    },
-                    {
-                      id: '2',
-                      heading:
-                        'What organisations are considered for applications?',
-                      content:
-                        'The Aesop Foundation supports its partners through two granting programs. The Companion Grants program provides up to AUD30,000, usually for a single year. The Partnerships Grants program provides between AUD100,000-300,000 per year for up to five years.',
-                    },
-                    {
-                      id: '3',
-                      heading: 'What are the guidelines for an application?',
-                      content: (
-                        <React.Fragment>
-                          <p>
-                            We respectfully request that you review the
-                            following guidelines to ensure close alignment prior
-                            to submitting a letter of enquiry:
-                          </p>
-                          <p>
-                            Applicant organisations must be a DGR Item 1 entity,
-                            operating in Australia and a charity registered with
-                            the ACNC.
-                          </p>
-                          <p>
-                            The project must meet, or make a contribution to
-                            meeting, one or both of the objectives of the
-                            Foundation, as follows',
-                          </p>
-                        </React.Fragment>
-                      ),
-                    },
-                  ]}
-                  theme={knobs.select(
-                    'theme',
-                    ['dark', 'light'],
-                    'dark',
-                    'Presentation',
-                  )}
-                />
-                <BynderWidget
-                  theme={theme}
-                  heading="Media Releases"
-                  id="6E8E63F9-7A54-442B-861E291124E19D94"
-                />
-              </React.Fragment>
-            }
-            hasFullWidthContent={knobs.boolean(
-              'hasFullWidthContent',
-              false,
-              'Presentation',
-            )}
-            id="TwoColumn-id"
-            isReversed={knobs.boolean('isReversed', true, 'Presentation')}
-            sidebar={
-              <React.Fragment>
-                <BodyCopy
-                  copy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus vulputate, consectetur mauris sit amet, auctor tortor. Nunc at mauris enim. Maecenas tincidunt metus placerat, interdum arcu ac, semper lectus. Quisque venenatis dictum interdum. Maecenas velit tortor, egestas at ornare quis, egestas quis dui. Suspendisse rhoncus sagittis diam"
-                  cta={{
-                    id: 'button-id',
-                    text: 'Lorem ipsum dolor',
-                    url: '/',
-                    openInANewWindow: true,
-                    style: 'Internal Button Link',
-                  }}
-                  secondaryCta={{
-                    id: 'button-id',
-                    text: 'Ipsum dolor',
-                    url: '/',
-                    openInANewWindow: true,
-                    style: 'Internal Button Link',
-                  }}
-                  eyebrow="In a metus vulputate"
-                  hasSerifFontHeading={true}
-                  heading="Lorem ipsum dolor sit amet"
-                  id="Anti-Oxidant"
-                  subHeading="Quisque venenatis dictum interdum"
-                  theme={theme}
-                />
-                <Image
-                  altText="Lorem ipsum dolor sit amet"
-                  cta={{
-                    url: '/',
-                  }}
-                  sizes={{
-                    large:
-                      './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
-                    medium:
-                      './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
-                    small:
-                      './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
-                  }}
-                  theme={theme}
-                />
-                <SubNav
-                  theme={theme}
-                  id="Navigation block"
-                  isSelect={true}
-                  links={SubNavFixture.links}
-                />
-              </React.Fragment>
-            }
-            theme={theme}
-          />
-        </div>
+        </>
       );
-    }}
+    })()}
   </Story>
 </Canvas>
 
