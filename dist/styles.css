@@ -4545,6 +4545,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -o-object-fit: cover;
      object-fit: cover;
 }
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
 .Video-module_base__3wxiY video::cue {
     font: 14px/14px;
     font-size: 14px;

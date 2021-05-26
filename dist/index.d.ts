@@ -1511,7 +1511,7 @@ declare type SectionHeadingProps = {
     titleFont?: 'Suisse' | 'Zapf';
 };
 
-declare const SectionHeading: ({ childrenClassNames, className, eyebrow, hasSerifFontHeading, heading, id, isFlush, isOffsetPageHeading, isHeroHeading, isPageHeading, subHeading, theme, titleFont, }: SectionHeadingProps) => ReactElement;
+declare const SectionHeading: ({ childrenClassNames, className, eyebrow, hasSerifFontHeading, heading, id, isFlush, isOffsetPageHeading, isHeroHeading, isPageHeading, subHeading, theme, titleFont, }: SectionHeadingProps) => ReactElement | null;
 
 declare const Select: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 
