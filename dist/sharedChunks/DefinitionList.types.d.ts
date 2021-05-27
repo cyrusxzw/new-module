@@ -14,4 +14,4 @@ declare type DefinitionListProps = {
     theme?: Themes;
 };
 
-export { DefinitionListProps as D };
+export { DefinitionListProps as D, DefinitionListItem as a };
