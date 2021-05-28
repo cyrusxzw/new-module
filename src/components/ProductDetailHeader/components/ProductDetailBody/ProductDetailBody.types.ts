@@ -22,6 +22,7 @@ type ProductDetailBodyProps = {
   copy: ProductDetailBodyCopy;
   theme?: Themes;
   onFlyinOpenCloseClick?: (flyinStatus: 'open' | 'close') => void;
+  paymentWidget?: React.ReactNode;
 };
 
 export type { ProductDetailBodyProps, ProductDetailBodyCopy };

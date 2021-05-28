@@ -258,3 +258,9 @@
 .mediumProductName {
   margin-bottom: 15px;
 }
+
+.paymentWidget {
+  &.hasBottomBorder {
+    border-bottom: 1px solid var(--color-grey-65);
+  }
+}

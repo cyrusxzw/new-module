@@ -16,6 +16,7 @@ type ProductDetailHeaderProps = {
     flyinStatus: 'open' | 'close',
     selectedVariant: Variant,
   ) => void;
+  paymentWidget?: React.ReactNode;
   theme?: Themes;
 };
 
