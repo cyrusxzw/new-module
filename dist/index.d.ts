@@ -1421,10 +1421,11 @@ declare type ProductDetailHeaderProps = {
     className?: string;
     copy?: ProductDetailBodyCopy;
     onBreadcrumbClick?: (item: BreadcrumbItem, selectedVariant: Variant) => void;
+    onFlyinOpenCloseClick?: (flyinStatus: 'open' | 'close', selectedVariant: Variant) => void;
     theme?: Themes;
 };
 
-declare const ProductDetailHeader: ({ breadcrumbs, className, copy, onBreadcrumbClick, theme, }: ProductDetailHeaderProps) => ReactElement;
+declare const ProductDetailHeader: ({ breadcrumbs, className, copy, onBreadcrumbClick, onFlyinOpenCloseClick, theme, }: ProductDetailHeaderProps) => ReactElement;
 
 declare type QuoteProps = {
     author: string;
@@ -1496,26 +1497,26 @@ declare namespace ReadMore {
     }
 }
 
-declare function SecondaryMessage({ className, id, items }: {
-    className: any;
-    id: any;
-    items: any;
-}): JSX.Element;
-declare namespace SecondaryMessage {
-    namespace propTypes {
-        const className: PropTypes.Requireable<string>;
-        const id: PropTypes.Requireable<string>;
-        const items: any;
-    }
-    namespace defaultProps {
-        const className_1: any;
-        export { className_1 as className };
-        const id_1: any;
-        export { id_1 as id };
-        const items_1: any;
-        export { items_1 as items };
-    }
-}
+declare type MessageProps = {
+    className?: string;
+    copy: string;
+    heading: string;
+    id?: string;
+    link?: {
+        title: string;
+        url: string;
+    };
+    theme?: Themes;
+};
+
+declare type SecondaryMessageProps = {
+    className?: string;
+    id?: string;
+    items?: [MessageProps?, MessageProps?];
+    theme?: Themes;
+};
+
+declare const SecondaryMessage: ({ className, id, items, theme, }: SecondaryMessageProps) => ReactElement | null;
 
 declare type SectionHeadingProps = {
     childrenClassNames?: {
@@ -1600,39 +1601,21 @@ declare namespace StoreDetailHeader {
     }
 }
 
-declare function StoreHoursList({ alternateHoursNote, className, heading, hoursList, theme, }: {
-    alternateHoursNote: any;
-    className: any;
-    heading: any;
-    hoursList: any;
-    theme: any;
-}): JSX.Element;
-declare namespace StoreHoursList {
-    namespace propTypes {
-        const alternateHoursNote: PropTypes.Requireable<string>;
-        const className: PropTypes.Requireable<string>;
-        const heading: PropTypes.Requireable<string>;
-        const hoursList: PropTypes.Requireable<PropTypes.InferProps<{
-            dayName: PropTypes.Requireable<string>;
-            hours: PropTypes.Requireable<string>;
-            id: PropTypes.Requireable<string>;
-            isAlternate: PropTypes.Requireable<boolean>;
-        }>[]>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const alternateHoursNote_1: any;
-        export { alternateHoursNote_1 as alternateHoursNote };
-        const className_1: any;
-        export { className_1 as className };
-        const heading_1: any;
-        export { heading_1 as heading };
-        const hoursList_1: any[];
-        export { hoursList_1 as hoursList };
-        const theme_1: string;
-        export { theme_1 as theme };
-    }
-}
+declare type HoursListItem = {
+    dayName?: string;
+    hours?: string;
+    id?: string;
+    isAlternate?: boolean;
+};
+declare type StoreHoursListProps = {
+    alternateHoursNote?: string;
+    className?: string;
+    heading?: string;
+    hoursList?: HoursListItem[];
+    theme?: Themes;
+};
+
+declare const StoreHoursList: ({ alternateHoursNote, className, heading, hoursList, theme, }: StoreHoursListProps) => ReactElement | null;
 
 declare const SubNav: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
 

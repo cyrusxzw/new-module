@@ -26,6 +26,7 @@ const ProductDetailBody = ({
   className,
   copy,
   theme,
+  onFlyinOpenCloseClick,
 }: ProductDetailBodyProps): ReactElement | null => {
   const currentTheme = useThemeContext(theme, 'dark');
   const [isFlyinPanelVisible, setIsFlyinPanelVisible] = useState(false);
@@ -51,8 +52,14 @@ const ProductDetailBody = ({
   const variantRadioOptions = getVariantRadioOptions(variants);
   const handleOnVariantChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     onVariantChange(e, variants);
-  const handleOnFlyinPanelTriggerClick = () => setIsFlyinPanelVisible(true);
-  const handleOnCloseClick = () => setIsFlyinPanelVisible(false);
+  const handleOnFlyinPanelTriggerClick = () => {
+    onFlyinOpenCloseClick('open');
+    setIsFlyinPanelVisible(true);
+  };
+  const handleOnCloseClick = () => {
+    onFlyinOpenCloseClick('close');
+    setIsFlyinPanelVisible(false);
+  };
   const classSet = cx(styles.base, styles[currentTheme], className);
   const flyinPanelTriggerClassSet = cx(styles.flyinPanelTrigger, {
     [styles.isActiveButton]: isFlyinPanelVisible,

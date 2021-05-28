@@ -1,13 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactElement } from 'react';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import { ConditionalWrapper } from '~/components/ConditionalWrapper';
 import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
+import type { MessageProps } from './Message.types';
 import styles from './Message.module.css';
 
-const Message = ({ className, copy, heading, id, link }) => {
-  const classSet = cx(styles.base, className);
+const Message = ({
+  className,
+  copy,
+  heading,
+  id,
+  link,
+  theme,
+}: MessageProps): ReactElement => {
+  const currentTheme = useThemeContext(theme, 'dark');
+
+  const classSet = cx(styles.base, styles[currentTheme], className);
 
   return (
     <div className={classSet} id={id}>
@@ -28,25 +38,6 @@ const Message = ({ className, copy, heading, id, link }) => {
       </ConditionalWrapper>
     </div>
   );
-};
-
-Message.propTypes = {
-  className: PropTypes.string,
-  copy: PropTypes.string.isRequired,
-  heading: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  link: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-  }),
-};
-
-Message.defaultProps = {
-  className: undefined,
-  copy: undefined,
-  heading: undefined,
-  id: undefined,
-  link: undefined,
 };
 
 export { Message };

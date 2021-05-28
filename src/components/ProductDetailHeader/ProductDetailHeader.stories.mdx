@@ -24,7 +24,7 @@ import { ProductDetailHeaderFixture } from './ProductDetailHeader.fixture';
         'theme',
         ['dark', 'light'],
         ProductDetailHeaderFixture.theme,
-        'Presentation',
+        'Presentation'
       );
       const {
         productName,
@@ -39,7 +39,7 @@ import { ProductDetailHeaderFixture } from './ProductDetailHeader.fixture';
           'imageSize',
           ['Small', 'Large'],
           imageSize,
-          'Content',
+          'Content'
         ),
         ...productRest,
       };
@@ -55,7 +55,7 @@ import { ProductDetailHeaderFixture } from './ProductDetailHeader.fixture';
           hasInvertedColours: knobs.boolean(
             'Invert grid overlay colours',
             false,
-            'Implementation',
+            'Implementation'
           ),
         },
       };
@@ -71,6 +71,7 @@ import { ProductDetailHeaderFixture } from './ProductDetailHeader.fixture';
                   className={ProductDetailHeaderFixture.className}
                   copy={copy}
                   onBreadcrumbClick={action('clicked')}
+                  onFlyinOpenCloseClick={action('clicked')}
                   theme={theme}
                 />
               </VariantSelectContextProvider>
