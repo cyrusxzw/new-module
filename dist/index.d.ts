@@ -1471,26 +1471,26 @@ declare namespace ReadMore {
     }
 }
 
-declare function SecondaryMessage({ className, id, items }: {
-    className: any;
-    id: any;
-    items: any;
-}): JSX.Element;
-declare namespace SecondaryMessage {
-    namespace propTypes {
-        const className: PropTypes.Requireable<string>;
-        const id: PropTypes.Requireable<string>;
-        const items: any;
-    }
-    namespace defaultProps {
-        const className_1: any;
-        export { className_1 as className };
-        const id_1: any;
-        export { id_1 as id };
-        const items_1: any;
-        export { items_1 as items };
-    }
-}
+declare type MessageProps = {
+    className?: string;
+    copy: string;
+    heading: string;
+    id?: string;
+    link?: {
+        title: string;
+        url: string;
+    };
+    theme?: Themes;
+};
+
+declare type SecondaryMessageProps = {
+    className?: string;
+    id?: string;
+    items?: [MessageProps?, MessageProps?];
+    theme?: Themes;
+};
+
+declare const SecondaryMessage: ({ className, id, items, theme, }: SecondaryMessageProps) => ReactElement | null;
 
 declare type SectionHeadingProps = {
     childrenClassNames?: {

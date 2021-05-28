@@ -39,7 +39,9 @@ describe('<SecondaryMessage />', () => {
       />,
     );
 
-    screen.getByRole('link', { name: 'SecondaryMessage link title' });
+    expect(
+      screen.getByRole('link', { name: 'SecondaryMessage link title' }),
+    ).toBeInTheDocument();
   });
 
   it('should not render the UI if the `items` prop is not provided', () => {
