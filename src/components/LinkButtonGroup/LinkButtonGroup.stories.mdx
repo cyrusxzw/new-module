@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Button } from '~/components/Button';
 import { LinkButtonGroup } from './LinkButtonGroup';
@@ -11,57 +12,83 @@ import { LinkButtonGroupFixture } from './LinkButtonGroup.fixture';
 
 <Canvas>
   <Story name="Base component">
-    <LinkButtonGroup
-      hasFitContent={knobs.boolean('hasFitContent', false, 'Presentation')}
-      theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
-      textAlign={knobs.select(
-        'textAlign',
-        ['center', 'left', 'right'],
-        'center',
+    {(() => {
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
         'Presentation',
-      )}
-    >
-      <Hyperlink
-        url={knobs.text('url', LinkButtonGroupFixture.link.url, 'First link')}
-        style={knobs.select(
-          'style',
-          [
-            'External Button Link',
-            'Internal Button Link',
-            'External No Icon Button Link',
-            'Internal No Icon Button Link',
-          ],
-          LinkButtonGroupFixture.link.style,
-          'First link',
-        )}
-      >
-        {knobs.text(
-          'children',
-          LinkButtonGroupFixture.link.text,
-          'First link',
-        )}
-      </Hyperlink>
-      <Hyperlink
-        url={knobs.text('url', LinkButtonGroupFixture.secondaryLink.url, 'First link')}
-        style={knobs.select(
-          'style',
-          [
-            'External Button Link',
-            'Internal Button Link',
-            'External No Icon Button Link',
-            'Internal No Icon Button Link',
-          ],
-          LinkButtonGroupFixture.secondaryLink.style,
-          'First link',
-        )}
-      >
-        {knobs.text(
-          'children',
-          LinkButtonGroupFixture.secondaryLink.text,
-          'First link',
-        )}
-      </Hyperlink>
-    </LinkButtonGroup>
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <LinkButtonGroup
+            hasFitContent={knobs.boolean('hasFitContent', false, 'Presentation')}
+            theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
+            textAlign={knobs.select(
+              'textAlign',
+              ['center', 'left', 'right'],
+              'center',
+              'Presentation',
+            )}
+          >
+            <Hyperlink
+              url={knobs.text('url', LinkButtonGroupFixture.link.url, 'First link')}
+              style={knobs.select(
+                'style',
+                [
+                  'External Button Link',
+                  'Internal Button Link',
+                  'External No Icon Button Link',
+                  'Internal No Icon Button Link',
+                ],
+                LinkButtonGroupFixture.link.style,
+                'First link',
+              )}
+            >
+              {knobs.text(
+                'children',
+                LinkButtonGroupFixture.link.text,
+                'First link',
+              )}
+            </Hyperlink>
+            <Hyperlink
+              url={knobs.text('url', LinkButtonGroupFixture.secondaryLink.url, 'First link')}
+              style={knobs.select(
+                'style',
+                [
+                  'External Button Link',
+                  'Internal Button Link',
+                  'External No Icon Button Link',
+                  'Internal No Icon Button Link',
+                ],
+                LinkButtonGroupFixture.secondaryLink.style,
+                'First link',
+              )}
+            >
+              {knobs.text(
+                'children',
+                LinkButtonGroupFixture.secondaryLink.text,
+                'First link',
+              )}
+            </Hyperlink>
+          </LinkButtonGroup>
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 
