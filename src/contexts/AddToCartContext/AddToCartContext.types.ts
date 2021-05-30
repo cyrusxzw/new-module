@@ -1,3 +1,5 @@
+import type { Dispatch } from 'react';
+
 type AddToCartActionType = 'fail' | 'fetching' | 'success';
 
 type AddToCartAction = {
@@ -7,7 +9,7 @@ type AddToCartAction = {
 
 type OnAddToCartClick = (
   sku: string,
-  addToCartDispatch: React.Dispatch<AddToCartAction>,
+  addToCartDispatch: Dispatch<AddToCartAction>,
 ) => any;
 
 type AddToCartStoreState = {

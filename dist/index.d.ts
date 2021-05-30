@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1, { ReactNode, FC, MouseEvent, CSSProperties, LegacyRef, ReactElement, MouseEventHandler, RefObject } from 'react';
+import React$1, { ReactNode, FC, MouseEvent, CSSProperties, LegacyRef, ReactElement, Dispatch, MouseEventHandler, RefObject } from 'react';
 import PropTypes from 'prop-types';
 
 declare type DefinitionListItem = {
@@ -2352,7 +2352,7 @@ declare type AddToCartAction = {
     type: AddToCartActionType;
     payload?: string;
 };
-declare type OnAddToCartClick = (sku: string, addToCartDispatch: React.Dispatch<AddToCartAction>) => any;
+declare type OnAddToCartClick = (sku: string, addToCartDispatch: Dispatch<AddToCartAction>) => any;
 declare type AddToCartContextProps = {
     /**
       A callback function that takes `sku<string>`, `addToCartDispatch<function>`, `ADD_TO_CART_ACTION_TYPES<array[string]>`

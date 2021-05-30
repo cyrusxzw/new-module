@@ -1,12 +1,11 @@
-/// <reference types="react" />
-import { FC } from 'react';
+import { Dispatch, FC } from 'react';
 
 declare type AddToCartActionType = 'fail' | 'fetching' | 'success';
 declare type AddToCartAction = {
     type: AddToCartActionType;
     payload?: string;
 };
-declare type OnAddToCartClick = (sku: string, addToCartDispatch: React.Dispatch<AddToCartAction>) => any;
+declare type OnAddToCartClick = (sku: string, addToCartDispatch: Dispatch<AddToCartAction>) => any;
 declare type AddToCartContextProps = {
     /**
       A callback function that takes `sku<string>`, `addToCartDispatch<function>`, `ADD_TO_CART_ACTION_TYPES<array[string]>`
