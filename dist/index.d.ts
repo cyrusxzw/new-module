@@ -1106,42 +1106,17 @@ declare type KitListProps = {
  */
 declare const KitList: React$1.ForwardRefExoticComponent<KitListProps & React$1.RefAttributes<any>>;
 
-declare function LinkButtonGroup({ children, className, hasFitContent, isFlush, isFullWidth, textAlign, theme, }: {
-    children: any;
-    className: any;
-    hasFitContent: any;
-    isFlush: any;
-    isFullWidth: any;
-    textAlign: any;
-    theme: any;
-}): JSX.Element;
-declare namespace LinkButtonGroup {
-    namespace propTypes {
-        const children: PropTypes.Requireable<PropTypes.ReactElementLike | PropTypes.ReactElementLike[]>;
-        const className: PropTypes.Requireable<string>;
-        const hasFitContent: PropTypes.Requireable<boolean>;
-        const isFlush: PropTypes.Requireable<boolean>;
-        const isFullWidth: PropTypes.Requireable<boolean>;
-        const textAlign: PropTypes.Requireable<string>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const children_1: any;
-        export { children_1 as children };
-        const className_1: any;
-        export { className_1 as className };
-        const hasFitContent_1: boolean;
-        export { hasFitContent_1 as hasFitContent };
-        const isFlush_1: boolean;
-        export { isFlush_1 as isFlush };
-        const isFullWidth_1: boolean;
-        export { isFullWidth_1 as isFullWidth };
-        const textAlign_1: string;
-        export { textAlign_1 as textAlign };
-        const theme_1: any;
-        export { theme_1 as theme };
-    }
-}
+declare type LinkButtonGroupProps = {
+    children?: JSX.Element | JSX.Element[] /** @todo figure out how to efficiently allow only Button an Hyperlink */;
+    className?: string;
+    hasFitContent?: boolean;
+    isFlush?: boolean;
+    isFullWidth?: boolean;
+    textAlign?: 'center' | 'left' | 'right';
+    theme?: Themes;
+};
+
+declare const LinkButtonGroup: ({ children, className, hasFitContent, isFlush, isFullWidth, textAlign, theme, }: LinkButtonGroupProps) => React$1.ReactElement;
 
 declare const List: React$1.ForwardRefExoticComponent<ListProps & React$1.RefAttributes<HTMLUListElement>>;
 
@@ -1540,66 +1515,27 @@ declare type SectionHeadingProps = {
 
 declare const SectionHeading: ({ childrenClassNames, className, eyebrow, hasSerifFontHeading, heading, id, isFlush, isOffsetPageHeading, isHeroHeading, isPageHeading, subHeading, theme, titleFont, }: SectionHeadingProps) => ReactElement | null;
 
-declare const Select: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type SelectOption = {
+    id?: string;
+    label?: string;
+    value?: string;
+};
+declare type SelectProps = {
+    className?: string;
+    dataTestRef?: string;
+    errorMessage?: string;
+    isBlock?: boolean;
+    label?: string;
+    name: string;
+    onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void;
+    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+    onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void;
+    options: SelectOption[];
+    theme?: Themes;
+    value?: string;
+};
 
-declare function StoreDetailHeader({ alternateHoursNote, className, copy, email, location, openingHours, phone, storeName, theme, }: {
-    alternateHoursNote: any;
-    className: any;
-    copy: any;
-    email: any;
-    location: any;
-    openingHours: any;
-    phone: any;
-    storeName: any;
-    theme: any;
-}): JSX.Element;
-declare namespace StoreDetailHeader {
-    namespace propTypes {
-        const alternateHoursNote: PropTypes.Requireable<string>;
-        const className: PropTypes.Requireable<string>;
-        const copy: PropTypes.Requireable<PropTypes.InferProps<{
-            location: PropTypes.Requireable<string>;
-            email: PropTypes.Requireable<string>;
-            phone: PropTypes.Requireable<string>;
-            openingHours: PropTypes.Requireable<string>;
-        }>>;
-        const email: PropTypes.Requireable<string>;
-        const location: PropTypes.Requireable<string>;
-        const openingHours: PropTypes.Requireable<any[]>;
-        const phone: PropTypes.Requireable<string>;
-        const storeName: PropTypes.Validator<string>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const alternateHoursNote_1: any;
-        export { alternateHoursNote_1 as alternateHoursNote };
-        const className_1: any;
-        export { className_1 as className };
-        export namespace copy_1 {
-            const location_1: any;
-            export { location_1 as location };
-            const email_1: any;
-            export { email_1 as email };
-            const phone_1: any;
-            export { phone_1 as phone };
-            const openingHours_1: any;
-            export { openingHours_1 as openingHours };
-        }
-        export { copy_1 as copy };
-        const email_2: any;
-        export { email_2 as email };
-        const location_2: any;
-        export { location_2 as location };
-        const openingHours_2: any;
-        export { openingHours_2 as openingHours };
-        const phone_2: any;
-        export { phone_2 as phone };
-        const storeName_1: any;
-        export { storeName_1 as storeName };
-        const theme_1: string;
-        export { theme_1 as theme };
-    }
-}
+declare const Select: React$1.ForwardRefExoticComponent<SelectProps & React$1.RefAttributes<HTMLSelectElement>>;
 
 declare type HoursListItem = {
     dayName?: string;
@@ -1615,9 +1551,47 @@ declare type StoreHoursListProps = {
     theme?: Themes;
 };
 
+declare type StoreDetailCopy = {
+    location?: string;
+    email?: string;
+    phone?: string;
+    openingHours?: string;
+};
+declare type StoreDetailHeaderProps = {
+    alternateHoursNote?: string;
+    className?: string;
+    copy?: StoreDetailCopy;
+    email?: string;
+    location?: string;
+    openingHours?: HoursListItem[];
+    phone?: string;
+    storeName: string;
+    theme?: Themes;
+};
+
+declare const StoreDetailHeader: ({ alternateHoursNote, className, copy, email, location, openingHours, phone, storeName, theme, }: StoreDetailHeaderProps) => ReactElement;
+
 declare const StoreHoursList: ({ alternateHoursNote, className, heading, hoursList, theme, }: StoreHoursListProps) => ReactElement | null;
 
-declare const SubNav: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type SubNavLink = {
+    children: string /** @todo change this prop api to content or text  */;
+    id?: string;
+    hasTargetInNewWindow?: boolean;
+    style?: LinkStyle;
+    url: string;
+    onClick?: (event: MouseEvent) => void;
+};
+declare type SubNavProps = {
+    className?: string;
+    id: string;
+    isSelect?: boolean;
+    links: SubNavLink[];
+    heading?: string;
+    headingClassName?: string;
+    theme?: Themes;
+};
+
+declare const SubNav: React$1.ForwardRefExoticComponent<SubNavProps & React$1.RefAttributes<HTMLElement>>;
 
 declare function Textarea({ className, dataTestRef, defaultValue, id, isEnabled, inputRef, maxLength, name, onBlur, onChange, rows, textareaClassName, theme, value, }: {
     className: any;
