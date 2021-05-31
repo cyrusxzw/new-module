@@ -61,7 +61,7 @@
 
   .reverse &.fullWidth {
     padding-right: 0;
-    padding-left: var(--layout-sm-spacing);
+    padding-left: var(--layout-sm-margin);
   }
 
   @media (--viewport-xs-sm-only) {
