@@ -1489,7 +1489,27 @@ declare type SectionHeadingProps = {
 
 declare const SectionHeading: ({ childrenClassNames, className, eyebrow, hasSerifFontHeading, heading, id, isFlush, isOffsetPageHeading, isHeroHeading, isPageHeading, subHeading, theme, titleFont, }: SectionHeadingProps) => ReactElement | null;
 
-declare const Select: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type SelectOption = {
+    id?: string;
+    label?: string;
+    value?: string;
+};
+declare type SelectProps = {
+    className?: string;
+    dataTestRef?: string;
+    errorMessage?: string;
+    isBlock?: boolean;
+    label?: string;
+    name: string;
+    onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void;
+    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+    onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void;
+    options: SelectOption[];
+    theme?: Themes;
+    value?: string;
+};
+
+declare const Select: React$1.ForwardRefExoticComponent<SelectProps & React$1.RefAttributes<HTMLSelectElement>>;
 
 declare type HoursListItem = {
     dayName?: string;
@@ -1527,7 +1547,25 @@ declare const StoreDetailHeader: ({ alternateHoursNote, className, copy, email, 
 
 declare const StoreHoursList: ({ alternateHoursNote, className, heading, hoursList, theme, }: StoreHoursListProps) => ReactElement | null;
 
-declare const SubNav: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type SubNavLink = {
+    children: string /** @todo change this prop api to content or text  */;
+    id?: string;
+    hasTargetInNewWindow?: boolean;
+    style?: LinkStyle;
+    url: string;
+    onClick?: (event: MouseEvent) => void;
+};
+declare type SubNavProps = {
+    className?: string;
+    id: string;
+    isSelect?: boolean;
+    links: SubNavLink[];
+    heading?: string;
+    headingClassName?: string;
+    theme?: Themes;
+};
+
+declare const SubNav: React$1.ForwardRefExoticComponent<SubNavProps & React$1.RefAttributes<HTMLElement>>;
 
 declare function Textarea({ className, dataTestRef, defaultValue, id, isEnabled, inputRef, maxLength, name, onBlur, onChange, rows, textareaClassName, theme, value, }: {
     className: any;
