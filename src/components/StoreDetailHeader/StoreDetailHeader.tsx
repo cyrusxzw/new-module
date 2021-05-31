@@ -1,11 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactElement } from 'react';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS } from '~/constants';
 import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { StoreHoursList } from '~/components/StoreHoursList/index.ts';
 import { TwoColumnLayout } from '~/components/TwoColumnLayout/index.ts';
+import type { StoreDetailHeaderProps } from './StoreDetailHeader.types';
 import styles from './StoreDetailHeader.module.css';
 
 const DATA_TEST_REF_LOCATION = 'STORE_DETAILS_DIRECTION_LINK';
@@ -22,20 +23,21 @@ const StoreDetailHeader = ({
   phone,
   storeName,
   theme,
-}) => {
-  const classSet = cx(styles.base, styles[theme], className);
+}: StoreDetailHeaderProps): ReactElement => {
+  const currentTheme = useThemeContext(theme, 'dark');
+  const classSet = cx(styles.base, styles[currentTheme], className);
 
   const contentBlocks = [
     {
-      label: copy.location,
+      label: copy?.location,
       content: location ? (
         <Hyperlink
           className={styles.hyperlink}
           dataTestRef={DATA_TEST_REF_LOCATION}
           hasTargetInNewWindow={true}
           style={HYPERLINK_STYLE_TYPES.EXTERNAL_TEXT_LINK}
-          theme={theme}
-          title={`${copy.location}: ${location}`}
+          theme={currentTheme}
+          title={`${copy?.location}: ${location}`}
           url={`${GOOGLE_MAPS.DIRECTIONS_URL_PREFIX}${location}`}
         >
           {location}
@@ -44,15 +46,15 @@ const StoreDetailHeader = ({
       id: 'location',
     },
     {
-      label: copy.email,
+      label: copy?.email,
       content: email ? (
         <Hyperlink
           className={styles.hyperlink}
           dataTestRef={DATA_TEST_REF_EMAIL}
           hasTargetInNewWindow={true}
           style={HYPERLINK_STYLE_TYPES.EXTERNAL_TEXT_LINK}
-          theme={theme}
-          title={email}
+          theme={currentTheme}
+          title={`${copy?.email}: ${email}`}
           url={`mailto:${email}`}
         >
           {email}
@@ -61,15 +63,15 @@ const StoreDetailHeader = ({
       id: 'email',
     },
     {
-      label: copy.phone,
+      label: copy?.phone,
       content: phone ? (
         <Hyperlink
           className={styles.hyperlink}
           dataTestRef={DATA_TEST_REF_PHONE}
           hasTargetInNewWindow={false}
           style={HYPERLINK_STYLE_TYPES.EXTERNAL_NO_ICON_TEXT_LINK}
-          theme={theme}
-          title={`tel: ${phone}`}
+          theme={currentTheme}
+          title={`${copy?.phone}: ${phone}`}
           url={`tel:${phone}`}
         >
           {phone}
@@ -78,12 +80,12 @@ const StoreDetailHeader = ({
       id: 'phone',
     },
     {
-      label: copy.openingHours,
+      label: copy?.openingHours,
       content: (
         <StoreHoursList
           alternateHoursNote={alternateHoursNote}
           hoursList={openingHours}
-          theme={theme}
+          theme={currentTheme}
         />
       ),
       id: 'openingHours',
@@ -95,7 +97,7 @@ const StoreDetailHeader = ({
       className={classSet}
       content={
         <>
-          <Heading level="1" size="large" theme={theme}>
+          <Heading level="1" size="large" theme={currentTheme}>
             {storeName}
           </Heading>
           <div className={styles.detailBlock}>
@@ -107,7 +109,7 @@ const StoreDetailHeader = ({
                     className={styles.detailHeading}
                     level="3"
                     size="xXSmall"
-                    theme={theme}
+                    theme={currentTheme}
                   >
                     {label}
                   </Heading>
@@ -121,40 +123,6 @@ const StoreDetailHeader = ({
       isReversed={true}
     />
   );
-};
-
-StoreDetailHeader.propTypes = {
-  alternateHoursNote: PropTypes.string,
-  className: PropTypes.string,
-  copy: PropTypes.shape({
-    location: PropTypes.string,
-    email: PropTypes.string,
-    phone: PropTypes.string,
-    openingHours: PropTypes.string,
-  }),
-  email: PropTypes.string,
-  location: PropTypes.string,
-  openingHours: PropTypes.array,
-  phone: PropTypes.string,
-  storeName: PropTypes.string.isRequired,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-StoreDetailHeader.defaultProps = {
-  alternateHoursNote: undefined,
-  className: undefined,
-  copy: {
-    location: undefined,
-    email: undefined,
-    phone: undefined,
-    openingHours: undefined,
-  },
-  email: undefined,
-  location: undefined,
-  openingHours: undefined,
-  phone: undefined,
-  storeName: undefined,
-  theme: 'dark',
 };
 
 export { StoreDetailHeader };

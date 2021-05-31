@@ -14,12 +14,12 @@
   flex-wrap: wrap;
   font-family: var(--font-family-sans-serif-regular);
   font-size: rem(15px);
-  line-height: 1.8;
+  line-height: 1.4;
 }
 
 .detail {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 
   @media (--viewport-md) {
     width: calc(100% * 1 / 2);
@@ -56,5 +56,15 @@
 
   .light & {
     color: var(--color-light-label);
+  }
+
+  &:hover {
+    .dark & {
+      color: var(--color-dark-link);
+    }
+
+    .light & {
+      color: var(--color-light-link);
+    }
   }
 }
