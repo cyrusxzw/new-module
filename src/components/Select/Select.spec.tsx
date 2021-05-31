@@ -1,61 +1,107 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { Select } from './Select';
 
 describe('<Select />', () => {
-  it('should render Correcet select list with option UI', () => {
-    const handleOnChange = jest.fn();
+  const name = 'character-select';
+  const label = 'Select your character';
+  const options = [
+    { id: 'option1', label: 'Rick', value: 'rick' },
+    { label: 'Morty', value: 'morty' },
+  ];
+  const onChange = () => {
+    return;
+  };
 
-    render(
+  it('should call the event handling props correctly', async () => {
+    const onBlur = jest.fn();
+    const onChange = jest.fn();
+    const onFocus = jest.fn();
+
+    const { container } = render(
       <Select
-        name="test-select"
-        onChange={handleOnChange}
-        options={[
-          {
-            id: 'item-id-1',
-            label: 'item label 1',
-            value: 'item value 1',
-          },
-          {
-            id: 'item-id-2',
-            label: 'item label 2',
-            value: 'item value 2',
-          },
-        ]}
+        label={label}
+        name={name}
+        onBlur={onBlur}
+        onChange={onChange}
+        onFocus={onFocus}
+        options={options}
       />,
     );
+    const dropDownElement = screen.getByRole('combobox');
 
-    expect(
-      screen.getByRole('combobox', { name: 'test-select' }),
-    ).toBeInTheDocument();
-    expect(screen.getAllByRole('option')).toHaveLength(2);
+    dropDownElement.focus();
+    expect(onFocus).toHaveBeenCalledTimes(1);
+    expect(onFocus).toHaveBeenCalledWith(expect.anything());
+
+    userEvent.selectOptions(dropDownElement, options[0].value);
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith(expect.anything());
+
+    dropDownElement.blur();
+    expect(onBlur).toHaveBeenCalledTimes(1);
+    expect(onBlur).toHaveBeenCalledWith(expect.anything());
+
+    const a11lyResults = await axe(container);
+    expect(a11lyResults).toHaveNoViolations();
   });
 
-  it('should call the onChange callback on option change', () => {
-    const handleOnChange = jest.fn();
-
+  it(`should add an option with the label's text and empty value when the label is provided`, () => {
     render(
       <Select
-        name="test-select"
-        onChange={handleOnChange}
-        options={[
-          {
-            id: 'item-id-1',
-            label: 'item label 1',
-            value: 'item value 1',
-          },
-          {
-            id: 'item-id-2',
-            label: 'item label 2',
-            value: 'item value 2',
-          },
-        ]}
+        label={label}
+        name={name}
+        onChange={onChange}
+        options={options}
       />,
     );
+    const dropDownElement = screen.getByRole('combobox');
 
-    userEvent.selectOptions(screen.getByRole('combobox'), 'item label 2');
+    expect(dropDownElement.childElementCount).toEqual(options.length + 1);
+  });
 
-    expect(handleOnChange).toHaveBeenCalledTimes(1);
+  it(`should have only the passed in options if a label isn't provided`, () => {
+    render(<Select name={name} onChange={onChange} options={options} />);
+    const dropDownElement = screen.getByRole('combobox');
+
+    expect(dropDownElement.childElementCount).toEqual(options.length);
+  });
+
+  it(`should show an errorMessage and set it as the description if provided`, async () => {
+    const errorMessage = 'oooo weee';
+
+    const { container } = render(
+      <Select
+        errorMessage={errorMessage}
+        name={name}
+        onChange={onChange}
+        options={options}
+      />,
+    );
+    const dropDownElement = screen.getByRole('combobox');
+    const errorMessageElement = screen.getByText(errorMessage);
+
+    expect(errorMessageElement).toBeVisible();
+    expect(dropDownElement).toHaveDescription(errorMessage);
+
+    const a11lyResults = await axe(container);
+    expect(a11lyResults).toHaveNoViolations();
+  });
+
+  it('should function correctly without onFocus and onBlur props', async () => {
+    render(<Select name={name} onChange={onChange} options={options} />);
+    const dropDownElement = screen.getByRole('combobox');
+
+    dropDownElement.focus();
+    userEvent.selectOptions(dropDownElement, options[1].value);
+    dropDownElement.blur();
+
+    expect(dropDownElement).toHaveValue(options[1].value);
+
+    // TODO: suffers from this issue https://github.com/nickcolley/jest-axe/issues/147
+    // const a11lyResults = await axe(container);
+    // expect(a11lyResults).toHaveNoViolations();
   });
 });
