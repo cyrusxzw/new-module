@@ -2,15 +2,9 @@
 
 .base {
   display: flex;
-  height: 90vh;
-
-  &,
-  & * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
 
   @media (--viewport-xs-sm-only) {
-    display: block;
-    height: auto;
+    flex-direction: column;
   }
 }
