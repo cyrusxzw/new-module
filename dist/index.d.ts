@@ -1,33 +1,45 @@
 /// <reference types="react" />
-import React$1, { ReactNode, FC, MouseEvent, CSSProperties, LegacyRef, ReactElement, MouseEventHandler, RefObject } from 'react';
+import React$1, { ReactNode, FC, MouseEvent, CSSProperties, LegacyRef, ReactElement, Dispatch, MouseEventHandler, RefObject } from 'react';
 import PropTypes from 'prop-types';
 
-declare type Product = {
-    description?: string;
-    id?: string;
-    variantOptions?: Variant[];
-    cartDisclaimer?: string;
-    definitionList?: {
-        term?: JSX.Element;
-        description?: JSX.Element;
-    }[];
-    flyinPanel?: JSX.Element;
-    productName: string;
-    imageSize?: string;
-    upSellProduct?: {
-        image?: {
-            altText?: string;
-            small?: string;
-        };
-        name?: string;
-        url?: string;
+declare type DefinitionListItem = {
+    description?: ReactNode;
+    id: string;
+    term?: ReactNode;
+};
+declare type DefinitionListProps = {
+    className?: string;
+    hasBottomBorder?: boolean;
+    isVisible?: boolean;
+    items?: DefinitionListItem[];
+    theme?: Themes;
+};
+
+declare type UpSellProduct = {
+    image?: {
+        altText?: string;
+        small?: string;
     };
+    name?: string;
+    url?: string;
+};
+declare type Product = {
+    cartDisclaimer?: string;
+    definitionList?: DefinitionListItem[];
+    description?: string;
+    flyinPanel?: React.ReactNode;
+    id?: string;
+    imageSize?: string;
+    productName: string;
+    sku: string;
+    upSellProduct?: UpSellProduct;
+    variantOptions?: Variant[];
 };
 
 declare type Themes = 'dark' | 'light';
 
 declare type Variant = {
-    alternateAction: {
+    alternateAction?: {
         url: string;
         label: string;
     };
@@ -395,19 +407,6 @@ declare namespace ContentHubArticleList {
         export { pattern_1 as pattern };
     }
 }
-
-declare type DefinitionListItem = {
-    description?: ReactNode;
-    id: string;
-    term?: ReactNode;
-};
-declare type DefinitionListProps = {
-    className?: string;
-    hasBottomBorder?: boolean;
-    isVisible?: boolean;
-    items?: DefinitionListItem[];
-    theme?: Themes;
-};
 
 declare const DefinitionList: React$1.ForwardRefExoticComponent<DefinitionListProps & React$1.RefAttributes<HTMLDListElement>>;
 
@@ -1321,7 +1320,34 @@ declare type PodiumProps = {
 
 declare const Podium: React$1.ForwardRefExoticComponent<PodiumProps & React$1.RefAttributes<HTMLDivElement>>;
 
-declare const ProductCommerce: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type ProductCommerceProps = {
+    className?: string;
+    copy?: {
+        addToCart?: {
+            cartAction?: string;
+            updateNotification?: string;
+            outOfStock?: {
+                label?: string;
+                title?: string;
+            };
+        };
+        size?: string;
+    };
+    cta?: {
+        text?: string;
+        url?: string;
+    };
+    description?: React.ReactNode;
+    eyebrow?: string;
+    heading?: string;
+    id?: string;
+    isActive?: boolean;
+    onCtaClick?: () => void;
+    size?: string;
+    theme?: Themes;
+};
+
+declare const ProductCommerce: React$1.ForwardRefExoticComponent<ProductCommerceProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type ProductExtractProps = {
     dataTestRef: string;
@@ -1482,7 +1508,7 @@ declare type SectionHeadingProps = {
     isOffsetPageHeading?: boolean;
     isHeroHeading?: boolean;
     isPageHeading?: boolean;
-    subHeading?: string;
+    subHeading?: ReactNode;
     theme?: Themes;
     titleFont?: 'Suisse' | 'Zapf';
 };
@@ -2295,13 +2321,19 @@ declare namespace index_d$2 {
   };
 }
 
+declare type AddToCartActionType = 'fail' | 'fetching' | 'success';
+declare type AddToCartAction = {
+    type: AddToCartActionType;
+    payload?: string;
+};
+declare type OnAddToCartClick = (sku: string, addToCartDispatch: Dispatch<AddToCartAction>) => any;
 declare type AddToCartContextProps = {
     /**
       A callback function that takes `sku<string>`, `addToCartDispatch<function>`, `ADD_TO_CART_ACTION_TYPES<array[string]>`
       as arguments. See [AddToCartButton.onClick.js mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/AddToCartButton/__mocks__/AddToCartButton.onClick.js)
       for an example. ___Required___
      */
-    onClick?: MouseEventHandler<HTMLButtonElement>;
+    onClick?: OnAddToCartClick;
 };
 
 declare const AddToCartContextProvider: FC<AddToCartContextProps>;

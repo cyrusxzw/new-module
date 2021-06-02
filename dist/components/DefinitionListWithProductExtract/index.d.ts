@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { T as Themes } from '../../sharedChunks/Themes.types';
 import { D as DefinitionListProps } from '../../sharedChunks/DefinitionList.types';
+import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type DefinitionListWithProductExtractProps = {
     dataTestRef: string;

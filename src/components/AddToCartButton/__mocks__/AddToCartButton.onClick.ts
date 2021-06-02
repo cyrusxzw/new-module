@@ -1,10 +1,11 @@
 /* istanbul ignore file */
-const mockAddToCartButtonOnClick = async (
+import type { OnAddToCartClick } from '~/contexts/AddToCartContext/AddToCartContext.types';
+
+const mockAddToCartButtonOnClick: OnAddToCartClick = async (
   sku,
   addToCartDispatch,
-  ADD_TO_CART_ACTION_TYPES,
 ) => {
-  addToCartDispatch({ type: ADD_TO_CART_ACTION_TYPES.FETCHING });
+  addToCartDispatch({ type: 'fetching' });
 
   try {
     await (() =>
@@ -18,9 +19,9 @@ const mockAddToCartButtonOnClick = async (
         );
       }))();
 
-    addToCartDispatch({ type: ADD_TO_CART_ACTION_TYPES.SUCCESS });
+    addToCartDispatch({ type: 'success' });
   } catch (error) {
-    addToCartDispatch({ type: ADD_TO_CART_ACTION_TYPES.FAIL });
+    addToCartDispatch({ type: 'fail', payload: error });
   }
 };
 
