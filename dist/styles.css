@@ -876,10 +876,8 @@
   font-family: 'Suisse Regular', sans-serif;
   font-weight: 400;
   line-height: 1.2;
-  -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-          text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+      text-size-adjust: 100%;
 }
 .Heading-module_dark__3xDuY {
   color: #333;
@@ -9411,10 +9409,8 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   font-size: 25px;
   font-weight: 400;
   line-height: 1.33;
-  -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-          text-size-adjust: 100%
+  -ms-text-size-adjust: 100%;
+      text-size-adjust: 100%
 }
 @media (min-width: 640px) {
   .Quote-module_blockquote__1Ap9l {
