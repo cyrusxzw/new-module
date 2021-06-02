@@ -1,7 +1,6 @@
 // TODO: refactor to address eslint rule violations
 /* eslint-disable testing-library/no-node-access */
 /* eslint-disable testing-library/no-container */
-
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -15,7 +14,7 @@ import { AccordionProduct } from './AccordionProduct';
 
 describe('<AccordionProduct />', () => {
   it('should render base component correctly', () => {
-    const { container } = render(
+    render(
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
         <VariantSelectContextProvider
           variants={AccordionProductFixture.openState.product.variants}
@@ -35,7 +34,6 @@ describe('<AccordionProduct />', () => {
     );
 
     expect(accordionProduct).toBeInTheDocument();
-    expect(container).toMatchSnapshot();
   });
 
   it('should fire resetAccordion onClick if the accordion is compressed', () => {
@@ -122,9 +120,9 @@ describe('<AccordionProduct />', () => {
       </AddToCartContextProvider>,
     );
 
-    const closeStateBtn = container.querySelector('.closeBtn');
+    const closeStateButton = container.querySelector('.closeButton');
 
-    userEvent.click(closeStateBtn);
+    userEvent.click(closeStateButton);
 
     expect(handleOpenOnClick).toHaveBeenCalledTimes(1);
   });
@@ -151,9 +149,9 @@ describe('<AccordionProduct />', () => {
       </AddToCartContextProvider>,
     );
 
-    const openStateBtn = container.querySelector('.openBtn');
+    const openStateButton = container.querySelector('.openButton');
 
-    userEvent.click(openStateBtn);
+    userEvent.click(openStateButton);
 
     expect(handleCloseOnClick).toHaveBeenCalledTimes(2);
   });
@@ -180,11 +178,11 @@ describe('<AccordionProduct />', () => {
       </AddToCartContextProvider>,
     );
 
-    const foregroundBtn = container.querySelector(
-      '.closedStateForegroundImageWrap',
+    const foregroundButton = container.querySelector(
+      '.closedStateForegroundImage',
     );
 
-    userEvent.click(foregroundBtn);
+    userEvent.click(foregroundButton);
 
     expect(handleForegroundOnClick).toHaveBeenCalledTimes(2);
   });
@@ -214,54 +212,6 @@ describe('<AccordionProduct />', () => {
     expect(handleCallbackWithRef).toHaveBeenCalledTimes(1);
   });
 
-  it('should render closedState video', () => {
-    const { container } = render(
-      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-        <VariantSelectContextProvider
-          variants={AccordionProductFixture.openState.product.variants}
-        >
-          <AccordionProduct
-            addToCart={AccordionProductFixture.addToCart}
-            closedState={AccordionProductFixture.closedStateWithVideo}
-            id={AccordionProductFixture.id}
-            openState={AccordionProductFixture.openStateWithVideo}
-            resetAccordion={() => undefined}
-            toggleAccordion={() => undefined}
-          />
-        </VariantSelectContextProvider>
-      </AddToCartContextProvider>,
-    );
-
-    const videos = container.querySelectorAll('.closedBackgroundVideo');
-
-    expect(videos.length).toEqual(1);
-    expect(videos[0]).toBeInTheDocument();
-  });
-
-  it('should render openState video', () => {
-    const { container } = render(
-      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-        <VariantSelectContextProvider
-          variants={AccordionProductFixture.openState.product.variants}
-        >
-          <AccordionProduct
-            addToCart={AccordionProductFixture.addToCart}
-            closedState={AccordionProductFixture.closedState}
-            id={AccordionProductFixture.id}
-            openState={AccordionProductFixture.openStateWithVideo}
-            resetAccordion={() => undefined}
-            toggleAccordion={() => undefined}
-          />
-        </VariantSelectContextProvider>
-      </AddToCartContextProvider>,
-    );
-
-    const videos = container.querySelectorAll('.openBackgroundVideo');
-
-    expect(videos.length).toEqual(1);
-    expect(videos[0]).toBeInTheDocument();
-  });
-
   it('should apply correct styles when isExpanded is true', () => {
     const { container } = render(
       <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
@@ -282,10 +232,8 @@ describe('<AccordionProduct />', () => {
     );
 
     const parentDiv = container.querySelector('.base');
-    const closedStateDiv = container.querySelector(
-      '.accordionDefaultBackground',
-    );
-    const openStateDiv = container.querySelector('.accordionExpanded');
+    const closedStateDiv = container.querySelector('.background');
+    const openStateDiv = container.querySelector('.expanded');
 
     expect(parentDiv).toHaveClass('isExpanded');
     // Note: toBeVisible() not working as expected, so instead asserting by class
@@ -316,9 +264,9 @@ describe('<AccordionProduct />', () => {
       </AddToCartContextProvider>,
     );
 
-    const openStateBtn = container.querySelector('.openBtn');
+    const openStateButton = container.querySelector('.openButton');
 
-    userEvent.click(openStateBtn);
+    userEvent.click(openStateButton);
 
     expect(defaultOnPromoClickSpy).toHaveBeenCalledTimes(1);
   });

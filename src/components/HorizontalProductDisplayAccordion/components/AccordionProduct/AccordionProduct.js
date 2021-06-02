@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import { AddToCartButton } from '~/components/AddToCartButton';
 import { Button } from '~/components/Button';
 import { Heading } from '~/components/Heading/index.ts';
@@ -28,34 +27,36 @@ const AccordionProduct = forwardRef(
     },
     ref,
   ) => {
-    if (callbackWithRef) {
-      callbackWithRef(ref);
-    }
+    callbackWithRef?.(ref);
+
+    const classSet = cx(
+      styles.base,
+      isExpanded && styles.isExpanded,
+      isCompressed && styles.isCompressed,
+    );
+
+    const onClick = isCompressed ? () => resetAccordion() : undefined;
+    const onKeyDown = isCompressed ? () => resetAccordion() : undefined;
+    const handleOnCloseClick = () => toggleAccordion(index, false);
+
     return (
       <div
-        className={cx(
-          styles.base,
-          isExpanded && styles.isExpanded,
-          isCompressed && styles.isCompressed,
-        )}
+        className={classSet}
         data-testid="data-testid-AccordionProduct"
         id={id}
-        onClick={isCompressed ? () => resetAccordion() : undefined}
-        onKeyDown={isCompressed ? () => resetAccordion() : undefined}
+        onClick={onClick}
+        onKeyDown={onKeyDown}
         ref={ref}
         role="button"
         tabIndex={isCompressed ? 0 : -1}
       >
         <div
-          className={cx(
-            styles.accordionDefaultBackground,
-            isExpanded && styles.hidden,
-          )}
+          className={cx(styles.background, isExpanded && styles.hidden)}
           style={{ backgroundColor: closedState?.backgroundColour }}
         >
           {closedState.background === 'Video' && (
             <Video
-              className={cx(styles.closedBackgroundVideo)}
+              className={styles.backgroundVideo}
               hasAllowAudio={false}
               hasAutoplay={true}
               hasControls={false}
@@ -66,7 +67,7 @@ const AccordionProduct = forwardRef(
           )}
           {closedState.background === 'Image' && (
             <Image
-              className={cx(styles.closedBackgroundImage)}
+              className={styles.backgroundImage}
               {...closedState.backgroundImage}
             />
           )}
@@ -74,74 +75,64 @@ const AccordionProduct = forwardRef(
 
         <div
           className={cx(
-            styles.accordionDefaultContent,
+            styles.content,
             isExpanded || isCompressed ? styles.hidden : '',
           )}
         >
-          <div>
-            {closedState?.title && (
-              <Heading
-                hasSerifFont={closedState.hasSerifFont}
-                level="2"
-                size="xLarge"
-                theme={closedState.theme}
-              >
-                {closedState?.title}
-              </Heading>
-            )}
-            {closedState?.eyebrow && (
-              <Heading
-                hasMediumWeightFont={true}
-                level="4"
-                size="xSmall"
-                theme={closedState.theme}
-              >
-                {closedState?.eyebrow}
-              </Heading>
-            )}
-            <div
-              className={cx(
-                styles.accordionClosedCopy,
-                styles[closedState.theme],
-              )}
+          {closedState?.title && (
+            <Heading
+              hasSerifFont={closedState.hasSerifFont}
+              level="2"
+              size="xLarge"
+              theme={closedState.theme}
             >
-              {closedState?.copy}
-            </div>
-            <button
-              className={cx(styles.openBtn, styles[closedState.theme])}
-              onClick={() => {
-                toggleAccordion(index, true);
-                onPromoClick();
-              }}
+              {closedState?.title}
+            </Heading>
+          )}
+          {closedState?.eyebrow && (
+            <Heading
+              hasMediumWeightFont={true}
+              level="4"
+              size="xSmall"
+              theme={closedState.theme}
             >
-              {closedState?.openButtonText}
-            </button>
-            <Button
-              className={cx(styles.closedStateForegroundImageWrap)}
-              isInline={true}
-              onClick={() => {
-                toggleAccordion(index, true);
-                onPromoClick();
-              }}
-            >
-              <Image
-                className={cx(styles.closedForegroundImage)}
-                {...closedState.foregroundImage}
-              />
-            </Button>
+              {closedState?.eyebrow}
+            </Heading>
+          )}
+          <div className={cx(styles.closedCopy, styles[closedState.theme])}>
+            {closedState?.copy}
           </div>
+          <button
+            className={cx(styles.openButton, styles[closedState.theme])}
+            onClick={() => {
+              toggleAccordion(index, true);
+              onPromoClick();
+            }}
+          >
+            {closedState?.openButtonText}
+          </button>
+          <Button
+            className={cx(styles.closedStateForegroundImage)}
+            isInline={true}
+            onClick={() => {
+              toggleAccordion(index, true);
+              onPromoClick();
+            }}
+          >
+            <Image
+              className={cx(styles.closedForegroundImage)}
+              {...closedState.foregroundImage}
+            />
+          </Button>
         </div>
 
         <div
-          className={cx(
-            styles.accordionExpanded,
-            isExpanded ? styles.open : '',
-          )}
+          className={cx(styles.expanded, isExpanded ? styles.open : '')}
           style={{ backgroundColor: openState.backgroundColour }}
         >
           {openState.background === 'Video' && (
             <Video
-              className={cx(styles.openBackgroundVideo)}
+              className={styles.backgroundVideo}
               hasAllowAudio={false}
               hasAutoplay={true}
               hasControls={false}
@@ -152,15 +143,15 @@ const AccordionProduct = forwardRef(
           )}
           {openState.background === 'Image' && (
             <Image
-              className={cx(styles.openBackgroundImage)}
+              className={styles.backgroundImage}
               {...openState.backgroundImage}
             />
           )}
-          <div className={cx(styles.accordionExpandedContent)}>
-            <div className={cx(styles.expandedAccordionImage)}>
+          <div className={cx(styles.expandedContent)}>
+            <div className={cx(styles.expandedImage)}>
               <Image {...openState.foregroundImage} />
             </div>
-            <div className={cx(styles.expandedAccordionText)}>
+            <div className={cx(styles.expandedText)}>
               {openState?.title && (
                 <Heading
                   className={styles.openStateHeading}
@@ -183,12 +174,7 @@ const AccordionProduct = forwardRef(
                   {openState?.eyebrow}
                 </Heading>
               )}
-              <div
-                className={cx(
-                  styles.accordionOpenCopy,
-                  styles[openState.theme],
-                )}
-              >
+              <div className={cx(styles.openCopy, styles[openState.theme])}>
                 {openState?.copy}
               </div>
               <LinkButtonGroup
@@ -200,7 +186,7 @@ const AccordionProduct = forwardRef(
                 {openState?.cta && (
                   <Hyperlink
                     isAlternate={false}
-                    style={HYPERLINK_STYLE_TYPES.INTERNAL_BUTTON_LINK}
+                    style="Internal Button Link"
                     theme={openState.theme}
                     url={openState?.cta.url}
                   >
@@ -211,8 +197,8 @@ const AccordionProduct = forwardRef(
             </div>
           </div>
           <button
-            className={cx(styles.closeBtn, styles[openState.theme])}
-            onClick={() => toggleAccordion(index, false)}
+            className={cx(styles.closeButton, styles[openState.theme])}
+            onClick={handleOnCloseClick}
           >
             {openState.closeButtonText}
           </button>

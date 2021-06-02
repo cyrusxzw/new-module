@@ -15,20 +15,13 @@ import styles from './HorizontalProductDisplayAccordion.module.css';
 const HorizontalProductDisplayAccordion = ({ id, products, addToCartCopy }) => {
   const [accordionProducts, toggleAccordionProducts] = useState(products);
   const [accordionActive, toggleAccordionActiveState] = useState(false);
-  const isMobile = isViewport('xs to sm only');
 
   useEffect(() => {
-    let currentSize = isViewport('xs to sm only');
-
     const resetAccordionOnResize = debounce(() => {
-      if (isViewport('xs to sm only') !== currentSize) {
-        accordionProducts.map((product) => {
-          product.isExpanded = false;
-          product.isCompressed = false;
-        });
-
-        currentSize = isViewport('xs to sm only');
-      }
+      accordionProducts.map((product) => {
+        product.isExpanded = false;
+        product.isCompressed = false;
+      });
     }, 200);
 
     window.addEventListener('resize', resetAccordionOnResize);
@@ -43,7 +36,7 @@ const HorizontalProductDisplayAccordion = ({ id, products, addToCartCopy }) => {
   const toggleAccordion = (index, opening) => {
     toggleAccordionProducts(
       accordionProducts.map((product, productIndex) => {
-        if (isMobile) {
+        if (isViewport('xs to sm only')) {
           if (opening) {
             if (productIndex === index) {
               product.isExpanded = true;

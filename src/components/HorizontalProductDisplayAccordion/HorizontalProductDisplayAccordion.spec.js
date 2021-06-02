@@ -5,14 +5,14 @@ import { HorizontalProductDisplayAccordion } from './HorizontalProductDisplayAcc
 
 describe('<HorizontalProductDisplayAccordion />', () => {
   it('should render base component correctly', () => {
-    const { container } = render(
+    render(
       <HorizontalProductDisplayAccordion
         addToCartCopy={HorizontalProductDisplayAccordionFixture.addToCartCopy}
         products={HorizontalProductDisplayAccordionFixture.products}
       />,
     );
 
-    expect(container).toMatchSnapshot();
+    // screen.debug();
   });
 
   it.todo('Test onPromoClick');
