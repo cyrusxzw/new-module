@@ -1,5 +1,5 @@
 type Variant = {
-  alternateAction: {
+  alternateAction?: {
     url: string;
     label: string;
   };
