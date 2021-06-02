@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactNode, ReactElement } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type SectionHeadingProps = {
@@ -16,7 +16,7 @@ declare type SectionHeadingProps = {
     isOffsetPageHeading?: boolean;
     isHeroHeading?: boolean;
     isPageHeading?: boolean;
-    subHeading?: string;
+    subHeading?: ReactNode;
     theme?: Themes;
     titleFont?: 'Suisse' | 'Zapf';
 };

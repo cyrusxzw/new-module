@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import type { Themes } from '~/types';
 
 type SectionHeadingProps = {
@@ -15,7 +17,7 @@ type SectionHeadingProps = {
   isOffsetPageHeading?: boolean;
   isHeroHeading?: boolean;
   isPageHeading?: boolean;
-  subHeading?: string;
+  subHeading?: ReactNode;
   theme?: Themes;
   titleFont?: 'Suisse' | 'Zapf';
 };
