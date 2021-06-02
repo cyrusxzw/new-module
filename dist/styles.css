@@ -6330,7 +6330,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 } */
 /* Dark theme UI elements */
 /* Light theme UI elements */
-.AccordionProduct-module_base__2s-7t {
+.ProductAccordionItem-module_base__CB7Pp {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6347,64 +6347,64 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
           transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 @media (min-width: 640px) {
-.AccordionProduct-module_base__2s-7t {
+.ProductAccordionItem-module_base__CB7Pp {
     min-height: 60vh
 }
   }
 @media (min-width: 1025px) {
-.AccordionProduct-module_base__2s-7t {
+.ProductAccordionItem-module_base__CB7Pp {
     min-height: 80vh
 }
   }
-.AccordionProduct-module_base__2s-7t,
-  .AccordionProduct-module_base__2s-7t * {
+.ProductAccordionItem-module_base__CB7Pp,
+  .ProductAccordionItem-module_base__CB7Pp * {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-.AccordionProduct-module_base__2s-7t.AccordionProduct-module_isCompressed__cU8x9 {
+.ProductAccordionItem-module_base__CB7Pp.ProductAccordionItem-module_compressed__1U05P {
     width: 10%;
     cursor: pointer;
   }
 @media (max-width: 639px) {
-.AccordionProduct-module_base__2s-7t.AccordionProduct-module_isCompressed__cU8x9 {
+.ProductAccordionItem-module_base__CB7Pp.ProductAccordionItem-module_compressed__1U05P {
       width: 100%;
       cursor: default
   }
     }
 @media (min-width: 1600px) {
-.AccordionProduct-module_base__2s-7t.AccordionProduct-module_isCompressed__cU8x9 {
+.ProductAccordionItem-module_base__CB7Pp.ProductAccordionItem-module_compressed__1U05P {
       width: 20%
   }
     }
 @media (min-width: 1920px) {
-.AccordionProduct-module_base__2s-7t.AccordionProduct-module_isCompressed__cU8x9 {
+.ProductAccordionItem-module_base__CB7Pp.ProductAccordionItem-module_compressed__1U05P {
       width: 33.33%
   }
     }
 @media (min-width: 2400px) {
-.AccordionProduct-module_base__2s-7t.AccordionProduct-module_isCompressed__cU8x9 {
+.ProductAccordionItem-module_base__CB7Pp.ProductAccordionItem-module_compressed__1U05P {
       width: 41%
   }
     }
-.AccordionProduct-module_closedForegroundImage__233QR {
+.ProductAccordionItem-module_closedForegroundImage__3rvH8 {
   display: block;
   margin: 0 auto;
 }
-.AccordionProduct-module_closedForegroundImage__233QR img {
+.ProductAccordionItem-module_closedForegroundImage__3rvH8 img {
     width: auto;
     max-height: 240px;
   }
 @media (min-width: 640px) {
-.AccordionProduct-module_closedForegroundImage__233QR img {
+.ProductAccordionItem-module_closedForegroundImage__3rvH8 img {
       max-height: 220px
   }
     }
 @media (min-width: 1025px) {
-.AccordionProduct-module_closedForegroundImage__233QR img {
+.ProductAccordionItem-module_closedForegroundImage__3rvH8 img {
       max-height: 260px
   }
     }
-.AccordionProduct-module_backgroundVideo__39P4v {
+.ProductAccordionItem-module_backgroundVideo__3Oexe {
   position: absolute;
   top: 0;
   left: 0;
@@ -6412,14 +6412,14 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   width: 100%;
   height: 100%;
 }
-.AccordionProduct-module_backgroundImage__1Oisv {
+.ProductAccordionItem-module_backgroundImage__xOfjv {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.AccordionProduct-module_backgroundImage__1Oisv img {
+.ProductAccordionItem-module_backgroundImage__xOfjv img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
@@ -6427,13 +6427,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     -o-object-position: center;
        object-position: center;
   }
-.AccordionProduct-module_productImage__2Zgl2 {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 100%;
-}
-.AccordionProduct-module_content__1XLDq {
+.ProductAccordionItem-module_content__3YgPm {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6466,21 +6460,21 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
           transition-timing-function: linear;
 }
 @media (min-width: 640px) {
-.AccordionProduct-module_content__1XLDq {
+.ProductAccordionItem-module_content__3YgPm {
     padding-right: 40px;
     padding-left: 40px
 }
   }
 @media (min-width: 1025px) {
-.AccordionProduct-module_content__1XLDq {
+.ProductAccordionItem-module_content__3YgPm {
     padding-top: 60px
 }
   }
-.AccordionProduct-module_content__1XLDq.AccordionProduct-module_hidden__32W8W {
+.ProductAccordionItem-module_content__3YgPm.ProductAccordionItem-module_hidden__3m4tk {
     opacity: 0;
     pointer-events: none;
   }
-.AccordionProduct-module_expanded__1hnk7 {
+.ProductAccordionItem-module_expanded__37prG {
   position: absolute;
   top: 0;
   left: 0;
@@ -6504,11 +6498,11 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
           transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.AccordionProduct-module_expanded__1hnk7.AccordionProduct-module_open__2VFan {
+.ProductAccordionItem-module_expanded__37prG.ProductAccordionItem-module_open__2um6J {
     opacity: 1;
     pointer-events: auto;
   }
-.AccordionProduct-module_expandedContent__H7x-H {
+.ProductAccordionItem-module_expandedContent__cXApF {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6538,7 +6532,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 @media (max-width: 1024px) {
-.AccordionProduct-module_expandedContent__H7x-H {
+.ProductAccordionItem-module_expandedContent__cXApF {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -6546,30 +6540,30 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 }
   }
 @media (min-width: 640px) {
-.AccordionProduct-module_expandedContent__H7x-H {
+.ProductAccordionItem-module_expandedContent__cXApF {
     -ms-flex-pack: distribute;
         justify-content: space-around;
     padding: 34px
 }
   }
 @media (min-width: 1025px) {
-.AccordionProduct-module_expandedContent__H7x-H {
+.ProductAccordionItem-module_expandedContent__cXApF {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
     padding: 40px
 }
   }
-.AccordionProduct-module_open__2VFan .AccordionProduct-module_expandedContent__H7x-H {
+.ProductAccordionItem-module_open__2um6J .ProductAccordionItem-module_expandedContent__cXApF {
   opacity: 1;
 }
-.AccordionProduct-module_expandedImage__wDM2V {
+.ProductAccordionItem-module_expandedImage__3Q4GG {
   position: relative;
   min-height: 100px;
   max-height: 280px;
 }
 @media (max-width: 1024px) {
-.AccordionProduct-module_expandedImage__wDM2V {
+.ProductAccordionItem-module_expandedImage__3Q4GG {
     width: 100%;
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -6578,7 +6572,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     margin-bottom: 30px
 }
 
-    .AccordionProduct-module_expandedImage__wDM2V img {
+    .ProductAccordionItem-module_expandedImage__3Q4GG img {
       position: absolute;
       top: 0;
       left: 0;
@@ -6591,12 +6585,12 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     }
   }
 @media (min-width: 640px) {
-.AccordionProduct-module_expandedImage__wDM2V {
+.ProductAccordionItem-module_expandedImage__3Q4GG {
     max-height: 350px
 }
   }
 @media (min-width: 1025px) {
-.AccordionProduct-module_expandedImage__wDM2V {
+.ProductAccordionItem-module_expandedImage__3Q4GG {
     width: 33.33%;
     max-height: 420px;
     margin-right: 40px;
@@ -6604,26 +6598,26 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 }
   }
 @media (min-width: 640px) {
-.AccordionProduct-module_expandedText__6YCJx {
+.ProductAccordionItem-module_expandedText__25sKv {
     width: 100%
 }
   }
 @media (min-width: 1025px) {
-.AccordionProduct-module_expandedText__6YCJx {
+.ProductAccordionItem-module_expandedText__25sKv {
     width: 66.66%;
     max-width: 640px
 }
   }
-.AccordionProduct-module_closedStateForegroundImage__QLue1 {
+.ProductAccordionItem-module_closedStateForegroundImage__cjlM4 {
   display: block;
   width: 100%;
   margin-top: auto;
   cursor: pointer;
 }
-.AccordionProduct-module_closedStateForegroundImage__QLue1:focus {
+.ProductAccordionItem-module_closedStateForegroundImage__cjlM4:focus {
     outline: 0;
   }
-.AccordionProduct-module_closeButton__2GLIF {
+.ProductAccordionItem-module_closeButton__1PirO {
   position: absolute;
   z-index: 1;
   top: 40px;
@@ -6631,12 +6625,12 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   margin: 0;
   font-size: 16px;
 }
-.AccordionProduct-module_openButton__3pC9h {
+.ProductAccordionItem-module_openButton__1ftki {
   margin-bottom: 40px;
   font-size: 16px;
 }
-.AccordionProduct-module_openButton__3pC9h,
-.AccordionProduct-module_closeButton__2GLIF {
+.ProductAccordionItem-module_openButton__1ftki,
+.ProductAccordionItem-module_closeButton__1PirO {
   padding: 0;
   border: none;
   background: transparent;
@@ -6645,13 +6639,13 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   font-family: 'Suisse Regular', sans-serif;
   text-decoration: underline;
 }
-.AccordionProduct-module_openButton__3pC9h:focus, .AccordionProduct-module_closeButton__2GLIF:focus {
+.ProductAccordionItem-module_openButton__1ftki:focus, .ProductAccordionItem-module_closeButton__1PirO:focus {
     outline: 0;
   }
-.AccordionProduct-module_openButton__3pC9h.AccordionProduct-module_light__10wa6, .AccordionProduct-module_closeButton__2GLIF.AccordionProduct-module_light__10wa6 {
+.ProductAccordionItem-module_openButton__1ftki.ProductAccordionItem-module_light__Yv6gq, .ProductAccordionItem-module_closeButton__1PirO.ProductAccordionItem-module_light__Yv6gq {
     color: #fffef2;
   }
-.AccordionProduct-module_background__whjRK {
+.ProductAccordionItem-module_background__s_hoU {
   position: absolute;
   top: 0;
   right: 0;
@@ -6660,8 +6654,8 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   overflow: hidden;
   height: 100%;
 }
-.AccordionProduct-module_openCopy__hu5g_,
-.AccordionProduct-module_closedCopy__A5fRq {
+.ProductAccordionItem-module_openCopy__7A5al,
+.ProductAccordionItem-module_closedCopy__3Kb-8 {
   padding: 0;
   margin-bottom: 30px;
   color: #333;
@@ -6669,16 +6663,16 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   font-size: 16px;
   line-height: 1.5;
 }
-.AccordionProduct-module_openCopy__hu5g_.AccordionProduct-module_light__10wa6, .AccordionProduct-module_closedCopy__A5fRq.AccordionProduct-module_light__10wa6 {
+.ProductAccordionItem-module_openCopy__7A5al.ProductAccordionItem-module_light__Yv6gq, .ProductAccordionItem-module_closedCopy__3Kb-8.ProductAccordionItem-module_light__Yv6gq {
     color: #fffef2;
   }
-.AccordionProduct-module_openStateHeading__3KEzp {
+.ProductAccordionItem-module_openStateHeading__1k57z {
   margin-bottom: 20px;
 }
-.AccordionProduct-module_openStateEyebrow__3Bn14 {
+.ProductAccordionItem-module_openStateEyebrow__3kpW9 {
   margin-bottom: 20px;
 }
-.AccordionProduct-module_openCopy__hu5g_ {
+.ProductAccordionItem-module_openCopy__7A5al {
   margin-bottom: 30px;
 }
 
@@ -6715,7 +6709,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 } */
 /* Dark theme UI elements */
 /* Light theme UI elements */
-.HorizontalProductDisplayAccordion-module_base__3e9o6 {
+.ProductAccordion-module_base__3w-nf {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6723,7 +6717,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
           box-sizing: border-box;
 }
 @media (max-width: 639px) {
-.HorizontalProductDisplayAccordion-module_base__3e9o6 {
+.ProductAccordion-module_base__3w-nf {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;

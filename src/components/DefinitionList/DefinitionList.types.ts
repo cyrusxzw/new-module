@@ -15,4 +15,4 @@ type DefinitionListProps = {
   theme?: Themes;
 };
 
-export type { DefinitionListProps };
+export type { DefinitionListProps, DefinitionListItem };

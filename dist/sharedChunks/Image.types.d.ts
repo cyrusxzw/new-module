@@ -11,7 +11,7 @@ declare type ImageProps = {
     id?: string;
     isFullBleedImage?: boolean;
     isLazyLoaded?: boolean;
-    sizes: {
+    sizes?: {
         large?: string;
         medium?: string;
         small?: string;

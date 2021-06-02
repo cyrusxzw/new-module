@@ -1,7 +1,7 @@
 declare type Variant = {
-    alternateAction: {
-        url: string;
-        label: string;
+    alternateAction?: {
+        url?: string;
+        label?: string;
     };
     cartDisclaimer?: string;
     hasAgeVerificationRequirement?: boolean;
