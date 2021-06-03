@@ -1,8 +1,9 @@
 import React from 'react';
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
 import { P } from '~/components/Paragraph';
+import type { ProductAccordionProps } from './ProductAccordion.types';
 
-const HorizontalProductDisplayAccordionFixture = {
+const ProductAccordionFixture: ProductAccordionProps = {
   addToCartCopy: {
     cartAction: 'Add to your cart',
     updateNotification: 'added to your cart',
@@ -15,18 +16,9 @@ const HorizontalProductDisplayAccordionFixture = {
     {
       handleAddToCart: mockAddToCartButtonOnClick,
       closedState: {
-        addToCart: {
-          cartAction: 'Add to your cart',
-          updateNotification: 'added to your cart',
-          outOfStock: {
-            label: 'Out of Stock',
-            title: 'Out of stock',
-          },
-        },
         background: 'Video',
         backgroundColour: '#9DB5AC',
         backgroundImage: {
-          type: 'image',
           sizes: {
             small:
               'https://www.aesop.com/u1nb1km7t5q7/6yw9x2JrNGlERfEdHBR8yI/290ca3aa55f5177cf8ba793796d66118/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_01_Ptolemy_Background_1500x540px__1_.gif',
@@ -63,7 +55,6 @@ const HorizontalProductDisplayAccordionFixture = {
         openButtonText: 'Discover Ptolemy',
         theme: 'light',
         title: 'Ptolemy',
-        typeface: 'sans-serif',
       },
       id: 'Ptolemy',
       openState: {
@@ -135,18 +126,9 @@ const HorizontalProductDisplayAccordionFixture = {
     {
       handleAddToCart: mockAddToCartButtonOnClick,
       closedState: {
-        addToCart: {
-          cartAction: 'Add to your cart',
-          updateNotification: 'added to your cart',
-          outOfStock: {
-            label: 'Out of Stock',
-            title: 'Out of stock',
-          },
-        },
         background: 'Colour',
         backgroundColour: '#9DB5AC',
         backgroundImage: {
-          type: 'image',
           sizes: {
             small:
               'https://www.aesop.com/u1nb1km7t5q7/P8gAwCGTwO8GjpXIlslDi/f378fff236ceb7889a115f46b96a0e4e/Aesop_Poured_Candles_2020_Hybris_Homepage_Secondary_Accordion_02_Aganice_Background_1500x540px.gif',
@@ -174,7 +156,6 @@ const HorizontalProductDisplayAccordionFixture = {
         openButtonText: 'Discover Aganice',
         theme: 'light',
         title: 'Aganice',
-        typeface: 'sans-serif',
       },
       id: 'Aganice',
       openState: {
@@ -237,14 +218,6 @@ const HorizontalProductDisplayAccordionFixture = {
     {
       handleAddToCart: mockAddToCartButtonOnClick,
       closedState: {
-        addToCart: {
-          cartAction: 'Add to your cart',
-          updateNotification: 'added to your cart',
-          outOfStock: {
-            label: 'Out of Stock',
-            title: 'Out of stock',
-          },
-        },
         background: 'Image',
         backgroundColour: '#9DB5AC',
         backgroundImage: {
@@ -275,7 +248,6 @@ const HorizontalProductDisplayAccordionFixture = {
         openButtonText: 'Discover Callippus',
         theme: 'light',
         title: 'Callippus',
-        typeface: 'sans-serif',
       },
       id: 'Callippus',
       openState: {
@@ -348,4 +320,4 @@ const HorizontalProductDisplayAccordionFixture = {
   ],
 };
 
-export { HorizontalProductDisplayAccordionFixture };
+export { ProductAccordionFixture };
