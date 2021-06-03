@@ -12,12 +12,6 @@ import { ProductAccordion } from './ProductAccordion';
 <Canvas>
   <Story name="Base component">
     {(() => {
-      const theme = knobs.select(
-        'theme',
-        ['dark', 'light'],
-        'dark',
-        'Presentation',
-      );
       const implementation = {
         gridOverlay: {
           isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
@@ -32,8 +26,7 @@ import { ProductAccordion } from './ProductAccordion';
         <>
           <ProductAccordion
             addToCartCopy={ProductAccordionFixture.addToCartCopy}
-            products={[ProductAccordionFixture.products[0], ProductAccordionFixture.products[1]]}
-            theme={theme}
+            products={[ProductAccordionFixture.products[0], ProductAccordionFixture.products[1]]}\
           />
           <StorybookGridOverlay
             isActive={implementation.gridOverlay.isActive}

@@ -42,26 +42,17 @@ function ProductAccordion({
         const isCurrentItem = productIndex === index;
 
         if (isViewport('xs to sm only')) {
-          if (isOpening) {
-            if (isCurrentItem) {
-              product.visualState = 'expanded';
-            }
-          } else {
-            if (isCurrentItem) {
-              product.visualState = 'default';
-            }
+          if (isCurrentItem) {
+            product.visualState = isOpening ? 'expanded' : 'default';
           }
         } else {
           if (isOpening) {
-            if (isCurrentItem) {
-              product.visualState = 'expanded';
-            } else {
-              product.visualState = 'compressed';
-            }
+            product.visualState = isCurrentItem ? 'expanded' : 'compressed';
           } else {
             product.visualState = 'default';
           }
         }
+
         return product;
       }),
     );
