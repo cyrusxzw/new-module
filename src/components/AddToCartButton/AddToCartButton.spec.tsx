@@ -74,15 +74,16 @@ describe('<AddToCartButton />', () => {
   });
 
   it('should render add to cart button with text to indicate tax inclusion for jp region correctly', () => {
+    const mockVariants = [...variants];
+    mockVariants[0].price = fixture.copyJP.price;
     const { container } = render(
       <AddToCartButtonWithProviders
         copy={copyJP}
         onClick={mockAddToCartButtonOnClick}
         product={product}
-        variants={variants}
+        variants={mockVariants}
       />,
     );
-
     const button = screen.getByRole('button', {
       name: `${fixture.copyJP.cartAction} — ${fixture.copyJP.price}${' '}${
         fixture.copyJP.postTaxPrice

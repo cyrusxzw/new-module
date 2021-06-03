@@ -11,7 +11,7 @@ const AddToCartButtonFixture = {
 
   copyJP: {
     cartAction: 'カートに追加する',
-    price: '$26.45',
+    price: '¥3,850',
     postTaxPrice: '(税込)',
   },
 
