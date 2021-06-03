@@ -61,5 +61,6 @@
   --color-highlight-blue: #114094;
 
   /* Secondary Message background colour */
-  --color-secondary-msg-bg: #f3f1e4;
+  --color-secondary-msg-bg-dark: #f3f1e4;
+  --color-secondary-msg-bg-light: var(--color-secondary);
 }

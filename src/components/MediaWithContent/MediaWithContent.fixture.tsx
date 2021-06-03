@@ -138,16 +138,18 @@ const MediaWithContentFixture = {
   linkButtonGroup: {
     textAlign: 'center',
     hasFitContent: true,
-    children: (
-      <>
-        <Hyperlink style="Internal No Icon Button Link" url="/">
-          Proin vulputate
-        </Hyperlink>
-        <Hyperlink style="Internal No Icon Button Link" url="Quisque lacus">
-          Quisque lacus
-        </Hyperlink>
-      </>
-    ),
+    children: [
+      <Hyperlink key="1" style="Internal No Icon Button Link" url="/">
+        Proin vulputate
+      </Hyperlink>,
+      <Hyperlink
+        key="2"
+        style="Internal No Icon Button Link"
+        url="Quisque lacus"
+      >
+        Quisque lacus
+      </Hyperlink>,
+    ],
   },
   hyperlinkButtonDark: {
     style: 'Internal Button Link',

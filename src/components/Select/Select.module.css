@@ -39,6 +39,18 @@
     font-size: rem(24px);
   }
 
+  .isBlock & {
+    padding: 20px 50px 20px 20px;
+    border-width: 1px;
+    font-size: rem(16px);
+    -webkit-padding-end: 50px;
+    -webkit-padding-start: 20px;
+
+    @media (--viewport-md) {
+      font-size: rem(16px);
+    }
+  }
+
   .dark & {
     color: var(--color-dark-copy);
   }
@@ -48,19 +60,15 @@
   }
 }
 
-.isBlock {
-  padding: 20px 50px 20px 20px;
-  border-width: 1px;
-  font-size: rem(16px);
-  -webkit-padding-end: 50px;
-  -webkit-padding-start: 20px;
-}
-
 .icon {
   position: absolute;
   top: 35px;
   right: 22px;
   pointer-events: none;
+
+  .isBlock & {
+    top: 50px;
+  }
 
   .dark & {
     fill: var(--color-dark-label);
@@ -81,6 +89,15 @@
 
   @media (--viewport-md) {
     font-size: rem(24px);
+  }
+
+  .isBlock & {
+    font-size: rem(16px);
+    transform: translateY(45px) translateX(20px);
+
+    @media (--viewport-md) {
+      font-size: rem(16px);
+    }
   }
 
   .dark & {

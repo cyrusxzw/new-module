@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { forwardRef, useRef } from 'react';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import { useProductDetailContext, useVariantSelectContext } from '~/contexts';
 import { useImageTransition } from '~/customHooks';
-import { getVariantRadioOptions } from '~/utils/product/index.ts';
+import { getVariantRadioOptions } from '~/utils/product';
 import { AddToCartButton } from '~/components/AddToCartButton';
 import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
@@ -14,10 +14,10 @@ import { Loading } from '~/components/Loading';
 import { RadioGroup } from '~/components/RadioGroup/index.ts';
 import { SectionHeading } from '~/components/SectionHeading/index.ts';
 import { Transition } from '~/components/Transition';
-
+import type { ProductCommerceProps } from './ProductCommerce.types';
 import styles from './ProductCommerce.module.css';
 
-const ProductCommerce = React.forwardRef(
+const ProductCommerce = forwardRef<HTMLDivElement, ProductCommerceProps>(
   (
     {
       className,
@@ -29,32 +29,34 @@ const ProductCommerce = React.forwardRef(
       id,
       size,
       theme,
-      isActive,
+      isActive = true,
       onCtaClick,
     },
     ref,
   ) => {
     const imageRef = useRef();
+    const currentTheme = useThemeContext(theme, 'dark');
     const {
       selectedVariant,
       onVariantChange,
       variants,
     } = useVariantSelectContext();
-
-    const isBundle = variants?.length === 0;
-
     const { productDetail } = useProductDetailContext();
-    const { sku } = productDetail;
-
     const [currentImage, isImageActive] = useImageTransition(
       selectedVariant?.image || productDetail.image,
       imageRef,
     );
 
+    const isBundle = variants?.length === 0;
+
     if (!isBundle && !selectedVariant) {
       return <Loading isLoading={true} />;
     }
 
+    const { sku } = productDetail;
+    const handleOnCtaClick = () => onCtaClick();
+    const handleOnRadioGroupChange = (e: React.FormEvent<HTMLInputElement>) =>
+      onVariantChange(e, variants);
     const variantRadioOptions = getVariantRadioOptions(variants);
     const classSet = cx(styles.base, className);
     const RADIO_GROUP_NAME = sku;
@@ -68,7 +70,7 @@ const ProductCommerce = React.forwardRef(
             eyebrow={eyebrow}
             heading={heading}
             isFlush={true}
-            theme={theme}
+            theme={currentTheme}
           />
         </Transition>
         <Transition isActive={isActive} type="slowFade">
@@ -94,7 +96,7 @@ const ProductCommerce = React.forwardRef(
                 isFlush={true}
                 level="4"
                 size="xXSmall"
-                theme={theme}
+                theme={currentTheme}
               >
                 {copy?.size}
               </Heading>
@@ -102,9 +104,9 @@ const ProductCommerce = React.forwardRef(
                 className={styles.variants}
                 dataTestRef={RADIO_GROUP_DATA_TEST_REF}
                 name={RADIO_GROUP_NAME}
-                onChange={(e) => onVariantChange(e, variants)}
+                onChange={handleOnRadioGroupChange}
                 options={variantRadioOptions}
-                theme={theme}
+                theme={currentTheme}
                 value={selectedVariant.sku}
               />
             </div>
@@ -117,19 +119,20 @@ const ProductCommerce = React.forwardRef(
             hasFitContent={false}
             isFlush={false}
             textAlign="center"
-            theme={theme}
+            theme={currentTheme}
           >
             <AddToCartButton
               className={styles.addToCartButton}
-              copy={copy.addToCart}
+              copy={copy?.addToCart}
+              dataTestRef="product-commerce"
               isFullWidth={false}
-              theme={theme}
+              theme={currentTheme}
             />
             {cta && (
               <Hyperlink
                 className={styles.cta}
                 isAlternate={false}
-                onClick={() => onCtaClick()}
+                onClick={handleOnCtaClick}
                 style={HYPERLINK_STYLE_TYPES.INTERNAL_BUTTON_LINK}
                 url={cta.url}
               >
@@ -142,56 +145,5 @@ const ProductCommerce = React.forwardRef(
     );
   },
 );
-
-ProductCommerce.propTypes = {
-  className: PropTypes.string,
-  onCtaClick: PropTypes.func,
-  copy: PropTypes.shape({
-    addToCart: PropTypes.shape({
-      cartAction: PropTypes.string,
-      updateNotification: PropTypes.string,
-      outOfStock: PropTypes.shape({
-        label: PropTypes.string,
-        title: PropTypes.string,
-      }),
-    }),
-    size: PropTypes.string,
-  }),
-  cta: PropTypes.shape({
-    text: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  description: PropTypes.element,
-  eyebrow: PropTypes.string,
-  heading: PropTypes.string,
-  id: PropTypes.string,
-  size: PropTypes.string,
-  isActive: PropTypes.bool,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-ProductCommerce.defaultProps = {
-  className: undefined,
-  copy: {
-    addToCart: {
-      cartAction: undefined,
-      updateNotification: undefined,
-      outOfStock: {
-        label: undefined,
-        title: undefined,
-      },
-    },
-    size: undefined,
-  },
-  cta: undefined,
-  description: undefined,
-  eyebrow: undefined,
-  heading: undefined,
-  id: undefined,
-  onCtaClick: () => undefined,
-  size: undefined,
-  isActive: true,
-  theme: 'dark',
-};
 
 export { ProductCommerce };

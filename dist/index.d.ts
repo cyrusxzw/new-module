@@ -1,33 +1,45 @@
 /// <reference types="react" />
-import React$1, { ReactNode, FC, MouseEvent, CSSProperties, LegacyRef, ReactElement, MouseEventHandler, RefObject } from 'react';
+import React$1, { ReactNode, FC, MouseEvent, CSSProperties, LegacyRef, ReactElement, Dispatch, MouseEventHandler, RefObject } from 'react';
 import PropTypes from 'prop-types';
 
-declare type Product = {
-    description?: string;
-    id?: string;
-    variantOptions?: Variant[];
-    cartDisclaimer?: string;
-    definitionList?: {
-        term?: JSX.Element;
-        description?: JSX.Element;
-    }[];
-    flyinPanel?: JSX.Element;
-    productName: string;
-    imageSize?: string;
-    upSellProduct?: {
-        image?: {
-            altText?: string;
-            small?: string;
-        };
-        name?: string;
-        url?: string;
+declare type DefinitionListItem = {
+    description?: ReactNode;
+    id: string;
+    term?: ReactNode;
+};
+declare type DefinitionListProps = {
+    className?: string;
+    hasBottomBorder?: boolean;
+    isVisible?: boolean;
+    items?: DefinitionListItem[];
+    theme?: Themes;
+};
+
+declare type UpSellProduct = {
+    image?: {
+        altText?: string;
+        small?: string;
     };
+    name?: string;
+    url?: string;
+};
+declare type Product = {
+    cartDisclaimer?: string;
+    definitionList?: DefinitionListItem[];
+    description?: string;
+    flyinPanel?: React.ReactNode;
+    id?: string;
+    imageSize?: string;
+    productName: string;
+    sku: string;
+    upSellProduct?: UpSellProduct;
+    variantOptions?: Variant[];
 };
 
 declare type Themes = 'dark' | 'light';
 
 declare type Variant = {
-    alternateAction: {
+    alternateAction?: {
         url: string;
         label: string;
     };
@@ -395,19 +407,6 @@ declare namespace ContentHubArticleList {
         export { pattern_1 as pattern };
     }
 }
-
-declare type DefinitionListItem = {
-    description?: ReactNode;
-    id: string;
-    term?: ReactNode;
-};
-declare type DefinitionListProps = {
-    className?: string;
-    hasBottomBorder?: boolean;
-    isVisible?: boolean;
-    items?: DefinitionListItem[];
-    theme?: Themes;
-};
 
 declare const DefinitionList: React$1.ForwardRefExoticComponent<DefinitionListProps & React$1.RefAttributes<HTMLDListElement>>;
 
@@ -1107,42 +1106,17 @@ declare type KitListProps = {
  */
 declare const KitList: React$1.ForwardRefExoticComponent<KitListProps & React$1.RefAttributes<any>>;
 
-declare function LinkButtonGroup({ children, className, hasFitContent, isFlush, isFullWidth, textAlign, theme, }: {
-    children: any;
-    className: any;
-    hasFitContent: any;
-    isFlush: any;
-    isFullWidth: any;
-    textAlign: any;
-    theme: any;
-}): JSX.Element;
-declare namespace LinkButtonGroup {
-    namespace propTypes {
-        const children: PropTypes.Requireable<PropTypes.ReactElementLike | PropTypes.ReactElementLike[]>;
-        const className: PropTypes.Requireable<string>;
-        const hasFitContent: PropTypes.Requireable<boolean>;
-        const isFlush: PropTypes.Requireable<boolean>;
-        const isFullWidth: PropTypes.Requireable<boolean>;
-        const textAlign: PropTypes.Requireable<string>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const children_1: any;
-        export { children_1 as children };
-        const className_1: any;
-        export { className_1 as className };
-        const hasFitContent_1: boolean;
-        export { hasFitContent_1 as hasFitContent };
-        const isFlush_1: boolean;
-        export { isFlush_1 as isFlush };
-        const isFullWidth_1: boolean;
-        export { isFullWidth_1 as isFullWidth };
-        const textAlign_1: string;
-        export { textAlign_1 as textAlign };
-        const theme_1: any;
-        export { theme_1 as theme };
-    }
-}
+declare type LinkButtonGroupProps = {
+    children?: JSX.Element | JSX.Element[] /** @todo figure out how to efficiently allow only Button an Hyperlink */;
+    className?: string;
+    hasFitContent?: boolean;
+    isFlush?: boolean;
+    isFullWidth?: boolean;
+    textAlign?: 'center' | 'left' | 'right';
+    theme?: Themes;
+};
+
+declare const LinkButtonGroup: ({ children, className, hasFitContent, isFlush, isFullWidth, textAlign, theme, }: LinkButtonGroupProps) => React$1.ReactElement;
 
 declare const List: React$1.ForwardRefExoticComponent<ListProps & React$1.RefAttributes<HTMLUListElement>>;
 
@@ -1346,7 +1320,34 @@ declare type PodiumProps = {
 
 declare const Podium: React$1.ForwardRefExoticComponent<PodiumProps & React$1.RefAttributes<HTMLDivElement>>;
 
-declare const ProductCommerce: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type ProductCommerceProps = {
+    className?: string;
+    copy?: {
+        addToCart?: {
+            cartAction?: string;
+            updateNotification?: string;
+            outOfStock?: {
+                label?: string;
+                title?: string;
+            };
+        };
+        size?: string;
+    };
+    cta?: {
+        text?: string;
+        url?: string;
+    };
+    description?: React.ReactNode;
+    eyebrow?: string;
+    heading?: string;
+    id?: string;
+    isActive?: boolean;
+    onCtaClick?: () => void;
+    size?: string;
+    theme?: Themes;
+};
+
+declare const ProductCommerce: React$1.ForwardRefExoticComponent<ProductCommerceProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type ProductExtractProps = {
     dataTestRef: string;
@@ -1472,26 +1473,26 @@ declare namespace ReadMore {
     }
 }
 
-declare function SecondaryMessage({ className, id, items }: {
-    className: any;
-    id: any;
-    items: any;
-}): JSX.Element;
-declare namespace SecondaryMessage {
-    namespace propTypes {
-        const className: PropTypes.Requireable<string>;
-        const id: PropTypes.Requireable<string>;
-        const items: any;
-    }
-    namespace defaultProps {
-        const className_1: any;
-        export { className_1 as className };
-        const id_1: any;
-        export { id_1 as id };
-        const items_1: any;
-        export { items_1 as items };
-    }
-}
+declare type MessageProps = {
+    className?: string;
+    copy: string;
+    heading: string;
+    id?: string;
+    link?: {
+        title: string;
+        url: string;
+    };
+    theme?: Themes;
+};
+
+declare type SecondaryMessageProps = {
+    className?: string;
+    id?: string;
+    items?: [MessageProps?, MessageProps?];
+    theme?: Themes;
+};
+
+declare const SecondaryMessage: ({ className, id, items, theme, }: SecondaryMessageProps) => ReactElement | null;
 
 declare type SectionHeadingProps = {
     childrenClassNames?: {
@@ -1508,109 +1509,90 @@ declare type SectionHeadingProps = {
     isOffsetPageHeading?: boolean;
     isHeroHeading?: boolean;
     isPageHeading?: boolean;
-    subHeading?: string;
+    subHeading?: ReactNode;
     theme?: Themes;
     titleFont?: 'Suisse' | 'Zapf';
 };
 
 declare const SectionHeading: ({ childrenClassNames, className, eyebrow, hasSerifFontHeading, heading, id, isFlush, isOffsetPageHeading, isHeroHeading, isPageHeading, subHeading, theme, titleFont, }: SectionHeadingProps) => ReactElement | null;
 
-declare const Select: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type SelectOption = {
+    id?: string;
+    label?: string;
+    value?: string;
+};
+declare type SelectProps = {
+    className?: string;
+    dataTestRef?: string;
+    errorMessage?: string;
+    isBlock?: boolean;
+    label?: string;
+    name: string;
+    onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void;
+    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+    onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void;
+    options: SelectOption[];
+    theme?: Themes;
+    value?: string;
+};
 
-declare function StoreDetailHeader({ alternateHoursNote, className, copy, email, location, openingHours, phone, storeName, theme, }: {
-    alternateHoursNote: any;
-    className: any;
-    copy: any;
-    email: any;
-    location: any;
-    openingHours: any;
-    phone: any;
-    storeName: any;
-    theme: any;
-}): JSX.Element;
-declare namespace StoreDetailHeader {
-    namespace propTypes {
-        const alternateHoursNote: PropTypes.Requireable<string>;
-        const className: PropTypes.Requireable<string>;
-        const copy: PropTypes.Requireable<PropTypes.InferProps<{
-            location: PropTypes.Requireable<string>;
-            email: PropTypes.Requireable<string>;
-            phone: PropTypes.Requireable<string>;
-            openingHours: PropTypes.Requireable<string>;
-        }>>;
-        const email: PropTypes.Requireable<string>;
-        const location: PropTypes.Requireable<string>;
-        const openingHours: PropTypes.Requireable<any[]>;
-        const phone: PropTypes.Requireable<string>;
-        const storeName: PropTypes.Validator<string>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const alternateHoursNote_1: any;
-        export { alternateHoursNote_1 as alternateHoursNote };
-        const className_1: any;
-        export { className_1 as className };
-        export namespace copy_1 {
-            const location_1: any;
-            export { location_1 as location };
-            const email_1: any;
-            export { email_1 as email };
-            const phone_1: any;
-            export { phone_1 as phone };
-            const openingHours_1: any;
-            export { openingHours_1 as openingHours };
-        }
-        export { copy_1 as copy };
-        const email_2: any;
-        export { email_2 as email };
-        const location_2: any;
-        export { location_2 as location };
-        const openingHours_2: any;
-        export { openingHours_2 as openingHours };
-        const phone_2: any;
-        export { phone_2 as phone };
-        const storeName_1: any;
-        export { storeName_1 as storeName };
-        const theme_1: string;
-        export { theme_1 as theme };
-    }
-}
+declare const Select: React$1.ForwardRefExoticComponent<SelectProps & React$1.RefAttributes<HTMLSelectElement>>;
 
-declare function StoreHoursList({ alternateHoursNote, className, heading, hoursList, theme, }: {
-    alternateHoursNote: any;
-    className: any;
-    heading: any;
-    hoursList: any;
-    theme: any;
-}): JSX.Element;
-declare namespace StoreHoursList {
-    namespace propTypes {
-        const alternateHoursNote: PropTypes.Requireable<string>;
-        const className: PropTypes.Requireable<string>;
-        const heading: PropTypes.Requireable<string>;
-        const hoursList: PropTypes.Requireable<PropTypes.InferProps<{
-            dayName: PropTypes.Requireable<string>;
-            hours: PropTypes.Requireable<string>;
-            id: PropTypes.Requireable<string>;
-            isAlternate: PropTypes.Requireable<boolean>;
-        }>[]>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const alternateHoursNote_1: any;
-        export { alternateHoursNote_1 as alternateHoursNote };
-        const className_1: any;
-        export { className_1 as className };
-        const heading_1: any;
-        export { heading_1 as heading };
-        const hoursList_1: any[];
-        export { hoursList_1 as hoursList };
-        const theme_1: string;
-        export { theme_1 as theme };
-    }
-}
+declare type HoursListItem = {
+    dayName?: string;
+    hours?: string;
+    id?: string;
+    isAlternate?: boolean;
+};
+declare type StoreHoursListProps = {
+    alternateHoursNote?: string;
+    className?: string;
+    heading?: string;
+    hoursList?: HoursListItem[];
+    theme?: Themes;
+};
 
-declare const SubNav: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type StoreDetailCopy = {
+    location?: string;
+    email?: string;
+    phone?: string;
+    openingHours?: string;
+};
+declare type StoreDetailHeaderProps = {
+    alternateHoursNote?: string;
+    className?: string;
+    copy?: StoreDetailCopy;
+    email?: string;
+    location?: string;
+    openingHours?: HoursListItem[];
+    phone?: string;
+    storeName: string;
+    theme?: Themes;
+};
+
+declare const StoreDetailHeader: ({ alternateHoursNote, className, copy, email, location, openingHours, phone, storeName, theme, }: StoreDetailHeaderProps) => ReactElement;
+
+declare const StoreHoursList: ({ alternateHoursNote, className, heading, hoursList, theme, }: StoreHoursListProps) => ReactElement | null;
+
+declare type SubNavLink = {
+    children: string /** @todo change this prop api to content or text  */;
+    id?: string;
+    hasTargetInNewWindow?: boolean;
+    style?: LinkStyle;
+    url: string;
+    onClick?: (event: MouseEvent) => void;
+};
+declare type SubNavProps = {
+    className?: string;
+    id: string;
+    isSelect?: boolean;
+    links: SubNavLink[];
+    heading?: string;
+    headingClassName?: string;
+    theme?: Themes;
+};
+
+declare const SubNav: React$1.ForwardRefExoticComponent<SubNavProps & React$1.RefAttributes<HTMLElement>>;
 
 declare function Textarea({ className, dataTestRef, defaultValue, id, isEnabled, inputRef, maxLength, name, onBlur, onChange, rows, textareaClassName, theme, value, }: {
     className: any;
@@ -2340,13 +2322,19 @@ declare namespace index_d$2 {
   };
 }
 
+declare type AddToCartActionType = 'fail' | 'fetching' | 'success';
+declare type AddToCartAction = {
+    type: AddToCartActionType;
+    payload?: string;
+};
+declare type OnAddToCartClick = (sku: string, addToCartDispatch: Dispatch<AddToCartAction>) => any;
 declare type AddToCartContextProps = {
     /**
       A callback function that takes `sku<string>`, `addToCartDispatch<function>`, `ADD_TO_CART_ACTION_TYPES<array[string]>`
       as arguments. See [AddToCartButton.onClick.js mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/AddToCartButton/__mocks__/AddToCartButton.onClick.js)
       for an example. ___Required___
      */
-    onClick?: MouseEventHandler<HTMLButtonElement>;
+    onClick?: OnAddToCartClick;
 };
 
 declare const AddToCartContextProvider: FC<AddToCartContextProps>;

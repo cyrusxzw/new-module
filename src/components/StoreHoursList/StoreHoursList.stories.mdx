@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { StoreHoursList } from './StoreHoursList';
 import { StoreHoursListFixture } from './StoreHoursList.fixture';
 
@@ -9,11 +10,38 @@ import { StoreHoursListFixture } from './StoreHoursList.fixture';
 
 <Canvas>
   <Story name="Base component">
-    <StoreHoursList
-      alternateHoursNote={StoreHoursListFixture.alternateHoursNote}
-      heading={StoreHoursListFixture.heading}
-      hoursList={StoreHoursListFixture.hoursList}
-    />
+    {(() => {
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <StoreHoursList
+            alternateHoursNote={StoreHoursListFixture.alternateHoursNote}
+            heading={StoreHoursListFixture.heading}
+            hoursList={StoreHoursListFixture.hoursList}
+            theme={theme}
+          />
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 
