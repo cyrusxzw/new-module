@@ -140,7 +140,7 @@ const ProductAccordionFixture: ProductAccordionProps = {
         },
         backgroundVideo: null,
         copy: (
-          <P>
+          <P theme="light">
             Florals, spice and tobacco in symphony; titled for an Ancient Greek
             astronomer renowned for her knowledge of the moon and its cycles.
           </P>
