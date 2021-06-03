@@ -85,9 +85,7 @@ describe('<AddToCartButton />', () => {
       />,
     );
     const button = screen.getByRole('button', {
-      name: `${fixture.copyJP.cartAction} — ${fixture.copyJP.price}${' '}${
-        fixture.copyJP.postTaxPrice
-      }`,
+      name: `${fixture.copyJP.cartAction} — ${fixture.copyJP.price} ${fixture.copyJP.postTaxPrice}`,
     });
     expect(button).toBeInTheDocument();
     expect(container).toMatchSnapshot();
