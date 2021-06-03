@@ -38,7 +38,7 @@ const ProductAccordionFixture: ProductAccordionProps = {
               'https://player.vimeo.com/external/524134498.hd.mp4?s=f568a040a2ba6fad0ea7fd5c8bb0e70433ba938f&profile_id=175',
           },
         },
-        copy: ' Balsam, leather, and light smoke',
+        copy: 'Balsam, leather, and light smoke',
         eyebrow: 'Cypress • Cedar • Vetiver',
         foregroundImage: {
           altText: 'Lorem ipsum dolor sit',
@@ -139,7 +139,12 @@ const ProductAccordionFixture: ProductAccordionProps = {
           },
         },
         backgroundVideo: null,
-        copy: 'Florals, spices and tobacco in symphony',
+        copy: (
+          <P>
+            Florals, spice and tobacco in symphony; titled for an Ancient Greek
+            astronomer renowned for her knowledge of the moon and its cycles.
+          </P>
+        ),
         eyebrow: 'Cardamon • Mimosa • Tobacco',
         foregroundImage: {
           altText: 'Lorem ipsum dolor sit',

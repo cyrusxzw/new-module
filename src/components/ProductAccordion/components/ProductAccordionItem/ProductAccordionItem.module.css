@@ -4,14 +4,14 @@
   position: relative;
   display: flex;
   width: 100%;
-  min-height: 70vh;
+  min-height: 90vh;
   transition-delay: 0ms;
   transition-duration: 1000ms;
   transition-property: width;
   transition-timing-function: var(--easing-ease-out-cubic);
 
   @media (--viewport-md) {
-    min-height: 60vh;
+    min-height: 70vh;
   }
 
   @media (--viewport-lg) {
@@ -109,13 +109,10 @@
   transition-property: opacity;
   transition-timing-function: linear;
 
-  @media (--viewport-md) {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-
   @media (--viewport-lg) {
     padding-top: 60px;
+    padding-right: 40px;
+    padding-left: 40px;
   }
 
   &.hidden {
@@ -292,6 +289,10 @@
 
   &.light {
     color: var(--color-light-copy);
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 }
 

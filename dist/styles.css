@@ -6334,7 +6334,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  min-height: 70vh;
+  min-height: 90vh;
   -webkit-transition-delay: 0ms;
           transition-delay: 0ms;
   -webkit-transition-duration: 1000ms;
@@ -6346,7 +6346,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 }
 @media (min-width: 640px) {
 .ProductAccordionItem-module_base__CB7Pp {
-    min-height: 60vh
+    min-height: 70vh
 }
   }
 @media (min-width: 1025px) {
@@ -6459,15 +6459,11 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
 }
-@media (min-width: 640px) {
-.ProductAccordionItem-module_content__3YgPm {
-    padding-right: 40px;
-    padding-left: 40px
-}
-  }
 @media (min-width: 1025px) {
 .ProductAccordionItem-module_content__3YgPm {
-    padding-top: 60px
+    padding-top: 60px;
+    padding-right: 40px;
+    padding-left: 40px
 }
   }
 .ProductAccordionItem-module_content__3YgPm.ProductAccordionItem-module_hidden__3m4tk {
@@ -6665,6 +6661,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 }
 .ProductAccordionItem-module_openCopy__7A5al.ProductAccordionItem-module_light__Yv6gq, .ProductAccordionItem-module_closedCopy__3Kb-8.ProductAccordionItem-module_light__Yv6gq {
     color: #fffef2;
+  }
+.ProductAccordionItem-module_openCopy__7A5al p:last-child, .ProductAccordionItem-module_closedCopy__3Kb-8 p:last-child {
+    margin-bottom: 0;
   }
 .ProductAccordionItem-module_openStateHeading__1k57z {
   margin-bottom: 20px;
