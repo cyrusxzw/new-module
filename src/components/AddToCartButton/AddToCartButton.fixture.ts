@@ -8,6 +8,13 @@ const AddToCartButtonFixture = {
       title: 'Out of stock',
     },
   },
+
+  copyJP: {
+    cartAction: 'カートに追加する',
+    price: '$26.45',
+    postTaxPrice: '(税込)',
+  },
+
   dataTestRef: 'DATA_TEST_REF',
   isEnabled: true,
   isFullWidth: true,

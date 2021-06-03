@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<AddToCartButton /> should render add to cart button with text to indicate tax inclusion for jp region correctly 1`] = `
+<div>
+  <button
+    class="base alternate blockStyle dark base fullWidth"
+    data-test-ref="ADD_TO_CART"
+    title="カートに追加する — $26.45 (税込)"
+    type="button"
+  >
+    <span
+      class="label"
+    >
+      <span>
+         
+      </span>
+      <span>
+        カートに追加する — $26.45 (税込)
+      </span>
+    </span>
+  </button>
+</div>
+`;
+
 exports[`<AddToCartButton /> should render base component correctly 1`] = `
 <div>
   <button

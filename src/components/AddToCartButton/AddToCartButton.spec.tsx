@@ -28,6 +28,7 @@ AddToCartButtonWithProviders.propTypes = {
   product: PropTypes.object,
   variants: PropTypes.array,
   copy: PropTypes.object,
+  copyJP: PropTypes.object,
 };
 
 describe('<AddToCartButton />', () => {
@@ -37,6 +38,7 @@ describe('<AddToCartButton />', () => {
   const outOfStockVariant = fixture.outOfStockVariant;
   const alternateActionVariant = fixture.alternateActionVariant;
   const copy = fixture.copy;
+  const copyJP = fixture.copyJP;
 
   beforeAll(() => {
     jest.spyOn(global.console, 'error').mockImplementation(() => {
@@ -67,6 +69,25 @@ describe('<AddToCartButton />', () => {
       name: `${fixture.copy.cartAction} — ${fixture.variants[0].price}`,
     });
 
+    expect(button).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render add to cart button with text to indicate tax inclusion for jp region correctly', () => {
+    const { container } = render(
+      <AddToCartButtonWithProviders
+        copy={copyJP}
+        onClick={mockAddToCartButtonOnClick}
+        product={product}
+        variants={variants}
+      />,
+    );
+
+    const button = screen.getByRole('button', {
+      name: `${fixture.copyJP.cartAction} — ${fixture.copyJP.price}${' '}${
+        fixture.copyJP.postTaxPrice
+      }`,
+    });
     expect(button).toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
