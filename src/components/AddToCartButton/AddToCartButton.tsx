@@ -40,7 +40,7 @@ const AddToCartButton: FC<AddToCartButtonProps> = ({
   } = selectedVariant;
   const cartActionLabel = !copy?.postTaxPrice
     ? `${copy?.cartAction} — ${price}`
-    : `${copy?.cartAction} — ${price}${' '}${copy?.postTaxPrice}`;
+    : `${copy?.cartAction} — ${price} ${copy?.postTaxPrice}`;
 
   const classSet = cx(
     styles.base,
