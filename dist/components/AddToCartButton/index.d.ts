@@ -5,6 +5,7 @@ declare type AddToCartButtonProps = {
     className?: string;
     copy?: {
         cartAction?: string;
+        postTaxPrice?: string;
         updateNotification?: string;
         outOfStock?: {
             label?: string;

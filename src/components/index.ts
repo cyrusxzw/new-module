@@ -22,7 +22,10 @@ export { GoogleMap } from './GoogleMap';
 export { Heading } from './Heading';
 export { HeroBanner } from './HeroBanner';
 export { Hidden } from './Hidden';
-export { HorizontalProductDisplayAccordion } from './HorizontalProductDisplayAccordion';
+export {
+  ProductAccordion,
+  HorizontalProductDisplayAccordion,
+} from './ProductAccordion';
 export { Hyperlink } from './Hyperlink';
 export { Icon } from './Icon';
 export { IconLink } from './IconLink';

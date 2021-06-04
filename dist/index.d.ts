@@ -40,8 +40,8 @@ declare type Themes = 'dark' | 'light';
 
 declare type Variant = {
     alternateAction?: {
-        url: string;
-        label: string;
+        url?: string;
+        label?: string;
     };
     cartDisclaimer?: string;
     hasAgeVerificationRequirement?: boolean;
@@ -99,6 +99,7 @@ declare type AddToCartButtonProps = {
     className?: string;
     copy?: {
         cartAction?: string;
+        postTaxPrice?: string;
         updateNotification?: string;
         outOfStock?: {
             label?: string;
@@ -209,7 +210,7 @@ declare type ImageProps = {
     id?: string;
     isFullBleedImage?: boolean;
     isLazyLoaded?: boolean;
-    sizes: {
+    sizes?: {
         large?: string;
         medium?: string;
         small?: string;
@@ -867,138 +868,104 @@ declare type HiddenProps = {
 
 declare const Hidden: ({ children, isLarge, isMedium, isSmall, isXLarge, }: HiddenProps) => ReactElement | null;
 
-declare function HorizontalProductDisplayAccordion({ id, products, addToCartCopy }: {
-    id: any;
-    products: any;
-    addToCartCopy: any;
-}): JSX.Element;
-declare namespace HorizontalProductDisplayAccordion {
-    namespace propTypes {
-        const className: PropTypes.Requireable<string>;
-        const id: PropTypes.Requireable<string>;
-        const addToCartCopy: PropTypes.Requireable<PropTypes.InferProps<{
-            cartAction: PropTypes.Requireable<string>;
-            updateNotification: PropTypes.Requireable<string>;
-            outOfStock: PropTypes.Requireable<PropTypes.InferProps<{
-                label: PropTypes.Requireable<string>;
-                title: PropTypes.Requireable<string>;
-            }>>;
-        }>>;
-        const openIndex: PropTypes.Requireable<string>;
-        const products: PropTypes.Requireable<PropTypes.InferProps<{
-            closedState: PropTypes.Requireable<PropTypes.InferProps<{
-                background: PropTypes.Requireable<string>;
-                backgroundColour: PropTypes.Requireable<string>;
-                backgroundImage: PropTypes.Requireable<object>;
-                backgroundVideo: PropTypes.Requireable<object>;
-                copy: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-                eyebrow: PropTypes.Requireable<string>;
-                foregroundImage: PropTypes.Requireable<object>;
-                id: PropTypes.Requireable<string>;
-                openButtonText: PropTypes.Requireable<string>;
-                theme: PropTypes.Requireable<string>;
-                title: PropTypes.Requireable<string>;
-            }>>;
-            handleAddToCart: PropTypes.Requireable<(...args: any[]) => any>;
-            isCompressed: PropTypes.Requireable<boolean>;
-            isExpanded: PropTypes.Requireable<boolean>;
-            id: PropTypes.Requireable<string>;
-            index: PropTypes.Requireable<number>;
-            openState: PropTypes.Requireable<PropTypes.InferProps<{
-                background: PropTypes.Requireable<string>;
-                backgroundColour: PropTypes.Requireable<string>;
-                backgroundImage: PropTypes.Requireable<object>;
-                backgroundVideo: PropTypes.Requireable<object>;
-                closeButtonText: PropTypes.Requireable<string>;
-                copy: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-                eyebrow: PropTypes.Requireable<string>;
-                foregroundImage: PropTypes.Requireable<object>;
-                product: PropTypes.Requireable<PropTypes.InferProps<{
-                    variants: PropTypes.Requireable<PropTypes.InferProps<{
-                        inStock: PropTypes.Requireable<boolean>;
-                        price: PropTypes.Requireable<string>;
-                        size: PropTypes.Requireable<string>;
-                        sku: PropTypes.Requireable<string>;
-                    }>[]>;
-                }>>;
-                theme: PropTypes.Requireable<string>;
-                title: PropTypes.Requireable<string>;
-            }>>;
-            toggleAccordion: PropTypes.Requireable<(...args: any[]) => any>;
-        }>[]>;
-    }
-    namespace defaultProps {
-        const className_1: any;
-        export { className_1 as className };
-        const id_1: any;
-        export { id_1 as id };
-        const openIndex_1: any;
-        export { openIndex_1 as openIndex };
-        export namespace addToCartCopy_1 {
-            const cartAction: any;
-            const updateNotification: any;
-            namespace outOfStock {
-                const label: any;
-                const title: any;
-            }
-        }
-        export { addToCartCopy_1 as addToCartCopy };
-        export namespace products_1 {
-            export namespace closedState {
-                export const background: string;
-                export const backgroundColour: any;
-                export const backgroundImage: any;
-                export const backgroundVideo: any;
-                export const closeButtonText: any;
-                export const copy: any;
-                export const eyebrow: any;
-                export const foregroundImage: any;
-                const id_2: any;
-                export { id_2 as id };
-                export const theme: any;
-                const title_1: any;
-                export { title_1 as title };
-            }
-            export const handleAddToCart: any;
-            export const isCompressed: any;
-            export const isExpanded: any;
-            const id_3: any;
-            export { id_3 as id };
-            export const index: any;
-            export namespace openState {
-                const background_1: string;
-                export { background_1 as background };
-                const backgroundColour_1: any;
-                export { backgroundColour_1 as backgroundColour };
-                const backgroundImage_1: any;
-                export { backgroundImage_1 as backgroundImage };
-                const backgroundVideo_1: any;
-                export { backgroundVideo_1 as backgroundVideo };
-                const copy_1: any;
-                export { copy_1 as copy };
-                const eyebrow_1: any;
-                export { eyebrow_1 as eyebrow };
-                const foregroundImage_1: any;
-                export { foregroundImage_1 as foregroundImage };
-                export const openButtonText: any;
-                export namespace product {
-                    const variants: {
-                        inStock: any;
-                        price: any;
-                        size: any;
-                        sku: any;
-                    }[];
-                }
-                const theme_1: any;
-                export { theme_1 as theme };
-                const title_2: any;
-                export { title_2 as title };
-            }
-            export const toggleAccordion: any;
-        }
-        export { products_1 as products };
-    }
-}
+declare type AddToCartActionType = 'fail' | 'fetching' | 'success';
+declare type AddToCartAction = {
+    type: AddToCartActionType;
+    payload?: string;
+};
+declare type OnAddToCartClick = (sku: string, addToCartDispatch: Dispatch<AddToCartAction>) => any;
+declare type AddToCartContextProps = {
+    /**
+      A callback function that takes `sku<string>`, `addToCartDispatch<function>`, `ADD_TO_CART_ACTION_TYPES<array[string]>`
+      as arguments. See [AddToCartButton.onClick.js mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/AddToCartButton/__mocks__/AddToCartButton.onClick.js)
+      for an example. ___Required___
+     */
+    onClick?: OnAddToCartClick;
+};
+
+declare type Media = {
+    sizes?: {
+        xSmall?: string;
+        small?: string;
+        medium?: string;
+        large?: string;
+        xLarge?: string;
+    };
+};
+declare type Image = Media & {
+    altText?: string;
+};
+declare type Video = Media & {
+    fallbackImage?: {
+        copy?: {
+            altText?: string;
+        };
+        sizes?: {
+            large?: string;
+            medium?: string;
+            small?: string;
+        };
+    };
+};
+declare type AddToCartCopy = {
+    cartAction?: string;
+    updateNotification?: string;
+    outOfStock?: {
+        label?: string;
+        title?: string;
+    };
+};
+declare type Background = 'Colour' | 'Image' | 'Video';
+declare type State = {
+    background?: Background;
+    backgroundColour?: string;
+    backgroundImage?: Image;
+    backgroundVideo?: Video;
+    copy?: ReactNode;
+    eyebrow?: string;
+    foregroundImage?: Image;
+    hasSerifFont?: boolean;
+    theme?: Themes;
+    title?: string;
+};
+declare type ClosedState = State & {
+    id?: string;
+    openButtonText?: string;
+};
+declare type OpenState = State & {
+    closeButtonText?: string;
+    cta?: {
+        text?: string;
+        url?: string;
+    };
+    product: {
+        variants: Variant[];
+    };
+};
+declare type VisualState = 'compressed' | 'default' | 'expanded';
+declare type ProductAccordionItem = {
+    closedState?: ClosedState;
+    id?: string;
+    isCompressed?: boolean;
+    isExpanded?: boolean;
+    onPromoClick?: () => void;
+    openState?: OpenState;
+    theme?: Themes;
+    visualState?: VisualState;
+};
+
+declare type Product$1 = ProductAccordionItem & {
+    handleAddToCart: OnAddToCartClick;
+};
+declare type ProductAccordionProps = {
+    className?: string;
+    id?: string;
+    addToCartCopy?: AddToCartCopy;
+    openIndex?: string;
+    products: Product$1[];
+};
+
+declare function ProductAccordion({ id, products, addToCartCopy, }: ProductAccordionProps): ReactElement;
 
 declare const Hyperlink: React$1.ForwardRefExoticComponent<HyperlinkProps & React$1.RefAttributes<HTMLAnchorElement>>;
 
@@ -1062,7 +1029,7 @@ declare namespace IconLink {
     }
 }
 
-declare const Image: React$1.ForwardRefExoticComponent<ImageProps & React$1.RefAttributes<HTMLImageElement>>;
+declare const Image$1: React$1.ForwardRefExoticComponent<ImageProps & React$1.RefAttributes<HTMLImageElement>>;
 
 declare type Slide$1 = {
     caption?: string;
@@ -1811,7 +1778,7 @@ declare type TwoColumnListProps = {
 
 declare const TwoColumnList: React$1.ForwardRefExoticComponent<TwoColumnListProps & React$1.RefAttributes<HTMLDivElement>>;
 
-declare const Video: React$1.ForwardRefExoticComponent<Pick<ControlsProps, "copy"> & {
+declare const Video$1: React$1.ForwardRefExoticComponent<Pick<ControlsProps, "copy"> & {
     captions?: {
         copy?: {
             toggleButtonTitleOn?: string;
@@ -1882,11 +1849,10 @@ declare const index_d$1_GoogleMap: typeof GoogleMap;
 declare const index_d$1_Heading: typeof Heading;
 declare const index_d$1_HeroBanner: typeof HeroBanner;
 declare const index_d$1_Hidden: typeof Hidden;
-declare const index_d$1_HorizontalProductDisplayAccordion: typeof HorizontalProductDisplayAccordion;
+declare const index_d$1_ProductAccordion: typeof ProductAccordion;
 declare const index_d$1_Hyperlink: typeof Hyperlink;
 declare const index_d$1_Icon: typeof Icon;
 declare const index_d$1_IconLink: typeof IconLink;
-declare const index_d$1_Image: typeof Image;
 declare const index_d$1_ImageCarousel: typeof ImageCarousel;
 declare const index_d$1_KitList: typeof KitList;
 declare const index_d$1_LinkButtonGroup: typeof LinkButtonGroup;
@@ -1920,7 +1886,6 @@ declare const index_d$1_TextOverFullWidthAsset: typeof TextOverFullWidthAsset;
 declare const index_d$1_Transition: typeof Transition;
 declare const index_d$1_TwoColumnLayout: typeof TwoColumnLayout;
 declare const index_d$1_TwoColumnList: typeof TwoColumnList;
-declare const index_d$1_Video: typeof Video;
 declare namespace index_d$1 {
   export {
     index_d$1_Accordion as Accordion,
@@ -1947,11 +1912,12 @@ declare namespace index_d$1 {
     index_d$1_Heading as Heading,
     index_d$1_HeroBanner as HeroBanner,
     index_d$1_Hidden as Hidden,
-    index_d$1_HorizontalProductDisplayAccordion as HorizontalProductDisplayAccordion,
+    index_d$1_ProductAccordion as ProductAccordion,
+    ProductAccordion as HorizontalProductDisplayAccordion,
     index_d$1_Hyperlink as Hyperlink,
     index_d$1_Icon as Icon,
     index_d$1_IconLink as IconLink,
-    index_d$1_Image as Image,
+    Image$1 as Image,
     index_d$1_ImageCarousel as ImageCarousel,
     index_d$1_KitList as KitList,
     index_d$1_LinkButtonGroup as LinkButtonGroup,
@@ -1986,7 +1952,7 @@ declare namespace index_d$1 {
     index_d$1_Transition as Transition,
     index_d$1_TwoColumnLayout as TwoColumnLayout,
     index_d$1_TwoColumnList as TwoColumnList,
-    index_d$1_Video as Video,
+    Video$1 as Video,
   };
 }
 
@@ -2321,21 +2287,6 @@ declare namespace index_d$2 {
   };
 }
 
-declare type AddToCartActionType = 'fail' | 'fetching' | 'success';
-declare type AddToCartAction = {
-    type: AddToCartActionType;
-    payload?: string;
-};
-declare type OnAddToCartClick = (sku: string, addToCartDispatch: Dispatch<AddToCartAction>) => any;
-declare type AddToCartContextProps = {
-    /**
-      A callback function that takes `sku<string>`, `addToCartDispatch<function>`, `ADD_TO_CART_ACTION_TYPES<array[string]>`
-      as arguments. See [AddToCartButton.onClick.js mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/AddToCartButton/__mocks__/AddToCartButton.onClick.js)
-      for an example. ___Required___
-     */
-    onClick?: OnAddToCartClick;
-};
-
 declare const AddToCartContextProvider: FC<AddToCartContextProps>;
 declare const useAddToCartContext: () => any;
 
@@ -2610,4 +2561,4 @@ declare namespace index_d$a {
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs, Button, BynderWidget, Carousel, Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, Podium, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$1 as components, index_d$2 as constants, index_d$3 as contexts, index_d$4 as customHooks, index_d$5 as environment, index_d$6 as objects, index_d$8 as product, index_d as types, useAddToCartContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d$a as utils, index_d$9 as viewport };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs, Button, BynderWidget, Carousel, Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image$1 as Image, ImageCarousel, KitList, LinkButtonGroup, List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video$1 as Video, index_d$1 as components, index_d$2 as constants, index_d$3 as contexts, index_d$4 as customHooks, index_d$5 as environment, index_d$6 as objects, index_d$8 as product, index_d as types, useAddToCartContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d$a as utils, index_d$9 as viewport };
