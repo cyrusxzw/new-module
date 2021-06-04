@@ -1,27 +1,28 @@
 /// <reference types="react" />
 import { FC } from 'react';
+import { a as DefinitionListItem } from '../../sharedChunks/DefinitionList.types';
 import { V as Variant } from '../../sharedChunks/Variant.types';
+import '../../sharedChunks/Themes.types';
 
-declare type Product = {
-    description?: string;
-    id?: string;
-    variantOptions?: Variant[];
-    cartDisclaimer?: string;
-    definitionList?: {
-        term?: JSX.Element;
-        description?: JSX.Element;
-    }[];
-    flyinPanel?: JSX.Element;
-    productName: string;
-    imageSize?: string;
-    upSellProduct?: {
-        image?: {
-            altText?: string;
-            small?: string;
-        };
-        name?: string;
-        url?: string;
+declare type UpSellProduct = {
+    image?: {
+        altText?: string;
+        small?: string;
     };
+    name?: string;
+    url?: string;
+};
+declare type Product = {
+    cartDisclaimer?: string;
+    definitionList?: DefinitionListItem[];
+    description?: string;
+    flyinPanel?: React.ReactNode;
+    id?: string;
+    imageSize?: string;
+    productName: string;
+    sku: string;
+    upSellProduct?: UpSellProduct;
+    variantOptions?: Variant[];
 };
 
 declare type ProductDetailContextProps = {

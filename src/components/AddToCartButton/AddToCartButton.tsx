@@ -49,9 +49,9 @@ const AddToCartButton: FC<AddToCartButtonProps> = ({
   );
 
   const handleOnClick = () => {
-    const { actionTypes, dispatch, onClick } = addToCartContext;
+    const { dispatch, onClick } = addToCartContext;
 
-    onClick(sku, dispatch, actionTypes);
+    onClick(sku, dispatch);
   };
 
   if (!!alternateAction?.url && !!alternateAction?.label) {
