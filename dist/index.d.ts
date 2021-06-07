@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1, { ReactNode, FC, MouseEvent, CSSProperties, LegacyRef, ReactElement, Dispatch, MouseEventHandler, RefObject } from 'react';
+import React$1, { ReactNode, Dispatch, FC, MouseEvent, CSSProperties, LegacyRef, ReactElement, MouseEventHandler, RefObject } from 'react';
 import PropTypes from 'prop-types';
 
 declare type DefinitionListItem = {
@@ -65,11 +65,27 @@ declare type Variant = {
 declare type BreakpointNames = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'x2l' | 'x3l' | 'x4l';
 declare type ViewportNames = BreakpointNames | 'xs only' | 'xs to sm only' | 'xs to md only' | 'xs to xl only' | 'sm only' | 'md only' | 'lg only' | 'lg to xl only' | 'lg to x2l only' | 'xl only';
 
+declare type AddToCartActionType = 'fail' | 'fetching' | 'success';
+declare type AddToCartAction = {
+    type: AddToCartActionType;
+    payload?: string;
+};
+declare type OnAddToCartClick = (sku: string, addToCartDispatch: Dispatch<AddToCartAction>) => any;
+declare type AddToCartContextProps = {
+    /**
+      A callback function that takes `sku<string>`, `addToCartDispatch<function>`, `ADD_TO_CART_ACTION_TYPES<array[string]>`
+      as arguments. See [AddToCartButton.onClick.js mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/AddToCartButton/__mocks__/AddToCartButton.onClick.js)
+      for an example. ___Required___
+     */
+    onClick?: OnAddToCartClick;
+};
+
 type index_d_Product = Product;
 type index_d_Themes = Themes;
 type index_d_Variant = Variant;
 type index_d_ViewportNames = ViewportNames;
 type index_d_BreakpointNames = BreakpointNames;
+type index_d_OnAddToCartClick = OnAddToCartClick;
 declare namespace index_d {
   export {
     index_d_Product as Product,
@@ -77,6 +93,7 @@ declare namespace index_d {
     index_d_Variant as Variant,
     index_d_ViewportNames as ViewportNames,
     index_d_BreakpointNames as BreakpointNames,
+    index_d_OnAddToCartClick as OnAddToCartClick,
   };
 }
 
@@ -867,21 +884,6 @@ declare type HiddenProps = {
 };
 
 declare const Hidden: ({ children, isLarge, isMedium, isSmall, isXLarge, }: HiddenProps) => ReactElement | null;
-
-declare type AddToCartActionType = 'fail' | 'fetching' | 'success';
-declare type AddToCartAction = {
-    type: AddToCartActionType;
-    payload?: string;
-};
-declare type OnAddToCartClick = (sku: string, addToCartDispatch: Dispatch<AddToCartAction>) => any;
-declare type AddToCartContextProps = {
-    /**
-      A callback function that takes `sku<string>`, `addToCartDispatch<function>`, `ADD_TO_CART_ACTION_TYPES<array[string]>`
-      as arguments. See [AddToCartButton.onClick.js mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/AddToCartButton/__mocks__/AddToCartButton.onClick.js)
-      for an example. ___Required___
-     */
-    onClick?: OnAddToCartClick;
-};
 
 declare type Media = {
     sizes?: {
