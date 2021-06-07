@@ -27,6 +27,7 @@ const ProductDetailBody = ({
   copy,
   theme,
   onFlyinOpenCloseClick,
+  paymentWidget,
 }: ProductDetailBodyProps): ReactElement | null => {
   const currentTheme = useThemeContext(theme, 'dark');
   const [isFlyinPanelVisible, setIsFlyinPanelVisible] = useState(false);
@@ -64,6 +65,17 @@ const ProductDetailBody = ({
   const flyinPanelTriggerClassSet = cx(styles.flyinPanelTrigger, {
     [styles.isActiveButton]: isFlyinPanelVisible,
   });
+
+  const paymentWidgetClassSet = cx(
+    styles.paymentWidget,
+    {
+      [styles.hasBottomBorder]:
+        (!!upSellProduct && isViewport('lg')) ||
+        (!!selectedVariant?.cartDisclaimer && isViewport('xs to sm only')),
+    },
+    className,
+  );
+
   const RADIO_GROUP_NAME = 'sku';
   const RADIO_GROUP_DATA_TEST_REF = 'PRODUCT_DETAIL_VARIANT_SELECT';
   const PRODUCT_UP_SELL = 'PRODUCT_UP_SELL';
@@ -171,6 +183,9 @@ const ProductDetailBody = ({
             dataTestRef="ADD_TO_CART"
             theme={currentTheme}
           />
+          {paymentWidget && (
+            <div className={paymentWidgetClassSet}>{paymentWidget}</div>
+          )}
         </div>
 
         <Hidden isLarge={true} isMedium={true} isXLarge={true}>

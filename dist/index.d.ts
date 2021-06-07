@@ -1366,10 +1366,11 @@ declare type ProductDetailHeaderProps = {
     copy?: ProductDetailBodyCopy;
     onBreadcrumbClick?: (item: BreadcrumbItem, selectedVariant: Variant) => void;
     onFlyinOpenCloseClick?: (flyinStatus: 'open' | 'close', selectedVariant: Variant) => void;
+    paymentWidget?: React.ReactNode;
     theme?: Themes;
 };
 
-declare const ProductDetailHeader: ({ breadcrumbs, className, copy, onBreadcrumbClick, onFlyinOpenCloseClick, theme, }: ProductDetailHeaderProps) => ReactElement;
+declare const ProductDetailHeader: ({ breadcrumbs, className, copy, onBreadcrumbClick, onFlyinOpenCloseClick, paymentWidget, theme, }: ProductDetailHeaderProps) => ReactElement;
 
 declare type QuoteProps = {
     author: string;

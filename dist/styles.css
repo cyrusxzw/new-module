@@ -9108,6 +9108,9 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
 .ProductDetailBody-module_mediumProductName__1HprA {
   margin-bottom: 15px;
 }
+.ProductDetailBody-module_paymentWidget__v_icY.ProductDetailBody-module_hasBottomBorder__E7Wso {
+    border-bottom: 1px solid #d5d4c9;
+  }
 
 :root {
   /* Base colours */

@@ -19,6 +19,7 @@ const ProductDetailHeader = ({
   copy,
   onBreadcrumbClick,
   onFlyinOpenCloseClick,
+  paymentWidget,
   theme,
 }: ProductDetailHeaderProps): ReactElement => {
   const currentTheme = useThemeContext(theme, 'dark');
@@ -53,6 +54,7 @@ const ProductDetailHeader = ({
               flyinPanelHeading: copy?.flyinPanelHeading,
             }}
             onFlyinOpenCloseClick={handleOnFlyinOpenCloseClick}
+            paymentWidget={paymentWidget}
             theme={currentTheme}
           />
         </div>
