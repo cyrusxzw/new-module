@@ -1,0 +1,10 @@
+@import 'styles/index';
+
+.base {
+  display: flex;
+  box-sizing: border-box;
+
+  @media (--viewport-xs-sm-only) {
+    flex-direction: column;
+  }
+}
