@@ -47,13 +47,38 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
   );
   const [hasActiveVideo, setHasActiveVideo] = useState(hasAutoplay);
   const [isMuted, setIsMuted] = useState(!hasAllowAudio);
-  const isMobileOrTablet = isViewport('xs to md only');
   const { progress, setProgress } = useProgress(videoRef);
   const hasMounted = useHasMounted();
+
+  const isMobileOrTablet = isViewport('xs to md only');
 
   useWindowHasResized();
   useVideoScroller(videoRef, isScrollBasedVideo);
   useOverflowHidden(hasActiveVideo && hasPlayInFullScreen && !isMobileOrTablet);
+
+  const pauseVideo = () => {
+    videoRef.current.pause();
+    setIsPlaying(false);
+  };
+
+  const stopVideo = () => {
+    videoRef.current.pause();
+    setIsPlaying(false);
+    setHasActiveVideo(false);
+
+    setTimeout(() => {
+      videoRef.current.currentTime = 0;
+      videoRef.current.load();
+      setProgress(0);
+    }, 500);
+  };
+
+  const playVideo = () => {
+    videoRef.current.play();
+    setIsPlaying(true);
+    setHasActiveVideo(true);
+  };
+
   useEscapeKeyListener(stopVideo);
 
   const captionsTrack = videoRef.current?.textTracks[0];
@@ -67,14 +92,16 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
   }, [sizes]);
 
   if (!!captionsTrack && !isIE) {
-    if (hasActiveCaptions) {
-      captionsTrack.mode = 'showing';
-    } else {
-      captionsTrack.mode = 'hidden';
-    }
+    captionsTrack.mode = hasActiveCaptions ? 'showing' : 'hidden';
   }
 
-  const hasVideo = !!sizes;
+  /**
+   * @todo temporary fix for autoplay issue in ie -
+   * https://aesoponline.atlassian.net/browse/CON-426
+   * `const hasVideo = !!sizes`
+   */
+  const hasVideo = !!sizes && !(isIE && hasAutoplay && !isScrollBasedVideo);
+
   const handleOnPosterClick = () => playVideo();
   const handlePlayPauseButtonOnClick = isPlaying ? pauseVideo : playVideo;
   const handleAudioButtonClick = () => setIsMuted(!isMuted);
@@ -88,29 +115,6 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
     [styles.fullWidth]: isFullWidth,
     [styles.chrome]: isChrome,
   });
-
-  function pauseVideo() {
-    videoRef.current.pause();
-    setIsPlaying(false);
-  }
-
-  function stopVideo() {
-    videoRef.current.pause();
-    setIsPlaying(false);
-    setHasActiveVideo(false);
-
-    setTimeout(() => {
-      videoRef.current.currentTime = 0;
-      videoRef.current.load();
-      setProgress(0);
-    }, 500);
-  }
-
-  function playVideo() {
-    videoRef.current.play();
-    setIsPlaying(true);
-    setHasActiveVideo(true);
-  }
 
   return (
     <div className={classSet} id={id} ref={ref} role="group">
@@ -126,24 +130,26 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
         </figure>
       )}
 
-      <VideoPlayer
-        captions={{
-          fileUrl: captions?.fileUrl,
-          languageCode: captions?.languageCode,
-          languageLabel: captions?.languageLabel,
-        }}
-        hasActiveVideo={hasActiveVideo}
-        hasAllowAudio={hasAllowAudio}
-        hasAutoplay={hasAutoplay}
-        hasLoop={hasLoop}
-        hasNativeControls={hasNativeControls}
-        hasPlayInFullScreen={hasPlayInFullScreen}
-        isActive={!poster || hasActiveVideo || isScrollBasedVideo}
-        isBackground={isBackground}
-        isMuted={isMuted}
-        ref={videoRef}
-        sizes={sizes}
-      />
+      {hasVideo && (
+        <VideoPlayer
+          captions={{
+            fileUrl: captions?.fileUrl,
+            languageCode: captions?.languageCode,
+            languageLabel: captions?.languageLabel,
+          }}
+          hasActiveVideo={hasActiveVideo}
+          hasAllowAudio={hasAllowAudio}
+          hasAutoplay={hasAutoplay}
+          hasLoop={hasLoop}
+          hasNativeControls={hasNativeControls}
+          hasPlayInFullScreen={hasPlayInFullScreen}
+          isActive={!poster || hasActiveVideo || isScrollBasedVideo}
+          isBackground={isBackground}
+          isMuted={isMuted}
+          ref={videoRef}
+          sizes={sizes}
+        />
+      )}
 
       {!isScrollBasedVideo && (
         <Poster
