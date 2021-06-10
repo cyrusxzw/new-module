@@ -4,10 +4,6 @@ import { axe } from 'jest-axe';
 import { Video } from './Video';
 
 describe('<Video />', () => {
-  it('should not crash application when rendered with no props', () => {
-    render(<Video />);
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <Video

@@ -1,5 +1,7 @@
 import React, { forwardRef, useRef, useState } from 'react';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import cx from 'classnames';
+import { useIEErrorContext } from '~/contexts/IEErrorContext';
 import {
   useEscapeKeyListener,
   useHasMounted,
@@ -40,7 +42,8 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
   },
   ref,
 ) {
-  const videoRef = useRef<HTMLVideoElement>();
+  const ieError = useIEErrorContext();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(hasAutoplay);
   const [hasActiveCaptions, setHasActiveCaptions] = useState(
     !!captions?.isActiveOnLoad,
@@ -81,27 +84,20 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
 
   useEscapeKeyListener(stopVideo);
 
-  const captionsTrack = videoRef.current?.textTracks[0];
-
-  React.useEffect(() => {
+  useDeepCompareEffect(() => {
     /** Stop and reset video if the source changes */
     if (hasMounted && videoRef.current) {
       videoRef.current.load();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sizes]);
+
+  const captionsTrack = videoRef.current?.textTracks[0];
 
   if (!!captionsTrack && !isIE) {
     captionsTrack.mode = hasActiveCaptions ? 'showing' : 'hidden';
   }
 
-  /**
-   * @todo temporary fix for autoplay issue in ie -
-   * https://aesoponline.atlassian.net/browse/CON-426
-   * `const hasVideo = !!sizes`
-   */
-  const hasVideo = !!sizes && !(isIE && hasAutoplay && !isScrollBasedVideo);
-
+  const hasVideo = !!sizes && ieError !== 'IndexSizeError';
   const handleOnPosterClick = () => playVideo();
   const handlePlayPauseButtonOnClick = isPlaying ? pauseVideo : playVideo;
   const handleAudioButtonClick = () => setIsMuted(!isMuted);
@@ -151,7 +147,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
         />
       )}
 
-      {!isScrollBasedVideo && (
+      {hasVideo && !isScrollBasedVideo && (
         <Poster
           copy={{
             playButtonTitle: copy?.playButtonTitle,
@@ -163,7 +159,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
         />
       )}
 
-      {hasControls && !hasNativeControls && (
+      {hasVideo && hasControls && !hasNativeControls && (
         <Controls
           captions={{
             copy: captions?.copy,
