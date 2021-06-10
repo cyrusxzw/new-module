@@ -1,6 +1,6 @@
 import React, { forwardRef, useRef, useState, useEffect } from 'react';
 import cx from 'classnames';
-import { useIEErrorContext } from '~/contexts/IEErrorContext';
+import { useErrorContext } from '~/contexts/';
 import {
   useEscapeKeyListener,
   useHasMounted,
@@ -41,8 +41,8 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
   },
   ref,
 ) {
-  const ieError = useIEErrorContext();
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const ieError = useErrorContext();
+  const videoRef = useRef<HTMLVideoElement>();
   const [isPlaying, setIsPlaying] = useState(hasAutoplay);
   const [hasActiveCaptions, setHasActiveCaptions] = useState(
     !!captions?.isActiveOnLoad,
@@ -88,6 +88,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
     if (hasMounted && videoRef.current) {
       videoRef.current.load();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sizes]);
 
   const captionsTrack = videoRef.current?.textTracks[0];
@@ -95,8 +96,6 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
   if (!!captionsTrack && !isIE) {
     captionsTrack.mode = hasActiveCaptions ? 'showing' : 'hidden';
   }
-
-  console.log('ieError', ieError);
 
   const hasVideo = !!sizes && ieError !== 'IndexSizeError';
   const handleOnPosterClick = () => playVideo();

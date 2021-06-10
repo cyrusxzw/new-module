@@ -8,7 +8,7 @@ export {
   useGoogleMapsContext,
 } from './GoogleMapsContext';
 
-export { IEErrorContextProvider, useIEErrorContext } from './IEErrorContext';
+export { ErrorContextProvider, useErrorContext } from './ErrorContext';
 
 export { LoadMoreContextProvider, useLoadMoreContext } from './LoadMoreContext';
 

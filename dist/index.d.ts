@@ -2309,13 +2309,13 @@ declare const useGoogleMapsContext: () => {
     isLoading: boolean;
 };
 
-declare type IEErrorContextProps = {
+declare type ErrorContextProps = {
     children: ReactNode;
-    error?: string | undefined;
+    error?: string;
 };
 
-declare const IEErrorContextProvider: ({ children, error, }: IEErrorContextProps) => ReactElement;
-declare const useIEErrorContext: () => string;
+declare const ErrorContextProvider: ({ children, error, }: ErrorContextProps) => ReactElement;
+declare const useErrorContext: () => string;
 
 declare type LoadMoreContextProps = {
     /**
@@ -2365,8 +2365,8 @@ declare const index_d$3_AddToCartContextProvider: typeof AddToCartContextProvide
 declare const index_d$3_useAddToCartContext: typeof useAddToCartContext;
 declare const index_d$3_GoogleMapsContextProvider: typeof GoogleMapsContextProvider;
 declare const index_d$3_useGoogleMapsContext: typeof useGoogleMapsContext;
-declare const index_d$3_IEErrorContextProvider: typeof IEErrorContextProvider;
-declare const index_d$3_useIEErrorContext: typeof useIEErrorContext;
+declare const index_d$3_ErrorContextProvider: typeof ErrorContextProvider;
+declare const index_d$3_useErrorContext: typeof useErrorContext;
 declare const index_d$3_LoadMoreContextProvider: typeof LoadMoreContextProvider;
 declare const index_d$3_useLoadMoreContext: typeof useLoadMoreContext;
 declare const index_d$3_NavBarThemeContextProvider: typeof NavBarThemeContextProvider;
@@ -2385,8 +2385,8 @@ declare namespace index_d$3 {
     index_d$3_useAddToCartContext as useAddToCartContext,
     index_d$3_GoogleMapsContextProvider as GoogleMapsContextProvider,
     index_d$3_useGoogleMapsContext as useGoogleMapsContext,
-    index_d$3_IEErrorContextProvider as IEErrorContextProvider,
-    index_d$3_useIEErrorContext as useIEErrorContext,
+    index_d$3_ErrorContextProvider as ErrorContextProvider,
+    index_d$3_useErrorContext as useErrorContext,
     index_d$3_LoadMoreContextProvider as LoadMoreContextProvider,
     index_d$3_useLoadMoreContext as useLoadMoreContext,
     index_d$3_NavBarThemeContextProvider as NavBarThemeContextProvider,
@@ -2576,4 +2576,4 @@ declare namespace index_d$a {
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs, Button, BynderWidget, Carousel, Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, IEErrorContextProvider, Icon, IconLink, Image$1 as Image, ImageCarousel, KitList, LinkButtonGroup, List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video$1 as Video, index_d$1 as components, index_d$2 as constants, index_d$3 as contexts, index_d$4 as customHooks, index_d$5 as environment, index_d$6 as objects, index_d$8 as product, index_d as types, useAddToCartContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useIEErrorContext, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d$a as utils, index_d$9 as viewport };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs, Button, BynderWidget, Carousel, Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image$1 as Image, ImageCarousel, KitList, LinkButtonGroup, List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video$1 as Video, index_d$1 as components, index_d$2 as constants, index_d$3 as contexts, index_d$4 as customHooks, index_d$5 as environment, index_d$6 as objects, index_d$8 as product, index_d as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d$a as utils, index_d$9 as viewport };
