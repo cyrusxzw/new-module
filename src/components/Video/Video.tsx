@@ -1,7 +1,6 @@
-import React, { forwardRef, useRef, useState } from 'react';
-import useDeepCompareEffect from 'use-deep-compare-effect';
+import React, { forwardRef, useRef, useState, useEffect } from 'react';
 import cx from 'classnames';
-// import { useIEErrorContext } from '~/contexts/IEErrorContext';
+import { useIEErrorContext } from '~/contexts/IEErrorContext';
 import {
   useEscapeKeyListener,
   useHasMounted,
@@ -42,7 +41,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
   },
   ref,
 ) {
-  // const ieError = useIEErrorContext();
+  const ieError = useIEErrorContext();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(hasAutoplay);
   const [hasActiveCaptions, setHasActiveCaptions] = useState(
@@ -84,7 +83,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
 
   useEscapeKeyListener(stopVideo);
 
-  useDeepCompareEffect(() => {
+  useEffect(() => {
     /** Stop and reset video if the source changes */
     if (hasMounted && videoRef.current) {
       videoRef.current.load();
@@ -97,7 +96,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
     captionsTrack.mode = hasActiveCaptions ? 'showing' : 'hidden';
   }
 
-  const hasVideo = !!sizes; // && ieError !== 'IndexSizeError';
+  const hasVideo = !!sizes && ieError !== 'IndexSizeError';
   const handleOnPosterClick = () => playVideo();
   const handlePlayPauseButtonOnClick = isPlaying ? pauseVideo : playVideo;
   const handleAudioButtonClick = () => setIsMuted(!isMuted);
