@@ -78,7 +78,7 @@ export { contexts };
 export {
   AddToCartContextProvider,
   GoogleMapsContextProvider,
-  IEErrorContextProvider,
+  // IEErrorContextProvider,
   LoadMoreContextProvider,
   NavBarThemeContextProvider,
   NotificationContextProvider,
@@ -87,7 +87,7 @@ export {
   VariantSelectContextProvider,
   useAddToCartContext,
   useGoogleMapsContext,
-  useIEErrorContext,
+  // useIEErrorContext,
   useLoadMoreContext,
   useNavBarThemeContext,
   useNotificationContext,

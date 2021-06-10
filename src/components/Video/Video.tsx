@@ -1,7 +1,7 @@
 import React, { forwardRef, useRef, useState } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import cx from 'classnames';
-import { useIEErrorContext } from '~/contexts/IEErrorContext';
+// import { useIEErrorContext } from '~/contexts/IEErrorContext';
 import {
   useEscapeKeyListener,
   useHasMounted,
@@ -42,7 +42,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
   },
   ref,
 ) {
-  const ieError = useIEErrorContext();
+  // const ieError = useIEErrorContext();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(hasAutoplay);
   const [hasActiveCaptions, setHasActiveCaptions] = useState(
@@ -97,7 +97,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
     captionsTrack.mode = hasActiveCaptions ? 'showing' : 'hidden';
   }
 
-  const hasVideo = !!sizes && ieError !== 'IndexSizeError';
+  const hasVideo = !!sizes; // && ieError !== 'IndexSizeError';
   const handleOnPosterClick = () => playVideo();
   const handlePlayPauseButtonOnClick = isPlaying ? pauseVideo : playVideo;
   const handleAudioButtonClick = () => setIsMuted(!isMuted);
