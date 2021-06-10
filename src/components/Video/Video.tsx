@@ -96,6 +96,8 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
     captionsTrack.mode = hasActiveCaptions ? 'showing' : 'hidden';
   }
 
+  console.log('ieError', ieError);
+
   const hasVideo = !!sizes && ieError !== 'IndexSizeError';
   const handleOnPosterClick = () => playVideo();
   const handlePlayPauseButtonOnClick = isPlaying ? pauseVideo : playVideo;
