@@ -8,6 +8,8 @@ export {
   useGoogleMapsContext,
 } from './GoogleMapsContext';
 
+export { ErrorContextProvider, useErrorContext } from './ErrorContext';
+
 export { LoadMoreContextProvider, useLoadMoreContext } from './LoadMoreContext';
 
 export {
