@@ -1,9 +1,12 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import { StorybookGridOverlay } from '~.storybook/components';
-import { NotificationContextProvider } from '~/contexts';
+import {
+  NotificationContextProvider,
+  useNotificationContext,
+} from '~/contexts';
 import { Podium } from '~/components/Podium';
-import { ToggleButton } from './components/ToggleButton';
+import { Button } from '~/components/Button';
 import { NotificationModal } from './NotificationModal';
 import { NotificationModalFixture } from './NotificationModal.fixture';
 
@@ -28,7 +31,21 @@ import { NotificationModalFixture } from './NotificationModal.fixture';
         <>
           <NotificationContextProvider>
             <Podium horizontalPadding="small" verticalPadding="small">
-              <ToggleButton />
+              {(() => {
+                const ToggleButton = () => {
+                  const { actionType, dispatch } = useNotificationContext();
+                  const handleOnClick = (event) => {
+                    event.preventDefault();
+                    dispatch?.({ type: actionType?.SHOW_NOTIFICATION });
+                  };
+                  return (
+                    <Button onClick={handleOnClick} title="Show Notification">
+                      Show Notification
+                    </Button>
+                  );
+                };
+                return <ToggleButton />;
+              })()}
             </Podium>
             <NotificationModal
               backgroundColor="#d5d5cc"
