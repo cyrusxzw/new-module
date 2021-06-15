@@ -1,12 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ComponentBoilerplate } from './ComponentBoilerplate';
 import { ComponentBoilerplateFixture } from './ComponentBoilerplate.fixture';
 
 describe('<ComponentBoilerplate />', () => {
-  it('should render base component correctly', () => {
-    const { container } = render(<ComponentBoilerplate />);
+  it.todo('should assert something', () => {
+    render(<ComponentBoilerplate />);
 
-    expect(container).toMatchSnapshot();
+    screen.debug();
   });
 });

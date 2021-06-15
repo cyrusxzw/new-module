@@ -4,7 +4,10 @@ import { StorybookGridOverlay } from '~.storybook/components';
 import { ComponentBoilerplate } from './ComponentBoilerplate';
 import { ComponentBoilerplateFixture } from './ComponentBoilerplate.fixture';
 
-<Meta title="Components/ComponentBoilerplate" component={ComponentBoilerplate} />
+<Meta
+  title="Components/ComponentBoilerplate"
+  component={ComponentBoilerplate}
+/>
 
 # ComponentBoilerplate
 
@@ -30,10 +33,7 @@ import { ComponentBoilerplateFixture } from './ComponentBoilerplate.fixture';
       return (
         <>
           <ComponentBoilerplate theme={theme} />
-          <StorybookGridOverlay
-            isActive={implementation.gridOverlay.isActive}
-            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
-          />
+          <StorybookGridOverlay {...implementation.gridOverlay} />
         </>
       );
     })()}
