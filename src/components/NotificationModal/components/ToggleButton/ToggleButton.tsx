@@ -1,12 +1,13 @@
 import React from 'react';
+import type { SyntheticEvent } from 'react';
 import { Button } from '~/components/Button';
 import { useNotificationContext } from '~/contexts';
 
-const ToogleButton = () => {
+const ToggleButton = () => {
   const footerSuccessModal = useNotificationContext();
   const { actionType, dispatch } = footerSuccessModal;
 
-  const handleOnClick = (e) => {
+  const handleOnClick = (e: SyntheticEvent) => {
     e.preventDefault();
     dispatch({ type: actionType.SHOW_NOTIFICATION });
   };
@@ -18,4 +19,4 @@ const ToogleButton = () => {
   );
 };
 
-export { ToogleButton };
+export { ToggleButton };

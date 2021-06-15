@@ -1,8 +1,9 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { NotificationContextProvider } from '~/contexts';
 import { Podium } from '~/components/Podium';
-import { ToogleButton } from './components/ToogleButton';
+import { ToggleButton } from './components/ToggleButton';
 import { NotificationModal } from './NotificationModal';
 import { NotificationModalFixture } from './NotificationModal.fixture';
 
@@ -12,15 +13,35 @@ import { NotificationModalFixture } from './NotificationModal.fixture';
 
 <Canvas>
   <Story name="Base component">
-    <NotificationContextProvider>
-      <Podium horizontalPadding="small" verticalPadding="small">
-        <ToogleButton />
-      </Podium>
-      <NotificationModal
-        backgroundColor="#d5d5cc"
-        notificationMessage={NotificationModalFixture.notificationMessage}
-      />
-    </NotificationContextProvider>
+    {(() => {
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <NotificationContextProvider>
+            <Podium horizontalPadding="small" verticalPadding="small">
+              <ToggleButton />
+            </Podium>
+            <NotificationModal
+              backgroundColor="#d5d5cc"
+              notificationMessage={NotificationModalFixture.notificationMessage}
+            />
+          </NotificationContextProvider>
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 
