@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
@@ -10,68 +11,59 @@ import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartBu
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
 import { ProductGridItem } from './ProductGridItem';
 import { ProductGridItemFixture } from './ProductGridItem.fixture';
-import styles from './ProductGridItemStorybook.module.css';
 
 <Meta title="Components/ProductGridItem" component={ProductGridItem} />
 
 # ProductGridItem
 
-Requires `AddToCartContextProvider`, `ProductDetailContextProvider` and `VariantSelectContextProvider`.
-
 <Canvas>
   <Story name="Base component">
-    <div className={styles.holder}>
-      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-        <ProductDetailContextProvider
-          product={knobs.object('Product', ProductDetailHeaderFixture.product, 'Content')}
-        >
-          <VariantSelectContextProvider
-            variants={knobs.object('Variant', ProductGridItemFixture.variantOptions, 'Content')}
+    {(() => {
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+        <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+          <ProductDetailContextProvider
+            product={knobs.object('Product', ProductDetailHeaderFixture.product, 'Content')}
           >
-            <ProductGridItem
-              copy={{
-                addToCart: AddToCartButtonFixture.copy,
-                ...ProductGridItemFixture.copy,
-              }}
-              info={knobs.text('Info', ProductGridItemFixture.info, 'Content')}
-              url={knobs.text('URL', ProductGridItemFixture.url, 'Content')}
-            />
-          </VariantSelectContextProvider>
-        </ProductDetailContextProvider>
-      </AddToCartContextProvider>
-    </div>
+            <VariantSelectContextProvider
+              variants={knobs.object('Variant', ProductGridItemFixture.variantOptions, 'Content')}
+            >
+              <ProductGridItem
+                copy={{
+                  addToCart: AddToCartButtonFixture.copy,
+                  ...ProductGridItemFixture.copy,
+                }}
+                url={knobs.text('URL', ProductGridItemFixture.url, 'Content')}
+                theme={theme}
+              />
+            </VariantSelectContextProvider>
+          </ProductDetailContextProvider>
+        </AddToCartContextProvider>
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
-
-## Variations
-
-### Single variant
-
-<Canvas>
-  <Story name="Single variant">
-    <div className={styles.holder}>
-      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-        <ProductDetailContextProvider
-          product={knobs.object('Product', ProductDetailHeaderFixture.product, 'Content')}
-        >
-          <VariantSelectContextProvider
-            variants={knobs.object('Variant', ProductGridItemFixture.variantOptionsOneItem, 'Content')}
-          >
-            <ProductGridItem
-              copy={{
-                addToCart: AddToCartButtonFixture.copy,
-                ...ProductGridItemFixture.copy,
-              }}
-              info={knobs.text('Info', ProductGridItemFixture.info, 'Content')}
-              url={knobs.text('URL', ProductGridItemFixture.url, 'Content')}
-            />
-          </VariantSelectContextProvider>
-        </ProductDetailContextProvider>
-      </AddToCartContextProvider>
-    </div>
-  </Story>
-</Canvas>
-
 
 ## API
 

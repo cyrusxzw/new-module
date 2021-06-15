@@ -129,8 +129,8 @@ exports[`<ProductGridItem /> should render base component correctly 1`] = `
     </div>
     <button
       class="base alternate blockStyle dark base fullWidth addToCartButton"
-      data-test-ref="ADD_TO_CART"
-      title="Add to your cart — $26.45"
+      data-test-ref="PRODUCT_GRID_ITEM"
+      title="copy add to cart — $26.45"
       type="button"
     >
       <span
@@ -140,7 +140,7 @@ exports[`<ProductGridItem /> should render base component correctly 1`] = `
            
         </span>
         <span>
-          Add to your cart — $26.45
+          copy add to cart — $26.45
         </span>
       </span>
     </button>

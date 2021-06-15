@@ -1,7 +1,10 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef, forwardRef } from 'react';
 import cx from 'classnames';
-import { useProductDetailContext, useVariantSelectContext } from '~/contexts';
+import {
+  useThemeContext,
+  useProductDetailContext,
+  useVariantSelectContext,
+} from '~/contexts';
 import { useImageTransition } from '~/customHooks';
 import { getVariantRadioOptions } from '~/utils/product/index.ts';
 import { AddToCartButton } from '~/components/AddToCartButton';
@@ -12,20 +15,23 @@ import { Image } from '~/components/Image';
 import { P } from '~/components/Paragraph';
 import { RadioGroup } from '~/components/RadioGroup/index.ts';
 import { Transition } from '~/components/Transition';
+import type { ProductGridItemProps } from './ProductGridItem.types';
 import styles from './ProductGridItem.module.css';
 
-const ProductGridItem = React.forwardRef(
-  ({ className, onCtaClick, copy, cta, id, info, theme, url }, ref) => {
+const ProductGridItem = forwardRef<HTMLDivElement, ProductGridItemProps>(
+  function ProductGridItemRef(
+    { className, onCtaClick, copy, cta, id, info, theme, url },
+    ref,
+  ) {
+    const currentTheme = useThemeContext(theme, 'dark');
     const imageRef = useRef();
+    const { productDetail } = useProductDetailContext();
+
     const {
       selectedVariant,
       onVariantChange,
       variants,
     } = useVariantSelectContext();
-    const { productDetail } = useProductDetailContext();
-
-    const hasOneVariant = variants?.length === 1;
-    const isBundle = variants?.length === 0;
 
     const [currentImage, isImageActive] = useImageTransition(
       selectedVariant?.image || productDetail.image,
@@ -34,10 +40,13 @@ const ProductGridItem = React.forwardRef(
 
     if (!productDetail) return null;
 
+    const hasOneVariant = variants?.length === 1;
+    const isBundle = variants?.length === 0;
     const { definitionList, productName, sku } = productDetail;
-
     const variantRadioOptions = getVariantRadioOptions(variants);
-    const classSet = cx(styles.base, styles[theme], className);
+    const handleOnCtaClick = () => onCtaClick?.();
+
+    const classSet = cx(styles.base, styles[currentTheme], className);
 
     const classInfoHolderSet = cx(styles.infoHolder, {
       [styles.hasOneVariant]: hasOneVariant || isBundle,
@@ -51,10 +60,10 @@ const ProductGridItem = React.forwardRef(
 
     return (
       <div className={classSet} id={id} ref={ref}>
-        <Transition isActive={isImageActive} name="fade">
+        <Transition isActive={isImageActive} type="fade">
           <Hyperlink
             className={styles.imageLink}
-            onClick={() => onCtaClick()}
+            onClick={handleOnCtaClick}
             url={url}
           >
             <Image
@@ -102,6 +111,7 @@ const ProductGridItem = React.forwardRef(
           <AddToCartButton
             className={styles.addToCartButton}
             copy={copy.addToCart}
+            dataTestRef="PRODUCT_GRID_ITEM"
             isFullWidth={true}
             theme={theme}
           />
@@ -111,7 +121,7 @@ const ProductGridItem = React.forwardRef(
           <Hyperlink
             className={classCtaLinkSet}
             isAlternate={false}
-            onClick={() => onCtaClick()}
+            onClick={handleOnCtaClick}
             theme={theme}
             title={cta?.text}
             url={cta?.url}
@@ -130,49 +140,5 @@ const ProductGridItem = React.forwardRef(
     );
   },
 );
-
-ProductGridItem.propTypes = {
-  className: PropTypes.string,
-  onCtaClick: PropTypes.func,
-  copy: PropTypes.shape({
-    addToCart: PropTypes.shape({
-      cartAction: PropTypes.string,
-      updateNotification: PropTypes.string,
-      outOfStock: PropTypes.shape({
-        label: PropTypes.string,
-        title: PropTypes.string,
-      }),
-    }),
-  }),
-  cta: PropTypes.shape({
-    text: PropTypes.string,
-    url: PropTypes.string,
-    clickFunction: PropTypes.func,
-  }),
-  id: PropTypes.string,
-  info: PropTypes.string,
-  theme: PropTypes.oneOf(['dark', 'light']),
-  url: PropTypes.string,
-};
-
-ProductGridItem.defaultProps = {
-  className: undefined,
-  copy: {
-    addToCart: {
-      cartAction: undefined,
-      updateNotification: undefined,
-      outOfStock: {
-        label: undefined,
-        title: undefined,
-      },
-    },
-  },
-  cta: undefined,
-  id: undefined,
-  info: undefined,
-  onCtaClick: () => undefined,
-  theme: 'dark',
-  url: undefined,
-};
 
 export { ProductGridItem };

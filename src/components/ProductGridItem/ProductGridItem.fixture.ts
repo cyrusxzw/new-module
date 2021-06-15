@@ -1,4 +1,14 @@
 const ProductGridItemFixture = {
+  copy: {
+    addToCart: {
+      cartAction: 'copy add to cart',
+      outOfStock: {
+        label: 'copy out of stock label',
+        title: 'copy out of stock title',
+      },
+      updateNotification: 'copy update notification',
+    },
+  },
   info: '4 Sizes / From $ 26.45',
   variantOptionsOneItem: [
     {
