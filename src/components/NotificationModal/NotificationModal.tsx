@@ -1,8 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { ReactElement, SyntheticEvent } from 'react';
 import cx from 'classnames';
 import { useNotificationContext } from '~/contexts';
 import { Icon } from '~/components/Icon';
+import type { NotificationModalProps } from './NotificationModal.types';
 import styles from './NotificationModal.module.css';
 
 const NotificationModal = ({
@@ -10,18 +11,18 @@ const NotificationModal = ({
   className,
   notificationMessage,
   ...props
-}) => {
+}: NotificationModalProps): ReactElement => {
   const footerSuccessModal = useNotificationContext();
   const { actionType, dispatch, showModal } = footerSuccessModal;
 
-  const handleOnClick = (e) => {
-    e.preventDefault();
+  const handleOnClick = (event: SyntheticEvent) => {
+    event.preventDefault();
     dispatch({ type: actionType.SHOW_NOTIFICATION });
   };
 
   const baseClassSet = cx(
     styles.base,
-    !showModal && styles.isNotVisible,
+    { [styles.isNotVisible]: !showModal },
     className,
   );
 
@@ -40,18 +41,6 @@ const NotificationModal = ({
       </button>
     </div>
   );
-};
-
-NotificationModal.propTypes = {
-  backgroundColor: PropTypes.string,
-  className: PropTypes.string,
-  notificationMessage: PropTypes.string,
-};
-
-NotificationModal.defaultProps = {
-  backgroundColor: undefined,
-  className: undefined,
-  notificationMessage: undefined,
 };
 
 export { NotificationModal };
