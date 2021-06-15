@@ -7,8 +7,8 @@ const ToggleButton = () => {
   const footerSuccessModal = useNotificationContext();
   const { actionType, dispatch } = footerSuccessModal;
 
-  const handleOnClick = (e: SyntheticEvent) => {
-    e.preventDefault();
+  const handleOnClick = (event: SyntheticEvent) => {
+    event.preventDefault();
     dispatch({ type: actionType.SHOW_NOTIFICATION });
   };
 
