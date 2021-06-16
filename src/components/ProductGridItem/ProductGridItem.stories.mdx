@@ -37,24 +37,32 @@ import { ProductGridItemFixture } from './ProductGridItem.fixture';
       };
       return (
         <>
-        <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-          <ProductDetailContextProvider
-            product={knobs.object('Product', ProductDetailHeaderFixture.product, 'Content')}
-          >
-            <VariantSelectContextProvider
-              variants={knobs.object('Variant', ProductGridItemFixture.variantOptions, 'Content')}
+          <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+            <ProductDetailContextProvider
+              product={knobs.object(
+                'Product',
+                ProductDetailHeaderFixture.product,
+                'Content',
+              )}
             >
-              <ProductGridItem
-                copy={{
-                  addToCart: AddToCartButtonFixture.copy,
-                  ...ProductGridItemFixture.copy,
-                }}
-                url={knobs.text('URL', ProductGridItemFixture.url, 'Content')}
-                theme={theme}
-              />
-            </VariantSelectContextProvider>
-          </ProductDetailContextProvider>
-        </AddToCartContextProvider>
+              <VariantSelectContextProvider
+                variants={knobs.object(
+                  'Variant',
+                  ProductGridItemFixture.variantOptions,
+                  'Content',
+                )}
+              >
+                <ProductGridItem
+                  copy={{
+                    addToCart: AddToCartButtonFixture.copy,
+                    ...ProductGridItemFixture.copy,
+                  }}
+                  url={knobs.text('URL', ProductGridItemFixture.url, 'Content')}
+                  theme={theme}
+                />
+              </VariantSelectContextProvider>
+            </ProductDetailContextProvider>
+          </AddToCartContextProvider>
           <StorybookGridOverlay
             isActive={implementation.gridOverlay.isActive}
             hasInvertedColours={implementation.gridOverlay.hasInvertedColours}

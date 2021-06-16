@@ -34,11 +34,7 @@ import { ProductCommerceFixture } from './ProductCommerce.fixture';
         ProductCommerceFixture.heading,
         'Content',
       );
-      const isActive = knobs.boolean(
-        'isActive',
-        true,
-        'Presentation',
-      );
+      const isActive = knobs.boolean('isActive', true, 'Presentation');
       const theme = knobs.select(
         'theme',
         ['dark', 'light'],
@@ -57,39 +53,39 @@ import { ProductCommerceFixture } from './ProductCommerce.fixture';
       };
       return (
         <>
-        <Podium verticalPadding="small">
-          <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-            <ProductDetailContextProvider
-              product={ProductDetailHeaderFixture.product}
-            >
-              <VariantSelectContextProvider
-                variants={ProductCommerceFixture.variantOptions}
+          <Podium verticalPadding="small">
+            <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+              <ProductDetailContextProvider
+                product={ProductDetailHeaderFixture.product}
               >
-                <ProductCommerce
-                  isActive={isActive}
-                  copy={{
-                    addToCart: AddToCartButtonFixture.copy,
-                    ...ProductCommerceFixture.copy,
-                  }}
-                  cta={cta}
-                  description={
-                    <P>
-                      {knobs.text(
-                        'description',
-                        ProductCommerceFixture.description,
-                        'Content',
-                      )}
-                    </P>
-                  }
-                  eyebrow={eyebrow}
-                  heading={heading}
-                  size={ProductDetailHeaderFixture.product.size}
-                  theme={theme}
-                />
-              </VariantSelectContextProvider>
-            </ProductDetailContextProvider>
-          </AddToCartContextProvider>
-        </Podium>
+                <VariantSelectContextProvider
+                  variants={ProductCommerceFixture.variantOptions}
+                >
+                  <ProductCommerce
+                    isActive={isActive}
+                    copy={{
+                      addToCart: AddToCartButtonFixture.copy,
+                      ...ProductCommerceFixture.copy,
+                    }}
+                    cta={cta}
+                    description={
+                      <P>
+                        {knobs.text(
+                          'description',
+                          ProductCommerceFixture.description,
+                          'Content',
+                        )}
+                      </P>
+                    }
+                    eyebrow={eyebrow}
+                    heading={heading}
+                    size={ProductDetailHeaderFixture.product.size}
+                    theme={theme}
+                  />
+                </VariantSelectContextProvider>
+              </ProductDetailContextProvider>
+            </AddToCartContextProvider>
+          </Podium>
           <StorybookGridOverlay
             isActive={implementation.gridOverlay.isActive}
             hasInvertedColours={implementation.gridOverlay.hasInvertedColours}

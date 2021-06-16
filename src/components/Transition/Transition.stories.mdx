@@ -32,7 +32,7 @@ import { Transition } from './Transition';
         <State initialState={{ isActive: false }}>
           {(state, setState) => {
             const handleOnClick = () => {
-              setState(state => ({
+              setState((state) => ({
                 ...state,
                 isActive: !state.isActive,
               }));

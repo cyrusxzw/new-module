@@ -5,10 +5,7 @@ import * as knobs from '@storybook/addon-knobs';
 import { Button } from '~/components/Button';
 import { DialogBanner } from './DialogBanner';
 
-<Meta
-  title="Components/DialogBanner"
-  component={DialogBanner}
-/>
+<Meta title="Components/DialogBanner" component={DialogBanner} />
 
 # DialogBanner
 
@@ -22,7 +19,11 @@ import { DialogBanner } from './DialogBanner';
               text: 'Vestibulum ullamcorper.',
               url: '/',
             }}
-            heading={knobs.text('heading', 'Maecenas elementum, metus id facilisis', 'Copy')}
+            heading={knobs.text(
+              'heading',
+              'Maecenas elementum, metus id facilisis',
+              'Copy',
+            )}
             isVisible={state.isVisible}
             message={knobs.text(
               'message',
@@ -30,9 +31,23 @@ import { DialogBanner } from './DialogBanner';
               'Copy',
             )}
             onClose={() => setState({ ...state, isVisible: false })}
-            position={knobs.select('position', ['top', 'bottom'], 'top', 'Presentation')}
-            showCloseButton={knobs.boolean('showCloseButton', true, 'Presentation')}
-            theme={knobs.select('theme', ['dark', 'black'], 'dark', 'Presentation')}
+            position={knobs.select(
+              'position',
+              ['top', 'bottom'],
+              'top',
+              'Presentation',
+            )}
+            showCloseButton={knobs.boolean(
+              'showCloseButton',
+              true,
+              'Presentation',
+            )}
+            theme={knobs.select(
+              'theme',
+              ['dark', 'black'],
+              'dark',
+              'Presentation',
+            )}
           />
           <Button
             onClick={() => setState({ ...state, isVisible: true })}
