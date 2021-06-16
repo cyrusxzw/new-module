@@ -36,7 +36,7 @@ npm install github:aesop/aesop-gel --save
 Import the component/hook/etc that you need in your code
 
 ```jsx
-import { Heading } from 'aesop-gel';
+import { Heading } from 'aesop-gel/dist/components/Heading';
 
 // example usage
 const MyAppHeading = () => (
