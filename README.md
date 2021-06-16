@@ -55,7 +55,7 @@ TBA
 ## Development
 
 ```bash
-nvm use && npm i && npm start
+nvm use && npm ci && npm start
 ```
 
 ### While using a consuming application
