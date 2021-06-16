@@ -34,7 +34,8 @@ import { NotificationModalFixture } from './NotificationModal.fixture';
               {(() => {
                 const ToggleButton = () => {
                   const { actionType, dispatch } = useNotificationContext();
-                  const handleOnClick = () => dispatch?.({ type: actionType?.SHOW_NOTIFICATION });
+                  const handleOnClick = () =>
+                    dispatch?.({ type: actionType?.SHOW_NOTIFICATION });
                   return (
                     <Button onClick={handleOnClick} title="Show Notification">
                       Show Notification

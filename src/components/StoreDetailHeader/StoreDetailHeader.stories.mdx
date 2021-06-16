@@ -26,13 +26,21 @@ import { StoreDetailHeaderFixture } from './StoreDetailHeader.fixture';
         phone: knobs.text('phone', StoreDetailHeaderFixture.copy.phone, 'Copy'),
         email: knobs.text('email', StoreDetailHeaderFixture.copy.email, 'Copy'),
       };
-      const email = knobs.text('email', StoreDetailHeaderFixture.email, 'Content');
+      const email = knobs.text(
+        'email',
+        StoreDetailHeaderFixture.email,
+        'Content',
+      );
       const location = knobs.text(
         'location',
         StoreDetailHeaderFixture.location,
         'Content',
       );
-      const phone = knobs.text('phone', StoreDetailHeaderFixture.phone, 'Content');
+      const phone = knobs.text(
+        'phone',
+        StoreDetailHeaderFixture.phone,
+        'Content',
+      );
       const storeName = knobs.text(
         'storeName',
         StoreDetailHeaderFixture.storeName,

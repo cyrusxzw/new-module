@@ -15,7 +15,11 @@ import { ContentHubArticleListFixture } from './ContentHubArticleList.fixture';
   <Story name="Base component">
     <Podium transition="fade">
       <ContentHubArticleList
-        articles={ContentHubArticleListFixture.articles.filter(article => article.id <= knobs.select('number', [1, 2, 3, 4], 4, 'Presentation'))}
+        articles={ContentHubArticleListFixture.articles.filter(
+          (article) =>
+            article.id <=
+            knobs.select('number', [1, 2, 3, 4], 4, 'Presentation'),
+        )}
         isFirstGroup={false}
         pattern={knobs.select('pattern', [0, 1], 0, 'Presentation')}
       />

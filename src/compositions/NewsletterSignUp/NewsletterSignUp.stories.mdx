@@ -5,7 +5,7 @@ import { Podium } from '~/components/Podium';
 import { NotificationModal } from '~/components/NotificationModal';
 import { NotificationModalFixture } from '~/components/NotificationModal/NotificationModal.fixture';
 import { NewsletterSignUp } from './NewsletterSignUp';
-import { NewsletterSignUpFixture } from './NewsletterSignUp.fixture'
+import { NewsletterSignUpFixture } from './NewsletterSignUp.fixture';
 import { newsletterSignUpOnClick } from './__mocks__/NewsletterSignUp.onClick';
 
 # NewsletterSignUp
@@ -16,7 +16,7 @@ import { newsletterSignUpOnClick } from './__mocks__/NewsletterSignUp.onClick';
   <Story name="Base component">
     <Podium horizontalPadding="small" verticalPadding="small">
       <NotificationContextProvider>
-        <div style={{position: 'relative'}}>
+        <div style={{ position: 'relative' }}>
           <NotificationModal
             backgroundColor="#d5d5cc"
             notificationMessage={NotificationModalFixture.notificationMessage}
@@ -25,11 +25,20 @@ import { newsletterSignUpOnClick } from './__mocks__/NewsletterSignUp.onClick';
             consentErrorMsg={NewsletterSignUpFixture.consentErrorMsg}
             errorMessage={NewsletterSignUpFixture.errorMessage}
             onClick={newsletterSignUpOnClick}
-            showTermsConditionsTextBox={knobs.boolean('showTermsConditionsTextBox', true, 'Presentation')}
+            showTermsConditionsTextBox={knobs.boolean(
+              'showTermsConditionsTextBox',
+              true,
+              'Presentation',
+            )}
             subscriptionMessage={NewsletterSignUpFixture.subscriptionMessage}
             termsAndCondition={NewsletterSignUpFixture.termsAndCondition}
             termsMessage={NewsletterSignUpFixture.termsMessage}
-            theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
+            theme={knobs.select(
+              'theme',
+              ['dark', 'light'],
+              'dark',
+              'Presentation',
+            )}
           />
         </div>
       </NotificationContextProvider>
