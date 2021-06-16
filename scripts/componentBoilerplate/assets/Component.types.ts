@@ -1,9 +1,10 @@
-import type { Themes } from '~/types';
+import type { Themes, ComponentTypeBoilerplate } from '~/types';
 
 type ComponentBoilerplateProps = {
-  children: React.ReactNode;
   className?: string;
   theme?: Themes;
 };
 
-export type { ComponentBoilerplateProps };
+type ComponentBoilerplateType = ComponentTypeBoilerplate<ComponentBoilerplateProps>;
+
+export type { ComponentBoilerplateType };
