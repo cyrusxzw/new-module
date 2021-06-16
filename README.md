@@ -309,7 +309,7 @@ Any `@TODO`s in the code base should have a corresponding issue submission.
 
 ### Contributing
 
-### Component directory generator
+#### Component directory generator
 
 Use the `generate-component` script to generate the new files for a new component:
 
