@@ -13,25 +13,30 @@ The `useThemeContext` consumer hook takes two arguments, the current components 
   <>
     {(() => {
       const LevelOne = () => {
-        return(
-          <div>LevelOne component theme context: {useThemeContext()}</div>
-        );
-      }
+        return <div>LevelOne component theme context: {useThemeContext()}</div>;
+      };
       const LevelTwo = ({ children }) => {
-        return(
-          <div>LevelTwo sibling component theme context: {useThemeContext()} <div>{children}</div></div>
+        return (
+          <div>
+            LevelTwo sibling component theme context: {useThemeContext()}{' '}
+            <div>{children}</div>
+          </div>
         );
-      }
+      };
       const LevelThree = () => {
-        return(
-          <div>LevelThree child component theme context: {useThemeContext()}</div>
+        return (
+          <div>
+            LevelThree child component theme context: {useThemeContext()}
+          </div>
         );
-      }
+      };
       const LevelFour = ({ theme }) => {
-        return(
-          <div>LevelFour child component with theme prop: {useThemeContext(theme)}</div>
+        return (
+          <div>
+            LevelFour child component with theme prop: {useThemeContext(theme)}
+          </div>
         );
-      }
+      };
       return (
         <ThemeContextProvider theme="light">
           <LevelOne />
@@ -44,7 +49,7 @@ The `useThemeContext` consumer hook takes two arguments, the current components 
             </LevelTwo>
           </ThemeContextProvider>
         </ThemeContextProvider>
-      )
+      );
     })()}
   </>
 </Canvas>

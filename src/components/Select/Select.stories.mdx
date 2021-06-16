@@ -25,40 +25,44 @@ import { SelectFixture } from './Select.fixture';
       return (
         <>
           <State
-           initialState={{
-             value: '',
-           }}
+            initialState={{
+              value: '',
+            }}
           >
-           {(state, setState) => {
-             const errorMessage = knobs.text('errorMessage', '', 'Copy');
-             const isBlock = knobs.boolean('isBlock', false, 'Presentation');
-             const label = knobs.text('label', SelectFixture.label, 'Copy');
-             const name = knobs.text('name', SelectFixture.name, 'Copy');
-             const onChange = (event) => {
-               event.persist();
-               setState({...state, value: event.target.value})
-             };
-             const options = knobs.object('options', SelectFixture.options, 'Copy');
-             const theme = knobs.select(
-               'theme',
-               ['dark', 'light'],
-               'dark',
-               'Presentation',
-             );
-             return (
-               <Select
-                 errorMessage={errorMessage}
-                 isBlock={isBlock}
-                 label={label}
-                 name={name}
-                 onChange={onChange}
-                 options={options}
-                 testReference={SelectFixture.testReference}
-                 theme={theme}
-                 value={state.value}
-               />
-             )
-           }}
+            {(state, setState) => {
+              const errorMessage = knobs.text('errorMessage', '', 'Copy');
+              const isBlock = knobs.boolean('isBlock', false, 'Presentation');
+              const label = knobs.text('label', SelectFixture.label, 'Copy');
+              const name = knobs.text('name', SelectFixture.name, 'Copy');
+              const onChange = (event) => {
+                event.persist();
+                setState({ ...state, value: event.target.value });
+              };
+              const options = knobs.object(
+                'options',
+                SelectFixture.options,
+                'Copy',
+              );
+              const theme = knobs.select(
+                'theme',
+                ['dark', 'light'],
+                'dark',
+                'Presentation',
+              );
+              return (
+                <Select
+                  errorMessage={errorMessage}
+                  isBlock={isBlock}
+                  label={label}
+                  name={name}
+                  onChange={onChange}
+                  options={options}
+                  testReference={SelectFixture.testReference}
+                  theme={theme}
+                  value={state.value}
+                />
+              );
+            }}
           </State>
           <StorybookGridOverlay
             isActive={implementation.gridOverlay.isActive}

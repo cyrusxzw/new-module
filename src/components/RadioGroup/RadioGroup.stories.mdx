@@ -4,10 +4,7 @@ import { State } from '~.storybook/State';
 import { RadioGroup } from './RadioGroup';
 import { RadioGroupFixture } from './RadioGroup.fixture';
 
-<Meta
-  title="Components/RadioGroup"
-  component={RadioGroup}
-/>
+<Meta title="Components/RadioGroup" component={RadioGroup} />
 
 # RadioGroup
 
@@ -17,7 +14,7 @@ import { RadioGroupFixture } from './RadioGroup.fixture';
       initialState={{
         value: '',
       }}
-     >
+    >
       {(state, setState) => {
         return (
           <RadioGroup
@@ -27,12 +24,16 @@ import { RadioGroupFixture } from './RadioGroup.fixture';
               const {
                 target: { value },
               } = event;
-              setState({...state, value})
+              setState({ ...state, value });
             }}
-            options={knobs.object('options', RadioGroupFixture.options, 'Content')}
+            options={knobs.object(
+              'options',
+              RadioGroupFixture.options,
+              'Content',
+            )}
             value={state.value}
           />
-        )
+        );
       }}
     </State>
   </Story>

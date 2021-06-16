@@ -32,8 +32,17 @@ import { LinkButtonGroupFixture } from './LinkButtonGroup.fixture';
       return (
         <>
           <LinkButtonGroup
-            hasFitContent={knobs.boolean('hasFitContent', false, 'Presentation')}
-            theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
+            hasFitContent={knobs.boolean(
+              'hasFitContent',
+              false,
+              'Presentation',
+            )}
+            theme={knobs.select(
+              'theme',
+              ['dark', 'light'],
+              'dark',
+              'Presentation',
+            )}
             textAlign={knobs.select(
               'textAlign',
               ['center', 'left', 'right'],
@@ -42,7 +51,11 @@ import { LinkButtonGroupFixture } from './LinkButtonGroup.fixture';
             )}
           >
             <Hyperlink
-              url={knobs.text('url', LinkButtonGroupFixture.link.url, 'First link')}
+              url={knobs.text(
+                'url',
+                LinkButtonGroupFixture.link.url,
+                'First link',
+              )}
               style={knobs.select(
                 'style',
                 [
@@ -62,7 +75,11 @@ import { LinkButtonGroupFixture } from './LinkButtonGroup.fixture';
               )}
             </Hyperlink>
             <Hyperlink
-              url={knobs.text('url', LinkButtonGroupFixture.secondaryLink.url, 'First link')}
+              url={knobs.text(
+                'url',
+                LinkButtonGroupFixture.secondaryLink.url,
+                'First link',
+              )}
               style={knobs.select(
                 'style',
                 [
