@@ -1,10 +1,10 @@
-import type { Themes, ComponentTypeBoilerplate } from '~/types';
+import type { Themes, _COMPONENT_TYPE_ } from '~/types';
 
-type ComponentBoilerplateProps = {
+type _COMPONENT_NAME_Props = {
   className?: string;
   theme?: Themes;
 };
 
-type ComponentBoilerplateType = ComponentTypeBoilerplate<ComponentBoilerplateProps>;
+type _COMPONENT_NAME_Type = _COMPONENT_TYPE_<_COMPONENT_NAME_Props>;
 
-export type { ComponentBoilerplateType };
+export type { _COMPONENT_NAME_Type };

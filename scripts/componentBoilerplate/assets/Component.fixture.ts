@@ -1,3 +1,3 @@
-const ComponentBoilerplateFixture = {};
+const _COMPONENT_NAME_Fixture = {};
 
-export { ComponentBoilerplateFixture };
+export { _COMPONENT_NAME_Fixture };

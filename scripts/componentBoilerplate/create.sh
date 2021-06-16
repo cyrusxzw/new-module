@@ -36,16 +36,16 @@ else
 
     cd "../../$LOCATION/$COMPONENT/";
 
-    sed -i "" "s/ComponentBoilerplate/$COMPONENT/g" "$COMPONENT.tsx" "$COMPONENT.types.ts" "$COMPONENT.module.css" "$COMPONENT.spec.tsx" "$COMPONENT.stories.mdx" "$COMPONENT.fixture.ts" "index.ts";
+    sed -i "" "s/_COMPONENT_NAME_/$COMPONENT/g" "$COMPONENT.tsx" "$COMPONENT.types.ts" "$COMPONENT.module.css" "$COMPONENT.spec.tsx" "$COMPONENT.stories.mdx" "$COMPONENT.fixture.ts" "index.ts";
 
     if [[ $TYPE = "withChildren" ]]; then
-      sed -i "" "s/ComponentTypeBoilerplate/ComponentWithChildren/g" "$COMPONENT.types.ts";
-      sed -i "" "s/ComponentChildrenPropBoilerplate/children,/g" "$COMPONENT.tsx";
-      sed -i "" "s/ComponentUIBoilerplate/<div className={classSet}>{children}<\/div>/g" "$COMPONENT.tsx";
+      sed -i "" "s/_COMPONENT_TYPE_/ComponentWithChildren/g" "$COMPONENT.types.ts";
+      sed -i "" "s/_COMPONENT_CHILDREN_PROP_/children,/g" "$COMPONENT.tsx";
+      sed -i "" "s/_COMPONENT_UI_/<div className={classSet}>{children}<\/div>/g" "$COMPONENT.tsx";
     elif [[ $TYPE = "withoutChildren" ]]; then
-      sed -i "" "s/ComponentTypeBoilerplate/ComponentWithoutChildren/g" "$COMPONENT.types.ts";
-      sed -i "" "s/ComponentChildrenPropBoilerplate/ /g" "$COMPONENT.tsx";
-      sed -i "" "s/ComponentUIBoilerplate/<div className={classSet} \/>/g" "$COMPONENT.tsx";
+      sed -i "" "s/_COMPONENT_TYPE_/ComponentWithoutChildren/g" "$COMPONENT.types.ts";
+      sed -i "" "s/_COMPONENT_CHILDREN_PROP_/ /g" "$COMPONENT.tsx";
+      sed -i "" "s/_COMPONENT_UI_/<div className={classSet} \/>/g" "$COMPONENT.tsx";
     fi
 
     echo "-----------------------------------------------------------------------";
@@ -54,7 +54,7 @@ else
     ls;
     echo "-----------------------------------------------------------------------";
 
-    prettier --write "./*.{js,ts,tsx,json,md}" --loglevel "error";
+    prettier --write "./*.{js,ts,tsx,json,md,mdx}" --loglevel "error";
 
   else
     echo "-----------------------------------------------------"
