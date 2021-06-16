@@ -48,8 +48,6 @@ else
       sed -i "" "s/ComponentUIBoilerplate/<div className={classSet} \/>/g" "$COMPONENT.tsx";
     fi
 
-    # ComponentWithChildren, ComponentWithoutChildren
-
     echo "-----------------------------------------------------------------------";
     echo "New component '$COMPONENT' created! 🎉 : $LOCATION/$COMPONENT";
     echo "-----------------------------------------------------------------------";
