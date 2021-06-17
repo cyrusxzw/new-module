@@ -325,4 +325,12 @@ The `$component-name` is required, where as the optional `$component-type` will 
 - `withoutChildren` - A functional component that does not accept a `children` prop.
 - `withChildren` (default) - A functional component that does accept a `children` prop.
 
+For example:
+
+```bash
+npm run generate-component Button
+npm run generate-component Icon withoutChildren
+npm run generate-component Map ref
+```
+
 Pull Requests for any new feature, bug fix or update need to be made with the PR template provided via a [New Pull Request](https://github.com/aesop/aesop-gel/pulls). Every PR needs to be Peer Reviewed before it can be merged.
