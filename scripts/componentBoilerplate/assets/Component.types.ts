@@ -1,9 +1,10 @@
-import type { Themes } from '~/types';
+import type { Themes, _COMPONENT_TYPE_ } from '~/types';
 
-type ComponentBoilerplateProps = {
-  children: React.ReactNode;
+type _COMPONENT_NAME_Props = {
   className?: string;
   theme?: Themes;
 };
 
-export type { ComponentBoilerplateProps };
+type _COMPONENT_NAME_Type = _COMPONENT_TYPE_<_COMPONENT_NAME_Props>;
+
+export type { _COMPONENT_NAME_Type };

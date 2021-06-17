@@ -1,17 +1,18 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import type { ComponentBoilerplateProps } from './ComponentBoilerplate.types';
-import styles from './ComponentBoilerplate.module.css';
+import type { _COMPONENT_NAME_Type } from './_COMPONENT_NAME_.types';
+import styles from './_COMPONENT_NAME_.module.css';
 
-const ComponentBoilerplate = forwardRef<
-  HTMLDivElement,
-  ComponentBoilerplateProps
->(function ComponentBoilerplateRef({ children, className, theme }) {
+const _COMPONENT_NAME_: _COMPONENT_NAME_Type = ({
+  _COMPONENT_CHILDREN_PROP_
+  className,
+  theme,
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const classSet = cx(styles.base, styles[currentTheme], className);
 
-  return <div className={classSet}>{children}</div>;
-});
+  return _COMPONENT_UI_;
+};
 
-export { ComponentBoilerplate };
+export { _COMPONENT_NAME_ };

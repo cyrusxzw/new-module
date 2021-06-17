@@ -1,3 +1,3 @@
-import { ComponentBoilerplate } from './ComponentBoilerplate';
+import { _COMPONENT_NAME_ } from './_COMPONENT_NAME_';
 
-export { ComponentBoilerplate };
+export { _COMPONENT_NAME_ };

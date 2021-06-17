@@ -4,6 +4,7 @@
 /.githooks
 /.pnp
 /build
+/scripts/componentBoilerplate/assets/Component.tsx
 /coverage
 /node_modules
 /public
