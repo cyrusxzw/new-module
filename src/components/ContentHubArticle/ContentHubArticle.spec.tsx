@@ -1,11 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ContentHubArticle } from './ContentHubArticle';
 import { ContentHubArticleFixture } from './ContentHubArticle.fixture';
 
 describe('<ContentHubArticle />', () => {
-  it('should render base component correctly', () => {
-    const { container } = render(
+  it('should render a component with correct hyperlinks and heading', () => {
+    render(
       <ContentHubArticle
         category={ContentHubArticleFixture.category}
         dataTestRef={ContentHubArticleFixture.dataTestRef}
@@ -15,7 +15,7 @@ describe('<ContentHubArticle />', () => {
         isInFirstGroup={true}
         isMenuItem={false}
         isReadMore={false}
-        longTitle={ContentHubArticleFixture.longTitle}
+        longTitle={'title'}
         onClick={ContentHubArticleFixture.onClick}
         readingTime={ContentHubArticleFixture.readingTime}
         uri={ContentHubArticleFixture.uri}
@@ -23,6 +23,7 @@ describe('<ContentHubArticle />', () => {
       />,
     );
 
-    expect(container).toMatchSnapshot();
+    expect(screen.getAllByRole('link', { name: 'title' }).length).toEqual(3);
+    expect(screen.getByRole('heading', { name: 'title' })).toBeInTheDocument();
   });
 });

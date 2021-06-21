@@ -1,23 +1,23 @@
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useOnScreen } from '~/customHooks';
 import { Image } from '~/components/Image';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Transition } from '~/components/Transition';
+import type { ContentHubArticleType } from './ContentHubArticle.types';
 import styles from './ContentHubArticle.module.css';
 
-const ContentHubArticle = ({
+const ContentHubArticle: ContentHubArticleType = ({
   articleRef,
   category,
   className,
   dataTestRef,
   horizontalThumbnail,
   id,
-  isHorizontal, // use horizontal or vertical thumbnail
-  isInFirstGroup,
-  isMenuItem, // if it's displayed in Read Menu Navigation
-  isReadMore, // if it's displayed in ReadMore section
+  isHorizontal = false, // use horizontal or vertical thumbnail
+  isInFirstGroup = false,
+  isMenuItem = false, // if it's displayed in Read Menu Navigation
+  isReadMore = false, // if it's displayed in ReadMore section
   longTitle,
   onClick,
   readingTime,
@@ -47,23 +47,23 @@ const ContentHubArticle = ({
   const titleRef = useRef(null);
 
   const imageMouseEnter = () => {
-    const titleSpan = titleRef.current
+    const titleSpan = titleRef?.current
       .getElementsByClassName(titleClassSet)[0]
       .getElementsByTagName('span')[0];
     titleSpan.className = cx(styles.title, styles.titleActive);
   };
 
   const imageMouseLeave = () => {
-    const titleSpan = titleRef.current
-      .getElementsByClassName(titleClassSet)[0]
-      .getElementsByTagName('span')[0];
+    const titleSpan = titleRef?.current
+      ?.getElementsByClassName(titleClassSet)[0]
+      ?.getElementsByTagName('span')[0];
     titleSpan.className = '';
   };
 
   const titleMouseEnter = () => {
     [readMoreThumbnailRef, nonMobileThumbnailRef, mobileThumbnailRef].forEach(
       (imageRef) => {
-        if (imageRef.current)
+        if (imageRef?.current)
           imageRef.current.className = cx(styles.imageActive);
       },
     );
@@ -72,7 +72,7 @@ const ContentHubArticle = ({
   const titleMouseLeave = () => {
     [readMoreThumbnailRef, nonMobileThumbnailRef, mobileThumbnailRef].forEach(
       (imageRef) => {
-        if (imageRef.current)
+        if (imageRef?.current)
           imageRef.current.className = cx(styles.imageUnactive);
       },
     );
@@ -94,9 +94,9 @@ const ContentHubArticle = ({
               onMouseLeave={() => imageMouseLeave()}
             >
               <Image
-                altText={currentImage.altText}
+                altText={currentImage?.altText}
                 ref={readMoreThumbnailRef}
-                sizes={currentImage.sizes}
+                sizes={currentImage?.sizes}
               />
             </div>
           </Hyperlink>
@@ -138,10 +138,10 @@ const ContentHubArticle = ({
               onMouseLeave={() => imageMouseLeave()}
             >
               <Image
-                altText={currentImage.altText}
+                altText={currentImage?.altText}
                 className={styles.image}
                 ref={nonMobileThumbnailRef}
-                sizes={currentImage.sizes}
+                sizes={currentImage?.sizes}
               />
             </div>
           </Hyperlink>
@@ -159,10 +159,10 @@ const ContentHubArticle = ({
               onMouseLeave={() => imageMouseLeave()}
             >
               <Image
-                altText={currentImage.altText}
+                altText={currentImage?.altText}
                 className={styles.image}
                 ref={mobileThumbnailRef}
-                sizes={currentImage.sizes}
+                sizes={currentImage?.sizes}
               />
             </div>
           </Hyperlink>
@@ -170,42 +170,6 @@ const ContentHubArticle = ({
       </div>
     </Transition>
   );
-};
-
-ContentHubArticle.propTypes = {
-  articleRef: PropTypes.object,
-  category: PropTypes.string,
-  className: PropTypes.string,
-  dataTestRef: PropTypes.string.isRequired,
-  horizontalThumbnail: PropTypes.object,
-  id: PropTypes.string,
-  isHorizontal: PropTypes.bool,
-  isInFirstGroup: PropTypes.bool,
-  isMenuItem: PropTypes.bool,
-  isReadMore: PropTypes.bool,
-  longTitle: PropTypes.string,
-  onClick: PropTypes.func,
-  readingTime: PropTypes.string,
-  uri: PropTypes.string,
-  verticalThumbnail: PropTypes.object,
-};
-
-ContentHubArticle.defaultProps = {
-  articleRef: undefined,
-  category: undefined,
-  className: undefined,
-  dataTestRef: undefined,
-  horizontalThumbnail: undefined,
-  id: undefined,
-  isHorizontal: undefined,
-  isInFirstGroup: false,
-  isMenuItem: false,
-  isReadMore: false,
-  longTitle: undefined,
-  onClick: undefined,
-  readingTime: undefined,
-  uri: undefined,
-  verticalThumbnail: undefined,
 };
 
 export { ContentHubArticle };
