@@ -27,4 +27,4 @@ type MediaBlockProps = {
   };
 };
 
-export type { MediaBlockProps };
+export type { MediaBlockProps, MediaType };

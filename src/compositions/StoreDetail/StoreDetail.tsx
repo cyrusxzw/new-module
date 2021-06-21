@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import { Image } from '~/components/Image';
 import { DoubleMedia } from '~/components/DoubleMedia';
 import { GoogleMap } from '~/components/GoogleMap/index.ts';
@@ -14,10 +14,13 @@ import { GoogleMapFixture } from '~/components/GoogleMap/GoogleMap.fixture';
 import { StoreHoursListFixture } from '~/components/StoreHoursList/StoreHoursList.fixture';
 import { StoreDetailHeaderFixture } from '~/components/StoreDetailHeader/StoreDetailHeader.fixture';
 import { StoreDetailFixture } from './StoreDetail.fixture';
+import type { StoreDetailType } from './StoreDetail.types';
+import type { MediaType } from '~/components/DoubleMedia/components/MediaBlock/MediaBlock.types';
 import styles from './StoreDetail.module.css';
 
-const StoreDetail = ({ className }) => {
-  const classSet = cx(styles.base, className);
+const StoreDetail: StoreDetailType = ({ className, theme }) => {
+  const currentTheme = useThemeContext(theme, 'dark');
+  const classSet = cx(styles.base, styles[currentTheme], className);
 
   return (
     <div className={classSet}>
@@ -74,12 +77,12 @@ const StoreDetail = ({ className }) => {
       <Podium horizontalPadding="small" verticalPadding="small">
         <DoubleMedia
           mediaOne={{
-            type: StoreDetailFixture.doubleMedia.imageOne.type,
+            type: StoreDetailFixture.doubleMedia.imageOne.type as MediaType,
             altText: StoreDetailFixture.doubleMedia.imageOne.altText,
             sizes: StoreDetailFixture.doubleMedia.imageOne.sizes,
           }}
           mediaTwo={{
-            type: StoreDetailFixture.doubleMedia.imageOne.type,
+            type: StoreDetailFixture.doubleMedia.imageOne.type as MediaType,
             altText: StoreDetailFixture.doubleMedia.imageTwo.altText,
             sizes: StoreDetailFixture.doubleMedia.imageTwo.sizes,
           }}
@@ -99,7 +102,6 @@ const StoreDetail = ({ className }) => {
               tortor in ipsum congue bibendum id nec erat.
             </P>
           }
-          hasRightPadding={true}
           isReversed={true}
         />
       </Podium>
@@ -120,14 +122,6 @@ const StoreDetail = ({ className }) => {
       </Podium>
     </div>
   );
-};
-
-StoreDetail.propTypes = {
-  className: PropTypes.string,
-};
-
-StoreDetail.defaultProps = {
-  className: undefined,
 };
 
 export { StoreDetail };
