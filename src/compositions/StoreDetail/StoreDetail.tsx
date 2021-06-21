@@ -16,11 +16,10 @@ import { StoreDetailHeaderFixture } from '~/components/StoreDetailHeader/StoreDe
 import { StoreDetailFixture } from './StoreDetail.fixture';
 import type { StoreDetailType } from './StoreDetail.types';
 import type { MediaType } from '~/components/DoubleMedia/components/MediaBlock/MediaBlock.types';
-import styles from './StoreDetail.module.css';
 
 const StoreDetail: StoreDetailType = ({ className, theme }) => {
   const currentTheme = useThemeContext(theme, 'dark');
-  const classSet = cx(styles.base, styles[currentTheme], className);
+  const classSet = cx(styles[currentTheme], className);
 
   return (
     <div className={classSet}>
