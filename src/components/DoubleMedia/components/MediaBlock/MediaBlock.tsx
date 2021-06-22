@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import { ConditionalWrapper } from '~/components/ConditionalWrapper';
 import { Figure } from '~/components/Figure';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Image } from '~/components/Image';
@@ -39,9 +40,7 @@ const MediaBlock = ({
     );
   };
 
-  const captionClassSet = cx(styles.caption);
-  const headingClassSet = cx(styles.heading, link && styles.headingLink);
-  const headingWrapperClassSet = cx(styles.headingWrapper);
+  const headingClassSet = cx(styles.heading, { [styles.headingLink]: link });
 
   return (
     <Figure
@@ -49,13 +48,16 @@ const MediaBlock = ({
       hasCaptionBorder={false}
       theme={theme}
     >
-      {link ? (
-        <Hyperlink {...link} className={styles.imageLinkWrapper}>
-          <Media />
-        </Hyperlink>
-      ) : (
+      <ConditionalWrapper
+        condition={!!link}
+        wrapper={(children) => (
+          <Hyperlink {...link} className={styles.imageLinkWrapper}>
+            {children}
+          </Hyperlink>
+        )}
+      >
         <Media />
-      )}
+      </ConditionalWrapper>
 
       {(heading || caption) && (
         <figcaption className={styles.figcaption}>
@@ -64,17 +66,17 @@ const MediaBlock = ({
               {link ? (
                 <Hyperlink
                   {...link}
-                  className={headingWrapperClassSet}
+                  className={styles.headingWrapper}
                   theme={theme}
                 >
                   <span>{heading}</span>
                 </Hyperlink>
               ) : (
-                <span className={headingWrapperClassSet}>{heading}</span>
+                <span className={styles.headingWrapper}>{heading}</span>
               )}
             </h3>
           )}
-          {caption && <div className={captionClassSet}>{caption}</div>}
+          {caption && <div className={styles.caption}>{caption}</div>}
         </figcaption>
       )}
     </Figure>
