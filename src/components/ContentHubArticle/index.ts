@@ -1,3 +1,3 @@
-import { ContentHubArticle } from './ContentHubArticle.js';
+import { ContentHubArticle } from './ContentHubArticle';
 
 export { ContentHubArticle };
