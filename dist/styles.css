@@ -11,6 +11,35 @@
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -136,6 +165,35 @@
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -273,6 +331,35 @@
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -422,6 +509,35 @@
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -546,6 +662,35 @@
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -725,6 +870,35 @@
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -849,6 +1023,35 @@
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -969,6 +1172,35 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -1009,6 +1241,35 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -1107,6 +1368,35 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -1161,6 +1451,35 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -1313,6 +1632,35 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -1399,6 +1747,35 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -1506,6 +1883,35 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -1601,6 +2007,35 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -1701,6 +2136,35 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -1823,6 +2287,35 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -2269,6 +2762,35 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -2365,6 +2887,35 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -2442,6 +2993,35 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -2537,6 +3117,35 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -2616,6 +3225,35 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -2719,6 +3357,35 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -2794,6 +3461,35 @@ a:hover .Slide-module_heading__2KIs0,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -3033,6 +3729,35 @@ a:hover .Slide-module_heading__2KIs0,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -3159,6 +3884,35 @@ a:hover .Slide-module_heading__2KIs0,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -3334,6 +4088,35 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -3540,6 +4323,35 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -3691,6 +4503,35 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -3798,6 +4639,35 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -3844,6 +4714,35 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -3970,6 +4869,35 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -4060,6 +4988,35 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -4374,6 +5331,35 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -4429,6 +5415,35 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -4514,6 +5529,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -4660,6 +5704,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -4794,6 +5867,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -4838,6 +5940,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -4938,6 +6069,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -5046,6 +6206,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -5185,6 +6374,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -5252,6 +6470,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -5399,6 +6646,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -5496,6 +6772,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -5588,6 +6893,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -5735,6 +7069,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -5931,6 +7294,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -6148,6 +7540,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -6212,6 +7633,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -6308,6 +7758,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -6349,7 +7828,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     min-height: 70vh
 }
   }
-@media (min-width: 1025px) {
+@media (min-width: 2400px) {
 .ProductAccordionItem-module_base__CB7Pp {
     min-height: 80vh
 }
@@ -6390,6 +7869,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 }
 .ProductAccordionItem-module_closedForegroundImage__3rvH8 img {
     width: auto;
+    max-width: 100%;
     max-height: 240px;
   }
 @media (min-width: 640px) {
@@ -6397,9 +7877,24 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
       max-height: 220px
   }
     }
-@media (min-width: 1025px) {
+@media (min-width: 1220px) {
 .ProductAccordionItem-module_closedForegroundImage__3rvH8 img {
-      max-height: 260px
+      max-height: 280px
+  }
+    }
+@media (min-width: 1600px) {
+.ProductAccordionItem-module_closedForegroundImage__3rvH8 img {
+      max-height: 360px
+  }
+    }
+@media (min-width: 1920px) {
+.ProductAccordionItem-module_closedForegroundImage__3rvH8 img {
+      max-height: 400px
+  }
+    }
+@media (min-width: 2400px) {
+.ProductAccordionItem-module_closedForegroundImage__3rvH8 img {
+      max-height: none
   }
     }
 .ProductAccordionItem-module_backgroundVideo__3Oexe {
@@ -6503,7 +7998,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: auto;;
+  overflow: auto;
   width: 100%;
   height: 100%;
   -webkit-box-align: center;
@@ -6520,11 +8015,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
           transition-duration: 1000ms;
   -webkit-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-timing-function:
-    cubic-bezier(0.215, 0.61, 0.355, 1),
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1),
     cubic-bezier(0.215, 0.61, 0.355, 1);
-          transition-timing-function:
-    cubic-bezier(0.215, 0.61, 0.355, 1),
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1),
     cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 @media (max-width: 1024px) {
@@ -6688,6 +8181,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -6737,6 +8259,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -6787,6 +8338,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -6893,6 +8473,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -6958,6 +8567,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -7104,6 +8742,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -7245,6 +8912,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -7302,6 +8998,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -7386,6 +9111,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -7462,6 +9216,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -7644,6 +9427,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -7742,6 +9554,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -7884,6 +9725,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -8048,6 +9918,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -8242,6 +10141,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -8422,6 +10350,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -8802,6 +10759,35 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -9125,6 +11111,35 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -9203,6 +11218,35 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -9361,6 +11405,35 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -9460,6 +11533,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -9534,6 +11636,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -9641,6 +11772,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -9741,6 +11901,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -9900,6 +12089,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -10088,6 +12306,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -10181,6 +12428,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -10261,6 +12537,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -10346,6 +12651,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -10482,6 +12816,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -10582,6 +12945,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -10687,6 +13079,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -10780,6 +13201,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
@@ -10917,6 +13367,35 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 
   /* Secondary Message background colour */
 }
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
 /** https://github.com/postcss/postcss-custom-properties/issues/24
  :root {
   --breakpoint-xs-min: 0;
