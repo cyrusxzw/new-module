@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from 'react';
+import { ReactElement, ReactNode, ForwardedRef } from 'react';
 import type { Themes } from '~/types';
 
 type HeroBannerMediaAnchorPoints =

@@ -28,6 +28,7 @@ type SubNavProps = {
   heading?: string;
   headingClassName?: string;
   theme?: Themes;
+  onSelectCallback?: (e) => void;
 };
 
 export type { SubNavProps, SubNavLink, GetLinkItems, GetSelectOption };
