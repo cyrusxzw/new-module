@@ -1,9 +1,7 @@
-import { ReactElement, MutableRefObject } from 'react';
+import { MutableRefObject } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { I as ImageProps } from '../../sharedChunks/Image.types';
 import '../../sharedChunks/Themes.types';
-
-declare type DefaultReactComponentReturn = ReactElement<any, any> | null;
-declare type ComponentWithoutChildren<P = {}> = (props: P) => DefaultReactComponentReturn;
 
 declare type Image = Pick<ImageProps, 'altText' | 'sizes'>;
 declare type ContentHubArticleProps = {
