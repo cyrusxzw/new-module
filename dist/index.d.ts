@@ -1,6 +1,13 @@
 /// <reference types="react" />
-import React$1, { ReactNode, Dispatch, FC, MouseEvent, CSSProperties, LegacyRef, ReactElement, MouseEventHandler, RefObject } from 'react';
+import React$1, { ReactElement, ReactNode, Dispatch, FC, MouseEvent, CSSProperties, LegacyRef, MutableRefObject, MouseEventHandler, RefObject } from 'react';
 import PropTypes from 'prop-types';
+
+declare type DefaultReactComponentReturn = ReactElement<any, any> | null;
+declare type PropsWithChildren<P> = P & {
+    children?: ReactNode;
+};
+declare type ComponentWithChildren<P = {}> = (props: PropsWithChildren<P>) => DefaultReactComponentReturn;
+declare type ComponentWithoutChildren<P = {}> = (props: P) => DefaultReactComponentReturn;
 
 declare type DefinitionListItem = {
     description?: ReactNode;
@@ -80,6 +87,8 @@ declare type AddToCartContextProps = {
     onClick?: OnAddToCartClick;
 };
 
+type index_d_ComponentWithChildren<_0> = ComponentWithChildren<_0>;
+type index_d_ComponentWithoutChildren<_0> = ComponentWithoutChildren<_0>;
 type index_d_Product = Product;
 type index_d_Themes = Themes;
 type index_d_Variant = Variant;
@@ -88,6 +97,8 @@ type index_d_BreakpointNames = BreakpointNames;
 type index_d_OnAddToCartClick = OnAddToCartClick;
 declare namespace index_d {
   export {
+    index_d_ComponentWithChildren as ComponentWithChildren,
+    index_d_ComponentWithoutChildren as ComponentWithoutChildren,
     index_d_Product as Product,
     index_d_Themes as Themes,
     index_d_Variant as Variant,
@@ -332,74 +343,27 @@ declare type ConditionalWrapperProps = {
 
 declare const ConditionalWrapper: FC<ConditionalWrapperProps>;
 
-declare function ContentHubArticle({ articleRef, category, className, dataTestRef, horizontalThumbnail, id, isHorizontal, isInFirstGroup, isMenuItem, isReadMore, longTitle, onClick, readingTime, uri, verticalThumbnail, }: {
-    articleRef: any;
-    category: any;
-    className: any;
-    dataTestRef: any;
-    horizontalThumbnail: any;
-    id: any;
-    isHorizontal: any;
-    isInFirstGroup: any;
-    isMenuItem: any;
-    isReadMore: any;
-    longTitle: any;
-    onClick: any;
-    readingTime: any;
-    uri: any;
-    verticalThumbnail: any;
-}): JSX.Element;
-declare namespace ContentHubArticle {
-    namespace propTypes {
-        const articleRef: PropTypes.Requireable<object>;
-        const category: PropTypes.Requireable<string>;
-        const className: PropTypes.Requireable<string>;
-        const dataTestRef: PropTypes.Validator<string>;
-        const horizontalThumbnail: PropTypes.Requireable<object>;
-        const id: PropTypes.Requireable<string>;
-        const isHorizontal: PropTypes.Requireable<boolean>;
-        const isInFirstGroup: PropTypes.Requireable<boolean>;
-        const isMenuItem: PropTypes.Requireable<boolean>;
-        const isReadMore: PropTypes.Requireable<boolean>;
-        const longTitle: PropTypes.Requireable<string>;
-        const onClick: PropTypes.Requireable<(...args: any[]) => any>;
-        const readingTime: PropTypes.Requireable<string>;
-        const uri: PropTypes.Requireable<string>;
-        const verticalThumbnail: PropTypes.Requireable<object>;
-    }
-    namespace defaultProps {
-        const articleRef_1: any;
-        export { articleRef_1 as articleRef };
-        const category_1: any;
-        export { category_1 as category };
-        const className_1: any;
-        export { className_1 as className };
-        const dataTestRef_1: any;
-        export { dataTestRef_1 as dataTestRef };
-        const horizontalThumbnail_1: any;
-        export { horizontalThumbnail_1 as horizontalThumbnail };
-        const id_1: any;
-        export { id_1 as id };
-        const isHorizontal_1: any;
-        export { isHorizontal_1 as isHorizontal };
-        const isInFirstGroup_1: boolean;
-        export { isInFirstGroup_1 as isInFirstGroup };
-        const isMenuItem_1: boolean;
-        export { isMenuItem_1 as isMenuItem };
-        const isReadMore_1: boolean;
-        export { isReadMore_1 as isReadMore };
-        const longTitle_1: any;
-        export { longTitle_1 as longTitle };
-        const onClick_1: any;
-        export { onClick_1 as onClick };
-        const readingTime_1: any;
-        export { readingTime_1 as readingTime };
-        const uri_1: any;
-        export { uri_1 as uri };
-        const verticalThumbnail_1: any;
-        export { verticalThumbnail_1 as verticalThumbnail };
-    }
-}
+declare type Image = Pick<ImageProps, 'altText' | 'sizes'>;
+declare type ContentHubArticleProps = {
+    articleRef?: MutableRefObject<HTMLDivElement>;
+    category?: string;
+    className?: string;
+    dataTestRef: string;
+    horizontalThumbnail?: Image;
+    id?: string;
+    isHorizontal?: boolean;
+    isInFirstGroup?: boolean;
+    isMenuItem?: boolean;
+    isReadMore?: boolean;
+    longTitle?: string;
+    onClick?: () => void;
+    readingTime?: string;
+    uri?: string;
+    verticalThumbnail?: Image;
+};
+declare type ContentHubArticleType = ComponentWithoutChildren<ContentHubArticleProps>;
+
+declare const ContentHubArticle: ContentHubArticleType;
 
 declare function ContentHubArticleList({ articles, className, isFirstGroup, pattern, }: {
     articles: any;
@@ -894,7 +858,7 @@ declare type Media = {
         xLarge?: string;
     };
 };
-declare type Image = Media & {
+declare type Image$1 = Media & {
     altText?: string;
 };
 declare type Video = Media & {
@@ -921,11 +885,11 @@ declare type Background = 'Colour' | 'Image' | 'Video';
 declare type State = {
     background?: Background;
     backgroundColour?: string;
-    backgroundImage?: Image;
+    backgroundImage?: Image$1;
     backgroundVideo?: Video;
     copy?: ReactNode;
     eyebrow?: string;
-    foregroundImage?: Image;
+    foregroundImage?: Image$1;
     hasSerifFont?: boolean;
     theme?: Themes;
     title?: string;
@@ -1031,7 +995,7 @@ declare namespace IconLink {
     }
 }
 
-declare const Image$1: React$1.ForwardRefExoticComponent<ImageProps & React$1.RefAttributes<HTMLImageElement>>;
+declare const Image$2: React$1.ForwardRefExoticComponent<ImageProps & React$1.RefAttributes<HTMLImageElement>>;
 
 declare type Slide$1 = {
     caption?: string;
@@ -1207,27 +1171,13 @@ declare namespace NavigationBar {
     }
 }
 
-declare function NotificationModal({ backgroundColor, className, notificationMessage, ...props }: {
-    [x: string]: any;
-    backgroundColor: any;
-    className: any;
-    notificationMessage: any;
-}): JSX.Element;
-declare namespace NotificationModal {
-    namespace propTypes {
-        const backgroundColor: PropTypes.Requireable<string>;
-        const className: PropTypes.Requireable<string>;
-        const notificationMessage: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const backgroundColor_1: any;
-        export { backgroundColor_1 as backgroundColor };
-        const className_1: any;
-        export { className_1 as className };
-        const notificationMessage_1: any;
-        export { notificationMessage_1 as notificationMessage };
-    }
-}
+declare type NotificationModalProps = {
+    backgroundColor?: string;
+    className?: string;
+    notificationMessage?: string;
+};
+
+declare const NotificationModal: ({ backgroundColor, className, notificationMessage, ...props }: NotificationModalProps) => ReactElement;
 
 declare type OverlayProps = {
     className?: string;
@@ -1337,7 +1287,33 @@ declare type ProductExtractProps = {
 
 declare const ProductExtract: React$1.ForwardRefExoticComponent<ProductExtractProps & React$1.RefAttributes<HTMLDivElement>>;
 
-declare const ProductGridItem: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type Copy = {
+    addToCart?: {
+        cartAction?: string;
+        outOfStock?: {
+            label?: string;
+            title?: string;
+        };
+        updateNotification?: string;
+    };
+};
+declare type CallToAction = {
+    clickFunction?: () => void;
+    text?: string;
+    url?: string;
+};
+declare type ProductGridItemProps = {
+    className?: string;
+    copy?: Copy;
+    cta?: CallToAction;
+    id?: string;
+    info?: string;
+    onCtaClick?: () => void;
+    theme?: Themes;
+    url?: string;
+};
+
+declare const ProductGridItem: React$1.ForwardRefExoticComponent<ProductGridItemProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type ProductDetailBodyCopy = {
     addToCart?: {
@@ -1920,7 +1896,7 @@ declare namespace index_d$1 {
     index_d$1_Hyperlink as Hyperlink,
     index_d$1_Icon as Icon,
     index_d$1_IconLink as IconLink,
-    Image$1 as Image,
+    Image$2 as Image,
     index_d$1_ImageCarousel as ImageCarousel,
     index_d$1_KitList as KitList,
     index_d$1_LinkButtonGroup as LinkButtonGroup,
@@ -2576,4 +2552,4 @@ declare namespace index_d$a {
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs, Button, BynderWidget, Carousel, Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image$1 as Image, ImageCarousel, KitList, LinkButtonGroup, List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video$1 as Video, index_d$1 as components, index_d$2 as constants, index_d$3 as contexts, index_d$4 as customHooks, index_d$5 as environment, index_d$6 as objects, index_d$8 as product, index_d as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d$a as utils, index_d$9 as viewport };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs, Button, BynderWidget, Carousel, Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image$2 as Image, ImageCarousel, KitList, LinkButtonGroup, List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video$1 as Video, index_d$1 as components, index_d$2 as constants, index_d$3 as contexts, index_d$4 as customHooks, index_d$5 as environment, index_d$6 as objects, index_d$8 as product, index_d as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d$a as utils, index_d$9 as viewport };
