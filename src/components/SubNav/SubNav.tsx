@@ -50,9 +50,9 @@ const SubNav = forwardRef<HTMLElement, SubNavProps>(function SubNavRef(
         <Select
           isBlock={isSelect}
           name={id}
-          onChange={(e) => {
-            onSelectCallback?.(e);
-            handleOnChange(e);
+          onChange={(event) => {
+            onSelectCallback?.(event);
+            handleOnChange(event);
           }}
           options={getSelectOptions(links)}
           theme={currentTheme}
