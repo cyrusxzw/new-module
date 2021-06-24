@@ -4,14 +4,23 @@ import { useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
 import { isViewport } from '~/utils/viewport';
 import { List } from '~/components/List';
-import { Select } from '~/components/Select/index.ts';
-import { Heading } from '~/components/Heading/index.ts';
+import { Select } from '~/components/Select/index';
+import { Heading } from '~/components/Heading/index';
 import { getLinkItems, getSelectOptions, handleOnChange } from './SubNav.utils';
 import type { SubNavProps } from './SubNav.types';
 import styles from './SubNav.module.css';
 
 const SubNav = forwardRef<HTMLElement, SubNavProps>(function SubNavRef(
-  { className, heading, headingClassName, id, isSelect, links, theme },
+  {
+    className,
+    heading,
+    headingClassName,
+    id,
+    isSelect,
+    links,
+    theme,
+    onSelectCallback,
+  },
   ref,
 ) {
   const currentTheme = useThemeContext(theme, 'dark');
@@ -41,7 +50,10 @@ const SubNav = forwardRef<HTMLElement, SubNavProps>(function SubNavRef(
         <Select
           isBlock={isSelect}
           name={id}
-          onChange={handleOnChange}
+          onChange={(event) => {
+            onSelectCallback?.(event);
+            handleOnChange(event);
+          }}
           options={getSelectOptions(links)}
           theme={currentTheme}
         />
