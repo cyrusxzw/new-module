@@ -1,27 +1,29 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import cx from 'classnames';
-import { ContentHubArticle } from '~/components/ContentHubArticle/index.ts';
+import { ContentHubArticle } from '~/components/ContentHubArticle';
+import type { ContentHubArticleListType } from './ContentHubArticleList.types';
 import styles from './ContentHubArticleList.module.css';
 
-const ContentHubArticleList = ({
+const ContentHubArticleList: ContentHubArticleListType = ({
   articles,
   className,
-  isFirstGroup,
-  pattern, // 0 means first image is horizontal
+  isFirstGroup = false,
+  pattern = 0,
 }) => {
   const count = articles && articles.length;
-
   const classSet = cx(styles.base, className);
   const mobileSet = cx(styles.mobile, className);
+
   const mobileMiddleSet = cx(
     styles.mobileMiddleRow,
     { [styles.reverseColumn]: pattern === 0 },
     className,
   );
+
   const topLeftClassSet = cx(styles[`top-left-${pattern}`], styles[`article`], {
     [styles.nonFirstRow]: (count < 3 && pattern === 0) || count < 2,
   });
+
   const topRightClassSet = cx(
     styles[`top-right-${pattern}`],
     styles[`article`],
@@ -29,6 +31,7 @@ const ContentHubArticleList = ({
       [styles.nonFirstRow]: (count < 3 && pattern === 1) || count < 2,
     },
   );
+
   const bottomLeftClassSet = cx(
     styles[`bottom-left-${pattern}`],
     styles[`article`],
@@ -36,6 +39,7 @@ const ContentHubArticleList = ({
       [styles.nonFirstRow]: count === 1 && pattern === 0,
     },
   );
+
   const bottomRightClassSet = cx(
     styles[`bottom-right-${pattern}`],
     styles[`article`],
@@ -43,33 +47,42 @@ const ContentHubArticleList = ({
       [styles.nonFirstRow]: count === 1 && pattern === 1,
     },
   );
+
   const leftMiddleArticleClassSet = cx(styles.leftMiddleArticle);
   const middleArticleClassSet = cx(styles.middleArticle);
   const rightMiddleArticleClassSet = cx(styles.rightMiddleArticle);
+
   let articleNo = -1; // article index for mobile
+
   const increaseArticleNo = () => {
     articleNo++;
     return true;
   };
 
-  const getArticleIndex = (isOnTop, isOnLeft) => {
+  const getArticleIndex = (isOnTop: boolean, isOnLeft: boolean) => {
     const indexArray = isOnTop ? [4, 3] : [2, 1];
+
     if (!isOnLeft) {
       indexArray.reverse();
     }
+
     return pattern === 0 ? indexArray[0] : indexArray[1]; // this is to get the max number of articles when this position is visible
   };
 
-  const getArticle = (isOnTop, isOnLeft) => {
+  const getArticle = (isOnTop: boolean, isOnLeft: boolean) => {
     const articleIndex = getArticleIndex(isOnTop, isOnLeft);
+
     return articles[count - articleIndex];
   };
 
   return (
     <section>
-      <Fragment>
+      <>
         <div className={classSet}>
-          <div className={topLeftClassSet}>
+          <div
+            className={topLeftClassSet}
+            data-testid="data-testid-ContentHubArticle-top"
+          >
             {count >= getArticleIndex(true, true) && (
               <ContentHubArticle
                 articleRef={getArticle(true, true).articleRef}
@@ -88,7 +101,10 @@ const ContentHubArticleList = ({
               />
             )}
           </div>
-          <div className={topRightClassSet}>
+          <div
+            className={topRightClassSet}
+            data-testid="data-testid-ContentHubArticle-top"
+          >
             {count >= getArticleIndex(true, false) && (
               <ContentHubArticle
                 articleRef={getArticle(true, false).articleRef}
@@ -109,7 +125,10 @@ const ContentHubArticleList = ({
               />
             )}
           </div>
-          <div className={bottomLeftClassSet}>
+          <div
+            className={bottomLeftClassSet}
+            data-testid="data-testid-ContentHubArticle-bottom"
+          >
             {count >= getArticleIndex(false, true) && (
               <ContentHubArticle
                 articleRef={getArticle(false, true).articleRef}
@@ -129,7 +148,10 @@ const ContentHubArticleList = ({
               />
             )}
           </div>
-          <div className={bottomRightClassSet}>
+          <div
+            className={bottomRightClassSet}
+            data-testid="data-testid-ContentHubArticle-bottom"
+          >
             {count >= getArticleIndex(false, false) && (
               <ContentHubArticle
                 articleRef={getArticle(false, false).articleRef}
@@ -323,23 +345,9 @@ const ContentHubArticleList = ({
             </div>
           </div>
         )}
-      </Fragment>
+      </>
     </section>
   );
-};
-
-ContentHubArticleList.propTypes = {
-  articles: PropTypes.array,
-  className: PropTypes.string,
-  isFirstGroup: PropTypes.bool,
-  pattern: PropTypes.oneOf([0, 1]),
-};
-
-ContentHubArticleList.defaultProps = {
-  articles: undefined,
-  className: undefined,
-  isFirstGroup: false,
-  pattern: 0,
 };
 
 export { ContentHubArticleList };
