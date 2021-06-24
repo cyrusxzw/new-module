@@ -10,7 +10,7 @@ type ContentHubArticleListProps = {
   articles?: ListArticle[];
   className?: string;
   isFirstGroup?: boolean;
-  pattern?: 0 | 1;
+  pattern?: 0 | 1; // 0 means first image is horizontal
 };
 
 type ContentHubArticleListType = ComponentWithoutChildren<ContentHubArticleListProps>;
