@@ -1525,6 +1525,7 @@ declare type SubNavProps = {
     heading?: string;
     headingClassName?: string;
     theme?: Themes;
+    onSelectCallback?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
 declare const SubNav: React$1.ForwardRefExoticComponent<SubNavProps & React$1.RefAttributes<HTMLElement>>;
