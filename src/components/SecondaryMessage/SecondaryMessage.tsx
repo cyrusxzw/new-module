@@ -27,7 +27,7 @@ const SecondaryMessage = ({
     >
       <aside className={classSet} id={id}>
         {items.map((item, index) => {
-          const { className, id, ...props } = item;
+          const { id, ...props } = item;
           return (
             <Message
               className={cx({

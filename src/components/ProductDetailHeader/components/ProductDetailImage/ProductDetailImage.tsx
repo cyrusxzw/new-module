@@ -16,7 +16,7 @@ const ProductDetailImage = ({
   const imageRef = useRef();
   const currentTheme = useThemeContext(theme, 'dark');
   const { selectedVariant } = useVariantSelectContext();
-  const { cartDisclaimer } = selectedVariant;
+  const { cartDisclaimer } = selectedVariant || {};
   const [currentImage, isImageActive] = useImageTransition(
     selectedVariant?.image,
     imageRef,

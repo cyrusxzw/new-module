@@ -8,7 +8,7 @@ describe('isInBrowser', () => {
   });
 
   afterEach(() => {
-    (global as any).window = windowObj;
+    (global as { window: unknown }).window = windowObj;
   });
 
   it('should return false if not running in the browser', () => {

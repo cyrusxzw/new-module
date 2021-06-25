@@ -1,6 +1,10 @@
+import { ComponentWithChildren } from '~/types';
+
 type NavBarThemeContextProps = {
   loginAndCartTheme?: string;
   navigationAndLogoTheme?: string;
 };
 
-export type { NavBarThemeContextProps };
+type NavBarThemeContextProviderType = ComponentWithChildren<NavBarThemeContextProps>;
+
+export type { NavBarThemeContextProviderType };

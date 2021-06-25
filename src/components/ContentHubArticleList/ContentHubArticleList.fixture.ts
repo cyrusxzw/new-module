@@ -22,7 +22,7 @@ const ContentHubArticleListFixture = {
         },
       },
       readingTime: '15 minute read',
-      onClick: () => {
+      onClick: (): void => {
         console.log('click tracking: test_1'); // eslint-disable-line no-console
       },
     },
@@ -49,7 +49,7 @@ const ContentHubArticleListFixture = {
         },
       },
       readingTime: '15 minute read',
-      onClick: () => {
+      onClick: (): void => {
         console.log('click tracking: test_2'); // eslint-disable-line no-console
       },
     },
@@ -76,7 +76,7 @@ const ContentHubArticleListFixture = {
         },
       },
       readingTime: '15 minute read',
-      onClick: () => {
+      onClick: (): void => {
         console.log('click tracking: test_3'); // eslint-disable-line no-console
       },
     },
@@ -103,7 +103,7 @@ const ContentHubArticleListFixture = {
         },
       },
       readingTime: '15 minute read',
-      onClick: () => {
+      onClick: (): void => {
         console.log('click tracking: test_4'); // eslint-disable-line no-console
       },
     },

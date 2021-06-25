@@ -16,4 +16,4 @@ type HeadingProps = {
   theme?: Themes;
 };
 
-export type { HeadingProps };
+export type { HeadingProps, Levels, Sizes };

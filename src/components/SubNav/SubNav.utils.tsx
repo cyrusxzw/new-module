@@ -1,13 +1,10 @@
 import React from 'react';
 import { Hyperlink } from '~/components/Hyperlink';
-import type {
-  SubNavProps,
-  GetLinkItems,
-  GetSelectOption,
-} from './SubNav.types';
+import type { ChangeEvent } from 'react';
+import type { GetLinkItems, GetSelectOption } from './SubNav.types';
 import styles from './SubNav.module.css';
 
-const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+const handleOnChange = (event: ChangeEvent<HTMLSelectElement>) => {
   window.location.href = event.target.value;
 };
 

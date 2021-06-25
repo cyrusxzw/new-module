@@ -8,24 +8,7 @@ import type { ListItem } from '~/components/List/List.types';
 import type { TwoColumnListProps, ColumnProps } from './TwoColumnList.types';
 import styles from './TwoColumnList.module.css';
 
-const TwoColumnList = forwardRef<HTMLDivElement, TwoColumnListProps>(
-  function TwoColumnListRef(
-    { className, leftColumn, rightColumn, theme },
-    ref,
-  ) {
-    const currentTheme = useThemeContext(theme, 'dark');
-    const classSet = cx(styles.base, styles[currentTheme], className);
-
-    return (
-      <div className={classSet} ref={ref}>
-        <Column lists={leftColumn} theme={theme} />
-        <Column lists={rightColumn} theme={theme} />
-      </div>
-    );
-  },
-);
-
-export function Column({ lists, theme }: ColumnProps): ReactElement | null {
+const Column = ({ lists, theme }: ColumnProps): ReactElement | null => {
   return (
     <div className={styles.column}>
       {lists.map(({ heading, id, items, subHeading }) => {
@@ -69,7 +52,6 @@ export function Column({ lists, theme }: ColumnProps): ReactElement | null {
             </Heading>
 
             <List
-              className={styles.list}
               items={linkItems}
               listItemClassName={styles.item}
               theme={theme}
@@ -79,6 +61,23 @@ export function Column({ lists, theme }: ColumnProps): ReactElement | null {
       })}
     </div>
   );
-}
+};
 
-export { TwoColumnList };
+const TwoColumnList = forwardRef<HTMLDivElement, TwoColumnListProps>(
+  function TwoColumnListRef(
+    { className, leftColumn, rightColumn, theme },
+    ref,
+  ) {
+    const currentTheme = useThemeContext(theme, 'dark');
+    const classSet = cx(styles.base, styles[currentTheme], className);
+
+    return (
+      <div className={classSet} ref={ref}>
+        <Column lists={leftColumn} theme={theme} />
+        <Column lists={rightColumn} theme={theme} />
+      </div>
+    );
+  },
+);
+
+export { TwoColumnList, Column };

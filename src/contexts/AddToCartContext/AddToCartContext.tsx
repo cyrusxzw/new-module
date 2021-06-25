@@ -1,10 +1,10 @@
-import React, { createContext, useContext, FC } from 'react';
+import React, { createContext, useContext } from 'react';
 import { useAddToCartStore } from './AddToCartStore';
-import type { AddToCartContextProps } from './AddToCartContext.types';
+import type { AddToCartContextProviderType } from './AddToCartContext.types';
 
 const AddToCartContext = createContext(undefined);
 
-const AddToCartContextProvider: FC<AddToCartContextProps> = ({
+const AddToCartContextProvider: AddToCartContextProviderType = ({
   children,
   onClick,
 }) => (

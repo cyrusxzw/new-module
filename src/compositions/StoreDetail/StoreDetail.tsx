@@ -31,6 +31,7 @@ const StoreDetail: StoreDetailType = ({ className, theme }) => (
         openingHours={StoreHoursListFixture.hoursList}
         phone={StoreDetailHeaderFixture.phone}
         storeName={StoreDetailHeaderFixture.storeName}
+        theme={theme}
       />
     </Podium>
 
