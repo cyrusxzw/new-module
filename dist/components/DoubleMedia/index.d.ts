@@ -1,7 +1,7 @@
-/// <reference types="react" />
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
+import { T as Themes } from '../../sharedChunks/Themes.types';
 import { ReactNode } from 'react';
 import { C as ControlsProps, P as PosterProps } from '../../sharedChunks/Poster.types';
-import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type VideoProps = Pick<ControlsProps, 'copy'> & {
     captions?: {
@@ -85,7 +85,8 @@ declare type DoubleMediaProps = {
     mediaTwo?: MediaBlockProps;
     theme?: Themes;
 };
+declare type DoubleMediaType = ComponentWithoutChildren<DoubleMediaProps>;
 
-declare const DoubleMedia: ({ className, mediaOne, mediaTwo, theme, }: DoubleMediaProps) => JSX.Element;
+declare const DoubleMedia: DoubleMediaType;
 
 export { DoubleMedia };

@@ -1,4 +1,5 @@
 import { Dispatch } from 'react';
+import { a as ComponentWithChildren } from './Component.types';
 
 declare type AddToCartActionType = 'fail' | 'fetching' | 'success';
 declare type AddToCartAction = {
@@ -14,5 +15,6 @@ declare type AddToCartContextProps = {
      */
     onClick?: OnAddToCartClick;
 };
+declare type AddToCartContextProviderType = ComponentWithChildren<AddToCartContextProps>;
 
-export { AddToCartContextProps as A, OnAddToCartClick as O };
+export { AddToCartContextProviderType as A, OnAddToCartClick as O };

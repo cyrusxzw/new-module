@@ -29,4 +29,4 @@ type MediaBlockProps = {
 
 type MediaBlockType = ComponentWithoutChildren<MediaBlockProps>;
 
-export type { MediaBlockType, MediaType };
+export type { MediaBlockType, MediaBlockProps, MediaType };
