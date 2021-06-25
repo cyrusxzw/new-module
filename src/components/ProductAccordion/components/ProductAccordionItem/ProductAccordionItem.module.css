@@ -72,7 +72,7 @@
     }
 
     @media (--viewport-x4l) {
-      max-height: none;
+      max-height: 550px;
     }
   }
 }
