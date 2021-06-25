@@ -28,6 +28,7 @@ type SubNavProps = {
   heading?: string;
   headingClassName?: string;
   theme?: Themes;
+  onSelectCallback?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
 export type { SubNavProps, SubNavLink, GetLinkItems, GetSelectOption };

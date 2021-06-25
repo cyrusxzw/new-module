@@ -1,28 +1,20 @@
-import PropTypes from 'prop-types';
+import { MutableRefObject } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
+import { A as Article } from '../../sharedChunks/ContentHubArticle.types';
+import '../../sharedChunks/Image.types';
+import '../../sharedChunks/Themes.types';
 
-declare function ContentHubArticleList({ articles, className, isFirstGroup, pattern, }: {
-    articles: any;
-    className: any;
-    isFirstGroup: any;
-    pattern: any;
-}): JSX.Element;
-declare namespace ContentHubArticleList {
-    namespace propTypes {
-        const articles: PropTypes.Requireable<any[]>;
-        const className: PropTypes.Requireable<string>;
-        const isFirstGroup: PropTypes.Requireable<boolean>;
-        const pattern: PropTypes.Requireable<number>;
-    }
-    namespace defaultProps {
-        const articles_1: any;
-        export { articles_1 as articles };
-        const className_1: any;
-        export { className_1 as className };
-        const isFirstGroup_1: boolean;
-        export { isFirstGroup_1 as isFirstGroup };
-        const pattern_1: number;
-        export { pattern_1 as pattern };
-    }
-}
+declare type ListArticle = Article & {
+    mobileArticleRef?: MutableRefObject<HTMLDivElement>;
+};
+declare type ContentHubArticleListProps = {
+    articles?: ListArticle[];
+    className?: string;
+    isFirstGroup?: boolean;
+    pattern?: 0 | 1;
+};
+declare type ContentHubArticleListType = ComponentWithoutChildren<ContentHubArticleListProps>;
+
+declare const ContentHubArticleList: ContentHubArticleListType;
 
 export { ContentHubArticleList };

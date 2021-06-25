@@ -9,8 +9,9 @@ type HeroBannerMediaProps = {
   containMedia?: HeroBannerMediaAnchorPoints;
   foregroundImage?: ReactElement;
   foregroundImageLink?: {
-    url?: string;
+    onClick?: () => void;
     title?: string;
+    url?: string;
   };
   media?: ReactElement;
   variation?: HeroBannerVariations;

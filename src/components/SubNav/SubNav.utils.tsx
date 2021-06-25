@@ -7,7 +7,7 @@ import type {
 } from './SubNav.types';
 import styles from './SubNav.module.css';
 
-const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
   window.location.href = event.target.value;
 };
 

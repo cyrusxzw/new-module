@@ -344,51 +344,41 @@ declare type ConditionalWrapperProps = {
 declare const ConditionalWrapper: FC<ConditionalWrapperProps>;
 
 declare type Image = Pick<ImageProps, 'altText' | 'sizes'>;
-declare type ContentHubArticleProps = {
+declare type Article = {
     articleRef?: MutableRefObject<HTMLDivElement>;
     category?: string;
-    className?: string;
-    dataTestRef: string;
     horizontalThumbnail?: Image;
     id?: string;
-    isHorizontal?: boolean;
-    isInFirstGroup?: boolean;
-    isMenuItem?: boolean;
-    isReadMore?: boolean;
     longTitle?: string;
     onClick?: () => void;
     readingTime?: string;
     uri?: string;
     verticalThumbnail?: Image;
 };
+declare type ContentHubArticleProps = Article & {
+    className?: string;
+    dataTestRef: string;
+    isHorizontal?: boolean;
+    isInFirstGroup?: boolean;
+    isMenuItem?: boolean;
+    isReadMore?: boolean;
+};
 declare type ContentHubArticleType = ComponentWithoutChildren<ContentHubArticleProps>;
 
 declare const ContentHubArticle: ContentHubArticleType;
 
-declare function ContentHubArticleList({ articles, className, isFirstGroup, pattern, }: {
-    articles: any;
-    className: any;
-    isFirstGroup: any;
-    pattern: any;
-}): JSX.Element;
-declare namespace ContentHubArticleList {
-    namespace propTypes {
-        const articles: PropTypes.Requireable<any[]>;
-        const className: PropTypes.Requireable<string>;
-        const isFirstGroup: PropTypes.Requireable<boolean>;
-        const pattern: PropTypes.Requireable<number>;
-    }
-    namespace defaultProps {
-        const articles_1: any;
-        export { articles_1 as articles };
-        const className_1: any;
-        export { className_1 as className };
-        const isFirstGroup_1: boolean;
-        export { isFirstGroup_1 as isFirstGroup };
-        const pattern_1: number;
-        export { pattern_1 as pattern };
-    }
-}
+declare type ListArticle = Article & {
+    mobileArticleRef?: MutableRefObject<HTMLDivElement>;
+};
+declare type ContentHubArticleListProps = {
+    articles?: ListArticle[];
+    className?: string;
+    isFirstGroup?: boolean;
+    pattern?: 0 | 1;
+};
+declare type ContentHubArticleListType = ComponentWithoutChildren<ContentHubArticleListProps>;
+
+declare const ContentHubArticleList: ContentHubArticleListType;
 
 declare const DefinitionList: React$1.ForwardRefExoticComponent<DefinitionListProps & React$1.RefAttributes<HTMLDListElement>>;
 
@@ -1535,6 +1525,7 @@ declare type SubNavProps = {
     heading?: string;
     headingClassName?: string;
     theme?: Themes;
+    onSelectCallback?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
 declare const SubNav: React$1.ForwardRefExoticComponent<SubNavProps & React$1.RefAttributes<HTMLElement>>;

@@ -4,17 +4,11 @@ import type { ImageProps } from '~/components/Image/Image.types';
 
 type Image = Pick<ImageProps, 'altText' | 'sizes'>;
 
-type ContentHubArticleProps = {
+type Article = {
   articleRef?: MutableRefObject<HTMLDivElement>;
   category?: string;
-  className?: string;
-  dataTestRef: string;
   horizontalThumbnail?: Image;
   id?: string;
-  isHorizontal?: boolean;
-  isInFirstGroup?: boolean;
-  isMenuItem?: boolean;
-  isReadMore?: boolean;
   longTitle?: string;
   onClick?: () => void;
   readingTime?: string;
@@ -22,6 +16,15 @@ type ContentHubArticleProps = {
   verticalThumbnail?: Image;
 };
 
+type ContentHubArticleProps = Article & {
+  className?: string;
+  dataTestRef: string;
+  isHorizontal?: boolean;
+  isInFirstGroup?: boolean;
+  isMenuItem?: boolean;
+  isReadMore?: boolean;
+};
+
 type ContentHubArticleType = ComponentWithoutChildren<ContentHubArticleProps>;
 
-export type { ContentHubArticleType };
+export type { ContentHubArticleType, Article };

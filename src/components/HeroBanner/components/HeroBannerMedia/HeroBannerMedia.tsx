@@ -39,6 +39,7 @@ const HeroBannerMedia: FC<HeroBannerMediaProps> = ({
             condition={!!foregroundImageLink}
             wrapper={(children) => (
               <Hyperlink
+                onClick={foregroundImageLink.onClick}
                 title={foregroundImageLink.title}
                 url={foregroundImageLink.url}
               >
