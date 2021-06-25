@@ -25,8 +25,13 @@ const MediaWithContent = forwardRef<HTMLDivElement, MediaWithContentProps>(
     ref,
   ) {
     const currentTheme = useThemeContext(theme, 'dark');
-    const classSet = cx(styles.base, styles[currentTheme], className);
     const style = backgroundColor ? { backgroundColor } : undefined;
+    const classSet = cx(
+      styles.base,
+      { [styles.reverse]: isReverse },
+      styles[currentTheme],
+      className,
+    );
 
     return (
       <div className={classSet} ref={ref} style={style}>
