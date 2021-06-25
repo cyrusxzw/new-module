@@ -10,4 +10,4 @@ type DoubleMediaProps = {
 
 type DoubleMediaType = ComponentWithoutChildren<DoubleMediaProps>;
 
-export type { DoubleMediaType };
+export type { DoubleMediaType, DoubleMediaProps };
