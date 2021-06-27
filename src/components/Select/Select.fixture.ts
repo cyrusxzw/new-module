@@ -4,9 +4,9 @@ const SelectFixture = {
   errorMessage: 'Test Error Messsage',
   label: 'Vestibulum accumsan',
   name: 'select',
-  onBlur: (): undefined => undefined,
-  onChange: (): undefined => undefined,
-  onFocus: (): undefined => undefined,
+  onBlur: () => undefined,
+  onChange: () => undefined,
+  onFocus: () => undefined,
   options: [
     {
       id: 'morbi-id-nulla',
