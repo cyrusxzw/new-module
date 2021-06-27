@@ -73,61 +73,6 @@ const GoogleMap = ({
     setMarkerCluster(null);
   };
 
-  useEffect(() => {
-    mapRef.current = createGoogleMap();
-
-    if (googleMap) {
-      handleMapClick.current = googleMap.maps.event.addListener(
-        mapRef.current,
-        'click',
-        () => {
-          if (activeInfoCard.current) {
-            activeInfoCard.current.close();
-          }
-        },
-      );
-
-      setMarkers(() =>
-        [customMarker, ...places]
-          .filter((item) => item?.lat !== undefined && item?.lng !== undefined)
-          .map((marker, index) =>
-            marker.type === GOOGLE_MAPS.MARKER_TYPE.PIN
-              ? createPinMarker(marker, index)
-              : createPlaceMarker(marker, index, index === 0),
-          ),
-      );
-    }
-
-    return function cleanup() {
-      if (googleMap) {
-        googleMap.maps.event.removeListener(handleMapClick.current);
-        clearMapMarkers();
-      }
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [createGoogleMap, customMarker, places, googleMap]);
-
-  useEffect(() => {
-    const options = {
-      styles: [
-        {
-          url: GOOGLE_MAPS.CLUSTER_IMAGE_PATH, // https://www.aesop.com/_ui/responsive/common/images/icons/map-cluster-icon.svg
-          ...GoogleMapOptions.MAP_MARKER_CLUSTER,
-        },
-      ],
-    };
-
-    if (googleMap) {
-      setMarkerCluster(
-        () => new MarkerClusterer(mapRef.current, markers, options),
-      );
-    }
-    return function cleanup() {
-      clearMapClusters();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [markers]);
-
   const createPinMarker = useCallback(
     (pin, index) => {
       return new googleMap.maps.Marker({
@@ -241,6 +186,61 @@ const GoogleMap = ({
       isXSmallOrSmallOnlyViewport,
     ],
   );
+
+  useEffect(() => {
+    mapRef.current = createGoogleMap();
+
+    if (googleMap) {
+      handleMapClick.current = googleMap.maps.event.addListener(
+        mapRef.current,
+        'click',
+        () => {
+          if (activeInfoCard.current) {
+            activeInfoCard.current.close();
+          }
+        },
+      );
+
+      setMarkers(() =>
+        [customMarker, ...places]
+          .filter((item) => item?.lat !== undefined && item?.lng !== undefined)
+          .map((marker, index) =>
+            marker.type === GOOGLE_MAPS.MARKER_TYPE.PIN
+              ? createPinMarker(marker, index)
+              : createPlaceMarker(marker, index, index === 0),
+          ),
+      );
+    }
+
+    return function cleanup() {
+      if (googleMap) {
+        googleMap.maps.event.removeListener(handleMapClick.current);
+        clearMapMarkers();
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [createGoogleMap, customMarker, places, googleMap]);
+
+  useEffect(() => {
+    const options = {
+      styles: [
+        {
+          url: GOOGLE_MAPS.CLUSTER_IMAGE_PATH, // https://www.aesop.com/_ui/responsive/common/images/icons/map-cluster-icon.svg
+          ...GoogleMapOptions.MAP_MARKER_CLUSTER,
+        },
+      ],
+    };
+
+    if (googleMap) {
+      setMarkerCluster(
+        () => new MarkerClusterer(mapRef.current, markers, options),
+      );
+    }
+    return function cleanup() {
+      clearMapClusters();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [markers]);
 
   const classSet = cx(styles.base, className);
 

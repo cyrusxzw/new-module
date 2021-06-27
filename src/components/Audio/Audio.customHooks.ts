@@ -4,7 +4,21 @@ import { COLORS } from '~/constants';
 import { getProgressColorHex } from './Audio.utils';
 import type { ProgressColor } from './Audio.types';
 
-const useWaveSurfer = (progressColor: ProgressColor, hasAutoPlay: boolean) => {
+type UseWaveSurfer = (
+  progressColor: ProgressColor,
+  hasAutoPlay: boolean,
+) => {
+  duration: number;
+  isLoading: boolean;
+  isPlaying: boolean;
+  progress: number;
+  togglePlaying: () => void;
+  trackRef: React.MutableRefObject<any>;
+  waveformRef: React.MutableRefObject<any>;
+  wavesurfer: any;
+};
+
+const useWaveSurfer: UseWaveSurfer = (progressColor, hasAutoPlay) => {
   const waveformRef = useRef(null);
   const wavesurfer = useRef(null);
   const trackRef = useRef(null);
@@ -12,6 +26,11 @@ const useWaveSurfer = (progressColor: ProgressColor, hasAutoPlay: boolean) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
+
+  const togglePlaying = () => {
+    setIsPlaying((state) => !state);
+    wavesurfer.current.playPause();
+  };
 
   useEffect(() => {
     import('wavesurfer.js').then((module) => {
@@ -61,11 +80,6 @@ const useWaveSurfer = (progressColor: ProgressColor, hasAutoPlay: boolean) => {
       }
     });
   }, [progressColor, hasAutoPlay]); // eslint-disable-line
-
-  function togglePlaying() {
-    setIsPlaying((state) => !state);
-    wavesurfer.current.playPause();
-  }
 
   return {
     duration,

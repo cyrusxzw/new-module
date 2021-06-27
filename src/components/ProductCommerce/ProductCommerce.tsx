@@ -55,8 +55,9 @@ const ProductCommerce = forwardRef<HTMLDivElement, ProductCommerceProps>(
 
     const { sku } = productDetail;
     const handleOnCtaClick = () => onCtaClick();
-    const handleOnRadioGroupChange = (e: React.FormEvent<HTMLInputElement>) =>
-      onVariantChange(e, variants);
+    const handleOnRadioGroupChange = (
+      event: React.ChangeEvent<HTMLInputElement>,
+    ) => onVariantChange(event, variants);
     const variantRadioOptions = getVariantRadioOptions(variants);
     const classSet = cx(styles.base, className);
     const RADIO_GROUP_NAME = sku;

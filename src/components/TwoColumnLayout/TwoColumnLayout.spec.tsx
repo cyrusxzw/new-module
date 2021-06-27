@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { TwoColumnLayout } from './TwoColumnLayout';
-import { TwoColumnLayoutFixture } from './TwoColumnLayout.fixture';
 
 describe('<TwoColumnLayout />', () => {
   it('should render two columns correctly', () => {

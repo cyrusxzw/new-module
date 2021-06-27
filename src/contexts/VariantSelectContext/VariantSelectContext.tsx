@@ -1,10 +1,13 @@
-import React, { createContext, useContext, FC } from 'react';
+import React, { createContext, useContext } from 'react';
 import { useVariantSelectStore } from './VariantSelectStore';
-import type { VariantSelectContextProps } from './VariantSelectContext.types';
+import type {
+  VariantSelectContextType,
+  VariantSelectContextProviderType,
+} from './VariantSelectContext.types';
 
 const VariantSelectContext = createContext(undefined);
 
-const VariantSelectContextProvider: FC<VariantSelectContextProps> = ({
+const VariantSelectContextProvider: VariantSelectContextProviderType = ({
   children,
   variants,
 }) => (
@@ -13,7 +16,7 @@ const VariantSelectContextProvider: FC<VariantSelectContextProps> = ({
   </VariantSelectContext.Provider>
 );
 
-const useVariantSelectContext = () => {
+const useVariantSelectContext = (): VariantSelectContextType => {
   const context = useContext(VariantSelectContext);
 
   if (context === undefined) {

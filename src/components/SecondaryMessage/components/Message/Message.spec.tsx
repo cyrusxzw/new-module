@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Message } from './Message';
-import { MessageFixture } from './Message.fixture';
 
 describe('<Message />', () => {
   it('should present UI with heading copy', () => {

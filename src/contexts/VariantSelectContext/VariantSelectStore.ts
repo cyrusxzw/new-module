@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react';
 import find from 'lodash/find';
 import queryString from 'query-string';
+import type {
+  UseVariantSelectStore,
+  OnVariantChange,
+} from './VariantSelectContext.types';
+
 import type { Variant } from '~/types';
 
-const useVariantSelectStore = (variants = []) => {
-  const [selectedVariant, setSelectedVariant] = useState({});
+const useVariantSelectStore: UseVariantSelectStore = (variants = []) => {
+  const [selectedVariant, setSelectedVariant] = useState<Variant | undefined>(
+    undefined,
+  );
 
   useEffect(() => {
     const queryStringVariant = queryString.parse(location.search).variant;
@@ -12,10 +19,11 @@ const useVariantSelectStore = (variants = []) => {
     const variantFromQueryString = variants.find(
       (variant) => variant.sku === queryStringVariant,
     );
+
     setSelectedVariant(variantFromQueryString ?? variants[0]);
   }, [variants]);
 
-  const onVariantChange = (event, currentVariants: Variant[]) => {
+  const onVariantChange: OnVariantChange = (event, currentVariants) => {
     event.persist();
 
     const {

@@ -1,9 +1,13 @@
 /// <reference types="react" />
-import { FC } from 'react';
+import { Dispatch, SetStateAction } from 'react';
+import { a as ComponentWithChildren } from '../../sharedChunks/Component.types';
 import { a as DefinitionListItem } from '../../sharedChunks/DefinitionList.types';
 import { V as Variant } from '../../sharedChunks/Variant.types';
 import '../../sharedChunks/Themes.types';
 
+declare type ProductDefinitionListItem = DefinitionListItem & {
+    isExpandable?: boolean;
+};
 declare type UpSellProduct = {
     image?: {
         altText?: string;
@@ -14,10 +18,18 @@ declare type UpSellProduct = {
 };
 declare type Product = {
     cartDisclaimer?: string;
-    definitionList?: DefinitionListItem[];
+    definitionList?: ProductDefinitionListItem[];
     description?: string;
     flyinPanel?: React.ReactNode;
     id?: string;
+    image?: {
+        altText?: string;
+        sizes?: {
+            large?: string;
+            medium?: string;
+            small?: string;
+        };
+    };
     imageSize?: string;
     productName: string;
     sku: string;
@@ -25,11 +37,16 @@ declare type Product = {
     variantOptions?: Variant[];
 };
 
+declare type ProductDetailContextType = {
+    productDetail: Product;
+    setProductDetail: Dispatch<SetStateAction<Product>>;
+};
 declare type ProductDetailContextProps = {
     product?: Product;
 };
+declare type ProductDetailContextProviderType = ComponentWithChildren<ProductDetailContextProps>;
 
-declare const ProductDetailContextProvider: FC<ProductDetailContextProps>;
-declare const useProductDetailContext: () => any;
+declare const ProductDetailContextProvider: ProductDetailContextProviderType;
+declare const useProductDetailContext: () => ProductDetailContextType;
 
 export { ProductDetailContextProvider, useProductDetailContext };

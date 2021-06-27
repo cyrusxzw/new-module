@@ -1,7 +1,8 @@
-import { FC } from 'react';
-import { A as AddToCartContextProps } from '../../sharedChunks/AddToCartContext.types';
+import { A as AddToCartContextProviderType } from '../../sharedChunks/AddToCartContext.types';
+import 'react';
+import '../../sharedChunks/Component.types';
 
-declare const AddToCartContextProvider: FC<AddToCartContextProps>;
+declare const AddToCartContextProvider: AddToCartContextProviderType;
 declare const useAddToCartContext: () => any;
 
 export { AddToCartContextProvider, useAddToCartContext };

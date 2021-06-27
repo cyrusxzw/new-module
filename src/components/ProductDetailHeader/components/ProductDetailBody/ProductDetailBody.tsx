@@ -62,9 +62,14 @@ const ProductDetailBody = ({
     setIsFlyinPanelVisible(false);
   };
   const classSet = cx(styles.base, styles[currentTheme], className);
-  const flyinPanelTriggerClassSet = cx(styles.flyinPanelTrigger, {
-    [styles.isActiveButton]: isFlyinPanelVisible,
-  });
+
+  /**
+   * @TODO There is currently no isActiveButton in the stylesheet
+   */
+  const flyinPanelTriggerClassSet = styles.flyinPanelTrigger;
+  // const flyinPanelTriggerClassSet = cx(styles.flyinPanelTrigger, {
+  //   [styles.isActiveButton]: isFlyinPanelVisible,
+  // });
 
   const paymentWidgetClassSet = cx(
     styles.paymentWidget,
@@ -107,16 +112,17 @@ const ProductDetailBody = ({
     id: item.id,
   });
 
-  const definitionListItems = definitionList.map((item) =>
-    !item.isExpandable ? item : flyinPanelItem(item),
-  );
+  const definitionListItems = definitionList.map((item) => {
+    const { isExpandable, ...props } = item;
+    return !isExpandable ? props : flyinPanelItem(props);
+  });
 
   const variantsHeading =
     variants.length > 1 ? copy?.size?.plural : copy?.size?.singular;
 
   const shouldDefinintionHaveBottomBorder =
     (!!variantRadioOptions.length && isViewport('lg')) ||
-    (isViewport('xs to md only') && upSellProduct);
+    !!(isViewport('xs to md only') && upSellProduct);
 
   return (
     <div className={classSet}>
@@ -175,7 +181,7 @@ const ProductDetailBody = ({
               onChange={handleOnVariantChange}
               options={variantRadioOptions}
               theme={currentTheme}
-              value={selectedVariant.sku}
+              value={selectedVariant?.sku}
             />
           </Transition>
           <AddToCartButton
@@ -225,7 +231,7 @@ const ProductDetailBody = ({
 
       <Hidden isLarge={true} isSmall={true} isXLarge={true}>
         <div className={styles.mediumSidebar}>
-          <header className={styles.mediumHeader}>
+          <header>
             <Heading
               className={styles.mediumProductName}
               level="1"

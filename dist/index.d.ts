@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1, { ReactElement, ReactNode, Dispatch, FC, MouseEvent, CSSProperties, LegacyRef, MutableRefObject, MouseEventHandler, RefObject } from 'react';
+import React$1, { ReactElement, ReactNode, Dispatch, FC, MouseEvent, CSSProperties, LegacyRef, MutableRefObject, MouseEventHandler, SetStateAction, ChangeEvent, RefObject } from 'react';
 import PropTypes from 'prop-types';
 
 declare type DefaultReactComponentReturn = ReactElement<any, any> | null;
@@ -22,6 +22,9 @@ declare type DefinitionListProps = {
     theme?: Themes;
 };
 
+declare type ProductDefinitionListItem = DefinitionListItem & {
+    isExpandable?: boolean;
+};
 declare type UpSellProduct = {
     image?: {
         altText?: string;
@@ -32,10 +35,18 @@ declare type UpSellProduct = {
 };
 declare type Product = {
     cartDisclaimer?: string;
-    definitionList?: DefinitionListItem[];
+    definitionList?: ProductDefinitionListItem[];
     description?: string;
     flyinPanel?: React.ReactNode;
     id?: string;
+    image?: {
+        altText?: string;
+        sizes?: {
+            large?: string;
+            medium?: string;
+            small?: string;
+        };
+    };
     imageSize?: string;
     productName: string;
     sku: string;
@@ -86,6 +97,7 @@ declare type AddToCartContextProps = {
      */
     onClick?: OnAddToCartClick;
 };
+declare type AddToCartContextProviderType = ComponentWithChildren<AddToCartContextProps>;
 
 type index_d_ComponentWithChildren<_0> = ComponentWithChildren<_0>;
 type index_d_ComponentWithoutChildren<_0> = ComponentWithoutChildren<_0>;
@@ -564,8 +576,9 @@ declare type DoubleMediaProps = {
     mediaTwo?: MediaBlockProps;
     theme?: Themes;
 };
+declare type DoubleMediaType = ComponentWithoutChildren<DoubleMediaProps>;
 
-declare const DoubleMedia: ({ className, mediaOne, mediaTwo, theme, }: DoubleMediaProps) => JSX.Element;
+declare const DoubleMedia: DoubleMediaType;
 
 declare type FigureProps = {
     caption?: string;
@@ -2257,7 +2270,7 @@ declare namespace index_d$2 {
   };
 }
 
-declare const AddToCartContextProvider: FC<AddToCartContextProps>;
+declare const AddToCartContextProvider: AddToCartContextProviderType;
 declare const useAddToCartContext: () => any;
 
 declare type Options = {
@@ -2269,8 +2282,9 @@ declare type GoogleMapsContextProps = {
     apiKey?: string;
     options?: Options;
 };
+declare type GoogleMapsContextProviderType = ComponentWithChildren<GoogleMapsContextProps>;
 
-declare const GoogleMapsContextProvider: FC<GoogleMapsContextProps>;
+declare const GoogleMapsContextProvider: GoogleMapsContextProviderType;
 declare const useGoogleMapsContext: () => {
     googleMap: any;
     isLoading: boolean;
@@ -2292,41 +2306,57 @@ declare type LoadMoreContextProps = {
      */
     onClick: MouseEventHandler<HTMLButtonElement>;
 };
+declare type LoadMoreContextProviderType = ComponentWithChildren<LoadMoreContextProps>;
 
-declare const LoadMoreContextProvider: FC<LoadMoreContextProps>;
+declare const LoadMoreContextProvider: LoadMoreContextProviderType;
 declare const useLoadMoreContext: () => any;
 
 declare type NavBarThemeContextProps = {
     loginAndCartTheme?: string;
     navigationAndLogoTheme?: string;
 };
+declare type NavBarThemeContextProviderType = ComponentWithChildren<NavBarThemeContextProps>;
 
-declare const NavBarThemeContextProvider: FC<NavBarThemeContextProps>;
+declare const NavBarThemeContextProvider: NavBarThemeContextProviderType;
 declare const useNavBarThemeContext: () => any;
 
-declare const NotificationContextProvider: FC;
+declare const NotificationContextProvider: ComponentWithChildren;
 declare const useNotificationContext: () => any;
 
+declare type ProductDetailContextType = {
+    productDetail: Product;
+    setProductDetail: Dispatch<SetStateAction<Product>>;
+};
 declare type ProductDetailContextProps = {
     product?: Product;
 };
+declare type ProductDetailContextProviderType = ComponentWithChildren<ProductDetailContextProps>;
 
-declare const ProductDetailContextProvider: FC<ProductDetailContextProps>;
-declare const useProductDetailContext: () => any;
+declare const ProductDetailContextProvider: ProductDetailContextProviderType;
+declare const useProductDetailContext: () => ProductDetailContextType;
 
 declare type ThemeContextProps = {
     theme?: Themes;
 };
+declare type ThemeContextProviderType = ComponentWithChildren<ThemeContextProps>;
 
-declare const ThemeContextProvider: FC<ThemeContextProps>;
-declare const useThemeContext: (propTheme: string, defaultTheme?: string) => any;
+declare const ThemeContextProvider: ThemeContextProviderType;
+declare const useThemeContext: (propTheme: Themes, defaultTheme?: string) => Themes;
 
+declare type OnVariantChange = (event: ChangeEvent<HTMLInputElement>, currentVariants: Variant[]) => void;
+declare type VariantSelectContextType = {
+    onVariantChange: OnVariantChange;
+    selectedVariant?: Variant;
+    setSelectedVariant: Dispatch<SetStateAction<Variant>>;
+    variants: Variant[];
+};
 declare type VariantSelectContextProps = {
     variants: Variant[];
 };
+declare type VariantSelectContextProviderType = ComponentWithChildren<VariantSelectContextProps>;
 
-declare const VariantSelectContextProvider: FC<VariantSelectContextProps>;
-declare const useVariantSelectContext: () => any;
+declare const VariantSelectContextProvider: VariantSelectContextProviderType;
+declare const useVariantSelectContext: () => VariantSelectContextType;
 
 declare const index_d$3_AddToCartContextProvider: typeof AddToCartContextProvider;
 declare const index_d$3_useAddToCartContext: typeof useAddToCartContext;

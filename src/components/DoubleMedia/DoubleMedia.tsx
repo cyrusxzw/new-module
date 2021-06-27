@@ -1,15 +1,15 @@
 import React from 'react';
 import cx from 'classnames';
 import { MediaBlock } from './components/MediaBlock';
-import type { DoubleMediaProps } from './DoubleMedia.types';
+import type { DoubleMediaType } from './DoubleMedia.types';
 import styles from './DoubleMedia.module.css';
 
-const DoubleMedia = ({
+const DoubleMedia: DoubleMediaType = ({
   className,
   mediaOne,
   mediaTwo,
   theme = 'dark',
-}: DoubleMediaProps) => {
+}) => {
   const classSet = cx(styles.base, styles[theme], className);
 
   return (

@@ -1,4 +1,5 @@
-import { MouseEventHandler, FC } from 'react';
+import { MouseEventHandler } from 'react';
+import { a as ComponentWithChildren } from '../../sharedChunks/Component.types';
 
 declare type LoadMoreContextProps = {
     /**
@@ -8,8 +9,9 @@ declare type LoadMoreContextProps = {
      */
     onClick: MouseEventHandler<HTMLButtonElement>;
 };
+declare type LoadMoreContextProviderType = ComponentWithChildren<LoadMoreContextProps>;
 
-declare const LoadMoreContextProvider: FC<LoadMoreContextProps>;
+declare const LoadMoreContextProvider: LoadMoreContextProviderType;
 declare const useLoadMoreContext: () => any;
 
 export { LoadMoreContextProvider, useLoadMoreContext };

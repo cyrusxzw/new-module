@@ -1,7 +1,16 @@
-const getEyebrowLevel = (heading, isPageHeading = false) =>
+import type { HeadingLevels } from '~/components/Heading/Heading.types';
+
+const getEyebrowLevel = (
+  heading: string,
+  isPageHeading = false,
+): HeadingLevels =>
   heading ? (isPageHeading ? '2' : '3') : isPageHeading ? '1' : '2';
 
-const getSubHeadingLevel = (eyebrow, heading, isPageHeading = false) => {
+const getSubHeadingLevel = (
+  eyebrow: string,
+  heading: string,
+  isPageHeading = false,
+): HeadingLevels => {
   if (eyebrow) {
     if (heading) {
       return isPageHeading ? '3' : '4';

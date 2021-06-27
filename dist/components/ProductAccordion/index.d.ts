@@ -2,6 +2,7 @@ import { ReactNode, ReactElement } from 'react';
 import { O as OnAddToCartClick } from '../../sharedChunks/AddToCartContext.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import { V as Variant } from '../../sharedChunks/Variant.types';
+import '../../sharedChunks/Component.types';
 
 declare type Media = {
     sizes?: {

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 import type { VideoProps } from '~/components/Video/Video.types';
-import type { Themes } from '~/types';
 
 type MediaType = 'video' | 'image' | 'scrollbasedvideo';
 
@@ -27,4 +27,6 @@ type MediaBlockProps = {
   };
 };
 
-export type { MediaBlockProps, MediaType };
+type MediaBlockType = ComponentWithoutChildren<MediaBlockProps>;
+
+export type { MediaBlockType, MediaBlockProps, MediaType };

@@ -5,10 +5,10 @@ import { Figure } from '~/components/Figure';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Image } from '~/components/Image';
 import { Video } from '~/components/Video';
-import type { MediaBlockProps } from './MediaBlock.types';
+import type { MediaBlockType } from './MediaBlock.types';
 import styles from './MediaBlock.module.css';
 
-const MediaBlock = ({
+const MediaBlock: MediaBlockType = ({
   altText,
   caption,
   fallbackImage,
@@ -18,7 +18,7 @@ const MediaBlock = ({
   sizes,
   theme = 'dark',
   type = 'image',
-}: MediaBlockProps) => {
+}) => {
   const Media = () => {
     const isScrollBasedVideo = type === 'scrollbasedvideo' ? true : false;
 

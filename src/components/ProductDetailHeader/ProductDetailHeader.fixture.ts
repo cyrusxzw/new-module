@@ -2,11 +2,17 @@ const ProductDetailHeaderFixture = {
   breadcrumbs: {
     items: [
       {
-        label: 'Suspendisse',
         id: 'suspendisse',
+        label: 'Suspendisse',
+        title: 'suspendisse',
         url: '/',
       },
-      { label: 'Maecenas luctus', id: 'maecenas-luctus', url: '/' },
+      {
+        id: 'maecenas-luctus',
+        label: 'Maecenas luctus',
+        title: 'maecenas-luctus',
+        url: '/',
+      },
     ],
   },
   className: 'fixture-classname',

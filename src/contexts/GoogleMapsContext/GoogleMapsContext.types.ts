@@ -1,3 +1,5 @@
+import { ComponentWithChildren } from '~/types';
+
 type Options = {
   libraries?: string[];
   regionCode?: string;
@@ -9,4 +11,6 @@ type GoogleMapsContextProps = {
   options?: Options;
 };
 
-export type { GoogleMapsContextProps, Options };
+type GoogleMapsContextProviderType = ComponentWithChildren<GoogleMapsContextProps>;
+
+export type { GoogleMapsContextProviderType, Options };

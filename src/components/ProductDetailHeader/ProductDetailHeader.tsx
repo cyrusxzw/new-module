@@ -37,7 +37,10 @@ const ProductDetailHeader = ({
   return (
     <div className={classSet}>
       <div className={styles.wrapper}>
-        <div className={styles.content}>
+        <div
+          className={styles.content}
+          data-testid="data-testid-ProductDetailHeader-content"
+        >
           <Hidden isSmall={true}>
             <Breadcrumbs
               className={styles.breadcrumbs}
@@ -59,7 +62,10 @@ const ProductDetailHeader = ({
           />
         </div>
 
-        <div className={imageClassSet}>
+        <div
+          className={imageClassSet}
+          data-testid="data-testid-ProductDetailHeader-image"
+        >
           <Hidden isLarge={true} isMedium={true} isXLarge={true}>
             <Breadcrumbs
               className={styles.breadcrumbs}

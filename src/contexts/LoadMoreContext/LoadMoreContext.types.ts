@@ -1,4 +1,5 @@
 import { MouseEventHandler } from 'react';
+import { ComponentWithChildren } from '~/types';
 
 type LoadMoreContextProps = {
   /**
@@ -9,4 +10,6 @@ type LoadMoreContextProps = {
   onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-export type { LoadMoreContextProps };
+type LoadMoreContextProviderType = ComponentWithChildren<LoadMoreContextProps>;
+
+export type { LoadMoreContextProviderType };

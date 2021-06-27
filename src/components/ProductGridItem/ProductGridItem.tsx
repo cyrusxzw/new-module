@@ -99,10 +99,10 @@ const ProductGridItem = forwardRef<HTMLDivElement, ProductGridItemProps>(
               className={styles.variants}
               dataTestRef={RADIO_GROUP_DATA_TEST_REF}
               name={RADIO_GROUP_NAME}
-              onChange={(e) => onVariantChange(e, variants)}
+              onChange={(event) => onVariantChange(event, variants)}
               options={variantRadioOptions}
               theme={theme}
-              value={selectedVariant.sku}
+              value={selectedVariant?.sku}
             />
           )}
         </div>
