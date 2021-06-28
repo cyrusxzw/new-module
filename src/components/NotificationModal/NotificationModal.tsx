@@ -1,17 +1,17 @@
 import React from 'react';
-import type { ReactElement, SyntheticEvent } from 'react';
+import type { SyntheticEvent } from 'react';
 import cx from 'classnames';
 import { useNotificationContext } from '~/contexts';
 import { Icon } from '~/components/Icon';
-import type { NotificationModalProps } from './NotificationModal.types';
+import type { NotificationModalType } from './NotificationModal.types';
 import styles from './NotificationModal.module.css';
 
-const NotificationModal = ({
+const NotificationModal: NotificationModalType = ({
   backgroundColor,
   className,
   notificationMessage,
   ...props
-}: NotificationModalProps): ReactElement => {
+}) => {
   const footerSuccessModal = useNotificationContext();
   const { actionType, dispatch, showModal } = footerSuccessModal;
 

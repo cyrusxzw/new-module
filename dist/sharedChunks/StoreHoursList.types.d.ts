@@ -1,3 +1,4 @@
+import { C as ComponentWithoutChildren } from './Component.types';
 import { T as Themes } from './Themes.types';
 
 declare type HoursListItem = {
@@ -13,5 +14,6 @@ declare type StoreHoursListProps = {
     hoursList?: HoursListItem[];
     theme?: Themes;
 };
+declare type StoreHoursListType = ComponentWithoutChildren<StoreHoursListProps>;
 
-export { HoursListItem as H, StoreHoursListProps as S };
+export { HoursListItem as H, StoreHoursListType as S };

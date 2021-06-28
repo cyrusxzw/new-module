@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 import type { HoursListItem } from '~/components/StoreHoursList/StoreHoursList.types';
 
 type StoreDetailCopy = {
@@ -20,4 +20,6 @@ type StoreDetailHeaderProps = {
   theme?: Themes;
 };
 
-export type { StoreDetailHeaderProps };
+type StoreDetailHeaderType = ComponentWithoutChildren<StoreDetailHeaderProps>;
+
+export type { StoreDetailHeaderProps, StoreDetailHeaderType };

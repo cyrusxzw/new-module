@@ -1,4 +1,5 @@
-import { ReactNode, ReactElement } from 'react';
+import { ReactNode } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type SectionHeadingProps = {
@@ -20,7 +21,8 @@ declare type SectionHeadingProps = {
     theme?: Themes;
     titleFont?: 'Suisse' | 'Zapf';
 };
+declare type SectionHeadingType = ComponentWithoutChildren<SectionHeadingProps>;
 
-declare const SectionHeading: ({ childrenClassNames, className, eyebrow, hasSerifFontHeading, heading, id, isFlush, isOffsetPageHeading, isHeroHeading, isPageHeading, subHeading, theme, titleFont, }: SectionHeadingProps) => ReactElement | null;
+declare const SectionHeading: SectionHeadingType;
 
 export { SectionHeading };

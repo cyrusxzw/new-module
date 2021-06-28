@@ -1,8 +1,9 @@
 /// <reference types="react" />
-import { ReactElement } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import { V as Variant } from '../../sharedChunks/Variant.types';
 import { a as BreadcrumbItem } from '../../sharedChunks/Breadcrumbs.types';
+import 'react';
 
 declare type ProductDetailBodyCopy = {
     addToCart?: {
@@ -34,7 +35,8 @@ declare type ProductDetailHeaderProps = {
     paymentWidget?: React.ReactNode;
     theme?: Themes;
 };
+declare type ProductDetailHeaderType = ComponentWithoutChildren<ProductDetailHeaderProps>;
 
-declare const ProductDetailHeader: ({ breadcrumbs, className, copy, onBreadcrumbClick, onFlyinOpenCloseClick, paymentWidget, theme, }: ProductDetailHeaderProps) => ReactElement;
+declare const ProductDetailHeader: ProductDetailHeaderType;
 
 export { ProductDetailHeader };

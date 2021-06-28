@@ -1,3 +1,4 @@
+import { C as ComponentWithoutChildren } from './Component.types';
 import { T as Themes } from './Themes.types';
 
 declare type BreadcrumbItem = {
@@ -12,5 +13,6 @@ declare type BreadcrumbsProps = {
     onHyperlinkClick?: (item: BreadcrumbItem) => void;
     theme?: Themes;
 };
+declare type BreadcrumbsType = ComponentWithoutChildren<BreadcrumbsProps>;
 
-export { BreadcrumbsProps as B, BreadcrumbItem as a };
+export { BreadcrumbsType as B, BreadcrumbItem as a };

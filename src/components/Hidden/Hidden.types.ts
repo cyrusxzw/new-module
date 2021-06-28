@@ -1,3 +1,5 @@
+import type { ComponentWithChildren } from '~/types';
+
 type HiddenProps = {
   children: React.ReactNode;
   isLarge?: boolean;
@@ -6,4 +8,6 @@ type HiddenProps = {
   isXLarge?: boolean;
 };
 
-export type { HiddenProps };
+type HiddenType = ComponentWithChildren<HiddenProps>;
+
+export type { HiddenProps, HiddenType };

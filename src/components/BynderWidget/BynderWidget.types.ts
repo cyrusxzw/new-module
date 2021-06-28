@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type BynderWidgetProps = {
   className?: string;
@@ -7,4 +7,6 @@ type BynderWidgetProps = {
   theme?: Themes;
 };
 
-export type { BynderWidgetProps };
+type BynderWidgetType = ComponentWithoutChildren<BynderWidgetProps>;
+
+export type { BynderWidgetProps, BynderWidgetType };

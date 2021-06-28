@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type BreadcrumbItem = {
   label: string;
@@ -14,4 +14,6 @@ type BreadcrumbsProps = {
   theme?: Themes;
 };
 
-export type { BreadcrumbsProps, BreadcrumbItem };
+type BreadcrumbsType = ComponentWithoutChildren<BreadcrumbsProps>;
+
+export type { BreadcrumbsProps, BreadcrumbsType, BreadcrumbItem };

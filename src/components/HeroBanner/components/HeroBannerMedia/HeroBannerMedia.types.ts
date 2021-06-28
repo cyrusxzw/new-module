@@ -1,4 +1,5 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
+import type { ComponentWithoutChildren } from '~/types';
 import type {
   HeroBannerVariations,
   HeroBannerMediaAnchorPoints,
@@ -17,4 +18,6 @@ type HeroBannerMediaProps = {
   variation?: HeroBannerVariations;
 };
 
-export type { HeroBannerMediaProps };
+type HeroBannerMediaType = ComponentWithoutChildren<HeroBannerMediaProps>;
+
+export type { HeroBannerMediaProps, HeroBannerMediaType };

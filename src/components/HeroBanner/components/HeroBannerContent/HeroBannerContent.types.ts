@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import type { Themes } from '~/types';
+import type { ReactNode } from 'react';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 import type {
   HeroBannerCopy,
   HeroBannerVariations,
@@ -16,4 +16,6 @@ type HeroBannerContentProps = {
   variation?: HeroBannerVariations;
 };
 
-export type { HeroBannerContentProps };
+type HeroBannerContentType = ComponentWithoutChildren<HeroBannerContentProps>;
+
+export type { HeroBannerContentProps, HeroBannerContentType };

@@ -1,13 +1,15 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
-type Sizes = 'small' | 'medium' | 'large';
+type LoadingSizes = 'small' | 'medium' | 'large';
 
 type LoadingProps = {
   className?: string;
   isLoading: boolean;
   shouldFillSpace?: boolean;
-  size?: Sizes;
+  size?: LoadingSizes;
   theme?: Themes;
 };
 
-export type { LoadingProps };
+type LoadingType = ComponentWithoutChildren<LoadingProps>;
+
+export type { LoadingProps, LoadingType };

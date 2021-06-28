@@ -1,4 +1,4 @@
-import React, { useState, ReactElement } from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 import {
   useProductDetailContext,
@@ -19,16 +19,16 @@ import { Paragraph } from '~/components/Paragraph';
 import { ProductExtract } from '~/components/ProductExtract/index.ts';
 import { RadioGroup } from '~/components/RadioGroup';
 import { Transition } from '~/components/Transition';
-import type { ProductDetailBodyProps } from './ProductDetailBody.types';
+import type { ProductDetailBodyType } from './ProductDetailBody.types';
 import styles from './ProductDetailBody.module.css';
 
-const ProductDetailBody = ({
+const ProductDetailBody: ProductDetailBodyType = ({
   className,
   copy,
   theme,
   onFlyinOpenCloseClick,
   paymentWidget,
-}: ProductDetailBodyProps): ReactElement | null => {
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const [isFlyinPanelVisible, setIsFlyinPanelVisible] = useState(false);
   const { productDetail } = useProductDetailContext();

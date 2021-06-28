@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type AddToCartButtonProps = {
   className?: string;
@@ -17,4 +17,6 @@ type AddToCartButtonProps = {
   theme?: Themes;
 };
 
-export type { AddToCartButtonProps };
+type AddToCartButtonType = ComponentWithoutChildren<AddToCartButtonProps>;
+
+export type { AddToCartButtonProps, AddToCartButtonType };

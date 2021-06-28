@@ -1,18 +1,18 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import find from 'lodash/find';
 import { useThemeContext } from '~/contexts';
 import { Heading } from '~/components/Heading/index.ts';
-import type { StoreHoursListProps } from './StoreHoursList.types';
+import type { StoreHoursListType } from './StoreHoursList.types';
 import styles from './StoreHoursList.module.css';
 
-const StoreHoursList = ({
+const StoreHoursList: StoreHoursListType = ({
   alternateHoursNote,
   className,
   heading,
   hoursList = [],
   theme,
-}: StoreHoursListProps): ReactElement | null => {
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
 
   if (hoursList.length === 0) {

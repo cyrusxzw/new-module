@@ -1,14 +1,14 @@
-import React, { forwardRef, ReactElement } from 'react';
+import React, { forwardRef } from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { Heading } from '~/components/Heading';
 import { Hyperlink } from '~/components/Hyperlink';
 import { List } from '~/components/List';
 import type { ListItem } from '~/components/List/List.types';
-import type { TwoColumnListProps, ColumnProps } from './TwoColumnList.types';
+import type { TwoColumnListProps, ColumnType } from './TwoColumnList.types';
 import styles from './TwoColumnList.module.css';
 
-const Column = ({ lists, theme }: ColumnProps): ReactElement | null => {
+const Column: ColumnType = ({ lists, theme }) => {
   return (
     <div className={styles.column}>
       {lists.map(({ heading, id, items, subHeading }) => {

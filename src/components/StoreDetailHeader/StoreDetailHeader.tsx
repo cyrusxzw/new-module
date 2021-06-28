@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS } from '~/constants';
@@ -6,14 +6,14 @@ import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { StoreHoursList } from '~/components/StoreHoursList/index.ts';
 import { TwoColumnLayout } from '~/components/TwoColumnLayout/index.ts';
-import type { StoreDetailHeaderProps } from './StoreDetailHeader.types';
+import type { StoreDetailHeaderType } from './StoreDetailHeader.types';
 import styles from './StoreDetailHeader.module.css';
 
 const DATA_TEST_REF_LOCATION = 'STORE_DETAILS_DIRECTION_LINK';
 const DATA_TEST_REF_EMAIL = 'STORE_DETAILS_DIRECTION_EMAIL';
 const DATA_TEST_REF_PHONE = 'STORE_DETAILS_DIRECTION_PHONE';
 
-const StoreDetailHeader = ({
+const StoreDetailHeader: StoreDetailHeaderType = ({
   alternateHoursNote,
   className,
   copy,
@@ -23,7 +23,7 @@ const StoreDetailHeader = ({
   phone,
   storeName,
   theme,
-}: StoreDetailHeaderProps): ReactElement => {
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const classSet = cx(styles.base, styles[currentTheme], className);
 

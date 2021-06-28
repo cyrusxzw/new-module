@@ -1,4 +1,5 @@
-import { ReactNode, LegacyRef, FC } from 'react';
+import { ReactNode, LegacyRef } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import { I as ImageProps } from '../../sharedChunks/Image.types';
 import { L as LinkStyle } from '../../sharedChunks/Hyperlink.types';
@@ -11,9 +12,9 @@ declare type CarouselIntroductionProps = {
         text?: string;
     };
     description?: ReactNode;
+    eyebrow?: string;
     heading?: string;
     theme?: Themes;
-    eyebrow?: string;
 };
 
 declare type Slide = {
@@ -41,7 +42,8 @@ declare type CarouselProps = {
     slideRefs?: LegacyRef<HTMLDivElement>[];
     theme?: Themes;
 };
+declare type CarouselType = ComponentWithoutChildren<CarouselProps>;
 
-declare const Carousel: FC<CarouselProps>;
+declare const Carousel: CarouselType;
 
 export { Carousel };

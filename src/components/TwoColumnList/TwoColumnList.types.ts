@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 import type { LinkStyle } from '~/components/Hyperlink/Hyperlink.types';
 
 /**
@@ -25,6 +25,8 @@ type ColumnProps = {
   theme?: Themes;
 };
 
+type ColumnType = ComponentWithoutChildren<ColumnProps>;
+
 type TwoColumnListProps = {
   className?: string;
   leftColumn: List[];
@@ -32,4 +34,4 @@ type TwoColumnListProps = {
   theme?: Themes;
 };
 
-export type { TwoColumnListProps, ColumnProps };
+export type { TwoColumnListProps, ColumnProps, ColumnType };

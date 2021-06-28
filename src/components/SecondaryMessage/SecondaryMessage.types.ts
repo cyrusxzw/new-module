@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 import type { MessageProps } from './components/Message/Message.types';
 
 type SecondaryMessageProps = {
@@ -8,4 +8,6 @@ type SecondaryMessageProps = {
   theme?: Themes;
 };
 
-export type { SecondaryMessageProps };
+type SecondaryMessageType = ComponentWithoutChildren<SecondaryMessageProps>;
+
+export type { SecondaryMessageProps, SecondaryMessageType };

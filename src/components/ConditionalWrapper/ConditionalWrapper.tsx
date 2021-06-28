@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
-import type { ConditionalWrapperProps } from './ConditionalWrapper.types.';
+import React from 'react';
+import type { ConditionalWrapperType } from './ConditionalWrapper.types';
 
-const ConditionalWrapper: FC<ConditionalWrapperProps> = ({
+const ConditionalWrapper: ConditionalWrapperType = ({
   alternateWrapper,
   children,
   condition,

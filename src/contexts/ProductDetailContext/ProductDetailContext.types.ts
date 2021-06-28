@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
-import { ComponentWithChildren, Product } from '~/types';
+import type { ComponentWithChildren, Product } from '~/types';
 
 type ProductDetailContextType = {
   productDetail: Product;
@@ -15,6 +15,7 @@ type ProductDetailContextProps = {
 type ProductDetailContextProviderType = ComponentWithChildren<ProductDetailContextProps>;
 
 export {
+  ProductDetailContextProps,
   ProductDetailContextType,
   ProductDetailContextProviderType,
   UseProductDetailStore,

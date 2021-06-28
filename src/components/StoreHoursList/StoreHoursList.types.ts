@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type HoursListItem = {
   dayName?: string;
@@ -15,4 +15,6 @@ type StoreHoursListProps = {
   theme?: Themes;
 };
 
-export type { StoreHoursListProps, HoursListItem };
+type StoreHoursListType = ComponentWithoutChildren<StoreHoursListProps>;
+
+export type { StoreHoursListProps, StoreHoursListType, HoursListItem };

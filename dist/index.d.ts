@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1, { ReactElement, ReactNode, Dispatch, FC, MouseEvent, CSSProperties, LegacyRef, MutableRefObject, MouseEventHandler, SetStateAction, ChangeEvent, RefObject } from 'react';
+import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, MutableRefObject, MouseEventHandler, SetStateAction, ChangeEvent, RefObject } from 'react';
 import PropTypes from 'prop-types';
 
 declare type DefaultReactComponentReturn = ReactElement<any, any> | null;
@@ -151,8 +151,9 @@ declare type AddToCartButtonProps = {
     isFullWidth?: boolean;
     theme?: Themes;
 };
+declare type AddToCartButtonType = ComponentWithoutChildren<AddToCartButtonProps>;
 
-declare const AddToCartButton: FC<AddToCartButtonProps>;
+declare const AddToCartButton: AddToCartButtonType;
 
 declare type ProgressColor = 'orange' | 'green' | 'blue';
 declare type AudioCopy = {
@@ -174,8 +175,9 @@ declare type AudioProps = {
     progressColor?: ProgressColor;
     trackTitle?: string;
 };
+declare type AudioType = ComponentWithoutChildren<AudioProps>;
 
-declare const Audio: FC<AudioProps>;
+declare const Audio: AudioType;
 
 declare type BodyCopyProps = {
     childrenClassNames?: {
@@ -210,8 +212,9 @@ declare type BreadcrumbsProps = {
     onHyperlinkClick?: (item: BreadcrumbItem) => void;
     theme?: Themes;
 };
+declare type BreadcrumbsType = ComponentWithoutChildren<BreadcrumbsProps>;
 
-declare const Breadcrumbs: FC<BreadcrumbsProps>;
+declare const Breadcrumbs: BreadcrumbsType;
 
 declare type ButtonBehaviourType = 'button' | 'reset' | 'submit';
 declare type ButtonProps = {
@@ -237,8 +240,9 @@ declare type BynderWidgetProps = {
     id: string;
     theme?: Themes;
 };
+declare type BynderWidgetType = ComponentWithoutChildren<BynderWidgetProps>;
 
-declare const BynderWidget: FC<BynderWidgetProps>;
+declare const BynderWidget: BynderWidgetType;
 
 declare type ImageProps = {
     altText?: string;
@@ -288,9 +292,9 @@ declare type CarouselIntroductionProps = {
         text?: string;
     };
     description?: ReactNode;
+    eyebrow?: string;
     heading?: string;
     theme?: Themes;
-    eyebrow?: string;
 };
 
 declare type Slide = {
@@ -318,8 +322,9 @@ declare type CarouselProps = {
     slideRefs?: LegacyRef<HTMLDivElement>[];
     theme?: Themes;
 };
+declare type CarouselType = ComponentWithoutChildren<CarouselProps>;
 
-declare const Carousel: FC<CarouselProps>;
+declare const Carousel: CarouselType;
 
 declare type CheckboxProps = {
     checkboxClassName?: string;
@@ -352,8 +357,9 @@ declare type ConditionalWrapperProps = {
      */
     wrapper: Wrapper;
 };
+declare type ConditionalWrapperType = ComponentWithChildren<ConditionalWrapperProps>;
 
-declare const ConditionalWrapper: FC<ConditionalWrapperProps>;
+declare const ConditionalWrapper: ConditionalWrapperType;
 
 declare type Image = Pick<ImageProps, 'altText' | 'sizes'>;
 declare type Article = {
@@ -582,7 +588,6 @@ declare const DoubleMedia: DoubleMediaType;
 
 declare type FigureProps = {
     caption?: string;
-    children?: React.ReactNode;
     className?: string;
     hasCaptionBorder?: boolean;
     hasCaptionOffset?: boolean;
@@ -590,8 +595,9 @@ declare type FigureProps = {
     theme?: string;
     foo?: boolean;
 };
+declare type FigureType = ComponentWithChildren<FigureProps>;
 
-declare const Figure: FC<FigureProps>;
+declare const Figure: FigureType;
 
 declare type FlyinPanelProps = {
     children: React.ReactNode;
@@ -604,8 +610,9 @@ declare type FlyinPanelProps = {
     onClose: () => void;
     theme?: Themes;
 };
+declare type FlyinPanelType = ComponentWithChildren<FlyinPanelProps>;
 
-declare const FlyinPanel: ({ children, className, copy, heading, isVisible, onClose, theme, }: FlyinPanelProps) => ReactElement | null;
+declare const FlyinPanel: FlyinPanelType;
 
 declare function FooterBlock({ className, copy, heading, headingClassName, isVisibleOnTabletAndMobile, links, listClassName, listItemClassName, theme, }: {
     className: any;
@@ -801,7 +808,6 @@ declare namespace GoogleMap {
 declare type HeadingLevels = '1' | '2' | '3' | '4' | '5' | '6';
 declare type HeadingSizes = 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
 declare type HeadingProps = {
-    children?: React.ReactNode;
     className?: string;
     hasMediumWeightFont?: boolean;
     hasSerifFont?: boolean;
@@ -811,8 +817,9 @@ declare type HeadingProps = {
     size: HeadingSizes;
     theme?: Themes;
 };
+declare type HeadingType = ComponentWithChildren<HeadingProps>;
 
-declare const Heading: FC<HeadingProps>;
+declare const Heading: HeadingType;
 
 declare type HeroBannerMediaAnchorPoints = 'center' | 'left' | 'right' | 'bottom' | 'top';
 declare type HeroBannerVariations = 'article-header' | 'default' | 'fifty-fifty' | 'full-display' | 'landing-header' | 'wide-header';
@@ -849,8 +856,9 @@ declare type HiddenProps = {
     isSmall?: boolean;
     isXLarge?: boolean;
 };
+declare type HiddenType = ComponentWithChildren<HiddenProps>;
 
-declare const Hidden: ({ children, isLarge, isMedium, isSmall, isXLarge, }: HiddenProps) => ReactElement | null;
+declare const Hidden: HiddenType;
 
 declare type Media = {
     sizes?: {
@@ -933,8 +941,9 @@ declare type ProductAccordionProps = {
     openIndex?: string;
     products: Product$1[];
 };
+declare type ProductAccordionType = ComponentWithoutChildren<ProductAccordionProps>;
 
-declare function ProductAccordion({ id, products, addToCartCopy, }: ProductAccordionProps): ReactElement;
+declare const ProductAccordion: ProductAccordionType;
 
 declare const Hyperlink: React$1.ForwardRefExoticComponent<HyperlinkProps & React$1.RefAttributes<HTMLAnchorElement>>;
 
@@ -950,8 +959,9 @@ declare type IconProps = {
     title?: string;
     width?: number;
 };
+declare type IconType = ComponentWithoutChildren<IconProps>;
 
-declare const Icon: FC<IconProps>;
+declare const Icon: IconType;
 
 declare function IconLink({ altText, className, dataTestRef, hasTargetInNewWindow, height, icon, iconImageClassName, target, width, }: {
     altText: any;
@@ -1014,8 +1024,9 @@ declare type ImageCarouselProps = {
     slides?: Slide$1[];
     theme?: Themes;
 };
+declare type ImageCarouselType = ComponentWithoutChildren<ImageCarouselProps>;
 
-declare const ImageCarousel: ({ autoplaySpeed, className, hasAutoplay, hasFlushPagination, isCompact, slides, theme, }: ImageCarouselProps) => ReactElement | null;
+declare const ImageCarousel: ImageCarouselType;
 
 declare type ListItem = {
     content: React.ReactNode;
@@ -1051,8 +1062,9 @@ declare type LinkButtonGroupProps = {
     textAlign?: 'center' | 'left' | 'right';
     theme?: Themes;
 };
+declare type LinkButtonGroupType = (props: LinkButtonGroupProps) => ReactElement | null;
 
-declare const LinkButtonGroup: ({ children, className, hasFitContent, isFlush, isFullWidth, textAlign, theme, }: LinkButtonGroupProps) => React$1.ReactElement;
+declare const LinkButtonGroup: LinkButtonGroupType;
 
 declare const List: React$1.ForwardRefExoticComponent<ListProps & React$1.RefAttributes<HTMLUListElement>>;
 
@@ -1085,16 +1097,17 @@ declare namespace LoadMoreButton {
     }
 }
 
-declare type Sizes = 'small' | 'medium' | 'large';
+declare type LoadingSizes = 'small' | 'medium' | 'large';
 declare type LoadingProps = {
     className?: string;
     isLoading: boolean;
     shouldFillSpace?: boolean;
-    size?: Sizes;
+    size?: LoadingSizes;
     theme?: Themes;
 };
+declare type LoadingType = ComponentWithoutChildren<LoadingProps>;
 
-declare const Loading: FC<LoadingProps>;
+declare const Loading: LoadingType;
 
 declare type ContentCopy = {
     description?: React.ReactNode;
@@ -1138,8 +1151,9 @@ declare type ModalAndModalBodyProps = {
     theme?: Themes;
 };
 declare type ModalProps = ModalAndModalBodyProps & ModalBodyCopy;
+declare type ModalType = ComponentWithChildren<ModalProps>;
 
-declare const Modal: FC<ModalProps>;
+declare const Modal: ModalType;
 
 declare function NavigationBar({ childLinks, className, parentLink, selectedUrl }: {
     childLinks: any;
@@ -1179,16 +1193,18 @@ declare type NotificationModalProps = {
     className?: string;
     notificationMessage?: string;
 };
+declare type NotificationModalType = ComponentWithoutChildren<NotificationModalProps>;
 
-declare const NotificationModal: ({ backgroundColor, className, notificationMessage, ...props }: NotificationModalProps) => ReactElement;
+declare const NotificationModal: NotificationModalType;
 
 declare type OverlayProps = {
     className?: string;
     isVisible?: boolean;
     onClose: () => void;
 };
+declare type OverlayType = ComponentWithoutChildren<OverlayProps>;
 
-declare const Overlay: ({ className, isVisible, onClose }: OverlayProps) => JSX.Element;
+declare const Overlay: OverlayType;
 
 declare type ParagraphProps = {
     className?: string;
@@ -1198,24 +1214,27 @@ declare type ParagraphProps = {
     isLarge?: boolean;
     theme?: Themes;
 };
+declare type ParagraphType = ComponentWithChildren<ParagraphProps>;
 declare type ParagraphSetProps = {
     className?: string;
     isLarge?: boolean;
     theme?: Themes;
 };
+declare type ParagraphSetType = ComponentWithChildren<ParagraphSetProps>;
 
-declare const Paragraph: FC<ParagraphProps>;
-declare const ParagraphSet: FC<ParagraphSetProps>;
+declare const Paragraph: ParagraphType;
+declare const ParagraphSet: ParagraphSetType;
 
-declare type TransitionType = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
+declare type TransitionTypeLabel = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
 declare type TransitionProps = {
     children: JSX.Element;
     isActive?: boolean;
     isActiveOnMount?: boolean;
     shouldMountOnEnter?: boolean;
     shouldUnmountOnExit?: boolean;
-    type?: TransitionType;
+    type?: TransitionTypeLabel;
 };
+declare type TransitionType = (props: TransitionProps) => ReactElement | null;
 
 declare type HorizontalPadding = 'none' | 'small';
 declare type VerticalPadding = 'none' | 'small' | 'medium' | 'large';
@@ -1236,7 +1255,7 @@ declare type PodiumProps = {
     paddingRight?: HorizontalPadding;
     paddingTop?: VerticalPadding;
     theme?: Themes;
-    transition?: TransitionType;
+    transition?: TransitionTypeLabel;
     verticalPadding?: VerticalPadding;
 };
 
@@ -1348,8 +1367,9 @@ declare type ProductDetailHeaderProps = {
     paymentWidget?: React.ReactNode;
     theme?: Themes;
 };
+declare type ProductDetailHeaderType = ComponentWithoutChildren<ProductDetailHeaderProps>;
 
-declare const ProductDetailHeader: ({ breadcrumbs, className, copy, onBreadcrumbClick, onFlyinOpenCloseClick, paymentWidget, theme, }: ProductDetailHeaderProps) => ReactElement;
+declare const ProductDetailHeader: ProductDetailHeaderType;
 
 declare type QuoteProps = {
     author: string;
@@ -1439,8 +1459,9 @@ declare type SecondaryMessageProps = {
     items?: [MessageProps?, MessageProps?];
     theme?: Themes;
 };
+declare type SecondaryMessageType = ComponentWithoutChildren<SecondaryMessageProps>;
 
-declare const SecondaryMessage: ({ className, id, items, theme, }: SecondaryMessageProps) => ReactElement | null;
+declare const SecondaryMessage: SecondaryMessageType;
 
 declare type SectionHeadingProps = {
     childrenClassNames?: {
@@ -1461,8 +1482,9 @@ declare type SectionHeadingProps = {
     theme?: Themes;
     titleFont?: 'Suisse' | 'Zapf';
 };
+declare type SectionHeadingType = ComponentWithoutChildren<SectionHeadingProps>;
 
-declare const SectionHeading: ({ childrenClassNames, className, eyebrow, hasSerifFontHeading, heading, id, isFlush, isOffsetPageHeading, isHeroHeading, isPageHeading, subHeading, theme, titleFont, }: SectionHeadingProps) => ReactElement | null;
+declare const SectionHeading: SectionHeadingType;
 
 declare type SelectOption = {
     id?: string;
@@ -1499,6 +1521,7 @@ declare type StoreHoursListProps = {
     hoursList?: HoursListItem[];
     theme?: Themes;
 };
+declare type StoreHoursListType = ComponentWithoutChildren<StoreHoursListProps>;
 
 declare type StoreDetailCopy = {
     location?: string;
@@ -1517,10 +1540,11 @@ declare type StoreDetailHeaderProps = {
     storeName: string;
     theme?: Themes;
 };
+declare type StoreDetailHeaderType = ComponentWithoutChildren<StoreDetailHeaderProps>;
 
-declare const StoreDetailHeader: ({ alternateHoursNote, className, copy, email, location, openingHours, phone, storeName, theme, }: StoreDetailHeaderProps) => ReactElement;
+declare const StoreDetailHeader: StoreDetailHeaderType;
 
-declare const StoreHoursList: ({ alternateHoursNote, className, heading, hoursList, theme, }: StoreHoursListProps) => ReactElement | null;
+declare const StoreHoursList: StoreHoursListType;
 
 declare type SubNavLink = {
     children: string /** @todo change this prop api to content or text  */;
@@ -1716,7 +1740,7 @@ declare namespace TextOverFullWidthAsset {
     }
 }
 
-declare const Transition: ({ children, isActive, isActiveOnMount, shouldMountOnEnter, shouldUnmountOnExit, type, }: TransitionProps) => ReactElement | null;
+declare const Transition: TransitionType;
 
 declare type TwoColumnLayoutProps = {
     childrenClassNames?: {
@@ -1732,8 +1756,9 @@ declare type TwoColumnLayoutProps = {
     sidebar?: React.ReactNode;
     theme?: Themes;
 };
+declare type TwoColumnLayoutType = ComponentWithoutChildren<TwoColumnLayoutProps>;
 
-declare const TwoColumnLayout: ({ childrenClassNames, className, content, hasFullWidthContent, id, isFlushOnSmall, isReversed, sidebar, theme, }: TwoColumnLayoutProps) => ReactElement;
+declare const TwoColumnLayout: TwoColumnLayoutType;
 
 /**
  * Not using HyperlinkType as url is not required here

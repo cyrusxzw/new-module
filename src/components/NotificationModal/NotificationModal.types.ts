@@ -1,7 +1,11 @@
+import type { ComponentWithoutChildren } from '~/types';
+
 type NotificationModalProps = {
   backgroundColor?: string;
   className?: string;
   notificationMessage?: string;
 };
 
-export type { NotificationModalProps };
+type NotificationModalType = ComponentWithoutChildren<NotificationModalProps>;
+
+export type { NotificationModalProps, NotificationModalType };

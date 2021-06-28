@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithChildren, Themes } from '~/types';
 
 type FlyinPanelProps = {
   children: React.ReactNode;
@@ -12,4 +12,6 @@ type FlyinPanelProps = {
   theme?: Themes;
 };
 
-export type { FlyinPanelProps };
+type FlyinPanelType = ComponentWithChildren<FlyinPanelProps>;
+
+export type { FlyinPanelProps, FlyinPanelType };

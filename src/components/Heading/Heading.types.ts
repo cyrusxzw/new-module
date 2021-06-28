@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithChildren, Themes } from '~/types';
 
 type HeadingLevels = '1' | '2' | '3' | '4' | '5' | '6';
 
@@ -11,7 +11,6 @@ type HeadingSizes =
   | 'xLarge';
 
 type HeadingProps = {
-  children?: React.ReactNode;
   className?: string;
   hasMediumWeightFont?: boolean;
   hasSerifFont?: boolean;
@@ -22,4 +21,6 @@ type HeadingProps = {
   theme?: Themes;
 };
 
-export type { HeadingProps, HeadingLevels, HeadingSizes };
+type HeadingType = ComponentWithChildren<HeadingProps>;
+
+export type { HeadingLevels, HeadingProps, HeadingSizes, HeadingType };

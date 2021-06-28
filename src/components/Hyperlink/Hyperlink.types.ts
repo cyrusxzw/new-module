@@ -1,4 +1,4 @@
-import { MouseEvent, ReactNode } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 import type { Themes } from '~/types';
 
 type TextAlign = 'center' | 'left' | 'right';

@@ -1,6 +1,7 @@
 /// <reference types="react" />
-import { ReactElement } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
+import 'react';
 
 declare type TwoColumnLayoutProps = {
     childrenClassNames?: {
@@ -16,7 +17,8 @@ declare type TwoColumnLayoutProps = {
     sidebar?: React.ReactNode;
     theme?: Themes;
 };
+declare type TwoColumnLayoutType = ComponentWithoutChildren<TwoColumnLayoutProps>;
 
-declare const TwoColumnLayout: ({ childrenClassNames, className, content, hasFullWidthContent, id, isFlushOnSmall, isReversed, sidebar, theme, }: TwoColumnLayoutProps) => ReactElement;
+declare const TwoColumnLayout: TwoColumnLayoutType;
 
 export { TwoColumnLayout };

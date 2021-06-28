@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithChildren, Themes } from '~/types';
 import type { ModalBodyCopy } from './components/ModalBody/ModalBody.types';
 
 type ModalAndModalBodyProps = {
@@ -10,4 +10,6 @@ type ModalAndModalBodyProps = {
 
 type ModalProps = ModalAndModalBodyProps & ModalBodyCopy;
 
-export type { ModalProps, ModalAndModalBodyProps };
+type ModalType = ComponentWithChildren<ModalProps>;
+
+export type { ModalType, ModalProps, ModalAndModalBodyProps };

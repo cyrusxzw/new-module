@@ -22,6 +22,7 @@ type VariantSelectContextProps = {
 type VariantSelectContextProviderType = ComponentWithChildren<VariantSelectContextProps>;
 
 export type {
+  VariantSelectContextProps,
   VariantSelectContextType,
   VariantSelectContextProviderType,
   UseVariantSelectStore,

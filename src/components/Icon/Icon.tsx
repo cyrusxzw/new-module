@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useUID } from 'react-uid';
 import find from 'lodash/find';
 import { svgs } from './Icon.svgs';
 import { generateSvgBlueprint } from './Icon.utils';
-import type { IconProps } from './Icon.types';
+import type { IconType } from './Icon.types';
 import styles from './Icon.module.css';
 
-const Icon: FC<IconProps> = ({
+const Icon: IconType = ({
   className,
   dataRef,
   height = 12,

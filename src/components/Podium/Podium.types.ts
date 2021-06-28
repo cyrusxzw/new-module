@@ -1,5 +1,5 @@
 import type { Themes } from '~/types';
-import type { TransitionType } from '~/components/Transition/Transition.types';
+import type { TransitionTypeLabel } from '~/components/Transition/Transition.types';
 
 type HorizontalPadding = 'none' | 'small';
 type VerticalPadding = 'none' | 'small' | 'medium' | 'large';
@@ -21,7 +21,7 @@ type PodiumProps = {
   paddingRight?: HorizontalPadding;
   paddingTop?: VerticalPadding;
   theme?: Themes;
-  transition?: TransitionType;
+  transition?: TransitionTypeLabel;
   verticalPadding?: VerticalPadding;
 };
 

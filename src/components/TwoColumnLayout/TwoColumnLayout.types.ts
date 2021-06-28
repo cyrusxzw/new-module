@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type TwoColumnLayoutProps = {
   childrenClassNames?: {
@@ -15,4 +15,6 @@ type TwoColumnLayoutProps = {
   theme?: Themes;
 };
 
-export type { TwoColumnLayoutProps };
+type TwoColumnLayoutType = ComponentWithoutChildren<TwoColumnLayoutProps>;
+
+export type { TwoColumnLayoutProps, TwoColumnLayoutType };

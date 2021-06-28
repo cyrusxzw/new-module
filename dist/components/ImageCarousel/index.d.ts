@@ -1,6 +1,7 @@
-import { ReactElement } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import { I as ImageProps } from '../../sharedChunks/Image.types';
+import 'react';
 
 declare type Slide = {
     caption?: string;
@@ -16,7 +17,8 @@ declare type ImageCarouselProps = {
     slides?: Slide[];
     theme?: Themes;
 };
+declare type ImageCarouselType = ComponentWithoutChildren<ImageCarouselProps>;
 
-declare const ImageCarousel: ({ autoplaySpeed, className, hasAutoplay, hasFlushPagination, isCompact, slides, theme, }: ImageCarouselProps) => ReactElement | null;
+declare const ImageCarousel: ImageCarouselType;
 
 export { ImageCarousel };

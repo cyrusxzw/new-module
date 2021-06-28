@@ -1,3 +1,4 @@
+import type { ComponentWithoutChildren } from '~/types';
 import type { OnAddToCartClick } from '~/contexts/AddToCartContext/AddToCartContext.types';
 
 import type {
@@ -17,4 +18,6 @@ type ProductAccordionProps = {
   products: Product[];
 };
 
-export type { ProductAccordionProps };
+type ProductAccordionType = ComponentWithoutChildren<ProductAccordionProps>;
+
+export type { ProductAccordionProps, ProductAccordionType };

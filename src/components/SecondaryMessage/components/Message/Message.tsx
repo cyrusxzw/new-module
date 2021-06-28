@@ -1,22 +1,21 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { ConditionalWrapper } from '~/components/ConditionalWrapper';
 import { Heading } from '~/components/Heading/index.ts';
 import { Hyperlink } from '~/components/Hyperlink';
-import type { MessageProps } from './Message.types';
+import type { MessageType } from './Message.types';
 import styles from './Message.module.css';
 
-const Message = ({
+const Message: MessageType = ({
   className,
   copy,
   heading,
   id,
   link,
   theme,
-}: MessageProps): ReactElement => {
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
-
   const classSet = cx(styles.base, styles[currentTheme], className);
 
   return (

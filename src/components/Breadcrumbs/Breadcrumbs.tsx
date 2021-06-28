@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { isObjectPopulatedArray } from '~/utils/objects';
 import { Hyperlink } from '~/components/Hyperlink';
-import type { BreadcrumbsProps } from './Breadcrumbs.types';
+import type { BreadcrumbsType } from './Breadcrumbs.types';
 import styles from './Breadcrumbs.module.css';
 
-const Breadcrumbs: FC<BreadcrumbsProps> = ({
+const Breadcrumbs: BreadcrumbsType = ({
   className,
   items,
   onHyperlinkClick,

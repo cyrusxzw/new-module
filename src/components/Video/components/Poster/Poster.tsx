@@ -1,18 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { Button } from '~/components/Button';
 import { Image } from '~/components/Image';
 import { Transition } from '~/components/Transition';
-import type { PosterProps } from './Poster.types';
+import type { PosterType } from './Poster.types';
 import styles from './Poster.module.css';
 
-const Poster: FC<PosterProps> = ({
-  className,
-  copy,
-  isActive,
-  onClick,
-  sizes,
-}) => {
+const Poster: PosterType = ({ className, copy, isActive, onClick, sizes }) => {
   const classSet = cx(styles.base, { [styles.isActive]: isActive }, className);
 
   return (

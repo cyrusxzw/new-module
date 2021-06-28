@@ -1,9 +1,10 @@
-import React, { FC, ReactNode } from 'react';
+import React from 'react';
+import { ReactNode } from 'react';
 import { BREAKPOINTS } from '~/constants';
 import type { Themes } from '~/types';
-import type { NextButtonProps } from './components/NextButton/NextButton.types';
-import type { PaginationProps } from './components/Pagination/Pagination.types';
-import type { PreviousButtonProps } from './components/PreviousButton/PreviousButton.types';
+import type { NextButtonType } from './components/NextButton/NextButton.types';
+import type { PaginationType } from './components/Pagination/Pagination.types';
+import type { PreviousButtonType } from './components/PreviousButton/PreviousButton.types';
 
 type GetCarouselSettingsArgs = {
   autoplaySpeed: number;
@@ -14,9 +15,9 @@ type GetCarouselSettingsArgs = {
   initialSlideIndex: number;
   isNextButtonActive: boolean;
   isPreviousButtonActive: boolean;
-  Pagination: FC<PaginationProps>;
-  NextButton: FC<NextButtonProps>;
-  PreviousButton: FC<PreviousButtonProps>;
+  Pagination: PaginationType;
+  NextButton: NextButtonType;
+  PreviousButton: PreviousButtonType;
   progressIndex: number;
   theme: Themes;
 };

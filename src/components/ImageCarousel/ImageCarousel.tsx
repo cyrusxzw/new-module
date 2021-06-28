@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { Carousel } from '~/components/Carousel';
-import type { ImageCarouselProps } from './ImageCarousel.types';
+import type { ImageCarouselType } from './ImageCarousel.types';
 
-const ImageCarousel = ({
+const ImageCarousel: ImageCarouselType = ({
   autoplaySpeed = 3000,
   className,
   hasAutoplay = false,
@@ -10,7 +10,7 @@ const ImageCarousel = ({
   isCompact = false,
   slides = [],
   theme,
-}: ImageCarouselProps): ReactElement | null => (
+}) => (
   <Carousel
     autoplaySpeed={autoplaySpeed}
     className={className}

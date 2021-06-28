@@ -1,11 +1,10 @@
-/// <reference types="react" />
-import { FC } from 'react';
+import { a as ComponentWithChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
+import 'react';
 
 declare type HeadingLevels = '1' | '2' | '3' | '4' | '5' | '6';
 declare type HeadingSizes = 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
 declare type HeadingProps = {
-    children?: React.ReactNode;
     className?: string;
     hasMediumWeightFont?: boolean;
     hasSerifFont?: boolean;
@@ -15,7 +14,8 @@ declare type HeadingProps = {
     size: HeadingSizes;
     theme?: Themes;
 };
+declare type HeadingType = ComponentWithChildren<HeadingProps>;
 
-declare const Heading: FC<HeadingProps>;
+declare const Heading: HeadingType;
 
 export { Heading };

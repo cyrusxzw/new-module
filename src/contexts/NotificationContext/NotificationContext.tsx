@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react';
 import { useNotificationStore } from './NotificationStore';
-import { ComponentWithChildren } from '~/types';
+import type { ComponentWithChildren } from '~/types';
 
 const NotificationContext = createContext(undefined);
 

@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import type { Themes } from '~/types';
 
 type LinkButtonGroupProps = {
@@ -12,4 +13,6 @@ type LinkButtonGroupProps = {
   theme?: Themes;
 };
 
-export type { LinkButtonGroupProps };
+type LinkButtonGroupType = (props: LinkButtonGroupProps) => ReactElement | null;
+
+export type { LinkButtonGroupProps, LinkButtonGroupType };

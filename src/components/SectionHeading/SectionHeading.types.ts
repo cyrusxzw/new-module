@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type SectionHeadingProps = {
   childrenClassNames?: {
@@ -21,4 +21,6 @@ type SectionHeadingProps = {
   titleFont?: 'Suisse' | 'Zapf';
 };
 
-export type { SectionHeadingProps };
+type SectionHeadingType = ComponentWithoutChildren<SectionHeadingProps>;
+
+export type { SectionHeadingProps, SectionHeadingType };

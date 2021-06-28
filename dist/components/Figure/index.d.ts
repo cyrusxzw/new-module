@@ -1,9 +1,8 @@
-/// <reference types="react" />
-import { FC } from 'react';
+import { a as ComponentWithChildren } from '../../sharedChunks/Component.types';
+import 'react';
 
 declare type FigureProps = {
     caption?: string;
-    children?: React.ReactNode;
     className?: string;
     hasCaptionBorder?: boolean;
     hasCaptionOffset?: boolean;
@@ -11,7 +10,8 @@ declare type FigureProps = {
     theme?: string;
     foo?: boolean;
 };
+declare type FigureType = ComponentWithChildren<FigureProps>;
 
-declare const Figure: FC<FigureProps>;
+declare const Figure: FigureType;
 
 export { Figure };

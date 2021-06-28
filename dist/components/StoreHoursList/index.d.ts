@@ -1,7 +1,8 @@
-import { ReactElement } from 'react';
-import { S as StoreHoursListProps } from '../../sharedChunks/StoreHoursList.types';
+import { S as StoreHoursListType } from '../../sharedChunks/StoreHoursList.types';
+import '../../sharedChunks/Component.types';
+import 'react';
 import '../../sharedChunks/Themes.types';
 
-declare const StoreHoursList: ({ alternateHoursNote, className, heading, hoursList, theme, }: StoreHoursListProps) => ReactElement | null;
+declare const StoreHoursList: StoreHoursListType;
 
 export { StoreHoursList };

@@ -27,4 +27,4 @@ type ContentHubArticleProps = Article & {
 
 type ContentHubArticleType = ComponentWithoutChildren<ContentHubArticleProps>;
 
-export type { ContentHubArticleType, Article };
+export type { ContentHubArticleProps, ContentHubArticleType, Article };

@@ -1,5 +1,5 @@
-import { MouseEventHandler } from 'react';
-import { ComponentWithChildren } from '~/types';
+import type { MouseEventHandler } from 'react';
+import type { ComponentWithChildren } from '~/types';
 
 type LoadMoreContextProps = {
   /**
@@ -12,4 +12,4 @@ type LoadMoreContextProps = {
 
 type LoadMoreContextProviderType = ComponentWithChildren<LoadMoreContextProps>;
 
-export type { LoadMoreContextProviderType };
+export type { LoadMoreContextProps, LoadMoreContextProviderType };

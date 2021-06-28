@@ -1,8 +1,8 @@
-import { ReactNode, ReactElement } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { O as OnAddToCartClick } from '../../sharedChunks/AddToCartContext.types';
+import { ReactNode } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import { V as Variant } from '../../sharedChunks/Variant.types';
-import '../../sharedChunks/Component.types';
 
 declare type Media = {
     sizes?: {
@@ -85,7 +85,8 @@ declare type ProductAccordionProps = {
     openIndex?: string;
     products: Product[];
 };
+declare type ProductAccordionType = ComponentWithoutChildren<ProductAccordionProps>;
 
-declare function ProductAccordion({ id, products, addToCartCopy, }: ProductAccordionProps): ReactElement;
+declare const ProductAccordion: ProductAccordionType;
 
 export { ProductAccordion as HorizontalProductDisplayAccordion, ProductAccordion };

@@ -1,5 +1,5 @@
 import type { Themes } from '~/types';
-import { ImageProps } from '~/components/Image/Image.types';
+import type { ImageProps } from '~/components/Image/Image.types';
 
 type ProductExtractProps = {
   dataTestRef: string;

@@ -1,4 +1,4 @@
-import { ComponentWithChildren } from '~/types';
+import type { ComponentWithChildren } from '~/types';
 
 type Options = {
   libraries?: string[];
@@ -13,4 +13,4 @@ type GoogleMapsContextProps = {
 
 type GoogleMapsContextProviderType = ComponentWithChildren<GoogleMapsContextProps>;
 
-export type { GoogleMapsContextProviderType, Options };
+export type { GoogleMapsContextProviderType, GoogleMapsContextProps, Options };

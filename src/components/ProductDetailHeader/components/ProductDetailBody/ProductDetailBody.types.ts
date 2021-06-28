@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type ProductDetailBodyCopy = {
   addToCart?: {
@@ -25,4 +25,10 @@ type ProductDetailBodyProps = {
   paymentWidget?: React.ReactNode;
 };
 
-export type { ProductDetailBodyProps, ProductDetailBodyCopy };
+type ProductDetailBodyType = ComponentWithoutChildren<ProductDetailBodyProps>;
+
+export type {
+  ProductDetailBodyProps,
+  ProductDetailBodyType,
+  ProductDetailBodyCopy,
+};

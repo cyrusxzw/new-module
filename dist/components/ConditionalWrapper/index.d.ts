@@ -1,4 +1,5 @@
-import { ReactNode, ReactElement, FC } from 'react';
+import { ReactNode, ReactElement } from 'react';
+import { a as ComponentWithChildren } from '../../sharedChunks/Component.types';
 
 declare type Wrapper = (children: ReactNode) => ReactElement;
 declare type ConditionalWrapperProps = {
@@ -15,7 +16,8 @@ declare type ConditionalWrapperProps = {
      */
     wrapper: Wrapper;
 };
+declare type ConditionalWrapperType = ComponentWithChildren<ConditionalWrapperProps>;
 
-declare const ConditionalWrapper: FC<ConditionalWrapperProps>;
+declare const ConditionalWrapper: ConditionalWrapperType;
 
 export { ConditionalWrapper };

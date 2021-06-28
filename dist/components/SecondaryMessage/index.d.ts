@@ -1,5 +1,6 @@
-import { ReactElement } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
+import 'react';
 
 declare type MessageProps = {
     className?: string;
@@ -19,7 +20,8 @@ declare type SecondaryMessageProps = {
     items?: [MessageProps?, MessageProps?];
     theme?: Themes;
 };
+declare type SecondaryMessageType = ComponentWithoutChildren<SecondaryMessageProps>;
 
-declare const SecondaryMessage: ({ className, id, items, theme, }: SecondaryMessageProps) => ReactElement | null;
+declare const SecondaryMessage: SecondaryMessageType;
 
 export { SecondaryMessage };

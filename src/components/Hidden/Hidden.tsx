@@ -1,15 +1,15 @@
-import React, { ReactElement } from 'react';
-import type { HiddenProps } from './Hidden.types';
+import React from 'react';
+import type { HiddenType } from './Hidden.types';
 import { useWindowHasResized } from '~/customHooks';
 import { isViewport } from '~/utils/viewport';
 
-const Hidden = ({
+const Hidden: HiddenType = ({
   children,
   isLarge = false,
   isMedium = false,
   isSmall = false,
   isXLarge = false,
-}: HiddenProps): ReactElement | null => {
+}) => {
   useWindowHasResized();
 
   const isHiddenOnSmall = isSmall && isViewport('xs to sm only');

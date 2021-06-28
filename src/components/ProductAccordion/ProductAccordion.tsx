@@ -8,16 +8,15 @@ import {
 import { useWindowHasResized } from '~/customHooks';
 import { isViewport } from '~/utils/viewport';
 import { ProductAccordionItem } from './components/ProductAccordionItem';
-import type { ReactElement } from 'react';
-import type { ProductAccordionProps } from './ProductAccordion.types';
+import type { ProductAccordionType } from './ProductAccordion.types';
 import type { ToggleAccordion } from './components/ProductAccordionItem/ProductAccordionItem.types';
 import styles from './ProductAccordion.module.css';
 
-function ProductAccordion({
+const ProductAccordion: ProductAccordionType = ({
   id,
   products,
   addToCartCopy,
-}: ProductAccordionProps): ReactElement {
+}) => {
   const [accordionProducts, setAccordionProducts] = useState(products);
 
   useEffect(() => {
@@ -89,6 +88,6 @@ function ProductAccordion({
       ))}
     </div>
   );
-}
+};
 
 export { ProductAccordion };
