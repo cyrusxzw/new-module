@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type LinkButtonGroupProps = {
-    children?: JSX.Element | JSX.Element[] /** @todo figure out how to efficiently allow only Button an Hyperlink */;
+    children?: JSX.Element | JSX.Element[] /** @TODO figure out how to efficiently allow only Button an Hyperlink */;
     className?: string;
     hasFitContent?: boolean;
     isFlush?: boolean;

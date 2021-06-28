@@ -1054,7 +1054,7 @@ declare type KitListProps = {
 declare const KitList: React$1.ForwardRefExoticComponent<KitListProps & React$1.RefAttributes<any>>;
 
 declare type LinkButtonGroupProps = {
-    children?: JSX.Element | JSX.Element[] /** @todo figure out how to efficiently allow only Button an Hyperlink */;
+    children?: JSX.Element | JSX.Element[] /** @TODO figure out how to efficiently allow only Button an Hyperlink */;
     className?: string;
     hasFitContent?: boolean;
     isFlush?: boolean;
@@ -1547,7 +1547,7 @@ declare const StoreDetailHeader: StoreDetailHeaderType;
 declare const StoreHoursList: StoreHoursListType;
 
 declare type SubNavLink = {
-    children: string /** @todo change this prop api to content or text  */;
+    children: string /** @TODO change this prop api to content or text  */;
     id?: string;
     hasTargetInNewWindow?: boolean;
     style?: LinkStyle;

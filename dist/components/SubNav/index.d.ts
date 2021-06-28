@@ -3,7 +3,7 @@ import { T as Themes } from '../../sharedChunks/Themes.types';
 import { L as LinkStyle } from '../../sharedChunks/Hyperlink.types';
 
 declare type SubNavLink = {
-    children: string /** @todo change this prop api to content or text  */;
+    children: string /** @TODO change this prop api to content or text  */;
     id?: string;
     hasTargetInNewWindow?: boolean;
     style?: LinkStyle;
