@@ -798,8 +798,8 @@ declare namespace GoogleMap {
     }
 }
 
-declare type Levels = '1' | '2' | '3' | '4' | '5' | '6';
-declare type Sizes = 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
+declare type HeadingLevels = '1' | '2' | '3' | '4' | '5' | '6';
+declare type HeadingSizes = 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
 declare type HeadingProps = {
     children?: React.ReactNode;
     className?: string;
@@ -807,8 +807,8 @@ declare type HeadingProps = {
     hasSerifFont?: boolean;
     id?: string;
     isFlush?: boolean;
-    level: Levels;
-    size: Sizes;
+    level: HeadingLevels;
+    size: HeadingSizes;
     theme?: Themes;
 };
 
@@ -1085,12 +1085,12 @@ declare namespace LoadMoreButton {
     }
 }
 
-declare type Sizes$1 = 'small' | 'medium' | 'large';
+declare type Sizes = 'small' | 'medium' | 'large';
 declare type LoadingProps = {
     className?: string;
     isLoading: boolean;
     shouldFillSpace?: boolean;
-    size?: Sizes$1;
+    size?: Sizes;
     theme?: Themes;
 };
 
