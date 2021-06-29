@@ -1,5 +1,5 @@
 {
   "extends": [
-    "aesop-code-styles/stylelint.config.js"
+    "@aesop-engineering/code-styles/stylelint.config.js"
   ],
 }
