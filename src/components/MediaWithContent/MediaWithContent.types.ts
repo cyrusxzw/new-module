@@ -4,6 +4,7 @@ import type { ContentCopy } from './components/Content/Content.types';
 type ContainMedia = 'center' | 'left' | 'right';
 
 type ForegroundImageLink = {
+  onClick?: () => void;
   url: string;
   title: string;
 };

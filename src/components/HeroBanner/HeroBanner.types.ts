@@ -30,6 +30,7 @@ type HeroBannerProps = {
   copy?: HeroBannerCopy;
   foregroundImage?: ReactElement;
   foregroundImageLink?: {
+    onClick?: () => void;
     url?: string;
     title?: string;
   };
