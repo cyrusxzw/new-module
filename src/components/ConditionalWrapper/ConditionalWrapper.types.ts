@@ -1,4 +1,5 @@
-import { ReactNode, ReactElement } from 'react';
+import type { ReactNode, ReactElement } from 'react';
+import type { ComponentWithChildren } from '~/types';
 
 type Wrapper = (children: ReactNode) => ReactElement;
 
@@ -17,4 +18,6 @@ type ConditionalWrapperProps = {
   wrapper: Wrapper;
 };
 
-export type { ConditionalWrapperProps };
+type ConditionalWrapperType = ComponentWithChildren<ConditionalWrapperProps>;
+
+export type { ConditionalWrapperProps, ConditionalWrapperType };

@@ -1,15 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
-import type { PreviousButtonProps } from './PreviousButton.types';
+import type { PreviousButtonType } from './PreviousButton.types';
 import styles from './PreviousButton.module.css';
 
 /**
  * The onClick callback for the PreviousButton
  * components are provided through react-slick
  */
-const PreviousButton: FC<PreviousButtonProps> = ({
+const PreviousButton: PreviousButtonType = ({
   isActive = true,
   onClick,
   theme = 'dark',

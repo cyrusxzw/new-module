@@ -1,9 +1,9 @@
-import { MouseEvent, ReactNode } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 import type { Themes } from '~/types';
 import type { LinkStyle } from '~/components/Hyperlink/Hyperlink.types';
 
 type SubNavLink = {
-  children: string /** @todo change this prop api to content or text  */;
+  children: string /** @TODO change this prop api to content or text  */;
   id?: string;
   hasTargetInNewWindow?: boolean;
   style?: LinkStyle;

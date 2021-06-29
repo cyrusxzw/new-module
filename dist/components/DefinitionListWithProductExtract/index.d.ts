@@ -1,6 +1,7 @@
-import { FC } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { D as DefinitionListProps } from '../../sharedChunks/DefinitionList.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
+import 'react';
 
 declare type DefinitionListWithProductExtractProps = {
     dataTestRef: string;
@@ -16,7 +17,8 @@ declare type DefinitionListWithProductExtractProps = {
     theme?: Themes;
     works?: string;
 } & Pick<DefinitionListProps, 'items'>;
+declare type DefinitionListWithProductExtractType = ComponentWithoutChildren<DefinitionListWithProductExtractProps>;
 
-declare const DefinitionListWithProductExtract: FC<DefinitionListWithProductExtractProps>;
+declare const DefinitionListWithProductExtract: DefinitionListWithProductExtractType;
 
 export { DefinitionListWithProductExtract };

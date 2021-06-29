@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 import get from 'lodash/get';
 import Slider from 'react-slick';
@@ -15,10 +15,10 @@ import { NextButton } from './components/NextButton/NextButton';
 import { Pagination } from './components/Pagination';
 import { PreviousButton } from './components/PreviousButton';
 import { Slide } from './components/Slide';
-import type { CarouselProps } from './Carousel.types';
+import type { CarouselType } from './Carousel.types';
 import styles from './Carousel.module.css';
 
-const Carousel: FC<CarouselProps> = ({
+const Carousel: CarouselType = ({
   autoplaySpeed = 3000,
   className,
   hasAutoplay = false,

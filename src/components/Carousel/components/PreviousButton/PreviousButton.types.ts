@@ -1,5 +1,5 @@
-import { MouseEvent } from 'react';
-import type { Themes } from '~/types';
+import type { MouseEvent } from 'react';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type PreviousButtonProps = {
   isActive?: boolean;
@@ -7,4 +7,6 @@ type PreviousButtonProps = {
   theme?: Themes;
 };
 
-export { PreviousButtonProps };
+type PreviousButtonType = ComponentWithoutChildren<PreviousButtonProps>;
+
+export { PreviousButtonProps, PreviousButtonType };

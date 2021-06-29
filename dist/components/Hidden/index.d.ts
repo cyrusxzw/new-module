@@ -1,5 +1,6 @@
 /// <reference types="react" />
-import { ReactElement } from 'react';
+import { a as ComponentWithChildren } from '../../sharedChunks/Component.types';
+import 'react';
 
 declare type HiddenProps = {
     children: React.ReactNode;
@@ -8,7 +9,8 @@ declare type HiddenProps = {
     isSmall?: boolean;
     isXLarge?: boolean;
 };
+declare type HiddenType = ComponentWithChildren<HiddenProps>;
 
-declare const Hidden: ({ children, isLarge, isMedium, isSmall, isXLarge, }: HiddenProps) => ReactElement | null;
+declare const Hidden: HiddenType;
 
 export { Hidden };

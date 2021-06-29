@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import React$1 from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
-import { T as TransitionType } from '../../sharedChunks/Transition.types';
+import { T as TransitionTypeLabel } from '../../sharedChunks/Transition.types';
 
 declare type HorizontalPadding = 'none' | 'small';
 declare type VerticalPadding = 'none' | 'small' | 'medium' | 'large';
@@ -22,7 +22,7 @@ declare type PodiumProps = {
     paddingRight?: HorizontalPadding;
     paddingTop?: VerticalPadding;
     theme?: Themes;
-    transition?: TransitionType;
+    transition?: TransitionTypeLabel;
     verticalPadding?: VerticalPadding;
 };
 

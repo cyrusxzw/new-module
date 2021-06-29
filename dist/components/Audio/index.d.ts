@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
+import 'react';
 
 declare type ProgressColor = 'orange' | 'green' | 'blue';
 declare type AudioCopy = {
@@ -20,7 +21,8 @@ declare type AudioProps = {
     progressColor?: ProgressColor;
     trackTitle?: string;
 };
+declare type AudioType = ComponentWithoutChildren<AudioProps>;
 
-declare const Audio: FC<AudioProps>;
+declare const Audio: AudioType;
 
 export { Audio };

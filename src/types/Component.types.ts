@@ -12,4 +12,4 @@ type ComponentWithoutChildren<P = {}> = (
   props: P,
 ) => DefaultReactComponentReturn;
 
-export { ComponentWithChildren, ComponentWithoutChildren };
+export type { ComponentWithChildren, ComponentWithoutChildren };

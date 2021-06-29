@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import type { LoadingProps } from './Loading.types';
+import type { LoadingType } from './Loading.types';
 import styles from './Loading.module.css';
 
-const Loading: FC<LoadingProps> = ({
+const Loading: LoadingType = ({
   className,
   isLoading,
   shouldFillSpace = false,

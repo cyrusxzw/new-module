@@ -1,4 +1,6 @@
-type TransitionType =
+import type { ReactElement } from 'react';
+
+type TransitionTypeLabel =
   | 'fade'
   | 'shiftInDown'
   | 'shiftInLeft'
@@ -14,7 +16,9 @@ type TransitionProps = {
   isActiveOnMount?: boolean;
   shouldMountOnEnter?: boolean;
   shouldUnmountOnExit?: boolean;
-  type?: TransitionType;
+  type?: TransitionTypeLabel;
 };
 
-export type { TransitionProps, TransitionType };
+type TransitionType = (props: TransitionProps) => ReactElement | null;
+
+export type { TransitionProps, TransitionType, TransitionTypeLabel };

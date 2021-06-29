@@ -24,7 +24,7 @@ export {
   Heading,
   HeroBanner,
   Hidden,
-  HorizontalProductDisplayAccordion /** @todo remove this reference */,
+  HorizontalProductDisplayAccordion /** @TODO remove this reference */,
   Hyperlink,
   Icon,
   IconLink,

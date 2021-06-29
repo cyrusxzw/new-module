@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useScript } from '~/customHooks';
 import { Heading } from '~/components/Heading';
 import { Loading } from '~/components/Loading';
-import type { BynderWidgetProps } from './BynderWidget.types';
+import type { BynderWidgetType } from './BynderWidget.types';
 import styles from './BynderWidget.module.css';
 
-const BynderWidget: FC<BynderWidgetProps> = ({
+const BynderWidget: BynderWidgetType = ({
   className,
   heading,
   id,

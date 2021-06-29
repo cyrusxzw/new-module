@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 import type { DefinitionListProps } from '../DefinitionList/DefinitionList.types';
 
 type DefinitionListWithProductExtractProps = {
@@ -17,4 +17,9 @@ type DefinitionListWithProductExtractProps = {
   works?: string;
 } & Pick<DefinitionListProps, 'items'>;
 
-export type { DefinitionListWithProductExtractProps };
+type DefinitionListWithProductExtractType = ComponentWithoutChildren<DefinitionListWithProductExtractProps>;
+
+export type {
+  DefinitionListWithProductExtractProps,
+  DefinitionListWithProductExtractType,
+};

@@ -1,11 +1,11 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { useUID } from 'react-uid';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import type { TwoColumnLayoutProps } from './TwoColumnLayout.types';
+import type { TwoColumnLayoutType } from './TwoColumnLayout.types';
 import styles from './TwoColumnLayout.module.css';
 
-const TwoColumnLayout = ({
+const TwoColumnLayout: TwoColumnLayoutType = ({
   childrenClassNames,
   className,
   content,
@@ -15,7 +15,7 @@ const TwoColumnLayout = ({
   isReversed = true,
   sidebar,
   theme,
-}: TwoColumnLayoutProps): ReactElement => {
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const uid = useUID();
 

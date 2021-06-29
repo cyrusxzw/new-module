@@ -1,3 +1,5 @@
+import type { ComponentWithoutChildren } from '~/types';
+
 type ProgressColor = 'orange' | 'green' | 'blue';
 
 type AudioCopy = {
@@ -21,4 +23,6 @@ type AudioProps = {
   trackTitle?: string;
 };
 
-export type { AudioProps, ProgressColor, AudioCopy };
+type AudioType = ComponentWithoutChildren<AudioProps>;
+
+export type { AudioType, AudioProps, ProgressColor, AudioCopy };

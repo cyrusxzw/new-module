@@ -1,4 +1,5 @@
 import { MouseEvent } from 'react';
+import { ComponentWithoutChildren } from '~/types';
 
 type ControlsProps = {
   captions?: {
@@ -30,4 +31,6 @@ type ControlsProps = {
   progress?: number;
 };
 
-export type { ControlsProps };
+type ControlsType = ComponentWithoutChildren<ControlsProps>;
+
+export type { ControlsType, ControlsProps };

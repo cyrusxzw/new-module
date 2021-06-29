@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
-import type { ModalBodyProps } from './ModalBody.types';
+import type { ModalBodyType } from './ModalBody.types';
 import styles from './ModalBody.module.css';
 
-const ModalBody: FC<ModalBodyProps> = ({
+const ModalBody: ModalBodyType = ({
   children,
   className,
   copy,

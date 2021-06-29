@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { Heading } from '~/components/Heading';
 import { Image } from '~/components/Image';
-import type { SlideProps } from './Slide.types';
+import type { SlideType } from './Slide.types';
 import styles from './Slide.module.css';
 
-const Slide: FC<SlideProps> = ({
+const Slide: SlideType = ({
   description,
   heading,
   id,

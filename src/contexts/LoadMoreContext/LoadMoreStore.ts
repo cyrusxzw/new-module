@@ -1,4 +1,5 @@
-import { useReducer, MouseEventHandler } from 'react';
+import { useReducer } from 'react';
+import type { MouseEventHandler } from 'react';
 
 enum LOAD_MORE_ACTION_TYPES {
   FAIL,

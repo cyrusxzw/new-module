@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useAddToCartContext, useVariantSelectContext } from '~/contexts';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
@@ -6,10 +6,10 @@ import { Button } from '~/components/Button';
 import { Loading } from '~/components/Loading';
 import { Hyperlink } from '~/components/Hyperlink';
 import { useDelayedDisabled } from './AddToCartButton.utils';
-import type { AddToCartButtonProps } from './AddToCartButton.types';
+import type { AddToCartButtonType } from './AddToCartButton.types';
 import styles from './AddToCartButton.module.css';
 
-const AddToCartButton: FC<AddToCartButtonProps> = ({
+const AddToCartButton: AddToCartButtonType = ({
   className,
   copy,
   dataTestRef = 'ADD_TO_CART',

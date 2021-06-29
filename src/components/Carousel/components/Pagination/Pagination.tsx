@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
-import type { PaginationProps } from './Pagination.types';
+import type { PaginationType } from './Pagination.types';
 import styles from './Pagination.module.css';
 
-const Pagination: FC<PaginationProps> = ({
+const Pagination: PaginationType = ({
   dots = [],
   hasFlushPagination = false,
   progressIndex = 0,

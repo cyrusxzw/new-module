@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 import type { LinkStyle } from '~/components/Hyperlink/Hyperlink.types';
-import type { Themes } from '~/types';
 
 type CarouselIntroductionProps = {
   cta?: {
@@ -10,9 +10,11 @@ type CarouselIntroductionProps = {
     text?: string;
   };
   description?: ReactNode;
+  eyebrow?: string;
   heading?: string;
   theme?: Themes;
-  eyebrow?: string;
 };
 
-export type { CarouselIntroductionProps };
+type CarouselIntroductionType = ComponentWithoutChildren<CarouselIntroductionProps>;
+
+export type { CarouselIntroductionProps, CarouselIntroductionType };

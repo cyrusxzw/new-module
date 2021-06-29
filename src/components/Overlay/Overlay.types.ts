@@ -1,7 +1,11 @@
+import type { ComponentWithoutChildren } from '~/types';
+
 type OverlayProps = {
   className?: string;
   isVisible?: boolean;
   onClose: () => void;
 };
 
-export type { OverlayProps };
+type OverlayType = ComponentWithoutChildren<OverlayProps>;
+
+export type { OverlayProps, OverlayType };

@@ -1,5 +1,6 @@
-import { FC } from 'react';
+import { a as ComponentWithChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
+import 'react';
 
 declare type ModalBodyCopy = {
     copy?: {
@@ -14,7 +15,8 @@ declare type ModalAndModalBodyProps = {
     theme?: Themes;
 };
 declare type ModalProps = ModalAndModalBodyProps & ModalBodyCopy;
+declare type ModalType = ComponentWithChildren<ModalProps>;
 
-declare const Modal: FC<ModalProps>;
+declare const Modal: ModalType;
 
 export { Modal };

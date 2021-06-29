@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { createPortal } from 'react-dom';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
@@ -7,12 +7,12 @@ import { getPortalRoot } from '~/utils/portal';
 import { ModalBody } from './components/ModalBody';
 import { Overlay } from '~/components/Overlay';
 import { Transition } from '~/components/Transition';
-import type { ModalProps } from './Modal.types';
+import type { ModalType } from './Modal.types';
 import styles from './Modal.module.css';
 
 const modalRoot = getPortalRoot('aesop-gel-modal-root');
 
-const Modal: FC<ModalProps> = ({
+const Modal: ModalType = ({
   children,
   className,
   copy,

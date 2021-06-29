@@ -1,4 +1,4 @@
-import type { Themes, Variant } from '~/types';
+import type { ComponentWithoutChildren, Themes, Variant } from '~/types';
 import type { BreadcrumbItem } from '~/components/Breadcrumbs/Breadcrumbs.types';
 import type { ProductDetailBodyCopy } from './components/ProductDetailBody/ProductDetailBody.types';
 
@@ -20,4 +20,6 @@ type ProductDetailHeaderProps = {
   theme?: Themes;
 };
 
-export type { ProductDetailHeaderProps };
+type ProductDetailHeaderType = ComponentWithoutChildren<ProductDetailHeaderProps>;
+
+export type { ProductDetailHeaderProps, ProductDetailHeaderType };

@@ -1,8 +1,10 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type ProductDetailImageProps = {
   className?: string;
   theme?: Themes;
 };
 
-export type { ProductDetailImageProps };
+type ProductDetailImageType = ComponentWithoutChildren<ProductDetailImageProps>;
+
+export type { ProductDetailImageProps, ProductDetailImageType };

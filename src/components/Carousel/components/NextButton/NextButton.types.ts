@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type NextButtonProps = {
   isActive?: boolean;
@@ -7,4 +7,6 @@ type NextButtonProps = {
   theme?: Themes;
 };
 
-export type { NextButtonProps };
+type NextButtonType = ComponentWithoutChildren<NextButtonProps>;
+
+export type { NextButtonProps, NextButtonType };

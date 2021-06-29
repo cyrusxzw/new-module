@@ -1,6 +1,7 @@
-import { ReactElement } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import { H as HoursListItem } from '../../sharedChunks/StoreHoursList.types';
+import 'react';
 
 declare type StoreDetailCopy = {
     location?: string;
@@ -19,7 +20,8 @@ declare type StoreDetailHeaderProps = {
     storeName: string;
     theme?: Themes;
 };
+declare type StoreDetailHeaderType = ComponentWithoutChildren<StoreDetailHeaderProps>;
 
-declare const StoreDetailHeader: ({ alternateHoursNote, className, copy, email, location, openingHours, phone, storeName, theme, }: StoreDetailHeaderProps) => ReactElement;
+declare const StoreDetailHeader: StoreDetailHeaderType;
 
 export { StoreDetailHeader };

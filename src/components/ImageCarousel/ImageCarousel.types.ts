@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 import type { ImageProps } from '../Image/Image.types';
 
 type Slide = {
@@ -17,4 +17,6 @@ type ImageCarouselProps = {
   theme?: Themes;
 };
 
-export type { ImageCarouselProps };
+type ImageCarouselType = ComponentWithoutChildren<ImageCarouselProps>;
+
+export type { ImageCarouselProps, ImageCarouselType };

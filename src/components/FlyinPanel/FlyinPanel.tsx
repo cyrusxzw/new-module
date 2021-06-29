@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { createPortal } from 'react-dom';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
@@ -9,12 +9,12 @@ import { Heading } from '~/components/Heading/index.ts';
 import { Icon } from '~/components/Icon';
 import { Overlay } from '~/components/Overlay';
 import { Transition } from '~/components/Transition';
-import type { FlyinPanelProps } from './FlyinPanel.types';
+import type { FlyinPanelType } from './FlyinPanel.types';
 import styles from './FlyinPanel.module.css';
 
 const flyinRoot = getPortalRoot('aesop-gel-flyin-root');
 
-const FlyinPanel = ({
+const FlyinPanel: FlyinPanelType = ({
   children,
   className,
   copy,
@@ -22,7 +22,7 @@ const FlyinPanel = ({
   isVisible = false,
   onClose,
   theme,
-}: FlyinPanelProps): ReactElement | null => {
+}) => {
   useEscapeKeyListener(onClose);
   useOverflowHidden(isVisible);
 

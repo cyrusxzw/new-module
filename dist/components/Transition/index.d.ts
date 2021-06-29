@@ -1,6 +1,6 @@
-import { ReactElement } from 'react';
-import { a as TransitionProps } from '../../sharedChunks/Transition.types';
+import { a as TransitionType } from '../../sharedChunks/Transition.types';
+import 'react';
 
-declare const Transition: ({ children, isActive, isActiveOnMount, shouldMountOnEnter, shouldUnmountOnExit, type, }: TransitionProps) => ReactElement | null;
+declare const Transition: TransitionType;
 
 export { Transition };

@@ -1,6 +1,7 @@
 /// <reference types="react" />
-import { ReactElement } from 'react';
+import { a as ComponentWithChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
+import 'react';
 
 declare type FlyinPanelProps = {
     children: React.ReactNode;
@@ -13,7 +14,8 @@ declare type FlyinPanelProps = {
     onClose: () => void;
     theme?: Themes;
 };
+declare type FlyinPanelType = ComponentWithChildren<FlyinPanelProps>;
 
-declare const FlyinPanel: ({ children, className, copy, heading, isVisible, onClose, theme, }: FlyinPanelProps) => ReactElement | null;
+declare const FlyinPanel: FlyinPanelType;
 
 export { FlyinPanel };

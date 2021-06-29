@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { ConditionalWrapper } from '~/components/ConditionalWrapper';
 import { Figure } from '~/components/Figure';
 import { Hyperlink } from '~/components/Hyperlink';
-import type { HeroBannerMediaProps } from './HeroBannerMedia.types';
+import type { HeroBannerMediaType } from './HeroBannerMedia.types';
 import styles from './HeroBannerMedia.module.css';
 
-const HeroBannerMedia: FC<HeroBannerMediaProps> = ({
+const HeroBannerMedia: HeroBannerMediaType = ({
   className,
   containMedia,
   foregroundImage,

@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { ParagraphSet } from '~/components/Paragraph';
 import { SectionHeading } from '~/components/SectionHeading';
-import type { HeroBannerContentProps } from './HeroBannerContent.types';
+import type { HeroBannerContentType } from './HeroBannerContent.types';
 import styles from './HeroBannerContent.module.css';
 
-const HeroBannerContent: FC<HeroBannerContentProps> = ({
+const HeroBannerContent: HeroBannerContentType = ({
   className,
   content,
   copy,

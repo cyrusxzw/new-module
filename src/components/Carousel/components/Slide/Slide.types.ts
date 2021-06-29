@@ -1,5 +1,5 @@
+import type { ComponentWithoutChildren, Themes } from '~/types';
 import type { ImageProps } from '~/components/Image/Image.types';
-import type { Themes } from '~/types';
 
 type SlideProps = {
   description?: string;
@@ -10,4 +10,6 @@ type SlideProps = {
   theme?: Themes;
 };
 
-export type { SlideProps };
+type SlideType = ComponentWithoutChildren<SlideProps>;
+
+export type { SlideProps, SlideType };

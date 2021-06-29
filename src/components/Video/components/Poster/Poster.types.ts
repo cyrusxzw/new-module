@@ -1,4 +1,5 @@
 import { MouseEvent } from 'react';
+import { ComponentWithoutChildren } from '~/types';
 
 type PosterProps = {
   className?: string;
@@ -17,4 +18,6 @@ type PosterProps = {
   };
 };
 
-export type { PosterProps };
+type PosterType = ComponentWithoutChildren<PosterProps>;
+
+export type { PosterType, PosterProps };

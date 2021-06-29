@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import {
   useProductDetailContext,
@@ -10,10 +10,10 @@ import { Hidden } from '~/components/Hidden/index.ts';
 import { ProductDetailBody } from './components/ProductDetailBody';
 import { ProductDetailImage } from './components/ProductDetailImage';
 import type { BreadcrumbItem } from '~/components/Breadcrumbs/Breadcrumbs.types';
-import type { ProductDetailHeaderProps } from './ProductDetailHeader.types';
+import type { ProductDetailHeaderType } from './ProductDetailHeader.types';
 import styles from './ProductDetailHeader.module.css';
 
-const ProductDetailHeader = ({
+const ProductDetailHeader: ProductDetailHeaderType = ({
   breadcrumbs,
   className,
   copy,
@@ -21,7 +21,7 @@ const ProductDetailHeader = ({
   onFlyinOpenCloseClick,
   paymentWidget,
   theme,
-}: ProductDetailHeaderProps): ReactElement => {
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const { productDetail } = useProductDetailContext();
   const { selectedVariant } = useVariantSelectContext();

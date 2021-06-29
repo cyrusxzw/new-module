@@ -1,5 +1,5 @@
 import type { LegacyRef } from 'react';
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 import type { ImageProps } from '../Image/Image.types';
 import type { CarouselIntroductionProps } from './components/CarouselIntroduction/CarouselIntroduction.types';
 
@@ -30,4 +30,6 @@ type CarouselProps = {
   theme?: Themes;
 };
 
-export type { CarouselProps };
+type CarouselType = ComponentWithoutChildren<CarouselProps>;
+
+export type { CarouselProps, CarouselType };

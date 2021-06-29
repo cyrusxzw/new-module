@@ -1,16 +1,16 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { Message } from './components/Message';
-import type { SecondaryMessageProps } from './SecondaryMessage.types';
+import type { SecondaryMessageType } from './SecondaryMessage.types';
 import styles from './SecondaryMessage.module.css';
 
-const SecondaryMessage = ({
+const SecondaryMessage: SecondaryMessageType = ({
   className,
   id,
   items,
   theme,
-}: SecondaryMessageProps): ReactElement | null => {
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
 
   if (!items || items.length === 0) {

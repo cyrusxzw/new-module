@@ -1,7 +1,8 @@
-import { FC } from 'react';
-import { B as BreadcrumbsProps } from '../../sharedChunks/Breadcrumbs.types';
+import { B as BreadcrumbsType } from '../../sharedChunks/Breadcrumbs.types';
+import '../../sharedChunks/Component.types';
+import 'react';
 import '../../sharedChunks/Themes.types';
 
-declare const Breadcrumbs: FC<BreadcrumbsProps>;
+declare const Breadcrumbs: BreadcrumbsType;
 
 export { Breadcrumbs };

@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type MessageProps = {
   className?: string;
@@ -12,4 +12,6 @@ type MessageProps = {
   theme?: Themes;
 };
 
-export type { MessageProps };
+type MessageType = ComponentWithoutChildren<MessageProps>;
+
+export type { MessageProps, MessageType };

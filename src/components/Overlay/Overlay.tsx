@@ -2,10 +2,10 @@ import React from 'react';
 import cx from 'classnames';
 import { useEscapeKeyListener } from '~/customHooks';
 import { Transition } from '~/components/Transition';
-import type { OverlayProps } from './Overlay.types';
+import type { OverlayType } from './Overlay.types';
 import styles from './Overlay.module.css';
 
-const Overlay = ({ className, isVisible, onClose }: OverlayProps) => {
+const Overlay: OverlayType = ({ className, isVisible, onClose }) => {
   useEscapeKeyListener(onClose);
 
   const classSet = cx(

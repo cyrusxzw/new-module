@@ -1,15 +1,17 @@
-import { FC } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
+import 'react';
 
-declare type Sizes = 'small' | 'medium' | 'large';
+declare type LoadingSizes = 'small' | 'medium' | 'large';
 declare type LoadingProps = {
     className?: string;
     isLoading: boolean;
     shouldFillSpace?: boolean;
-    size?: Sizes;
+    size?: LoadingSizes;
     theme?: Themes;
 };
+declare type LoadingType = ComponentWithoutChildren<LoadingProps>;
 
-declare const Loading: FC<LoadingProps>;
+declare const Loading: LoadingType;
 
 export { Loading };

@@ -1,19 +1,21 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { SectionHeading } from '~/components/SectionHeading';
-import type { CarouselIntroductionProps } from './CarouselIntroduction.types';
+import type { CarouselIntroductionType } from './CarouselIntroduction.types';
 import styles from './CarouselIntroduction.module.css';
 
-const CarouselIntroduction: FC<CarouselIntroductionProps> = ({
+const CarouselIntroduction: CarouselIntroductionType = ({
   cta,
   description,
   eyebrow,
   heading,
-  theme = 'dark',
+  theme,
 }) => {
+  const currentTheme = useThemeContext(theme, 'dark');
   const hasCta = !!cta?.text;
-  const classSet = cx(styles.base, styles[theme]);
+  const classSet = cx(styles.base, styles[currentTheme]);
   const headingClassSet = cx(styles.heading, {
     [styles.offsetHeading]: !!description || hasCta,
   });
@@ -26,7 +28,7 @@ const CarouselIntroduction: FC<CarouselIntroductionProps> = ({
         hasSerifFontHeading={true}
         heading={heading}
         isFlush={true}
-        theme={theme}
+        theme={currentTheme}
       />
       {(!!description || hasCta) && (
         <div className={styles.content}>
@@ -35,7 +37,7 @@ const CarouselIntroduction: FC<CarouselIntroductionProps> = ({
               className={cx(
                 styles.description,
                 { [styles.hasCta]: hasCta },
-                styles[theme],
+                styles[currentTheme],
               )}
             >
               {description}
@@ -45,7 +47,7 @@ const CarouselIntroduction: FC<CarouselIntroductionProps> = ({
             <div className={styles.ctaWrapper}>
               <Hyperlink
                 style={cta.style}
-                theme={theme}
+                theme={currentTheme}
                 title={cta.title}
                 url={cta.url}
               >

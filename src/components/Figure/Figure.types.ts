@@ -1,6 +1,7 @@
+import type { ComponentWithChildren } from '~/types';
+
 type FigureProps = {
   caption?: string;
-  children?: React.ReactNode;
   className?: string;
   hasCaptionBorder?: boolean;
   hasCaptionOffset?: boolean;
@@ -9,4 +10,6 @@ type FigureProps = {
   foo?: boolean;
 };
 
-export type { FigureProps };
+type FigureType = ComponentWithChildren<FigureProps>;
+
+export type { FigureProps, FigureType };

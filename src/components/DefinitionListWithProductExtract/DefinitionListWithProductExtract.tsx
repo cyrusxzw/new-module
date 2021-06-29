@@ -1,6 +1,6 @@
-import React, { Fragment, FC } from 'react';
+import React, { Fragment } from 'react';
 import { DefinitionList } from '../DefinitionList/DefinitionList';
-import type { DefinitionListWithProductExtractProps } from './DefinitionListWithProductExtract.type';
+import type { DefinitionListWithProductExtractType } from './DefinitionListWithProductExtract.type';
 import { ProductExtract } from '../ProductExtract/ProductExtract';
 
 const defaultProduct = {
@@ -9,7 +9,7 @@ const defaultProduct = {
   },
 };
 
-const DefinitionListWithProductExtract: FC<DefinitionListWithProductExtractProps> = ({
+const DefinitionListWithProductExtract: DefinitionListWithProductExtractType = ({
   dataTestRef,
   isVisible = true,
   itemBottomBorder = false,
@@ -20,10 +20,8 @@ const DefinitionListWithProductExtract: FC<DefinitionListWithProductExtractProps
   theme = 'dark',
   works = 'Works well with',
 }) => {
-  /** @TODO Remove @ts-ignore and eslint-disable once ProductExtract is migrated to TS */
-  /* eslint-disable @typescript-eslint/ban-ts-comment */
   return (
-    <Fragment>
+    <>
       <DefinitionList
         hasBottomBorder={itemBottomBorder}
         isVisible={isVisible}
@@ -31,24 +29,16 @@ const DefinitionListWithProductExtract: FC<DefinitionListWithProductExtractProps
         theme={theme}
       />
       <ProductExtract
-        // @ts-ignore
         dataTestRef={dataTestRef}
-        // @ts-ignore
         hasBottomBorder={productBottomBorder}
-        // @ts-ignore
         isVisible={isVisible}
-        // @ts-ignore
         itemNum={productItemNumber}
-        // @ts-ignore
         product={product}
-        // @ts-ignore
         theme={theme}
-        // @ts-ignore
         works={works}
       />
-    </Fragment>
+    </>
   );
-  /* eslint-enable @typescript-eslint/ban-ts-comment */
 };
 
 export { DefinitionListWithProductExtract };

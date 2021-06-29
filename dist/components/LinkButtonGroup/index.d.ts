@@ -1,9 +1,8 @@
-/// <reference types="react" />
-import React from 'react';
+import { ReactElement } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type LinkButtonGroupProps = {
-    children?: JSX.Element | JSX.Element[] /** @todo figure out how to efficiently allow only Button an Hyperlink */;
+    children?: JSX.Element | JSX.Element[] /** @TODO figure out how to efficiently allow only Button an Hyperlink */;
     className?: string;
     hasFitContent?: boolean;
     isFlush?: boolean;
@@ -11,7 +10,8 @@ declare type LinkButtonGroupProps = {
     textAlign?: 'center' | 'left' | 'right';
     theme?: Themes;
 };
+declare type LinkButtonGroupType = (props: LinkButtonGroupProps) => ReactElement | null;
 
-declare const LinkButtonGroup: ({ children, className, hasFitContent, isFlush, isFullWidth, textAlign, theme, }: LinkButtonGroupProps) => React.ReactElement;
+declare const LinkButtonGroup: LinkButtonGroupType;
 
 export { LinkButtonGroup };

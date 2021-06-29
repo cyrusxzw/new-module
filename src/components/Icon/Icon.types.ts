@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type SvgName =
   | ''
@@ -38,4 +38,6 @@ type IconProps = {
   width?: number;
 };
 
-export type { IconProps, SvgName, Svg };
+type IconType = ComponentWithoutChildren<IconProps>;
+
+export type { IconProps, IconType, SvgName, Svg };

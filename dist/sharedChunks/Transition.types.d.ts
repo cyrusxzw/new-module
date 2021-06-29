@@ -1,12 +1,14 @@
-/// <reference types="react" />
-declare type TransitionType = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
+import { ReactElement } from 'react';
+
+declare type TransitionTypeLabel = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
 declare type TransitionProps = {
     children: JSX.Element;
     isActive?: boolean;
     isActiveOnMount?: boolean;
     shouldMountOnEnter?: boolean;
     shouldUnmountOnExit?: boolean;
-    type?: TransitionType;
+    type?: TransitionTypeLabel;
 };
+declare type TransitionType = (props: TransitionProps) => ReactElement | null;
 
-export { TransitionType as T, TransitionProps as a };
+export { TransitionTypeLabel as T, TransitionType as a };

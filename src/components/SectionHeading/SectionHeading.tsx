@@ -1,12 +1,12 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { Heading } from '~/components/Heading/index.ts';
 import { getEyebrowLevel, getSubHeadingLevel } from './SectionHeading.utils';
-import type { SectionHeadingProps } from './SectionHeading.types';
+import type { SectionHeadingType } from './SectionHeading.types';
 import styles from './SectionHeading.module.css';
 
-const SectionHeading = ({
+const SectionHeading: SectionHeadingType = ({
   childrenClassNames,
   className,
   eyebrow,
@@ -20,7 +20,7 @@ const SectionHeading = ({
   subHeading,
   theme,
   titleFont,
-}: SectionHeadingProps): ReactElement | null => {
+}) => {
   const currentTheme = useThemeContext(theme, 'dark');
 
   if (!eyebrow && !heading && !subHeading) {

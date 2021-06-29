@@ -1,5 +1,6 @@
-import { FC } from 'react';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
+import 'react';
 
 declare type AddToCartButtonProps = {
     className?: string;
@@ -17,7 +18,8 @@ declare type AddToCartButtonProps = {
     isFullWidth?: boolean;
     theme?: Themes;
 };
+declare type AddToCartButtonType = ComponentWithoutChildren<AddToCartButtonProps>;
 
-declare const AddToCartButton: FC<AddToCartButtonProps>;
+declare const AddToCartButton: AddToCartButtonType;
 
 export { AddToCartButton };

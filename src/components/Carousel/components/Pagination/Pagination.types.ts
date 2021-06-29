@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type PaginationProps = {
   dots?: any[];
@@ -7,4 +7,6 @@ type PaginationProps = {
   theme?: Themes;
 };
 
-export type { PaginationProps };
+type PaginationType = ComponentWithoutChildren<PaginationProps>;
+
+export type { PaginationProps, PaginationType };

@@ -1,4 +1,4 @@
-import React, { useRef, ReactElement } from 'react';
+import React, { useRef } from 'react';
 import cx from 'classnames';
 import { useThemeContext, useVariantSelectContext } from '~/contexts';
 import { useImageTransition } from '~/customHooks';
@@ -6,13 +6,10 @@ import { Figure } from '~/components/Figure';
 import { Hidden } from '~/components/Hidden';
 import { Image } from '~/components/Image';
 import { Transition } from '~/components/Transition';
-import type { ProductDetailImageProps } from './ProductDetailImage.types';
+import type { ProductDetailImageType } from './ProductDetailImage.types';
 import styles from './ProductDetailImage.module.css';
 
-const ProductDetailImage = ({
-  className,
-  theme,
-}: ProductDetailImageProps): ReactElement | null => {
+const ProductDetailImage: ProductDetailImageType = ({ className, theme }) => {
   const imageRef = useRef();
   const currentTheme = useThemeContext(theme, 'dark');
   const { selectedVariant } = useVariantSelectContext();

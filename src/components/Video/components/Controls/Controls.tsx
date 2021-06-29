@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, FC } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
 import { useEscapeKeyListener } from '~/customHooks';
@@ -6,10 +6,10 @@ import { isViewport } from '~/utils/viewport';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
 import { Transition } from '~/components/Transition';
-import type { ControlsProps } from './Controls.types';
+import type { ControlsType } from './Controls.types';
 import styles from './Controls.module.css';
 
-const Controls: FC<ControlsProps> = ({
+const Controls: ControlsType = ({
   captions,
   className,
   copy,
