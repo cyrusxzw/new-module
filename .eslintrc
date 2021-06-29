@@ -1,7 +1,7 @@
 {
   "plugins": ["testing-library", "jest-dom"],
   "extends": [
-    "./node_modules/aesop-code-styles/eslint/browser-ts.js",
+    "./node_modules/@aesop-engineering/code-styles/eslint/browser-ts.js",
     "plugin:testing-library/react",
     "plugin:jest-dom/recommended"
   ],
