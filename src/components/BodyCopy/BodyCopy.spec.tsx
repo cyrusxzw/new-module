@@ -42,7 +42,7 @@ describe('<BodyCopy />', () => {
       eyebrow,
       hasSerifFontHeading,
       heading,
-      id,
+      id: `${id}-heading`,
       isFlush: hasFlushHeading,
       isPageHeading: isHeroArticle,
       subHeading,
