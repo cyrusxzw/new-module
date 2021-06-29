@@ -11,6 +11,7 @@ declare type ContentCopy = {
 
 declare type ContainMedia = 'center' | 'left' | 'right';
 declare type ForegroundImageLink = {
+    onClick?: () => void;
     url: string;
     title: string;
 };

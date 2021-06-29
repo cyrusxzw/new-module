@@ -837,6 +837,7 @@ declare type HeroBannerProps = {
     copy?: HeroBannerCopy;
     foregroundImage?: ReactElement;
     foregroundImageLink?: {
+        onClick?: () => void;
         url?: string;
         title?: string;
     };
@@ -1118,6 +1119,7 @@ declare type ContentCopy = {
 
 declare type ContainMedia = 'center' | 'left' | 'right';
 declare type ForegroundImageLink = {
+    onClick?: () => void;
     url: string;
     title: string;
 };
