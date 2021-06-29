@@ -91,7 +91,6 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
             <header
               class="base"
               data-testid="data-testid-SectionHeading"
-              id="undefined-heading"
             >
               <h1
                 class="base xLarge light heading"

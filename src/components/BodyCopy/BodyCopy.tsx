@@ -25,6 +25,7 @@ const BodyCopy = forwardRef<HTMLElement, BodyCopyProps>(
   ) => {
     const currentTheme = useThemeContext(theme, 'dark');
     const classSet = cx(styles.base, styles[currentTheme], className);
+    const sectionHeadingId = id && `${id}-heading`;
 
     return (
       <article className={classSet} id={id} ref={ref}>
@@ -37,7 +38,7 @@ const BodyCopy = forwardRef<HTMLElement, BodyCopyProps>(
           eyebrow={eyebrow}
           hasSerifFontHeading={hasSerifFontHeading}
           heading={heading}
-          id={`${id}-heading`}
+          id={sectionHeadingId}
           isFlush={hasFlushHeading}
           isPageHeading={isHeroArticle}
           subHeading={subHeading}
