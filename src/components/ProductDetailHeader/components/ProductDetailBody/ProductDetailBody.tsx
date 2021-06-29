@@ -29,6 +29,7 @@ const ProductDetailBody: ProductDetailBodyType = ({
   theme,
   onFlyinOpenCloseClick,
   onUpsellScrollIntoView,
+  onUpsellClick,
   paymentWidget,
 }) => {
   const currentTheme = useThemeContext(theme, 'dark');
@@ -235,6 +236,7 @@ const ProductDetailBody: ProductDetailBodyType = ({
               hasTopMargin={false}
               imageSize="medium"
               itemNum={1}
+              onHyperlinkClick={onUpsellClick}
               product={upSellProduct}
               theme={currentTheme}
               works={copy.upSellProductLabel}

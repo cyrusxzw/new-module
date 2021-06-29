@@ -19,6 +19,7 @@ const ProductExtract = forwardRef<HTMLDivElement, ProductExtractProps>(
       imageSize = 'small',
       isVisible = true,
       itemNum = 1,
+      onHyperlinkClick,
       product,
       theme,
       works,
@@ -90,6 +91,7 @@ const ProductExtract = forwardRef<HTMLDivElement, ProductExtractProps>(
             <Hyperlink
               className={linkClassSet}
               dataTestRef={dataTestRef}
+              onClick={onHyperlinkClick}
               theme={currentTheme}
               title={product?.name}
               url={product?.url}
