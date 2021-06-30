@@ -1,7 +1,7 @@
 import React from 'react';
-import type { HiddenType } from './Hidden.types';
 import { useWindowHasResized } from '~/customHooks';
 import { isViewport } from '~/utils/viewport';
+import type { HiddenType } from './Hidden.types';
 
 /**
  * The Hidden component will unmount children components given they meet
