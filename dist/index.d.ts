@@ -783,15 +783,22 @@ declare type HeroBannerProps = {
 
 declare const HeroBanner: React$1.ForwardRefExoticComponent<HeroBannerProps & React$1.RefAttributes<HTMLDivElement>>;
 
+declare type HiddenViewports = 'sm' | 'md' | 'lg' | 'xl';
 declare type HiddenProps = {
     children: React.ReactNode;
-    isLarge?: boolean;
-    isMedium?: boolean;
-    isSmall?: boolean;
-    isXLarge?: boolean;
+    /** An array of strings representing viewports that the children components
+     * will be unmounted on. 'sm' | 'md' | 'lg' | 'xl'.
+     */
+    when: HiddenViewports[];
 };
 declare type HiddenType = ComponentWithChildren<HiddenProps>;
 
+/**
+ * The Hidden component will unmount children components given they meet
+ * the breakpoint criteria of the `sm`, `me`, `lg` and/or `xl` in the `when` prop.
+ * @param children
+ * @param when - 'sm' | 'md' | 'lg' | 'xl'
+ */
 declare const Hidden: HiddenType;
 
 declare type Media = {
