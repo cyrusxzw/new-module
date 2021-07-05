@@ -22,6 +22,8 @@ type ProductDetailBodyProps = {
   copy: ProductDetailBodyCopy;
   theme?: Themes;
   onFlyinOpenCloseClick?: (flyinStatus: 'open' | 'close') => void;
+  onUpsellClick?: () => void;
+  onUpsellScrollIntoView?: () => void;
   paymentWidget?: React.ReactNode;
 };
 

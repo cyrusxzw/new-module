@@ -16,6 +16,8 @@ type ProductDetailHeaderProps = {
     flyinStatus: 'open' | 'close',
     selectedVariant: Variant,
   ) => void;
+  onUpsellClick?: () => void;
+  onUpsellScrollIntoView?: () => void;
   paymentWidget?: React.ReactNode;
   theme?: Themes;
 };

@@ -1301,6 +1301,7 @@ declare type ProductExtractProps = {
     isVisible?: boolean;
     itemNum?: number;
     theme?: Themes;
+    onHyperlinkClick?: () => void;
     product?: {
         image?: ImageProps;
         name?: string;
@@ -1366,6 +1367,8 @@ declare type ProductDetailHeaderProps = {
     copy?: ProductDetailBodyCopy;
     onBreadcrumbClick?: (item: BreadcrumbItem, selectedVariant: Variant) => void;
     onFlyinOpenCloseClick?: (flyinStatus: 'open' | 'close', selectedVariant: Variant) => void;
+    onUpsellClick?: () => void;
+    onUpsellScrollIntoView?: () => void;
     paymentWidget?: React.ReactNode;
     theme?: Themes;
 };

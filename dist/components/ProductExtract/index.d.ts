@@ -11,6 +11,7 @@ declare type ProductExtractProps = {
     isVisible?: boolean;
     itemNum?: number;
     theme?: Themes;
+    onHyperlinkClick?: () => void;
     product?: {
         image?: ImageProps;
         name?: string;

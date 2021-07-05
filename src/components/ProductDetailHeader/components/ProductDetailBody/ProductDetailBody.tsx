@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import cx from 'classnames';
 import {
   useProductDetailContext,
@@ -6,6 +6,7 @@ import {
   useVariantSelectContext,
 } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks/useWindowHasResized';
+import { useExecuteOnImpression } from '~/customHooks';
 import { getVariantRadioOptions } from '~/utils/product';
 import { isViewport } from '~/utils/viewport';
 import { AddToCartButton } from '~/components/AddToCartButton';
@@ -27,11 +28,25 @@ const ProductDetailBody: ProductDetailBodyType = ({
   copy,
   theme,
   onFlyinOpenCloseClick,
+  onUpsellScrollIntoView,
+  onUpsellClick,
   paymentWidget,
 }) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const [isFlyinPanelVisible, setIsFlyinPanelVisible] = useState(false);
+  const upsellRef = useRef(null);
   const { productDetail } = useProductDetailContext();
+  const handleOnUpsellScrollIntoView = () => {
+    if (onUpsellScrollIntoView) {
+      onUpsellScrollIntoView();
+    }
+  };
+
+  useExecuteOnImpression(upsellRef, handleOnUpsellScrollIntoView, {
+    threshold: 0.2,
+    isExecutableOnReEntry: false,
+  });
+
   const {
     selectedVariant,
     onVariantChange,
@@ -214,13 +229,14 @@ const ProductDetailBody: ProductDetailBodyType = ({
         </div>
 
         {!!upSellProduct && (
-          <div className={styles.upSell}>
+          <div className={styles.upSell} ref={upsellRef}>
             <ProductExtract
               dataTestRef={PRODUCT_UP_SELL}
               hasBottomBorder={false}
               hasTopMargin={false}
               imageSize="medium"
               itemNum={1}
+              onHyperlinkClick={onUpsellClick}
               product={upSellProduct}
               theme={currentTheme}
               works={copy.upSellProductLabel}

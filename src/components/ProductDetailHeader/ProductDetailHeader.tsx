@@ -19,6 +19,8 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
   copy,
   onBreadcrumbClick,
   onFlyinOpenCloseClick,
+  onUpsellScrollIntoView,
+  onUpsellClick,
   paymentWidget,
   theme,
 }) => {
@@ -33,6 +35,8 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
     onBreadcrumbClick(item, selectedVariant);
   const handleOnFlyinOpenCloseClick = (flyinState) =>
     onFlyinOpenCloseClick(flyinState, selectedVariant);
+  const handleOnUpsellScrollIntoView = () =>
+    onUpsellScrollIntoView && onUpsellScrollIntoView();
 
   return (
     <div className={classSet}>
@@ -57,6 +61,8 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
               flyinPanelHeading: copy?.flyinPanelHeading,
             }}
             onFlyinOpenCloseClick={handleOnFlyinOpenCloseClick}
+            onUpsellClick={onUpsellClick}
+            onUpsellScrollIntoView={handleOnUpsellScrollIntoView}
             paymentWidget={paymentWidget}
             theme={currentTheme}
           />
