@@ -1,3 +1,3 @@
 module.exports = {
-  ...require('aesop-code-styles/.prettierrc'),
+  ...require('@aesop-engineering/code-styles/.prettierrc'),
 };
