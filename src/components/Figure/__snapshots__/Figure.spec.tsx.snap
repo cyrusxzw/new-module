@@ -16,6 +16,7 @@ exports[`<Figure /> should render base component correctly 1`] = `
       <img
         alt="Image Alt Text"
         loading="lazy"
+        src="https://release.aesop-web-ui.aesopdigital.io/images/products/Skin_Perfect_Facial_Hydrating_Cream_60mL_large.png"
       />
     </picture>
     <figcaption

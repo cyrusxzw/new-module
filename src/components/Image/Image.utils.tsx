@@ -54,4 +54,12 @@ function getImageSourcesBySize(
   return imageSources;
 }
 
-export { getImageSourcesBySize };
+const getDefaultImageSource = (sizes: ImageProps['sizes']): string | null => {
+  if (!sizes) return null;
+
+  const { large, medium, small } = sizes;
+
+  return large || medium || small;
+};
+
+export { getImageSourcesBySize, getDefaultImageSource };

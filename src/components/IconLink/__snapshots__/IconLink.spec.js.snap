@@ -28,6 +28,7 @@ exports[`<IconLink /> should render base component correctly 1`] = `
       <img
         alt="Instagram"
         loading="lazy"
+        src="./assets/images/IconLink/instagram.png"
       />
     </picture>
   </a>

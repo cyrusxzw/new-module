@@ -26,6 +26,7 @@ exports[`<DoubleMedia /> should render base component correctly 1`] = `
         <img
           alt="A tactile approach infuses our work, from our product development to our retail service and visual merchandising."
           loading="lazy"
+          src="./assets/images/DoubleImage/image-one-large.jpg"
         />
       </picture>
       <figcaption
@@ -73,6 +74,7 @@ exports[`<DoubleMedia /> should render base component correctly 1`] = `
           <img
             alt="Image of: Our passion for creativity in form and function, extends to the setting of a meal among staff."
             loading="lazy"
+            src="./assets/images/DoubleImage/image-two-large.jpg"
           />
         </picture>
       </a>

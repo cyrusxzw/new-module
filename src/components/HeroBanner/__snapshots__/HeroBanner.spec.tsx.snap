@@ -30,6 +30,7 @@ exports[`<HeroBanner /> should render base component correctly 1`] = `
           <img
             alt="alt image"
             loading="lazy"
+            src="./assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Desktop_2880x1044px.jpg"
           />
         </picture>
       </figure>

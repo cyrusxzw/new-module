@@ -1,7 +1,7 @@
 import React, { forwardRef, LegacyRef } from 'react';
 import cx from 'classnames';
 import { Hyperlink } from '~/components/Hyperlink';
-import { getImageSourcesBySize } from './Image.utils';
+import { getImageSourcesBySize, getDefaultImageSource } from './Image.utils';
 import type { ImageProps } from './Image.types';
 import styles from './Image.module.css';
 
@@ -34,7 +34,12 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function ImageRef(
     <picture className={classSet} style={style}>
       {getImageSourcesBySize(sizes)}
 
-      <img alt={altText} loading={isLazyLoaded ? 'lazy' : 'eager'} ref={ref} />
+      <img
+        alt={altText}
+        loading={isLazyLoaded ? 'lazy' : 'eager'}
+        ref={ref}
+        src={getDefaultImageSource(sizes)}
+      />
     </picture>
   );
 
