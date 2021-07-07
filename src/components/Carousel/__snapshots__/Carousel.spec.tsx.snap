@@ -70,6 +70,7 @@ exports[`<Carousel /> renders component correctly if no \`introduction\` prop is
                       <img
                         alt="Quisque non enim efficitur"
                         loading="lazy"
+                        src="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
                       />
                     </picture>
                   </div>
@@ -131,6 +132,7 @@ exports[`<Carousel /> renders component correctly if no \`introduction\` prop is
                       <img
                         alt="Phasellus posuere porta varius"
                         loading="lazy"
+                        src="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
                       />
                     </picture>
                   </div>
@@ -192,6 +194,7 @@ exports[`<Carousel /> renders component correctly if no \`introduction\` prop is
                       <img
                         alt="Etiam at pharetra nisl"
                         loading="lazy"
+                        src="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Large-1584x962px.png?context=bWFzdGVyfGltYWdlc3wzOTUwOTh8aW1hZ2UvcG5nfGltYWdlcy9oMWMvaDk4LzkxMTA3OTc2NDc5MDIucG5nfGYwMTE1NGQ3N2M0MDBmYTg1NzY4OTlkNTg0NTlmNmYzMWRkYmJkYzczYjFlOGEyMGMyOWVlZDRmZTRkYzE5ZjI"
                       />
                     </picture>
                   </div>
@@ -253,6 +256,7 @@ exports[`<Carousel /> renders component correctly if no \`introduction\` prop is
                       <img
                         alt="Phasellus posuere porta varius"
                         loading="lazy"
+                        src="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
                       />
                     </picture>
                   </div>
@@ -336,6 +340,7 @@ exports[`<Carousel /> renders component correctly if no \`url\` member is provid
                       <img
                         alt="Quisque non enim efficitur"
                         loading="lazy"
+                        src="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
                       />
                     </picture>
                   </div>
@@ -531,6 +536,7 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                       <img
                         alt="Quisque non enim efficitur"
                         loading="lazy"
+                        src="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
                       />
                     </picture>
                   </div>
@@ -592,6 +598,7 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                       <img
                         alt="Phasellus posuere porta varius"
                         loading="lazy"
+                        src="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
                       />
                     </picture>
                   </div>
@@ -653,6 +660,7 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                       <img
                         alt="Etiam at pharetra nisl"
                         loading="lazy"
+                        src="https://www.aesop.com/medias/Aesop-Resurrection-Duet-with-Product-Large-1584x962px.png?context=bWFzdGVyfGltYWdlc3wzOTUwOTh8aW1hZ2UvcG5nfGltYWdlcy9oMWMvaDk4LzkxMTA3OTc2NDc5MDIucG5nfGYwMTE1NGQ3N2M0MDBmYTg1NzY4OTlkNTg0NTlmNmYzMWRkYmJkYzczYjFlOGEyMGMyOWVlZDRmZTRkYzE5ZjI"
                       />
                     </picture>
                   </div>
@@ -714,6 +722,7 @@ exports[`<Carousel /> should render base component correctly 1`] = `
                       <img
                         alt="Phasellus posuere porta varius"
                         loading="lazy"
+                        src="https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ"
                       />
                     </picture>
                   </div>

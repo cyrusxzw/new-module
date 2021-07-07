@@ -25,6 +25,7 @@ exports[`<Image /> should render base component correctly 1`] = `
       <img
         alt="Image of Milk Cleansing Campaign Aesop 2019"
         loading="lazy"
+        src="/images/products/Hand_Reverence_Aromatique_Hand_Wash_500mL_large.png 2x"
       />
     </picture>
   </a>
