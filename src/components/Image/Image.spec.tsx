@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { Image } from './Image';
+import { getDefaultImageSource } from './Image.utils';
 
 describe('<Image />', () => {
   it('should render base component correctly', () => {
@@ -49,5 +50,18 @@ describe('<Image />', () => {
     const results = await axe(container);
 
     expect(results).toHaveNoViolations();
+  });
+});
+
+describe('Image utils - getDefaultImageSource', () => {
+  it('should return a string when provided with the correctly typed object', () => {
+    expect(getDefaultImageSource({ small: 'small-image-source' })).toBe(
+      'small-image-source',
+    );
+  });
+
+  it('should return null or undefined if no strings could be returned', () => {
+    expect(getDefaultImageSource({})).toBeUndefined();
+    expect(getDefaultImageSource(null)).toBeNull();
   });
 });
