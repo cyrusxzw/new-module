@@ -6,6 +6,9 @@ on:
     tags-ignore:
       - '**'
 
+env:
+  NPM_TOKEN: ${{ secrets.X_NPM_TOKEN }}
+  
 jobs:
   prepare_release:
     name: Prepare Release
