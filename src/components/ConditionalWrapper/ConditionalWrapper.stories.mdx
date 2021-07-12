@@ -10,7 +10,7 @@ import { ConditionalWrapper } from './ConditionalWrapper';
   <Story name="Base component">
     <ConditionalWrapper
       condition={true}
-      wrapper={children => <div>{children}</div>}
+      wrapper={(children) => <div>{children}</div>}
     >
       <span>Conditionally wrapped content</span>
     </ConditionalWrapper>

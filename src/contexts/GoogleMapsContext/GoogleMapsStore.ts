@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import type { Options } from './GoogleMapsContext.types';
 
-const loadGoogleMapsAsync = loader =>
-  new Promise(resolve => {
-    loader.load(google => {
+const loadGoogleMapsAsync = (loader) =>
+  new Promise((resolve) => {
+    loader.load((google) => {
       resolve(google);
     });
   });

@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import { GridOverlay } from '~.storybook/GridOverlay.js';
+import { StorybookGridOverlay } from '~.storybook/components/StorybookGridOverlay';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
@@ -51,7 +51,7 @@ import { ProductDetailFixture } from './ProductDetail.fixture';
       };
       return (
         <div>
-          <GridOverlay
+          <StorybookGridOverlay
             isActive={gridOverlayActive}
             hasInvertedColours={gridOverlayIntertedColours}
           />
@@ -81,7 +81,8 @@ import { ProductDetailFixture } from './ProductDetail.fixture';
                     productHeader: {
                       addToCart: AddToCartButtonFixture.copy,
                       size: ProductDetailBodyFixture.copy.size,
-                      upSellProductLabel: ProductDetailBodyFixture.copy.upSellProductLabel,
+                      upSellProductLabel:
+                        ProductDetailBodyFixture.copy.upSellProductLabel,
                     },
                   }}
                   quote={QuoteFixture}

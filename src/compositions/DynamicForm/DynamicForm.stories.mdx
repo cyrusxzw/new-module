@@ -12,11 +12,16 @@ import { Button } from '../../components/Button';
 <Canvas>
   <Story name="Base component">
     <DynamicForm
-      formSchema={knobs.select('formSchema', {
-        'None': null,
-        'Au Sign up form': DynamicFormFixture.auSignUp,
-        'Korean Sign up form': DynamicFormFixture.krSignUp,
-      }, DynamicFormFixture.auSignUp, 'Content')}
+      formSchema={knobs.select(
+        'formSchema',
+        {
+          None: null,
+          'Au Sign up form': DynamicFormFixture.auSignUp,
+          'Korean Sign up form': DynamicFormFixture.krSignUp,
+        },
+        DynamicFormFixture.auSignUp,
+        'Content',
+      )}
       onSubmit={DynamicFormFixture.onSubmit}
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
     >
@@ -37,6 +42,7 @@ This prop defines the structure of the form in terms of elements to render, in a
 and validation.
 
 The schema has the following shape
+
 ```js
 formSchema = [
   [form elements], // each array is displayed inline (row) on large viewports

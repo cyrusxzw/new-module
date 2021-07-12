@@ -1,18 +1,17 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import { GridOverlay } from '~.storybook/GridOverlay.js';
+import { action } from '@storybook/addon-actions';
+import { StorybookGridOverlay } from '~.storybook/components';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
   VariantSelectContextProvider,
 } from '~/contexts';
 import { ProductDetailBodyFixture } from '~/components/ProductDetailHeader/components/ProductDetailBody/ProductDetailBody.fixture';
-import { ProductDetailHeader } from './ProductDetailHeader';
-import { ProductDetailHeaderFixture } from './ProductDetailHeader.fixture';
 import { AddToCartButtonFixture } from '~/components/AddToCartButton/AddToCartButton.fixture';
 import { mockAddToCartButtonOnClick } from '~/components/AddToCartButton/__mocks__/AddToCartButton.onClick';
-import { SecondaryMessage } from '~/components/SecondaryMessage';
-import { SecondaryMessageFixture } from '~/components/SecondaryMessage/SecondaryMessage.fixture';
+import { ProductDetailHeader } from './ProductDetailHeader';
+import { ProductDetailHeaderFixture } from './ProductDetailHeader.fixture';
 
 <Meta title="Components/ProductDetailHeader" component={ProductDetailHeader} />
 
@@ -21,16 +20,6 @@ import { SecondaryMessageFixture } from '~/components/SecondaryMessage/Secondary
 <Canvas>
   <Story name="Base component">
     {(() => {
-      const gridOverlayActive = knobs.boolean(
-        'isActive',
-        false,
-        'Grid overlay',
-      );
-      const gridOverlayIntertedColours = knobs.boolean(
-        'hasInvertedColours',
-        false,
-        'Grid overlay',
-      );
       const theme = knobs.select(
         'theme',
         ['dark', 'light'],
@@ -50,16 +39,28 @@ import { SecondaryMessageFixture } from '~/components/SecondaryMessage/Secondary
           'imageSize',
           ['Small', 'Large'],
           imageSize,
-          'Content'
+          'Content',
         ),
         ...productRest,
       };
+      const copy = {
+        addToCart: AddToCartButtonFixture.copy,
+        size: ProductDetailBodyFixture.copy.size,
+        upSellProductLabel: ProductDetailBodyFixture.copy.upSellProductLabel,
+        flyinPanelHeading: ProductDetailBodyFixture.copy.flyinPanelHeading,
+      };
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
       return (
-        <div>
-          <GridOverlay
-            isActive={gridOverlayActive}
-            hasInvertedColours={gridOverlayIntertedColours}
-          />
+        <>
           <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
             <ProductDetailContextProvider product={productDetails}>
               <VariantSelectContextProvider
@@ -68,21 +69,26 @@ import { SecondaryMessageFixture } from '~/components/SecondaryMessage/Secondary
                 <ProductDetailHeader
                   breadcrumbs={ProductDetailHeaderFixture.breadcrumbs}
                   className={ProductDetailHeaderFixture.className}
-                  copy={{
-                    addToCart: AddToCartButtonFixture.copy,
-                    size: ProductDetailBodyFixture.copy.size,
-                    upSellProductLabel:
-                      ProductDetailBodyFixture.copy.upSellProductLabel,
-                    flyinPanelHeading:
-                      ProductDetailBodyFixture.copy.flyinPanelHeading,
-                  }}
+                  copy={copy}
+                  onBreadcrumbClick={action('clicked')}
+                  onFlyinOpenCloseClick={action('clicked')}
+                  onUpsellScrollIntoView={action('Upsell is on screen')}
+                  onUpsellClick={action('Upsell clicked')}
+                  paymentWidget={
+                    <div>
+                      <span>Payment Widget Placeholder</span>
+                    </div>
+                  }
                   theme={theme}
                 />
-                <SecondaryMessage {...SecondaryMessageFixture} />
               </VariantSelectContextProvider>
             </ProductDetailContextProvider>
           </AddToCartContextProvider>
-        </div>
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
       );
     })()}
   </Story>

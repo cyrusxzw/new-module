@@ -1,0 +1,25 @@
+@import 'styles/index';
+
+.base {
+  position: relative;
+
+  @media (--viewport-lg) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.topOffest {
+  padding-top: 40px;
+  margin-top: -120px;
+
+  @media (--viewport-md) {
+    padding-top: 50px;
+    margin-top: -130px;
+  }
+
+  @media (--viewport-lg) {
+    padding-top: 75px;
+    margin-top: -155px;
+  }
+}

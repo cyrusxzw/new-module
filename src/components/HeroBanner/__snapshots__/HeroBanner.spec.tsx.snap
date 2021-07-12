@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeroBanner /> should render base component correctly 1`] = `
+<div>
+  <div
+    class="base"
+    style="background-color: rgb(246, 245, 232);"
+  >
+    <div
+      class="base undefined fullWidth"
+    >
+      <figure
+        class="base dark figure"
+      >
+        <picture
+          class="base picture dark"
+        >
+          <source
+            media="(min-width: 1025px)"
+            srcset="./assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Desktop_2880x1044px.jpg"
+          />
+          <source
+            media="(min-width: 640px)"
+            srcset="./assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Tablet_1536x1730px.jpg"
+          />
+          <source
+            media="(min-width: 0px)"
+            srcset="./assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Mobile_640x640px.jpg"
+          />
+          <img
+            alt="alt image"
+            loading="lazy"
+            src="./assets/images/HeroBanner/Aesop_Lunar_New_Year_2021_Homepage_Primary_Full_Bleed_Desktop_2880x1044px.jpg"
+          />
+        </picture>
+      </figure>
+    </div>
+    <div
+      class="base fullWidth dark"
+    >
+      <div
+        class="innerWrapper"
+      >
+        <header
+          class="header base heroHeading"
+          data-testid="data-testid-SectionHeading"
+        >
+          <h1
+            class="base serifFont xLarge dark heading"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </h1>
+          <h2
+            class="base mediumWeightFont xXSmall dark eyebrow"
+          >
+            Praesent tincidunt accumsan
+          </h2>
+          
+        </header>
+        <div
+          class="content"
+        >
+          <div
+            class="set dark large description"
+          >
+            Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

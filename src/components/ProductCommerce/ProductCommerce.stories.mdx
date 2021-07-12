@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
 import {
   AddToCartContextProvider,
   ProductDetailContextProvider,
@@ -19,58 +20,79 @@ import { ProductCommerceFixture } from './ProductCommerce.fixture';
 
 # ProductCommerce
 
-Presented in a [Podium](?path=/docs/components-podium--base-component) component with `verticalPadding` set to _small_.
-
-Requires `AddToCartContextProvider`, `ProductDetailContextProvider` and `VariantSelectContextProvider`.
-
 <Canvas>
   <Story name="Base component">
-    <Podium verticalPadding="small">
-      <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
-        <ProductDetailContextProvider
-          product={ProductDetailHeaderFixture.product}
-        >
-          <VariantSelectContextProvider
-            variants={ProductCommerceFixture.variantOptions}
-          >
-            <ProductCommerce
-              isActive={true}
-              copy={{
-                addToCart: AddToCartButtonFixture.copy,
-                ...ProductCommerceFixture.copy,
-              }}
-              cta={knobs.object('cta', ProductCommerceFixture.cta, 'Content')}
-              description={
-                <P>
-                  {knobs.text(
-                    'description',
-                    ProductCommerceFixture.description,
-                    'Content',
-                  )}
-                </P>
-              }
-              eyebrow={knobs.text(
-                'eyebrow',
-                ProductCommerceFixture.eyebrow,
-                'Content',
-              )}
-              heading={knobs.text(
-                'heading',
-                ProductCommerceFixture.heading,
-                'Content',
-              )}
-              size={ProductDetailHeaderFixture.product.size}
-              theme={knobs.select(
-                'theme',
-                ['dark', 'light'],
-                'dark',
-                'Presentation',
-              )}
-            />
-          </VariantSelectContextProvider>
-        </ProductDetailContextProvider>
-      </AddToCartContextProvider>
-    </Podium>
+    {(() => {
+      const cta = knobs.object('cta', ProductCommerceFixture.cta, 'Content');
+      const eyebrow = knobs.text(
+        'eyebrow',
+        ProductCommerceFixture.eyebrow,
+        'Content',
+      );
+      const heading = knobs.text(
+        'heading',
+        ProductCommerceFixture.heading,
+        'Content',
+      );
+      const isActive = knobs.boolean('isActive', true, 'Presentation');
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <Podium verticalPadding="small">
+            <AddToCartContextProvider onClick={mockAddToCartButtonOnClick}>
+              <ProductDetailContextProvider
+                product={ProductDetailHeaderFixture.product}
+              >
+                <VariantSelectContextProvider
+                  variants={ProductCommerceFixture.variantOptions}
+                >
+                  <ProductCommerce
+                    isActive={isActive}
+                    copy={{
+                      addToCart: AddToCartButtonFixture.copy,
+                      ...ProductCommerceFixture.copy,
+                    }}
+                    cta={cta}
+                    description={
+                      <P>
+                        {knobs.text(
+                          'description',
+                          ProductCommerceFixture.description,
+                          'Content',
+                        )}
+                      </P>
+                    }
+                    eyebrow={eyebrow}
+                    heading={heading}
+                    size={ProductDetailHeaderFixture.product.size}
+                    theme={theme}
+                  />
+                </VariantSelectContextProvider>
+              </ProductDetailContextProvider>
+            </AddToCartContextProvider>
+          </Podium>
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 

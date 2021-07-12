@@ -5,6 +5,7 @@
 ## Tooling Requirements
 
 - **Node** [https://nodejs.org/](https://nodejs.org/) (required version recorded in the [.nvmrc](.nvmrc) file)
+- **TypeScript** [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
 
 ## Tooling Suggestions
 
@@ -13,6 +14,7 @@
 
 It is also recommended to install these plugins into your **IDE / Code Editor** of choice:
 
+- TypeScript
 - Babel ([atom](https://atom.io/packages/language-babel))
 - Base linter ([atom only](https://atom.io/packages/linter))
 - Editor Config ([atom](https://atom.io/packages/editorconfig))
@@ -21,6 +23,30 @@ It is also recommended to install these plugins into your **IDE / Code Editor** 
 - Prettier ([atom](https://atom.io/packages/prettier-atom))
   ([vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode))
 - StyleLint ([atom](https://atom.io/packages/linter-stylelint)) ([vscode](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint))
+
+## Usage
+
+Install in your application using the following command
+
+```bash
+# will use the main branch (`develop` at the time of writing)
+npm install github:aesop/aesop-gel --save
+```
+
+Import the component/hook/etc that you need in your code
+
+```jsx
+import { Heading } from 'aesop-gel/dist/components/Heading';
+
+// example usage
+const MyAppHeading = () => (
+  <Heading theme="dark" level="1" size="large">
+    This is a large H1
+  </Heading>
+);
+```
+
+All exposed components, hooks, contexts, types and utilities can be reviewed [here](https://github.com/aesop/aesop-gel/blob/develop/src/index.ts)
 
 ## Application Architecture
 
@@ -69,7 +95,7 @@ To address this you can use a `jsconfig.json` with a sample shown below. More in
 
 ## Production
 
-Rollup buils ES Modules for this project
+Rollup builds ES Modules for this project. The following command will also construct the Typescript declaration files.
 
 ```bash
 npm run build
@@ -93,7 +119,7 @@ Commits to the `develop` branch will be released on the `develop` channel. These
 
 When `develop` is merged into `main` a release will be created. These will be tagged as `v1.2.3` (Note the `main` should also be merged back into `develop` at this point so both branches contain a 'full' git tag history).
 
-These versions can be refrenced in other projects by adding `"aesop-gel": "github:aesop/aesop-gel#1.2.3",` to the package.json file. Generally the `main` releases should only be used. However during development and testing it may make sense to use the `develop` or 'beta' builds.
+These versions can be referenced in other projects by adding `"aesop-gel": "github:aesop/aesop-gel#1.2.3",` to the `package.json` file. Generally the `main` releases should only be used. However during development and testing it may make sense to use the `develop` or 'beta' builds.
 
 Changes to the version number are calculated automatically via the CI flow. In short commits with a `feat` type will increment the `minor` version, commits with a `fix` type will increment the `patch` version.
 
@@ -142,6 +168,12 @@ test
 
 ## Testing
 
+### Real-time testing feedback
+
+```
+npm run test-watch
+```
+
 ### Component Snapshots
 
 To run Jest snapshots on all component files with a `.spec.js` file, run:
@@ -158,7 +190,7 @@ npm run test -- -u
 
 ### UI and Design Testing
 
-Story Book is used to Visually test and showcase components. Run the following to build the storybook files and serve them on `http://localhost:6006/?path=/story/*`:
+Story Book is used to visually test and showcase components. Run the following to build the storybook files and serve them on `http://localhost:6006/?path=/story/*`:
 
 ```
 npm start
@@ -250,17 +282,15 @@ In regards to typing React components, use [React+TypeScript Cheatsheets](https:
 [Prettier](https://github.com/prettier/prettier) is used to maintain code style within the application. The changes to the base Prettier config for this application are configured in the [`.prettierrc`](.prettierrc) file. Use the following task to format CSS and JavaScript files.
 
 ```
-npm run pretty
+npm run format
 ```
-
-`npm run prettier-eslint` and `npm run prettier-stylelint` will independently run the relevant format task for JavaScript and CSS respectively.
 
 ### Pre Commit Hook
 
 [Husky](https://github.com/typicode/husky) is used to automatically run `npm run format` as a pre-commit hook, ensuring changes to
 source files follow the same formatting. The configurations of Husky is found in [.huskyrc](.huskyrc).
 
-.huskyrc
+`.huskyrc`
 
 ```
 {
@@ -279,12 +309,28 @@ Any `@TODO`s in the code base should have a corresponding issue submission.
 
 ### Contributing
 
-#### Creating new components
+#### Component directory generator
 
-Use the npm script to generate the new files for a new component.
+Use the `generate-component` script to generate the new files for a new component:
 
 ```bash
-npm run generate-component -- MyComponent
+npm run generate-component $component-name <$component-type>
+```
+
+[Source code](https://github.com/aesop/aesop-gel/blob/develop/scripts/componentBoilerplate/create.sh)
+
+The `$component-name` is required, where as the optional `$component-type` will generate a component as one of the following options:
+
+- `ref` - A functional component wrapped in React’s `forwardRef` higher order function.
+- `withoutChildren` - A functional component that does not accept a `children` prop.
+- `withChildren` (default) - A functional component that does accept a `children` prop.
+
+For example:
+
+```bash
+npm run generate-component Button
+npm run generate-component Icon withoutChildren
+npm run generate-component Map ref
 ```
 
 Pull Requests for any new feature, bug fix or update need to be made with the PR template provided via a [New Pull Request](https://github.com/aesop/aesop-gel/pulls). Every PR needs to be Peer Reviewed before it can be merged.

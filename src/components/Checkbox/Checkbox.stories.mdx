@@ -11,7 +11,11 @@ import { Checkbox } from './Checkbox';
   <Story name="Base component">
     <Podium>
       <Checkbox
-        content={knobs.text('content', 'Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.', 'Content')}
+        content={knobs.text(
+          'content',
+          'Subscribe to communications about Aesop products, services, stores, events and matters of cultural interest.',
+          'Content',
+        )}
         errorMessage={knobs.text('errorMessage', '', 'Content')}
         isEnabled={knobs.boolean('isEnabled', true, 'Presentation')}
         theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}

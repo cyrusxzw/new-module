@@ -1,8 +1,12 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import { NotificationContextProvider } from '~/contexts';
+import { StorybookGridOverlay } from '~.storybook/components';
+import {
+  NotificationContextProvider,
+  useNotificationContext,
+} from '~/contexts';
 import { Podium } from '~/components/Podium';
-import { ToogleButton } from './components/ToogleButton';
+import { Button } from '~/components/Button';
 import { NotificationModal } from './NotificationModal';
 import { NotificationModalFixture } from './NotificationModal.fixture';
 
@@ -12,15 +16,47 @@ import { NotificationModalFixture } from './NotificationModal.fixture';
 
 <Canvas>
   <Story name="Base component">
-    <NotificationContextProvider>
-      <Podium horizontalPadding="small" verticalPadding="small">
-        <ToogleButton />
-      </Podium>
-      <NotificationModal
-        backgroundColor="#d5d5cc"
-        notificationMessage={NotificationModalFixture.notificationMessage}
-      />
-    </NotificationContextProvider>
+    {(() => {
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <NotificationContextProvider>
+            <Podium horizontalPadding="small" verticalPadding="small">
+              {(() => {
+                const ToggleButton = () => {
+                  const { actionType, dispatch } = useNotificationContext();
+                  const handleOnClick = () =>
+                    dispatch?.({ type: actionType?.SHOW_NOTIFICATION });
+                  return (
+                    <Button onClick={handleOnClick} title="Show Notification">
+                      Show Notification
+                    </Button>
+                  );
+                };
+                return <ToggleButton />;
+              })()}
+            </Podium>
+            <NotificationModal
+              backgroundColor="#d5d5cc"
+              notificationMessage={NotificationModalFixture.notificationMessage}
+            />
+          </NotificationContextProvider>
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 

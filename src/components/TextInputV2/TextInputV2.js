@@ -30,7 +30,7 @@ const TextInputV2 = forwardRef(
     const [value, setValue] = useState(valueProp || '');
     const inputId = idProp || uid;
     const handleOnChange = useCallback(
-      event => {
+      (event) => {
         setValue(event.target.value);
         onChange(event);
       },
@@ -126,7 +126,7 @@ TextInputV2.propTypes = {
 TextInputV2.defaultProps = {
   classes: {},
   isDisabled: false,
-  onChange: () => {},
+  onChange: () => undefined,
   theme: 'dark',
   type: 'text',
 };

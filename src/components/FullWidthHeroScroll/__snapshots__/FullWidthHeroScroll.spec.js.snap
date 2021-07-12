@@ -33,6 +33,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
             <img
               alt="How to Use Video for Tea Tree Leaf Facial Exfoliant"
               loading="lazy"
+              src="./assets/images/MediaWithContent/video-poster.png"
             />
           </picture>
         </figure>
@@ -45,7 +46,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
           playsinline=""
         >
           <source
-            src="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
+            src="https://player.vimeo.com/external/462935380.hd.mp4?s=01e048a4b5942b2c6648ffe9965ac5c79ebfc545&profile_id=169"
             type="video/mp4"
           />
         </video>
@@ -71,6 +72,7 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
             <img
               alt="How to Use Video for Tea Tree Leaf Facial Exfoliant"
               loading="lazy"
+              src="./assets/images/MediaWithContent/video-poster.png"
             />
           </picture>
         </button>
@@ -90,9 +92,10 @@ exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
           >
             <header
               class="base"
+              data-testid="data-testid-SectionHeading"
             >
               <h1
-                class="base xLarge light heading heading"
+                class="base xLarge light heading"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </h1>

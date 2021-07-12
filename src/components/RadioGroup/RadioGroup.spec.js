@@ -5,10 +5,6 @@ import { RadioGroup } from './RadioGroup';
 import { RadioGroupFixture } from './RadioGroup.fixture';
 
 describe('<RadioGroup />', () => {
-  it('should be defined', () => {
-    expect(RadioGroup).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <RadioGroup

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Carousel.CarouselIntroduction /> should render base component correctly 1`] = `
+<div>
+  <div
+    class="base dark"
+  >
+    <header
+      class="heading offsetHeading base"
+      data-testid="data-testid-SectionHeading"
+    >
+      <h2
+        class="base flush serifFont xLarge dark heading"
+      >
+        Maecenas elementum
+      </h2>
+    </header>
+    <div
+      class="content"
+    >
+      <div
+        class="description dark"
+      >
+        Maecenas elementum, metus id facilisis placerat, turpis diam sodales velit, quis sodales ipsum nunc nec velit. Aenean ac tortor consectetur, volutpat massa sed, ultricies orci.
+      </div>
+    </div>
+  </div>
+</div>
+`;

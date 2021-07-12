@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { ContentHubArticle } from '~/components/ContentHubArticle';
+import { ContentHubArticle } from '~/components/ContentHubArticle/index.ts';
 import { Transition } from '~/components/Transition';
 import styles from './ReadMore.module.css';
 
@@ -12,7 +12,7 @@ const ReadMore = ({ articles, className }) => {
   return (
     <Transition isActiveOnMount={true} type="fade">
       <section className={classSet}>
-        {articles.map(article => (
+        {articles.map((article) => (
           <ContentHubArticle
             articleRef={article.articleRef}
             category={article.category}

@@ -6,53 +6,51 @@ import { DefinitionList } from '~/components/DefinitionList';
 import { DefinitionListFixture } from '~/components/DefinitionList/DefinitionList.fixture';
 import { Transition } from './Transition';
 
-<Meta
-  title="Components/Transition"
-  component={Transition}
-/>
+<Meta title="Components/Transition" component={Transition} />
 
 # Transition
 
 <Canvas>
   <Story name="Base component">
-    <State initialState={{ isActive: false }}>
-      {(state, setState) => {
-        return (
-          <React.Fragment>
-            <Button
-              onClick={() => {
-                setState(state => ({ ...state, isActive: !state.isActive }));
-              }}
-              title="Toggle Transition"
-            >
-              Toggle Transition
-            </Button>
-            <Transition
-              isActive={state.isActive}
-              type={knobs.select(
-                'type',
-                [
-                  'fade',
-                  'shiftInDown',
-                  'shiftInLeft',
-                  'shiftInUp',
-                  'slideDown',
-                  'slideRight',
-                  'slowFade',
-                  'zoom',
-                ],
-                'shiftInDown',
-                'Presentation',
-              )}
-            >
-              <DefinitionList
-                items={DefinitionListFixture.items}
-              />
-            </Transition>
-          </React.Fragment>
-        )
-      }}
-    </State>
+    {(() => {
+      const type = knobs.select(
+        'type',
+        [
+          'fade',
+          'shiftInDown',
+          'shiftInLeft',
+          'shiftInUp',
+          'slideDown',
+          'slideRight',
+          'slowFade',
+          'zoom',
+        ],
+        'shiftInDown',
+        'Presentation',
+      );
+      return (
+        <State initialState={{ isActive: false }}>
+          {(state, setState) => {
+            const handleOnClick = () => {
+              setState((state) => ({
+                ...state,
+                isActive: !state.isActive,
+              }));
+            };
+            return (
+              <React.Fragment>
+                <Button onClick={handleOnClick} title="Toggle Transition">
+                  Toggle Transition
+                </Button>
+                <Transition isActive={state.isActive} type={type}>
+                  <DefinitionList items={DefinitionListFixture.items} />
+                </Transition>
+              </React.Fragment>
+            );
+          }}
+        </State>
+      );
+    })()}
   </Story>
 </Canvas>
 

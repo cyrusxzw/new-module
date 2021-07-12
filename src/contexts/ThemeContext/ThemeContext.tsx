@@ -1,13 +1,15 @@
-import React, { createContext, useContext, FC } from 'react';
-import type { ThemeContextProps } from './ThemeContext.types';
+import React, { createContext, useContext } from 'react';
+import type { ThemeContextProviderType } from './ThemeContext.types';
+import { Themes } from '~/types';
 
 const ThemeContext = createContext(undefined);
 
-const ThemeContextProvider: FC<ThemeContextProps> = ({ children, theme }) => (
-  <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
-);
+const ThemeContextProvider: ThemeContextProviderType = ({
+  children,
+  theme,
+}) => <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>;
 
-const useThemeContext = (propTheme: string, defaultTheme = 'dark') => {
+const useThemeContext = (propTheme: Themes, defaultTheme = 'dark'): Themes => {
   const themeContext = useContext(ThemeContext);
 
   return propTheme || themeContext || defaultTheme;

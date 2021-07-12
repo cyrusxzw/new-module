@@ -1,25 +1,38 @@
 import type { Variant } from '~/types';
+import type { DefinitionListItem } from '~/components/DefinitionList/DefinitionList.types';
+
+type ProductDefinitionListItem = DefinitionListItem & {
+  isExpandable?: boolean;
+};
+
+type UpSellProduct = {
+  image?: {
+    altText?: string;
+    small?: string;
+  };
+  name?: string;
+  url?: string;
+};
 
 type Product = {
-  description?: string;
-  id?: string;
-  variantOptions?: Variant[];
   cartDisclaimer?: string;
-  definitionList?: {
-    term?: JSX.Element;
-    description?: JSX.Element;
-  }[];
-  flyinPanel?: JSX.Element;
-  productName: string;
-  imageSize?: string;
-  upSellProduct?: {
-    image?: {
-      altText?: string;
+  definitionList?: ProductDefinitionListItem[];
+  description?: string;
+  flyinPanel?: React.ReactNode;
+  id?: string;
+  image?: {
+    altText?: string;
+    sizes?: {
+      large?: string;
+      medium?: string;
       small?: string;
     };
-    name?: string;
-    url?: string;
   };
+  imageSize?: string;
+  productName: string;
+  sku: string;
+  upSellProduct?: UpSellProduct;
+  variantOptions?: Variant[];
 };
 
 export type { Product };

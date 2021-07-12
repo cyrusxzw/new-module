@@ -1,41 +1,33 @@
 import { useReducer } from 'react';
+import type {
+  AddToCartAction,
+  AddToCartStoreState,
+  OnAddToCartClick,
+} from './AddToCartContext.types';
 
-enum ADD_TO_CART_ACTION_TYPES {
-  FAIL,
-  FETCHING,
-  SUCCESS,
-}
-
-const defaultState = {
-  actionTypes: {},
-  dispatch: () => {
-    return;
-  },
+const defaultState: AddToCartStoreState = {
   errorMessage: '',
   hasError: false,
   isLoading: false,
   isUpdateSuccessful: false,
-  onClick: () => {
-    return;
-  },
 };
 
-const reducer = (state, action) => {
-  if (action.type === ADD_TO_CART_ACTION_TYPES.FETCHING) {
+const reducer = (_state: AddToCartStoreState, action: AddToCartAction) => {
+  if (action.type === 'fetching') {
     return {
       errorMessage: '',
       hasError: false,
       isLoading: true,
       isUpdateSuccessful: false,
     };
-  } else if (action.type === ADD_TO_CART_ACTION_TYPES.SUCCESS) {
+  } else if (action.type === 'success') {
     return {
       errorMessage: '',
       hasError: false,
       isLoading: false,
       isUpdateSuccessful: true,
     };
-  } else if (action.type === ADD_TO_CART_ACTION_TYPES.FAIL) {
+  } else if (action.type === 'fail') {
     return {
       errorMessage: action.payload,
       hasError: true,
@@ -49,12 +41,11 @@ const reducer = (state, action) => {
   );
 };
 
-const useAddToCartStore = onClick => {
+const useAddToCartStore = (onClick: OnAddToCartClick) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
   const { errorMessage, hasError, isLoading, isUpdateSuccessful } = state;
 
   return {
-    actionTypes: ADD_TO_CART_ACTION_TYPES,
     dispatch,
     errorMessage,
     hasError,
@@ -64,4 +55,4 @@ const useAddToCartStore = onClick => {
   };
 };
 
-export { useAddToCartStore, ADD_TO_CART_ACTION_TYPES };
+export { useAddToCartStore };

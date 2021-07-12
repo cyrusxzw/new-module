@@ -1,4 +1,4 @@
-import type { Themes } from '~/types';
+import type { ComponentWithChildren, Themes } from '~/types';
 
 type ParagraphProps = {
   className?: string;
@@ -9,10 +9,14 @@ type ParagraphProps = {
   theme?: Themes;
 };
 
+type ParagraphType = ComponentWithChildren<ParagraphProps>;
+
 type ParagraphSetProps = {
   className?: string;
   isLarge?: boolean;
   theme?: Themes;
 };
 
-export type { ParagraphProps, ParagraphSetProps };
+type ParagraphSetType = ComponentWithChildren<ParagraphSetProps>;
+
+export type { ParagraphType, ParagraphSetType };

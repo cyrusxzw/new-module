@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import { Podium } from '~/components/Podium';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { ContentHubArticleList } from './ContentHubArticleList';
 import { ContentHubArticleListFixture } from './ContentHubArticleList.fixture';
 
@@ -13,13 +13,33 @@ import { ContentHubArticleListFixture } from './ContentHubArticleList.fixture';
 
 <Canvas>
   <Story name="Base component">
-    <Podium transition="fade">
-      <ContentHubArticleList
-        articles={ContentHubArticleListFixture.articles.filter(article => article.id <= knobs.select('number', [1, 2, 3, 4], 4, 'Presentation'))}
-        isFirstGroup={false}
-        pattern={knobs.select('pattern', [0, 1], 0, 'Presentation')}
-      />
-    </Podium>
+    {(() => {
+      const articles = ContentHubArticleListFixture.articles.filter(
+        (article) =>
+          article.id <= knobs.select('number', [1, 2, 3, 4], 4, 'Presentation'),
+      );
+      const pattern = knobs.select('pattern', [0, 1], 0, 'Presentation');
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <ContentHubArticleList
+            articles={articles}
+            isFirstGroup={false}
+            pattern={pattern}
+          />
+          <StorybookGridOverlay {...implementation.gridOverlay} />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 

@@ -23,9 +23,8 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
 
     const classSet = cx(styles.base, styles[theme], className);
     /** handleOnChange gets passed to the AccessibleAccordion dependency */
-    /* istanbul ignore next */
-    const handleOnChange = nodes => setIsActiveNodes(nodes);
-    const checkIsActive = id => activeNodes.includes(id);
+    const handleOnChange = (nodes) => setIsActiveNodes(nodes);
+    const checkIsActive = (id: string) => activeNodes.includes(id);
 
     return (
       <div
@@ -42,9 +41,7 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
         >
           {items.map(({ content, heading, id }) => (
             <AccordionItem className={styles.item} key={id} uuid={id}>
-              <AccordionItemHeading
-                className={cx(styles.heading, styles[theme])}
-              >
+              <AccordionItemHeading className={styles[theme]}>
                 <AccordionItemButton className={styles.button}>
                   <span className={styles.headingCopy}>{heading}</span>
                   <Icon
@@ -61,7 +58,10 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
                   isOpened={checkIsActive(id)}
                   theme={{ collapse: styles.collapse }}
                 >
-                  <div className={cx(styles.content, styles[theme])}>
+                  <div
+                    className={cx(styles.content, styles[theme])}
+                    data-testid="Accordion-content-section"
+                  >
                     {content}
                   </div>
                 </Collapse>

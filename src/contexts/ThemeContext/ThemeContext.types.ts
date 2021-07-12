@@ -1,7 +1,9 @@
-import { Themes } from '~/types';
+import type { ComponentWithChildren, Themes } from '~/types';
 
 type ThemeContextProps = {
   theme?: Themes;
 };
 
-export { ThemeContextProps };
+type ThemeContextProviderType = ComponentWithChildren<ThemeContextProps>;
+
+export { ThemeContextProps, ThemeContextProviderType };

@@ -5,7 +5,7 @@ import { useNotificationContext } from '~/contexts';
 import { Icon } from '~/components/Icon';
 import { Loading } from '~/components/Loading';
 import { Checkbox } from '~/components/Checkbox';
-import { TextInput } from '~/components/TextInput';
+import { TextInput } from '~/components/TextInput/index.ts';
 import styles from './NewsletterSignUp.css';
 
 const NewsletterSignUp = ({
@@ -42,7 +42,7 @@ const NewsletterSignUp = ({
   const footerSuccessModal = useNotificationContext();
   const { actionType, dispatch } = footerSuccessModal;
 
-  const validate = value => {
+  const validate = (value) => {
     const EMAIL_REGEXP = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     const string = String(value);
     if (!string) {
@@ -53,12 +53,12 @@ const NewsletterSignUp = ({
     return isValid;
   };
 
-  const onChange = e => {
+  const onChange = (e) => {
     setEmail(e.target.value);
     setHasContent(e.target.value && e.target.value.trim() !== '');
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError(undefined);
     const isValid = validate(email);

@@ -41,7 +41,7 @@
   line-height: 1.4;
   transition: all 200ms var(--easing-ease-in-out-cubic);
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     width: 100%;
     max-width: 100%;
   }

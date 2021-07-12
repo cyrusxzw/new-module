@@ -3,7 +3,10 @@ import { select } from '@storybook/addon-knobs';
 import { TextOverFullWidthAsset } from './TextOverFullWidthAsset';
 import { TextOverFullWidthAssetFixture } from './TextOverFullWidthAsset.fixture';
 
-<Meta title="Components/TextOverFullWidthAsset" component={TextOverFullWidthAsset} />
+<Meta
+  title="Components/TextOverFullWidthAsset"
+  component={TextOverFullWidthAsset}
+/>
 
 # TextOverFullWidthAsset
 
@@ -12,10 +15,32 @@ import { TextOverFullWidthAssetFixture } from './TextOverFullWidthAsset.fixture'
     <TextOverFullWidthAsset
       backgroundImage={TextOverFullWidthAssetFixture.backgroundImage}
       backgroundVideo={TextOverFullWidthAssetFixture.backgroundVideo}
-      content={<p>Enim id sit consequat reprehenderit enim ut tempor. Velit labore magna sint tempor qui anim reprehenderit id ipsum exercitation id nulla cillum laboris. Nostrud aliquip sit reprehenderit reprehenderit culpa ex dolor mollit officia aliqua commodo sint elit commodo fugiat.</p>}
-      copyHeight={select('Content vertical location', ['Top', 'Bottom'], 'Top', 'Layout')}
-      copySide={select('Content horizontal location', ['Left', 'Right'], 'Left', 'Layout')}
-      mediaType={select('Media type', ['Image', 'Video'], 'Video', 'Presentation')}
+      content={
+        <p>
+          Enim id sit consequat reprehenderit enim ut tempor. Velit labore magna
+          sint tempor qui anim reprehenderit id ipsum exercitation id nulla
+          cillum laboris. Nostrud aliquip sit reprehenderit reprehenderit culpa
+          ex dolor mollit officia aliqua commodo sint elit commodo fugiat.
+        </p>
+      }
+      copyHeight={select(
+        'Content vertical location',
+        ['Top', 'Bottom'],
+        'Top',
+        'Layout',
+      )}
+      copySide={select(
+        'Content horizontal location',
+        ['Left', 'Right'],
+        'Left',
+        'Layout',
+      )}
+      mediaType={select(
+        'Media type',
+        ['Image', 'Video'],
+        'Video',
+        'Presentation',
+      )}
     />
   </Story>
 </Canvas>

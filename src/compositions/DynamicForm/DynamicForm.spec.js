@@ -50,7 +50,7 @@ describe('<DynamicForm />', () => {
   });
 
   it('should not render anything if the schema is not defined', () => {
-    const { container } = render(<DynamicForm onSubmit={() => {}} />);
+    const { container } = render(<DynamicForm onSubmit={() => undefined} />);
 
     expect(container).toBeEmptyDOMElement();
   });
@@ -59,7 +59,7 @@ describe('<DynamicForm />', () => {
     render(
       <DynamicForm
         formSchema={[[{ type: 'Not a real element' }]]}
-        onSubmit={() => {}}
+        onSubmit={() => undefined}
       />,
     );
 
@@ -70,7 +70,7 @@ describe('<DynamicForm />', () => {
   it('should populate with the default value from schema', () => {
     const formSchema = [[textFieldSchema]];
 
-    render(<DynamicForm formSchema={formSchema} onSubmit={() => {}} />);
+    render(<DynamicForm formSchema={formSchema} onSubmit={() => undefined} />);
 
     const inputField = screen.getByRole('textbox');
     expect(inputField).toHaveValue(textFieldSchema.defaultValue);
@@ -84,7 +84,7 @@ describe('<DynamicForm />', () => {
       <DynamicForm
         defaultValues={defaultValues}
         formSchema={formSchema}
-        onSubmit={() => {}}
+        onSubmit={() => undefined}
       />,
     );
 
@@ -98,7 +98,7 @@ describe('<DynamicForm />', () => {
       [checkboxFieldSchema],
     ];
 
-    render(<DynamicForm formSchema={formSchema} onSubmit={() => {}} />);
+    render(<DynamicForm formSchema={formSchema} onSubmit={() => undefined} />);
 
     expect(screen.getByRole('combobox')).toBeInTheDocument();
     expect(screen.getByRole('textbox')).toBeInTheDocument();
@@ -112,7 +112,7 @@ describe('<DynamicForm />', () => {
       [checkboxFieldSchema],
     ];
 
-    render(<DynamicForm formSchema={formSchema} onSubmit={() => {}} />);
+    render(<DynamicForm formSchema={formSchema} onSubmit={() => undefined} />);
 
     expect(validators.getValidationRules).toHaveBeenCalledTimes(3);
     expect(validators.getValidationRules).toHaveBeenCalledWith(

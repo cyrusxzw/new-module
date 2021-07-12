@@ -4,23 +4,15 @@ import cx from 'classnames';
 import isFunction from 'lodash/isFunction';
 import { renderToStaticMarkup } from 'react-dom/server.browser';
 import MarkerClusterer from '@google/markerclusterer';
-import {
-  HYPERLINK_STYLE_TYPES,
-  GOOGLE_MAPS,
-  STORES,
-  TRANSITIONS,
-} from '~/constants';
+import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS, STORES } from '~/constants';
 import { useGoogleMapsContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
-import {
-  ascertainIsSmallOnlyViewport,
-  ascertainIsMediumViewport,
-} from '~/utils/viewports';
+import { isViewport } from '~/utils/viewport';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Loading } from '~/components/Loading';
 import { Transition } from '~/components/Transition';
 import { GoogleMapOptions } from './GoogleMap.options';
-import { InfoCard } from './components/InfoCard';
+import { InfoCard } from './components/InfoCard/index.ts';
 import styles from './GoogleMap.module.css';
 
 const GoogleMap = ({
@@ -38,8 +30,8 @@ const GoogleMap = ({
   const mapRef = useRef();
   const activeInfoCard = useRef(null);
   const handleMapClick = useRef(null);
-  const isIsSmallOnlyViewport = useRef(ascertainIsSmallOnlyViewport());
-  const isIsMediumViewport = useRef(ascertainIsMediumViewport());
+  const isXSmallOrSmallOnlyViewport = useRef(isViewport('xs to sm only'));
+  const isMediumViewport = useRef(isViewport('md'));
   const [activeInfoBlockData, setActiveInfoBlockData] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [markerCluster, setMarkerCluster] = useState([]);
@@ -65,11 +57,11 @@ const GoogleMap = ({
     }
   }, [center, initialZoom, googleMap]);
 
-  isIsSmallOnlyViewport.current = ascertainIsSmallOnlyViewport();
-  isIsMediumViewport.current = ascertainIsMediumViewport();
+  isXSmallOrSmallOnlyViewport.current = isViewport('xs to sm only');
+  isMediumViewport.current = isViewport('md');
 
   const clearMapMarkers = () => {
-    markers.forEach(marker => marker.setMap(null));
+    markers.forEach((marker) => marker.setMap(null));
     setMarkers([]);
   };
 
@@ -80,61 +72,6 @@ const GoogleMap = ({
 
     setMarkerCluster(null);
   };
-
-  useEffect(() => {
-    mapRef.current = createGoogleMap();
-
-    if (googleMap) {
-      handleMapClick.current = googleMap.maps.event.addListener(
-        mapRef.current,
-        'click',
-        () => {
-          if (activeInfoCard.current) {
-            activeInfoCard.current.close();
-          }
-        },
-      );
-
-      setMarkers(() =>
-        [customMarker, ...places]
-          .filter(item => item?.lat !== undefined && item?.lng !== undefined)
-          .map((marker, index) =>
-            marker.type === GOOGLE_MAPS.MARKER_TYPE.PIN
-              ? createPinMarker(marker, index)
-              : createPlaceMarker(marker, index, index === 0),
-          ),
-      );
-    }
-
-    return function cleanup() {
-      if (googleMap) {
-        googleMap.maps.event.removeListener(handleMapClick.current);
-        clearMapMarkers();
-      }
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [createGoogleMap, customMarker, places, googleMap]);
-
-  useEffect(() => {
-    const options = {
-      styles: [
-        {
-          url: GOOGLE_MAPS.CLUSTER_IMAGE_PATH, // https://www.aesop.com/_ui/responsive/common/images/icons/map-cluster-icon.svg
-          ...GoogleMapOptions.MAP_MARKER_CLUSTER,
-        },
-      ],
-    };
-
-    if (googleMap) {
-      setMarkerCluster(
-        () => new MarkerClusterer(mapRef.current, markers, options),
-      );
-    }
-    return function cleanup() {
-      clearMapClusters();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [markers]);
 
   const createPinMarker = useCallback(
     (pin, index) => {
@@ -218,7 +155,7 @@ const GoogleMap = ({
       });
 
       marker.addListener('click', () => {
-        if (isIsMediumViewport.current) {
+        if (isMediumViewport.current) {
           if (activeInfoCard.current) {
             activeInfoCard.current.close();
           }
@@ -227,7 +164,7 @@ const GoogleMap = ({
           activeInfoCard.current.open(mapRef.current, marker);
         }
 
-        if (isIsSmallOnlyViewport.current) {
+        if (isXSmallOrSmallOnlyViewport.current) {
           setActiveInfoBlockData({
             address,
             count: index + 1,
@@ -245,10 +182,65 @@ const GoogleMap = ({
       copy,
       customMarker,
       hasMarkerIndexes,
-      isIsMediumViewport,
-      isIsSmallOnlyViewport,
+      isMediumViewport,
+      isXSmallOrSmallOnlyViewport,
     ],
   );
+
+  useEffect(() => {
+    mapRef.current = createGoogleMap();
+
+    if (googleMap) {
+      handleMapClick.current = googleMap.maps.event.addListener(
+        mapRef.current,
+        'click',
+        () => {
+          if (activeInfoCard.current) {
+            activeInfoCard.current.close();
+          }
+        },
+      );
+
+      setMarkers(() =>
+        [customMarker, ...places]
+          .filter((item) => item?.lat !== undefined && item?.lng !== undefined)
+          .map((marker, index) =>
+            marker.type === GOOGLE_MAPS.MARKER_TYPE.PIN
+              ? createPinMarker(marker, index)
+              : createPlaceMarker(marker, index, index === 0),
+          ),
+      );
+    }
+
+    return function cleanup() {
+      if (googleMap) {
+        googleMap.maps.event.removeListener(handleMapClick.current);
+        clearMapMarkers();
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [createGoogleMap, customMarker, places, googleMap]);
+
+  useEffect(() => {
+    const options = {
+      styles: [
+        {
+          url: GOOGLE_MAPS.CLUSTER_IMAGE_PATH, // https://www.aesop.com/_ui/responsive/common/images/icons/map-cluster-icon.svg
+          ...GoogleMapOptions.MAP_MARKER_CLUSTER,
+        },
+      ],
+    };
+
+    if (googleMap) {
+      setMarkerCluster(
+        () => new MarkerClusterer(mapRef.current, markers, options),
+      );
+    }
+    return function cleanup() {
+      clearMapClusters();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [markers]);
 
   const classSet = cx(styles.base, className);
 
@@ -259,10 +251,10 @@ const GoogleMap = ({
         <div className={styles.map} id={id} ref={mapContainerRef} />
       </div>
       <Transition
-        hasCSSTransitionMountOnEnter={true}
-        hasCSSTransitionUnmountOnExit={true}
         isActive={!!activeInfoBlockData}
-        type={TRANSITIONS.TYPE.SHIFT_IN_DOWN}
+        shouldMountOnEnter={true}
+        shouldUnmountOnExit={true}
+        type="shiftInDown"
       >
         <InfoCard
           address={activeInfoBlockData?.address}

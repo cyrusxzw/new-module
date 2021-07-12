@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
-import { GridOverlay } from '~.storybook/GridOverlay.js';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { Accordion } from '~/components/Accordion';
 import { BodyCopy } from '~/components/BodyCopy';
 import { BynderWidget } from '~/components/BynderWidget';
@@ -8,9 +8,10 @@ import { Image } from '~/components/Image';
 import { SubNav } from '~/components/SubNav';
 import { SubNavFixture } from '~/components/SubNav/SubNav.fixture';
 import { TwoColumnList } from '~/components/TwoColumnList';
-import { Video } from '~/components/Video';
 import { TwoColumnListFixture } from '~/components/TwoColumnList/TwoColumnList.fixture';
+import { Video } from '~/components/Video';
 import { TwoColumnLayout } from './TwoColumnLayout';
+import { TwoColumnLayoutFixture } from './TwoColumnLayout.fixture';
 
 <Meta title="Components/TwoColumnLayout" component={TwoColumnLayout} />
 
@@ -18,29 +19,25 @@ import { TwoColumnLayout } from './TwoColumnLayout';
 
 <Canvas>
   <Story name="Base component">
-    {() => {
-      const gridOverlayActive = knobs.boolean(
-        'isActive',
-        false,
-        'Grid overlay',
-      );
-      const gridOverlayIntertedColours = knobs.boolean(
-        'hasInvertedColours',
-        false,
-        'Grid overlay',
-      );
+    {(() => {
       const theme = knobs.select(
         'theme',
         ['dark', 'light'],
         'dark',
         'Presentation',
       );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
       return (
-        <div>
-          <GridOverlay
-            isActive={gridOverlayActive}
-            hasInvertedColours={gridOverlayIntertedColours}
-          />
+        <>
           <TwoColumnLayout
             childrenClassNames={{ sidebar: 'sidebar', content: 'content' }}
             content={
@@ -52,14 +49,17 @@ import { TwoColumnLayout } from './TwoColumnLayout';
                   theme={theme}
                 />
                 <Image
-                  theme={theme}
                   altText="Lorem ipsum dolor sit amet"
                   cta={{
                     url: '/',
                   }}
-                  large="./assets/images/ImageCarousel/image-one-large.jpg"
-                  medium="./assets/images/ImageCarousel/image-one-medium.jpg"
-                  small="./assets/images/ImageCarousel/image-one-small.jpg"
+                  sizes={{
+                    large: './assets/images/ImageCarousel/image-one-large.jpg',
+                    medium:
+                      './assets/images/ImageCarousel/image-one-medium.jpg',
+                    small: './assets/images/ImageCarousel/image-one-small.jpg',
+                  }}
+                  theme={theme}
                 />
                 <TwoColumnList
                   leftColumn={TwoColumnListFixture.leftColumn}
@@ -73,18 +73,28 @@ import { TwoColumnLayout } from './TwoColumnLayout';
                   hasSpanContent={false}
                   hasPlayInFullScreen={false}
                   isFullWidth={true}
-                  large="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
-                  medium="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
                   poster={{
                     copy: {
                       altText:
                         'How to Use Video for Tea Tree Leaf Facial Exfoliant',
                     },
-                    large: './assets/images/MediaWithContent/video-poster.png',
-                    medium: './assets/images/MediaWithContent/video-poster.png',
-                    small: './assets/images/MediaWithContent/video-poster.png',
+                    sizes: {
+                      large:
+                        './assets/images/MediaWithContent/video-poster.png',
+                      medium:
+                        './assets/images/MediaWithContent/video-poster.png',
+                      small:
+                        './assets/images/MediaWithContent/video-poster.png',
+                    },
                   }}
-                  small="https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174"
+                  sizes={{
+                    large:
+                      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+                    medium:
+                      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+                    small:
+                      'https://player.vimeo.com/external/225136214.hd.mp4?s=a01cd8b47f35767394e48dc01af10510ef8ff4dd&profile_id=174',
+                  }}
                 />
                 <Accordion
                   items={[
@@ -126,12 +136,7 @@ import { TwoColumnLayout } from './TwoColumnLayout';
                       ),
                     },
                   ]}
-                  theme={knobs.select(
-                    'theme',
-                    ['dark', 'light'],
-                    'dark',
-                    'Presentation',
-                  )}
+                  theme={theme}
                 />
                 <BynderWidget
                   theme={theme}
@@ -173,14 +178,19 @@ import { TwoColumnLayout } from './TwoColumnLayout';
                   theme={theme}
                 />
                 <Image
-                  theme={theme}
                   altText="Lorem ipsum dolor sit amet"
                   cta={{
                     url: '/',
                   }}
-                  large="./assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg"
-                  medium="./assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg"
-                  small="./assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg"
+                  sizes={{
+                    large:
+                      './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
+                    medium:
+                      './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
+                    small:
+                      './assets/images/HeroWithContent/Large_JPG-Aesop_Combination_Skin_Range_Page_Primary_Image_640x456px_M.jpg',
+                  }}
+                  theme={theme}
                 />
                 <SubNav
                   theme={theme}
@@ -192,9 +202,13 @@ import { TwoColumnLayout } from './TwoColumnLayout';
             }
             theme={theme}
           />
-        </div>
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
       );
-    }}
+    })()}
   </Story>
 </Canvas>
 

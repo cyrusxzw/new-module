@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { StoreHoursListFixture } from '~/components/StoreHoursList/StoreHoursList.fixture';
 import { StoreDetailHeader } from './StoreDetailHeader';
 import { StoreDetailHeaderFixture } from './StoreDetailHeader.fixture';
@@ -10,9 +11,8 @@ import { StoreDetailHeaderFixture } from './StoreDetailHeader.fixture';
 
 <Canvas>
   <Story name="Base component">
-    <StoreDetailHeader
-      alternateHoursNote={StoreHoursListFixture.alternateHoursNote}
-      copy={{
+    {(() => {
+      const copy = {
         location: knobs.text(
           'location',
           StoreDetailHeaderFixture.copy.location,
@@ -25,22 +25,62 @@ import { StoreDetailHeaderFixture } from './StoreDetailHeader.fixture';
         ),
         phone: knobs.text('phone', StoreDetailHeaderFixture.copy.phone, 'Copy'),
         email: knobs.text('email', StoreDetailHeaderFixture.copy.email, 'Copy'),
-      }}
-      email={knobs.text('email', StoreDetailHeaderFixture.email, 'Content')}
-      location={knobs.text(
+      };
+      const email = knobs.text(
+        'email',
+        StoreDetailHeaderFixture.email,
+        'Content',
+      );
+      const location = knobs.text(
         'location',
         StoreDetailHeaderFixture.location,
         'Content',
-      )}
-      openingHours={StoreHoursListFixture.hoursList}
-      phone={knobs.text('phone', StoreDetailHeaderFixture.phone, 'Content')}
-      storeName={knobs.text(
+      );
+      const phone = knobs.text(
+        'phone',
+        StoreDetailHeaderFixture.phone,
+        'Content',
+      );
+      const storeName = knobs.text(
         'storeName',
         StoreDetailHeaderFixture.storeName,
         'Content',
-      )}
-      theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
-    />
+      );
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <StoreDetailHeader
+            alternateHoursNote={StoreHoursListFixture.alternateHoursNote}
+            copy={copy}
+            email={email}
+            location={location}
+            openingHours={StoreHoursListFixture.hoursList}
+            phone={phone}
+            storeName={storeName}
+            theme={theme}
+          />
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 

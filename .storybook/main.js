@@ -8,7 +8,7 @@ module.exports = {
   addons: [
     '@storybook/addon-knobs/register',
     '@storybook/addon-actions/register',
-    '@storybook/addon-a11y/register',
+    '@storybook/addon-a11y',
     '@storybook/addon-viewport/register',
     '@storybook/addon-docs/preset',
     '@storybook/addon-backgrounds',
@@ -19,7 +19,7 @@ module.exports = {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
-      propFilter: prop =>
+      propFilter: (prop) =>
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
   },
@@ -35,7 +35,7 @@ module.exports = {
 
     // Remove the existing css rule
     config.module.rules = config.module.rules.filter(
-      f => f.test.toString() !== '/\\.css$/',
+      (f) => f.test.toString() !== '/\\.css$/',
     );
 
     config.resolve.extensions.push('.ts', '.tsx');
@@ -59,7 +59,7 @@ module.exports = {
         {
           loader: 'postcss-loader',
           options: {
-            config: {
+            postcssOptions: {
               path: path.resolve(__dirname, '../postcss.config.js'),
             },
             sourceMap: true,

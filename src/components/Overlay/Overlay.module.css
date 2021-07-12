@@ -1,5 +1,4 @@
 @import 'styles/variables/index';
-@import 'styles/mixins/index';
 
 .base {
   position: fixed;

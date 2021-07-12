@@ -1,50 +1,91 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import { State } from '~.storybook/State';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { Button } from '~/components/Button';
-import { Heading } from '~/components/Heading';
 import { P } from '~/components/Paragraph';
 import { FlyinPanel } from './FlyinPanel';
 
-<Meta
-  title="Components/FlyinPanel"
-  component={FlyinPanel}
-/>
+<Meta title="Components/FlyinPanel" component={FlyinPanel} />
 
 # FlyinPanel
 
 <Canvas>
   <Story name="Base component">
-    <State initialState={{ isVisible: false }}>
-      {(state, setState) => {
-        return (
-          <React.Fragment>
-            <FlyinPanel
-              isVisible={state.isVisible}
-              onClose={() => {
+    {(() => {
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <State initialState={{ isVisible: false }}>
+            {(state, setState) => {
+              const handleOnClose = () => {
                 setState(() => ({ ...state, isVisible: false }));
-              }}
-              heading="Ingredients"
-            >
-              <P>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id erat est. Ut convallis, neque id semper fermentum, urna risus gravida nibh, vel molestie sapien leo ac tortor. Nunc dignissim quis arcu a lobortis. Phasellus tempus consequat erat, at egestas elit pulvinar lacinia. Nullam pretium, risus a dictum rhoncus, ex libero cursus erat, dignissim malesuada tortor justo quis enim. Nulla pellentesque sit amet ante et molestie. Mauris interdum odio at mauris pulvinar, non placerat nulla tempus.
-              </P>
-              <P>
-                Sed in justo a risus scelerisque molestie. Aliquam rhoncus erat sit amet quam vehicula venenatis. Maecenas elementum, metus id facilisis placerat, turpis diam sodales velit, quis sodales ipsum nunc nec velit. Aenean ac tortor consectetur, volutpat massa sed, ultricies orci. In euismod justo at mattis accumsan. Vestibulum ullamcorper, urna a mattis vehicula, ipsum ligula vehicula eros, eu auctor tellus enim eget elit. In a tempus mi.
-              </P>
-            </FlyinPanel>
-            <Button
-              onClick={() => {
-                setState(() => ({ ...state, isVisible: true }));
-              }}
-              title="Open Flyin"
-            >
-              Open Flyin
-            </Button>
-          </React.Fragment>
-        );
-      }}
-    </State>
+              };
+              return (
+                <>
+                  <FlyinPanel
+                    isVisible={state.isVisible}
+                    onClose={handleOnClose}
+                    heading="Lorem ipsum dolor sit amet"
+                    theme={theme}
+                  >
+                    <P>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Nullam id erat est. Ut convallis, neque id semper
+                      fermentum, urna risus gravida nibh, vel molestie sapien
+                      leo ac tortor. Nunc dignissim quis arcu a lobortis.
+                      Phasellus tempus consequat erat, at egestas elit pulvinar
+                      lacinia. Nullam pretium, risus a dictum rhoncus, ex libero
+                      cursus erat, dignissim malesuada tortor justo quis enim.
+                      Nulla pellentesque sit amet ante et molestie. Mauris
+                      interdum odio at mauris pulvinar, non placerat nulla
+                      tempus.
+                    </P>
+                    <P>
+                      Sed in justo a risus scelerisque molestie. Aliquam rhoncus
+                      erat sit amet quam vehicula venenatis. Maecenas elementum,
+                      metus id facilisis placerat, turpis diam sodales velit,
+                      quis sodales ipsum nunc nec velit. Aenean ac tortor
+                      consectetur, volutpat massa sed, ultricies orci. In
+                      euismod justo at mattis accumsan. Vestibulum ullamcorper,
+                      urna a mattis vehicula, ipsum ligula vehicula eros, eu
+                      auctor tellus enim eget elit. In a tempus mi.
+                    </P>
+                  </FlyinPanel>
+                  <Button
+                    onClick={() => {
+                      setState(() => ({ ...state, isVisible: true }));
+                    }}
+                    title="Open Flyin"
+                  >
+                    Open Flyin
+                  </Button>
+                </>
+              );
+            }}
+          </State>
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 

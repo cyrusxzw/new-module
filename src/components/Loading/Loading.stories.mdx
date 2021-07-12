@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { Loading } from './Loading';
 
 <Meta title="Components/Loading" component={Loading} />
@@ -8,16 +9,50 @@ import { Loading } from './Loading';
 
 <Canvas>
   <Story name="Base component">
-    <Loading
-      isLoading={knobs.boolean('isLoading', true, 'Presentation')}
-      size={knobs.select(
+    {(() => {
+      const isLoading = knobs.boolean('isLoading', true, 'Presentation');
+      const shouldFillSpace = knobs.boolean(
+        'shouldFillSpace',
+        false,
+        'Presentation',
+      );
+      const size = knobs.select(
         'size',
         ['small', 'medium', 'large'],
         'medium',
         'Presentation',
-      )}
-      theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
-    />
+      );
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <Loading
+            isLoading={isLoading}
+            shouldFillSpace={shouldFillSpace}
+            size={size}
+            theme={theme}
+          />
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 

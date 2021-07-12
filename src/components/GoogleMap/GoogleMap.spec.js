@@ -4,10 +4,6 @@ import { GoogleMapFixture } from './GoogleMap.fixture';
 import { GoogleMap } from './GoogleMap';
 
 describe('<GoogleMap />', () => {
-  it('should be defined', () => {
-    expect(GoogleMap).toBeDefined();
-  });
-
   it('should render base component correctly', () => {
     const { container } = render(
       <GoogleMap

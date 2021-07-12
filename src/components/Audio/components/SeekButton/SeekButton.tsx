@@ -13,7 +13,7 @@ const SeekButton = React.memo<SeekButtonProps>(
     onClick,
     progressColor = 'orange',
   }) => {
-    const classSet = cx(styles.base, styles[progressColor], {
+    const classSet = cx(styles[progressColor], {
       [styles.forward]: direction === 'forward',
     });
 

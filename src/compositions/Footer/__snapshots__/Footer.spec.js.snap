@@ -134,16 +134,7 @@ exports[`<Footer /> should render base component correctly 1`] = `
                   <span
                     class="content light"
                   >
-                    <span>
-                      By subscribing, you agree to receive email marketing from Aesop about our products and services, and accept our
-                       
-                      <a
-                        href="https://www.aesop.com/au/r/privacy/"
-                      >
-                        privacy policy
-                      </a>
-                      .
-                    </span>
+                    By subscribing, you agree to receive email marketing from Aesop about our products and services, and accept our
                   </span>
                 </label>
               </div>

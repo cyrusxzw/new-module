@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
 import { SubNav } from './SubNav';
 import { SubNavFixture } from './SubNav.fixture';
 
@@ -9,24 +10,43 @@ import { SubNavFixture } from './SubNav.fixture';
 
 <Canvas>
   <Story name="Base component">
-    <SubNav
-      heading={SubNavFixture.heading}
-      id={SubNavFixture.id}
-      isSelect={knobs.boolean('isSelect', false, 'Presentation')}
-      links={SubNavFixture.links}
-      theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
-    />
+    {(() => {
+      const isSelect = knobs.boolean('isSelect', false, 'Presentation');
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <SubNav
+            heading={SubNavFixture.heading}
+            id={SubNavFixture.id}
+            isSelect={isSelect}
+            links={SubNavFixture.links}
+            theme={theme}
+          />
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 
 ## API
 
 <ArgsTable of={SubNav} />
-
-## Navigation block on Mobile and Tablet
-
-<Canvas>
-  <Story name="Navigation block">
-    <SubNav id="Navigation block" isSelect={true} links={SubNavFixture.links} />
-  </Story>
-</Canvas>

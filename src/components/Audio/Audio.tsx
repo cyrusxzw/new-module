@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { Loading } from '~/components/Loading';
 import { AudioHeader } from './components/AudioHeader';
 import { AudioFooter } from './components/AudioFooter';
 import { useWaveSurfer } from './Audio.customHooks';
-import type { AudioProps } from './Audio.types';
+import type { AudioType } from './Audio.types';
 import styles from './Audio.module.css';
 
-const Audio: FC<AudioProps> = ({
+const Audio: AudioType = ({
   artistName,
   audioUrl,
   className,
@@ -49,6 +49,7 @@ const Audio: FC<AudioProps> = ({
       <div className={styles.waveContainer}>
         <Loading className={styles.loading} isLoading={isLoading} />
         <figure className={styles.waveform} ref={waveformRef} />
+        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <audio ref={trackRef} src={audioUrl} />
       </div>
 

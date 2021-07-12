@@ -1,25 +1,22 @@
-import React, { forwardRef, FC } from 'react';
+import React, { forwardRef, LegacyRef } from 'react';
 import cx from 'classnames';
-import get from 'lodash/get';
-import { constraintsByViewport } from '~/utils/viewports';
 import { Hyperlink } from '~/components/Hyperlink';
+import { getImageSourcesBySize, getDefaultImageSource } from './Image.utils';
 import type { ImageProps } from './Image.types';
 import styles from './Image.module.css';
 
-const Image: FC<ImageProps> = forwardRef(function ImageRef(
+const Image = forwardRef<HTMLImageElement, ImageProps>(function ImageRef(
   {
     altText,
     className,
     cta,
     isLazyLoaded = true,
-    large,
-    medium,
-    small,
+    sizes,
     style,
     type,
     theme = 'dark',
   },
-  ref: React.LegacyRef<HTMLImageElement>,
+  ref: LegacyRef<HTMLImageElement>,
 ) {
   const fullBleedImage = type === 'componentFullBleedImage';
   const isRightAligned = type === 'componentSquareImage';
@@ -35,37 +32,14 @@ const Image: FC<ImageProps> = forwardRef(function ImageRef(
 
   const picture = (
     <picture className={classSet} style={style}>
-      {large && (
-        <source
-          media={`(min-width: ${get(
-            constraintsByViewport,
-            'large.minWidth',
-          )}px)`}
-          srcSet={large}
-        />
-      )}
+      {getImageSourcesBySize(sizes)}
 
-      {medium && (
-        <source
-          media={`(min-width: ${get(
-            constraintsByViewport,
-            'medium.minWidth',
-          )}px)`}
-          srcSet={medium}
-        />
-      )}
-
-      {small && (
-        <source
-          media={`(min-width: ${get(
-            constraintsByViewport,
-            'small.minWidth',
-          )}px)`}
-          srcSet={small}
-        />
-      )}
-
-      <img alt={altText} loading={isLazyLoaded ? 'lazy' : 'eager'} ref={ref} />
+      <img
+        alt={altText}
+        loading={isLazyLoaded ? 'lazy' : 'eager'}
+        ref={ref}
+        src={getDefaultImageSource(sizes)}
+      />
     </picture>
   );
 

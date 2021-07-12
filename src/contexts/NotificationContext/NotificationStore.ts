@@ -1,3 +1,4 @@
+import type { Dispatch } from 'react';
 import { useReducer } from 'react';
 
 enum NOTIFICATION_ACTION_TYPES {
@@ -28,7 +29,13 @@ const reducer = (state: State, action: Action) => {
   );
 };
 
-const useNotificationStore = () => {
+type UseNotificationStore = () => {
+  actionType: any;
+  dispatch: Dispatch<Action>;
+  showModal: boolean;
+};
+
+const useNotificationStore: UseNotificationStore = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { showModal } = state;
 

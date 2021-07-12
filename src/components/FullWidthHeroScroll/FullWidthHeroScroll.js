@@ -2,12 +2,12 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
-import { isInBrowser } from '~/utils/environment';
+import { isInBrowser } from '~/utils/environment/index.ts';
 import { BodyCopy } from '~/components/BodyCopy';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
-import { BackgroundElement } from './components/BackgroundElement';
-import { FullscreenSection } from './components/FullscreenSection';
+import { BackgroundElement } from './components/BackgroundElement/index.ts';
+import { FullscreenSection } from './components/FullscreenSection/index.ts';
 import styles from './FullWidthHeroScroll.module.css';
 
 const FullWidthHeroScroll = ({
@@ -132,9 +132,9 @@ FullWidthHeroScroll.propTypes = {
 };
 
 FullWidthHeroScroll.defaultProps = {
-  backgroundVideo: undefined,
-  backgroundMediaType: undefined,
   backgroundImage: undefined,
+  backgroundMediaType: undefined,
+  backgroundVideo: undefined,
   copy: undefined,
   cta: undefined,
   eyebrow: undefined,
@@ -142,8 +142,8 @@ FullWidthHeroScroll.defaultProps = {
   hasTopOffset: false,
   heading: undefined,
   id: undefined,
-  theme: 'light',
   textBlocks: [],
+  theme: 'light',
 };
 
 export { FullWidthHeroScroll };

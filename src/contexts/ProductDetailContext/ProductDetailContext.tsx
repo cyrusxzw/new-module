@@ -1,10 +1,13 @@
-import React, { createContext, useContext, FC } from 'react';
+import React, { createContext, useContext } from 'react';
 import { useProductDetailStore } from './ProductDetailStore';
-import type { ProductDetailContextProps } from './ProductDetailContext.types';
+import type {
+  ProductDetailContextType,
+  ProductDetailContextProviderType,
+} from './ProductDetailContext.types';
 
 const ProductDetailContext = createContext(undefined);
 
-const ProductDetailContextProvider: FC<ProductDetailContextProps> = ({
+const ProductDetailContextProvider: ProductDetailContextProviderType = ({
   children,
   product,
 }) => (
@@ -13,7 +16,7 @@ const ProductDetailContextProvider: FC<ProductDetailContextProps> = ({
   </ProductDetailContext.Provider>
 );
 
-const useProductDetailContext = () => {
+const useProductDetailContext = (): ProductDetailContextType => {
   const context = useContext(ProductDetailContext);
 
   if (context === undefined) {

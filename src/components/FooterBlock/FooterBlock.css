@@ -18,7 +18,7 @@
   font-size: rem(15px);
   line-height: 2;
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     font-size: rem(13px);
   }
 }
@@ -35,7 +35,7 @@
     border-color: var(--color-light-copy);
   }
 
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     margin: 6px 0;
   }
 }
@@ -50,7 +50,7 @@
 .listItem {
   font-size: rem(14px);
   line-height: 2.5;
-  @media (--viewport-sm-only) {
+  @media (--viewport-xs-sm-only) {
     font-size: rem(12px);
   }
   & svg {

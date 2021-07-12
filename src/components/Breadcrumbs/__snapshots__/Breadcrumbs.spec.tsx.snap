@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Breadcrumbs /> should render base component correctly 1`] = `
+<div>
+  <nav
+    class="base dark breadcrumbs"
+    data-testid="data-testid-Breadcrumbs"
+  >
+    <ul
+      class="list"
+    >
+      <li
+        class="item"
+      >
+        <a
+          class="base left dark link"
+          href="/"
+          target="_self"
+          title="Breadcrumb title 1"
+        >
+          Suspendisse quis elit
+        </a>
+      </li>
+      <li
+        class="item"
+      >
+        <a
+          class="base left dark link"
+          href="/"
+          target="_self"
+          title="Breadcrumb title 2"
+        >
+          Maecenas luctus
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

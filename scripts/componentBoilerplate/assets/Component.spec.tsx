@@ -1,16 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { ComponentBoilerplate } from './ComponentBoilerplate';
-import { ComponentBoilerplateFixture } from './ComponentBoilerplate.fixture';
+import { render, screen } from '@testing-library/react';
+import { _COMPONENT_NAME_ } from './_COMPONENT_NAME_';
+import { _COMPONENT_NAME_Fixture } from './_COMPONENT_NAME_.fixture';
 
-describe('<ComponentBoilerplate />', () => {
-  it('should be defined', () => {
-    expect(ComponentBoilerplate).toBeDefined();
-  });
+describe('<_COMPONENT_NAME_ />', () => {
+  it.todo('should assert something', () => {
+    render(<_COMPONENT_NAME_ />);
 
-  it('should render base component correctly', () => {
-    const { container } = render(<ComponentBoilerplate />);
-
-    expect(container).toMatchSnapshot();
+    screen.debug();
   });
 });

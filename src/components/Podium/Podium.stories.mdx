@@ -17,92 +17,101 @@ and foreground theme colour (TBA).
 
 Presented here with both `paddingTop` and `paddingBottom` set to `small`, and fade transitions in on mount.
 
-*The black border is for demonstration purposes only.*
+_The black border is for demonstration purposes only._
 
 <Canvas>
   <Story name="Base component">
-    <div style={{ border: '1px solid #333', margin: '20px'}}>
-        {(() => {
-          const ref1 = useRef();
-          const isOnScreen1 = useOnScreen(ref1);
-          const ref2 = useRef();
-          const isOnScreen2 = useOnScreen(ref2);
-          const ref3 = useRef();
-          const isOnScreen3 = useOnScreen(ref3);
-          const ref4 = useRef();
-          const isOnScreen4 = useOnScreen(ref4);
-          const backgroundColor = knobs.text('backgroundColor', '', 'Presentation');
-          const theme = knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')
-          const transition = knobs.select(
-            'transition',
-            [
-              'fade',
-              'shiftInDown',
-              'shiftInLeft',
-              'shiftInUp',
-              'slideDown',
-              'slideRight',
-              'slowFade',
-              'zoom',
-            ],
+    <div style={{ border: '1px solid #333', margin: '20px' }}>
+      {(() => {
+        const ref1 = useRef();
+        const isOnScreen1 = useOnScreen(ref1);
+        const ref2 = useRef();
+        const isOnScreen2 = useOnScreen(ref2);
+        const ref3 = useRef();
+        const isOnScreen3 = useOnScreen(ref3);
+        const ref4 = useRef();
+        const isOnScreen4 = useOnScreen(ref4);
+        const backgroundColor = knobs.text(
+          'backgroundColor',
+          '',
+          'Presentation',
+        );
+        const theme = knobs.select(
+          'theme',
+          ['dark', 'light'],
+          'dark',
+          'Presentation',
+        );
+        const transition = knobs.select(
+          'transition',
+          [
             'fade',
-            'Presentation',
-          );
-          return (
-            <div>
-              <Podium
-                backgroundColor={backgroundColor}
-                isActive={isOnScreen1}
-                ref={ref1}
-                theme={theme}
-                transition={transition}
-                className={'hellothere'}
-              >
-                <Carousel
-                  introduction={CarouselFixture.introduction}
-                  slides={CarouselFixture.slides}
-                />
-              </Podium>
-              <Podium
-                backgroundColor={backgroundColor}
-                isActive={isOnScreen2}
-                ref={ref2}
-                theme={theme}
-                transition={transition}
-              >
-                <Carousel
-                  introduction={CarouselFixture.introduction}
-                  slides={CarouselFixture.slides}
-                />
-              </Podium>
-              <Podium
-                backgroundColor={backgroundColor}
-                isActive={isOnScreen3}
-                ref={ref3}
-                theme={theme}
-                transition={transition}
-              >
-                <Carousel
-                  introduction={CarouselFixture.introduction}
-                  slides={CarouselFixture.slides}
-                />
-              </Podium>
-              <Podium
-                backgroundColor={backgroundColor}
-                id={PodiumFixture.id}
-                isActive={isOnScreen4}
-                ref={ref4}
-                theme={theme}
-                transition={transition}
-              >
-                <Carousel
-                  introduction={CarouselFixture.introduction}
-                  slides={CarouselFixture.slides}
-                />
-              </Podium>
-            </div>
-          )
-        })()}
+            'shiftInDown',
+            'shiftInLeft',
+            'shiftInUp',
+            'slideDown',
+            'slideRight',
+            'slowFade',
+            'zoom',
+          ],
+          'fade',
+          'Presentation',
+        );
+        return (
+          <div>
+            <Podium
+              backgroundColor={backgroundColor}
+              isActive={isOnScreen1}
+              ref={ref1}
+              theme={theme}
+              transition={transition}
+              className={'hellothere'}
+            >
+              <Carousel
+                introduction={CarouselFixture.introduction}
+                slides={CarouselFixture.slides}
+              />
+            </Podium>
+            <Podium
+              backgroundColor={backgroundColor}
+              isActive={isOnScreen2}
+              ref={ref2}
+              theme={theme}
+              transition={transition}
+            >
+              <Carousel
+                introduction={CarouselFixture.introduction}
+                slides={CarouselFixture.slides}
+              />
+            </Podium>
+            <Podium
+              backgroundColor={backgroundColor}
+              isActive={isOnScreen3}
+              ref={ref3}
+              theme={theme}
+              transition={transition}
+            >
+              <Carousel
+                introduction={CarouselFixture.introduction}
+                slides={CarouselFixture.slides}
+              />
+            </Podium>
+            <Podium
+              backgroundColor={backgroundColor}
+              id={PodiumFixture.id}
+              isActive={isOnScreen4}
+              ref={ref4}
+              theme={theme}
+              transition={transition}
+            >
+              <Carousel
+                introduction={CarouselFixture.introduction}
+                slides={CarouselFixture.slides}
+              />
+            </Podium>
+          </div>
+        );
+      })()}
     </div>
   </Story>
 </Canvas>

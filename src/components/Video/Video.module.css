@@ -8,6 +8,7 @@
   margin: 0;
   object-fit: cover;
 
+  /* stylelint-disable-next-line selector-pseudo-element-no-unknown */
   video::cue {
     font: 14px/14px;
     font-size: 14px;
@@ -42,7 +43,7 @@
     }
   }
 
-  @media (--viewport-sm-md-only) {
+  @media (--viewport-xs-sm-md-only) {
     height: 0;
     padding-top: 30px;
     padding-bottom: 56.25%; /* 16:9 */
@@ -50,6 +51,14 @@
 
   &.heroFullWidth {
     @media (--viewport-md) {
+      height: 100%;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &.heroFullWidthMobile {
+    @media (--viewport-xs-sm-only) {
       height: 100%;
       padding-top: 0;
       padding-bottom: 0;

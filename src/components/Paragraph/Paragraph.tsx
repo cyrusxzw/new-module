@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cx from 'classnames';
-import type { ParagraphProps, ParagraphSetProps } from './Paragraph.types';
+import type { ParagraphType, ParagraphSetType } from './Paragraph.types';
 import styles from './Paragraph.module.css';
 
-const Paragraph: FC<ParagraphProps> = ({
+const Paragraph: ParagraphType = ({
   children,
   className,
   hasSerifFont = false,
@@ -25,7 +25,7 @@ const Paragraph: FC<ParagraphProps> = ({
   return <p className={classSet}>{children}</p>;
 };
 
-const ParagraphSet: FC<ParagraphSetProps> = ({
+const ParagraphSet: ParagraphSetType = ({
   children,
   className,
   isLarge = false,
