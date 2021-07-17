@@ -1,0 +1,43 @@
+@import 'styles/index';
+
+.slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &[aria-hidden='false'] {
+    z-index: 1;
+    overflow: auto;
+  }
+}
+
+.backButton {
+  justify-content: flex-start;
+}
+
+.directionIcon {
+  margin-right: 15px;
+  margin-left: -2px;
+
+  &.dark {
+    polygon {
+      fill: var(--color-grey-45);
+    }
+  }
+
+  &.light {
+    polygon {
+      fill: var(--color-grey-65);
+    }
+  }
+}
+
+.forward {
+  transform: rotate(-90deg);
+}
+
+.backwards {
+  transform: rotate(90deg);
+}

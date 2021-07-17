@@ -1,0 +1,3 @@
+const LinkFixture = {};
+
+export { LinkFixture };

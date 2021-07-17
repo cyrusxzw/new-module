@@ -1,0 +1,3 @@
+const SecondaryNavigationFixture = {};
+
+export { SecondaryNavigationFixture };

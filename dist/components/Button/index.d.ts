@@ -3,6 +3,12 @@ import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type ButtonBehaviourType = 'button' | 'reset' | 'submit';
 declare type ButtonProps = {
+    aria?: {
+        expanded?: boolean;
+        haspopup?: boolean;
+        hidden?: boolean;
+        label?: string;
+    };
     children?: ReactNode;
     className?: string;
     dataTestRef?: string;

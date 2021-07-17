@@ -217,6 +217,12 @@ declare const Breadcrumbs$1: BreadcrumbsType;
 
 declare type ButtonBehaviourType = 'button' | 'reset' | 'submit';
 declare type ButtonProps = {
+    aria?: {
+        expanded?: boolean;
+        haspopup?: boolean;
+        hidden?: boolean;
+        label?: string;
+    };
     children?: ReactNode;
     className?: string;
     dataTestRef?: string;
@@ -277,6 +283,7 @@ declare type HyperlinkProps = {
     isDownload?: boolean;
     onClick?: (event: MouseEvent) => void;
     style?: LinkStyle;
+    tabIndex?: number;
     textAlign?: TextAlign;
     theme?: Themes;
     title?: string;
@@ -1080,6 +1087,41 @@ declare type MediaWithContentProps = {
 
 declare const MediaWithContent: React$1.ForwardRefExoticComponent<MediaWithContentProps & React$1.RefAttributes<HTMLDivElement>>;
 
+declare type SecondaryNavigationItems = (Trigger | Link)[];
+
+declare type Clickable = {
+    id: string;
+    label: string;
+    title: string;
+};
+declare type Link = Clickable & {
+    url: string;
+    type: 'link';
+};
+declare type Trigger = Clickable & {
+    onClick: () => void;
+    type: 'trigger';
+};
+declare type NestedCollection = Clickable & {
+    items: Link[];
+    type: 'nested-collection';
+};
+declare type Collection = Clickable & {
+    items: (NestedCollection | Link)[];
+    type: 'collection';
+};
+declare type MobileNavigationProps = {
+    className?: string;
+    isOpen: boolean;
+    items: Collection[];
+    onCloseButtonClick: () => void;
+    secondaryItems?: SecondaryNavigationItems;
+    theme?: Themes;
+};
+declare type MobileNavigationType = ComponentWithoutChildren<MobileNavigationProps>;
+
+declare const MobileNavigation: MobileNavigationType;
+
 declare type ModalBodyCopy = {
     copy?: {
         close?: string;
@@ -1189,7 +1231,7 @@ declare type PersonalInfoSummaryType = VFC<PersonalInfoSummaryProps>;
 
 declare const PersonalInfoSummary: PersonalInfoSummaryType;
 
-declare type TransitionTypeLabel = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
+declare type TransitionTypeLabel = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideLeft' | 'slideRight' | 'slowFade' | 'zoom';
 declare type TransitionProps = {
     children: JSX.Element;
     isActive?: boolean;
@@ -1833,6 +1875,7 @@ declare const index_d$9_LinkButtonGroup: typeof LinkButtonGroup;
 declare const index_d$9_LoadMoreButton: typeof LoadMoreButton;
 declare const index_d$9_Loading: typeof Loading;
 declare const index_d$9_MediaWithContent: typeof MediaWithContent;
+declare const index_d$9_MobileNavigation: typeof MobileNavigation;
 declare const index_d$9_Modal: typeof Modal;
 declare const index_d$9_NavigationBar: typeof NavigationBar;
 declare const index_d$9_NotificationModal: typeof NotificationModal;
@@ -1899,6 +1942,7 @@ declare namespace index_d$9 {
     index_d$9_LoadMoreButton as LoadMoreButton,
     index_d$9_Loading as Loading,
     index_d$9_MediaWithContent as MediaWithContent,
+    index_d$9_MobileNavigation as MobileNavigation,
     index_d$9_Modal as Modal,
     index_d$9_NavigationBar as NavigationBar,
     index_d$9_NotificationModal as NotificationModal,
@@ -2625,4 +2669,4 @@ declare namespace index_d {
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$9 as components, index_d$8 as constants, index_d$7 as contexts, index_d$6 as customHooks, index_d$5 as environment, index_d$4 as objects, index_d$2 as product, index_d$a as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, MobileNavigation, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$9 as components, index_d$8 as constants, index_d$7 as contexts, index_d$6 as customHooks, index_d$5 as environment, index_d$4 as objects, index_d$2 as product, index_d$a as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };

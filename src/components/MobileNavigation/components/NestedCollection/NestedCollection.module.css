@@ -1,0 +1,36 @@
+@import 'styles/index';
+
+.collapse {
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 400ms var(--easing-ease-out-cubic),
+    opacity 400ms var(--easing-ease-out-cubic);
+
+  &[aria-hidden='false'] {
+    opacity: 1;
+  }
+}
+
+.nestedButton {
+  padding-left: 42px;
+  margin-bottom: 5px;
+}
+
+.tempIcon {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  line-height: 1;
+  text-align: center;
+  transform: translateY(-2px);
+
+  .dark & {
+    color: var(--color-grey-45);
+  }
+
+  .light & {
+    color: var(--color-grey-65);
+  }
+}

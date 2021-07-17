@@ -4,6 +4,12 @@ import type { Themes } from '~/types';
 type ButtonBehaviourType = 'button' | 'reset' | 'submit';
 
 type ButtonProps = {
+  aria?: {
+    expanded?: boolean;
+    haspopup?: boolean;
+    hidden?: boolean;
+    label?: string;
+  };
   children?: ReactNode;
   className?: string;
   dataTestRef?: string;

@@ -37,6 +37,7 @@ export { List } from './List';
 export { LoadMoreButton } from './LoadMoreButton';
 export { Loading } from './Loading';
 export { MediaWithContent } from './MediaWithContent';
+export { MobileNavigation } from './MobileNavigation';
 export { Modal } from './Modal';
 export { NavigationBar } from './NavigationBar';
 export { NotificationModal } from './NotificationModal';

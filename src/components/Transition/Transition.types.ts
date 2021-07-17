@@ -6,6 +6,7 @@ type TransitionTypeLabel =
   | 'shiftInLeft'
   | 'shiftInUp'
   | 'slideDown'
+  | 'slideLeft'
   | 'slideRight'
   | 'slowFade'
   | 'zoom';

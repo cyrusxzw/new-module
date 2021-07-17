@@ -22,6 +22,7 @@ type HyperlinkProps = {
   isDownload?: boolean;
   onClick?: (event: MouseEvent) => void;
   style?: LinkStyle;
+  tabIndex?: number;
   textAlign?: TextAlign;
   theme?: Themes;
   title?: string;

@@ -1,0 +1,3 @@
+const NestedCollectionFixture = {};
+
+export { NestedCollectionFixture };

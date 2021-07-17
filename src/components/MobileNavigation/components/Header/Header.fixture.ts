@@ -1,0 +1,3 @@
+const HeaderFixture = {};
+
+export { HeaderFixture };

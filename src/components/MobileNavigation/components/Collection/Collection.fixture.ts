@@ -1,0 +1,3 @@
+const CollectionFixture = {};
+
+export { CollectionFixture };

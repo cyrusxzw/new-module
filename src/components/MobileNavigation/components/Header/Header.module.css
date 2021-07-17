@@ -1,0 +1,59 @@
+@import 'styles/index';
+
+.tempLogo {
+  font-family: var(--font-family-sans-serif-regular);
+  font-size: 20px;
+}
+
+.base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-right: 20px;
+  padding-bottom: 60px;
+  padding-left: 20px;
+}
+
+.closeButton {
+  width: 14px;
+  height: 14px;
+  transition: outline-offset 300ms var(--easing-ease-out-cubic);
+
+  .dark & polygon {
+    color: var(--color-secondary);
+  }
+
+  .light & polygon {
+    color: var(--color-primary);
+  }
+
+  &:hover {
+    .dark & polygon {
+      fill: var(--color-black);
+    }
+
+    .light & polygon {
+      fill: var(--color-white);
+    }
+  }
+
+  .dark &:focus {
+    outline: 1px dashed var(--color-dark-label);
+    outline-offset: 2px;
+  }
+
+  .light &:focus {
+    outline: 1px dashed var(--color-dark-label);
+    outline-offset: 2px;
+  }
+}
+
+.srOnly {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}

@@ -22,6 +22,7 @@ const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
       isDownload,
       onClick,
       style = 'Internal No Icon Link',
+      tabIndex,
       textAlign = 'left',
       theme = 'dark',
       title,
@@ -60,6 +61,7 @@ const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
         href={url}
         onClick={onClick}
         ref={ref}
+        tabIndex={tabIndex}
         target={target}
         title={title}
       >

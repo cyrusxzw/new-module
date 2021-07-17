@@ -1,0 +1,64 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
+import { Button } from '~/components/Button';
+import { MobileNavigation } from './MobileNavigation';
+import { MobileNavigationFixture } from './MobileNavigation.fixture';
+
+<Meta title="Components/MobileNavigation" component={MobileNavigation} />
+
+# MobileNavigation
+
+<Canvas>
+  <Story name="Base component">
+    {(() => {
+      const [isOpen, setIsOpen] = React.useState(false);
+      const handleOnClick = () => {
+        setIsOpen(true);
+      };
+      const onCloseClick = () => {
+        setIsOpen(false);
+      };
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <nav>
+            <Button
+              onClick={handleOnClick}
+              aria={{ haspopup: true, expanded: isOpen }}
+            >
+              Open the Navigation
+            </Button>
+          </nav>
+          <MobileNavigation
+            onCloseButtonClick={onCloseClick}
+            isOpen={isOpen}
+            items={MobileNavigationFixture.items}
+            secondaryItems={MobileNavigationFixture.secondaryItems}
+            theme={theme}
+          />
+          <StorybookGridOverlay {...implementation.gridOverlay} />
+        </>
+      );
+    })()}
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of={MobileNavigation} />

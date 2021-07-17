@@ -9,7 +9,7 @@ const fade = {
     exitActive: transitions.fadeExitActive,
     exitDone: transitions.fadeExitDone,
   },
-  timeout: 500,
+  timeout: 300,
 };
 
 const slowFade = {
@@ -84,6 +84,18 @@ const slideRight = {
   timeout: 800,
 };
 
+const slideLeft = {
+  classNames: {
+    enter: transitions.slideLeftEnter,
+    enterActive: transitions.slideLeftEnterActive,
+    enterDone: transitions.slideLeftEnterDone,
+    exit: transitions.slideLeftExit,
+    exitActive: transitions.slideLeftExitActive,
+    exitDone: transitions.slideLeftExitDone,
+  },
+  timeout: 400,
+};
+
 const zoom = {
   classNames: {
     enter: transitions.zoomEnter,
@@ -102,6 +114,7 @@ const data = {
   shiftInLeft,
   shiftInUp,
   slideDown,
+  slideLeft,
   slideRight,
   slowFade,
   zoom,

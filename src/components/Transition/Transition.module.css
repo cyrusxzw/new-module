@@ -1,7 +1,7 @@
 @import 'styles/variables/index';
 
-%transition-opacity-500ms-linear {
-  transition: opacity 500ms linear;
+%transition-opacity-300ms-linear {
+  transition: opacity 300ms linear;
 }
 
 %transition-opacity-1500ms-linear {
@@ -13,15 +13,18 @@
 }
 
 %transition-transform-1500ms-ease-out-opacity-1500ms-linear {
-  transition:
-    transform 1500ms var(--easing-ease-out-cubic),
+  transition: transform 1500ms var(--easing-ease-out-cubic),
     opacity 1500ms linear;
 }
 
 %transition-transform-800ms-ease-out-visibility-800ms-ease-out {
-  transition:
-    transform 800ms var(--easing-ease-out-cubic),
+  transition: transform 800ms var(--easing-ease-out-cubic),
     visibility 800ms var(--easing-ease-out-cubic);
+}
+
+%transition-transform-400ms-ease-out-visibility-400ms-ease-out {
+  transition: transform 400ms var(--easing-ease-out-cubic),
+    visibility 400ms var(--easing-ease-out-cubic);
 }
 
 .fadeEnter {
@@ -29,7 +32,7 @@
 }
 
 .fadeEnterActive {
-  @extend %transition-opacity-500ms-linear;
+  @extend %transition-opacity-300ms-linear;
 
   opacity: 1;
 }
@@ -43,7 +46,7 @@
 }
 
 .fadeExitActive {
-  @extend %transition-opacity-500ms-linear;
+  @extend %transition-opacity-300ms-linear;
 
   opacity: 0;
 }
@@ -219,6 +222,40 @@
 
 .slideRightExitDone {
   transform: translate3d(-100%, 0, 0);
+  visibility: hidden;
+}
+
+.slideLeftEnter {
+  transform: translate3d(100%, 0, 0);
+  visibility: hidden;
+}
+
+.slideLeftEnterActive {
+  @extend %transition-transform-400ms-ease-out-visibility-400ms-ease-out;
+
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+}
+
+.slideLeftEnterDone {
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+}
+
+.slideLeftExit {
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+}
+
+.slideLeftExitActive {
+  @extend %transition-transform-400ms-ease-out-visibility-400ms-ease-out;
+
+  transform: translate3d(100%, 0, 0);
+  visibility: hidden;
+}
+
+.slideLeftExitDone {
+  transform: translate3d(100%, 0, 0);
   visibility: hidden;
 }
 
