@@ -12,24 +12,24 @@ const items = [
     type: 'collection' as const,
     items: [
       {
-        type: 'nested-collection' as const,
         id: 'by-skin-type',
         label: 'By Skin Type',
         title: 'By Skin Type',
+        type: 'nested-collection' as const,
         items: [
           {
+            id: 'normal',
             label: 'Normal',
             title: 'Normal',
-            id: 'normal',
-            url: '#normal',
             type: 'link' as const,
+            url: '#normal',
           },
           {
+            id: 'dry',
             label: 'Dry',
             title: 'Dry',
-            id: 'dry',
-            url: '#dry',
             type: 'link' as const,
+            url: '#dry',
           },
         ],
       },
