@@ -5,15 +5,12 @@ const useVariableHeightStyle = (ref, isActive: boolean) => {
   const [style, setStyle] = useState({ maxHeight: 'none' });
 
   useEffect(() => {
-    console.log('effect 1 ran');
     if (ref?.current) {
       setHeight(ref.current.clientHeight);
     }
   }, [ref]);
 
   useEffect(() => {
-    console.log('effect 2 ran');
-
     if (ref?.current) {
       setStyle({ maxHeight: isActive ? `${height}px` : '0' });
     }
