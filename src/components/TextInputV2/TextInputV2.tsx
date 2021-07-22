@@ -8,11 +8,11 @@ const TextInputV2 = forwardRef<HTMLInputElement, TextInputV2Props>(
   (
     {
       autoComplete,
-      classes = {},
+      classNames,
       dataTestRef,
       errorMessage,
       id: idProp,
-      isDisabled = false,
+      isEnabled = true,
       label,
       max,
       maxLength,
@@ -39,7 +39,7 @@ const TextInputV2 = forwardRef<HTMLInputElement, TextInputV2Props>(
     const errorMessageId = `${inputId}-error-message`;
 
     return (
-      <div className={cx(styles.wrapper, classes.wrapper)}>
+      <div className={cx(styles.wrapper, classNames?.wrapper)}>
         <div>
           <input
             aria-describedby={errorMessageId}
@@ -49,10 +49,10 @@ const TextInputV2 = forwardRef<HTMLInputElement, TextInputV2Props>(
               styles.input,
               styles[theme],
               { [styles.hasError]: errorMessage },
-              classes.input,
+              classNames?.input,
             )}
             data-test-ref={dataTestRef}
-            disabled={isDisabled}
+            disabled={!isEnabled}
             id={inputId}
             max={max}
             maxLength={maxLength}
@@ -70,7 +70,7 @@ const TextInputV2 = forwardRef<HTMLInputElement, TextInputV2Props>(
                 styles.label,
                 styles[theme],
                 { [styles.moved]: value },
-                classes.label,
+                classNames?.label,
               )}
               htmlFor={inputId}
             >
@@ -80,7 +80,7 @@ const TextInputV2 = forwardRef<HTMLInputElement, TextInputV2Props>(
         </div>
         {errorMessage && (
           <span
-            className={cx(styles.errorMessage, classes.errorMessage)}
+            className={cx(styles.errorMessage, classNames?.errorMessage)}
             id={errorMessageId}
           >
             {errorMessage}

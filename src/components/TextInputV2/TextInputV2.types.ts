@@ -3,8 +3,7 @@ import type { Themes } from '~/types';
 
 export type TextInputV2Props = {
   autoComplete?: string;
-  /* @TODO change api to classNames */
-  classes?: {
+  classNames?: {
     errorMessage?: string;
     input?: string;
     label?: string;
@@ -13,7 +12,7 @@ export type TextInputV2Props = {
   dataTestRef?: string;
   errorMessage?: string;
   id?: string;
-  isDisabled?: boolean /* @TODO can we please make this isEnabled */;
+  isEnabled?: boolean;
   label: string;
   max?: number;
   maxLength?: number;

@@ -53,7 +53,7 @@ describe('<TextInputV2 />', () => {
     const onChangeFunction = jest.fn();
     render(
       <TextInputV2
-        isDisabled={true}
+        isEnabled={false}
         label="Email"
         onChange={onChangeFunction}
       />,
