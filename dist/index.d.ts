@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, MutableRefObject, MouseEventHandler, SetStateAction, ChangeEvent, RefObject } from 'react';
+import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, MutableRefObject, ChangeEvent, MouseEventHandler, SetStateAction, RefObject } from 'react';
 import PropTypes from 'prop-types';
 
 declare type DefaultReactComponentReturn = ReactElement<any, any> | null;
@@ -659,7 +659,31 @@ declare namespace FooterBlock {
     }
 }
 
-declare const TextInputV2: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type TextInputV2Props = {
+    autoComplete?: string;
+    classNames?: {
+        errorMessage?: string;
+        input?: string;
+        label?: string;
+        wrapper?: string;
+    };
+    dataTestRef?: string;
+    errorMessage?: string;
+    id?: string;
+    isEnabled?: boolean;
+    label: string;
+    max?: number;
+    maxLength?: number;
+    min?: number;
+    name?: string;
+    onChange?: (event: ChangeEvent) => void;
+    pattern?: string;
+    theme?: Themes;
+    type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'search';
+    value?: string;
+};
+
+declare const TextInputV2: React$1.ForwardRefExoticComponent<TextInputV2Props & React$1.RefAttributes<HTMLInputElement>>;
 
 declare const FullWidthHeroScroll: React$1.ForwardRefExoticComponent<Pick<any, string | number | symbol> & React$1.RefAttributes<any>>;
 
