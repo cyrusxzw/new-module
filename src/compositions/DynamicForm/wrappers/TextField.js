@@ -22,7 +22,7 @@ export const TextFieldWrapper = ({
     name={name}
     render={({ onChange, value }) => (
       <TextInputV2
-        classes={{ wrapper: className }}
+        classNames={{ wrapper: className }}
         dataTestRef={dataTestRef}
         errorMessage={errorMessage}
         id={id}

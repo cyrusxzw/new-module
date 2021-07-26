@@ -1,18 +1,18 @@
 import React, { forwardRef, useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useUID } from 'react-uid';
+import type { TextInputV2Props } from './TextInputV2.types';
 import styles from './TextInputV2.module.css';
 
-const TextInputV2 = forwardRef(
+const TextInputV2 = forwardRef<HTMLInputElement, TextInputV2Props>(
   (
     {
       autoComplete,
-      classes,
+      classNames,
       dataTestRef,
       errorMessage,
       id: idProp,
-      isDisabled,
+      isEnabled = true,
       label,
       max,
       maxLength,
@@ -20,8 +20,8 @@ const TextInputV2 = forwardRef(
       name,
       onChange,
       pattern,
-      theme,
-      type,
+      theme = 'dark',
+      type = 'text',
       value: valueProp,
     },
     ref,
@@ -32,14 +32,14 @@ const TextInputV2 = forwardRef(
     const handleOnChange = useCallback(
       (event) => {
         setValue(event.target.value);
-        onChange(event);
+        onChange?.(event);
       },
       [onChange, setValue],
     );
     const errorMessageId = `${inputId}-error-message`;
 
     return (
-      <div className={cx(styles.wrapper, classes.wrapper)}>
+      <div className={cx(styles.wrapper, classNames?.wrapper)}>
         <div>
           <input
             aria-describedby={errorMessageId}
@@ -49,10 +49,10 @@ const TextInputV2 = forwardRef(
               styles.input,
               styles[theme],
               { [styles.hasError]: errorMessage },
-              classes.input,
+              classNames?.input,
             )}
             data-test-ref={dataTestRef}
-            disabled={isDisabled}
+            disabled={!isEnabled}
             id={inputId}
             max={max}
             maxLength={maxLength}
@@ -70,7 +70,7 @@ const TextInputV2 = forwardRef(
                 styles.label,
                 styles[theme],
                 { [styles.moved]: value },
-                classes.label,
+                classNames?.label,
               )}
               htmlFor={inputId}
             >
@@ -80,7 +80,7 @@ const TextInputV2 = forwardRef(
         </div>
         {errorMessage && (
           <span
-            className={cx(styles.errorMessage, classes.errorMessage)}
+            className={cx(styles.errorMessage, classNames?.errorMessage)}
             id={errorMessageId}
           >
             {errorMessage}
@@ -90,45 +90,5 @@ const TextInputV2 = forwardRef(
     );
   },
 );
-
-TextInputV2.propTypes = {
-  autoComplete: PropTypes.string,
-  /* @TODO change api to classNames */
-  classes: PropTypes.shape({
-    errorMessage: PropTypes.string,
-    input: PropTypes.string,
-    label: PropTypes.string,
-    wrapper: PropTypes.string,
-  }),
-  dataTestRef: PropTypes.string,
-  errorMessage: PropTypes.string,
-  id: PropTypes.string,
-  isDisabled: PropTypes.bool /* @TODO can we please make this isEnabled */,
-  label: PropTypes.string.isRequired,
-  max: PropTypes.number,
-  maxLength: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  min: PropTypes.number,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  pattern: PropTypes.string,
-  theme: PropTypes.oneOf(['dark', 'light']),
-  type: PropTypes.oneOf([
-    'text',
-    'password',
-    'email',
-    'number',
-    'tel',
-    'search',
-  ]),
-  value: PropTypes.string,
-};
-
-TextInputV2.defaultProps = {
-  classes: {},
-  isDisabled: false,
-  onChange: () => undefined,
-  theme: 'dark',
-  type: 'text',
-};
 
 export { TextInputV2 };
