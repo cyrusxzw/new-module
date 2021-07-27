@@ -80,7 +80,7 @@ const DynamicForm = forwardRef<HTMLFormElement, DynamicFormProps>(
                       }
                       errorMessage={errors[name]?.message}
                       id={id}
-                      key={index}
+                      key={name}
                       label={label}
                       name={name}
                       options={options}
