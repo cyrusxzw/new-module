@@ -1,3 +1,4 @@
+import type { ChangeEvent } from 'react';
 import type { Themes } from '~/types';
 
 type CheckboxProps = {
@@ -10,7 +11,7 @@ type CheckboxProps = {
   id?: string;
   isEnabled?: boolean;
   name?: string;
-  onChange?: () => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   theme?: Themes;
 };
 

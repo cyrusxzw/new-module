@@ -1,14 +1,18 @@
-import { FieldTypes } from '../DynamicForm.constants';
+import type { AvailableFormFieldTypes } from '../wrappers';
+import type { FieldValidation, ValidationRules } from './validators.types';
 
-export const getValidationRules = (validationObject, fieldType) => {
-  const rules = {};
+export const getValidationRules = (
+  validationObject: FieldValidation,
+  fieldType: AvailableFormFieldTypes,
+): ValidationRules => {
+  const rules: ValidationRules = {};
 
   if (!validationObject) {
     return rules;
   }
 
   switch (fieldType) {
-    case FieldTypes.TextField:
+    case 'TextField':
       // Text pattern (Regex)
       if (validationObject.pattern) {
         rules.pattern = {
