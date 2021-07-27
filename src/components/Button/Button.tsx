@@ -17,6 +17,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ButtonRef(
     title,
     type = 'button',
     theme = 'dark',
+    ...otherProps
   },
   ref,
 ) {
@@ -42,6 +43,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ButtonRef(
       tabIndex={tabIndex}
       title={title}
       type={type}
+      {...otherProps}
     >
       {children}
     </button>
