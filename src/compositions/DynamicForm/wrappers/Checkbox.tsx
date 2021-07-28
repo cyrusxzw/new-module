@@ -1,9 +1,11 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
+import React, { VFC } from 'react';
 import { Controller } from 'react-hook-form/dist/index.ie11';
 import { Checkbox } from '~/components/Checkbox';
+import type { CommonWrapperProps } from './wrappers.types';
 
-export const CheckboxWrapper = ({
+type CheckboxWrapperProps = CommonWrapperProps;
+
+export const CheckboxWrapper: VFC<CheckboxWrapperProps> = ({
   className,
   control,
   dataTestRef,

@@ -1,9 +1,9 @@
 import { getValidationRules } from './validators';
-import { FieldTypes } from '../DynamicForm.constants';
+import type { AvailableFormFieldTypes } from '../wrappers';
 
 describe('DynamicForm field validators', () => {
-  describe(`${FieldTypes.TextField} validation rules`, () => {
-    const fieldType = FieldTypes.TextField;
+  describe(`TextField validation rules`, () => {
+    const fieldType = 'TextField';
 
     it('should create a validation rule for pattern requirements', () => {
       const schemaRequirements = {
@@ -40,7 +40,7 @@ describe('DynamicForm field validators', () => {
 
   describe('Generic validation rules', () => {
     it('should create a validation rule for required fields', () => {
-      const fieldType = 'Something not in the switch statement keys';
+      const fieldType = 'Something not in the switch statement keys' as AvailableFormFieldTypes;
       const schemaRequirements = {
         isRequired: {
           message: 'You must enter a value for this here field see',
@@ -54,8 +54,6 @@ describe('DynamicForm field validators', () => {
   });
 
   it('should not fail when validationObject is undefined', () => {
-    expect(getValidationRules(undefined, FieldTypes.TextField)).toStrictEqual(
-      {},
-    );
+    expect(getValidationRules(undefined, 'TextField')).toStrictEqual({});
   });
 });

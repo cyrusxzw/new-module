@@ -1,9 +1,14 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
+import React, { VFC } from 'react';
 import { Controller } from 'react-hook-form/dist/index.ie11';
-import { TextInputV2 } from '~/components/TextInputV2/index.ts';
+import { TextInputV2 } from '~/components/TextInputV2';
+import { TextInputV2Props } from '~/components/TextInputV2/TextInputV2.types';
+import type { CommonWrapperProps } from './wrappers.types';
 
-export const TextFieldWrapper = ({
+type TextFieldWrapperProps = CommonWrapperProps & {
+  subtype: TextInputV2Props['type'];
+};
+
+export const TextFieldWrapper: VFC<TextFieldWrapperProps> = ({
   className,
   control,
   dataTestRef,
