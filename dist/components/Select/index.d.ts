@@ -1,27 +1,7 @@
-/// <reference types="react" />
-import React$1 from 'react';
-import { T as Themes } from '../../sharedChunks/Themes.types';
+import React from 'react';
+import { S as SelectProps } from '../../sharedChunks/Select.types';
+import '../../sharedChunks/Themes.types';
 
-declare type SelectOption = {
-    id?: string;
-    label?: string;
-    value?: string;
-};
-declare type SelectProps = {
-    className?: string;
-    dataTestRef?: string;
-    errorMessage?: string;
-    isBlock?: boolean;
-    label?: string;
-    name: string;
-    onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void;
-    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-    onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void;
-    options: SelectOption[];
-    theme?: Themes;
-    value?: string;
-};
-
-declare const Select: React$1.ForwardRefExoticComponent<SelectProps & React$1.RefAttributes<HTMLSelectElement>>;
+declare const Select: React.ForwardRefExoticComponent<SelectProps & React.RefAttributes<HTMLSelectElement>>;
 
 export { Select };

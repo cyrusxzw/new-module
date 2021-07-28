@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, MutableRefObject, ChangeEvent, MouseEventHandler, SetStateAction, RefObject } from 'react';
+import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, MutableRefObject, SyntheticEvent, MouseEventHandler, SetStateAction, RefObject } from 'react';
 import PropTypes from 'prop-types';
 
 declare type DefaultReactComponentReturn = ReactElement<any, any> | null;
@@ -336,7 +336,7 @@ declare type CheckboxProps = {
     id?: string;
     isEnabled?: boolean;
     name?: string;
-    onChange?: () => void;
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     theme?: Themes;
 };
 
@@ -1932,7 +1932,61 @@ declare namespace index_d$1 {
   };
 }
 
-declare const DynamicForm: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type FieldValidation = {
+    isRequired?: {
+        message: string;
+    };
+    maxLength?: {
+        value: number;
+        message: string;
+    };
+    pattern?: {
+        value: string;
+        message: string;
+    };
+};
+
+declare const Checkbox$1 = "Checkbox";
+declare const Select$1 = "Select";
+declare const TextField = "TextField";
+declare type AvailableFormFieldTypes = typeof Checkbox$1 | typeof Select$1 | typeof TextField;
+
+declare type FieldSchema = {
+    /** An initial value for the field. The value in `defaultValues` prop for the same field will take presedence */
+    defaultValue?: string;
+    /** The field's HTML id attribute */
+    id?: string;
+    /** The field's label, often used for accessibility */
+    label?: string;
+    /** An identifier of the field to the form */
+    name: string;
+    /** Needed for the Select field type, passed on as the drop down options */
+    options?: SelectProps['options'];
+    /** Contains properties relating to the field's appearance */
+    styling?: {
+        /** Corresponds to the css `flex` property. Can be a value of 1, 2 or 3 */
+        flex?: number;
+    };
+    /** Used as the type for the TextField field type */
+    subtype?: TextInputV2Props['type'];
+    /** Passed to fields as `dataTestRef` */
+    testRef?: string;
+    /** Defines the field type */
+    type: AvailableFormFieldTypes;
+    /** Contains validation rules for the form field */
+    validation?: FieldValidation;
+};
+declare type FormFieldsRow = FieldSchema[];
+declare type DynamicFormProps = {
+    children?: ReactNode;
+    className?: string;
+    defaultValues?: Record<string, string>;
+    formSchema?: FormFieldsRow[];
+    onSubmit: (event: SyntheticEvent<HTMLFormElement>) => void;
+    theme?: Themes;
+};
+
+declare const DynamicForm: React$1.ForwardRefExoticComponent<DynamicFormProps & React$1.RefAttributes<HTMLFormElement>>;
 
 declare type BreakpointValue = {
     minWidth?: number;
