@@ -18,7 +18,7 @@ export type TextInputV2Props = {
   maxLength?: number;
   min?: number;
   name?: string;
-  onChange?: (event: ChangeEvent) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   pattern?: string;
   theme?: Themes;
   type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'search';
