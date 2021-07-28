@@ -2,6 +2,8 @@ import { getValidationRules } from './validators';
 import type { AvailableFormFieldTypes } from '../wrappers';
 
 describe('DynamicForm field validators', () => {
+  const getValuesMock = jest.fn().mockReturnValue('Test1234');
+
   describe(`TextField validation rules`, () => {
     const fieldType = 'TextField';
 
@@ -19,9 +21,9 @@ describe('DynamicForm field validators', () => {
         },
       };
 
-      expect(getValidationRules(schemaRequirements, fieldType)).toEqual(
-        expectedReturn,
-      );
+      expect(
+        getValidationRules(schemaRequirements, fieldType, getValuesMock),
+      ).toEqual(expectedReturn);
     });
 
     it('should assign the maximum length validation object from the schema', () => {
@@ -32,9 +34,34 @@ describe('DynamicForm field validators', () => {
         },
       };
 
-      expect(getValidationRules(schemaRequirements, fieldType)).toEqual({
+      expect(
+        getValidationRules(schemaRequirements, fieldType, getValuesMock),
+      ).toEqual({
         maxLength: schemaRequirements.maxLength,
       });
+    });
+
+    it('should generate a correct validation function if the field should have the same value as another', () => {
+      const schemaRequirements = {
+        isSameAs: {
+          fieldName: 'password',
+          message: 'passwords must match',
+        },
+      };
+
+      const sameValueFunction: any = getValidationRules(
+        schemaRequirements,
+        fieldType,
+        getValuesMock,
+      ).validate;
+
+      expect(sameValueFunction('Test1234')).toEqual(true);
+      expect(sameValueFunction('mismatching text')).toEqual(
+        schemaRequirements.isSameAs.message,
+      );
+      expect(getValuesMock).toHaveBeenCalledWith(
+        schemaRequirements.isSameAs.fieldName,
+      );
     });
   });
 
@@ -47,13 +74,17 @@ describe('DynamicForm field validators', () => {
         },
       };
 
-      expect(getValidationRules(schemaRequirements, fieldType)).toEqual({
+      expect(
+        getValidationRules(schemaRequirements, fieldType, getValuesMock),
+      ).toEqual({
         required: schemaRequirements.isRequired.message,
       });
     });
   });
 
   it('should not fail when validationObject is undefined', () => {
-    expect(getValidationRules(undefined, 'TextField')).toStrictEqual({});
+    expect(
+      getValidationRules(undefined, 'TextField', getValuesMock),
+    ).toStrictEqual({});
   });
 });

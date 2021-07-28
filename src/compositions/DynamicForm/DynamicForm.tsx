@@ -12,7 +12,7 @@ const DynamicForm = forwardRef<HTMLFormElement, DynamicFormProps>(
     { children, className, defaultValues, formSchema, onSubmit, theme },
     ref,
   ) {
-    const { control, handleSubmit, errors } = useForm({
+    const { control, handleSubmit, errors, getValues } = useForm({
       mode: 'onChange',
     });
     const currentTheme = useThemeContext(theme, 'dark');
@@ -84,7 +84,7 @@ const DynamicForm = forwardRef<HTMLFormElement, DynamicFormProps>(
                       label={label}
                       name={name}
                       options={options}
-                      rules={getValidationRules(validation, type)}
+                      rules={getValidationRules(validation, type, getValues)}
                       subtype={subtype}
                       theme={currentTheme}
                     />

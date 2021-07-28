@@ -1,9 +1,11 @@
+import type { UseFormMethods } from 'react-hook-form/dist/index.ie11';
 import type { AvailableFormFieldTypes } from '../wrappers';
 import type { FieldValidation, ValidationRules } from './validators.types';
 
 export const getValidationRules = (
   validationObject: FieldValidation,
   fieldType: AvailableFormFieldTypes,
+  getValues: UseFormMethods['getValues'],
 ): ValidationRules => {
   const rules: ValidationRules = {};
 
@@ -24,6 +26,13 @@ export const getValidationRules = (
       // Text maximum length
       if (validationObject.maxLength) {
         rules.maxLength = validationObject.maxLength;
+      }
+
+      // Text equals another field
+      if (validationObject.isSameAs) {
+        rules.validate = (value: string) =>
+          value === getValues(validationObject.isSameAs.fieldName) ||
+          validationObject.isSameAs.message;
       }
 
     // eslint-disable-next-line no-fallthrough
