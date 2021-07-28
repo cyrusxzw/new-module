@@ -9,11 +9,19 @@ import styles from './DynamicForm.module.css';
 
 const DynamicForm = forwardRef<HTMLFormElement, DynamicFormProps>(
   function DynamicFormRef(
-    { children, className, defaultValues, formSchema, onSubmit, theme },
+    {
+      children,
+      className,
+      defaultValues,
+      formSchema,
+      onSubmit,
+      theme,
+      validationMode = 'onChange',
+    },
     ref,
   ) {
     const { control, handleSubmit, errors, getValues } = useForm({
-      mode: 'onChange',
+      mode: validationMode,
     });
     const currentTheme = useThemeContext(theme, 'dark');
 
