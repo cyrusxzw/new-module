@@ -2,7 +2,7 @@ import React from 'react';
 import { render, act, screen } from '@testing-library/react';
 import { DynamicForm } from './DynamicForm';
 import * as validators from './validators/validators';
-import { FieldTypes } from './DynamicForm.constants';
+import type { DynamicFormProps } from './DynamicForm.types';
 
 describe('<DynamicForm />', () => {
   const selectFieldSchema = {
@@ -58,7 +58,11 @@ describe('<DynamicForm />', () => {
   it('should warn if the element type is not registered in the map', () => {
     render(
       <DynamicForm
-        formSchema={[[{ type: 'Not a real element' }]]}
+        formSchema={
+          ([
+            [{ type: 'Not a real element' }],
+          ] as unknown) as DynamicFormProps['formSchema']
+        }
         onSubmit={() => undefined}
       />,
     );
@@ -68,7 +72,7 @@ describe('<DynamicForm />', () => {
   });
 
   it('should populate with the default value from schema', () => {
-    const formSchema = [[textFieldSchema]];
+    const formSchema = [[textFieldSchema]] as DynamicFormProps['formSchema'];
 
     render(<DynamicForm formSchema={formSchema} onSubmit={() => undefined} />);
 
@@ -77,7 +81,7 @@ describe('<DynamicForm />', () => {
   });
 
   it('should prioritise default values from prop over schema', () => {
-    const formSchema = [[textFieldSchema]];
+    const formSchema = [[textFieldSchema]] as DynamicFormProps['formSchema'];
     const defaultValues = { [textFieldSchema.name]: 'Clark' };
 
     render(
@@ -96,7 +100,7 @@ describe('<DynamicForm />', () => {
     const formSchema = [
       [selectFieldSchema, textFieldSchema],
       [checkboxFieldSchema],
-    ];
+    ] as DynamicFormProps['formSchema'];
 
     render(<DynamicForm formSchema={formSchema} onSubmit={() => undefined} />);
 
@@ -110,22 +114,22 @@ describe('<DynamicForm />', () => {
       [selectFieldSchema],
       [textFieldSchema],
       [checkboxFieldSchema],
-    ];
+    ] as DynamicFormProps['formSchema'];
 
     render(<DynamicForm formSchema={formSchema} onSubmit={() => undefined} />);
 
     expect(validators.getValidationRules).toHaveBeenCalledTimes(3);
     expect(validators.getValidationRules).toHaveBeenCalledWith(
-      selectFieldSchema.validation,
-      FieldTypes.Select,
+      undefined,
+      selectFieldSchema.type,
     );
     expect(validators.getValidationRules).toHaveBeenCalledWith(
       textFieldSchema.validation,
-      FieldTypes.TextField,
+      textFieldSchema.type,
     );
     expect(validators.getValidationRules).toHaveBeenCalledWith(
-      checkboxFieldSchema.validation,
-      FieldTypes.Checkbox,
+      undefined,
+      checkboxFieldSchema.type,
     );
   });
 
@@ -133,7 +137,10 @@ describe('<DynamicForm />', () => {
     const onSubmitMock = jest.fn();
 
     render(
-      <DynamicForm formSchema={[[textFieldSchema]]} onSubmit={onSubmitMock}>
+      <DynamicForm
+        formSchema={[[textFieldSchema]] as DynamicFormProps['formSchema']}
+        onSubmit={onSubmitMock}
+      >
         <button type="submit">Submit</button>
       </DynamicForm>,
     );

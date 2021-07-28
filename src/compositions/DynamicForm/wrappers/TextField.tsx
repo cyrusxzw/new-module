@@ -1,9 +1,14 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
+import React, { VFC } from 'react';
 import { Controller } from 'react-hook-form/dist/index.ie11';
-import { Select } from '~/components/Select/index.ts';
+import { TextInputV2 } from '~/components/TextInputV2';
+import { TextInputV2Props } from '~/components/TextInputV2/TextInputV2.types';
+import type { CommonWrapperProps } from './wrappers.types';
 
-export const SelectWrapper = ({
+type TextFieldWrapperProps = CommonWrapperProps & {
+  subtype: TextInputV2Props['type'];
+};
+
+export const TextFieldWrapper: VFC<TextFieldWrapperProps> = ({
   className,
   control,
   dataTestRef,
@@ -12,8 +17,8 @@ export const SelectWrapper = ({
   id,
   label,
   name,
-  options,
   rules,
+  subtype: type,
   theme,
 }) => (
   <Controller
@@ -21,16 +26,15 @@ export const SelectWrapper = ({
     defaultValue={defaultValue || ''}
     name={name}
     render={({ onChange, value }) => (
-      <Select
-        className={className}
+      <TextInputV2
+        classNames={{ wrapper: className }}
         dataTestRef={dataTestRef}
         errorMessage={errorMessage}
         id={id}
         label={label}
-        name={name}
         onChange={onChange}
-        options={options}
         theme={theme}
+        type={type}
         value={value}
       />
     )}

@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, MutableRefObject, MouseEventHandler, SetStateAction, ChangeEvent, RefObject } from 'react';
+import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, MutableRefObject, SyntheticEvent, MouseEventHandler, SetStateAction, RefObject } from 'react';
 import PropTypes from 'prop-types';
 
 declare type DefaultReactComponentReturn = ReactElement<any, any> | null;
@@ -336,7 +336,7 @@ declare type CheckboxProps = {
     id?: string;
     isEnabled?: boolean;
     name?: string;
-    onChange?: () => void;
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     theme?: Themes;
 };
 
@@ -659,70 +659,33 @@ declare namespace FooterBlock {
     }
 }
 
-declare const TextInputV2: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type TextInputV2Props = {
+    autoComplete?: string;
+    classNames?: {
+        errorMessage?: string;
+        input?: string;
+        label?: string;
+        wrapper?: string;
+    };
+    dataTestRef?: string;
+    errorMessage?: string;
+    id?: string;
+    isEnabled?: boolean;
+    label: string;
+    max?: number;
+    maxLength?: number;
+    min?: number;
+    name?: string;
+    onChange?: (event: ChangeEvent) => void;
+    pattern?: string;
+    theme?: Themes;
+    type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'search';
+    value?: string;
+};
 
-declare function FullWidthHeroScroll({ backgroundImage, backgroundMediaType, backgroundVideo, copy, cta, eyebrow, hasSerifFontHeading, hasTopOffset, heading, id, textBlocks, theme, }: {
-    backgroundImage: any;
-    backgroundMediaType: any;
-    backgroundVideo: any;
-    copy: any;
-    cta: any;
-    eyebrow: any;
-    hasSerifFontHeading: any;
-    hasTopOffset: any;
-    heading: any;
-    id: any;
-    textBlocks: any;
-    theme: any;
-}): JSX.Element;
-declare namespace FullWidthHeroScroll {
-    namespace propTypes {
-        const backgroundImage: PropTypes.Requireable<object>;
-        const backgroundMediaType: PropTypes.Requireable<string>;
-        const backgroundVideo: PropTypes.Requireable<object>;
-        const copy: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-        const cta: PropTypes.Requireable<PropTypes.InferProps<{
-            text: PropTypes.Requireable<string>;
-            url: PropTypes.Requireable<string>;
-        }>>;
-        const eyebrow: PropTypes.Requireable<string>;
-        const hasSerifFontHeading: PropTypes.Requireable<boolean>;
-        const hasTopOffset: PropTypes.Requireable<boolean>;
-        const heading: PropTypes.Requireable<string>;
-        const id: PropTypes.Requireable<string>;
-        const textBlocks: PropTypes.Requireable<PropTypes.InferProps<{
-            text: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-            hasSerifFont: PropTypes.Requireable<boolean>;
-        }>[]>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const backgroundImage_1: any;
-        export { backgroundImage_1 as backgroundImage };
-        const backgroundMediaType_1: any;
-        export { backgroundMediaType_1 as backgroundMediaType };
-        const backgroundVideo_1: any;
-        export { backgroundVideo_1 as backgroundVideo };
-        const copy_1: any;
-        export { copy_1 as copy };
-        const cta_1: any;
-        export { cta_1 as cta };
-        const eyebrow_1: any;
-        export { eyebrow_1 as eyebrow };
-        const hasSerifFontHeading_1: boolean;
-        export { hasSerifFontHeading_1 as hasSerifFontHeading };
-        const hasTopOffset_1: boolean;
-        export { hasTopOffset_1 as hasTopOffset };
-        const heading_1: any;
-        export { heading_1 as heading };
-        const id_1: any;
-        export { id_1 as id };
-        const textBlocks_1: any[];
-        export { textBlocks_1 as textBlocks };
-        const theme_1: string;
-        export { theme_1 as theme };
-    }
-}
+declare const TextInputV2: React$1.ForwardRefExoticComponent<TextInputV2Props & React$1.RefAttributes<HTMLInputElement>>;
+
+declare const FullWidthHeroScroll: React$1.ForwardRefExoticComponent<Pick<any, string | number | symbol> & React$1.RefAttributes<any>>;
 
 declare function GoogleMap({ center, className, copy, customMarker, hasMarkerIndexes, id, initialZoom, places, }: {
     center: any;
@@ -1969,7 +1932,61 @@ declare namespace index_d$1 {
   };
 }
 
-declare const DynamicForm: React$1.ForwardRefExoticComponent<React$1.RefAttributes<any>>;
+declare type FieldValidation = {
+    isRequired?: {
+        message: string;
+    };
+    maxLength?: {
+        value: number;
+        message: string;
+    };
+    pattern?: {
+        value: string;
+        message: string;
+    };
+};
+
+declare const Checkbox$1 = "Checkbox";
+declare const Select$1 = "Select";
+declare const TextField = "TextField";
+declare type AvailableFormFieldTypes = typeof Checkbox$1 | typeof Select$1 | typeof TextField;
+
+declare type FieldSchema = {
+    /** An initial value for the field. The value in `defaultValues` prop for the same field will take presedence */
+    defaultValue?: string;
+    /** The field's HTML id attribute */
+    id?: string;
+    /** The field's label, often used for accessibility */
+    label?: string;
+    /** An identifier of the field to the form */
+    name: string;
+    /** Needed for the Select field type, passed on as the drop down options */
+    options?: SelectProps['options'];
+    /** Contains properties relating to the field's appearance */
+    styling?: {
+        /** Corresponds to the css `flex` property. Can be a value of 1, 2 or 3 */
+        flex?: number;
+    };
+    /** Used as the type for the TextField field type */
+    subtype?: TextInputV2Props['type'];
+    /** Passed to fields as `dataTestRef` */
+    testRef?: string;
+    /** Defines the field type */
+    type: AvailableFormFieldTypes;
+    /** Contains validation rules for the form field */
+    validation?: FieldValidation;
+};
+declare type FormFieldsRow = FieldSchema[];
+declare type DynamicFormProps = {
+    children?: ReactNode;
+    className?: string;
+    defaultValues?: Record<string, string>;
+    formSchema?: FormFieldsRow[];
+    onSubmit: (event: SyntheticEvent<HTMLFormElement>) => void;
+    theme?: Themes;
+};
+
+declare const DynamicForm: React$1.ForwardRefExoticComponent<DynamicFormProps & React$1.RefAttributes<HTMLFormElement>>;
 
 declare type BreakpointValue = {
     minWidth?: number;

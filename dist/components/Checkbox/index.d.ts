@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type CheckboxProps = {
@@ -11,7 +11,7 @@ declare type CheckboxProps = {
     id?: string;
     isEnabled?: boolean;
     name?: string;
-    onChange?: () => void;
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     theme?: Themes;
 };
 

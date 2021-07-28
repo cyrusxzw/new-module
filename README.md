@@ -1,6 +1,14 @@
 # Aesop Global Experience Language
 
-![Update Web UI build badge](https://img.shields.io/github/workflow/status/aesop/aesop-gel/Update%20Web%20UI?label=Update%20Web%20UI%20build&logo=github) ![Prepare Release build badge](https://img.shields.io/github/workflow/status/aesop/aesop-gel/Prepare%20Release?label=Prepare%20Release%20build&logo=github) ![Version badge](https://img.shields.io/github/package-json/v/aesop/aesop-gel) ![Pre Release Build badge](https://img.shields.io/github/v/release/aesop/aesop-gel?include_prereleases&label=pre%20release%20build) ![Tag badge](https://img.shields.io/github/v/tag/aesop/aesop-gel)
+<!-- Tags -->
+
+![Prepare Release build badge](https://img.shields.io/github/workflow/status/aesop/aesop-gel/Prepare%20Release?label=Prepare%20Release%20build&logo=github)
+![npm](https://img.shields.io/npm/v/@aesop-engineering/gel)
+![Version badge](https://img.shields.io/github/package-json/v/aesop/aesop-gel)
+![Pre Release Build badge](https://img.shields.io/github/v/release/aesop/aesop-gel?include_prereleases&label=pre%20release%20build)
+![Tag badge](https://img.shields.io/github/v/tag/aesop/aesop-gel)
+
+<!-- End Tags -->
 
 ## Tooling Requirements
 
@@ -29,14 +37,17 @@ It is also recommended to install these plugins into your **IDE / Code Editor** 
 Install in your application using the following command
 
 ```bash
-# will use the main branch (`develop` at the time of writing)
+# to use the most recent stable version
+npm install @aesop-engineering/gel --save
+
+# to use the in-development version
 npm install github:aesop/aesop-gel --save
 ```
 
 Import the component/hook/etc that you need in your code
 
 ```jsx
-import { Heading } from 'aesop-gel/dist/components/Heading';
+import { Heading } from 'aesop-gel/dist/components/Heading'; // or from '@aesop-engineering/gel/dist/components/Heading';
 
 // example usage
 const MyAppHeading = () => (

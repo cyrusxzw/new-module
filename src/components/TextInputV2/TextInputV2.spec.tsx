@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { TextInputV2 } from './';
+import { TextInputV2 } from '.';
 
 describe('<TextInputV2 />', () => {
   describe('onChange', () => {
@@ -53,7 +53,7 @@ describe('<TextInputV2 />', () => {
     const onChangeFunction = jest.fn();
     render(
       <TextInputV2
-        isDisabled={true}
+        isEnabled={false}
         label="Email"
         onChange={onChangeFunction}
       />,
