@@ -1,5 +1,6 @@
 /// <reference types="react" />
-import React, { ReactNode, SyntheticEvent } from 'react';
+import React, { ReactNode } from 'react';
+import { Mode } from 'react-hook-form/dist/index.ie11';
 import { S as SelectProps } from '../../sharedChunks/Select.types';
 import { T as TextInputV2Props } from '../../sharedChunks/TextInputV2.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
@@ -10,6 +11,10 @@ declare type FieldValidation = {
     };
     maxLength?: {
         value: number;
+        message: string;
+    };
+    isSameAs?: {
+        fieldName: string;
         message: string;
     };
     pattern?: {
@@ -54,8 +59,9 @@ declare type DynamicFormProps = {
     className?: string;
     defaultValues?: Record<string, string>;
     formSchema?: FormFieldsRow[];
-    onSubmit: (event: SyntheticEvent<HTMLFormElement>) => void;
+    onSubmit: (formData: Record<string, string>) => void;
     theme?: Themes;
+    validationMode?: Mode;
 };
 
 declare const DynamicForm: React.ForwardRefExoticComponent<DynamicFormProps & React.RefAttributes<HTMLFormElement>>;

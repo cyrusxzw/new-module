@@ -1,6 +1,7 @@
 /// <reference types="react" />
-import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, MutableRefObject, SyntheticEvent, MouseEventHandler, SetStateAction, RefObject } from 'react';
+import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, MutableRefObject, MouseEventHandler, SetStateAction, RefObject } from 'react';
 import PropTypes from 'prop-types';
+import { Mode } from 'react-hook-form/dist/index.ie11';
 
 declare type DefaultReactComponentReturn = ReactElement<any, any> | null;
 declare type PropsWithChildren<P> = P & {
@@ -676,7 +677,7 @@ declare type TextInputV2Props = {
     maxLength?: number;
     min?: number;
     name?: string;
-    onChange?: (event: ChangeEvent) => void;
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     pattern?: string;
     theme?: Themes;
     type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'search';
@@ -1940,6 +1941,10 @@ declare type FieldValidation = {
         value: number;
         message: string;
     };
+    isSameAs?: {
+        fieldName: string;
+        message: string;
+    };
     pattern?: {
         value: string;
         message: string;
@@ -1982,8 +1987,9 @@ declare type DynamicFormProps = {
     className?: string;
     defaultValues?: Record<string, string>;
     formSchema?: FormFieldsRow[];
-    onSubmit: (event: SyntheticEvent<HTMLFormElement>) => void;
+    onSubmit: (formData: Record<string, string>) => void;
     theme?: Themes;
+    validationMode?: Mode;
 };
 
 declare const DynamicForm: React$1.ForwardRefExoticComponent<DynamicFormProps & React$1.RefAttributes<HTMLFormElement>>;
