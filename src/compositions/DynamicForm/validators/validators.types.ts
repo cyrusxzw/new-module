@@ -1,3 +1,5 @@
+import type { UseControllerOptions } from 'react-hook-form/dist/index.ie11';
+
 export type FieldValidation = {
   isRequired?: {
     message: string;
@@ -6,17 +8,14 @@ export type FieldValidation = {
     value: number;
     message: string;
   };
+  isSameAs?: {
+    fieldName: string;
+    message: string;
+  };
   pattern?: {
     value: string;
     message: string;
   };
 };
 
-export type ValidationRules = {
-  pattern?: {
-    value: RegExp;
-    message: string;
-  };
-  maxLength?: FieldValidation['maxLength'];
-  required?: string;
-};
+export type ValidationRules = UseControllerOptions['rules'];
