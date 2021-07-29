@@ -71,6 +71,7 @@
     "react-slick": "0.25.2",
     "react-transition-group-npm": "npm:react-transition-group@^4.4.1",
     "react-uid": "^2.3.1",
+    "use-deep-compare-effect": "^1.6.1",
     "video-scroller": "^1.1.1",
     "wavesurfer.js": "3.3.3"
   },

@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import type { UseImageTransition } from './useImageTransition.types';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 
 const windowIsDefined = typeof window !== 'undefined';
 
@@ -13,7 +14,7 @@ const useImageTransition: UseImageTransition = (
   const [isImageActive, setIsImageActive] = useState(false);
   const timeout = useRef(null);
 
-  useEffect(() => {
+  useDeepCompareEffect(() => {
     const currentRef = ref.current || null;
 
     setIsImageActive(false);
