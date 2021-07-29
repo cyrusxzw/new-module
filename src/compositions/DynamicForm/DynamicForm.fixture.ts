@@ -95,6 +95,24 @@ const DynamicFormFixture = {
         },
       },
     ],
+    [
+      {
+        name: 'confirmPassword',
+        id: 'confirmPassword',
+        label: 'Confirm Password',
+        type: 'TextField',
+        subtype: 'password',
+        validation: {
+          isRequired: {
+            message: 'Please enter your password',
+          },
+          isSameAs: {
+            fieldName: 'password',
+            message: 'The passwords do not match',
+          },
+        },
+      },
+    ],
   ],
   krSignUp: [
     [

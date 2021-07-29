@@ -122,14 +122,17 @@ describe('<DynamicForm />', () => {
     expect(validators.getValidationRules).toHaveBeenCalledWith(
       undefined,
       selectFieldSchema.type,
+      expect.any(Function),
     );
     expect(validators.getValidationRules).toHaveBeenCalledWith(
       textFieldSchema.validation,
       textFieldSchema.type,
+      expect.any(Function),
     );
     expect(validators.getValidationRules).toHaveBeenCalledWith(
       undefined,
       checkboxFieldSchema.type,
+      expect.any(Function),
     );
   });
 

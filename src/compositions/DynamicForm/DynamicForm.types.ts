@@ -1,4 +1,5 @@
-import type { ReactNode, SyntheticEvent } from 'react';
+import type { ReactNode } from 'react';
+import type { Mode } from 'react-hook-form/dist/index.ie11';
 import type { SelectProps } from '~/components/Select/Select.types';
 import type { TextInputV2Props } from '~/components/TextInputV2/TextInputV2.types';
 import type { Themes } from '~/types';
@@ -47,6 +48,7 @@ export type DynamicFormProps = {
   className?: string;
   defaultValues?: Record<string, string>;
   formSchema?: FormFieldsRow[];
-  onSubmit: (event: SyntheticEvent<HTMLFormElement>) => void;
+  onSubmit: (formData: Record<string, string>) => void;
   theme?: Themes;
+  validationMode?: Mode;
 };

@@ -102,6 +102,18 @@ specified by the rule. It is defined as follows
 }
 ```
 
+#### Equals another field
+
+This rule is only applicaple to the **`TextField`** field type. It will show an error message if the value in the field does not match
+the value in another form field.
+
+```json
+"isSameAs": {
+  "fieldName": "another form field",
+  "message": "Error message to show when the current value is not the same as <another form field>",
+}
+```
+
 #### Pattern (Regex)
 
 This rule is only applicaple to the **`TextField`** field type. It will show an error message if the value in the field does not match the
