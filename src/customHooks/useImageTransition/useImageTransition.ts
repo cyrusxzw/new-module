@@ -12,7 +12,6 @@ const useImageTransition: UseImageTransition = (
   const [currentImage, setCurrentImage] = useState({});
   const [isImageActive, setIsImageActive] = useState(false);
   const timeout = useRef(null);
-  const stringifyImage = JSON.stringify(image);
 
   useEffect(() => {
     const currentRef = ref.current || null;
@@ -44,7 +43,15 @@ const useImageTransition: UseImageTransition = (
         currentRef.removeEventListener('load', handleOnImageLoad);
       }
     };
-  }, [stringifyImage, ref]); // eslint-disable-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    image?.sizes?.large,
+    image?.sizes?.medium,
+    image?.sizes?.small,
+    image?.sizes?.xLarge,
+    image?.sizes?.xSmall,
+    ref,
+  ]);
 
   return [currentImage, isImageActive];
 };

@@ -2482,7 +2482,7 @@ declare const useExecuteOnImpression: UseExecuteOnImpression;
 declare const useHasMounted: () => boolean;
 
 declare type EmptyObject = Record<string, never>;
-declare type UseImageTransition = <Image, Attributes>(image: Image, ref: RefObject<HTMLImageElement>, duration?: number, attributes?: Attributes | EmptyObject) => [(Image & Attributes) | EmptyObject, boolean];
+declare type UseImageTransition = <Attributes>(image: ImageProps, ref: RefObject<HTMLImageElement>, duration?: number, attributes?: Attributes | EmptyObject) => [(ImageProps & Attributes) | EmptyObject, boolean];
 
 declare const useImageTransition: UseImageTransition;
 
