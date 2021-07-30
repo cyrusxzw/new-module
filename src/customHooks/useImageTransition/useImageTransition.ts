@@ -1,6 +1,5 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { UseImageTransition } from './useImageTransition.types';
-import useDeepCompareEffect from 'use-deep-compare-effect';
 
 const windowIsDefined = typeof window !== 'undefined';
 
@@ -13,8 +12,9 @@ const useImageTransition: UseImageTransition = (
   const [currentImage, setCurrentImage] = useState({});
   const [isImageActive, setIsImageActive] = useState(false);
   const timeout = useRef(null);
+  const stringifyImage = JSON.stringify(image);
 
-  useDeepCompareEffect(() => {
+  useEffect(() => {
     const currentRef = ref.current || null;
 
     setIsImageActive(false);
@@ -44,7 +44,7 @@ const useImageTransition: UseImageTransition = (
         currentRef.removeEventListener('load', handleOnImageLoad);
       }
     };
-  }, [image, ref]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [stringifyImage, ref]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return [currentImage, isImageActive];
 };
