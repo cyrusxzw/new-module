@@ -9136,7 +9136,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 .MobileNavigation-module_base__Ud0IZ {
   position: relative;
   z-index: 100;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
   -webkit-transition: background-color 300ms linear;
