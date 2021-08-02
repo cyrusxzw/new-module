@@ -9485,6 +9485,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
+.Collection-module_directionIcon__2dOB- {
+  margin-right: 12px;
+}
 .Collection-module_directionIcon__2dOB-.Collection-module_dark__3Ecsu polygon {
       fill: #8e8e8e;
     }
@@ -9492,13 +9495,12 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
       fill: #d5d4c9;
     }
 .Collection-module_forward__1n7dU {
-  margin-right: 15px;
-  margin-left: 15px;
+  margin-left: 12px;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
 .Collection-module_backwards__1bnFF {
-  margin-right: 15px;
+  margin-right: 12px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }

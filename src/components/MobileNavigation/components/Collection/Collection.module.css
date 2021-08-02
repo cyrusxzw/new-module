@@ -14,6 +14,8 @@
 }
 
 .directionIcon {
+  margin-right: 12px;
+
   &.dark {
     polygon {
       fill: var(--color-grey-45);
@@ -28,12 +30,11 @@
 }
 
 .forward {
-  margin-right: 15px;
-  margin-left: 15px;
+  margin-left: 12px;
   transform: rotate(-90deg);
 }
 
 .backwards {
-  margin-right: 15px;
+  margin-right: 12px;
   transform: rotate(90deg);
 }
