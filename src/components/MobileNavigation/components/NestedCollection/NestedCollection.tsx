@@ -14,8 +14,8 @@ const NestedCollection: NestedCollectionType = ({
   items = [],
   title,
   label,
+  isActive: isVisible,
 }) => {
-  const ref = useRef();
   const currentTheme = useThemeContext(null, 'dark');
   const {
     activeId,
@@ -24,7 +24,7 @@ const NestedCollection: NestedCollectionType = ({
   } = useMobileNavigationContext();
 
   const isActive = activeNestedIds.includes(id);
-  const { style } = useVariableHeightStyle(ref, isActive);
+  const { ref, style } = useVariableHeightStyle(isActive);
   const handleOnNestedClick = () => onNestedClick(id, isActive);
 
   const listClassSet = cx(
@@ -41,15 +41,25 @@ const NestedCollection: NestedCollectionType = ({
           haspopup: true,
           hidden: !isActive,
         }}
-        className={cx(compositionStyles.itemElement, styles.nestedButton)}
+        className={cx(
+          compositionStyles.itemElement,
+          compositionStyles.ornamentalWrapper,
+          styles.nestedButton,
+        )}
         isInline={true}
         onClick={handleOnNestedClick}
-        tabIndex={activeId === 'top' ? -1 : null}
+        tabIndex={activeId === 'top' || !isVisible ? -1 : null}
         theme={currentTheme}
         title={title}
       >
-        <span className={compositionStyles.ornimentalHover}>{label}</span>
-        <span className={styles.tempIcon}>{isActive ? '-' : '+'}</span>{' '}
+        <span className={compositionStyles.ornamentalHover}>{label}</span>
+        <span
+          className={cx(
+            styles.icon,
+            { [styles.expanded]: isActive },
+            styles[currentTheme],
+          )}
+        />
       </Button>
 
       <ul

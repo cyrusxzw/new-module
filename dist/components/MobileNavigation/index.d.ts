@@ -17,19 +17,36 @@ declare type Trigger = Clickable & {
     onClick: () => void;
     type: 'trigger';
 };
+declare type Card = Clickable & {
+    heading: string;
+    type: 'card';
+    url: string;
+    image?: {
+        altText: string;
+        sizes: {
+            large?: string;
+            medium?: string;
+            small?: string;
+            xLarge?: string;
+            xSmall?: string;
+        };
+    };
+};
 declare type NestedCollection = Clickable & {
     items: Link[];
     type: 'nested-collection';
 };
 declare type Collection = Clickable & {
-    items: (NestedCollection | Link)[];
+    items: (NestedCollection | Link | Card)[];
     type: 'collection';
 };
 declare type MobileNavigationProps = {
     className?: string;
-    isOpen: boolean;
+    closedTheme?: Themes;
+    isVisuallyObstructed?: boolean;
     items: Collection[];
-    onCloseButtonClick: () => void;
+    onCartClick: () => void;
+    onLoginClick: () => void;
     secondaryItems?: SecondaryNavigationItems;
     theme?: Themes;
 };

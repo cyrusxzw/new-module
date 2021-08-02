@@ -103,11 +103,13 @@ export { customHooks };
 export {
   useEscapeKeyListener,
   useExecuteOnImpression,
+  useFocusOnFirst,
   useHasMounted,
   useImageTransition,
   useOnScreen,
   useOverflowHidden,
   useScript,
+  useTrapFocus,
   useWindowHasResized,
 } from './customHooks';
 

@@ -2,10 +2,15 @@ import { useEffect } from 'react';
 import { KEYBOARD_CODES } from '~/constants';
 import type { UseEscapeKeyListener } from './useEscapeKeyListener.types';
 
-const useEscapeKeyListener: UseEscapeKeyListener = (onKeyPress) => {
+const useEscapeKeyListener: UseEscapeKeyListener = (
+  onKeyPress,
+  shouldRunCallback = true,
+) => {
   useEffect(() => {
     const detectEscapeKey = (event: KeyboardEvent) => {
-      if (event.keyCode === KEYBOARD_CODES.ESCAPE) {
+      const isEscapeKey =
+        event.key === 'Esc' || event.keyCode === KEYBOARD_CODES.ESCAPE;
+      if (isEscapeKey && shouldRunCallback) {
         onKeyPress(event);
       }
 

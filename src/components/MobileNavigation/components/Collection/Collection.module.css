@@ -2,15 +2,11 @@
 
 .slide {
   position: absolute;
+  z-index: 1;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-
-  &[aria-hidden='false'] {
-    z-index: 1;
-    overflow: auto;
-  }
 }
 
 .backButton {
@@ -18,9 +14,6 @@
 }
 
 .directionIcon {
-  margin-right: 15px;
-  margin-left: -2px;
-
   &.dark {
     polygon {
       fill: var(--color-grey-45);
@@ -35,9 +28,12 @@
 }
 
 .forward {
+  margin-right: 15px;
+  margin-left: 15px;
   transform: rotate(-90deg);
 }
 
 .backwards {
+  margin-right: 15px;
   transform: rotate(90deg);
 }

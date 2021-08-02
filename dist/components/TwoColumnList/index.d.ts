@@ -1,4 +1,4 @@
-import React from 'react';
+import React__default from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import { L as LinkStyle } from '../../sharedChunks/Hyperlink.types';
 
@@ -26,6 +26,6 @@ declare type TwoColumnListProps = {
     theme?: Themes;
 };
 
-declare const TwoColumnList: React.ForwardRefExoticComponent<TwoColumnListProps & React.RefAttributes<HTMLDivElement>>;
+declare const TwoColumnList: React__default.ForwardRefExoticComponent<TwoColumnListProps & React__default.RefAttributes<HTMLDivElement>>;
 
 export { TwoColumnList };

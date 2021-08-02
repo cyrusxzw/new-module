@@ -9,6 +9,9 @@ declare type ModalBodyCopy = {
 };
 
 declare type ModalAndModalBodyProps = {
+    aria?: {
+        label?: string;
+    };
     className?: string;
     isVisible: boolean;
     onClose: () => void;

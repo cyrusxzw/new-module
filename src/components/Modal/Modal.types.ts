@@ -2,6 +2,9 @@ import type { ComponentWithChildren, Themes } from '~/types';
 import type { ModalBodyCopy } from './components/ModalBody/ModalBody.types';
 
 type ModalAndModalBodyProps = {
+  aria?: {
+    label?: string;
+  };
   className?: string;
   isVisible: boolean;
   onClose: () => void;

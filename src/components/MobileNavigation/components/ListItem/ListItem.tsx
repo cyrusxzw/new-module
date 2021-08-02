@@ -3,6 +3,7 @@ import cx from 'classnames';
 import {
   Collection,
   Link,
+  Card,
   NestedCollection,
 } from '~/components/MobileNavigation/components';
 import type { ListItemType } from './ListItem.types';
@@ -12,16 +13,24 @@ const ListItem: ListItemType = ({
   itemProps,
   isActive = false,
   isNestedItem,
+  isTopItem = false,
 }) => {
   let returnElement = null;
 
   if (itemProps.type === 'collection') {
-    returnElement = <Collection {...itemProps} />;
+    returnElement = <Collection {...itemProps} isActive={isActive} />;
   } else if (itemProps.type === 'nested-collection') {
-    returnElement = <NestedCollection {...itemProps} />;
+    returnElement = <NestedCollection {...itemProps} isActive={isActive} />;
+  } else if (itemProps.type === 'card') {
+    returnElement = <Card {...itemProps} isActive={isActive} />;
   } else if (itemProps.type === 'link') {
     returnElement = (
-      <Link {...itemProps} isActive={isActive} isNested={isNestedItem} />
+      <Link
+        {...itemProps}
+        isActive={isActive}
+        isNested={isNestedItem}
+        isTop={isTopItem}
+      />
     );
   }
 

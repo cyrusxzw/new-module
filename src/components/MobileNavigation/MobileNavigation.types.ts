@@ -32,21 +32,39 @@ type Trigger = Clickable & {
   type: 'trigger';
 };
 
+type Card = Clickable & {
+  heading: string;
+  type: 'card';
+  url: string;
+  image?: {
+    altText: string;
+    sizes: {
+      large?: string;
+      medium?: string;
+      small?: string;
+      xLarge?: string;
+      xSmall?: string;
+    };
+  };
+};
+
 type NestedCollection = Clickable & {
   items: Link[];
   type: 'nested-collection';
 };
 
 type Collection = Clickable & {
-  items: (NestedCollection | Link)[];
+  items: (NestedCollection | Link | Card)[];
   type: 'collection';
 };
 
 type MobileNavigationProps = {
   className?: string;
-  isOpen: boolean;
+  closedTheme?: Themes;
+  isVisuallyObstructed?: boolean;
   items: Collection[];
-  onCloseButtonClick: () => void;
+  onCartClick: () => void;
+  onLoginClick: () => void;
   secondaryItems?: SecondaryNavigationItems;
   theme?: Themes;
 };
@@ -54,11 +72,12 @@ type MobileNavigationProps = {
 type MobileNavigationType = ComponentWithoutChildren<MobileNavigationProps>;
 
 export type {
-  MobileNavigationType,
-  MobileNavigationContextProviderType,
-  NestedCollection,
-  Collection,
+  Card,
   Clickable,
-  Trigger,
+  Collection,
   Link,
+  MobileNavigationContextProviderType,
+  MobileNavigationType,
+  NestedCollection,
+  Trigger,
 };

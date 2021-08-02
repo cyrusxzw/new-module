@@ -12,25 +12,58 @@
 }
 
 .nestedButton {
+  width: calc(100% - 10px);
   padding-left: 42px;
   margin-bottom: 5px;
 }
 
-.tempIcon {
+.icon {
   position: relative;
-  display: inline-block;
   width: 14px;
   height: 14px;
-  margin-right: 8px;
-  line-height: 1;
-  text-align: center;
-  transform: translateY(-2px);
+  box-sizing: content-box;
+  padding: 5px;
 
-  .dark & {
-    color: var(--color-grey-45);
+  &::before {
+    transform: rotate(90deg);
   }
 
-  .light & {
-    color: var(--color-grey-65);
+  &::before,
+  &::after {
+    position: absolute;
+    top: 11px;
+    left: 5px;
+    width: 14px;
+    height: 2px;
+    content: '';
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  &.expanded::before {
+    transform: rotate(0);
+  }
+
+  &.expanded::after {
+    transform: rotate(180deg);
+  }
+
+  &.dark::before,
+  &.dark::after {
+    background-color: var(--color-dark-label);
+  }
+
+  &.light::before,
+  &.light::after {
+    background-color: var(--color-light-label);
+  }
+
+  &.dark:hover::before,
+  &.dark:hover::after {
+    background-color: var(--color-secondary);
+  }
+
+  &.light:hover::before,
+  &.light:hover::after {
+    background-color: var(--color-primary);
   }
 }

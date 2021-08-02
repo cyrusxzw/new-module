@@ -30,7 +30,7 @@
     color 300ms var(--easing-ease-out-cubic);
 
   &:hover {
-    .ornimentalHover::after {
+    .ornamentalHover::after {
       width: 100%;
     }
   }
@@ -52,12 +52,12 @@
   }
 
   .dark &:focus {
-    outline: 1px dashed var(--color-dark-label);
+    outline: 1px dashed var(--color-dark-copy-alternate);
     outline-offset: 2px;
   }
 
   .light &:focus {
-    outline: 1px dashed var(--color-dark-label);
+    outline: 1px dashed var(--color-dark-copy-alternate);
     outline-offset: 2px;
   }
 }

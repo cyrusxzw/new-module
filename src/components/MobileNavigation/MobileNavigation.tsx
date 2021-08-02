@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
-import { useEscapeKeyListener } from '~/customHooks';
+import {
+  useEscapeKeyListener,
+  useFocusOnFirst,
+  useOverflowHidden,
+  useTrapFocus,
+} from '~/customHooks';
 import { Transition } from '~/components/Transition';
 import { MobileNavigationContextProvider } from './MobileNavigation.context';
 import { Header, ListItem, SecondaryNavigation } from './components/';
@@ -10,25 +15,40 @@ import styles from './MobileNavigation.module.css';
 
 const MobileNavigation: MobileNavigationType = ({
   className,
+  closedTheme,
+  isVisuallyObstructed,
   items,
-  isOpen,
-  onCloseButtonClick,
+  onCartClick,
+  onLoginClick,
   secondaryItems,
   theme,
 }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const [activeId, setActiveId] = useState('top');
   const [activeNestedIds, setActiveNestedIds] = useState([]);
   const currentTheme = useThemeContext(theme, 'dark');
-  const handleOnClose = () => {
-    setActiveId(() => 'top');
-    setActiveNestedIds(() => []);
-    onCloseButtonClick();
+  const [listRef] = useFocusOnFirst(
+    isOpen && activeId === 'top',
+    'a:not([tabindex="-1"]), button:not([tabindex="-1"])',
+  );
+  const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
+
+  useOverflowHidden(isOpen);
+
+  const handleOnOpenClick = () => {
+    setIsOpen(true);
   };
 
-  useEscapeKeyListener(handleOnClose);
+  const handleOnCloseClick = () => {
+    setActiveId('top');
+    setActiveNestedIds([]);
+    setIsOpen(false);
+  };
+
+  useEscapeKeyListener(handleOnCloseClick, !isVisuallyObstructed);
 
   const handleOnClick = (id: string) => {
-    setActiveId(() => id);
+    setActiveId(id);
   };
 
   const handleOnNestedClick = (id: string) => {
@@ -42,8 +62,8 @@ const MobileNavigation: MobileNavigationType = ({
   };
 
   const handleOnBackButtonClick = () => {
-    setActiveId(() => 'top');
-    setActiveNestedIds(() => []);
+    setActiveId('top');
+    setActiveNestedIds([]);
   };
 
   const classSet = cx(
@@ -62,26 +82,44 @@ const MobileNavigation: MobileNavigationType = ({
       onNestedClick={handleOnNestedClick}
     >
       <ThemeContextProvider theme={currentTheme}>
-        <Transition isActive={isOpen} type="fade">
-          <div className={classSet}>
-            <Header isActive={isOpen} onCloseButtonClick={handleOnClose} />
-
-            <div className={styles.main}>
-              <nav aria-hidden={!isOpen} aria-label="primary" role="navigation">
-                <ul className={styles.list}>
-                  {items.map((props) => (
-                    <ListItem itemProps={props} key={props.id} />
-                  ))}
-                </ul>
-              </nav>
-
-              <SecondaryNavigation
-                hasAriaHidden={activeId !== 'top'}
-                items={secondaryItems}
+        <div className={styles.presentationalWrapper}>
+          <Transition isActive={isOpen} type="fixed">
+            <div className={classSet} ref={focusTrapRef}>
+              <Header
+                closedTheme={closedTheme || currentTheme}
+                isMenuOpen={isOpen}
+                onCartClick={onCartClick}
+                onCloseClick={handleOnCloseClick}
+                onOpenClick={handleOnOpenClick}
               />
+              <Transition isActive={isOpen} type="fadeIn">
+                <div className={cx(styles.main, { [styles.open]: isOpen })}>
+                  <nav
+                    aria-hidden={!isOpen}
+                    aria-label="navigation"
+                    role="navigation"
+                  >
+                    <ul className={styles.list} ref={listRef}>
+                      {items.map((props) => (
+                        <ListItem
+                          isActive={isOpen && activeId === 'top'}
+                          isTopItem={true}
+                          itemProps={props}
+                          key={props.id}
+                        />
+                      ))}
+                    </ul>
+                  </nav>
+
+                  <SecondaryNavigation
+                    hasAriaHidden={!isOpen || activeId !== 'top'}
+                    items={secondaryItems}
+                  />
+                </div>
+              </Transition>
             </div>
-          </div>
-        </Transition>
+          </Transition>
+        </div>
       </ThemeContextProvider>
     </MobileNavigationContextProvider>
   );

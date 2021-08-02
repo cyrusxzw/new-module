@@ -1,59 +1,231 @@
 @import 'styles/index';
 
-.tempLogo {
-  font-family: var(--font-family-sans-serif-regular);
-  font-size: 20px;
+.base {
+  position: relative;
+  background-color: transparent;
 }
 
-.base {
+.list {
   display: flex;
+  height: 80px;
   align-items: center;
   justify-content: space-between;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-right: 20px;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
   padding-left: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
 }
 
-.closeButton {
-  width: 14px;
-  height: 14px;
-  transition: outline-offset 300ms var(--easing-ease-out-cubic);
+.item {
+  &:not(:first-child) {
+    margin-left: 12px;
+  }
 
-  .dark & polygon {
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+}
+
+.action {
+  transition: color 300ms var(--easing-ease-out-cubic),
+    outline-offset 300ms var(--easing-ease-out-cubic);
+
+  .dark &:focus,
+  .darkClosed &:focus {
+    outline: 1px dashed var(--color-dark-copy-alternate);
+    outline-offset: 2px;
+  }
+
+  .light &:focus,
+  .lightClosed &:focus {
+    outline: 1px dashed var(--color-light-copy-alternate);
+    outline-offset: 2px;
+  }
+}
+
+.itemLogo {
+  flex-grow: 1;
+}
+
+.actionLogo {
+  width: 70px;
+  height: 22px;
+  box-sizing: content-box;
+  padding: 5px;
+  font-family: var(--font-family-sans-serif-regular);
+  font-size: rem(20px);
+  transform: translate(-5px, -5px);
+
+  svg {
+    .dark &,
+    .darkClosed & {
+      fill: var(--color-secondary);
+    }
+
+    .light &,
+    .lightClosed & {
+      fill: var(--color-primary);
+    }
+  }
+
+  .dark &:hover svg,
+  .darkClosed &:hover svg {
+    fill: var(--color-black);
+  }
+
+  .light &:hover svg,
+  .lightClosed &:hover svg {
+    fill: var(--color-white);
+  }
+}
+
+.actionSearch {
+  display: inline-flex;
+  padding: 5px;
+  font-family: var(--font-family-sans-serif-regular);
+  line-height: 1;
+  transform: translateY(-5px);
+}
+
+.searchIcon {
+  .dark &,
+  .darkClosed & {
+    path {
+      fill: var(--color-dark-label);
+    }
+  }
+
+  .light &,
+  .lightClosed & {
+    path {
+      fill: var(--color-light-label);
+    }
+  }
+
+  .dark .actionSearch:hover &,
+  .darkClosed .actionSearch:hover & {
+    path {
+      fill: var(--color-secondary);
+    }
+  }
+
+  .light .actionSearch:hover &,
+  .lightClosed .actionSearch:hover & {
+    path {
+      fill: var(--color-primary);
+    }
+  }
+}
+
+.actionCart {
+  display: inline-flex;
+  padding: 5px;
+  font-family: var(--font-family-sans-serif-regular);
+  font-size: rem(14px);
+  line-height: 1;
+  transform: translateY(-5px);
+
+  .dark &,
+  .darkClosed & {
+    color: var(--color-dark-label);
+  }
+
+  .light &,
+  .lightClosed & {
+    color: var(--color-light-label);
+  }
+
+  .dark &:hover,
+  .darkClosed &:hover {
     color: var(--color-secondary);
   }
 
-  .light & polygon {
+  .light &:hover,
+  .lightClosed &:hover {
     color: var(--color-primary);
-  }
-
-  &:hover {
-    .dark & polygon {
-      fill: var(--color-black);
-    }
-
-    .light & polygon {
-      fill: var(--color-white);
-    }
-  }
-
-  .dark &:focus {
-    outline: 1px dashed var(--color-dark-label);
-    outline-offset: 2px;
-  }
-
-  .light &:focus {
-    outline: 1px dashed var(--color-dark-label);
-    outline-offset: 2px;
   }
 }
 
-.srOnly {
-  position: absolute;
-  top: auto;
-  left: -10000px;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
+.ornamentalHover::after {
+  .darkClosed & {
+    background-color: var(--color-secondary);
+  }
+
+  .lightClosed & {
+    background-color: var(--color-primary);
+  }
+}
+
+.itemMenu:last-child {
+  margin-left: 7px;
+}
+
+.actionMenu {
+  width: 16px;
+  height: 16px;
+  box-sizing: content-box;
+  padding: 5px;
+  transform: translate(5px, -7px);
+
+  &::before {
+    top: 9px;
+  }
+
+  &::after {
+    top: 16px;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 5px;
+    width: 16px;
+    height: 2px;
+    content: '';
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  &.openState::before {
+    transform: rotate(45deg);
+  }
+
+  &.openState::after {
+    transform: rotate(-45deg);
+  }
+
+  &.openState::after,
+  &.openState::before {
+    top: 12px;
+  }
+
+  .dark &::before,
+  .dark &::after,
+  .darkClosed &::before,
+  .darkClosed &::after {
+    background-color: var(--color-dark-label);
+  }
+
+  .light &::before,
+  .light &::after,
+  .lightClosed &::before,
+  .lightClosed &::after {
+    background-color: var(--color-light-label);
+  }
+
+  .dark &:hover::before,
+  .dark &:hover::after,
+  .darkClosed &:hover::before,
+  .darkClosed &:hover::after {
+    background-color: var(--color-secondary);
+  }
+
+  .light &:hover::before,
+  .light &:hover::after,
+  .lightClosed &:hover::before,
+  .lightClosed &:hover::after {
+    background-color: var(--color-primary);
+  }
 }

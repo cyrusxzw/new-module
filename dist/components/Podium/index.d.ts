@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1 from 'react';
+import React__default from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import { T as TransitionTypeLabel } from '../../sharedChunks/Transition.types';
 
@@ -26,6 +26,6 @@ declare type PodiumProps = {
     verticalPadding?: VerticalPadding;
 };
 
-declare const Podium: React$1.ForwardRefExoticComponent<PodiumProps & React$1.RefAttributes<HTMLDivElement>>;
+declare const Podium: React__default.ForwardRefExoticComponent<PodiumProps & React__default.RefAttributes<HTMLDivElement>>;
 
 export { Podium };

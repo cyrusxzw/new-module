@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1 from 'react';
+import React__default from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type ContentCopy = {
@@ -30,6 +30,6 @@ declare type MediaWithContentProps = {
     theme?: Themes;
 };
 
-declare const MediaWithContent: React$1.ForwardRefExoticComponent<MediaWithContentProps & React$1.RefAttributes<HTMLDivElement>>;
+declare const MediaWithContent: React__default.ForwardRefExoticComponent<MediaWithContentProps & React__default.RefAttributes<HTMLDivElement>>;
 
 export { MediaWithContent };

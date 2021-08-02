@@ -1,9 +1,11 @@
 @import 'styles/index';
 
 .base {
-  padding-left: 42px;
+  &:not(.top) {
+    padding-left: 42px;
+  }
 }
 
-.nested {
+.nested.nested {
   padding-left: 72px;
 }

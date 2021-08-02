@@ -1,0 +1,1 @@
+"use strict";exports.mergeRefs=function(){for(var e=[],n=0;n<arguments.length;n++)e[n]=arguments[n];var r=e.filter(Boolean);return r.length?0===r.length?r[0]:function(e){for(var n=0,t=r;n<t.length;n++){var o=t[n];"function"==typeof o?o(e):o&&(o.current=e)}}:null};

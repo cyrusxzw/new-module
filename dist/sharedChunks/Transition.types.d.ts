@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-declare type TransitionTypeLabel = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideLeft' | 'slideRight' | 'slowFade' | 'zoom';
+declare type TransitionTypeLabel = 'fade' | 'fadeIn' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideLeft' | 'slideRight' | 'slowFade' | 'fixed' | 'zoom';
 declare type TransitionProps = {
     children: JSX.Element;
     isActive?: boolean;

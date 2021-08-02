@@ -55,6 +55,77 @@
   opacity: 0;
 }
 
+.fadeInEnter {
+  position: absolute !important;
+  right: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.fadeInEnterActive {
+  @extend %transition-opacity-300ms-linear;
+
+  position: relative;
+  opacity: 1;
+}
+
+.fadeInEnterDone {
+  opacity: 1;
+}
+
+.fadeInExit {
+  opacity: 1;
+}
+
+.fadeInExitActive {
+  @extend %transition-opacity-300ms-linear;
+
+  opacity: 0;
+}
+
+.fadeInExitDone {
+  position: absolute !important;
+  right: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.fixedEnter {
+  position: relative;
+}
+
+.fixedEnterActive {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.fixedEnterDone {
+  position: fixed;
+}
+
+.fixedExit {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.fixedExitActive {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.fixedExitDone {
+  position: relative;
+}
+
 .shiftInDownEnter {
   opacity: 0;
   transform: translate3d(0, -20px, 0);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React__default from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type QuoteProps = {
@@ -8,6 +8,6 @@ declare type QuoteProps = {
     theme?: Themes;
 };
 
-declare const Quote: React.ForwardRefExoticComponent<QuoteProps & React.RefAttributes<HTMLDivElement>>;
+declare const Quote: React__default.ForwardRefExoticComponent<QuoteProps & React__default.RefAttributes<HTMLDivElement>>;
 
 export { Quote };

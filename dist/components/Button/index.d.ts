@@ -1,4 +1,4 @@
-import React, { ReactNode, MouseEvent } from 'react';
+import React__default, { ReactNode, MouseEvent } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type ButtonBehaviourType = 'button' | 'reset' | 'submit';
@@ -23,6 +23,6 @@ declare type ButtonProps = {
     theme?: Themes;
 };
 
-declare const Button: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
+declare const Button: React__default.ForwardRefExoticComponent<ButtonProps & React__default.RefAttributes<HTMLButtonElement>>;
 
 export { Button };

@@ -1,8 +1,11 @@
-import type { ComponentWithoutChildren } from '~/types';
+import type { ComponentWithoutChildren, Themes } from '~/types';
 
 type HeaderProps = {
-  isActive?: boolean;
-  onCloseButtonClick: () => void;
+  closedTheme?: Themes;
+  isMenuOpen?: boolean;
+  onCartClick: () => void;
+  onCloseClick: () => void;
+  onOpenClick: () => void;
 };
 
 type HeaderType = ComponentWithoutChildren<HeaderProps>;

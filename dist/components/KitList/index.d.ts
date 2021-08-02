@@ -1,4 +1,4 @@
-import React from 'react';
+import React__default from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import { L as ListItem } from '../../sharedChunks/List.types';
 
@@ -14,6 +14,6 @@ declare type KitListProps = {
  * However, due to https://stackoverflow.com/questions/58469229/react-with-typescript-generics-while-using-react-forwardref/58473012
  * this does not work, and if List's return type changes, this static type will break
  */
-declare const KitList: React.ForwardRefExoticComponent<KitListProps & React.RefAttributes<any>>;
+declare const KitList: React__default.ForwardRefExoticComponent<KitListProps & React__default.RefAttributes<any>>;
 
 export { KitList };

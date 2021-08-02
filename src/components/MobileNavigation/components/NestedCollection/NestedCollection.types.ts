@@ -6,6 +6,7 @@ import type {
 
 type NestedCollectionProps = Clickable & {
   items: Link[];
+  isActive?: boolean;
 };
 
 type NestedCollectionType = ComponentWithoutChildren<NestedCollectionProps>;

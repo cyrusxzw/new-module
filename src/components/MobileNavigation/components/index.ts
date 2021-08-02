@@ -1,3 +1,4 @@
+export { Card } from './Card';
 export { Collection } from './Collection';
 export { Header } from './Header';
 export { Link } from './Link';

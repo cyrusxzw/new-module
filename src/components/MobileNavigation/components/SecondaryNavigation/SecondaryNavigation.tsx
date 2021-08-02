@@ -30,19 +30,22 @@ const SecondaryNavigation: SecondaryNavigationType = ({
                   title={props.title}
                   url={props.url}
                 >
-                  <span className={compositionStyles.ornimentalHover}>
+                  <span className={compositionStyles.ornamentalHover}>
                     {props.label}
                   </span>
                 </Hyperlink>
               ) : (
                 <Button
-                  className={styles.element}
+                  className={cx(
+                    styles.element,
+                    compositionStyles.ornamentalWrapper,
+                  )}
                   isInline={true}
                   onClick={props.onClick}
                   tabIndex={hasAriaHidden ? -1 : null}
                   title={props.title}
                 >
-                  <span className={compositionStyles.ornimentalHover}>
+                  <span className={compositionStyles.ornamentalHover}>
                     {props.label}
                   </span>
                 </Button>

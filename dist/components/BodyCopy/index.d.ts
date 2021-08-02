@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React__default, { ReactNode } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type BodyCopyProps = {
@@ -20,6 +20,6 @@ declare type BodyCopyProps = {
     theme?: Themes;
 };
 
-declare const BodyCopy: React.ForwardRefExoticComponent<BodyCopyProps & React.RefAttributes<HTMLElement>>;
+declare const BodyCopy: React__default.ForwardRefExoticComponent<BodyCopyProps & React__default.RefAttributes<HTMLElement>>;
 
 export { BodyCopy };

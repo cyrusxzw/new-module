@@ -1,31 +1,31 @@
 const MobileNavigationFixture = {
   secondaryItems: [
     {
-      id: 'footer-stores',
-      label: 'Stores',
-      title: 'Stores',
-      type: 'link' as const,
-      url: '#footer-stores',
-    },
-    {
-      id: 'footer-login',
-      label: 'Login',
-      onClick: () => undefined,
-      title: 'Login',
+      id: 'footer-read',
+      label: 'Read',
+      onClick: () => console.log('Clicked: footer-read'),
+      title: 'Read',
       type: 'trigger' as const,
     },
     {
-      id: 'footer-contact',
-      label: 'Contact',
-      title: 'Contact',
-      type: 'link' as const,
-      url: '#footer-contact',
+      id: 'footer-log-in',
+      label: 'Log in',
+      onClick: () => console.log('Clicked: footer-log-in'),
+      title: 'Log in',
+      type: 'trigger' as const,
     },
     {
-      id: 'footer-sign-up',
-      label: 'Sign up',
-      onClick: () => undefined,
-      title: 'Sign up',
+      id: 'footer-stores',
+      label: 'Stores',
+      onClick: () => console.log('Clicked: footer-stores'),
+      title: 'Stores',
+      type: 'trigger' as const,
+    },
+    {
+      id: 'live-assistance',
+      label: 'Live Assistance',
+      onClick: () => console.log('Clicked: live-assistance'),
+      title: 'Live Assistance',
       type: 'trigger' as const,
     },
   ],
@@ -92,6 +92,25 @@ const MobileNavigationFixture = {
           title: 'Skin Care Gifts',
           type: 'link' as const,
           url: '#skin-care-gifts',
+        },
+        {
+          id: 'see-all-skin-care-card',
+          label: 'See all Skin Care Card Label',
+          title: 'See all Skin Care Card',
+          type: 'card' as const,
+          url: '#see-all-skin-care-card',
+          heading: 'See all Skin Care Card Heading',
+          image: {
+            altText: 'Image of See all Skin Care',
+            sizes: {
+              large:
+                'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
+              medium:
+                'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
+              small:
+                'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
+            },
+          },
         },
       ],
     },

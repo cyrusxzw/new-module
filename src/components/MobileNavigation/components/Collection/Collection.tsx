@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
+import { useFocusOnFirst } from '~/customHooks';
 import { Transition } from '~/components/Transition';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
@@ -10,10 +11,20 @@ import type { CollectionType } from './Collection.types';
 import compositionStyles from '~/components/MobileNavigation/MobileNavigation.module.css';
 import styles from './Collection.module.css';
 
-const Collection: CollectionType = ({ id, items, title, label }) => {
+const Collection: CollectionType = ({
+  id,
+  isActive: isVisible,
+  items,
+  title,
+  label,
+}) => {
   const currentTheme = useThemeContext(null, 'dark');
   const { activeId, onClick, onBackButtonClick } = useMobileNavigationContext();
   const isActive = activeId === id;
+  const [listRef] = useFocusOnFirst(
+    isActive,
+    'a:not([tabindex="-1"]), button:not([tabindex="-1"])',
+  );
   const handleOnClick = () => onClick(id);
 
   const listClassSet = cx(
@@ -30,6 +41,7 @@ const Collection: CollectionType = ({ id, items, title, label }) => {
 
   const backButtonClassSet = cx(
     compositionStyles.itemElement,
+    compositionStyles.ornamentalWrapper,
     styles.backButton,
   );
 
@@ -49,20 +61,23 @@ const Collection: CollectionType = ({ id, items, title, label }) => {
         }}
         aria-expanded={isActive}
         aria-haspopup="true"
-        className={compositionStyles.itemElement}
+        className={cx(
+          compositionStyles.itemElement,
+          compositionStyles.ornamentalWrapper,
+        )}
         isInline={true}
         onClick={handleOnClick}
-        tabIndex={isActive ? -1 : null}
+        tabIndex={activeId === 'top' && isVisible ? null : -1}
         theme={currentTheme}
         title={title}
       >
-        <span className={compositionStyles.ornimentalHover}>{label}</span>{' '}
+        <span className={compositionStyles.ornamentalHover}>{label}</span>{' '}
         <Icon
           className={forwardIconClassSet}
-          height={14}
+          height={12}
           name="chevron"
           theme={currentTheme}
-          width={14}
+          width={12}
         />
       </Button>
 
@@ -74,6 +89,7 @@ const Collection: CollectionType = ({ id, items, title, label }) => {
           aria-hidden={!isActive}
           aria-label="submenu"
           className={listClassSet}
+          ref={listRef}
         >
           <li className={compositionStyles.listItem}>
             <Button
@@ -81,7 +97,7 @@ const Collection: CollectionType = ({ id, items, title, label }) => {
               className={backButtonClassSet}
               isInline={true}
               onClick={onBackButtonClick}
-              tabIndex={activeId === 'top' ? -1 : null}
+              tabIndex={isActive ? null : -1}
               theme={currentTheme}
               title={title}
             >
@@ -91,7 +107,9 @@ const Collection: CollectionType = ({ id, items, title, label }) => {
                 name="chevron"
                 width={14}
               />{' '}
-              <span className={compositionStyles.ornimentalHover}>{label}</span>
+              <span className={compositionStyles.ornamentalHover}>
+                All Collections
+              </span>
             </Button>
           </li>
 

@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
-const useVariableHeightStyle = (ref, isActive: boolean) => {
-  const [height, setHeight] = useState();
+const useVariableHeightStyle = (isActive: boolean) => {
+  const ref = useRef(null);
+  const [height, setHeight] = useState(0);
   const [style, setStyle] = useState({ maxHeight: 'none' });
 
   useEffect(() => {
@@ -14,9 +15,9 @@ const useVariableHeightStyle = (ref, isActive: boolean) => {
     if (ref?.current) {
       setStyle({ maxHeight: isActive ? `${height}px` : '0' });
     }
-  }, [isActive, ref, height]);
+  }, [isActive, height]);
 
-  return { style };
+  return { ref, style };
 };
 
 export { useVariableHeightStyle };
