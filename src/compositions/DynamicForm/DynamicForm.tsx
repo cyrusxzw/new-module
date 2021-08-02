@@ -13,6 +13,7 @@ const DynamicForm = forwardRef<HTMLFormElement, DynamicFormProps>(
       children,
       className,
       defaultValues,
+      formName,
       formSchema,
       onSubmit,
       theme,
@@ -32,7 +33,12 @@ const DynamicForm = forwardRef<HTMLFormElement, DynamicFormProps>(
     const classSet = cx(styles[currentTheme], className);
 
     return (
-      <form className={classSet} onSubmit={handleSubmit(onSubmit)} ref={ref}>
+      <form
+        className={classSet}
+        name={formName}
+        onSubmit={handleSubmit(onSubmit)}
+        ref={ref}
+      >
         {formSchema.map((fieldsArray, fieldsArrayIndex) => {
           const isFirstFieldGroup = fieldsArrayIndex === 0;
           const isLastFieldGroup = fieldsArrayIndex === formSchema.length - 1;

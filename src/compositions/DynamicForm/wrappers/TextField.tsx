@@ -32,6 +32,7 @@ export const TextFieldWrapper: VFC<TextFieldWrapperProps> = ({
         errorMessage={errorMessage}
         id={id}
         label={label}
+        name={name}
         onChange={onChange}
         theme={theme}
         type={type}
