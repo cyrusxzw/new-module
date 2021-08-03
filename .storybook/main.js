@@ -6,11 +6,14 @@ module.exports = {
     '../documentation/**/*.stories.mdx',
   ],
   addons: [
-    '@storybook/addon-knobs/register',
-    '@storybook/addon-actions/register',
+    '@storybook/addon-docs',
+    '@storybook/addon-knobs',
+    '@storybook/addon-actions',
     '@storybook/addon-a11y',
-    '@storybook/addon-viewport/register',
-    '@storybook/addon-docs/preset',
+    '@storybook/addon-queryparams',
+    '@storybook/addon-viewport',
+    '@storybook/addon-outline',
+    '@storybook/addon-measure',
     '@storybook/addon-backgrounds',
   ],
   typescript: {

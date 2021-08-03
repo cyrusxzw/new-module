@@ -1,6 +1,3 @@
-import { addDecorator } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
-
 const parameters = {
   a11y: {
     element: '#root',
@@ -31,7 +28,5 @@ const parameters = {
     },
   },
 };
-
-addDecorator(withKnobs);
 
 export { parameters };
