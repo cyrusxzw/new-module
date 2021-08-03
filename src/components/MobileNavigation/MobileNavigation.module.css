@@ -126,7 +126,7 @@
 .itemElement {
   position: relative;
   display: flex;
-  width: 100%;
+  width: calc(100% - 10px);
   align-items: center;
   justify-content: space-between;
   padding-top: 6px;
