@@ -58,6 +58,7 @@ declare type DynamicFormProps = {
     children?: ReactNode;
     className?: string;
     defaultValues?: Record<string, string>;
+    formName?: string;
     formSchema?: FormFieldsRow[];
     onSubmit: (formData: Record<string, string>) => void;
     theme?: Themes;
