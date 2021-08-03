@@ -30,7 +30,7 @@ describe('<ModalBody />', () => {
       </ModalBody>,
     );
 
-    expect(screen.getByText(/modal body test/i)).toBeTruthy();
+    expect(screen.getByText(/modal body test/i)).toBeInTheDocument();
 
     userEvent.click(screen.getByTitle(/close modal body button/i));
 

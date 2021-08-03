@@ -19,7 +19,7 @@ describe('<Modal />', () => {
       </Modal>,
     );
 
-    expect(screen.getByText(/modal test/i)).toBeTruthy();
+    expect(screen.getByText(/modal test/i)).toBeInTheDocument();
     expect(handleOnClose).not.toHaveBeenCalled();
 
     userEvent.click(screen.getByTitle(closeCopy));
