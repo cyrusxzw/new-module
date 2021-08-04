@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { ConditionalWrapper } from '~/components/ConditionalWrapper';
-import { Heading } from '~/components/Heading/index.ts';
+import { Heading } from '~/components/Heading';
 import { Hyperlink } from '~/components/Hyperlink';
 import type { MessageType } from './Message.types';
 import styles from './Message.module.css';

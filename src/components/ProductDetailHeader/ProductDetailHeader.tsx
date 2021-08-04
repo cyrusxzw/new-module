@@ -6,7 +6,7 @@ import {
   useVariantSelectContext,
 } from '~/contexts';
 import { Breadcrumbs } from '~/components/Breadcrumbs';
-import { Hidden } from '~/components/Hidden/index.ts';
+import { Hidden } from '~/components/Hidden';
 import { ProductDetailBody } from './components/ProductDetailBody';
 import { ProductDetailImage } from './components/ProductDetailImage';
 import type { BreadcrumbItem } from '~/components/Breadcrumbs/Breadcrumbs.types';

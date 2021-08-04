@@ -2,10 +2,10 @@ import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS } from '~/constants';
-import { Heading } from '~/components/Heading/index.ts';
+import { Heading } from '~/components/Heading';
 import { Hyperlink } from '~/components/Hyperlink';
-import { StoreHoursList } from '~/components/StoreHoursList/index.ts';
-import { TwoColumnLayout } from '~/components/TwoColumnLayout/index.ts';
+import { StoreHoursList } from '~/components/StoreHoursList';
+import { TwoColumnLayout } from '~/components/TwoColumnLayout';
 import type { StoreDetailHeaderType } from './StoreDetailHeader.types';
 import styles from './StoreDetailHeader.module.css';
 

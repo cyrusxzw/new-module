@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import find from 'lodash/find';
 import { useThemeContext } from '~/contexts';
-import { Heading } from '~/components/Heading/index.ts';
+import { Heading } from '~/components/Heading';
 import type { StoreHoursListType } from './StoreHoursList.types';
 import styles from './StoreHoursList.module.css';
 
