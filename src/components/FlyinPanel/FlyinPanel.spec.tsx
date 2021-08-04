@@ -16,8 +16,8 @@ describe('<FlyinPanel />', () => {
   it('renders component correctly and fires the close button on click', () => {
     render(<FlyinPanel {...props}>flyin panel</FlyinPanel>);
 
-    expect(screen.getByText(/flyin panel/i)).toBeTruthy();
-    expect(screen.getByRole('note')).toBeTruthy();
+    expect(screen.getByText(/flyin panel/i)).toBeInTheDocument();
+    expect(screen.getByRole('note')).toBeInTheDocument();
 
     userEvent.click(screen.getByTitle(/close flyin panel button/i));
 
