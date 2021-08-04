@@ -5,7 +5,7 @@ import { useThemeContext } from '~/contexts';
 import { useEscapeKeyListener, useOverflowHidden } from '~/customHooks';
 import { getPortalRoot } from '~/utils/portal';
 import { Button } from '~/components/Button';
-import { Heading } from '~/components/Heading/index.ts';
+import { Heading } from '~/components/Heading';
 import { Icon } from '~/components/Icon';
 import { Overlay } from '~/components/Overlay';
 import { Transition } from '~/components/Transition';

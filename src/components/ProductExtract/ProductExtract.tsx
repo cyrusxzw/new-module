@@ -3,7 +3,7 @@ import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import { useThemeContext } from '~/contexts';
 import { ConditionalWrapper } from '~/components/ConditionalWrapper';
-import { Heading } from '~/components/Heading/index.ts';
+import { Heading } from '~/components/Heading';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Image } from '~/components/Image';
 import type { ProductExtractProps } from './ProductExtract.types';

@@ -17,7 +17,7 @@ import { Heading } from '~/components/Heading';
 import { Hidden } from '~/components/Hidden';
 import { Icon } from '~/components/Icon';
 import { Paragraph } from '~/components/Paragraph';
-import { ProductExtract } from '~/components/ProductExtract/index.ts';
+import { ProductExtract } from '~/components/ProductExtract';
 import { RadioGroup } from '~/components/RadioGroup';
 import { Transition } from '~/components/Transition';
 import type { ProductDetailBodyType } from './ProductDetailBody.types';
