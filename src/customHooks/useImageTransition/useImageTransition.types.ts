@@ -1,12 +1,13 @@
 import type { RefObject } from 'react';
+import type { ImageProps } from '~/components/Image/Image.types';
 
 type EmptyObject = Record<string, never>;
 
-type UseImageTransition = <Image, Attributes>(
-  image: Image,
+type UseImageTransition = <Attributes>(
+  image: ImageProps,
   ref: RefObject<HTMLImageElement>,
   duration?: number,
   attributes?: Attributes | EmptyObject,
-) => [(Image & Attributes) | EmptyObject, boolean];
+) => [(ImageProps & Attributes) | EmptyObject, boolean];
 
 export type { UseImageTransition };

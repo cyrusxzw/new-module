@@ -44,20 +44,22 @@ describe('useImageTransition', () => {
     jest.useFakeTimers();
 
     const { rerender } = render(
-      <ComponentWithHook image={{ src: 'first-image' }} />,
+      <ComponentWithHook image={{ sizes: { large: 'first-image' } }} />,
     );
 
-    expect(result.currentImage.src).toBeUndefined();
+    expect(result.currentImage?.sizes?.large).toBeUndefined();
     expect(result.isImageActive).toBe(false);
 
     act(() => {
       jest.runOnlyPendingTimers();
     });
 
-    expect(result.currentImage.src).toBe('first-image');
+    expect(result.currentImage?.sizes?.large).toBe('first-image');
     expect(result.isImageActive).toBe(true);
 
-    rerender(<ComponentWithHook image={{ src: 'second-image' }} />);
+    rerender(
+      <ComponentWithHook image={{ sizes: { large: 'second-image' } }} />,
+    );
 
     expect(result.isImageActive).toBe(false);
 
@@ -65,14 +67,16 @@ describe('useImageTransition', () => {
       jest.runOnlyPendingTimers();
     });
 
-    expect(result.currentImage.src).toBe('second-image');
+    expect(result.currentImage?.sizes?.large).toBe('second-image');
     expect(result.isImageActive).toBe(true);
   });
 
   it('should have no active timers on unmount (should not throw state update error)', () => {
     jest.useFakeTimers();
 
-    const { unmount } = render(<ComponentWithHook image={{ src: 'foo' }} />);
+    const { unmount } = render(
+      <ComponentWithHook image={{ sizes: { large: 'foo' } }} />,
+    );
 
     unmount();
 
