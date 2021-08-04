@@ -84,7 +84,7 @@ describe('<Select />', () => {
     const errorMessageElement = screen.getByText(errorMessage);
 
     expect(errorMessageElement).toBeVisible();
-    expect(dropDownElement).toHaveDescription(errorMessage);
+    expect(dropDownElement).toHaveAccessibleDescription(errorMessage);
 
     const a11lyResults = await axe(container);
     expect(a11lyResults).toHaveNoViolations();
