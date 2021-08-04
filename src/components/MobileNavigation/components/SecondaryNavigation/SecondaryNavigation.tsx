@@ -18,43 +18,46 @@ const SecondaryNavigation: SecondaryNavigationType = ({
   const classSet = cx(styles.base, styles[currentTheme]);
 
   return (
-    <footer aria-hidden={hasAriaHidden} className={classSet}>
-      <nav aria-label="supplementary" role="navigation">
-        <ul className={styles.list}>
-          {items.map((props) => (
-            <li className={styles.item} key={props.label}>
-              {props.type === 'link' ? (
-                <Hyperlink
-                  className={styles.element}
-                  tabIndex={hasAriaHidden ? -1 : null}
-                  title={props.title}
-                  url={props.url}
-                >
-                  <span className={compositionStyles.ornamentalHover}>
-                    {props.label}
-                  </span>
-                </Hyperlink>
-              ) : (
-                <Button
-                  className={cx(
-                    styles.element,
-                    compositionStyles.ornamentalWrapper,
-                  )}
-                  isInline={true}
-                  onClick={props.onClick}
-                  tabIndex={hasAriaHidden ? -1 : null}
-                  title={props.title}
-                >
-                  <span className={compositionStyles.ornamentalHover}>
-                    {props.label}
-                  </span>
-                </Button>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </footer>
+    <nav
+      aria-hidden={hasAriaHidden}
+      aria-label="supplementary"
+      className={classSet}
+      role="navigation"
+    >
+      <ul className={styles.list}>
+        {items.map((props) => (
+          <li className={styles.item} key={props.label}>
+            {props.type === 'link' ? (
+              <Hyperlink
+                className={styles.element}
+                tabIndex={hasAriaHidden ? -1 : null}
+                title={props.title}
+                url={props.url}
+              >
+                <span className={compositionStyles.ornamentalHover}>
+                  {props.label}
+                </span>
+              </Hyperlink>
+            ) : (
+              <Button
+                className={cx(
+                  styles.element,
+                  compositionStyles.ornamentalWrapper,
+                )}
+                isInline={true}
+                onClick={props.onClick}
+                tabIndex={hasAriaHidden ? -1 : null}
+                title={props.title}
+              >
+                <span className={compositionStyles.ornamentalHover}>
+                  {props.label}
+                </span>
+              </Button>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

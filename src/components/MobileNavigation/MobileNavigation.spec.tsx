@@ -41,13 +41,8 @@ describe('<MobileNavigation />', () => {
   it('should render all items within nested elements', () => {
     render(
       <MobileNavigation
+        header={MobileNavigationFixture.header}
         items={items}
-        onCartClick={() => {
-          return;
-        }}
-        onLoginClick={() => {
-          return;
-        }}
       />,
     );
 
@@ -67,13 +62,8 @@ describe('<MobileNavigation />', () => {
   it('should be accessible', async () => {
     const { container } = render(
       <MobileNavigation
+        header={MobileNavigationFixture.header}
         items={items}
-        onCartClick={() => {
-          return;
-        }}
-        onLoginClick={() => {
-          return;
-        }}
         secondaryItems={MobileNavigationFixture.secondaryItems}
       />,
     );

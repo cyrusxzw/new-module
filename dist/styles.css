@@ -9233,7 +9233,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: calc(100% - 10px);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -9496,8 +9496,8 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     }
 .Collection-module_forward__1n7dU {
   margin-left: 12px;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg) translateY(10px);
+          transform: rotate(-90deg) translateY(10px);
 }
 .Collection-module_backwards__1bnFF {
   margin-right: 12px;
@@ -9918,6 +9918,8 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   padding: 5px;
+  -webkit-transform: translateX(4px);
+          transform: translateX(4px);
 }
 .NestedCollection-module_icon__2p4Fw::before {
     -webkit-transform: rotate(90deg);

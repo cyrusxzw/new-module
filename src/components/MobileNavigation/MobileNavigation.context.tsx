@@ -1,31 +1,22 @@
 import React from 'react';
 import { createContext, useContext } from 'react';
-import type { MobileNavigationContextProviderType } from './MobileNavigation.types';
+import type {
+  MobileNavigationContextProviderType,
+  MobileNavigationContextProviderProps,
+} from './MobileNavigation.types';
 
 const MobileNavigationContext = createContext(undefined);
 
 const MobileNavigationContextProvider: MobileNavigationContextProviderType = ({
-  activeId,
-  activeNestedIds,
   children,
-  onBackButtonClick,
-  onClick,
-  onNestedClick,
+  ...props
 }) => (
-  <MobileNavigationContext.Provider
-    value={{
-      activeId,
-      activeNestedIds,
-      onClick,
-      onNestedClick,
-      onBackButtonClick,
-    }}
-  >
+  <MobileNavigationContext.Provider value={props}>
     {children}
   </MobileNavigationContext.Provider>
 );
 
-const useMobileNavigationContext = () => {
+const useMobileNavigationContext = (): MobileNavigationContextProviderProps => {
   const context = useContext(MobileNavigationContext);
 
   if (context === undefined) {

@@ -1,4 +1,27 @@
 const MobileNavigationFixture = {
+  header: {
+    logo: {
+      url: '#home',
+      screenReaderLabel: 'home',
+      title: 'link to the home page',
+    },
+    search: {
+      onClick: () => console.log('Clicked: search'),
+      screenReaderLabel: 'search',
+      title: 'open the search component',
+    },
+    cart: {
+      label: 'Cart',
+      onClick: () => console.log('Clicked: cart'),
+      title: 'open the cart component',
+    },
+    menu: {
+      screenReaderOpenLabel: 'open the menu',
+      screenReaderCloseLabel: 'close the menu',
+      openTitle: 'click to open the menu',
+      closeTitle: 'click to close the menu',
+    },
+  },
   secondaryItems: [
     {
       id: 'footer-read',

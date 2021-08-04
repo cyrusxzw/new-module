@@ -6,21 +6,28 @@ import { Button } from '~/components/Button';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
 import type { HeaderType } from './Header.types';
+import { useMobileNavigationContext } from '~/components/MobileNavigation/MobileNavigation.context';
 import compositionStyles from '~/components/MobileNavigation/MobileNavigation.module.css';
 import styles from './Header.module.css';
 
-const Header: HeaderType = ({
-  closedTheme,
-  isMenuOpen,
-  onCloseClick,
-  onOpenClick,
-  onCartClick,
-}) => {
+const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
+  const { header, isOpen: isMenuOpen } = useMobileNavigationContext();
+  const { logo, search, cart, menu } = header;
   const currentTheme = useThemeContext(null, 'dark');
-  const handleOnCloseButtonClick = () =>
+  const handleOnCloseButtonClick = () => {
     isMenuOpen ? onCloseClick() : onOpenClick();
+  };
+
+  useWindowHasResized();
+
   const handleOnSearchClick = () => {
+    search.onClick();
     console.log('Clicked: handleOnSearchClick');
+  };
+
+  const handleOnCartClick = () => {
+    cart.onClick();
+    console.log('Clicked: handleOnCartClick');
   };
 
   const classSet = cx(
@@ -30,20 +37,20 @@ const Header: HeaderType = ({
       : styles[currentTheme],
   );
 
-  useWindowHasResized();
-
   return (
     <div>
-      <header className={classSet}>
+      <header aria-label="navigation header" className={classSet}>
         <ul className={styles.list}>
           <li className={cx(styles.item, styles.itemLogo)}>
             <Hyperlink
               className={cx(styles.action, styles.actionLogo)}
-              title="back home title"
-              url="#home"
+              title={logo.title}
+              url={logo.url}
             >
               <Icon height={22} name="aesop" width={70} />
-              <span className={compositionStyles.srOnly}>Aēsop.</span>
+              <span className={compositionStyles.srOnly}>
+                {logo.screenReaderLabel}
+              </span>
             </Hyperlink>
           </li>
           <li className={styles.item}>
@@ -51,7 +58,7 @@ const Header: HeaderType = ({
               className={cx(styles.action, styles.actionSearch)}
               isInline={true}
               onClick={handleOnSearchClick}
-              title={'search'}
+              title={search.title}
             >
               <Icon
                 className={styles.searchIcon}
@@ -59,7 +66,9 @@ const Header: HeaderType = ({
                 name="search"
                 width={16}
               />
-              <span className={compositionStyles.srOnly}>Search</span>
+              <span className={compositionStyles.srOnly}>
+                {search.screenReaderLabel}
+              </span>
             </Button>
           </li>
           <li className={styles.item}>
@@ -70,8 +79,8 @@ const Header: HeaderType = ({
                 compositionStyles.ornamentalWrapper,
               )}
               isInline={true}
-              onClick={onCartClick}
-              title={'cart'}
+              onClick={handleOnCartClick}
+              title={cart.title}
             >
               <span
                 className={cx(
@@ -79,7 +88,7 @@ const Header: HeaderType = ({
                   styles.ornamentalHover,
                 )}
               >
-                Cart
+                {cart.label}
               </span>
             </Button>
           </li>
@@ -91,10 +100,12 @@ const Header: HeaderType = ({
               })}
               isInline={true}
               onClick={handleOnCloseButtonClick}
-              title={'open menu title'}
+              title={isMenuOpen ? menu.closeTitle : menu.openTitle}
             >
               <span className={compositionStyles.srOnly}>
-                {isMenuOpen ? 'Close' : 'Open'} the Navigation
+                {isMenuOpen
+                  ? menu.screenReaderCloseLabel
+                  : menu.screenReaderOpenLabel}
               </span>
             </Button>
           </li>

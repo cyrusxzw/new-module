@@ -6,12 +6,38 @@ import type {
 
 import type { SecondaryNavigationItems } from './components/SecondaryNavigation/SecondaryNavigation.types';
 
+type Header = {
+  logo: {
+    url: string;
+    screenReaderLabel: string;
+    title: string;
+  };
+  search: {
+    onClick: () => void;
+    screenReaderLabel: string;
+    title: string;
+  };
+  cart: {
+    label: string;
+    onClick: () => void;
+    title: string;
+  };
+  menu: {
+    screenReaderOpenLabel: string;
+    screenReaderCloseLabel: string;
+    openTitle: string;
+    closeTitle: string;
+  };
+};
+
 type MobileNavigationContextProviderProps = {
-  activeId: string;
-  activeNestedIds: string[];
+  activeCollectionId: string;
+  activeNestedCollectionIds: string[];
+  header: Header;
+  isOpen: boolean;
   onBackButtonClick: () => void;
-  onClick: (id: string) => void;
-  onNestedClick: (id: string) => void;
+  onCollectionClick: (id: string) => void;
+  onNestedCollectionClick: (id: string) => void;
 };
 
 type MobileNavigationContextProviderType = ComponentWithChildren<MobileNavigationContextProviderProps>;
@@ -61,10 +87,9 @@ type Collection = Clickable & {
 type MobileNavigationProps = {
   className?: string;
   closedTheme?: Themes;
+  header: Header;
   isVisuallyObstructed?: boolean;
   items: Collection[];
-  onCartClick: () => void;
-  onLoginClick: () => void;
   secondaryItems?: SecondaryNavigationItems;
   theme?: Themes;
 };
@@ -77,6 +102,7 @@ export type {
   Collection,
   Link,
   MobileNavigationContextProviderType,
+  MobileNavigationContextProviderProps,
   MobileNavigationType,
   NestedCollection,
   Trigger,

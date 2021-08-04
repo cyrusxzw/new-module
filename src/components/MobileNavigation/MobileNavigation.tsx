@@ -18,17 +18,18 @@ const MobileNavigation: MobileNavigationType = ({
   closedTheme,
   isVisuallyObstructed,
   items,
-  onCartClick,
-  onLoginClick,
+  header,
   secondaryItems,
   theme,
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [activeId, setActiveId] = useState('top');
-  const [activeNestedIds, setActiveNestedIds] = useState([]);
+  const [activeCollectionId, setActiveCollectionId] = useState('top');
+  const [activeNestedCollectionIds, setActiveNestedCollectionIds] = useState(
+    [],
+  );
   const currentTheme = useThemeContext(theme, 'dark');
   const [listRef] = useFocusOnFirst(
-    isOpen && activeId === 'top',
+    isOpen && activeCollectionId === 'top',
     'a:not([tabindex="-1"]), button:not([tabindex="-1"])',
   );
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
@@ -40,19 +41,19 @@ const MobileNavigation: MobileNavigationType = ({
   };
 
   const handleOnCloseClick = () => {
-    setActiveId('top');
-    setActiveNestedIds([]);
+    setActiveCollectionId('top');
+    setActiveNestedCollectionIds([]);
     setIsOpen(false);
   };
 
   useEscapeKeyListener(handleOnCloseClick, !isVisuallyObstructed);
 
-  const handleOnClick = (id: string) => {
-    setActiveId(id);
+  const handleOnCollectionClick = (id: string) => {
+    setActiveCollectionId(id);
   };
 
-  const handleOnNestedClick = (id: string) => {
-    setActiveNestedIds((currentState) => {
+  const handleOnNestedCollectionClick = (id: string) => {
+    setActiveNestedCollectionIds((currentState) => {
       if (currentState.includes(id)) {
         return currentState.filter((item) => item !== id);
       }
@@ -62,8 +63,8 @@ const MobileNavigation: MobileNavigationType = ({
   };
 
   const handleOnBackButtonClick = () => {
-    setActiveId('top');
-    setActiveNestedIds([]);
+    setActiveCollectionId('top');
+    setActiveNestedCollectionIds([]);
   };
 
   const classSet = cx(
@@ -75,11 +76,13 @@ const MobileNavigation: MobileNavigationType = ({
 
   return (
     <MobileNavigationContextProvider
-      activeId={activeId}
-      activeNestedIds={activeNestedIds}
+      activeCollectionId={activeCollectionId}
+      activeNestedCollectionIds={activeNestedCollectionIds}
+      header={header}
+      isOpen={isOpen}
       onBackButtonClick={handleOnBackButtonClick}
-      onClick={handleOnClick}
-      onNestedClick={handleOnNestedClick}
+      onCollectionClick={handleOnCollectionClick}
+      onNestedCollectionClick={handleOnNestedCollectionClick}
     >
       <ThemeContextProvider theme={currentTheme}>
         <div className={styles.presentationalWrapper}>
@@ -87,11 +90,10 @@ const MobileNavigation: MobileNavigationType = ({
             <div className={classSet} ref={focusTrapRef}>
               <Header
                 closedTheme={closedTheme || currentTheme}
-                isMenuOpen={isOpen}
-                onCartClick={onCartClick}
                 onCloseClick={handleOnCloseClick}
                 onOpenClick={handleOnOpenClick}
               />
+
               <Transition isActive={isOpen} type="fadeIn">
                 <div className={cx(styles.main, { [styles.open]: isOpen })}>
                   <nav
@@ -102,7 +104,7 @@ const MobileNavigation: MobileNavigationType = ({
                     <ul className={styles.list} ref={listRef}>
                       {items.map((props) => (
                         <ListItem
-                          isActive={isOpen && activeId === 'top'}
+                          isActive={isOpen && activeCollectionId === 'top'}
                           isTopItem={true}
                           itemProps={props}
                           key={props.id}
@@ -112,7 +114,7 @@ const MobileNavigation: MobileNavigationType = ({
                   </nav>
 
                   <SecondaryNavigation
-                    hasAriaHidden={!isOpen || activeId !== 'top'}
+                    hasAriaHidden={!isOpen || activeCollectionId !== 'top'}
                     items={secondaryItems}
                   />
                 </div>

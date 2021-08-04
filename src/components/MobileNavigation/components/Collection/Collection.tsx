@@ -19,13 +19,17 @@ const Collection: CollectionType = ({
   label,
 }) => {
   const currentTheme = useThemeContext(null, 'dark');
-  const { activeId, onClick, onBackButtonClick } = useMobileNavigationContext();
-  const isActive = activeId === id;
+  const {
+    activeCollectionId,
+    onCollectionClick,
+    onBackButtonClick,
+  } = useMobileNavigationContext();
+  const isActive = activeCollectionId === id;
   const [listRef] = useFocusOnFirst(
     isActive,
     'a:not([tabindex="-1"]), button:not([tabindex="-1"])',
   );
-  const handleOnClick = () => onClick(id);
+  const handleOnClick = () => onCollectionClick(id);
 
   const listClassSet = cx(
     compositionStyles.list,
@@ -67,7 +71,7 @@ const Collection: CollectionType = ({
         )}
         isInline={true}
         onClick={handleOnClick}
-        tabIndex={activeId === 'top' && isVisible ? null : -1}
+        tabIndex={activeCollectionId === 'top' && isVisible ? null : -1}
         theme={currentTheme}
         title={title}
       >

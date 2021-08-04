@@ -23,6 +23,7 @@
   height: 14px;
   box-sizing: content-box;
   padding: 5px;
+  transform: translateX(4px);
 
   &::before {
     transform: rotate(90deg);

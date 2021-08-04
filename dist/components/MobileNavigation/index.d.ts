@@ -4,6 +4,29 @@ import 'react';
 
 declare type SecondaryNavigationItems = (Trigger | Link)[];
 
+declare type Header = {
+    logo: {
+        url: string;
+        screenReaderLabel: string;
+        title: string;
+    };
+    search: {
+        onClick: () => void;
+        screenReaderLabel: string;
+        title: string;
+    };
+    cart: {
+        label: string;
+        onClick: () => void;
+        title: string;
+    };
+    menu: {
+        screenReaderOpenLabel: string;
+        screenReaderCloseLabel: string;
+        openTitle: string;
+        closeTitle: string;
+    };
+};
 declare type Clickable = {
     id: string;
     label: string;
@@ -43,10 +66,9 @@ declare type Collection = Clickable & {
 declare type MobileNavigationProps = {
     className?: string;
     closedTheme?: Themes;
+    header: Header;
     isVisuallyObstructed?: boolean;
     items: Collection[];
-    onCartClick: () => void;
-    onLoginClick: () => void;
     secondaryItems?: SecondaryNavigationItems;
     theme?: Themes;
 };

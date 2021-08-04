@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { Button } from '~/components/Button';
@@ -18,14 +18,14 @@ const NestedCollection: NestedCollectionType = ({
 }) => {
   const currentTheme = useThemeContext(null, 'dark');
   const {
-    activeId,
-    activeNestedIds,
-    onNestedClick,
+    activeCollectionId,
+    activeNestedCollectionIds,
+    onNestedCollectionClick,
   } = useMobileNavigationContext();
 
-  const isActive = activeNestedIds.includes(id);
+  const isActive = activeNestedCollectionIds.includes(id);
   const { ref, style } = useVariableHeightStyle(isActive);
-  const handleOnNestedClick = () => onNestedClick(id, isActive);
+  const handleOnNestedClick = () => onNestedCollectionClick(id);
 
   const listClassSet = cx(
     compositionStyles.list,
@@ -48,7 +48,7 @@ const NestedCollection: NestedCollectionType = ({
         )}
         isInline={true}
         onClick={handleOnNestedClick}
-        tabIndex={activeId === 'top' || !isVisible ? -1 : null}
+        tabIndex={activeCollectionId === 'top' || !isVisible ? -1 : null}
         theme={currentTheme}
         title={title}
       >
