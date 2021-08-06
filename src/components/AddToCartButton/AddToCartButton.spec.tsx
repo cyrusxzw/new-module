@@ -73,6 +73,67 @@ describe('<AddToCartButton />', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('should render label without cartAction copy', () => {
+    render(
+      <AddToCartButtonWithProviders
+        copy={{
+          ...copy,
+          cartAction: undefined,
+        }}
+        onClick={mockAddToCartButtonOnClick}
+        product={product}
+        variants={variants}
+      />,
+    );
+
+    const button = screen.getByRole('button', {
+      name: `${fixture.variants[0].price}`,
+    });
+
+    expect(button).toBeInTheDocument();
+  });
+
+  it('should render label without cartAction copy and postTaxPrice copy', () => {
+    render(
+      <AddToCartButtonWithProviders
+        copy={{
+          ...copyJP,
+          cartAction: undefined,
+          postTaxPrice: undefined,
+        }}
+        onClick={mockAddToCartButtonOnClick}
+        product={product}
+        variants={variants}
+      />,
+    );
+
+    const button = screen.getByRole('button', {
+      name: fixture.variants[0].price,
+    });
+
+    expect(button).toBeInTheDocument();
+  });
+
+  it('should render label without cartAction copy but with postTaxPrice copy', () => {
+    render(
+      <AddToCartButtonWithProviders
+        copy={{
+          ...copyJP,
+          cartAction: undefined,
+        }}
+        onClick={mockAddToCartButtonOnClick}
+        product={product}
+        variants={variants}
+      />,
+    );
+
+    const button = screen.getByRole('button', {
+      name: `${fixture.variants[0].price} ${fixture.copyJP.postTaxPrice}`,
+    });
+
+    expect(button).toBeInTheDocument();
+  });
+
   it('should render add to cart button with text to indicate tax inclusion for jp region correctly', () => {
     const mockVariants = [...variants];
     mockVariants[0].price = fixture.copyJP.price;
