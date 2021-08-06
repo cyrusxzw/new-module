@@ -11,18 +11,18 @@
   /* stylelint-disable-next-line selector-pseudo-element-no-unknown */
   video::cue {
     font: 14px/14px;
-    font-size: 14px;
+    font-size: rem(14px);
     line-height: 14px;
 
     @media (--viewport-md) {
       font: 16px/16px;
-      font-size: 16px;
+      font-size: rem(16px);
       line-height: 16px;
     }
 
     @media (--viewport-lg) {
       font: 18px/9px;
-      font-size: 18px;
+      font-size: rem(18px);
       line-height: 1;
     }
   }

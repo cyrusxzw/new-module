@@ -1,0 +1,61 @@
+@import 'styles/index';
+
+.base {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  &.dark {
+    color: var(--color-dark-label);
+
+    svg {
+      fill: var(--color-dark-label);
+    }
+  }
+
+  &.light {
+    color: var(--color-light-label);
+
+    svg {
+      fill: var(--color-light-label);
+    }
+  }
+
+  &.dark:hover {
+    color: var(--color-secondary);
+
+    svg {
+      fill: var(--color-secondary);
+    }
+  }
+
+  &.light:hover {
+    color: var(--color-primary);
+
+    svg {
+      fill: var(--color-primary);
+    }
+  }
+}
+
+.image {
+  max-height: 240px;
+  aspect-ratio: 16 / 9;
+  pointer-events: none;
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}
+
+.label {
+  font-family: var(--font-family-sans-serif-regular);
+  font-size: rem(20px);
+}
+
+.leftAligned {
+  flex-direction: column;
+  align-items: start;
+}

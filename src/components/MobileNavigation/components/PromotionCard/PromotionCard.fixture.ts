@@ -1,8 +1,8 @@
-const CardFixture = {
+const PromotionCardFixture = {
   id: 'see-all-skin-care-card',
   label: 'See all Skin Care Card Label',
   title: 'See all Skin Care Card',
-  type: 'card' as const,
+  type: 'promotion-card' as const,
   url: '#see-all-skin-care-card',
   heading: 'See all Skin Care Card Heading',
   image: {
@@ -18,4 +18,4 @@ const CardFixture = {
   },
 };
 
-export { CardFixture };
+export { PromotionCardFixture };

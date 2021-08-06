@@ -5,9 +5,10 @@ import { useWindowHasResized } from '~/customHooks';
 import { Button } from '~/components/Button';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
+import { ScreenReaderOnly } from '~/components/ScreenReaderOnly';
 import type { HeaderType } from './Header.types';
 import { useMobileNavigationContext } from '~/components/MobileNavigation/MobileNavigation.context';
-import compositionStyles from '~/components/MobileNavigation/MobileNavigation.module.css';
+import compositionStyles from '../../MobileNavigation.module.css';
 import styles from './Header.module.css';
 
 const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
@@ -47,10 +48,8 @@ const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
               title={logo.title}
               url={logo.url}
             >
-              <Icon height={22} name="aesop" width={70} />
-              <span className={compositionStyles.srOnly}>
-                {logo.screenReaderLabel}
-              </span>
+              <Icon height={22} name="aesop" tabIndex={-1} width={70} />
+              <ScreenReaderOnly>{logo.screenReaderLabel}</ScreenReaderOnly>
             </Hyperlink>
           </li>
           <li className={styles.item}>
@@ -64,11 +63,9 @@ const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
                 className={styles.searchIcon}
                 height={16}
                 name="search"
+                tabIndex={-1}
                 width={16}
               />
-              <span className={compositionStyles.srOnly}>
-                {search.screenReaderLabel}
-              </span>
             </Button>
           </li>
           <li className={styles.item}>
@@ -102,11 +99,11 @@ const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
               onClick={handleOnCloseButtonClick}
               title={isMenuOpen ? menu.closeTitle : menu.openTitle}
             >
-              <span className={compositionStyles.srOnly}>
+              <ScreenReaderOnly>
                 {isMenuOpen
                   ? menu.screenReaderCloseLabel
                   : menu.screenReaderOpenLabel}
-              </span>
+              </ScreenReaderOnly>
             </Button>
           </li>
         </ul>

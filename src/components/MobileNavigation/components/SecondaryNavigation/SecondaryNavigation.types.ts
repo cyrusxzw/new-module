@@ -7,7 +7,7 @@ import type {
 type SecondaryNavigationItems = (Trigger | Link)[];
 
 type SecondaryNavigationProps = {
-  hasAriaHidden?: boolean;
+  isVisible?: boolean;
   items?: SecondaryNavigationItems;
 };
 

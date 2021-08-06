@@ -8,15 +8,17 @@ import { Icon } from '~/components/Icon';
 import { useMobileNavigationContext } from '~/components/MobileNavigation/MobileNavigation.context';
 import { ListItem } from '~/components/MobileNavigation/components';
 import type { CollectionType } from './Collection.types';
-import compositionStyles from '~/components/MobileNavigation/MobileNavigation.module.css';
+import compositionStyles from '../../MobileNavigation.module.css';
 import styles from './Collection.module.css';
 
 const Collection: CollectionType = ({
+  backLabel,
   id,
-  isActive: isVisible,
+  isVisible,
   items,
-  title,
   label,
+  promotion,
+  title,
 }) => {
   const currentTheme = useThemeContext(null, 'dark');
   const {
@@ -45,7 +47,6 @@ const Collection: CollectionType = ({
 
   const backButtonClassSet = cx(
     compositionStyles.itemElement,
-    compositionStyles.ornamentalWrapper,
     styles.backButton,
   );
 
@@ -65,17 +66,14 @@ const Collection: CollectionType = ({
         }}
         aria-expanded={isActive}
         aria-haspopup="true"
-        className={cx(
-          compositionStyles.itemElement,
-          compositionStyles.ornamentalWrapper,
-        )}
+        className={cx(compositionStyles.itemElement)}
         isInline={true}
         onClick={handleOnClick}
         tabIndex={activeCollectionId === 'top' && isVisible ? null : -1}
         theme={currentTheme}
         title={title}
       >
-        <span className={compositionStyles.ornamentalHover}>{label}</span>{' '}
+        {label}
         <Icon
           className={forwardIconClassSet}
           height={12}
@@ -111,15 +109,19 @@ const Collection: CollectionType = ({
                 name="chevron"
                 width={14}
               />{' '}
-              <span className={compositionStyles.ornamentalHover}>
-                All Collections
-              </span>
+              {backLabel}
             </Button>
           </li>
 
           {items.map((props) => (
-            <ListItem isActive={isActive} itemProps={props} key={props.label} />
+            <ListItem
+              isVisible={isActive}
+              itemProps={props}
+              key={props.label}
+            />
           ))}
+
+          {promotion && <ListItem isVisible={isActive} itemProps={promotion} />}
         </ul>
       </Transition>
     </>

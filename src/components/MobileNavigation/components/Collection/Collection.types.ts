@@ -1,14 +1,16 @@
 import type { ComponentWithoutChildren } from '~/types';
 import type {
   Clickable,
-  Card,
-  NestedCollection,
   Link,
+  NestedCollection,
+  PromotionCard,
 } from '~/components/MobileNavigation/MobileNavigation.types';
 
 type CollectionProps = Clickable & {
-  items: (NestedCollection | Link | Card)[];
-  isActive?: boolean;
+  backLabel: string;
+  items: (NestedCollection | Link)[];
+  isVisible?: boolean;
+  promotion?: PromotionCard;
 };
 
 type CollectionType = ComponentWithoutChildren<CollectionProps>;

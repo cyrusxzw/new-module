@@ -3,17 +3,22 @@ import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
 import {
   useEscapeKeyListener,
-  useFocusOnFirst,
   useOverflowHidden,
   useTrapFocus,
 } from '~/customHooks';
 import { Transition } from '~/components/Transition';
 import { MobileNavigationContextProvider } from './MobileNavigation.context';
-import { Header, ListItem, SecondaryNavigation } from './components/';
+import {
+  ArticleList,
+  Header,
+  PrimaryNavigation,
+  SecondaryNavigation,
+} from './components';
 import type { MobileNavigationType } from './MobileNavigation.types';
 import styles from './MobileNavigation.module.css';
 
 const MobileNavigation: MobileNavigationType = ({
+  articles,
   className,
   closedTheme,
   isVisuallyObstructed,
@@ -28,10 +33,6 @@ const MobileNavigation: MobileNavigationType = ({
     [],
   );
   const currentTheme = useThemeContext(theme, 'dark');
-  const [listRef] = useFocusOnFirst(
-    isOpen && activeCollectionId === 'top',
-    'a:not([tabindex="-1"]), button:not([tabindex="-1"])',
-  );
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
 
   useOverflowHidden(isOpen);
@@ -96,26 +97,16 @@ const MobileNavigation: MobileNavigationType = ({
 
               <Transition isActive={isOpen} type="fadeIn">
                 <div className={cx(styles.main, { [styles.open]: isOpen })}>
-                  <nav
-                    aria-hidden={!isOpen}
-                    aria-label="navigation"
-                    role="navigation"
-                  >
-                    <ul className={styles.list} ref={listRef}>
-                      {items.map((props) => (
-                        <ListItem
-                          isActive={isOpen && activeCollectionId === 'top'}
-                          isTopItem={true}
-                          itemProps={props}
-                          key={props.id}
-                        />
-                      ))}
-                    </ul>
-                  </nav>
+                  <PrimaryNavigation isVisible={isOpen} items={items} />
 
                   <SecondaryNavigation
-                    hasAriaHidden={!isOpen || activeCollectionId !== 'top'}
+                    isVisible={isOpen || activeCollectionId === 'top'}
                     items={secondaryItems}
+                  />
+
+                  <ArticleList
+                    isVisible={isOpen || activeCollectionId === 'top'}
+                    items={articles}
                   />
                 </div>
               </Transition>

@@ -3,39 +3,38 @@ import cx from 'classnames';
 import {
   Collection,
   Link,
-  Card,
+  PromotionCard,
   NestedCollection,
 } from '~/components/MobileNavigation/components';
 import type { ListItemType } from './ListItem.types';
-import compositionStyles from '~/components/MobileNavigation/MobileNavigation.module.css';
+import compositionStyles from '../../MobileNavigation.module.css';
 
 const ListItem: ListItemType = ({
-  itemProps,
-  isActive = false,
   isNestedItem,
   isTopItem = false,
+  isVisible = false,
+  itemProps,
 }) => {
   let returnElement = null;
 
   if (itemProps.type === 'collection') {
-    returnElement = <Collection {...itemProps} isActive={isActive} />;
+    returnElement = <Collection {...{ ...itemProps, isVisible }} />;
   } else if (itemProps.type === 'nested-collection') {
-    returnElement = <NestedCollection {...itemProps} isActive={isActive} />;
-  } else if (itemProps.type === 'card') {
-    returnElement = <Card {...itemProps} isActive={isActive} />;
+    returnElement = <NestedCollection {...{ ...itemProps, isVisible }} />;
+  } else if (itemProps.type === 'promotion-card') {
+    returnElement = <PromotionCard {...{ ...itemProps, isVisible }} />;
   } else if (itemProps.type === 'link') {
     returnElement = (
-      <Link
-        {...itemProps}
-        isActive={isActive}
-        isNested={isNestedItem}
-        isTop={isTopItem}
-      />
+      <Link {...{ ...itemProps, isVisible, isNestedItem, isTopItem }} />
     );
+  } else {
+    return null;
   }
 
   const classSet = cx(compositionStyles.listItem, {
     [compositionStyles.nestedItem]: itemProps.type === 'nested-collection',
+    [compositionStyles.nestedCollectionLink]:
+      itemProps.type === 'link' && isNestedItem,
   });
 
   return <li className={classSet}>{returnElement}</li>;

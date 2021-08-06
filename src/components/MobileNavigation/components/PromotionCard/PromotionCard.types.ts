@@ -1,10 +1,9 @@
 import type { ComponentWithoutChildren } from '~/types';
+import type { Clickable } from '~/components/MobileNavigation/MobileNavigation.types';
 
-type CardProps = {
+type PromotionCardProps = Clickable & {
   heading: string;
-  isActive?: boolean;
-  label: string;
-  title: string;
+  isVisible?: boolean;
   url: string;
   image?: {
     altText: string;
@@ -18,6 +17,6 @@ type CardProps = {
   };
 };
 
-type CardType = ComponentWithoutChildren<CardProps>;
+type PromotionCardType = ComponentWithoutChildren<PromotionCardProps>;
 
-export type { CardType };
+export type { PromotionCardType };

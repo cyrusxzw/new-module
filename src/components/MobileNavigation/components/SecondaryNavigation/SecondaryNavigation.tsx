@@ -4,12 +4,12 @@ import { useThemeContext } from '~/contexts';
 import { Button } from '~/components/Button';
 import { Hyperlink } from '~/components/Hyperlink';
 import type { SecondaryNavigationType } from './SecondaryNavigation.types';
-import compositionStyles from '~/components/MobileNavigation/MobileNavigation.module.css';
+import compositionStyles from '../../MobileNavigation.module.css';
 import styles from './SecondaryNavigation.module.css';
 
 const SecondaryNavigation: SecondaryNavigationType = ({
   items,
-  hasAriaHidden = false,
+  isVisible = true,
 }) => {
   const currentTheme = useThemeContext(null, 'dark');
 
@@ -19,7 +19,7 @@ const SecondaryNavigation: SecondaryNavigationType = ({
 
   return (
     <nav
-      aria-hidden={hasAriaHidden}
+      aria-hidden={!isVisible}
       aria-label="supplementary"
       className={classSet}
       role="navigation"
@@ -30,7 +30,7 @@ const SecondaryNavigation: SecondaryNavigationType = ({
             {props.type === 'link' ? (
               <Hyperlink
                 className={styles.element}
-                tabIndex={hasAriaHidden ? -1 : null}
+                tabIndex={!isVisible ? -1 : null}
                 title={props.title}
                 url={props.url}
               >
@@ -46,7 +46,7 @@ const SecondaryNavigation: SecondaryNavigationType = ({
                 )}
                 isInline={true}
                 onClick={props.onClick}
-                tabIndex={hasAriaHidden ? -1 : null}
+                tabIndex={!isVisible ? -1 : null}
                 title={props.title}
               >
                 <span className={compositionStyles.ornamentalHover}>

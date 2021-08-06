@@ -2,6 +2,22 @@ import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.type
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import 'react';
 
+declare type ArticleCardProps = Clickable & {
+    isVisible?: boolean;
+    metaLabel: string;
+    url: string;
+    image?: {
+        altText: string;
+        sizes: {
+            large?: string;
+            medium?: string;
+            small?: string;
+            xLarge?: string;
+            xSmall?: string;
+        };
+    };
+};
+
 declare type SecondaryNavigationItems = (Trigger | Link)[];
 
 declare type Header = {
@@ -40,9 +56,9 @@ declare type Trigger = Clickable & {
     onClick: () => void;
     type: 'trigger';
 };
-declare type Card = Clickable & {
+declare type PromotionCard = Clickable & {
     heading: string;
-    type: 'card';
+    type: 'promotion-card';
     url: string;
     image?: {
         altText: string;
@@ -60,10 +76,13 @@ declare type NestedCollection = Clickable & {
     type: 'nested-collection';
 };
 declare type Collection = Clickable & {
-    items: (NestedCollection | Link | Card)[];
+    backLabel: string;
+    items: (NestedCollection | Link)[];
+    promotion?: PromotionCard;
     type: 'collection';
 };
 declare type MobileNavigationProps = {
+    articles?: ArticleCardProps[];
     className?: string;
     closedTheme?: Themes;
     header: Header;

@@ -1,9 +1,9 @@
 import type { ComponentWithoutChildren } from '~/types';
 
 type LinkProps = {
-  isActive?: boolean;
   isNested?: boolean;
   isTop?: boolean;
+  isVisible?: boolean;
   label: string;
   title: string;
   url: string;

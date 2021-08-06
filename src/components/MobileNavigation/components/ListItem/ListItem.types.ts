@@ -1,16 +1,16 @@
 import type { ComponentWithChildren } from '~/types';
 import type {
-  Card,
+  PromotionCard,
   Collection,
   Link,
   NestedCollection,
 } from '~/components/MobileNavigation/MobileNavigation.types';
 
 type ListItemProps = {
-  isActive?: boolean;
   isNestedItem?: boolean;
   isTopItem?: boolean;
-  itemProps: NestedCollection | Collection | Link | Card;
+  isVisible?: boolean;
+  itemProps: NestedCollection | Collection | Link | PromotionCard;
 };
 
 type ListItemType = ComponentWithChildren<ListItemProps>;

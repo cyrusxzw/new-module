@@ -4,6 +4,7 @@ import type {
   ComponentWithChildren,
 } from '~/types';
 
+import type { ArticleCardProps } from './components/ArticleCard/ArticleCard.types';
 import type { SecondaryNavigationItems } from './components/SecondaryNavigation/SecondaryNavigation.types';
 
 type Header = {
@@ -58,9 +59,9 @@ type Trigger = Clickable & {
   type: 'trigger';
 };
 
-type Card = Clickable & {
+type PromotionCard = Clickable & {
   heading: string;
-  type: 'card';
+  type: 'promotion-card';
   url: string;
   image?: {
     altText: string;
@@ -80,11 +81,14 @@ type NestedCollection = Clickable & {
 };
 
 type Collection = Clickable & {
-  items: (NestedCollection | Link | Card)[];
+  backLabel: string;
+  items: (NestedCollection | Link)[];
+  promotion?: PromotionCard;
   type: 'collection';
 };
 
 type MobileNavigationProps = {
+  articles?: ArticleCardProps[];
   className?: string;
   closedTheme?: Themes;
   header: Header;
@@ -97,7 +101,7 @@ type MobileNavigationProps = {
 type MobileNavigationType = ComponentWithoutChildren<MobileNavigationProps>;
 
 export type {
-  Card,
+  PromotionCard,
   Clickable,
   Collection,
   Link,

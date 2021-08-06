@@ -1088,6 +1088,22 @@ declare type MediaWithContentProps = {
 
 declare const MediaWithContent: React__default.ForwardRefExoticComponent<MediaWithContentProps & React__default.RefAttributes<HTMLDivElement>>;
 
+declare type ArticleCardProps = Clickable & {
+    isVisible?: boolean;
+    metaLabel: string;
+    url: string;
+    image?: {
+        altText: string;
+        sizes: {
+            large?: string;
+            medium?: string;
+            small?: string;
+            xLarge?: string;
+            xSmall?: string;
+        };
+    };
+};
+
 declare type SecondaryNavigationItems = (Trigger | Link)[];
 
 declare type Header = {
@@ -1126,9 +1142,9 @@ declare type Trigger = Clickable & {
     onClick: () => void;
     type: 'trigger';
 };
-declare type Card = Clickable & {
+declare type PromotionCard = Clickable & {
     heading: string;
-    type: 'card';
+    type: 'promotion-card';
     url: string;
     image?: {
         altText: string;
@@ -1146,10 +1162,13 @@ declare type NestedCollection = Clickable & {
     type: 'nested-collection';
 };
 declare type Collection = Clickable & {
-    items: (NestedCollection | Link | Card)[];
+    backLabel: string;
+    items: (NestedCollection | Link)[];
+    promotion?: PromotionCard;
     type: 'collection';
 };
 declare type MobileNavigationProps = {
+    articles?: ArticleCardProps[];
     className?: string;
     closedTheme?: Themes;
     header: Header;
@@ -1492,6 +1511,14 @@ declare namespace ReadMore {
         export { className_1 as className };
     }
 }
+
+declare type ScreenReaderOnlyProps = {
+    as?: keyof JSX.IntrinsicElements;
+    className?: string;
+};
+declare type ScreenReaderOnlyType = ComponentWithChildren<ScreenReaderOnlyProps>;
+
+declare const ScreenReaderOnly: ScreenReaderOnlyType;
 
 declare type MessageProps = {
     className?: string;
@@ -1934,6 +1961,7 @@ declare const index_d$a_ProductDetailHeader: typeof ProductDetailHeader;
 declare const index_d$a_Quote: typeof Quote;
 declare const index_d$a_RadioGroup: typeof RadioGroup;
 declare const index_d$a_ReadMore: typeof ReadMore;
+declare const index_d$a_ScreenReaderOnly: typeof ScreenReaderOnly;
 declare const index_d$a_SecondaryMessage: typeof SecondaryMessage;
 declare const index_d$a_SectionHeading: typeof SectionHeading;
 declare const index_d$a_StoreDetailHeader: typeof StoreDetailHeader;
@@ -2002,6 +2030,7 @@ declare namespace index_d$a {
     index_d$a_Quote as Quote,
     index_d$a_RadioGroup as RadioGroup,
     index_d$a_ReadMore as ReadMore,
+    index_d$a_ScreenReaderOnly as ScreenReaderOnly,
     index_d$a_SecondaryMessage as SecondaryMessage,
     index_d$a_SectionHeading as SectionHeading,
     Select$1 as Select,

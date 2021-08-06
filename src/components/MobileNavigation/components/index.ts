@@ -1,7 +1,10 @@
-export { Card } from './Card';
+export { ArticleCard } from './ArticleCard';
+export { ArticleList } from './ArticleList';
 export { Collection } from './Collection';
 export { Header } from './Header';
 export { Link } from './Link';
 export { ListItem } from './ListItem';
 export { NestedCollection } from './NestedCollection';
+export { PrimaryNavigation } from './PrimaryNavigation';
+export { PromotionCard } from './PromotionCard';
 export { SecondaryNavigation } from './SecondaryNavigation';

@@ -1,8 +1,7 @@
 // import React from 'react';
 // import { render, screen } from '@testing-library/react';
-// import { Card } from './Card';
-// import { CardFixture } from './Card.fixture';
+// import { ArticleList } from './ArticleList';
 
-describe('<Card />', () => {
+describe('<ArticleList />', () => {
   it.todo('should assert something');
 });

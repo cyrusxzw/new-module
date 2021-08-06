@@ -6,14 +6,14 @@ import { Heading } from '~/components/Heading';
 import { Paragraph } from '~/components/Paragraph';
 import { Image } from '~/components/Image';
 import { Icon } from '~/components/Icon';
-import type { CardType } from './Card.types';
-import compositionStyles from '~/components/MobileNavigation/MobileNavigation.module.css';
-import styles from './Card.module.css';
+import type { PromotionCardType } from './PromotionCard.types';
+import compositionStyles from '../../MobileNavigation.module.css';
+import styles from './PromotionCard.module.css';
 
-const Card: CardType = ({
+const PromotionCard: PromotionCardType = ({
   heading,
   image,
-  isActive = true,
+  isVisible = true,
   label,
   title,
   url,
@@ -30,7 +30,7 @@ const Card: CardType = ({
   return (
     <Hyperlink
       className={classSet}
-      tabIndex={!isActive ? -1 : null}
+      tabIndex={!isVisible ? -1 : null}
       theme={currentTheme}
       title={title}
       url={url}
@@ -53,4 +53,4 @@ const Card: CardType = ({
   );
 };
 
-export { Card };
+export { PromotionCard };

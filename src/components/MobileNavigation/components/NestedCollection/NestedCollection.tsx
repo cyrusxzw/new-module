@@ -6,15 +6,15 @@ import { useMobileNavigationContext } from '~/components/MobileNavigation/Mobile
 import { useVariableHeightStyle } from '~/components/MobileNavigation/MobileNavigation.hooks';
 import { ListItem } from '~/components/MobileNavigation/components';
 import type { NestedCollectionType } from './NestedCollection.types';
-import compositionStyles from '~/components/MobileNavigation/MobileNavigation.module.css';
+import compositionStyles from '../../MobileNavigation.module.css';
 import styles from './NestedCollection.module.css';
 
 const NestedCollection: NestedCollectionType = ({
   id,
+  isVisible,
   items = [],
-  title,
   label,
-  isActive: isVisible,
+  title,
 }) => {
   const currentTheme = useThemeContext(null, 'dark');
   const {
@@ -41,18 +41,14 @@ const NestedCollection: NestedCollectionType = ({
           haspopup: true,
           hidden: !isActive,
         }}
-        className={cx(
-          compositionStyles.itemElement,
-          compositionStyles.ornamentalWrapper,
-          styles.nestedButton,
-        )}
+        className={cx(compositionStyles.itemElement, styles.nestedButton)}
         isInline={true}
         onClick={handleOnNestedClick}
         tabIndex={activeCollectionId === 'top' || !isVisible ? -1 : null}
         theme={currentTheme}
         title={title}
       >
-        <span className={compositionStyles.ornamentalHover}>{label}</span>
+        {label}
         <span
           className={cx(
             styles.icon,
@@ -71,8 +67,8 @@ const NestedCollection: NestedCollectionType = ({
       >
         {items.map((props) => (
           <ListItem
-            isActive={isActive}
             isNestedItem={true}
+            isVisible={isActive}
             itemProps={props}
             key={props.label}
           />
