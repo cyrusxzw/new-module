@@ -1,18 +1,18 @@
-const mergeRefs = (...refs) => {
+import React from 'react';
+
+const mergeRefs = <T = any>(
+  ...refs: Array<React.MutableRefObject<T> | React.LegacyRef<T>>
+): React.RefCallback<T> => {
   const filteredRefs = refs.filter(Boolean);
 
-  if (!filteredRefs.length) return null;
-
-  if (filteredRefs.length === 0) return filteredRefs[0];
-
-  return (instance) => {
-    for (const ref of filteredRefs) {
+  return (value) => {
+    filteredRefs.forEach((ref) => {
       if (typeof ref === 'function') {
-        ref(instance);
-      } else if (ref) {
-        ref.current = instance;
+        ref(value);
+      } else if (ref != null) {
+        (ref as React.MutableRefObject<T | null>).current = value;
       }
-    }
+    });
   };
 };
 
