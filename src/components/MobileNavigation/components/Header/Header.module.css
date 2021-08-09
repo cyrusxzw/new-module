@@ -185,7 +185,7 @@
     width: 16px;
     height: 2px;
     content: '';
-    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 200ms var(--easing-ease-out-cubic);
   }
 
   &.openState::before {

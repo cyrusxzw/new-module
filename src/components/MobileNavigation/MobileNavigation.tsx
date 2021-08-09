@@ -27,7 +27,7 @@ const MobileNavigation: MobileNavigationType = ({
   secondaryItems,
   theme,
 }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [activeCollectionId, setActiveCollectionId] = useState('top');
   const [activeNestedCollectionIds, setActiveNestedCollectionIds] = useState(
     [],
