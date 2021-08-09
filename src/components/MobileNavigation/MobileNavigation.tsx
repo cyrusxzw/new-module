@@ -100,12 +100,12 @@ const MobileNavigation: MobileNavigationType = ({
                   <PrimaryNavigation isVisible={isOpen} items={items} />
 
                   <SecondaryNavigation
-                    isVisible={isOpen || activeCollectionId === 'top'}
+                    isVisible={isOpen && activeCollectionId === 'top'}
                     items={secondaryItems}
                   />
 
                   <ArticleList
-                    isVisible={isOpen || activeCollectionId === 'top'}
+                    isVisible={isOpen && activeCollectionId === 'top'}
                     items={articles}
                   />
                 </div>
