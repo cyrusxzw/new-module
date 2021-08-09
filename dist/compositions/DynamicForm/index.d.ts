@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React__default, { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { Mode } from 'react-hook-form/dist/index.ie11';
 import { S as SelectProps } from '../../sharedChunks/Select.types';
 import { T as TextInputV2Props } from '../../sharedChunks/TextInputV2.types';
@@ -65,6 +65,6 @@ declare type DynamicFormProps = {
     validationMode?: Mode;
 };
 
-declare const DynamicForm: React__default.ForwardRefExoticComponent<DynamicFormProps & React__default.RefAttributes<HTMLFormElement>>;
+declare const DynamicForm: React.ForwardRefExoticComponent<DynamicFormProps & React.RefAttributes<HTMLFormElement>>;
 
 export { DynamicForm };

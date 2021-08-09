@@ -1,4 +1,4 @@
-import React__default, { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type AccordionItem = {
@@ -14,6 +14,6 @@ declare type AccordionProps = {
     wrapperClass?: string;
 };
 
-declare const Accordion: React__default.ForwardRefExoticComponent<AccordionProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const Accordion: React.ForwardRefExoticComponent<AccordionProps & React.RefAttributes<HTMLDivElement>>;
 
 export { Accordion };

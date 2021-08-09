@@ -1,4 +1,4 @@
-import React__default from 'react';
+import React from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import { I as ImageProps } from '../../sharedChunks/Image.types';
 
@@ -20,6 +20,6 @@ declare type ProductExtractProps = {
     works?: string;
 };
 
-declare const ProductExtract: React__default.ForwardRefExoticComponent<ProductExtractProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const ProductExtract: React.ForwardRefExoticComponent<ProductExtractProps & React.RefAttributes<HTMLDivElement>>;
 
 export { ProductExtract };

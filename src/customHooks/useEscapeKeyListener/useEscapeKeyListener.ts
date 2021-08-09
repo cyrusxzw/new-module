@@ -28,7 +28,7 @@ const useEscapeKeyListener: UseEscapeKeyListener = (
         });
       }
     };
-  }, [onKeyPress]);
+  }, [onKeyPress, shouldRunCallback]);
 };
 
 export { useEscapeKeyListener };

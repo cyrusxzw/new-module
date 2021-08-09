@@ -1,4 +1,4 @@
-import React__default, { ChangeEvent } from 'react';
+import React, { ChangeEvent } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type CheckboxProps = {
@@ -15,6 +15,6 @@ declare type CheckboxProps = {
     theme?: Themes;
 };
 
-declare const Checkbox: React__default.ForwardRefExoticComponent<CheckboxProps & React__default.RefAttributes<HTMLInputElement>>;
+declare const Checkbox: React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLInputElement>>;
 
 export { Checkbox };

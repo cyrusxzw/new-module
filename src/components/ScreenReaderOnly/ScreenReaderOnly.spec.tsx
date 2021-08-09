@@ -1,6 +1,6 @@
 import React from 'react';
 import { axe } from 'jest-axe';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { ScreenReaderOnly } from './ScreenReaderOnly';
 
 describe('<ScreenReaderOnly />', () => {

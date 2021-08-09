@@ -15,7 +15,17 @@ const defaultQuery = [
   '[contenteditable]',
 ].join(', ');
 
-const useTrapFocus = (shouldTrap = false, query = defaultQuery) => {
+type UseTrapFocus = {
+  <Type = any>(
+    shouldTrap?: boolean,
+    query?: string,
+  ): React.MutableRefObject<Type>[];
+};
+
+const useTrapFocus: UseTrapFocus = (
+  shouldTrap = false,
+  query = defaultQuery,
+) => {
   const ref = useRef(null);
 
   useEffect(() => {

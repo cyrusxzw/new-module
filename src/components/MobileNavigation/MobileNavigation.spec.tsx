@@ -1,6 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { render } from '@testing-library/react';
+// import { axe } from 'jest-axe';
 import { MobileNavigation } from './MobileNavigation';
 import { MobileNavigationFixture } from './MobileNavigation.fixture';
 

@@ -1,7 +1,7 @@
-import React__default from 'react';
+import React from 'react';
 import { a as ListProps } from '../../sharedChunks/List.types';
 import '../../sharedChunks/Themes.types';
 
-declare const List: React__default.ForwardRefExoticComponent<ListProps & React__default.RefAttributes<HTMLUListElement>>;
+declare const List: React.ForwardRefExoticComponent<ListProps & React.RefAttributes<HTMLUListElement>>;
 
 export { List };

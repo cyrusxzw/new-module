@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React__default from 'react';
+import React$1 from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type ProductCommerceProps = {
@@ -29,6 +29,6 @@ declare type ProductCommerceProps = {
     theme?: Themes;
 };
 
-declare const ProductCommerce: React__default.ForwardRefExoticComponent<ProductCommerceProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const ProductCommerce: React$1.ForwardRefExoticComponent<ProductCommerceProps & React$1.RefAttributes<HTMLDivElement>>;
 
 export { ProductCommerce };

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const mergeRefs = <T = any>(
-  ...refs: Array<React.MutableRefObject<T> | React.LegacyRef<T>>
-): React.RefCallback<T> => {
+const mergeRefs = <Type = any>(
+  ...refs: Array<React.MutableRefObject<Type> | React.LegacyRef<Type>>
+): React.RefCallback<Type> => {
   const filteredRefs = refs.filter(Boolean);
 
   return (value) => {
@@ -10,7 +10,7 @@ const mergeRefs = <T = any>(
       if (typeof ref === 'function') {
         ref(value);
       } else if (ref != null) {
-        (ref as React.MutableRefObject<T | null>).current = value;
+        (ref as React.MutableRefObject<Type | null>).current = value;
       }
     });
   };

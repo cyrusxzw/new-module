@@ -27,13 +27,13 @@ const MobileNavigationFixture = {
       title: 'link to the home page',
     },
     search: {
-      onClick: () => console.log('Clicked: search'),
+      onClick: (): void => console.log('Clicked: search'), // eslint-disable-line no-console
       screenReaderLabel: 'search',
       title: 'open the search component',
     },
     cart: {
       label: 'Cart',
-      onClick: () => console.log('Clicked: cart'),
+      onClick: (): void => console.log('Clicked: cart'), // eslint-disable-line no-console
       title: 'open the cart component',
     },
     menu: {
@@ -47,28 +47,28 @@ const MobileNavigationFixture = {
     {
       id: 'footer-read',
       label: 'Read',
-      onClick: () => console.log('Clicked: footer-read'),
+      onClick: (): void => console.log('Clicked: footer-read'), // eslint-disable-line no-console
       title: 'Read',
       type: 'trigger' as const,
     },
     {
       id: 'footer-log-in',
       label: 'Log in',
-      onClick: () => console.log('Clicked: footer-log-in'),
+      onClick: (): void => console.log('Clicked: footer-log-in'), // eslint-disable-line no-console
       title: 'Log in',
       type: 'trigger' as const,
     },
     {
       id: 'footer-stores',
       label: 'Stores',
-      onClick: () => console.log('Clicked: footer-stores'),
+      onClick: (): void => console.log('Clicked: footer-stores'), // eslint-disable-line no-console
       title: 'Stores',
       type: 'trigger' as const,
     },
     {
       id: 'live-assistance',
       label: 'Live Assistance',
-      onClick: () => console.log('Clicked: live-assistance'),
+      onClick: (): void => console.log('Clicked: live-assistance'), // eslint-disable-line no-console
       title: 'Live Assistance',
       type: 'trigger' as const,
     },

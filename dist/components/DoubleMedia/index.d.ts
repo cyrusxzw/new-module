@@ -1,4 +1,4 @@
-import React__default, { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 import { C as ControlsProps, P as PosterProps } from '../../sharedChunks/Poster.types';
 
@@ -85,6 +85,6 @@ declare type DoubleMediaProps = {
     theme?: Themes;
 };
 
-declare const DoubleMedia: React__default.ForwardRefExoticComponent<DoubleMediaProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const DoubleMedia: React.ForwardRefExoticComponent<DoubleMediaProps & React.RefAttributes<HTMLDivElement>>;
 
 export { DoubleMedia };

@@ -15,20 +15,19 @@ const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
   const { header, isOpen: isMenuOpen } = useMobileNavigationContext();
   const { logo, search, cart, menu } = header;
   const currentTheme = useThemeContext(null, 'dark');
-  const handleOnCloseButtonClick = () => {
+  const handleOnCloseButtonClick = () =>
     isMenuOpen ? onCloseClick() : onOpenClick();
-  };
 
   useWindowHasResized();
 
   const handleOnSearchClick = () => {
     search.onClick();
-    console.log('Clicked: handleOnSearchClick');
+    console.log('Clicked: handleOnSearchClick'); // eslint-disable-line no-console
   };
 
   const handleOnCartClick = () => {
     cart.onClick();
-    console.log('Clicked: handleOnCartClick');
+    console.log('Clicked: handleOnCartClick'); // eslint-disable-line no-console
   };
 
   const classSet = cx(

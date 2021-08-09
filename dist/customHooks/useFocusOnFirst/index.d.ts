@@ -1,6 +1,7 @@
 /// <reference types="react" />
-import * as React from 'react';
-
-declare const useFocusOnFirst: (shouldUse?: boolean, query?: string) => React.MutableRefObject<any>[];
+declare type UseFocusOnFirst = {
+    <Type = any>(shouldUse?: boolean, query?: string): React.MutableRefObject<Type>[];
+};
+declare const useFocusOnFirst: UseFocusOnFirst;
 
 export { useFocusOnFirst };

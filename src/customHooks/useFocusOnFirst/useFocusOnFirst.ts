@@ -14,7 +14,17 @@ const defaultQuery = [
   '[contenteditable]',
 ].join(', ');
 
-const useFocusOnFirst = (shouldUse = true, query = defaultQuery) => {
+type UseFocusOnFirst = {
+  <Type = any>(
+    shouldUse?: boolean,
+    query?: string,
+  ): React.MutableRefObject<Type>[];
+};
+
+const useFocusOnFirst: UseFocusOnFirst = (
+  shouldUse = true,
+  query = defaultQuery,
+) => {
   const ref = useRef(null);
 
   useEffect(() => {

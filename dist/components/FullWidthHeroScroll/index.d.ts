@@ -1,5 +1,5 @@
-import React__default from 'react';
+import React from 'react';
 
-declare const FullWidthHeroScroll: React__default.ForwardRefExoticComponent<Pick<any, string | number | symbol> & React__default.RefAttributes<any>>;
+declare const FullWidthHeroScroll: React.ForwardRefExoticComponent<Pick<any, string | number | symbol> & React.RefAttributes<any>>;
 
 export { FullWidthHeroScroll };

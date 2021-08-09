@@ -1,4 +1,4 @@
-import React__default from 'react';
+import React from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type Copy = {
@@ -27,6 +27,6 @@ declare type ProductGridItemProps = {
     url?: string;
 };
 
-declare const ProductGridItem: React__default.ForwardRefExoticComponent<ProductGridItemProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const ProductGridItem: React.ForwardRefExoticComponent<ProductGridItemProps & React.RefAttributes<HTMLDivElement>>;
 
 export { ProductGridItem };

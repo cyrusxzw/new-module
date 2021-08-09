@@ -9800,8 +9800,8 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     width: 16px;
     height: 2px;
     content: '';
-    -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 .Header-module_actionMenu__3IVUC.Header-module_openState__1lYNQ::before {
     -webkit-transform: rotate(45deg);

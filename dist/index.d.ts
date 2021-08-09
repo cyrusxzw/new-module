@@ -1,6 +1,5 @@
 /// <reference types="react" />
-import * as React$1 from 'react';
-import React__default, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, MutableRefObject, VFC, MouseEventHandler, SetStateAction, RefObject } from 'react';
+import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, MutableRefObject, VFC, MouseEventHandler, SetStateAction, RefObject } from 'react';
 import PropTypes from 'prop-types';
 import { Mode } from 'react-hook-form/dist/index.ie11';
 
@@ -133,7 +132,7 @@ declare type AccordionProps = {
     wrapperClass?: string;
 };
 
-declare const Accordion: React__default.ForwardRefExoticComponent<AccordionProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const Accordion: React$1.ForwardRefExoticComponent<AccordionProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type AddToCartButtonProps = {
     className?: string;
@@ -198,7 +197,7 @@ declare type BodyCopyProps = {
     theme?: Themes;
 };
 
-declare const BodyCopy: React__default.ForwardRefExoticComponent<BodyCopyProps & React__default.RefAttributes<HTMLElement>>;
+declare const BodyCopy: React$1.ForwardRefExoticComponent<BodyCopyProps & React$1.RefAttributes<HTMLElement>>;
 
 declare type BreadcrumbItem = {
     label: string;
@@ -238,7 +237,7 @@ declare type ButtonProps = {
     theme?: Themes;
 };
 
-declare const Button: React__default.ForwardRefExoticComponent<ButtonProps & React__default.RefAttributes<HTMLButtonElement>>;
+declare const Button: React$1.ForwardRefExoticComponent<ButtonProps & React$1.RefAttributes<HTMLButtonElement>>;
 
 declare type BynderWidgetProps = {
     className?: string;
@@ -347,7 +346,7 @@ declare type CheckboxProps = {
     theme?: Themes;
 };
 
-declare const Checkbox$1: React__default.ForwardRefExoticComponent<CheckboxProps & React__default.RefAttributes<HTMLInputElement>>;
+declare const Checkbox$1: React$1.ForwardRefExoticComponent<CheckboxProps & React$1.RefAttributes<HTMLInputElement>>;
 
 declare type Wrapper = (children: ReactNode) => ReactElement;
 declare type ConditionalWrapperProps = {
@@ -405,7 +404,7 @@ declare type ContentHubArticleListType = ComponentWithoutChildren<ContentHubArti
 
 declare const ContentHubArticleList: ContentHubArticleListType;
 
-declare const DefinitionList: React__default.ForwardRefExoticComponent<DefinitionListProps & React__default.RefAttributes<HTMLDListElement>>;
+declare const DefinitionList: React$1.ForwardRefExoticComponent<DefinitionListProps & React$1.RefAttributes<HTMLDListElement>>;
 
 declare type DialogBannerProps = {
     className?: string;
@@ -562,7 +561,7 @@ declare type DoubleMediaProps = {
     theme?: Themes;
 };
 
-declare const DoubleMedia: React__default.ForwardRefExoticComponent<DoubleMediaProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const DoubleMedia: React$1.ForwardRefExoticComponent<DoubleMediaProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type FigureProps = {
     caption?: string;
@@ -661,9 +660,9 @@ declare type TextInputV2Props = {
     value?: string;
 };
 
-declare const TextInputV2: React__default.ForwardRefExoticComponent<TextInputV2Props & React__default.RefAttributes<HTMLInputElement>>;
+declare const TextInputV2: React$1.ForwardRefExoticComponent<TextInputV2Props & React$1.RefAttributes<HTMLInputElement>>;
 
-declare const FullWidthHeroScroll: React__default.ForwardRefExoticComponent<Pick<any, string | number | symbol> & React__default.RefAttributes<any>>;
+declare const FullWidthHeroScroll: React$1.ForwardRefExoticComponent<Pick<any, string | number | symbol> & React$1.RefAttributes<any>>;
 
 declare function GoogleMap({ center, className, copy, customMarker, hasMarkerIndexes, id, initialZoom, places, }: {
     center: any;
@@ -789,7 +788,7 @@ declare type HeroBannerProps = {
     variation?: HeroBannerVariations;
 };
 
-declare const HeroBanner: React__default.ForwardRefExoticComponent<HeroBannerProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const HeroBanner: React$1.ForwardRefExoticComponent<HeroBannerProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type HiddenViewports = 'sm' | 'md' | 'lg' | 'xl';
 declare type HiddenProps = {
@@ -894,7 +893,7 @@ declare type ProductAccordionType = ComponentWithoutChildren<ProductAccordionPro
 
 declare const ProductAccordion: ProductAccordionType;
 
-declare const Hyperlink: React__default.ForwardRefExoticComponent<HyperlinkProps & React__default.RefAttributes<HTMLAnchorElement>>;
+declare const Hyperlink: React$1.ForwardRefExoticComponent<HyperlinkProps & React$1.RefAttributes<HTMLAnchorElement>>;
 
 declare type SvgName = '' | 'aesop' | 'chevron' | 'close' | 'downArrow' | 'download' | 'muted' | 'pause' | 'play' | 'plusAndCloseWithCircle' | 'rightArrow' | 'rightUpArrow' | 'scrolldown' | 'search' | 'seek' | 'unmuted' | 'warning';
 declare type IconProps = {
@@ -957,7 +956,7 @@ declare namespace IconLink {
     }
 }
 
-declare const Image: React__default.ForwardRefExoticComponent<ImageProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Image: React$1.ForwardRefExoticComponent<ImageProps & React$1.RefAttributes<HTMLImageElement>>;
 
 declare type Slide = {
     caption?: string;
@@ -1000,7 +999,7 @@ declare type KitListProps = {
  * However, due to https://stackoverflow.com/questions/58469229/react-with-typescript-generics-while-using-react-forwardref/58473012
  * this does not work, and if List's return type changes, this static type will break
  */
-declare const KitList: React__default.ForwardRefExoticComponent<KitListProps & React__default.RefAttributes<any>>;
+declare const KitList: React$1.ForwardRefExoticComponent<KitListProps & React$1.RefAttributes<any>>;
 
 declare type LinkButtonGroupProps = {
     children?: JSX.Element | JSX.Element[] /** @TODO figure out how to efficiently allow only Button an Hyperlink */;
@@ -1015,7 +1014,7 @@ declare type LinkButtonGroupType = (props: LinkButtonGroupProps) => ReactElement
 
 declare const LinkButtonGroup: LinkButtonGroupType;
 
-declare const List$1: React__default.ForwardRefExoticComponent<ListProps & React__default.RefAttributes<HTMLUListElement>>;
+declare const List$1: React$1.ForwardRefExoticComponent<ListProps & React$1.RefAttributes<HTMLUListElement>>;
 
 declare function LoadMoreButton({ className, copy, dataTestRef, isEnabled }: {
     className: any;
@@ -1086,7 +1085,7 @@ declare type MediaWithContentProps = {
     theme?: Themes;
 };
 
-declare const MediaWithContent: React__default.ForwardRefExoticComponent<MediaWithContentProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const MediaWithContent: React$1.ForwardRefExoticComponent<MediaWithContentProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type ArticleCardProps = Clickable & {
     isVisible?: boolean;
@@ -1327,7 +1326,7 @@ declare type PodiumProps = {
     verticalPadding?: VerticalPadding;
 };
 
-declare const Podium: React__default.ForwardRefExoticComponent<PodiumProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const Podium: React$1.ForwardRefExoticComponent<PodiumProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type ProductCommerceProps = {
     className?: string;
@@ -1356,7 +1355,7 @@ declare type ProductCommerceProps = {
     theme?: Themes;
 };
 
-declare const ProductCommerce: React__default.ForwardRefExoticComponent<ProductCommerceProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const ProductCommerce: React$1.ForwardRefExoticComponent<ProductCommerceProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type ProductExtractProps = {
     dataTestRef: string;
@@ -1376,7 +1375,7 @@ declare type ProductExtractProps = {
     works?: string;
 };
 
-declare const ProductExtract: React__default.ForwardRefExoticComponent<ProductExtractProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const ProductExtract: React$1.ForwardRefExoticComponent<ProductExtractProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type Copy = {
     addToCart?: {
@@ -1404,7 +1403,7 @@ declare type ProductGridItemProps = {
     url?: string;
 };
 
-declare const ProductGridItem: React__default.ForwardRefExoticComponent<ProductGridItemProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const ProductGridItem: React$1.ForwardRefExoticComponent<ProductGridItemProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type ProductDetailBodyCopy = {
     addToCart?: {
@@ -1449,7 +1448,7 @@ declare type QuoteProps = {
     theme?: Themes;
 };
 
-declare const Quote: React__default.ForwardRefExoticComponent<QuoteProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const Quote: React$1.ForwardRefExoticComponent<QuoteProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare function RadioGroup({ className, dataTestRef, errorMessage, name, onChange, options, theme, value, }: {
     className: any;
@@ -1585,7 +1584,7 @@ declare type SelectProps = {
     value?: string;
 };
 
-declare const Select$1: React__default.ForwardRefExoticComponent<SelectProps & React__default.RefAttributes<HTMLSelectElement>>;
+declare const Select$1: React$1.ForwardRefExoticComponent<SelectProps & React$1.RefAttributes<HTMLSelectElement>>;
 
 declare type HoursListItem = {
     dayName?: string;
@@ -1644,7 +1643,7 @@ declare type SubNavProps = {
     onSelectCallback?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
-declare const SubNav: React__default.ForwardRefExoticComponent<SubNavProps & React__default.RefAttributes<HTMLElement>>;
+declare const SubNav: React$1.ForwardRefExoticComponent<SubNavProps & React$1.RefAttributes<HTMLElement>>;
 
 declare function Textarea({ className, dataTestRef, defaultValue, id, isEnabled, inputRef, maxLength, name, onBlur, onChange, rows, textareaClassName, theme, value, }: {
     className: any;
@@ -1863,9 +1862,9 @@ declare type TwoColumnListProps = {
     theme?: Themes;
 };
 
-declare const TwoColumnList: React__default.ForwardRefExoticComponent<TwoColumnListProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const TwoColumnList: React$1.ForwardRefExoticComponent<TwoColumnListProps & React$1.RefAttributes<HTMLDivElement>>;
 
-declare const Video: React__default.ForwardRefExoticComponent<Pick<ControlsProps, "copy"> & {
+declare const Video: React$1.ForwardRefExoticComponent<Pick<ControlsProps, "copy"> & {
     captions?: {
         copy?: {
             toggleButtonTitleOn?: string;
@@ -1910,7 +1909,7 @@ declare const Video: React__default.ForwardRefExoticComponent<Pick<ControlsProps
         xLarge?: string;
         xSmall?: string;
     };
-} & React__default.RefAttributes<HTMLDivElement>>;
+} & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const index_d$a_Accordion: typeof Accordion;
 declare const index_d$a_AddToCartButton: typeof AddToCartButton;
@@ -2107,7 +2106,7 @@ declare type DynamicFormProps = {
     validationMode?: Mode;
 };
 
-declare const DynamicForm: React__default.ForwardRefExoticComponent<DynamicFormProps & React__default.RefAttributes<HTMLFormElement>>;
+declare const DynamicForm: React$1.ForwardRefExoticComponent<DynamicFormProps & React$1.RefAttributes<HTMLFormElement>>;
 
 declare type BreakpointValue = {
     minWidth?: number;
@@ -2596,7 +2595,10 @@ declare type UseExecuteOnImpression = (ref: RefObject<HTMLElement>, callback: ()
  */
 declare const useExecuteOnImpression: UseExecuteOnImpression;
 
-declare const useFocusOnFirst: (shouldUse?: boolean, query?: string) => React$1.MutableRefObject<any>[];
+declare type UseFocusOnFirst = {
+    <Type = any>(shouldUse?: boolean, query?: string): React.MutableRefObject<Type>[];
+};
+declare const useFocusOnFirst: UseFocusOnFirst;
 
 declare const useHasMounted: () => boolean;
 
@@ -2627,7 +2629,10 @@ declare type UseScript = (options: UseScriptOptions) => UseScriptReturn;
 
 declare const useScript: UseScript;
 
-declare const useTrapFocus: (shouldTrap?: boolean, query?: string) => React$1.MutableRefObject<any>[];
+declare type UseTrapFocus = {
+    <Type = any>(shouldTrap?: boolean, query?: string): React.MutableRefObject<Type>[];
+};
+declare const useTrapFocus: UseTrapFocus;
 
 declare type WindowSize = {
     height: number;
@@ -2697,7 +2702,7 @@ declare namespace index_d$6 {
   };
 }
 
-declare const mergeRefs: (...refs: any[]) => any;
+declare const mergeRefs: <Type = any>(...refs: (React$1.MutableRefObject<Type> | React$1.LegacyRef<Type>)[]) => (instance: Type) => void;
 
 declare const index_d$5_mergeRefs: typeof mergeRefs;
 declare namespace index_d$5 {

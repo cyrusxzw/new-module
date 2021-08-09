@@ -1,4 +1,4 @@
-import React__default, { ReactNode, ReactElement } from 'react';
+import React, { ReactNode, ReactElement } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
 declare type HeroBannerMediaAnchorPoints = 'center' | 'left' | 'right' | 'bottom' | 'top';
@@ -28,6 +28,6 @@ declare type HeroBannerProps = {
     variation?: HeroBannerVariations;
 };
 
-declare const HeroBanner: React__default.ForwardRefExoticComponent<HeroBannerProps & React__default.RefAttributes<HTMLDivElement>>;
+declare const HeroBanner: React.ForwardRefExoticComponent<HeroBannerProps & React.RefAttributes<HTMLDivElement>>;
 
 export { HeroBanner };

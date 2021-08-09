@@ -1,7 +1,7 @@
 import { C as ControlsProps, P as PosterProps } from '../../sharedChunks/Poster.types';
-import React__default from 'react';
+import React from 'react';
 
-declare const Video: React__default.ForwardRefExoticComponent<Pick<ControlsProps, "copy"> & {
+declare const Video: React.ForwardRefExoticComponent<Pick<ControlsProps, "copy"> & {
     captions?: {
         copy?: {
             toggleButtonTitleOn?: string;
@@ -46,6 +46,6 @@ declare const Video: React__default.ForwardRefExoticComponent<Pick<ControlsProps
         xLarge?: string;
         xSmall?: string;
     };
-} & React__default.RefAttributes<HTMLDivElement>>;
+} & React.RefAttributes<HTMLDivElement>>;
 
 export { Video };
