@@ -1,4 +1,4 @@
-import type { Themes, ComponentWithoutChildren } from '~/types';
+import type { Themes } from '~/types';
 import type { MediaBlockProps } from './components/MediaBlock/MediaBlock.types';
 
 type DoubleMediaProps = {
@@ -8,6 +8,4 @@ type DoubleMediaProps = {
   theme?: Themes;
 };
 
-type DoubleMediaType = ComponentWithoutChildren<DoubleMediaProps>;
-
-export type { DoubleMediaType, DoubleMediaProps };
+export type { DoubleMediaProps };
