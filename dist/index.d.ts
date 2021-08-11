@@ -553,9 +553,8 @@ declare type DoubleMediaProps = {
     mediaTwo?: MediaBlockProps;
     theme?: Themes;
 };
-declare type DoubleMediaType = ComponentWithoutChildren<DoubleMediaProps>;
 
-declare const DoubleMedia: DoubleMediaType;
+declare const DoubleMedia: React$1.ForwardRefExoticComponent<DoubleMediaProps & React$1.RefAttributes<HTMLDivElement>>;
 
 declare type FigureProps = {
     caption?: string;

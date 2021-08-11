@@ -1,6 +1,5 @@
-import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
+import React, { ReactNode } from 'react';
 import { T as Themes } from '../../sharedChunks/Themes.types';
-import { ReactNode } from 'react';
 import { C as ControlsProps, P as PosterProps } from '../../sharedChunks/Poster.types';
 
 declare type VideoProps = Pick<ControlsProps, 'copy'> & {
@@ -85,8 +84,7 @@ declare type DoubleMediaProps = {
     mediaTwo?: MediaBlockProps;
     theme?: Themes;
 };
-declare type DoubleMediaType = ComponentWithoutChildren<DoubleMediaProps>;
 
-declare const DoubleMedia: DoubleMediaType;
+declare const DoubleMedia: React.ForwardRefExoticComponent<DoubleMediaProps & React.RefAttributes<HTMLDivElement>>;
 
 export { DoubleMedia };
