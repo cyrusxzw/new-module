@@ -1,15 +1,10 @@
 import { ReactNode, MouseEvent } from 'react';
-import type { Themes } from '~/types';
+import type { Aria, Themes } from '~/types';
 
 type ButtonBehaviourType = 'button' | 'reset' | 'submit';
 
 type ButtonProps = {
-  aria?: {
-    expanded?: boolean;
-    haspopup?: boolean;
-    hidden?: boolean;
-    label?: string;
-  };
+  aria?: Pick<Aria, 'expanded' | 'haspopup' | 'hidden' | 'label'>;
   children?: ReactNode;
   className?: string;
   dataTestRef?: string;

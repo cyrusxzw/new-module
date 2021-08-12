@@ -1,3 +1,4 @@
+export type { Aria } from './Aria.types';
 export type {
   ComponentWithChildren,
   ComponentWithoutChildren,
