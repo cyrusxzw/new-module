@@ -12,6 +12,8 @@ exports[`<BynderWidget /> should render base component correctly 1`] = `
       heading
     </h3>
     <span
+      aria-busy="true"
+      aria-live="polite"
       class="base isLoading medium dark"
       data-testid="data-testid-loading"
     >

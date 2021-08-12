@@ -27,7 +27,12 @@ const Loading: LoadingType = ({
   );
 
   return (
-    <span className={classSet} data-testid="data-testid-loading">
+    <span
+      aria-busy={true}
+      aria-live="polite"
+      className={classSet}
+      data-testid="data-testid-loading"
+    >
       <span className={styles.dot} />
       <span className={styles.dot} />
       <span className={styles.dot} />

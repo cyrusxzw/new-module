@@ -24,6 +24,8 @@ exports[`<Audio /> should render base component correctly 1`] = `
       class="waveContainer"
     >
       <span
+        aria-busy="true"
+        aria-live="polite"
         class="base isLoading medium dark loading"
         data-testid="data-testid-loading"
       >
