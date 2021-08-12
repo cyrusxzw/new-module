@@ -42,6 +42,7 @@ export { NavigationBar } from './NavigationBar';
 export { NotificationModal } from './NotificationModal';
 export { Overlay } from './Overlay';
 export { Paragraph, P, ParagraphSet } from './Paragraph';
+export { PersonalInfoSummary } from './PersonalInfoSummary';
 export { Podium } from './Podium';
 export { ProductCommerce } from './ProductCommerce';
 export { ProductExtract } from './ProductExtract';

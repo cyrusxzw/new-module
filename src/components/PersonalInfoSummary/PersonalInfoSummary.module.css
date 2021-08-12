@@ -1,0 +1,18 @@
+@import 'styles/index';
+
+.base {
+  font-family: "Suisse Regular", sans-serif;
+  font-size: rem(20px);
+
+  @media (--viewport-lg) {
+    font-size: rem(24px);
+  }
+
+  &.dark {
+    color: var(--color-dark-copy);
+  }
+
+  &.light {
+    color: var(--color-light-copy);
+  }
+}
