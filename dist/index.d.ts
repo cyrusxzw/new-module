@@ -3,6 +3,13 @@ import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, 
 import PropTypes from 'prop-types';
 import { Mode } from 'react-hook-form/dist/index.ie11';
 
+declare type Aria = {
+    expanded?: boolean;
+    haspopup?: boolean | 'dialog' | 'menu' | 'listbox' | 'tree' | 'grid';
+    hidden?: boolean;
+    label?: string;
+};
+
 declare type DefaultReactComponentReturn = ReactElement<any, any> | null;
 declare type PropsWithChildren<P> = P & {
     children?: ReactNode;
@@ -100,6 +107,7 @@ declare type AddToCartContextProps = {
 };
 declare type AddToCartContextProviderType = ComponentWithChildren<AddToCartContextProps>;
 
+type index_d$b_Aria = Aria;
 type index_d$b_ComponentWithChildren<_0> = ComponentWithChildren<_0>;
 type index_d$b_ComponentWithoutChildren<_0> = ComponentWithoutChildren<_0>;
 type index_d$b_Themes = Themes;
@@ -108,6 +116,7 @@ type index_d$b_BreakpointNames = BreakpointNames;
 type index_d$b_OnAddToCartClick = OnAddToCartClick;
 declare namespace index_d$b {
   export {
+    index_d$b_Aria as Aria,
     index_d$b_ComponentWithChildren as ComponentWithChildren,
     index_d$b_ComponentWithoutChildren as ComponentWithoutChildren,
     Product$1 as Product,
@@ -217,12 +226,7 @@ declare const Breadcrumbs$1: BreadcrumbsType;
 
 declare type ButtonBehaviourType = 'button' | 'reset' | 'submit';
 declare type ButtonProps = {
-    aria?: {
-        expanded?: boolean;
-        haspopup?: boolean;
-        hidden?: boolean;
-        label?: string;
-    };
+    aria?: Pick<Aria, 'expanded' | 'haspopup' | 'hidden' | 'label'>;
     children?: ReactNode;
     className?: string;
     dataTestRef?: string;
