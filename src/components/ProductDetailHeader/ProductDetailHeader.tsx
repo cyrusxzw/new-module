@@ -45,7 +45,7 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
           className={styles.content}
           data-testid="data-testid-ProductDetailHeader-content"
         >
-          <Hidden isSmall={true}>
+          <Hidden when={['sm']}>
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}
@@ -72,7 +72,7 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
           className={imageClassSet}
           data-testid="data-testid-ProductDetailHeader-image"
         >
-          <Hidden isLarge={true} isMedium={true} isXLarge={true}>
+          <Hidden when={['md', 'lg', 'xl']}>
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}

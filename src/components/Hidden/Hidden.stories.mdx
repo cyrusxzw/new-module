@@ -1,5 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
+import { useWindowHasResized } from '~/customHooks';
+import { isViewport } from '~/utils/viewport';
 import { DefinitionList } from '~/components/DefinitionList';
 import { DefinitionListFixture } from '~/components/DefinitionList/DefinitionList.fixture';
 import { Hidden } from './Hidden';
@@ -8,20 +10,28 @@ import { Hidden } from './Hidden';
 
 # Hidden
 
-The Hidden component will unmount children components given they meet the breakpoint criteria of the `isSmall`, `isMedium`, `isLarge` and/or `isXLarge` props.
+The Hidden component will unmount children components given they meet the breakpoint criteria of the `sm`, `me`, `lg` and/or `xl` in the `when` prop.
 
-This example has a `isSmall`, `isMedium` prop of true, and therefore will not be mounted at those breakpoints.
+This example has a `when` prop of `sm`, and `lg`, and therefore will not be mounted at those breakpoints.
 
 <Canvas>
   <Story name="Base component">
-    <Hidden
-      isLarge={knobs.boolean('isLarge', false, 'Presentation')}
-      isMedium={knobs.boolean('isMedium', true, 'Presentation')}
-      isSmall={knobs.boolean('isSmall', true, 'Presentation')}
-      isXLarge={knobs.boolean('isXLarge', false, 'Presentation')}
-    >
-      <DefinitionList items={DefinitionListFixture.items} />
-    </Hidden>
+    {(() => {
+      useWindowHasResized();
+      const small = isViewport('xs to sm only') && 'sm';
+      const medium = isViewport('md only') && 'md';
+      const large = isViewport('lg only') && 'lg';
+      const xLarge = isViewport('xl') && 'xl';
+      const viewport = `viewport: ${small || medium || large || xLarge}`;
+      return (
+        <>
+          <div>{viewport}</div>
+          <Hidden when={knobs.object('when', ['sm', 'lg'], 'Presentation')}>
+            <DefinitionList items={DefinitionListFixture.items} />
+          </Hidden>
+        </>
+      );
+    })()}
   </Story>
 </Canvas>
 
