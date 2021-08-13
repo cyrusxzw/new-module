@@ -43,6 +43,7 @@ export {
   P,
   Paragraph,
   ParagraphSet,
+  PersonalInfoSummary,
   Podium,
   ProductAccordion,
   ProductCommerce,
