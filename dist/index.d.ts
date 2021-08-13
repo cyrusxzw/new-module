@@ -1160,6 +1160,28 @@ declare type ParagraphSetType = ComponentWithChildren<ParagraphSetProps>;
 declare const Paragraph: ParagraphType;
 declare const ParagraphSet: ParagraphSetType;
 
+declare type PersonalInfoSummaryProps = {
+    className?: string;
+    theme?: Themes;
+    prefixOptions?: {
+        value: string;
+        text: string;
+    }[];
+    shouldShowPrefix?: boolean;
+    shouldSwapFullNameOrder?: boolean;
+    userDetails?: {
+        suffix?: string;
+        prefix?: string;
+        firstName?: string;
+        lastName?: string;
+        dateOfBirth?: string;
+        email?: string;
+    };
+};
+declare type PersonalInfoSummaryType = VFC<PersonalInfoSummaryProps>;
+
+declare const PersonalInfoSummary: PersonalInfoSummaryType;
+
 declare type TransitionTypeLabel = 'fade' | 'shiftInDown' | 'shiftInLeft' | 'shiftInUp' | 'slideDown' | 'slideRight' | 'slowFade' | 'zoom';
 declare type TransitionProps = {
     children: JSX.Element;
@@ -1810,6 +1832,7 @@ declare const index_d$9_NotificationModal: typeof NotificationModal;
 declare const index_d$9_Overlay: typeof Overlay;
 declare const index_d$9_Paragraph: typeof Paragraph;
 declare const index_d$9_ParagraphSet: typeof ParagraphSet;
+declare const index_d$9_PersonalInfoSummary: typeof PersonalInfoSummary;
 declare const index_d$9_Podium: typeof Podium;
 declare const index_d$9_ProductCommerce: typeof ProductCommerce;
 declare const index_d$9_ProductExtract: typeof ProductExtract;
@@ -1876,6 +1899,7 @@ declare namespace index_d$9 {
     index_d$9_Paragraph as Paragraph,
     Paragraph as P,
     index_d$9_ParagraphSet as ParagraphSet,
+    index_d$9_PersonalInfoSummary as PersonalInfoSummary,
     index_d$9_Podium as Podium,
     index_d$9_ProductCommerce as ProductCommerce,
     index_d$9_ProductExtract as ProductExtract,
@@ -2594,4 +2618,4 @@ declare namespace index_d {
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$9 as components, index_d$8 as constants, index_d$7 as contexts, index_d$6 as customHooks, index_d$5 as environment, index_d$4 as objects, index_d$2 as product, index_d$a as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$9 as components, index_d$8 as constants, index_d$7 as contexts, index_d$6 as customHooks, index_d$5 as environment, index_d$4 as objects, index_d$2 as product, index_d$a as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };

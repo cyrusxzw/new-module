@@ -9605,6 +9605,84 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 } */
 /* Dark theme UI elements */
 /* Light theme UI elements */
+.PersonalInfoSummary-module_base__F5l6g {
+  font-family: "Suisse Regular", sans-serif;
+  font-size: 20px;
+}
+@media (min-width: 1025px) {
+.PersonalInfoSummary-module_base__F5l6g {
+    font-size: 24px
+}
+  }
+.PersonalInfoSummary-module_base__F5l6g.PersonalInfoSummary-module_dark___EBiI {
+    color: #333;
+  }
+.PersonalInfoSummary-module_base__F5l6g.PersonalInfoSummary-module_light__1pfKq {
+    color: #fffef2;
+  }
+
+:root {
+  /* Base colours */
+
+  /* UI colours light theme */
+
+  /* UI colours dark theme */
+
+  /* Background colours */
+
+  /* System colours */
+
+  /* Secondary Message background colour */
+}
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
+/** https://github.com/postcss/postcss-custom-properties/issues/24
+ :root {
+  --breakpoint-xs-min: 0;
+  --breakpoint-xs-max: 320px;
+  --breakpoint-sm-min: 321px;
+  --breakpoint-sm-max: 639px;
+  --breakpoint-md-min: 640px;
+  --breakpoint-md-max: 1024px;
+  --breakpoint-lg-min: 1025px;
+  --breakpoint-lg-max: 1219px;
+  --breakpoint-xl-min: 1220px;
+  --breakpoint-xl-max: 1599px;
+  --breakpoint-x2l-min: 1600px;
+  --breakpoint-x2l-max: 1919px;
+  --breakpoint-x3l-min: 1920px;
+  --breakpoint-x3l-max: 2399px;
+  --breakpoint-x4l-min: 2400px;
+} */
+/* Dark theme UI elements */
+/* Light theme UI elements */
 .Podium-module_base__3-gFX {
   display: block;
   padding: 0;
