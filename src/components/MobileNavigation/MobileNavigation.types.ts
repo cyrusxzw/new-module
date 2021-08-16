@@ -9,21 +9,25 @@ import type { SecondaryNavigationItems } from './components/SecondaryNavigation/
 
 type Header = {
   logo: {
-    url: string;
+    dataTestRef?: string;
     screenReaderLabel: string;
     title: string;
+    url: string;
   };
   search: {
+    dataTestRef?: string;
     onClick: () => void;
     screenReaderLabel: string;
     title: string;
   };
   cart: {
+    dataTestRef?: string;
     label: string;
     onClick: () => void;
     title: string;
   };
   menu: {
+    dataTestRef?: string;
     screenReaderOpenLabel: string;
     screenReaderCloseLabel: string;
     openTitle: string;
@@ -44,6 +48,7 @@ type MobileNavigationContextProviderProps = {
 type MobileNavigationContextProviderType = ComponentWithChildren<MobileNavigationContextProviderProps>;
 
 type Clickable = {
+  dataTestRef?: string;
   id: string;
   label: string;
   title: string;
@@ -81,7 +86,8 @@ type NestedCollection = Clickable & {
 };
 
 type Collection = Clickable & {
-  backLabel: string;
+  backLabel?: string;
+  backgroundColor?: string;
   items: (NestedCollection | Link)[];
   promotion?: PromotionCard;
   type: 'collection';

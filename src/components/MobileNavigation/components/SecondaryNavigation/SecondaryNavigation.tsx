@@ -30,6 +30,7 @@ const SecondaryNavigation: SecondaryNavigationType = ({
             {props.type === 'link' ? (
               <Hyperlink
                 className={styles.element}
+                dataTestRef={props.dataTestRef}
                 tabIndex={!isVisible ? -1 : null}
                 title={props.title}
                 url={props.url}
@@ -44,6 +45,7 @@ const SecondaryNavigation: SecondaryNavigationType = ({
                   styles.element,
                   compositionStyles.ornamentalWrapper,
                 )}
+                dataTestRef={props.dataTestRef}
                 isInline={true}
                 onClick={props.onClick}
                 tabIndex={!isVisible ? -1 : null}

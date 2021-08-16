@@ -50,6 +50,7 @@ const MobileNavigationFixture = {
       onClick: (): void => console.log('Clicked: footer-read'), // eslint-disable-line no-console
       title: 'Read',
       type: 'trigger' as const,
+      dataTestRef: 'NAV_READ',
     },
     {
       id: 'footer-log-in',
@@ -57,6 +58,7 @@ const MobileNavigationFixture = {
       onClick: (): void => console.log('Clicked: footer-log-in'), // eslint-disable-line no-console
       title: 'Log in',
       type: 'trigger' as const,
+      dataTestRef: 'NAV_LOGIN',
     },
     {
       id: 'footer-stores',
@@ -64,6 +66,7 @@ const MobileNavigationFixture = {
       onClick: (): void => console.log('Clicked: footer-stores'), // eslint-disable-line no-console
       title: 'Stores',
       type: 'trigger' as const,
+      dataTestRef: 'NAV_VISIT',
     },
     {
       id: 'live-assistance',
@@ -71,10 +74,12 @@ const MobileNavigationFixture = {
       onClick: (): void => console.log('Clicked: live-assistance'), // eslint-disable-line no-console
       title: 'Live Assistance',
       type: 'trigger' as const,
+      dataTestRef: 'NAV_LIVE_ASSISTANCE',
     },
   ],
   items: [
     {
+      backgroundColor: '#',
       backLabel: 'All Collections',
       id: 'skin-care',
       label: 'Skin Care',

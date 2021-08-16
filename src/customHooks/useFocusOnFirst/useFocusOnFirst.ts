@@ -28,7 +28,7 @@ const useFocusOnFirst: UseFocusOnFirst = (
   const ref = useRef(null);
 
   useEffect(() => {
-    if (ref?.current !== undefined && shouldUse) {
+    if (ref.current && shouldUse) {
       ref.current.querySelectorAll(query)[0]?.focus();
     }
   }, [shouldUse, query]);

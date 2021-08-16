@@ -101,7 +101,7 @@ const Collection: CollectionType = ({
               onClick={onBackButtonClick}
               tabIndex={isActive ? null : -1}
               theme={currentTheme}
-              title={title}
+              title={backLabel}
             >
               <Icon
                 className={backIconClassSet}

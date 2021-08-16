@@ -1111,21 +1111,25 @@ declare type SecondaryNavigationItems = (Trigger | Link)[];
 
 declare type Header = {
     logo: {
-        url: string;
+        dataTestRef?: string;
         screenReaderLabel: string;
         title: string;
+        url: string;
     };
     search: {
+        dataTestRef?: string;
         onClick: () => void;
         screenReaderLabel: string;
         title: string;
     };
     cart: {
+        dataTestRef?: string;
         label: string;
         onClick: () => void;
         title: string;
     };
     menu: {
+        dataTestRef?: string;
         screenReaderOpenLabel: string;
         screenReaderCloseLabel: string;
         openTitle: string;
@@ -1133,6 +1137,7 @@ declare type Header = {
     };
 };
 declare type Clickable = {
+    dataTestRef?: string;
     id: string;
     label: string;
     title: string;
@@ -1165,7 +1170,8 @@ declare type NestedCollection = Clickable & {
     type: 'nested-collection';
 };
 declare type Collection = Clickable & {
-    backLabel: string;
+    backLabel?: string;
+    backgroundColor?: string;
     items: (NestedCollection | Link)[];
     promotion?: PromotionCard;
     type: 'collection';

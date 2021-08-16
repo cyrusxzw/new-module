@@ -75,6 +75,41 @@ const MobileNavigation: MobileNavigationType = ({
     className,
   );
 
+  /**
+
+  Expose:
+    TEST IDS
+
+    const foo = document.querySelector('[data-component="NavMenu"]')
+    Array.from(foo.querySelectorAll('[data-test-ref]')).forEach((item) => console.log(item.dataset))
+
+    HeaderContext
+
+    GlobalNavigationContext
+      articles
+      isVisuallyObstructed
+      items
+      secondaryItems
+      theme
+      isOpen < updater
+      activeCollectionId < updater
+
+    MobileNavigationContext
+      closedTheme
+      theme
+      activeNestedCollectionIds
+      onBackButtonClick
+      onCollectionClick
+      onNestedCollectionClick
+
+    DesktopNavigationContext
+      TBA
+
+    TabletNavigationContext
+      TBA
+
+  */
+
   return (
     <MobileNavigationContextProvider
       activeCollectionId={activeCollectionId}

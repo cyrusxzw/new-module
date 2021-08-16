@@ -7,7 +7,7 @@ import type {
 } from '~/components/MobileNavigation/MobileNavigation.types';
 
 type CollectionProps = Clickable & {
-  backLabel: string;
+  backLabel?: string;
   items: (NestedCollection | Link)[];
   isVisible?: boolean;
   promotion?: PromotionCard;

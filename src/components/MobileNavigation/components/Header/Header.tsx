@@ -22,12 +22,10 @@ const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
 
   const handleOnSearchClick = () => {
     search.onClick();
-    console.log('Clicked: handleOnSearchClick'); // eslint-disable-line no-console
   };
 
   const handleOnCartClick = () => {
     cart.onClick();
-    console.log('Clicked: handleOnCartClick'); // eslint-disable-line no-console
   };
 
   const classSet = cx(
@@ -44,6 +42,7 @@ const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
           <li className={cx(styles.item, styles.itemLogo)}>
             <Hyperlink
               className={cx(styles.action, styles.actionLogo)}
+              dataTestRef={logo.dataTestRef ?? 'NAV_LOGO'}
               title={logo.title}
               url={logo.url}
             >
@@ -54,6 +53,7 @@ const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
           <li className={styles.item}>
             <Button
               className={cx(styles.action, styles.actionSearch)}
+              dataTestRef={search.dataTestRef ?? 'NAV_SEARCH'}
               isInline={true}
               onClick={handleOnSearchClick}
               title={search.title}
@@ -74,6 +74,7 @@ const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
                 styles.actionCart,
                 compositionStyles.ornamentalWrapper,
               )}
+              dataTestRef={cart.dataTestRef ?? 'NAV_CART'}
               isInline={true}
               onClick={handleOnCartClick}
               title={cart.title}
@@ -94,6 +95,7 @@ const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
               className={cx(styles.action, styles.actionMenu, {
                 [styles.openState]: isMenuOpen,
               })}
+              dataTestRef={menu.dataTestRef ?? 'NAV_HAMBURGER'}
               isInline={true}
               onClick={handleOnCloseButtonClick}
               title={isMenuOpen ? menu.closeTitle : menu.openTitle}
