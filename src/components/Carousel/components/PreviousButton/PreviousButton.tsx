@@ -19,7 +19,7 @@ const PreviousButton: PreviousButtonType = ({
     isInline={true}
     onClick={onClick}
     theme={theme}
-    title="next slide"
+    title="previous slide"
   >
     <Icon height={16} name="chevron" theme={theme} width={16} />
   </Button>

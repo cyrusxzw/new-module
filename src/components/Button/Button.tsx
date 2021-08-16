@@ -5,6 +5,7 @@ import styles from './Button.module.css';
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ButtonRef(
   {
+    aria,
     children,
     className,
     dataTestRef,
@@ -34,6 +35,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ButtonRef(
 
   return (
     <button
+      aria-expanded={aria?.expanded ?? null}
+      aria-haspopup={aria?.haspopup ?? null}
+      aria-hidden={aria?.hidden ?? null}
+      aria-label={aria?.label ?? null}
       className={classSet}
       data-test-ref={dataTestRef}
       disabled={!isEnabled}
