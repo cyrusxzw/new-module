@@ -77,11 +77,8 @@ const MobileNavigation: MobileNavigationType = ({
 
   /**
 
-  Expose:
-    TEST IDS
-
-    const foo = document.querySelector('[data-component="NavMenu"]')
-    Array.from(foo.querySelectorAll('[data-test-ref]')).forEach((item) => console.log(item.dataset))
+  context and other props:
+    TEST IDS [/]
 
     HeaderContext
 
