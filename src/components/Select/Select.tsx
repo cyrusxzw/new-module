@@ -55,7 +55,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function SelectRef(
         {label}
       </label>
       <select
-        aria-describedby={errorMessageId}
+        aria-describedby={errorMessage ? errorMessageId : undefined}
         aria-invalid={!!errorMessage}
         aria-label={label || name}
         className={styles.input}
