@@ -77,33 +77,69 @@ const MobileNavigation: MobileNavigationType = ({
 
   /**
 
-  context and other props:
-    TEST IDS [/]
+  <GlobalNavigationStateContext.Provider> - isGlobalMenuOpen, activeCollectionId
+    <GlobalNavigationContext value=props>
+     <GlobalNavigation isVisuallyObstructed theme />
+     ---
+      <CollectionContext>
+        <MobileViewContext>
+          <MobileView />
+        </>
+      </>
 
-    HeaderContext
+      <TabletViewContext>
+        <TabletView/>
+      </>
+
+      <DesktopViewContext
+        <DesktopView />
+      </>
+
+
+  context and other props:
+    Test IDs
+
+    AuxillaryNavigationContext
+      logo >
+      search >
+      cart >
+      menu/hamburger >
+      read >
+      account >
+      stores >
+      support >
+
+      Content / Collections /
+      Presentation /
 
     GlobalNavigationContext
-      articles
-      isVisuallyObstructed
-      items
-      secondaryItems
-      theme
+      closedTheme? >
+      articles >
+      isVisuallyObstructed >
+      items >
+      theme >
+      ---
+    GlobalNavigationStateContext
       isOpen < updater
       activeCollectionId < updater
 
-    MobileNavigationContext
+    CollectionContext
+      _activeNestedCollectionIds < updater
+      _onBackButtonClick < updater
+      _onCollectionClick < updater
+      _onNestedCollectionClick < updater
+
+    MobileViewContext >
       closedTheme
-      theme
-      activeNestedCollectionIds
-      onBackButtonClick
-      onCollectionClick
-      onNestedCollectionClick
 
-    DesktopNavigationContext
+    DesktopViewContext
+      _onCollectionClick
+
+    TabletViewContext
       TBA
 
-    TabletNavigationContext
-      TBA
+    Refactor
+      // secondaryItems > Actions? Auxillary?
 
   */
 

@@ -20,13 +20,9 @@ const Header: HeaderType = ({ closedTheme, onCloseClick, onOpenClick }) => {
 
   useWindowHasResized();
 
-  const handleOnSearchClick = () => {
-    search.onClick();
-  };
+  const handleOnSearchClick = () => search.onClick();
 
-  const handleOnCartClick = () => {
-    cart.onClick();
-  };
+  const handleOnCartClick = () => cart.onClick();
 
   const classSet = cx(
     styles.base,
