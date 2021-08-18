@@ -583,6 +583,10 @@
 .Loading-module_fullSize__1h4Cr {
   height: 100%;
 }
+.Loading-module_loadingText__dI5Y2 {
+  position: absolute;
+  display: none;
+}
 .Loading-module_dot__2jmbK {
   display: block;
   margin: 0 3px;

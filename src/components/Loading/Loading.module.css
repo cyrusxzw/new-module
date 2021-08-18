@@ -30,6 +30,11 @@
   height: 100%;
 }
 
+.loadingText {
+  position: absolute;
+  display: none;
+}
+
 .dot {
   display: block;
   margin: 0 3px;

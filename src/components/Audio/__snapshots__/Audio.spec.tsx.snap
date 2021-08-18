@@ -28,7 +28,13 @@ exports[`<Audio /> should render base component correctly 1`] = `
         aria-live="polite"
         class="base isLoading medium dark loading"
         data-testid="data-testid-loading"
+        role="status"
       >
+        <span
+          class="loadingText"
+        >
+          loading
+        </span>
         <span
           class="dot"
         />

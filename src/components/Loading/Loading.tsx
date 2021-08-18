@@ -32,7 +32,9 @@ const Loading: LoadingType = ({
       aria-live="polite"
       className={classSet}
       data-testid="data-testid-loading"
+      role="status"
     >
+      <span className={styles.loadingText}>loading</span>
       <span className={styles.dot} />
       <span className={styles.dot} />
       <span className={styles.dot} />
