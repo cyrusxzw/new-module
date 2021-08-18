@@ -4,7 +4,7 @@ exports[`<Carousel.PreviousButton /> should render base component correctly 1`] 
 <div>
   <button
     class="base dark base"
-    title="next slide"
+    title="previous slide"
     type="button"
   >
     <svg

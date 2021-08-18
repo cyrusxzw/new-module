@@ -9,7 +9,31 @@ const fade = {
     exitActive: transitions.fadeExitActive,
     exitDone: transitions.fadeExitDone,
   },
-  timeout: 500,
+  timeout: 300,
+};
+
+const fadeIn = {
+  classNames: {
+    enter: transitions.fadeInEnter,
+    enterActive: transitions.fadeInEnterActive,
+    enterDone: transitions.fadeInEnterDone,
+    exit: transitions.fadeInExit,
+    exitActive: transitions.fadeInExitActive,
+    exitDone: transitions.fadeInExitDone,
+  },
+  timeout: 300,
+};
+
+const fixed = {
+  classNames: {
+    enter: transitions.fixedEnter,
+    enterActive: transitions.fixedEnterActive,
+    enterDone: transitions.fixedEnterDone,
+    exit: transitions.fixedExit,
+    exitActive: transitions.fixedExitActive,
+    exitDone: transitions.fixedExitDone,
+  },
+  timeout: 300,
 };
 
 const slowFade = {
@@ -84,6 +108,18 @@ const slideRight = {
   timeout: 800,
 };
 
+const slideLeft = {
+  classNames: {
+    enter: transitions.slideLeftEnter,
+    enterActive: transitions.slideLeftEnterActive,
+    enterDone: transitions.slideLeftEnterDone,
+    exit: transitions.slideLeftExit,
+    exitActive: transitions.slideLeftExitActive,
+    exitDone: transitions.slideLeftExitDone,
+  },
+  timeout: 400,
+};
+
 const zoom = {
   classNames: {
     enter: transitions.zoomEnter,
@@ -98,10 +134,13 @@ const zoom = {
 
 const data = {
   fade,
+  fadeIn,
+  fixed,
   shiftInDown,
   shiftInLeft,
   shiftInUp,
   slideDown,
+  slideLeft,
   slideRight,
   slowFade,
   zoom,

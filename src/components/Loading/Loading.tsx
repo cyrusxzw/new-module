@@ -7,6 +7,7 @@ import styles from './Loading.module.css';
 const Loading: LoadingType = ({
   className,
   isLoading,
+  screenReaderText,
   shouldFillSpace = false,
   size = 'medium',
   theme,
@@ -28,7 +29,9 @@ const Loading: LoadingType = ({
 
   return (
     <span className={classSet} data-testid="data-testid-loading" role="status">
-      <span className={styles.loadingText}>loading</span>
+      {screenReaderText && (
+        <span className={styles.srOnly}>{screenReaderText}</span>
+      )}
       <span className={styles.dot} />
       <span className={styles.dot} />
       <span className={styles.dot} />

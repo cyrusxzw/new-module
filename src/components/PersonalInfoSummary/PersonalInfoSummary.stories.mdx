@@ -1,0 +1,87 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
+import { PersonalInfoSummary } from './PersonalInfoSummary';
+import { PersonalInfoSummaryFixture } from './PersonalInfoSummary.fixture';
+
+<Meta title="Components/PersonalInfoSummary" component={PersonalInfoSummary} />
+
+# PersonalInfoSummary
+
+<Canvas>
+  <Story name="Base component">
+    {(() => {
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <PersonalInfoSummary
+            theme={theme}
+            prefixOptions={PersonalInfoSummaryFixture.prefixOptions}
+            shouldShowPrefix={knobs.boolean(
+              'shouldShowPrefix',
+              true,
+              'Content',
+            )}
+            shouldSwapFullNameOrder={knobs.boolean(
+              'shouldSwapFullNameOrder',
+              false,
+              'Content',
+            )}
+            userDetails={{
+              suffix: knobs.text(
+                'suffix',
+                PersonalInfoSummaryFixture.userDetails.suffix,
+                'Content',
+              ),
+              prefix: knobs.text(
+                'prefix',
+                PersonalInfoSummaryFixture.userDetails.prefix,
+                'Content',
+              ),
+              firstName: knobs.text(
+                'firstName',
+                PersonalInfoSummaryFixture.userDetails.firstName,
+                'Content',
+              ),
+              lastName: knobs.text(
+                'lastName',
+                PersonalInfoSummaryFixture.userDetails.lastName,
+                'Content',
+              ),
+              dateOfBirth: knobs.text(
+                'dateOfBirth',
+                PersonalInfoSummaryFixture.userDetails.dateOfBirth,
+                'Content',
+              ),
+              email: knobs.text(
+                'email',
+                PersonalInfoSummaryFixture.userDetails.email,
+                'Content',
+              ),
+            }}
+          />
+          <StorybookGridOverlay {...implementation.gridOverlay} />
+        </>
+      );
+    })()}
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of={PersonalInfoSummary} />

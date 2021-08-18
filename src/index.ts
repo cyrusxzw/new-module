@@ -36,6 +36,7 @@ export {
   LoadMoreButton,
   Loading,
   MediaWithContent,
+  MobileNavigation,
   Modal,
   NavigationBar,
   NotificationModal,
@@ -43,6 +44,7 @@ export {
   P,
   Paragraph,
   ParagraphSet,
+  PersonalInfoSummary,
   Podium,
   ProductAccordion,
   ProductCommerce,
@@ -101,11 +103,13 @@ export { customHooks };
 export {
   useEscapeKeyListener,
   useExecuteOnImpression,
+  useFocusOnFirst,
   useHasMounted,
   useImageTransition,
   useOnScreen,
   useOverflowHidden,
   useScript,
+  useTrapFocus,
   useWindowHasResized,
 } from './customHooks';
 

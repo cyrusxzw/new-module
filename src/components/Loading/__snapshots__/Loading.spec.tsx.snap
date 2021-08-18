@@ -8,11 +8,6 @@ exports[`<Loading /> should render base component correctly 1`] = `
     role="status"
   >
     <span
-      class="loadingText"
-    >
-      loading
-    </span>
-    <span
       class="dot"
     />
     <span

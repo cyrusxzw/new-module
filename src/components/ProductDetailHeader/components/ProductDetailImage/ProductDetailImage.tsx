@@ -44,7 +44,7 @@ const ProductDetailImage: ProductDetailImageType = ({ className, theme }) => {
               sizes={sizes}
             />
             {currentCartDisclaimer && (
-              <Hidden isMedium={true} isSmall={true}>
+              <Hidden when={['sm', 'md']}>
                 <div className={styles.cartDisclaimer}>
                   <span>{currentCartDisclaimer}</span>
                 </div>

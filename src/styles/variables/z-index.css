@@ -7,6 +7,8 @@
   --z-index-modal: 1400;
   --z-index-cart: 1300;
   --z-index-overlay: 1200;
+  --z-index-fixed-mobile-menu: 1000;
+  --z-index-mobile-menu: 100;
   --z-index-fixed-header: 70;
   --z-index-aesop-logo: 60;
   --z-index-carousel-navigation: 60;

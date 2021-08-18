@@ -142,7 +142,7 @@ const ProductDetailBody: ProductDetailBodyType = ({
   return (
     <div className={classSet}>
       <div className={styles.content}>
-        <Hidden isMedium={true}>
+        <Hidden when={['md']}>
           <header className={styles.header}>
             <Transition isActiveOnMount={true} type="fade">
               <Heading
@@ -159,7 +159,7 @@ const ProductDetailBody: ProductDetailBodyType = ({
         </Hidden>
 
         {!!description && (
-          <Hidden isMedium={true}>
+          <Hidden when={['md']}>
             <div className={styles.description}>
               <Transition isActiveOnMount={true} type="fade">
                 <Paragraph
@@ -209,7 +209,7 @@ const ProductDetailBody: ProductDetailBodyType = ({
           )}
         </div>
 
-        <Hidden isLarge={true} isMedium={true} isXLarge={true}>
+        <Hidden when={['md', 'lg', 'xl']}>
           {!!selectedVariant?.cartDisclaimer && (
             <div className={styles.cartDisclaimer}>
               <span>{selectedVariant.cartDisclaimer}</span>
@@ -245,7 +245,7 @@ const ProductDetailBody: ProductDetailBodyType = ({
         )}
       </div>
 
-      <Hidden isLarge={true} isSmall={true} isXLarge={true}>
+      <Hidden when={['sm', 'lg', 'xl']}>
         <div className={styles.mediumSidebar}>
           <header>
             <Heading

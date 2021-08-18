@@ -30,9 +30,13 @@
   height: 100%;
 }
 
-.loadingText {
+.srOnly {
   position: absolute;
-  opacity: 0;
+  top: auto;
+  left: -10000px;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
 }
 
 .dot {
