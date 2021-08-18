@@ -585,7 +585,7 @@
 }
 .Loading-module_loadingText__dI5Y2 {
   position: absolute;
-  display: none;
+  opacity: 0;
 }
 .Loading-module_dot__2jmbK {
   display: block;
