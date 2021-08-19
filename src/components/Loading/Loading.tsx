@@ -14,8 +14,6 @@ const Loading: LoadingType = ({
 }) => {
   const currentTheme = useThemeContext(theme, 'dark');
 
-  if (!isLoading) return null;
-
   const classSet = cx(
     styles.base,
     {
@@ -29,12 +27,16 @@ const Loading: LoadingType = ({
 
   return (
     <span className={classSet} data-testid="data-testid-loading" role="status">
-      {screenReaderText && (
-        <span className={styles.srOnly}>{screenReaderText}</span>
+      {isLoading && (
+        <>
+          {screenReaderText && (
+            <span className={styles.srOnly}>{screenReaderText}</span>
+          )}
+          <span className={styles.dot} />
+          <span className={styles.dot} />
+          <span className={styles.dot} />
+        </>
       )}
-      <span className={styles.dot} />
-      <span className={styles.dot} />
-      <span className={styles.dot} />
     </span>
   );
 };
