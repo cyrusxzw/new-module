@@ -15,15 +15,21 @@
 }
 
 .small {
-  height: var(--loading-size-small);
+  &.isLoading{
+    height: var(--loading-size-small);
+  }
 }
 
 .medium {
-  height: var(--loading-size-medium);
+  &.isLoading{
+    height: var(--loading-size-medium);
+  }
 }
 
 .large {
-  height: var(--loading-size-large);
+  &.isLoading{
+    height: var(--loading-size-large);
+  }
 }
 
 .fullSize {

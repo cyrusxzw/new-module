@@ -571,15 +571,15 @@
           justify-content: center;
   pointer-events: none;
 }
-.Loading-module_small__2H7s_ {
-  height: 5px;
-}
-.Loading-module_medium__2hEHn {
-  height: 7px;
-}
-.Loading-module_large__1xf44 {
-  height: 10px;
-}
+.Loading-module_small__2H7s_.Loading-module_isLoading__2jmYF{
+    height: 5px;
+  }
+.Loading-module_medium__2hEHn.Loading-module_isLoading__2jmYF{
+    height: 7px;
+  }
+.Loading-module_large__1xf44.Loading-module_isLoading__2jmYF{
+    height: 10px;
+  }
 .Loading-module_fullSize__1h4Cr {
   height: 100%;
 }
