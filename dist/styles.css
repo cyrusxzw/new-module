@@ -583,9 +583,13 @@
 .Loading-module_fullSize__1h4Cr {
   height: 100%;
 }
-.Loading-module_loadingText__dI5Y2 {
+.Loading-module_srOnly__2Uej_ {
   position: absolute;
-  opacity: 0;
+  top: auto;
+  left: -10000px;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
 }
 .Loading-module_dot__2jmbK {
   display: block;
