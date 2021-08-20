@@ -11,6 +11,11 @@ import { Loading } from './Loading';
   <Story name="Base component">
     {(() => {
       const isLoading = knobs.boolean('isLoading', true, 'Presentation');
+      const screenReaderText = knobs.text(
+        'screenReaderText',
+        'Loading',
+        'Presentation',
+      );
       const shouldFillSpace = knobs.boolean(
         'shouldFillSpace',
         false,
@@ -42,6 +47,7 @@ import { Loading } from './Loading';
         <>
           <Loading
             isLoading={isLoading}
+            screenReaderText={screenReaderText}
             shouldFillSpace={shouldFillSpace}
             size={size}
             theme={theme}

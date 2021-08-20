@@ -8,6 +8,11 @@ exports[`<GoogleMap /> should render base component correctly 1`] = `
     <div
       class="wrapper"
     >
+      <span
+        class="base medium dark loading"
+        data-testid="data-testid-loading"
+        role="status"
+      />
       <div
         class="map"
         id="google-map"

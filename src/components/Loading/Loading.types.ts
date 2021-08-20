@@ -5,6 +5,7 @@ type LoadingSizes = 'small' | 'medium' | 'large';
 type LoadingProps = {
   className?: string;
   isLoading: boolean;
+  screenReaderText?: string;
   shouldFillSpace?: boolean;
   size?: LoadingSizes;
   theme?: Themes;

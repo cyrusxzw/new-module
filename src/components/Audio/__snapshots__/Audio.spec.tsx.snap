@@ -26,6 +26,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
       <span
         class="base isLoading medium dark loading"
         data-testid="data-testid-loading"
+        role="status"
       >
         <span
           class="dot"

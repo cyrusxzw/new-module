@@ -14,6 +14,7 @@ exports[`<BynderWidget /> should render base component correctly 1`] = `
     <span
       class="base isLoading medium dark"
       data-testid="data-testid-loading"
+      role="status"
     >
       <span
         class="dot"
