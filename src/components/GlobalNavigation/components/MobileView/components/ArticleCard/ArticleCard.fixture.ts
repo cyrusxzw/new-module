@@ -1,9 +1,9 @@
 const ArticleCardFixture = {
-  id: 'article-card',
+  id: 'article',
   label: 'Article Card Label',
   title: 'See all Skin Care Card',
-  type: 'article-card' as const,
-  url: '#article-card',
+  type: 'article' as const,
+  url: '#article',
   metaLabel: 'Article Card  •  Meta Label',
   image: {
     altText: 'Image of Article Card',

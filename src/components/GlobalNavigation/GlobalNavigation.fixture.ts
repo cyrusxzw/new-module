@@ -1,11 +1,13 @@
-const GlobalNavigationFixture = {
+import type { GlobalNavigationContextType } from './GlobalNavigation.types';
+
+const GlobalNavigationFixture: GlobalNavigationContextType = {
   articles: [
     {
-      id: 'article-card',
+      id: 'article',
       label: 'Article Card Label',
       title: 'See all Skin Care Card',
-      type: 'article-card' as const,
-      url: '#article-card',
+      type: 'article' as const,
+      url: '#article',
       metaLabel: 'Article Card  •  Meta Label',
       image: {
         altText: 'Image of Article Card',
@@ -87,14 +89,6 @@ const GlobalNavigationFixture = {
       type: 'trigger' as const,
     },
   },
-  actionAccountAuthenticated: {
-    dataTestRef: 'NAV_LOGIN',
-    id: 'actions-accountAuthenticated',
-    label: 'Aesop Customer',
-    url: '#',
-    title: 'Aesop Customer page',
-    type: 'link' as const,
-  },
   collections: [
     {
       backgroundColor: '#',
@@ -107,7 +101,7 @@ const GlobalNavigationFixture = {
         id: 'see-all-skin-care-card',
         label: 'See all Skin Care Card Label',
         title: 'See all Skin Care Card',
-        type: 'promotion-card' as const,
+        type: 'promotion' as const,
         url: '#see-all-skin-care-card',
         heading: 'See all Skin Care Card Heading',
         image: {
@@ -245,4 +239,13 @@ const GlobalNavigationFixture = {
   ],
 };
 
-export { GlobalNavigationFixture };
+const actionAccountAuthenticated = {
+  dataTestRef: 'NAV_LOGIN',
+  id: 'actions-accountAuthenticated',
+  label: 'Aesop Customer',
+  url: '#accountAuthenticated',
+  title: 'Aesop Customer page',
+  type: 'link' as const,
+};
+
+export { GlobalNavigationFixture, actionAccountAuthenticated };

@@ -2,7 +2,7 @@ const PromotionCardFixture = {
   id: 'see-all-skin-care-card',
   label: 'See all Skin Care Card Label',
   title: 'See all Skin Care Card',
-  type: 'promotion-card' as const,
+  type: 'promotion' as const,
   url: '#see-all-skin-care-card',
   heading: 'See all Skin Care Card Heading',
   image: {

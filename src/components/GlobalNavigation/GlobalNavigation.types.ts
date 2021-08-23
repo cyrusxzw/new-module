@@ -22,7 +22,7 @@ type Link = Clickable & {
 
 type Promotion = Clickable & {
   heading: string;
-  type: 'promotion-card';
+  type: 'promotion';
   url: string;
   image?: {
     altText: string;
@@ -38,6 +38,7 @@ type Promotion = Clickable & {
 
 type Article = Clickable & {
   isVisible?: boolean;
+  type: 'article';
   metaLabel: string;
   url: string;
   image?: {
@@ -79,6 +80,12 @@ type Collection = Clickable & {
   type: 'collection';
 };
 
+type GlobalNavigationProps = {
+  className?: string;
+};
+
+type GlobalNavigationType = ComponentWithChildren<GlobalNavigationProps>;
+
 type GlobalNavigationStateContextProviderType = ComponentWithChildren;
 
 type GlobalNavigationStateContextType = {
@@ -108,25 +115,20 @@ type UseGlobalNavigationStore = (
   value: GlobalNavigationContextType,
 ) => GlobalNavigationContextType;
 
-type GlobalNavigationProps = {
-  className?: string;
-};
-
-type GlobalNavigationType = ComponentWithChildren<GlobalNavigationProps>;
-
 export type {
+  Actions,
+  Article,
   Clickable,
   Collection,
-  GlobalNavigationContextProviderProps,
   GlobalNavigationContextProviderType,
   GlobalNavigationContextType,
+  GlobalNavigationStateContextProviderType,
+  GlobalNavigationStateContextType,
   GlobalNavigationType,
   Link,
   NestedCollection,
   Promotion,
   Trigger,
-  UseGlobalNavigationStore,
-  GlobalNavigationStateContextProviderType,
-  GlobalNavigationStateContextType,
   UseGlobalNavigationStateStore,
+  UseGlobalNavigationStore,
 };

@@ -141,19 +141,21 @@ import { MobileViewFixture } from './MobileView.fixture';
       fixture.actions.search.onClick = handleOnSearchClick;
       return (
         <>
-          <GlobalNavigationContextProvider
-            value={{
-              actions: fixture.actions,
-              articles: fixture.articles,
-              collections: fixture.collections,
-              isVisuallyObstructed: cartOpen || loginOpen || cartOpen,
-              mobileViewClosedTheme: 'light',
-            }}
-          >
-            <MobileViewContextProvider>
-              <MobileView />
-            </MobileViewContextProvider>
-          </GlobalNavigationContextProvider>
+          <GlobalNavigationStateContextProvider>
+            <GlobalNavigationContextProvider
+              value={{
+                actions: fixture.actions,
+                articles: fixture.articles,
+                collections: fixture.collections,
+                isVisuallyObstructed: cartOpen || loginOpen || cartOpen,
+                mobileViewClosedTheme: 'light',
+              }}
+            >
+              <MobileViewContextProvider>
+                <MobileView />
+              </MobileViewContextProvider>
+            </GlobalNavigationContextProvider>
+          </GlobalNavigationStateContextProvider>
           <HeroBanner
             backgroundColor="#202b52"
             theme="light"

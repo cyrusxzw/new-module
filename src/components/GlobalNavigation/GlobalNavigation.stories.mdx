@@ -8,7 +8,10 @@ import {
   GlobalNavigationContextProvider,
   GlobalNavigationStateContextProvider,
 } from './GlobalNavigation.context';
-import { GlobalNavigationFixture } from './GlobalNavigation.fixture';
+import {
+  GlobalNavigationFixture,
+  actionAccountAuthenticated,
+} from './GlobalNavigation.fixture';
 
 <Meta title="Components/GlobalNavigation" component={GlobalNavigation} />
 
@@ -58,7 +61,7 @@ import { GlobalNavigationFixture } from './GlobalNavigation.fixture';
       actions.cart.onClick = handleOnCartClick;
       actions.search.onClick = handleOnSearchClick;
       if (isLoggedIn) {
-        actions.account = GlobalNavigationFixture.actionAccountAuthenticated;
+        actions.account = actionAccountAuthenticated;
       } else {
         // is anonymous
         actions.account = GlobalNavigationFixture.actions.account;

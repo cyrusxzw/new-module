@@ -21,7 +21,7 @@ const ListItem: ListItemType = ({
     returnElement = <Collection {...{ ...itemProps, isVisible }} />;
   } else if (itemProps.type === 'nested-collection') {
     returnElement = <NestedCollection {...{ ...itemProps, isVisible }} />;
-  } else if (itemProps.type === 'promotion-card') {
+  } else if (itemProps.type === 'promotion') {
     returnElement = <PromotionCard {...{ ...itemProps, isVisible }} />;
   } else if (itemProps.type === 'link') {
     returnElement = (

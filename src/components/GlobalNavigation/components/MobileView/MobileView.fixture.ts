@@ -1,11 +1,11 @@
 const MobileViewFixture = {
   articles: [
     {
-      id: 'article-card',
+      id: 'article',
       label: 'Article Card Label',
       title: 'See all Skin Care Card',
-      type: 'article-card' as const,
-      url: '#article-card',
+      type: 'article' as const,
+      url: '#article',
       metaLabel: 'Article Card  •  Meta Label',
       image: {
         altText: 'Image of Article Card',
@@ -89,7 +89,7 @@ const MobileViewFixture = {
         id: 'see-all-skin-care-card',
         label: 'See all Skin Care Card Label',
         title: 'See all Skin Care Card',
-        type: 'promotion-card' as const,
+        type: 'promotion' as const,
         url: '#see-all-skin-care-card',
         heading: 'See all Skin Care Card Heading',
         image: {

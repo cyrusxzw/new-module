@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import type {
   GlobalNavigationStateContextProviderType,
   GlobalNavigationStateContextType,
@@ -41,7 +41,9 @@ const useGlobalNavigationStateContext = (): GlobalNavigationStateContextType => 
 const GlobalNavigationContext = createContext(undefined);
 
 /** keeping store incase of any programatic changes */
-const useGlobalNavigationStore: UseGlobalNavigationStore = (value) => value;
+const useGlobalNavigationStore: UseGlobalNavigationStore = (
+  value: GlobalNavigationContextType,
+): GlobalNavigationContextType => value;
 
 const GlobalNavigationContextProvider: GlobalNavigationContextProviderType = ({
   children,

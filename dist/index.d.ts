@@ -1144,7 +1144,7 @@ declare type Link = Clickable & {
 };
 declare type Promotion = Clickable & {
     heading: string;
-    type: 'promotion-card';
+    type: 'promotion';
     url: string;
     image?: {
         altText: string;
@@ -1159,6 +1159,7 @@ declare type Promotion = Clickable & {
 };
 declare type Article = Clickable & {
     isVisible?: boolean;
+    type: 'article';
     metaLabel: string;
     url: string;
     image?: {
@@ -1196,6 +1197,10 @@ declare type Collection = Clickable & {
     promotion?: Promotion;
     type: 'collection';
 };
+declare type GlobalNavigationProps = {
+    className?: string;
+};
+declare type GlobalNavigationType = ComponentWithChildren<GlobalNavigationProps>;
 declare type GlobalNavigationStateContextProviderType = ComponentWithChildren;
 declare type GlobalNavigationContextType = {
     actions: Actions;
@@ -1210,10 +1215,6 @@ declare type GlobalNavigationContextProviderProps = {
     value: GlobalNavigationContextType;
 };
 declare type GlobalNavigationContextProviderType = ComponentWithChildren<GlobalNavigationContextProviderProps>;
-declare type GlobalNavigationProps = {
-    className?: string;
-};
-declare type GlobalNavigationType = ComponentWithChildren<GlobalNavigationProps>;
 
 declare const GlobalNavigationStateContextProvider: GlobalNavigationStateContextProviderType;
 declare const GlobalNavigationContextProvider: GlobalNavigationContextProviderType;
