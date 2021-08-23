@@ -1,0 +1,3 @@
+const DesktopViewFixture = {};
+
+export { DesktopViewFixture };

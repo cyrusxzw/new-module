@@ -55,9 +55,8 @@
   position: absolute;
   top: var(--layout-sm-spacing);
   right: var(--layout-sm-spacing);
-  width: 16px;
-  height: 16px;
-  padding: 5px;
+  width: 14px;
+  height: 14px;
   transition: outline-offset 300ms var(--easing-ease-out-cubic);
 
   @media (--viewport-md) {

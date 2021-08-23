@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, MutableRefObject, VFC, MouseEventHandler, SetStateAction, RefObject } from 'react';
+import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, MutableRefObject, VFC, SetStateAction, MouseEventHandler, RefObject } from 'react';
 import PropTypes from 'prop-types';
 import { Mode } from 'react-hook-form/dist/index.ie11';
 
@@ -372,7 +372,7 @@ declare type ConditionalWrapperType = ComponentWithChildren<ConditionalWrapperPr
 declare const ConditionalWrapper: ConditionalWrapperType;
 
 declare type Image$2 = Pick<ImageProps, 'altText' | 'sizes'>;
-declare type Article = {
+declare type Article$1 = {
     articleRef?: MutableRefObject<HTMLDivElement>;
     category?: string;
     horizontalThumbnail?: Image$2;
@@ -383,7 +383,7 @@ declare type Article = {
     uri?: string;
     verticalThumbnail?: Image$2;
 };
-declare type ContentHubArticleProps = Article & {
+declare type ContentHubArticleProps = Article$1 & {
     className?: string;
     dataTestRef: string;
     isHorizontal?: boolean;
@@ -395,7 +395,7 @@ declare type ContentHubArticleType = ComponentWithoutChildren<ContentHubArticleP
 
 declare const ContentHubArticle: ContentHubArticleType;
 
-declare type ListArticle = Article & {
+declare type ListArticle = Article$1 & {
     mobileArticleRef?: MutableRefObject<HTMLDivElement>;
 };
 declare type ContentHubArticleListProps = {
@@ -1092,8 +1092,64 @@ declare type MediaWithContentProps = {
 
 declare const MediaWithContent: React$1.ForwardRefExoticComponent<MediaWithContentProps & React$1.RefAttributes<HTMLDivElement>>;
 
-declare type ArticleCardProps = Clickable & {
+declare type MobileViewContextProviderType = ComponentWithChildren;
+declare type MobileViewProps = {
+    className?: string;
+};
+declare type MobileViewType = ComponentWithoutChildren<MobileViewProps>;
+
+declare const MobileView: MobileViewType;
+
+declare const MobileViewContextProvider: MobileViewContextProviderType;
+
+declare type TabletViewProps = {
+    className?: string;
+    theme?: Themes;
+};
+declare type TabletViewType = ComponentWithChildren<TabletViewProps>;
+
+declare const TabletView: TabletViewType;
+
+declare type DesktopViewProps = {
+    className?: string;
+    theme?: Themes;
+};
+declare type DesktopViewType = ComponentWithChildren<DesktopViewProps>;
+
+declare const DesktopView: DesktopViewType;
+
+declare type Clickable = {
+    dataTestRef?: string;
+    id: string;
+    label: string;
+    title: string;
+};
+declare type Trigger = Clickable & {
+    onClick: () => void;
+    type: 'trigger';
+};
+declare type Link = Clickable & {
+    url: string;
+    type: 'link';
+};
+declare type Promotion = Clickable & {
+    heading: string;
+    type: 'promotion';
+    url: string;
+    image?: {
+        altText: string;
+        sizes: {
+            large?: string;
+            medium?: string;
+            small?: string;
+            xLarge?: string;
+            xSmall?: string;
+        };
+    };
+};
+declare type Article = Clickable & {
     isVisible?: boolean;
+    type: 'article';
     metaLabel: string;
     url: string;
     image?: {
@@ -1107,64 +1163,18 @@ declare type ArticleCardProps = Clickable & {
         };
     };
 };
-
-declare type SecondaryNavigationItems = (Trigger | Link)[];
-
-declare type Header = {
-    logo: {
-        dataTestRef?: string;
-        screenReaderLabel: string;
-        title: string;
-        url: string;
-    };
-    search: {
-        dataTestRef?: string;
-        onClick: () => void;
-        screenReaderLabel: string;
-        title: string;
-    };
-    cart: {
-        dataTestRef?: string;
-        label: string;
-        onClick: () => void;
-        title: string;
-    };
-    menu: {
-        dataTestRef?: string;
-        screenReaderOpenLabel: string;
-        screenReaderCloseLabel: string;
-        openTitle: string;
+declare type Actions = {
+    logo: Link;
+    search: Trigger;
+    cart: Trigger;
+    menu: Omit<Trigger, 'onClick'> & {
         closeTitle: string;
+        closeLabel: string;
     };
-};
-declare type Clickable = {
-    dataTestRef?: string;
-    id: string;
-    label: string;
-    title: string;
-};
-declare type Link = Clickable & {
-    url: string;
-    type: 'link';
-};
-declare type Trigger = Clickable & {
-    onClick: () => void;
-    type: 'trigger';
-};
-declare type PromotionCard = Clickable & {
-    heading: string;
-    type: 'promotion-card';
-    url: string;
-    image?: {
-        altText: string;
-        sizes: {
-            large?: string;
-            medium?: string;
-            small?: string;
-            xLarge?: string;
-            xSmall?: string;
-        };
-    };
+    read: Trigger;
+    account: Trigger | Link;
+    visit: Trigger;
+    support: Trigger;
 };
 declare type NestedCollection = Clickable & {
     items: Link[];
@@ -1174,22 +1184,37 @@ declare type Collection = Clickable & {
     backLabel?: string;
     backgroundColor?: string;
     items: (NestedCollection | Link)[];
-    promotion?: PromotionCard;
+    promotion?: Promotion;
     type: 'collection';
 };
-declare type MobileNavigationProps = {
-    articles?: ArticleCardProps[];
+declare type GlobalNavigationProps = {
     className?: string;
-    closedTheme?: Themes;
-    header: Header;
+};
+declare type GlobalNavigationType = ComponentWithChildren<GlobalNavigationProps>;
+declare type GlobalNavigationStateContextProviderType = ComponentWithChildren;
+declare type GlobalNavigationStateContextType = {
+    isOpen: boolean;
+    setIsOpen: Dispatch<SetStateAction<boolean>>;
+};
+declare type GlobalNavigationContextType = {
+    actions: Actions;
+    articles: Article[];
+    className?: string;
+    collections: Collection[];
     isVisuallyObstructed?: boolean;
-    items: Collection[];
-    secondaryItems?: SecondaryNavigationItems;
+    mobileViewClosedTheme?: Themes;
     theme?: Themes;
 };
-declare type MobileNavigationType = ComponentWithoutChildren<MobileNavigationProps>;
+declare type GlobalNavigationContextProviderProps = {
+    value: GlobalNavigationContextType;
+};
+declare type GlobalNavigationContextProviderType = ComponentWithChildren<GlobalNavigationContextProviderProps>;
 
-declare const MobileNavigation: MobileNavigationType;
+declare const GlobalNavigationStateContextProvider: GlobalNavigationStateContextProviderType;
+declare const useGlobalNavigationStateContext: () => GlobalNavigationStateContextType;
+declare const GlobalNavigationContextProvider: GlobalNavigationContextProviderType;
+
+declare const GlobalNavigation: GlobalNavigationType;
 
 declare type ModalBodyCopy = {
     copy?: {
@@ -1955,7 +1980,14 @@ declare const index_d$a_LinkButtonGroup: typeof LinkButtonGroup;
 declare const index_d$a_LoadMoreButton: typeof LoadMoreButton;
 declare const index_d$a_Loading: typeof Loading;
 declare const index_d$a_MediaWithContent: typeof MediaWithContent;
-declare const index_d$a_MobileNavigation: typeof MobileNavigation;
+declare const index_d$a_MobileView: typeof MobileView;
+declare const index_d$a_MobileViewContextProvider: typeof MobileViewContextProvider;
+declare const index_d$a_TabletView: typeof TabletView;
+declare const index_d$a_DesktopView: typeof DesktopView;
+declare const index_d$a_GlobalNavigationContextProvider: typeof GlobalNavigationContextProvider;
+declare const index_d$a_GlobalNavigationStateContextProvider: typeof GlobalNavigationStateContextProvider;
+declare const index_d$a_useGlobalNavigationStateContext: typeof useGlobalNavigationStateContext;
+declare const index_d$a_GlobalNavigation: typeof GlobalNavigation;
 declare const index_d$a_Modal: typeof Modal;
 declare const index_d$a_NavigationBar: typeof NavigationBar;
 declare const index_d$a_NotificationModal: typeof NotificationModal;
@@ -2023,7 +2055,14 @@ declare namespace index_d$a {
     index_d$a_LoadMoreButton as LoadMoreButton,
     index_d$a_Loading as Loading,
     index_d$a_MediaWithContent as MediaWithContent,
-    index_d$a_MobileNavigation as MobileNavigation,
+    index_d$a_MobileView as MobileView,
+    index_d$a_MobileViewContextProvider as MobileViewContextProvider,
+    index_d$a_TabletView as TabletView,
+    index_d$a_DesktopView as DesktopView,
+    index_d$a_GlobalNavigationContextProvider as GlobalNavigationContextProvider,
+    index_d$a_GlobalNavigationStateContextProvider as GlobalNavigationStateContextProvider,
+    index_d$a_useGlobalNavigationStateContext as useGlobalNavigationStateContext,
+    index_d$a_GlobalNavigation as GlobalNavigation,
     index_d$a_Modal as Modal,
     index_d$a_NavigationBar as NavigationBar,
     index_d$a_NotificationModal as NotificationModal,
@@ -2778,4 +2817,4 @@ declare namespace index_d {
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, MobileNavigation, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$a as components, index_d$9 as constants, index_d$8 as contexts, index_d$7 as customHooks, index_d$6 as environment, index_d$4 as objects, index_d$2 as product, index_d$b as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useFocusOnFirst, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useTrapFocus, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DesktopView, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, MobileView, MobileViewContextProvider, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TabletView, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$a as components, index_d$9 as constants, index_d$8 as contexts, index_d$7 as customHooks, index_d$6 as environment, index_d$4 as objects, index_d$2 as product, index_d$b as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useFocusOnFirst, useGlobalNavigationStateContext, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useTrapFocus, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };

@@ -1,0 +1,3 @@
+const TabletViewFixture = {};
+
+export { TabletViewFixture };
