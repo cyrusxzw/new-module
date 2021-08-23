@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, MutableRefObject, VFC, MouseEventHandler, SetStateAction, RefObject } from 'react';
+import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, MutableRefObject, VFC, SetStateAction, MouseEventHandler, RefObject } from 'react';
 import PropTypes from 'prop-types';
 import { Mode } from 'react-hook-form/dist/index.ie11';
 
@@ -1092,15 +1092,6 @@ declare type MediaWithContentProps = {
 
 declare const MediaWithContent: React$1.ForwardRefExoticComponent<MediaWithContentProps & React$1.RefAttributes<HTMLDivElement>>;
 
-declare type MobileViewContextType = {
-    activeCollectionId: string;
-    activeNestedCollectionIds: string;
-    onBackButtonClick: () => void;
-    onCollectionClick: (id: string) => void;
-    onNestedCollectionClick: (id: string) => void;
-    setActiveCollectionId: (id: string) => void;
-    setActiveNestedCollectionIds: (ids: string[]) => void;
-};
 declare type MobileViewContextProviderType = ComponentWithChildren;
 declare type MobileViewProps = {
     className?: string;
@@ -1110,7 +1101,6 @@ declare type MobileViewType = ComponentWithoutChildren<MobileViewProps>;
 declare const MobileView: MobileViewType;
 
 declare const MobileViewContextProvider: MobileViewContextProviderType;
-declare const useMobileViewContext: () => MobileViewContextType;
 
 declare type TabletViewProps = {
     className?: string;
@@ -1202,6 +1192,10 @@ declare type GlobalNavigationProps = {
 };
 declare type GlobalNavigationType = ComponentWithChildren<GlobalNavigationProps>;
 declare type GlobalNavigationStateContextProviderType = ComponentWithChildren;
+declare type GlobalNavigationStateContextType = {
+    isOpen: boolean;
+    setIsOpen: Dispatch<SetStateAction<boolean>>;
+};
 declare type GlobalNavigationContextType = {
     actions: Actions;
     articles: Article[];
@@ -1217,6 +1211,7 @@ declare type GlobalNavigationContextProviderProps = {
 declare type GlobalNavigationContextProviderType = ComponentWithChildren<GlobalNavigationContextProviderProps>;
 
 declare const GlobalNavigationStateContextProvider: GlobalNavigationStateContextProviderType;
+declare const useGlobalNavigationStateContext: () => GlobalNavigationStateContextType;
 declare const GlobalNavigationContextProvider: GlobalNavigationContextProviderType;
 
 declare const GlobalNavigation: GlobalNavigationType;
@@ -1987,11 +1982,11 @@ declare const index_d$a_Loading: typeof Loading;
 declare const index_d$a_MediaWithContent: typeof MediaWithContent;
 declare const index_d$a_MobileView: typeof MobileView;
 declare const index_d$a_MobileViewContextProvider: typeof MobileViewContextProvider;
-declare const index_d$a_useMobileViewContext: typeof useMobileViewContext;
 declare const index_d$a_TabletView: typeof TabletView;
 declare const index_d$a_DesktopView: typeof DesktopView;
 declare const index_d$a_GlobalNavigationContextProvider: typeof GlobalNavigationContextProvider;
 declare const index_d$a_GlobalNavigationStateContextProvider: typeof GlobalNavigationStateContextProvider;
+declare const index_d$a_useGlobalNavigationStateContext: typeof useGlobalNavigationStateContext;
 declare const index_d$a_GlobalNavigation: typeof GlobalNavigation;
 declare const index_d$a_Modal: typeof Modal;
 declare const index_d$a_NavigationBar: typeof NavigationBar;
@@ -2062,11 +2057,11 @@ declare namespace index_d$a {
     index_d$a_MediaWithContent as MediaWithContent,
     index_d$a_MobileView as MobileView,
     index_d$a_MobileViewContextProvider as MobileViewContextProvider,
-    index_d$a_useMobileViewContext as useMobileViewContext,
     index_d$a_TabletView as TabletView,
     index_d$a_DesktopView as DesktopView,
     index_d$a_GlobalNavigationContextProvider as GlobalNavigationContextProvider,
     index_d$a_GlobalNavigationStateContextProvider as GlobalNavigationStateContextProvider,
+    index_d$a_useGlobalNavigationStateContext as useGlobalNavigationStateContext,
     index_d$a_GlobalNavigation as GlobalNavigation,
     index_d$a_Modal as Modal,
     index_d$a_NavigationBar as NavigationBar,
@@ -2822,4 +2817,4 @@ declare namespace index_d {
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DesktopView, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, MobileView, MobileViewContextProvider, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TabletView, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$a as components, index_d$9 as constants, index_d$8 as contexts, index_d$7 as customHooks, index_d$6 as environment, index_d$4 as objects, index_d$2 as product, index_d$b as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useFocusOnFirst, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useMobileViewContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useTrapFocus, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DesktopView, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, MobileView, MobileViewContextProvider, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TabletView, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$a as components, index_d$9 as constants, index_d$8 as contexts, index_d$7 as customHooks, index_d$6 as environment, index_d$4 as objects, index_d$2 as product, index_d$b as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useFocusOnFirst, useGlobalNavigationStateContext, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useTrapFocus, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };

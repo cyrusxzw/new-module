@@ -38,15 +38,13 @@ export { LoadMoreButton } from './LoadMoreButton';
 export { Loading } from './Loading';
 export { MediaWithContent } from './MediaWithContent';
 export { MobileView } from './GlobalNavigation/components/MobileView';
-export {
-  MobileViewContextProvider,
-  useMobileViewContext,
-} from './GlobalNavigation/components/MobileView/MobileView.context';
+export { MobileViewContextProvider } from './GlobalNavigation/components/MobileView/MobileView.context';
 export { TabletView } from './GlobalNavigation/components/TabletView';
 export { DesktopView } from './GlobalNavigation/components/DesktopView';
 export {
   GlobalNavigationContextProvider,
   GlobalNavigationStateContextProvider,
+  useGlobalNavigationStateContext,
 } from './GlobalNavigation/GlobalNavigation.context';
 export { GlobalNavigation } from './GlobalNavigation';
 export { Modal } from './Modal';

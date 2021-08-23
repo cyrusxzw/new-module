@@ -69,11 +69,11 @@ export {
   Video,
   MobileView,
   MobileViewContextProvider,
-  useMobileViewContext,
   TabletView,
   DesktopView,
   GlobalNavigationContextProvider,
   GlobalNavigationStateContextProvider,
+  useGlobalNavigationStateContext,
   GlobalNavigation,
 } from './components';
 
