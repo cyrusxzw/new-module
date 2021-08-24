@@ -55,7 +55,7 @@ describe('<PersonalInfoSummary />', () => {
     );
 
     expect(
-      screen.getByText(`${mockPrefix} ${lastName} ${firstName} ${suffix}`),
+      screen.getByText(`${mockPrefix} ${lastName}${firstName} ${suffix}`),
     ).toBeInTheDocument();
   });
 
