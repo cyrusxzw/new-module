@@ -26,7 +26,7 @@ const PersonalInfoSummary: PersonalInfoSummaryType = ({
     : '';
 
   const fullName = shouldSwapFullNameOrder
-    ? `${userDetails.lastName} ${userDetails.firstName}`
+    ? `${userDetails.lastName}${userDetails.firstName}`
     : `${userDetails.firstName} ${userDetails.lastName}`;
 
   const suffix = userDetails.suffix ?? '';
