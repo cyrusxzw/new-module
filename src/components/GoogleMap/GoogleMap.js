@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import isFunction from 'lodash/isFunction';
 import { renderToStaticMarkup } from 'react-dom/server.browser';
-import MarkerClusterer from '@google/markerclusterer';
+import MarkerClusterer from '@googlemaps/markerclustererplus';
 import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS, STORES } from '~/constants';
 import { useGoogleMapsContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';

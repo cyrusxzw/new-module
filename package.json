@@ -40,7 +40,6 @@
   },
   "homepage": "https://github.com/aesop/aesop-gel",
   "peerDependencies": {
-    "@google/markerclusterer": "1.0.1",
     "classnames": "^2.2.5",
     "google-maps": "^3.2.1",
     "lodash": "^4.17.21",
@@ -58,7 +57,7 @@
     "wavesurfer.js": "3.3.3"
   },
   "dependencies": {
-    "@google/markerclusterer": "1.0.1",
+    "@googlemaps/markerclustererplus": "^1.2.0",
     "classnames": "^2.2.5",
     "google-maps": "^3.2.1",
     "lodash": "^4.17.21",
@@ -113,6 +112,7 @@
     "@testing-library/react-hooks": "^5.1.2",
     "@testing-library/user-event": "^13.1.6",
     "@types/classnames": "^2.2.11",
+    "@types/google.maps": "^3.45.6",
     "@types/jest": "^26.0.23",
     "@types/jest-axe": "^3.5.1",
     "@types/lodash": "^4.14.168",
