@@ -3,9 +3,9 @@ import cx from 'classnames';
 import {
   Collection,
   Link,
-  PromotionCard,
   NestedCollection,
-} from '../../components';
+} from '~/components/GlobalNavigation/components/MobileView/components';
+import { PromotionCard } from '~/components/GlobalNavigation/components';
 import type { ListItemType } from './ListItem.types';
 import compositionStyles from '../../MobileView.module.css';
 
@@ -19,7 +19,10 @@ const ListItem: ListItemType = ({
 
   if (itemProps.type === 'collection') {
     returnElement = <Collection {...{ ...itemProps, isVisible }} />;
-  } else if (itemProps.type === 'nested-collection') {
+  } else if (
+    itemProps.type === 'nested-collection' ||
+    itemProps.type === 'notable-nested-collection'
+  ) {
     returnElement = <NestedCollection {...{ ...itemProps, isVisible }} />;
   } else if (itemProps.type === 'promotion') {
     returnElement = <PromotionCard {...{ ...itemProps, isVisible }} />;

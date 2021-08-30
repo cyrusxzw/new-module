@@ -50,7 +50,7 @@ describe('<MobileView />', () => {
         <GlobalNavigationContextProvider
           value={{
             actions: GlobalNavigationFixture.actions,
-            articles: GlobalNavigationFixture.articles,
+            read: GlobalNavigationFixture.read,
             collections: collections,
           }}
         >

@@ -1,0 +1,32 @@
+@import 'styles/index';
+
+.base {
+  position: absolute;
+  z-index: 10;
+  top: 74px;
+  right: 0;
+  bottom: 0;
+  left: -35px;
+  width: 100vw;
+  pointer-events: none;
+
+  &.menuOpen {
+    pointer-events: auto;
+  }
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  opacity: 0;
+  overflow-y: auto;
+  pointer-events: none;
+  transition: opacity 200ms var(--easing-ease-in-out-cubic);
+}
+
+.active {
+  z-index: 11;
+  opacity: 1;
+  pointer-events: auto;
+}

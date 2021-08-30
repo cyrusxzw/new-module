@@ -903,6 +903,7 @@ declare const Hyperlink: React$1.ForwardRefExoticComponent<HyperlinkProps & Reac
 
 declare type SvgName = '' | 'aesop' | 'chevron' | 'close' | 'downArrow' | 'download' | 'muted' | 'pause' | 'play' | 'plusAndCloseWithCircle' | 'rightArrow' | 'rightUpArrow' | 'scrolldown' | 'search' | 'seek' | 'unmuted' | 'warning';
 declare type IconProps = {
+    aria?: Pick<Aria, 'hidden'>;
     className?: string;
     dataRef?: string;
     height?: number;
@@ -1115,12 +1116,19 @@ declare const TabletView: TabletViewType;
 
 declare type DesktopViewProps = {
     className?: string;
-    theme?: Themes;
 };
-declare type DesktopViewType = ComponentWithChildren<DesktopViewProps>;
+declare type DesktopViewType = ComponentWithoutChildren<DesktopViewProps>;
 
 declare const DesktopView: DesktopViewType;
 
+declare type CollectionImage = {
+    altText: string;
+    sizes: {
+        medium?: string;
+        large?: string;
+        small?: string;
+    };
+};
 declare type Clickable = {
     dataTestRef?: string;
     id: string;
@@ -1132,52 +1140,53 @@ declare type Trigger = Clickable & {
     type: 'trigger';
 };
 declare type Link = Clickable & {
-    url: string;
+    alternateLabel?: string;
     type: 'link';
+    url: string;
 };
 declare type Promotion = Clickable & {
     heading: string;
+    image?: CollectionImage;
     type: 'promotion';
     url: string;
-    image?: {
-        altText: string;
-        sizes: {
-            large?: string;
-            medium?: string;
-            small?: string;
-            xLarge?: string;
-            xSmall?: string;
-        };
-    };
 };
 declare type Article = Clickable & {
+    duration?: string;
+    image?: CollectionImage;
     isVisible?: boolean;
-    type: 'article';
     metaLabel: string;
+    type: 'article';
     url: string;
-    image?: {
-        altText: string;
-        sizes: {
-            large?: string;
-            medium?: string;
-            small?: string;
-            xLarge?: string;
-            xSmall?: string;
-        };
-    };
+};
+declare type Read = Clickable & {
+    articles: Article[];
+    articlesListHeading?: string;
+    backLabel?: string;
+    backgroundColor?: string;
+    image?: CollectionImage;
+    items: (Link | NestedCollection)[];
+    topLevelCollectionLabel?: string;
+    type: 'read-collection';
 };
 declare type Actions = {
-    logo: Link;
-    search: Trigger;
+    account: Link | Trigger;
     cart: Trigger;
-    menu: Omit<Trigger, 'onClick'> & {
-        closeTitle: string;
-        closeLabel: string;
-    };
-    read: Trigger;
-    account: Trigger | Link;
-    visit: Trigger;
+    logo: Link;
     support: Trigger;
+    menu: Omit<Trigger, 'onClick'> & {
+        closeLabel: string;
+        closeTitle: string;
+    };
+    search: Trigger & {
+        component: () => ReactElement;
+    };
+    visit: Trigger & {
+        component: () => ReactElement;
+    };
+};
+declare type NotableNestedCollection = Clickable & {
+    items: Link[];
+    type: 'notable-nested-collection';
 };
 declare type NestedCollection = Clickable & {
     items: Link[];
@@ -1186,26 +1195,35 @@ declare type NestedCollection = Clickable & {
 declare type Collection = Clickable & {
     backLabel?: string;
     backgroundColor?: string;
-    items: (NestedCollection | Link)[];
+    image?: CollectionImage;
+    items: (Link | NestedCollection | NotableNestedCollection)[];
     promotion?: Promotion;
+    topLevelCollectionLabel?: string;
     type: 'collection';
 };
 declare type GlobalNavigationProps = {
     className?: string;
 };
 declare type GlobalNavigationType = ComponentWithChildren<GlobalNavigationProps>;
-declare type GlobalNavigationStateContextProviderType = ComponentWithChildren;
+declare type GlobalNavigationStateContextProviderProps = {
+    activeCollectionId?: string;
+    isOpen?: boolean;
+};
+declare type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavigationStateContextProviderProps>;
 declare type GlobalNavigationStateContextType = {
+    activeCollectionId: string;
     isOpen: boolean;
+    setActiveCollectionId: (id: string) => void;
     setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 declare type GlobalNavigationContextType = {
     actions: Actions;
-    articles: Article[];
     className?: string;
     collections: Collection[];
+    desktopViewLogoTheme?: Themes;
     isVisuallyObstructed?: boolean;
     mobileViewClosedTheme?: Themes;
+    read: Read;
     theme?: Themes;
 };
 declare type GlobalNavigationContextProviderProps = {
@@ -1217,6 +1235,9 @@ declare const GlobalNavigationStateContextProvider: GlobalNavigationStateContext
 declare const useGlobalNavigationStateContext: () => GlobalNavigationStateContextType;
 declare const GlobalNavigationContextProvider: GlobalNavigationContextProviderType;
 
+/** @TODO Tracking exand / collapse */
+/** Add label to where closed + log current analytic push */
+/** Hovering as a tracking push */
 declare const GlobalNavigation: GlobalNavigationType;
 
 declare type ModalBodyCopy = {

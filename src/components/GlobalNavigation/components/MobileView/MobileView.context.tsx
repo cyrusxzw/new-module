@@ -13,10 +13,6 @@ const useMobileViewContextStore = () => {
     [],
   );
 
-  const handleOnCollectionClick = (id: string) => {
-    setActiveCollectionId(id);
-  };
-
   const handleOnNestedCollectionClick = (id: string) => {
     setActiveNestedCollectionIds((currentState) => {
       if (currentState.includes(id)) {
@@ -36,7 +32,6 @@ const useMobileViewContextStore = () => {
     activeCollectionId,
     activeNestedCollectionIds,
     onBackButtonClick: handleOnBackButtonClick,
-    onCollectionClick: handleOnCollectionClick,
     onNestedCollectionClick: handleOnNestedCollectionClick,
     setActiveCollectionId,
     setActiveNestedCollectionIds,

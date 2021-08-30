@@ -8,6 +8,7 @@ import type { IconType } from './Icon.types';
 import styles from './Icon.module.css';
 
 const Icon: IconType = ({
+  aria,
   className,
   dataRef,
   height = 12,
@@ -40,6 +41,7 @@ const Icon: IconType = ({
 
   return (
     <svg
+      aria-hidden={aria?.hidden ?? null}
       aria-labelledby={uidAriaLabelBy}
       className={classSet}
       data-ref={dataRef}

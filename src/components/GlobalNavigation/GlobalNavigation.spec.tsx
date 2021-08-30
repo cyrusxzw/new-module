@@ -14,9 +14,9 @@ describe('<GlobalNavigation />', () => {
         <GlobalNavigationContextProvider
           value={{
             actions: GlobalNavigationFixture.actions,
-            articles: GlobalNavigationFixture.articles,
             collections: GlobalNavigationFixture.collections,
             isVisuallyObstructed: false,
+            read: GlobalNavigationFixture.read,
           }}
         >
           <GlobalNavigation />

@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import type { ButtonProps } from './Button.types';
 import styles from './Button.module.css';
 
@@ -17,18 +18,20 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ButtonRef(
     tabIndex,
     title,
     type = 'button',
-    theme = 'dark',
+    theme,
     ...otherProps
   },
   ref,
 ) {
+  const currentTheme = useThemeContext(theme, 'dark');
+
   if (!children) return null;
 
   const classSet = cx(
     styles.base,
     { [styles.alternate]: isAlternate },
     { [styles.blockStyle]: !isInline },
-    styles[theme],
+    styles[currentTheme],
     { [styles.disabled]: !isEnabled },
     className,
   );

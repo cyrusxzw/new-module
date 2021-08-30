@@ -1,0 +1,3 @@
+const PrimaryNavigationFixture = {};
+
+export { PrimaryNavigationFixture };

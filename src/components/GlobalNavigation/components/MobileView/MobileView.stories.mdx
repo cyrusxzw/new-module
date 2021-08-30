@@ -32,9 +32,6 @@ import { MobileViewFixture } from './MobileView.fixture';
       const [cartOpen, setCartOpen] = React.useState(false);
       const handleOnCartClick = () => setCartOpen(true);
       const handleOnCartCloseClick = () => setCartOpen(false);
-      const [searchOpen, setSearchOpen] = React.useState(false);
-      const handleOnSearchClick = () => setSearchOpen(true);
-      const handleOnSearchCloseClick = () => setSearchOpen(false);
       const [loginOpen, setLoginOpen] = React.useState(false);
       const handleOnLoginClick = () => setLoginOpen(true);
       const handleOnLoginCloseClick = () => setLoginOpen(false);
@@ -62,14 +59,13 @@ import { MobileViewFixture } from './MobileView.fixture';
       };
       const fixture = { ...GlobalNavigationFixture };
       fixture.actions.cart.onClick = handleOnCartClick;
-      fixture.actions.search.onClick = handleOnSearchClick;
       return (
         <>
           <GlobalNavigationStateContextProvider>
             <GlobalNavigationContextProvider
               value={{
                 actions: fixture.actions,
-                articles: fixture.articles,
+                read: fixture.read,
                 collections: fixture.collections,
                 isVisuallyObstructed: cartOpen || loginOpen || cartOpen,
                 mobileViewClosedTheme,
@@ -89,15 +85,6 @@ import { MobileViewFixture } from './MobileView.fixture';
             onClose={handleOnCartCloseClick}
           >
             You have 0 items in you cart.
-          </Modal>
-          <Modal
-            copy={{
-              close: 'Close Modal',
-            }}
-            isVisible={searchOpen}
-            onClose={handleOnSearchCloseClick}
-          >
-            Search component
           </Modal>
           <StorybookGridOverlay {...implementation.gridOverlay} />
         </>
@@ -120,9 +107,6 @@ import { MobileViewFixture } from './MobileView.fixture';
       const [cartOpen, setCartOpen] = React.useState(false);
       const handleOnCartClick = () => setCartOpen(true);
       const handleOnCartCloseClick = () => setCartOpen(false);
-      const [searchOpen, setSearchOpen] = React.useState(false);
-      const handleOnSearchClick = () => setSearchOpen(true);
-      const handleOnSearchCloseClick = () => setSearchOpen(false);
       const [loginOpen, setLoginOpen] = React.useState(false);
       const handleOnLoginClick = () => setLoginOpen(true);
       const handleOnLoginCloseClick = () => setLoginOpen(false);
@@ -138,17 +122,17 @@ import { MobileViewFixture } from './MobileView.fixture';
       };
       const fixture = { ...GlobalNavigationFixture };
       fixture.actions.cart.onClick = handleOnCartClick;
-      fixture.actions.search.onClick = handleOnSearchClick;
       return (
         <>
           <GlobalNavigationStateContextProvider>
             <GlobalNavigationContextProvider
               value={{
                 actions: fixture.actions,
-                articles: fixture.articles,
+                read: fixture.read,
                 collections: fixture.collections,
                 isVisuallyObstructed: cartOpen || loginOpen || cartOpen,
                 mobileViewClosedTheme: 'light',
+                desktopViewLogoTheme: 'light',
               }}
             >
               <MobileViewContextProvider>
@@ -182,15 +166,6 @@ import { MobileViewFixture } from './MobileView.fixture';
             onClose={handleOnCartCloseClick}
           >
             You have 0 items in you cart.
-          </Modal>
-          <Modal
-            copy={{
-              close: 'Close Modal',
-            }}
-            isVisible={searchOpen}
-            onClose={handleOnSearchCloseClick}
-          >
-            Search component
           </Modal>
           <StorybookGridOverlay {...implementation.gridOverlay} />
         </>

@@ -1,0 +1,32 @@
+@import 'styles/index';
+
+.base {
+  display: flex;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  pointer-events: none;
+  transform: translateX(-5px);
+}
+
+.closeMenueItem {
+  display: flex;
+  height: 72px;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.searchIcon {
+  transform: translateY(3px);
+
+  .dark & {
+    path {
+      fill: var(--color-dark-label);
+    }
+  }
+
+  .light & path {
+    fill: var(--color-light-label);
+  }
+}

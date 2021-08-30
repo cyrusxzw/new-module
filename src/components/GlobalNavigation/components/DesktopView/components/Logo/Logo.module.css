@@ -1,0 +1,39 @@
+@import 'styles/index';
+
+.base {
+  position: absolute;
+  z-index: 20;
+  top: calc(80px + 74px + 25px);
+  left: 0;
+  padding: 5px;
+  pointer-events: auto;
+  transform: translateX(-5px);
+
+  &.active {
+    top: calc(80px + 74px);
+  }
+
+  &.dark:focus:not(:hover) {
+    outline: 1px dashed var(--color-dark-decoration);
+    outline-offset: 2px;
+  }
+
+  &.light:focus:not(:hover) {
+    outline: 1px dashed var(--color-light-decoration);
+    outline-offset: 2px;
+  }
+}
+
+.icon {
+  &.dark {
+    fill: var(--color-secondary);
+  }
+
+  &.light {
+    fill: var(--color-primary);
+  }
+
+  .active & {
+    fill: var(--color-secondary);
+  }
+}

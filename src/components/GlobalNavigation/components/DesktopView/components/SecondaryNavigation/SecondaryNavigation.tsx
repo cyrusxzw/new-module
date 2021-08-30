@@ -1,0 +1,36 @@
+import React from 'react';
+import { useGlobalNavigationContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import { MenuItem } from '~/components/GlobalNavigation/components/DesktopView/components';
+import type { SecondaryNavigationType } from './SecondaryNavigation.types';
+import styles from './SecondaryNavigation.module.css';
+
+const SecondaryNavigation: SecondaryNavigationType = () => {
+  const {
+    actions: { account, cart },
+  } = useGlobalNavigationContext();
+
+  return (
+    <ul className={styles.base}>
+      <MenuItem
+        dataTestRef={account.dataTestRef}
+        id={account.id}
+        label={account.label}
+        onClick={account.type === 'trigger' ? account.onClick : null}
+        title={account.title}
+        type={account.type}
+        url={account.type === 'link' ? account.url : null}
+      />
+
+      <MenuItem
+        dataTestRef={cart.dataTestRef ?? 'NAV_CART'}
+        id={cart.id}
+        label={cart.label}
+        onClick={cart.onClick}
+        title={cart.title}
+        type={cart.type}
+      />
+    </ul>
+  );
+};
+
+export { SecondaryNavigation };

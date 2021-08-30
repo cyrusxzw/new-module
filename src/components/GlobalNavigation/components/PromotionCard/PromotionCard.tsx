@@ -1,18 +1,19 @@
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import { Hyperlink } from '~/components/Hyperlink';
 import { Heading } from '~/components/Heading';
-import { Paragraph } from '~/components/Paragraph';
-import { Image } from '~/components/Image';
+import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
+import { Image } from '~/components/Image';
+import { Paragraph } from '~/components/Paragraph';
 import type { PromotionCardType } from './PromotionCard.types';
-import compositionStyles from '../../MobileView.module.css';
+import compositionStyles from '../MobileView/MobileView.module.css';
 import styles from './PromotionCard.module.css';
 
 const PromotionCard: PromotionCardType = ({
   heading,
   image,
+  isFlush = false,
   isVisible = true,
   label,
   title,
@@ -25,7 +26,10 @@ const PromotionCard: PromotionCardType = ({
     compositionStyles.itemElement,
     compositionStyles.ornamentalWrapper,
     styles.leftAligned,
+    { [styles.flush]: isFlush },
   );
+
+  if (!heading || !label) return null;
 
   return (
     <Hyperlink

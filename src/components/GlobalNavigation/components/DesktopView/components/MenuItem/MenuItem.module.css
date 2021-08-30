@@ -1,0 +1,46 @@
+@import 'styles/index';
+
+.base {
+  display: flex;
+  height: 72px;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  margin-right: 20px;
+  pointer-events: auto;
+  transition: border-bottom-color 200ms var(--easing-ease-in-out-cubic);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.active {
+  z-index: 11;
+
+  .dark & {
+    border-bottom-color: var(--color-secondary);
+  }
+
+  .light & {
+    border-bottom-color: var(--color-primary);
+  }
+}
+
+.element {
+  padding: 4px;
+  font-family: var(--font-family-sans-serif-medium);
+  font-size: rem(14px);
+  font-weight: normal;
+  transition: outline-offset 200ms var(--easing-ease-out-cubic),
+    color 200ms var(--easing-ease-out-cubic);
+
+  &.dark:focus {
+    outline: 1px dashed var(--color-dark-decoration);
+    outline-offset: 2px;
+  }
+
+  &.light:focus {
+    outline: 1px dashed var(--color-light-decoration);
+    outline-offset: 2px;
+  }
+}

@@ -1,6 +1,12 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as knobs from '@storybook/addon-knobs';
 import { StorybookGridOverlay } from '~.storybook/components';
+import {
+  GlobalNavigationContextProvider,
+  GlobalNavigationStateContextProvider,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
+import { GlobalNavigationFixture } from '~/components/GlobalNavigation/GlobalNavigation.fixture';
+import { DesktopViewContextProvider } from './DesktopView.context';
 import { DesktopView } from './DesktopView';
 import { DesktopViewFixture } from './DesktopView.fixture';
 
@@ -11,6 +17,21 @@ import { DesktopViewFixture } from './DesktopView.fixture';
 <Canvas>
   <Story name="Base component">
     {(() => {
+      const [cartOpen, setCartOpen] = React.useState(false);
+      const handleOnCartClick = () => setCartOpen(true);
+      const handleOnCartCloseClick = () => setCartOpen(false);
+      const [searchOpen, setSearchOpen] = React.useState(false);
+      const handleOnSearchClick = () => setSearchOpen(true);
+      const handleOnSearchCloseClick = () => setSearchOpen(false);
+      const [loginOpen, setLoginOpen] = React.useState(false);
+      const handleOnLoginClick = () => setLoginOpen(true);
+      const handleOnLoginCloseClick = () => setLoginOpen(false);
+      const mobileViewClosedTheme = knobs.select(
+        'mobileViewClosedTheme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
       const theme = knobs.select(
         'theme',
         ['dark', 'light'],
@@ -27,9 +48,27 @@ import { DesktopViewFixture } from './DesktopView.fixture';
           ),
         },
       };
+      const fixture = { ...GlobalNavigationFixture };
+      fixture.actions.cart.onClick = handleOnCartClick;
+      fixture.actions.search.onClick = handleOnSearchClick;
       return (
         <>
-          <DesktopView theme={theme} />
+          <GlobalNavigationStateContextProvider>
+            <GlobalNavigationContextProvider
+              value={{
+                actions: fixture.actions,
+                read: fixture.read,
+                collections: fixture.collections,
+                isVisuallyObstructed: cartOpen || loginOpen || cartOpen,
+                mobileViewClosedTheme,
+                theme,
+              }}
+            >
+              <DesktopViewContextProvider>
+                <DesktopView />
+              </DesktopViewContextProvider>
+            </GlobalNavigationContextProvider>
+          </GlobalNavigationStateContextProvider>
           <StorybookGridOverlay {...implementation.gridOverlay} />
         </>
       );

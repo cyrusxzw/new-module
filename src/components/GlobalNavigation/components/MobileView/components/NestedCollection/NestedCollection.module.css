@@ -3,8 +3,8 @@
 .collapse {
   overflow: hidden;
   opacity: 0;
-  transition: max-height 400ms var(--easing-ease-out-cubic),
-    opacity 400ms var(--easing-ease-out-cubic);
+  transition: max-height 200ms var(--easing-ease-out-cubic),
+    opacity 200ms var(--easing-ease-out-cubic);
 
   &[aria-hidden='false'] {
     opacity: 1;

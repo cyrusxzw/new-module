@@ -2,13 +2,13 @@ import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { Button } from '~/components/Button';
-import { useVariableHeightStyle } from '../../MobileView.hooks';
-import { ListItem } from '../../components';
+import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import { useMobileViewContext } from '~/components/GlobalNavigation/components/MobileView/MobileView.context';
+import { useVariableHeightStyle } from '~/components/GlobalNavigation/components/MobileView/MobileView.hooks';
+import { ListItem } from '~/components/GlobalNavigation/components/MobileView/components';
 import type { NestedCollectionType } from './NestedCollection.types';
 import compositionStyles from '../../MobileView.module.css';
 import styles from './NestedCollection.module.css';
-
-import { useMobileViewContext } from '~/components/GlobalNavigation/components/MobileView/MobileView.context';
 
 const NestedCollection: NestedCollectionType = ({
   id,
@@ -17,13 +17,12 @@ const NestedCollection: NestedCollectionType = ({
   label,
   title,
 }) => {
-  const currentTheme = useThemeContext(null, 'dark');
+  const { activeCollectionId } = useGlobalNavigationStateContext();
   const {
-    activeCollectionId,
     activeNestedCollectionIds,
     onNestedCollectionClick,
   } = useMobileViewContext();
-
+  const currentTheme = useThemeContext(null, 'dark');
   const isActive = activeNestedCollectionIds.includes(id);
   const { ref, style } = useVariableHeightStyle(isActive);
   const handleOnNestedClick = () => onNestedCollectionClick(id);
@@ -33,12 +32,6 @@ const NestedCollection: NestedCollectionType = ({
     compositionStyles.sublist,
     styles.collapse,
   );
-
-  /** @TODO Tracking exand / collapse */
-
-  /** Add label to where closed + log current analytic push */
-
-  /** Hovering as a tracking push */
 
   return (
     <>

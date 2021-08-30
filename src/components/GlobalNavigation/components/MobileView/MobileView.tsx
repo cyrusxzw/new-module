@@ -2,39 +2,40 @@ import React from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
 import {
+  useGlobalNavigationContext,
+  useGlobalNavigationStateContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
+import {
   useEscapeKeyListener,
   useOverflowHidden,
   useTrapFocus,
 } from '~/customHooks';
 import { Transition } from '~/components/Transition';
 import {
-  useGlobalNavigationContext,
-  useGlobalNavigationStateContext,
-} from '~/components/GlobalNavigation/GlobalNavigation.context';
-import { useMobileViewContext } from './MobileView.context';
-import {
   ArticleList,
   Header,
   PrimaryNavigation,
   SecondaryNavigation,
 } from './components';
+import { useMobileViewContext } from './MobileView.context';
 import type { MobileViewType } from './MobileView.types';
 import styles from './MobileView.module.css';
 
 const MobileView: MobileViewType = ({ className }) => {
-  const { isOpen, setIsOpen } = useGlobalNavigationStateContext();
+  const {
+    isOpen,
+    setActiveCollectionId,
+    setIsOpen,
+  } = useGlobalNavigationStateContext();
   const {
     actions,
-    articles,
     collections,
     isVisuallyObstructed,
+    read,
     theme,
   } = useGlobalNavigationContext();
 
-  const {
-    setActiveCollectionId,
-    setActiveNestedCollectionIds,
-  } = useMobileViewContext();
+  const { setActiveNestedCollectionIds } = useMobileViewContext();
 
   const currentTheme = useThemeContext(theme, 'dark');
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
@@ -57,7 +58,7 @@ const MobileView: MobileViewType = ({ className }) => {
   );
 
   const secondaryNavigationItems = [
-    actions.read,
+    read,
     actions.account,
     actions.visit,
     actions.support,
@@ -74,7 +75,7 @@ const MobileView: MobileViewType = ({ className }) => {
               <div className={cx(styles.main, { [styles.open]: isOpen })}>
                 <PrimaryNavigation isVisible={isOpen} items={collections} />
                 <SecondaryNavigation items={secondaryNavigationItems} />
-                <ArticleList items={articles} />
+                <ArticleList items={read.articles} />
               </div>
             </Transition>
           </div>

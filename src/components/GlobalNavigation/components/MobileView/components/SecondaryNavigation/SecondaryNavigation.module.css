@@ -26,8 +26,8 @@
   font-family: var(--font-family-sans-serif-regular);
   font-size: rem(14px);
   outline-offset: 0;
-  transition: outline-offset 300ms var(--easing-ease-out-cubic),
-    color 300ms var(--easing-ease-out-cubic);
+  transition: outline-offset 200ms var(--easing-ease-out-cubic),
+    color 200ms var(--easing-ease-out-cubic);
 
   &:hover {
     .ornamentalHover::after {
@@ -52,12 +52,12 @@
   }
 
   .dark &:focus {
-    outline: 1px dashed var(--color-dark-copy-alternate);
+    outline: 1px dashed var(--color-dark-decoration);
     outline-offset: 2px;
   }
 
   .light &:focus {
-    outline: 1px dashed var(--color-dark-copy-alternate);
+    outline: 1px dashed var(--color-dark-decoration);
     outline-offset: 2px;
   }
 }
