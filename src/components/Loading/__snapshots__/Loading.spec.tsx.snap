@@ -3,7 +3,7 @@
 exports[`<Loading /> should render base component correctly 1`] = `
 <div>
   <span
-    class="base isLoading medium dark"
+    class="base isLoading center medium dark"
     data-testid="data-testid-loading"
     role="status"
   >

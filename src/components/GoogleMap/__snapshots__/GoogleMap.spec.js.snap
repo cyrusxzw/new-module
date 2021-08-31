@@ -9,7 +9,7 @@ exports[`<GoogleMap /> should render base component correctly 1`] = `
       class="wrapper"
     >
       <span
-        class="base medium dark loading"
+        class="base center medium dark loading"
         data-testid="data-testid-loading"
         role="status"
       />

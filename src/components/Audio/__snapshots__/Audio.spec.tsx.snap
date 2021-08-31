@@ -24,7 +24,7 @@ exports[`<Audio /> should render base component correctly 1`] = `
       class="waveContainer"
     >
       <span
-        class="base isLoading medium dark loading"
+        class="base isLoading center medium dark loading"
         data-testid="data-testid-loading"
         role="status"
       >

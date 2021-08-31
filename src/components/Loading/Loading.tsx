@@ -5,6 +5,7 @@ import type { LoadingType } from './Loading.types';
 import styles from './Loading.module.css';
 
 const Loading: LoadingType = ({
+  align = 'center',
   className,
   isLoading,
   screenReaderText,
@@ -20,6 +21,7 @@ const Loading: LoadingType = ({
       [styles.isLoading]: isLoading,
       [styles.fullSize]: shouldFillSpace,
     },
+    styles[align],
     styles[size],
     styles[currentTheme],
     className,

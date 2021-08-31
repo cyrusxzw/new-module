@@ -10,8 +10,18 @@
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: center;
   pointer-events: none;
+}
+
+.start {
+  justify-content: start;
+}
+.center {
+  justify-content: center;
+}
+
+.end {
+  justify-content: end;
 }
 
 .small {

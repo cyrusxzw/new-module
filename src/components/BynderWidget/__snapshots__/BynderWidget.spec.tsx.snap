@@ -12,7 +12,7 @@ exports[`<BynderWidget /> should render base component correctly 1`] = `
       heading
     </h3>
     <span
-      class="base isLoading medium dark"
+      class="base isLoading center medium dark"
       data-testid="data-testid-loading"
       role="status"
     >
