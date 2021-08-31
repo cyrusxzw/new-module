@@ -17,4 +17,4 @@ type CollectionProps = Clickable & {
 
 type CollectionType = ComponentWithoutChildren<CollectionProps>;
 
-export type { CollectionType };
+export type { CollectionType, CollectionProps };

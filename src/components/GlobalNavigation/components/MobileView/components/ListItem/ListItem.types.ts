@@ -23,4 +23,4 @@ type ListItemProps = {
 
 type ListItemType = ComponentWithChildren<ListItemProps>;
 
-export type { ListItemType };
+export type { ListItemType, ListItemProps };

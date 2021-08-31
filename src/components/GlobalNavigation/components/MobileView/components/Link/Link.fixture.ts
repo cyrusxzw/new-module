@@ -1,8 +1,9 @@
-const LinkFixture = {
+import type { LinkProps } from './Link.types';
+
+const LinkFixture: LinkProps = {
   id: 'link',
   label: 'Link',
   title: 'Link',
-  type: 'link' as const,
   url: '#link',
 };
 

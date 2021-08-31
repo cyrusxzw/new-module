@@ -1,4 +1,6 @@
-const ListItemFixture = {
+import type { ListItemProps } from './ListItem.types';
+
+const ListItemFixture: ListItemProps = {
   itemProps: {
     id: 'nested-collection',
     label: 'Nested Collection',
@@ -14,7 +16,7 @@ const ListItemFixture = {
       },
     ],
   },
-  isActive: true,
+  isVisible: true,
   isNestedItem: false,
 };
 

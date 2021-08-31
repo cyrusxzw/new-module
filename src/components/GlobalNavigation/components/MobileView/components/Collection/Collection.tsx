@@ -26,10 +26,12 @@ const Collection: CollectionType = ({
     activeCollectionId,
     setActiveCollectionId,
   } = useGlobalNavigationStateContext();
+
   const { onBackButtonClick } = useMobileViewContext();
   const currentTheme = useThemeContext(null, 'dark');
 
   const isActive = activeCollectionId === id;
+
   const [listRef] = useFocusOnFirst(
     isActive,
     'a:not([tabindex="-1"]), button:not([tabindex="-1"])',

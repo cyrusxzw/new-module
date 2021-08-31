@@ -1,14 +1,13 @@
 import type { ComponentWithoutChildren } from '~/types';
+import type { Clickable } from '~/components/GlobalNavigation/GlobalNavigation.types';
 
-type LinkProps = {
+type LinkProps = Clickable & {
   isNested?: boolean;
   isTop?: boolean;
   isVisible?: boolean;
-  label: string;
-  title: string;
   url: string;
 };
 
 type LinkType = ComponentWithoutChildren<LinkProps>;
 
-export type { LinkType };
+export type { LinkType, LinkProps };

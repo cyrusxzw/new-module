@@ -20,10 +20,9 @@ const SecondaryNavigation: SecondaryNavigationType = ({ items }) => {
   } = useGlobalNavigationStateContext();
   const currentTheme = useThemeContext(null, 'dark');
 
-  const isVisible = isOpen && activeCollectionId === 'top';
-
   if (!items && !items?.length) return null;
 
+  const isVisible = isOpen && activeCollectionId === 'top';
   const handleSetActiveCollectionId = (id: string) => setActiveCollectionId(id);
   const classSet = cx(styles.base, styles[currentTheme]);
 

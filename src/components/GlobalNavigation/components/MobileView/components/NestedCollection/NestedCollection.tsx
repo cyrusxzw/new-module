@@ -18,13 +18,17 @@ const NestedCollection: NestedCollectionType = ({
   title,
 }) => {
   const { activeCollectionId } = useGlobalNavigationStateContext();
+
   const {
     activeNestedCollectionIds,
     onNestedCollectionClick,
   } = useMobileViewContext();
-  const currentTheme = useThemeContext(null, 'dark');
+
   const isActive = activeNestedCollectionIds.includes(id);
+
+  const currentTheme = useThemeContext(null, 'dark');
   const { ref, style } = useVariableHeightStyle(isActive);
+
   const handleOnNestedClick = () => onNestedCollectionClick(id);
 
   const listClassSet = cx(

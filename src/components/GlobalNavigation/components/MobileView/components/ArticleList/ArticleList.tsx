@@ -19,7 +19,7 @@ const ArticleList: ArticleListType = ({ className, theme, items }) => {
 
   return (
     <div className={classSet}>
-      <aside>
+      <aside aria-label="navigation read articles">
         {items?.map((item) => (
           <ArticleCard {...item} isVisible={isVisible} key={item.id} />
         ))}

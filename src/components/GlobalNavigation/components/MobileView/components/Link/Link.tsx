@@ -8,6 +8,7 @@ import styles from './Link.module.css';
 
 const Link: LinkType = ({ isTop, isNested, isVisible, label, title, url }) => {
   const currentTheme = useThemeContext(null, 'dark');
+
   const classSet = cx(
     styles.base,
     styles[currentTheme],

@@ -14,4 +14,4 @@ type PromotionCardProps = Clickable & {
 
 type PromotionCardType = ComponentWithoutChildren<PromotionCardProps>;
 
-export type { PromotionCardType };
+export type { PromotionCardType, PromotionCardProps };

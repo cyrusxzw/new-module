@@ -20,6 +20,9 @@ const PromotionCard: PromotionCardType = ({
   url,
 }) => {
   const currentTheme = useThemeContext(null, 'dark');
+
+  if (!heading || !label) return null;
+
   const classSet = cx(
     styles.base,
     styles[currentTheme],
@@ -28,8 +31,6 @@ const PromotionCard: PromotionCardType = ({
     styles.leftAligned,
     { [styles.flush]: isFlush },
   );
-
-  if (!heading || !label) return null;
 
   return (
     <Hyperlink
@@ -48,10 +49,12 @@ const PromotionCard: PromotionCardType = ({
       >
         {heading}
       </Heading>
+
       <Paragraph className={styles.label} isFlush={true} theme={currentTheme}>
         <span className={compositionStyles.ornamentalHover}>{label}</span>{' '}
         <Icon height={14} name="rightArrow" theme={currentTheme} width={14} />
       </Paragraph>
+
       <Image {...image} className={styles.image} />
     </Hyperlink>
   );

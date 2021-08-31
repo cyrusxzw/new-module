@@ -17,6 +17,7 @@ const ArticleCard: ArticleCardType = ({
   url,
 }) => {
   const currentTheme = useThemeContext(null, 'dark');
+
   const classSet = cx(
     styles.base,
     styles[currentTheme],
@@ -34,6 +35,7 @@ const ArticleCard: ArticleCardType = ({
       url={url}
     >
       <Image {...image} className={styles.image} />
+
       {metaLabel && (
         <Paragraph
           className={styles.metaLabel}
@@ -43,6 +45,7 @@ const ArticleCard: ArticleCardType = ({
           {metaLabel}
         </Paragraph>
       )}
+
       <Paragraph
         className={styles.label}
         hasSerifFont={true}

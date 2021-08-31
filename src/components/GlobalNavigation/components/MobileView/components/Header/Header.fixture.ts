@@ -1,6 +1,7 @@
-const HeaderFixture = {
-  isActive: true,
-  onCloseButtonClick: () => undefined,
+import type { HeaderProps } from './Header.types';
+
+const HeaderFixture: HeaderProps = {
+  onClose: () => undefined,
 };
 
 export { HeaderFixture };

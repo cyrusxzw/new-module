@@ -2,15 +2,15 @@ import React from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
 import {
-  useGlobalNavigationContext,
-  useGlobalNavigationStateContext,
-} from '~/components/GlobalNavigation/GlobalNavigation.context';
-import {
   useEscapeKeyListener,
   useOverflowHidden,
   useTrapFocus,
 } from '~/customHooks';
 import { Transition } from '~/components/Transition';
+import {
+  useGlobalNavigationContext,
+  useGlobalNavigationStateContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
 import {
   ArticleList,
   Header,
@@ -27,6 +27,7 @@ const MobileView: MobileViewType = ({ className }) => {
     setActiveCollectionId,
     setIsOpen,
   } = useGlobalNavigationStateContext();
+
   const {
     actions,
     collections,
