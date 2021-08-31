@@ -1,9 +1,9 @@
 import React from 'react';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
-import { PromotionCard } from '~/components/GlobalNavigation/components';
+import { PromotionCard } from '~/components/GlobalNavigation/components/PromotionCard';
 import { useMenuItemContext } from '~/components/GlobalNavigation/components/DesktopView/components/MenuItem/MenuItem.context';
-import { CollectionList } from '~/components/GlobalNavigation/components/DesktopView/components/CollectionList';
-import { CollectionImage } from '~/components/GlobalNavigation/components/DesktopView/components/CollectionImage';
+import { CollectionList } from '../CollectionList';
+import { CollectionImage } from '../CollectionImage';
 import { getCollectionLists } from './CollectionLayout.utils';
 import type { CollectionLayoutType } from './CollectionLayout.types';
 import styles from './CollectionLayout.module.css';

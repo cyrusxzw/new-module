@@ -4,7 +4,7 @@ import { useThemeContext } from '~/contexts';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { Button } from '~/components/Button';
 import { Hyperlink } from '~/components/Hyperlink';
-import { Collection } from '~/components/GlobalNavigation/components/MobileView/components';
+import { Collection } from '../Collection';
 import type {
   SecondaryNavigationType,
   SecondaryNavigationItem,

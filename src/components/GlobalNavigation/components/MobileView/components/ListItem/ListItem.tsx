@@ -1,10 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
-import {
-  Collection,
-  Link,
-  NestedCollection,
-} from '~/components/GlobalNavigation/components/MobileView/components';
+import { Collection } from '../Collection';
+import { Link } from '../Link';
+import { NestedCollection } from '../NestedCollection';
 import { PromotionCard } from '~/components/GlobalNavigation/components';
 import type { ListItemType } from './ListItem.types';
 import compositionStyles from '../../MobileView.module.css';

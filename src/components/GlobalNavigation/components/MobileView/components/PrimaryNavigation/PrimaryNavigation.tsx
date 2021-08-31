@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFocusOnFirst } from '~/customHooks';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
-import { ListItem } from '~/components/GlobalNavigation/components/MobileView/components';
+import { ListItem } from '../ListItem';
 import type { PrimaryNavigationType } from './PrimaryNavigation.types';
 import compositionStyles from '../../MobileView.module.css';
 

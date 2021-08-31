@@ -1,9 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import { Transition } from '~/components';
-import { Button } from '~/components';
-import { Icon } from '~/components';
+import { Transition } from '~/components/Transition';
+import { Button } from '~/components/Button';
+import { Icon } from '~/components/Icon';
 import {
   useGlobalNavigationContext,
   useGlobalNavigationStateContext,

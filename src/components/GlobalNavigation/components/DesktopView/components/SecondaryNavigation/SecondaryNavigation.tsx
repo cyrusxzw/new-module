@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGlobalNavigationContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
-import { MenuItem } from '~/components/GlobalNavigation/components/DesktopView/components';
+import { MenuItem } from '../MenuItem';
 import type { SecondaryNavigationType } from './SecondaryNavigation.types';
 import styles from './SecondaryNavigation.module.css';
 

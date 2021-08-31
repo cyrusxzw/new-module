@@ -7,7 +7,7 @@ import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useMobileViewContext } from '~/components/GlobalNavigation/components/MobileView/MobileView.context';
-import { ListItem } from '~/components/GlobalNavigation/components/MobileView/components';
+import { ListItem } from '../ListItem';
 import type { CollectionType } from './Collection.types';
 import compositionStyles from '../../MobileView.module.css';
 import styles from './Collection.module.css';
@@ -27,15 +27,15 @@ const Collection: CollectionType = ({
     setActiveCollectionId,
   } = useGlobalNavigationStateContext();
 
-  const { onBackButtonClick } = useMobileViewContext();
-  const currentTheme = useThemeContext(null, 'dark');
-
   const isActive = activeCollectionId === id;
 
+  const { onBackButtonClick } = useMobileViewContext();
+  const currentTheme = useThemeContext(null, 'dark');
   const [listRef] = useFocusOnFirst(
     isActive,
     'a:not([tabindex="-1"]), button:not([tabindex="-1"])',
   );
+
   const handleOnClick = () => setActiveCollectionId(id);
 
   const handleOnBackButtonClick = () => {

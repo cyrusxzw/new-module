@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { useMenuItemContext } from '~/components/GlobalNavigation/components/DesktopView/components/MenuItem/MenuItem.context';
-import { CollectionItem } from '~/components/GlobalNavigation/components/DesktopView/components/CollectionItem';
+import { CollectionItem } from '../CollectionItem';
 import type { CollectionListType } from './CollectionList.types';
 import styles from './CollectionList.module.css';
 

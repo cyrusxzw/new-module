@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
-import { useMobileViewContext } from '../../MobileView.context';
+import { useMobileViewContext } from '~/components/GlobalNavigation/components/MobileView/MobileView.context';
 import { ArticleCard } from '../ArticleCard';
 import type { ArticleListType } from './ArticleList.types';
 import styles from './ArticleList.module.css';

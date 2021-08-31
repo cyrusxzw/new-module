@@ -7,13 +7,11 @@ import {
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { Icon } from '~/components/Icon';
 import { ScreenReaderOnly } from '~/components/ScreenReaderOnly';
-import {
-  CloseButton,
-  CollectionLayout,
-  Logo,
-  MenuItem,
-  Panel,
-} from '~/components/GlobalNavigation/components/DesktopView/components';
+import { CloseButton } from '../CloseButton';
+import { CollectionLayout } from '../CollectionLayout';
+import { Logo } from '../Logo';
+import { MenuItem } from '../MenuItem';
+import { Panel } from '../Panel';
 import type { PrimaryNavigationType } from './PrimaryNavigation.types';
 import styles from './PrimaryNavigation.module.css';
 
