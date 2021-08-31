@@ -7,13 +7,15 @@ type DesktopViewProps = {
 type DesktopViewType = ComponentWithoutChildren<DesktopViewProps>;
 
 type DesktopViewContextType = {
-  activeCollectionId: string;
-  setActiveCollectionId: (id: string) => void;
+  closedClassName?: string;
+  openClassName?: string;
 };
 
-type DesktopViewContextProviderType = ComponentWithChildren;
+type DesktopViewContextProviderType = ComponentWithChildren<DesktopViewContextType>;
 
-type UseDesktopViewContextStore = () => DesktopViewContextType;
+type UseDesktopViewContextStore = (
+  props: DesktopViewContextType,
+) => DesktopViewContextType;
 
 export type {
   DesktopViewContextProviderType,

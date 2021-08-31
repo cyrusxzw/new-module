@@ -12,6 +12,11 @@
   list-style: none;
 }
 
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .item {
   display: inline-block;
   width: 50%;

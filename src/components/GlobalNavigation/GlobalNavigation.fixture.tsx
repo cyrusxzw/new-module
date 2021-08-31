@@ -2,6 +2,8 @@ import React from 'react';
 import type { GlobalNavigationContextType } from './GlobalNavigation.types';
 
 const GlobalNavigationFixture: GlobalNavigationContextType = {
+  onClose: (): void => console.log('Clicked: close'), // eslint-disable-line no-console
+  onOpen: (): void => console.log('Clicked: open'), // eslint-disable-line no-console
   actions: {
     logo: {
       dataTestRef: 'NAV_LOGO',

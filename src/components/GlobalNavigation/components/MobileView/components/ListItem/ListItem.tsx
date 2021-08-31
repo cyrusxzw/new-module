@@ -26,7 +26,9 @@ const ListItem: ListItemType = ({
     returnElement = <PromotionCard {...{ ...itemProps, isVisible }} />;
   } else if (itemProps.type === 'link') {
     returnElement = (
-      <Link {...{ ...itemProps, isVisible, isNestedItem, isTopItem }} />
+      <Link
+        {...{ ...itemProps, isVisible, isNested: isNestedItem, isTopItem }}
+      />
     );
   } else {
     return null;

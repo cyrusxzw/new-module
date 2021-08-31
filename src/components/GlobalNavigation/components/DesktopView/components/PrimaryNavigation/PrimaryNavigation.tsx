@@ -17,13 +17,16 @@ import styles from './PrimaryNavigation.module.css';
 
 const PrimaryNavigation: PrimaryNavigationType = ({ onClose }) => {
   const {
+    isOpen,
     setIsOpen,
     setActiveCollectionId,
   } = useGlobalNavigationStateContext();
+
   const {
     actions: { search, stores },
     read,
     collections,
+    onOpen,
   } = useGlobalNavigationContext();
   const currentTheme = useThemeContext(undefined, 'dark');
 
@@ -31,6 +34,9 @@ const PrimaryNavigation: PrimaryNavigationType = ({ onClose }) => {
     setActiveCollectionId(id);
     setIsOpen(id !== 'top');
     callback?.();
+    if (!isOpen) {
+      onOpen?.();
+    }
   };
 
   const handleOnSearchClick = () =>

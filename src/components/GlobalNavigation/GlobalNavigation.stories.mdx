@@ -11,6 +11,8 @@ import {
   GlobalNavigationContextProvider,
   GlobalNavigationStateContextProvider,
 } from './GlobalNavigation.context';
+import { MobileViewContextProvider } from './components/MobileView/MobileView.context';
+import { DesktopViewContextProvider } from './components/DesktopView/DesktopView.context';
 import {
   GlobalNavigationFixture,
   actionAccountAuthenticated,
@@ -77,9 +79,21 @@ import {
                 isVisuallyObstructed: accountOpen || cartOpen,
                 mobileViewClosedTheme,
                 theme,
+                onClose: fixture.onClose,
+                onOpen: fixture.onOpen,
               }}
             >
-              <GlobalNavigation />
+              <DesktopViewContextProvider
+                openClassName={'desktop-open'}
+                closedClassName={'desktop-closed'}
+              >
+                <MobileViewContextProvider
+                  openClassName={'mobile-open'}
+                  closedClassName={'mobile-closed'}
+                >
+                  <GlobalNavigation />
+                </MobileViewContextProvider>
+              </DesktopViewContextProvider>
             </GlobalNavigationContextProvider>
           </GlobalNavigationStateContextProvider>
           <Modal
@@ -178,9 +192,17 @@ import {
                 mobileViewClosedTheme: 'light',
                 desktopViewLogoTheme: 'light',
                 theme,
+                onClose: fixture.onClose,
               }}
             >
-              <GlobalNavigation />
+              <DesktopViewContextProvider
+                openClassName={'desktop-open'}
+                closedClassName={'desktop-closed'}
+              >
+                <MobileViewContextProvider>
+                  <GlobalNavigation />
+                </MobileViewContextProvider>
+              </DesktopViewContextProvider>
             </GlobalNavigationContextProvider>
           </GlobalNavigationStateContextProvider>
           <HeroBanner

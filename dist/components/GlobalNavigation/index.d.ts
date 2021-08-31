@@ -104,6 +104,8 @@ declare type GlobalNavigationContextType = {
     desktopViewLogoTheme?: Themes;
     isVisuallyObstructed?: boolean;
     mobileViewClosedTheme?: Themes;
+    onClose?: () => void;
+    onOpen?: () => void;
     read: Read;
     theme?: Themes;
 };
@@ -115,6 +117,7 @@ declare type GlobalNavigationContextProviderType = ComponentWithChildren<GlobalN
 /** @TODO Tracking exand / collapse */
 /** Add label to where closed + log current analytic push */
 /** Hovering as a tracking push */
+/** is open callback */
 declare const GlobalNavigation: GlobalNavigationType;
 
 declare const GlobalNavigationStateContextProvider: GlobalNavigationStateContextProviderType;

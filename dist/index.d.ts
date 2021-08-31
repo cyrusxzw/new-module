@@ -1096,7 +1096,11 @@ declare type MediaWithContentProps = {
 
 declare const MediaWithContent: React$1.ForwardRefExoticComponent<MediaWithContentProps & React$1.RefAttributes<HTMLDivElement>>;
 
-declare type MobileViewContextProviderType = ComponentWithChildren;
+declare type MobileViewContextProviderProps = {
+    closedClassName?: string;
+    openClassName?: string;
+};
+declare type MobileViewContextProviderType = ComponentWithChildren<MobileViewContextProviderProps>;
 declare type MobileViewProps = {
     className?: string;
 };
@@ -1223,6 +1227,8 @@ declare type GlobalNavigationContextType = {
     desktopViewLogoTheme?: Themes;
     isVisuallyObstructed?: boolean;
     mobileViewClosedTheme?: Themes;
+    onClose?: () => void;
+    onOpen?: () => void;
     read: Read;
     theme?: Themes;
 };
@@ -1238,6 +1244,7 @@ declare const GlobalNavigationContextProvider: GlobalNavigationContextProviderTy
 /** @TODO Tracking exand / collapse */
 /** Add label to where closed + log current analytic push */
 /** Hovering as a tracking push */
+/** is open callback */
 declare const GlobalNavigation: GlobalNavigationType;
 
 declare type ModalBodyCopy = {

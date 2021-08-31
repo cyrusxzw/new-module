@@ -20,7 +20,12 @@ const Header: HeaderType = ({ onClose }) => {
     setIsOpen: setIsMenuOpen,
   } = useGlobalNavigationStateContext();
 
-  const { actions, mobileViewClosedTheme } = useGlobalNavigationContext();
+  const {
+    actions,
+    mobileViewClosedTheme,
+    onOpen,
+  } = useGlobalNavigationContext();
+
   const currentTheme = useThemeContext(null, 'dark');
 
   useWindowHasResized();
@@ -30,8 +35,14 @@ const Header: HeaderType = ({ onClose }) => {
   const handleOnSearchClick = () => search.onClick();
   const handleOnCartClick = () => cart.onClick();
 
-  const handleOnMenuButtonClick = () =>
-    isMenuOpen ? onClose() : setIsMenuOpen(true);
+  const handleOnMenuButtonClick = () => {
+    if (isMenuOpen) {
+      onClose();
+    } else {
+      setIsMenuOpen(true);
+      onOpen?.();
+    }
+  };
 
   const classSet = cx(
     styles.base,

@@ -29,7 +29,7 @@ const Collection: CollectionType = ({
 
   const isActive = activeCollectionId === id;
 
-  const { onBackButtonClick } = useMobileViewContext();
+  const { setActiveNestedCollectionIds } = useMobileViewContext();
   const currentTheme = useThemeContext(null, 'dark');
   const [listRef] = useFocusOnFirst(
     isActive,
@@ -40,7 +40,7 @@ const Collection: CollectionType = ({
 
   const handleOnBackButtonClick = () => {
     setActiveCollectionId('top');
-    onBackButtonClick();
+    setActiveNestedCollectionIds([]);
   };
 
   const listClassSet = cx(

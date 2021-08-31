@@ -8,19 +8,21 @@ import type {
 
 const DesktopViewContext = createContext(undefined);
 
-const useDesktopViewContextStore: UseDesktopViewContextStore = () => {
-  const [activeCollectionId, setActiveCollectionId] = useState('top');
-
-  return {
-    activeCollectionId,
-    setActiveCollectionId,
-  };
+const useDesktopViewContextStore: UseDesktopViewContextStore = ({
+  closedClassName,
+  openClassName,
+}) => {
+  return { closedClassName, openClassName };
 };
 
 const DesktopViewContextProvider: DesktopViewContextProviderType = ({
   children,
+  closedClassName,
+  openClassName,
 }) => (
-  <DesktopViewContext.Provider value={useDesktopViewContextStore()}>
+  <DesktopViewContext.Provider
+    value={useDesktopViewContextStore({ closedClassName, openClassName })}
+  >
     {children}
   </DesktopViewContext.Provider>
 );

@@ -32,11 +32,16 @@ const MobileView: MobileViewType = ({ className }) => {
     actions,
     collections,
     isVisuallyObstructed,
+    onClose,
     read,
     theme,
   } = useGlobalNavigationContext();
 
-  const { setActiveNestedCollectionIds } = useMobileViewContext();
+  const {
+    setActiveNestedCollectionIds,
+    openClassName,
+    closedClassName,
+  } = useMobileViewContext();
 
   const currentTheme = useThemeContext(theme, 'dark');
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
@@ -47,6 +52,7 @@ const MobileView: MobileViewType = ({ className }) => {
     setActiveCollectionId('top');
     setActiveNestedCollectionIds([]);
     setIsOpen(false);
+    onClose?.();
   };
 
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
@@ -54,6 +60,8 @@ const MobileView: MobileViewType = ({ className }) => {
   const classSet = cx(
     styles.base,
     { [styles.open]: isOpen },
+    { [closedClassName]: !isOpen },
+    { [openClassName]: isOpen },
     styles[currentTheme],
     className,
   );

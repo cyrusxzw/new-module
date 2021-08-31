@@ -8,18 +8,14 @@
   display: flex;
 }
 
+.nestedCollections,
 .notableNestedCollections {
-  width: 50%;
-  padding-right: 30px;
-}
-
-.nestedCollections {
-  width: 50%;
+  width: calc(50% + 30px);
   padding-right: 30px;
 }
 
 .collectionsWrapper {
-  width: calc(100% * 2 / 12);
+  width: calc(100% * 2 / 12 + 30px);
   padding-right: 30px;
   margin-top: var(--offset);
   margin-bottom: 40px;

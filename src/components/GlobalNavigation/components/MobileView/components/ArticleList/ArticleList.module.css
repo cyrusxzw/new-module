@@ -4,3 +4,8 @@
   margin-top: 24px;
   margin-bottom: 40px;
 }
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

@@ -10,6 +10,7 @@ import {
   useGlobalNavigationContext,
   useGlobalNavigationStateContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import { useDesktopViewContext } from './DesktopView.context';
 import { PrimaryNavigation, SecondaryNavigation } from './components';
 import type { DesktopViewType } from './DesktopView.types';
 import styles from './DesktopView.module.css';
@@ -20,7 +21,8 @@ const DesktopView: DesktopViewType = ({ className }) => {
     setIsOpen,
     setActiveCollectionId,
   } = useGlobalNavigationStateContext();
-  const { isVisuallyObstructed, theme } = useGlobalNavigationContext();
+  const { isVisuallyObstructed, onClose, theme } = useGlobalNavigationContext();
+  const { closedClassName, openClassName } = useDesktopViewContext();
   const contextTheme = useThemeContext(theme, 'dark');
   const currentTheme = isOpen ? 'dark' : contextTheme;
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
@@ -28,6 +30,7 @@ const DesktopView: DesktopViewType = ({ className }) => {
   const handleOnClose = () => {
     setActiveCollectionId('top');
     setIsOpen(false);
+    onClose?.();
   };
 
   useOverflowHidden(isOpen);
@@ -36,7 +39,11 @@ const DesktopView: DesktopViewType = ({ className }) => {
   const classSet = cx(
     styles.base,
     {
+      [closedClassName]: !isOpen,
+    },
+    {
       [styles.open]: isOpen,
+      [openClassName]: isOpen,
     },
     styles[currentTheme],
     className,

@@ -125,6 +125,8 @@ type GlobalNavigationContextType = {
   desktopViewLogoTheme?: Themes;
   isVisuallyObstructed?: boolean;
   mobileViewClosedTheme?: Themes;
+  onClose?: () => void;
+  onOpen?: () => void;
   read: Read;
   theme?: Themes;
 };
