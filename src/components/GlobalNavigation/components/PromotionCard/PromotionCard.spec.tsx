@@ -3,6 +3,6 @@
 // import { PromotionCard } from './PromotionCard';
 // import { PromotionCardFixture } from './PromotionCard.fixture';
 
-describe('<PromotionCard />', () => {
+describe('<GlobalNavigation.PromotionCard />', () => {
   it.todo('should assert something');
 });

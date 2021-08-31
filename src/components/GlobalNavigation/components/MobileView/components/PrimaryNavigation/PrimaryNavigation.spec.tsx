@@ -3,6 +3,6 @@
 // import { PrimaryNavigation } from './PrimaryNavigation';
 // import { PrimaryNavigationFixture } from './PrimaryNavigation.fixture';
 
-describe('<PrimaryNavigation />', () => {
+describe('<GlobalNavigation.MobileView.PrimaryNavigation />', () => {
   it.todo('should assert something');
 });

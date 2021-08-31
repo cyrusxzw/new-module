@@ -60,7 +60,7 @@ const MobileView: MobileViewType = ({ className }) => {
   const secondaryNavigationItems = [
     read,
     actions.account,
-    actions.visit,
+    actions.stores,
     actions.support,
   ];
 

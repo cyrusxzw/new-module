@@ -17,11 +17,11 @@
 .active {
   z-index: 11;
 
-  .dark & {
+  &.dark {
     border-bottom-color: var(--color-secondary);
   }
 
-  .light & {
+  &.light {
     border-bottom-color: var(--color-primary);
   }
 }

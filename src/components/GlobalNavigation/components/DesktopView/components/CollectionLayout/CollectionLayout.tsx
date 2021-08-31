@@ -54,6 +54,7 @@ const CollectionLayout: CollectionLayoutType = ({
               <CollectionList items={[taxonomyOfDesignElement]} />
             )}
           </div>
+
           <div className={styles.notableNestedCollections}>
             {notableNestedCollections.map(({ label, items, id }) => (
               <CollectionList heading={label} items={items} key={id} />

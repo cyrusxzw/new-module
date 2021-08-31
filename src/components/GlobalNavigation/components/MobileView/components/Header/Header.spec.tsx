@@ -3,6 +3,6 @@
 // import { Header } from './Header';
 // import { HeaderFixture } from './Header.fixture';
 
-describe('<Header />', () => {
+describe('<GlobalNavigation.MobileView.Header />', () => {
   it.todo('should assert something');
 });

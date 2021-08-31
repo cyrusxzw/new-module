@@ -1,10 +1,5 @@
-import type { Themes, ComponentWithChildren } from '~/types';
+import type { ComponentWithoutChildren } from '~/types';
 
-type LogoProps = {
-  className?: string;
-  theme?: Themes;
-};
-
-type LogoType = ComponentWithChildren<LogoProps>;
+type LogoType = ComponentWithoutChildren;
 
 export type { LogoType };

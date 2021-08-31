@@ -18,8 +18,11 @@ const CloseButton: CloseButtonType = ({ onClose }) => {
       menu: { closeTitle, closeLabel },
     },
   } = useGlobalNavigationContext();
+
   const currentTheme = useThemeContext(undefined, 'dark');
-  const classSet = cx(styles.base, styles[currentTheme]);
+  const classSet = cx(styles.base, styles[currentTheme], {
+    [styles.menuOpen]: isOpen,
+  });
 
   return (
     <Transition isActive={isOpen} type="fade">

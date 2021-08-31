@@ -8,7 +8,7 @@ import { GlobalNavigation } from './GlobalNavigation';
 import { GlobalNavigationFixture } from './GlobalNavigation.fixture';
 
 describe('<GlobalNavigation />', () => {
-  it('should assert something', () => {
+  it('TODO: should assert something', () => {
     render(
       <GlobalNavigationStateContextProvider>
         <GlobalNavigationContextProvider

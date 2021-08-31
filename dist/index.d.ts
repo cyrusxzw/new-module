@@ -1151,10 +1151,10 @@ declare type Promotion = Clickable & {
     url: string;
 };
 declare type Article = Clickable & {
-    duration?: string;
     image?: CollectionImage;
     isVisible?: boolean;
-    metaLabel: string;
+    metaDuration?: string;
+    metaLabel?: string;
     type: 'article';
     url: string;
 };
@@ -1180,7 +1180,7 @@ declare type Actions = {
     search: Trigger & {
         component: () => ReactElement;
     };
-    visit: Trigger & {
+    stores: Trigger & {
         component: () => ReactElement;
     };
 };

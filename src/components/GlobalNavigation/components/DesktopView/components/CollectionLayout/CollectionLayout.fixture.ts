@@ -9,7 +9,7 @@ const CollectionLayoutFixture: CollectionLayoutProps = {
       type: 'article' as const,
       url: '#collection-layout-article',
       metaLabel: 'Collection layout article card meta label',
-      duration: 'Collection layout article card duration',
+      metaDuration: 'Collection layout article card metaDuration',
       image: {
         altText: 'Collection layout article card image alt text',
         sizes: {

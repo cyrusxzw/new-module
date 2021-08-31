@@ -43,7 +43,7 @@ const collections = [
   },
 ];
 
-describe('<MobileView />', () => {
+describe('<GlobalNavigation.MobileView />', () => {
   it('should render all items within nested elements', () => {
     render(
       <GlobalNavigationStateContextProvider>

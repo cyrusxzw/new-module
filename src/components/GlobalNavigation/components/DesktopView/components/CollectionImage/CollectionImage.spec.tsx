@@ -4,7 +4,7 @@ import { axe } from 'jest-axe';
 import { CollectionImage } from './CollectionImage';
 import { CollectionImageFixture } from './CollectionImage.fixture';
 
-describe('<CollectionImage />', () => {
+describe('<GlobalNavigation.DesktopView.CollectionImage />', () => {
   it('should be accessible', async () => {
     const { container } = render(
       <CollectionImage

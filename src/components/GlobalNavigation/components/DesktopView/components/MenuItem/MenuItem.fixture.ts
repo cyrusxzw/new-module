@@ -1,4 +1,6 @@
-const MenuItemFixture = {
+import type { MenuItemProps } from './MenuItem.types';
+
+const MenuItemFixture: MenuItemProps = {
   dataTestRef: 'MENU_ITEM_TEST_REF',
   id: 'menu-item-id',
   label: 'menu item label',

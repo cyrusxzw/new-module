@@ -34,13 +34,15 @@ const ArticleCard: ArticleCardType = ({
       url={url}
     >
       <Image {...image} className={styles.image} />
-      <Paragraph
-        className={styles.metaLabel}
-        isFlush={true}
-        theme={currentTheme}
-      >
-        {metaLabel}
-      </Paragraph>
+      {metaLabel && (
+        <Paragraph
+          className={styles.metaLabel}
+          isFlush={true}
+          theme={currentTheme}
+        >
+          {metaLabel}
+        </Paragraph>
+      )}
       <Paragraph
         className={styles.label}
         hasSerifFont={true}

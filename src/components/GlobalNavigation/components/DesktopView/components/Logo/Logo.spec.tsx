@@ -22,10 +22,9 @@ const BaseComponentWithProviders = () => (
   </GlobalNavigationStateContextProvider>
 );
 
-describe('<Logo />', () => {
+describe('<GlobalNavigation.DesktopView.Logo />', () => {
   it('should be accessible', async () => {
     const { container } = render(<BaseComponentWithProviders />);
-
     const results = await axe(container);
 
     expect(results).toHaveNoViolations();

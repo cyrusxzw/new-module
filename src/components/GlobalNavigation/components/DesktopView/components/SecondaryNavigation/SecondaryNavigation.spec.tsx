@@ -40,7 +40,7 @@ const BaseComponentWithProviders = () => (
   </GlobalNavigationStateContextProvider>
 );
 
-describe('<SecondaryNavigation />', () => {
+describe('<GlobalNavigation.DesktopView.SecondaryNavigation />', () => {
   it('should render two items with ', () => {
     render(<BaseComponentWithProviders />);
 

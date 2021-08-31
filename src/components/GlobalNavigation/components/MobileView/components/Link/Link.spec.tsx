@@ -3,6 +3,6 @@
 // import { Link } from './Link';
 // import { LinkFixture } from './Link.fixture';
 
-describe('<Link />', () => {
+describe('<GlobalNavigation.MobileView.Link />', () => {
   it.todo('should assert something');
 });

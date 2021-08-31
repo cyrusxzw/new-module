@@ -71,4 +71,6 @@
 
 .absoluteBuffer {
   height: 74px;
+  pointer-events: none;
+  visibility: hidden;
 }

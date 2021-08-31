@@ -73,8 +73,6 @@ const Collection: CollectionType = ({
             haspopup: true,
             hidden: !isActive,
           }}
-          aria-expanded={isActive}
-          aria-haspopup="true"
           className={cx(compositionStyles.itemElement)}
           isInline={true}
           onClick={handleOnClick}

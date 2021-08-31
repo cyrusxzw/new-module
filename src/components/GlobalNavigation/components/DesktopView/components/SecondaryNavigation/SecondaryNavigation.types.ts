@@ -1,10 +1,5 @@
-import type { Themes, ComponentWithChildren } from '~/types';
+import type { ComponentWithoutChildren } from '~/types';
 
-type SecondaryNavigationProps = {
-  className?: string;
-  theme?: Themes;
-};
-
-type SecondaryNavigationType = ComponentWithChildren<SecondaryNavigationProps>;
+type SecondaryNavigationType = ComponentWithoutChildren;
 
 export type { SecondaryNavigationType };

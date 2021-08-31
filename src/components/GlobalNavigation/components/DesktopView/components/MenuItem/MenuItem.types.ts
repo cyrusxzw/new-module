@@ -20,4 +20,9 @@ type MenuItemContextProviderType = ComponentWithChildren<MenuItemContextType>;
 
 type MenuItemType = ComponentWithChildren<MenuItemProps>;
 
-export type { MenuItemType, MenuItemContextProviderType, MenuItemContextType };
+export type {
+  MenuItemContextProviderType,
+  MenuItemContextType,
+  MenuItemProps,
+  MenuItemType,
+};

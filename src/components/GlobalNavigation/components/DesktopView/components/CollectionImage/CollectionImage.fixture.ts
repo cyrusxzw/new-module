@@ -1,6 +1,6 @@
 import type { CollectionImageProps } from './CollectionImage.types';
 
-const CollectionImageFixture = {
+const CollectionImageFixture: CollectionImageProps = {
   altText: 'Collection image alt text',
   sizes: {
     large:

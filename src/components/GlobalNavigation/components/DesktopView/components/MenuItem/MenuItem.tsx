@@ -21,8 +21,8 @@ const MenuItem: MenuItemType = ({
 }) => {
   const { activeCollectionId } = useGlobalNavigationStateContext();
   const currentTheme = useThemeContext(undefined, 'dark');
-  const isActive = activeCollectionId === id;
 
+  const isActive = activeCollectionId === id;
   const sharedProps = {
     className: cx(styles.element, styles[currentTheme]),
     dataTestRef,
@@ -43,13 +43,22 @@ const MenuItem: MenuItemType = ({
         )}
         condition={type === 'trigger'}
         wrapper={(children) => (
-          <Button {...sharedProps} isInline={true} onClick={onClick}>
+          <Button
+            {...sharedProps}
+            aria={{
+              expanded: isActive,
+              haspopup: true,
+            }}
+            isInline={true}
+            onClick={onClick}
+          >
             {children}
           </Button>
         )}
       >
         {label}
       </ConditionalWrapper>
+
       <MenuItemContextProvider id={id} isActive={isActive}>
         {children}
       </MenuItemContextProvider>

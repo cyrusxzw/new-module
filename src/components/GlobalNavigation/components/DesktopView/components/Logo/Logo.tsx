@@ -19,11 +19,14 @@ const Logo: LogoType = () => {
     },
     desktopViewLogoTheme = 'dark',
   } = useGlobalNavigationContext();
+
   const currentTheme = useThemeContext(undefined, 'dark');
 
   const classSet = cx(styles.base, styles[currentTheme], {
     [styles.active]: isOpen,
   });
+
+  const iconClassSet = cx(styles.icon, styles[desktopViewLogoTheme]);
 
   return (
     <Hyperlink
@@ -33,12 +36,13 @@ const Logo: LogoType = () => {
       url={url}
     >
       <Icon
-        className={cx(styles.icon, styles[desktopViewLogoTheme])}
+        className={iconClassSet}
         height={40}
         name="aesop"
         tabIndex={-1}
         width={120}
       />
+
       <ScreenReaderOnly>{label}</ScreenReaderOnly>
     </Hyperlink>
   );

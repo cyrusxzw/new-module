@@ -33,10 +33,9 @@ const BaseComponentWithProviders = () => (
   </GlobalNavigationStateContextProvider>
 );
 
-describe('<MenuItem />', () => {
+describe('<GlobalNavigation.DesktopView.MenuItem />', () => {
   it('should be accessible', async () => {
     const { container } = render(<BaseComponentWithProviders />);
-
     const results = await axe(container);
 
     expect(results).toHaveNoViolations();

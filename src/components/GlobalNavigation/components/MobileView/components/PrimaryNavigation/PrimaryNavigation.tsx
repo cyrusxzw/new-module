@@ -14,7 +14,7 @@ const PrimaryNavigation: PrimaryNavigationType = ({ isVisible, items }) => {
   );
 
   return (
-    <nav aria-hidden={!isVisible} aria-label="navigation" role="navigation">
+    <nav aria-hidden={!isVisible} aria-label="primary" role="navigation">
       <ul className={compositionStyles.list} ref={listRef}>
         {items.map((props) => (
           <ListItem

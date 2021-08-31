@@ -41,7 +41,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
     menu: {
       closeLabel: 'Close',
       closeTitle: 'click to close the menu',
-      dataTestRef: 'NAV_HAMBURGER',
+      dataTestRef: 'NAV_MENU',
       id: 'actions-menu',
       label: 'Open',
       title: 'click to open the menu',
@@ -55,9 +55,9 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       title: 'Log in',
       type: 'trigger' as const,
     },
-    visit: {
-      dataTestRef: 'NAV_VISIT',
-      id: 'actions-visit',
+    stores: {
+      dataTestRef: 'NAV_STORES',
+      id: 'actions-stores',
       label: 'Stores',
       onClick: (): void => console.log('Clicked: stores'), // eslint-disable-line no-console
       title: 'Stores',
@@ -102,11 +102,11 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       {
         id: 'article',
         label: 'Article Card Label',
+        metaDuration: 'Ten-minute read',
+        metaLabel: 'Article Card  •  Meta Label',
         title: 'See all Skin Care Card',
         type: 'article' as const,
         url: '#article',
-        metaLabel: 'Article Card  •  Meta Label',
-        duration: 'Ten-minute read',
         image: {
           altText: 'Image of Article Card',
           sizes: {
@@ -122,11 +122,11 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       {
         id: 'article-two',
         label: 'Article Two Card Label',
+        metaDuration: 'Two-minute read',
+        metaLabel: 'Article Card Two  •  Meta Label',
         title: 'See all Skin Care Two Card',
         type: 'article' as const,
         url: '#article-two',
-        metaLabel: 'Article Card Two  •  Meta Label',
-        duration: 'Two-minute read',
         image: {
           altText: 'Image of Article Card',
           sizes: {
@@ -557,7 +557,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       type: 'collection' as const,
       promotion: {
         id: 'classic-hair-care-trio',
-        label: 'Introducing Rōzu: a fragrance of tender intensity',
+        label: 'Introducing Rōzu',
         title: 'Introducing Rōzu: a fragrance of tender intensity',
         type: 'promotion' as const,
         url: '#see-all-skin-care-card',
