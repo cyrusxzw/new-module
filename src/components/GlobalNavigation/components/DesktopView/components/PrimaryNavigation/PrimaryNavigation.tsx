@@ -148,10 +148,6 @@ const PrimaryNavigation: PrimaryNavigationType = ({ onClose }) => {
         <li className={styles.closeMenueItem}>
           <CloseButton onClose={onClose} />
         </li>
-
-        <li>
-          <Logo />
-        </li>
       </ul>
     </nav>
   );

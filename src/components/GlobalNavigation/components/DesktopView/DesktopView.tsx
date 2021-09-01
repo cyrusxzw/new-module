@@ -11,7 +11,7 @@ import {
   useGlobalNavigationStateContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useDesktopViewContext } from './DesktopView.context';
-import { PrimaryNavigation, SecondaryNavigation } from './components';
+import { PrimaryNavigation, SecondaryNavigation, Logo } from './components';
 import type { DesktopViewType } from './DesktopView.types';
 import styles from './DesktopView.module.css';
 
@@ -54,6 +54,7 @@ const DesktopView: DesktopViewType = ({ className }) => {
       <div className={classSet} ref={focusTrapRef}>
         <PrimaryNavigation onClose={handleOnClose} />
         <SecondaryNavigation />
+        <Logo />
       </div>
 
       <div aria-hidden={true} className={styles.absoluteBuffer} />
