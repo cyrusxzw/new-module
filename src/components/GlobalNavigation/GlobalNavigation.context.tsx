@@ -1,9 +1,10 @@
 import React, { createContext, useContext, useState } from 'react';
+import { useActiveView } from './GlobalNavigation.hooks';
 import type {
   GlobalNavigationContextProviderType,
   GlobalNavigationContextType,
   GlobalNavigationStateContextProviderType,
-  GlobalNavigationStateContextType,
+  UseGlobalNavigationStateContext,
   UseGlobalNavigationStateStore,
   UseGlobalNavigationStore,
 } from './GlobalNavigation.types';
@@ -15,12 +16,14 @@ const useGlobalNavigationStateStore: UseGlobalNavigationStateStore = ({
   activeCollectionId: initialActiveCollectionId = 'top',
 }) => {
   const [isOpen, setIsOpen] = useState(initialIsOpen);
+  const [activeView] = useActiveView();
   const [activeCollectionId, setActiveCollectionId] = useState(
     initialActiveCollectionId,
   );
 
   return {
     activeCollectionId,
+    activeView,
     isOpen,
     setActiveCollectionId,
     setIsOpen,
@@ -39,7 +42,7 @@ const GlobalNavigationStateContextProvider: GlobalNavigationStateContextProvider
   </GlobalNavigationStateContext.Provider>
 );
 
-const useGlobalNavigationStateContext = (): GlobalNavigationStateContextType => {
+const useGlobalNavigationStateContext: UseGlobalNavigationStateContext = () => {
   const context = useContext(GlobalNavigationStateContext);
 
   if (context === undefined) {
@@ -53,7 +56,6 @@ const useGlobalNavigationStateContext = (): GlobalNavigationStateContextType => 
 
 const GlobalNavigationContext = createContext(undefined);
 
-/** keeping store incase of any programatic changes */
 const useGlobalNavigationStore: UseGlobalNavigationStore = (
   value: GlobalNavigationContextType,
 ): GlobalNavigationContextType => value;

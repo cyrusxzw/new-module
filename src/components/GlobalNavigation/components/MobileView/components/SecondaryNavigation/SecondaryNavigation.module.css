@@ -2,6 +2,13 @@
 
 .base {
   margin-top: 40px;
+  opacity: 1;
+  transition: opacity 200ms var(--easing-ease-out-cubic);
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .list {
@@ -10,11 +17,6 @@
   margin-top: 0;
   margin-bottom: -10px;
   list-style: none;
-}
-
-.hidden {
-  opacity: 0;
-  pointer-events: none;
 }
 
 .item {

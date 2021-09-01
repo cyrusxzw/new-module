@@ -94,11 +94,7 @@ type Collection = Clickable & {
   type: 'collection';
 };
 
-type GlobalNavigationProps = {
-  className?: string;
-};
-
-type GlobalNavigationType = ComponentWithChildren<GlobalNavigationProps>;
+type GlobalNavigationType = ComponentWithChildren;
 
 type GlobalNavigationStateContextProviderProps = {
   activeCollectionId?: string;
@@ -107,12 +103,17 @@ type GlobalNavigationStateContextProviderProps = {
 
 type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavigationStateContextProviderProps>;
 
+type SetActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
+
 type GlobalNavigationStateContextType = {
   activeCollectionId: string;
   isOpen: boolean;
   setActiveCollectionId: (id: string) => void;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
+  activeView: SetActiveViewTypes;
 };
+
+type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
 
 type UseGlobalNavigationStateStore = (
   props: GlobalNavigationStateContextProviderProps,
@@ -157,7 +158,9 @@ export type {
   NotableNestedCollection,
   Promotion,
   Read,
+  SetActiveViewTypes,
   Trigger,
+  UseGlobalNavigationStateContext,
   UseGlobalNavigationStateStore,
   UseGlobalNavigationStore,
 };

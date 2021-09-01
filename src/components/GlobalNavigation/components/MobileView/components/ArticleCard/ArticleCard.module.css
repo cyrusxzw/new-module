@@ -24,6 +24,7 @@
 }
 
 .image {
+  overflow: hidden;
   max-height: 240px;
 
   /* aspect-ratio: 4 / 3; */

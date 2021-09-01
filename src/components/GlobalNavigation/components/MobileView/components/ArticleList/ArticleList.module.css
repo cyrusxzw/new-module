@@ -3,6 +3,8 @@
 .base {
   margin-top: 24px;
   margin-bottom: 40px;
+  opacity: 1;
+  transition: opacity 200ms var(--easing-ease-out-cubic);
 }
 
 .hidden {

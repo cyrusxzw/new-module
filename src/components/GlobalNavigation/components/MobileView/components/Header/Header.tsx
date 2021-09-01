@@ -50,7 +50,7 @@ const Header: HeaderType = ({ onClose }) => {
   );
 
   return (
-    <div>
+    <>
       <nav
         aria-label="header navigation"
         className={classSet}
@@ -128,7 +128,7 @@ const Header: HeaderType = ({ onClose }) => {
           </li>
         </ul>
       </nav>
-    </div>
+    </>
   );
 };
 

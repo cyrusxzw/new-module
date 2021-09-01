@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, ReactElement } from 'react';
+import { ReactElement, Dispatch, SetStateAction } from 'react';
 import { a as ComponentWithChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
@@ -82,21 +82,21 @@ declare type Collection = Clickable & {
     topLevelCollectionLabel?: string;
     type: 'collection';
 };
-declare type GlobalNavigationProps = {
-    className?: string;
-};
-declare type GlobalNavigationType = ComponentWithChildren<GlobalNavigationProps>;
+declare type GlobalNavigationType = ComponentWithChildren;
 declare type GlobalNavigationStateContextProviderProps = {
     activeCollectionId?: string;
     isOpen?: boolean;
 };
 declare type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavigationStateContextProviderProps>;
+declare type SetActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
 declare type GlobalNavigationStateContextType = {
     activeCollectionId: string;
     isOpen: boolean;
     setActiveCollectionId: (id: string) => void;
     setIsOpen: Dispatch<SetStateAction<boolean>>;
+    activeView: SetActiveViewTypes;
 };
+declare type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
 declare type GlobalNavigationContextType = {
     actions: Actions;
     className?: string;
@@ -114,14 +114,10 @@ declare type GlobalNavigationContextProviderProps = {
 };
 declare type GlobalNavigationContextProviderType = ComponentWithChildren<GlobalNavigationContextProviderProps>;
 
-/** @TODO Tracking exand / collapse */
-/** Add label to where closed + log current analytic push */
-/** Hovering as a tracking push */
-/** is open callback */
 declare const GlobalNavigation: GlobalNavigationType;
 
 declare const GlobalNavigationStateContextProvider: GlobalNavigationStateContextProviderType;
-declare const useGlobalNavigationStateContext: () => GlobalNavigationStateContextType;
+declare const useGlobalNavigationStateContext: UseGlobalNavigationStateContext;
 declare const GlobalNavigationContextProvider: GlobalNavigationContextProviderType;
 declare const useGlobalNavigationContext: () => GlobalNavigationContextType;
 
