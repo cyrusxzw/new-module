@@ -42,7 +42,7 @@ describe('<ArticleCard />', () => {
       <ArticleCard
         id={ArticleCardFixture.id}
         isVisible={false}
-        label={ArticleCardFixture.label2}
+        label={ArticleCardFixture.label}
         metaLabel={ArticleCardFixture.metaLabel}
         title={ArticleCardFixture.title}
         url={ArticleCardFixture.url}
