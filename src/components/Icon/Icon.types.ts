@@ -1,4 +1,4 @@
-import type { ComponentWithoutChildren, Themes } from '~/types';
+import type { Aria, ComponentWithoutChildren, Themes } from '~/types';
 
 type SvgName =
   | ''
@@ -28,6 +28,7 @@ type Svg = {
 };
 
 type IconProps = {
+  aria?: Pick<Aria, 'hidden'>;
   className?: string;
   dataRef?: string;
   height?: number;

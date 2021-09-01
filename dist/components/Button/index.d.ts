@@ -1,12 +1,6 @@
 import React, { ReactNode, MouseEvent } from 'react';
+import { A as Aria } from '../../sharedChunks/Aria.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
-
-declare type Aria = {
-    expanded?: boolean;
-    haspopup?: boolean | 'dialog' | 'menu' | 'listbox' | 'tree' | 'grid';
-    hidden?: boolean;
-    label?: string;
-};
 
 declare type ButtonBehaviourType = 'button' | 'reset' | 'submit';
 declare type ButtonProps = {

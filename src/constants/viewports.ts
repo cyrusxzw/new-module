@@ -1,4 +1,4 @@
-import { BREAKPOINTS } from '~/constants';
+import { BREAKPOINTS } from '~/constants/breakpoints';
 import type { ViewportNames } from '~/types';
 
 const VIEWPORTS: Map<ViewportNames, string> = new Map([

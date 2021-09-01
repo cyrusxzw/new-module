@@ -19,7 +19,13 @@ const Header: HeaderType = ({ onClose }) => {
     isOpen: isMenuOpen,
     setIsOpen: setIsMenuOpen,
   } = useGlobalNavigationStateContext();
-  const { actions, mobileViewClosedTheme } = useGlobalNavigationContext();
+
+  const {
+    actions,
+    mobileViewClosedTheme,
+    onOpen,
+  } = useGlobalNavigationContext();
+
   const currentTheme = useThemeContext(null, 'dark');
 
   useWindowHasResized();
@@ -29,8 +35,14 @@ const Header: HeaderType = ({ onClose }) => {
   const handleOnSearchClick = () => search.onClick();
   const handleOnCartClick = () => cart.onClick();
 
-  const handleOnMenuButtonClick = () =>
-    isMenuOpen ? onClose() : setIsMenuOpen(true);
+  const handleOnMenuButtonClick = () => {
+    if (isMenuOpen) {
+      onClose();
+    } else {
+      setIsMenuOpen(true);
+      onOpen?.();
+    }
+  };
 
   const classSet = cx(
     styles.base,
@@ -38,8 +50,12 @@ const Header: HeaderType = ({ onClose }) => {
   );
 
   return (
-    <div>
-      <header aria-label="navigation header" className={classSet}>
+    <>
+      <nav
+        aria-label="header navigation"
+        className={classSet}
+        role="navigation"
+      >
         <ul className={styles.list}>
           <li className={cx(styles.item, styles.itemLogo)}>
             <Hyperlink
@@ -52,6 +68,7 @@ const Header: HeaderType = ({ onClose }) => {
               <ScreenReaderOnly>{logo.label}</ScreenReaderOnly>
             </Hyperlink>
           </li>
+
           <li className={styles.item}>
             <Button
               className={cx(styles.action, styles.actionSearch)}
@@ -69,6 +86,7 @@ const Header: HeaderType = ({ onClose }) => {
               />
             </Button>
           </li>
+
           <li className={styles.item}>
             <Button
               className={cx(
@@ -91,6 +109,7 @@ const Header: HeaderType = ({ onClose }) => {
               </span>
             </Button>
           </li>
+
           <li className={cx(styles.item, styles.itemMenu)}>
             <Button
               aria={{ haspopup: true, expanded: isMenuOpen }}
@@ -108,8 +127,8 @@ const Header: HeaderType = ({ onClose }) => {
             </Button>
           </li>
         </ul>
-      </header>
-    </div>
+      </nav>
+    </>
   );
 };
 

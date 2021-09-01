@@ -3,6 +3,6 @@
 // import { ArticleCard } from './ArticleCard';
 // import { ArticleCardFixture } from './ArticleCard.fixture';
 
-describe('<ArticleCard />', () => {
+describe('<GlobalNavigation.MobileView.ArticleCard />', () => {
   it.todo('should assert something');
 });

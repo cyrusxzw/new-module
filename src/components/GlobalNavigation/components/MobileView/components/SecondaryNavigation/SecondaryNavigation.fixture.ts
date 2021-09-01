@@ -1,4 +1,6 @@
-const SecondaryNavigationFixture = {
+import type { SecondaryNavigationProps } from './SecondaryNavigation.types';
+
+const SecondaryNavigationFixture: SecondaryNavigationProps = {
   items: [
     {
       id: 'link-one',
@@ -15,7 +17,6 @@ const SecondaryNavigationFixture = {
       url: '#link-two',
     },
   ],
-  hasAriaHidden: false,
 };
 
 export { SecondaryNavigationFixture };

@@ -1,7 +1,7 @@
 @import 'styles/variables/index';
 
-%transition-opacity-300ms-linear {
-  transition: opacity 300ms linear;
+%transition-opacity-200ms-linear {
+  transition: opacity 200ms linear;
 }
 
 %transition-opacity-1500ms-linear {
@@ -32,7 +32,7 @@
 }
 
 .fadeEnterActive {
-  @extend %transition-opacity-300ms-linear;
+  @extend %transition-opacity-200ms-linear;
 
   opacity: 1;
 }
@@ -46,7 +46,7 @@
 }
 
 .fadeExitActive {
-  @extend %transition-opacity-300ms-linear;
+  @extend %transition-opacity-200ms-linear;
 
   opacity: 0;
 }
@@ -63,7 +63,7 @@
 }
 
 .fadeInEnterActive {
-  @extend %transition-opacity-300ms-linear;
+  @extend %transition-opacity-200ms-linear;
 
   position: relative;
   opacity: 1;
@@ -78,7 +78,7 @@
 }
 
 .fadeInExitActive {
-  @extend %transition-opacity-300ms-linear;
+  @extend %transition-opacity-200ms-linear;
 
   opacity: 0;
 }

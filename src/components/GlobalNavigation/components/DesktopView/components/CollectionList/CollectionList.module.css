@@ -1,0 +1,28 @@
+@import 'styles/index';
+
+.eyebrow {
+  margin-bottom: 30px;
+}
+
+.small {
+  display: block;
+  color: var(--color-dark-label);
+  font-size: rem(14px);
+}
+
+.heading {
+  display: block;
+  margin-bottom: 18px;
+  font-family: var(--font-family-sans-serif-medium);
+  font-size: rem(18px);
+  font-weight: normal;
+  line-height: 1.33;
+}
+
+.list {
+  padding-right: 40px;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 45px;
+  list-style-type: none;
+}

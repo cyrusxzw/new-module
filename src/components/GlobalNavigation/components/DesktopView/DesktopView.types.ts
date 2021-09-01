@@ -1,10 +1,25 @@
-import type { Themes, ComponentWithChildren } from '~/types';
+import type { ComponentWithChildren, ComponentWithoutChildren } from '~/types';
 
 type DesktopViewProps = {
   className?: string;
-  theme?: Themes;
 };
 
-type DesktopViewType = ComponentWithChildren<DesktopViewProps>;
+type DesktopViewType = ComponentWithoutChildren<DesktopViewProps>;
 
-export type { DesktopViewType };
+type DesktopViewContextType = {
+  closedClassName?: string;
+  openClassName?: string;
+};
+
+type DesktopViewContextProviderType = ComponentWithChildren<DesktopViewContextType>;
+
+type UseDesktopViewContextStore = (
+  props: DesktopViewContextType,
+) => DesktopViewContextType;
+
+export type {
+  DesktopViewContextProviderType,
+  DesktopViewContextType,
+  DesktopViewType,
+  UseDesktopViewContextStore,
+};

@@ -3,6 +3,6 @@
 // import { NestedCollection } from './NestedCollection';
 // import { NestedCollectionFixture } from './NestedCollection.fixture';
 
-describe('<NestedCollection />', () => {
+describe('<GlobalNavigation.MobileView.NestedCollection />', () => {
   it.todo('should assert something');
 });

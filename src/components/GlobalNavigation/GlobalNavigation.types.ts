@@ -1,7 +1,16 @@
-import type { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction, ReactElement } from 'react';
 import type { Themes, ComponentWithChildren } from '~/types';
 
 // type Tracking = {}; // @TODO https://aesoponline.atlassian.net/browse/CON-315
+
+type CollectionImage = {
+  altText: string;
+  sizes: {
+    medium?: string;
+    large?: string;
+    small?: string;
+  };
+};
 
 type Clickable = {
   dataTestRef?: string;
@@ -16,55 +25,58 @@ type Trigger = Clickable & {
 };
 
 type Link = Clickable & {
-  url: string;
+  alternateLabel?: string;
   type: 'link';
+  url: string;
 };
 
 type Promotion = Clickable & {
   heading: string;
+  image?: CollectionImage;
   type: 'promotion';
   url: string;
-  image?: {
-    altText: string;
-    sizes: {
-      large?: string;
-      medium?: string;
-      small?: string;
-      xLarge?: string;
-      xSmall?: string;
-    };
-  };
 };
 
 type Article = Clickable & {
+  image?: CollectionImage;
   isVisible?: boolean;
+  metaDuration?: string;
+  metaLabel?: string;
   type: 'article';
-  metaLabel: string;
   url: string;
-  image?: {
-    altText: string;
-    sizes: {
-      large?: string;
-      medium?: string;
-      small?: string;
-      xLarge?: string;
-      xSmall?: string;
-    };
-  };
+};
+
+type Read = Clickable & {
+  articles: Article[];
+  articlesListHeading?: string;
+  backLabel?: string;
+  backgroundColor?: string;
+  image?: CollectionImage;
+  items: (Link | NestedCollection)[];
+  topLevelCollectionLabel?: string;
+  type: 'read-collection';
 };
 
 type Actions = {
-  logo: Link;
-  search: Trigger;
+  account: Link | Trigger;
   cart: Trigger;
-  menu: Omit<Trigger, 'onClick'> & {
-    closeTitle: string;
-    closeLabel: string;
-  };
-  read: Trigger;
-  account: Trigger | Link;
-  visit: Trigger;
+  logo: Link;
   support: Trigger;
+  menu: Omit<Trigger, 'onClick'> & {
+    closeLabel: string;
+    closeTitle: string;
+  };
+  search: Trigger & {
+    component: () => ReactElement;
+  };
+  stores: Trigger & {
+    component: () => ReactElement;
+  };
+};
+
+type NotableNestedCollection = Clickable & {
+  items: Link[];
+  type: 'notable-nested-collection';
 };
 
 type NestedCollection = Clickable & {
@@ -75,33 +87,48 @@ type NestedCollection = Clickable & {
 type Collection = Clickable & {
   backLabel?: string;
   backgroundColor?: string;
-  items: (NestedCollection | Link)[];
+  image?: CollectionImage;
+  items: (Link | NestedCollection | NotableNestedCollection)[];
   promotion?: Promotion;
+  topLevelCollectionLabel?: string;
   type: 'collection';
 };
 
-type GlobalNavigationProps = {
-  className?: string;
+type GlobalNavigationType = ComponentWithChildren;
+
+type GlobalNavigationStateContextProviderProps = {
+  activeCollectionId?: string;
+  isOpen?: boolean;
 };
 
-type GlobalNavigationType = ComponentWithChildren<GlobalNavigationProps>;
+type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavigationStateContextProviderProps>;
 
-type GlobalNavigationStateContextProviderType = ComponentWithChildren;
+type SetActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
 
 type GlobalNavigationStateContextType = {
+  activeCollectionId: string;
   isOpen: boolean;
+  setActiveCollectionId: (id: string) => void;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
+  activeView: SetActiveViewTypes;
 };
 
-type UseGlobalNavigationStateStore = () => GlobalNavigationStateContextType;
+type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
+
+type UseGlobalNavigationStateStore = (
+  props: GlobalNavigationStateContextProviderProps,
+) => GlobalNavigationStateContextType;
 
 type GlobalNavigationContextType = {
   actions: Actions;
-  articles: Article[];
   className?: string;
   collections: Collection[];
+  desktopViewLogoTheme?: Themes;
   isVisuallyObstructed?: boolean;
   mobileViewClosedTheme?: Themes;
+  onClose?: () => void;
+  onOpen?: () => void;
+  read: Read;
   theme?: Themes;
 };
 
@@ -120,6 +147,7 @@ export type {
   Article,
   Clickable,
   Collection,
+  CollectionImage,
   GlobalNavigationContextProviderType,
   GlobalNavigationContextType,
   GlobalNavigationStateContextProviderType,
@@ -127,8 +155,12 @@ export type {
   GlobalNavigationType,
   Link,
   NestedCollection,
+  NotableNestedCollection,
   Promotion,
+  Read,
+  SetActiveViewTypes,
   Trigger,
+  UseGlobalNavigationStateContext,
   UseGlobalNavigationStateStore,
   UseGlobalNavigationStore,
 };

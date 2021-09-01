@@ -7,15 +7,10 @@ import type {
 
 const MobileViewContext = createContext(undefined);
 
-const useMobileViewContextStore = () => {
-  const [activeCollectionId, setActiveCollectionId] = useState('top');
+const useMobileViewContextStore = ({ closedClassName, openClassName }) => {
   const [activeNestedCollectionIds, setActiveNestedCollectionIds] = useState(
     [],
   );
-
-  const handleOnCollectionClick = (id: string) => {
-    setActiveCollectionId(id);
-  };
 
   const handleOnNestedCollectionClick = (id: string) => {
     setActiveNestedCollectionIds((currentState) => {
@@ -27,26 +22,23 @@ const useMobileViewContextStore = () => {
     });
   };
 
-  const handleOnBackButtonClick = () => {
-    setActiveCollectionId('top');
-    setActiveNestedCollectionIds([]);
-  };
-
   return {
-    activeCollectionId,
     activeNestedCollectionIds,
-    onBackButtonClick: handleOnBackButtonClick,
-    onCollectionClick: handleOnCollectionClick,
+    closedClassName,
     onNestedCollectionClick: handleOnNestedCollectionClick,
-    setActiveCollectionId,
+    openClassName,
     setActiveNestedCollectionIds,
   };
 };
 
 const MobileViewContextProvider: MobileViewContextProviderType = ({
   children,
+  closedClassName,
+  openClassName,
 }) => (
-  <MobileViewContext.Provider value={useMobileViewContextStore()}>
+  <MobileViewContext.Provider
+    value={useMobileViewContextStore({ closedClassName, openClassName })}
+  >
     {children}
   </MobileViewContext.Provider>
 );

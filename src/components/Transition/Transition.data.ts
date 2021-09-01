@@ -9,7 +9,7 @@ const fade = {
     exitActive: transitions.fadeExitActive,
     exitDone: transitions.fadeExitDone,
   },
-  timeout: 300,
+  timeout: 200,
 };
 
 const fadeIn = {
@@ -21,7 +21,7 @@ const fadeIn = {
     exitActive: transitions.fadeInExitActive,
     exitDone: transitions.fadeInExitDone,
   },
-  timeout: 300,
+  timeout: 200,
 };
 
 const fixed = {
@@ -33,7 +33,7 @@ const fixed = {
     exitActive: transitions.fixedExitActive,
     exitDone: transitions.fixedExitDone,
   },
-  timeout: 300,
+  timeout: 200,
 };
 
 const slowFade = {

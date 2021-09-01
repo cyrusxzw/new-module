@@ -6,5 +6,4 @@ export { Link } from './Link';
 export { ListItem } from './ListItem';
 export { NestedCollection } from './NestedCollection';
 export { PrimaryNavigation } from './PrimaryNavigation';
-export { PromotionCard } from './PromotionCard';
 export { SecondaryNavigation } from './SecondaryNavigation';

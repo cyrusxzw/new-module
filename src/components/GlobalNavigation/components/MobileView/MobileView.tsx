@@ -11,29 +11,36 @@ import {
   useGlobalNavigationContext,
   useGlobalNavigationStateContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
-import { useMobileViewContext } from './MobileView.context';
 import {
   ArticleList,
   Header,
   PrimaryNavigation,
   SecondaryNavigation,
 } from './components';
+import { useMobileViewContext } from './MobileView.context';
 import type { MobileViewType } from './MobileView.types';
 import styles from './MobileView.module.css';
 
 const MobileView: MobileViewType = ({ className }) => {
-  const { isOpen, setIsOpen } = useGlobalNavigationStateContext();
+  const {
+    isOpen,
+    setActiveCollectionId,
+    setIsOpen,
+  } = useGlobalNavigationStateContext();
+
   const {
     actions,
-    articles,
     collections,
     isVisuallyObstructed,
+    onClose,
+    read,
     theme,
   } = useGlobalNavigationContext();
 
   const {
-    setActiveCollectionId,
     setActiveNestedCollectionIds,
+    openClassName,
+    closedClassName,
   } = useMobileViewContext();
 
   const currentTheme = useThemeContext(theme, 'dark');
@@ -45,6 +52,7 @@ const MobileView: MobileViewType = ({ className }) => {
     setActiveCollectionId('top');
     setActiveNestedCollectionIds([]);
     setIsOpen(false);
+    onClose?.();
   };
 
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
@@ -52,14 +60,16 @@ const MobileView: MobileViewType = ({ className }) => {
   const classSet = cx(
     styles.base,
     { [styles.open]: isOpen },
+    { [closedClassName]: !isOpen },
+    { [openClassName]: isOpen },
     styles[currentTheme],
     className,
   );
 
   const secondaryNavigationItems = [
-    actions.read,
+    read,
     actions.account,
-    actions.visit,
+    actions.stores,
     actions.support,
   ];
 
@@ -74,7 +84,7 @@ const MobileView: MobileViewType = ({ className }) => {
               <div className={cx(styles.main, { [styles.open]: isOpen })}>
                 <PrimaryNavigation isVisible={isOpen} items={collections} />
                 <SecondaryNavigation items={secondaryNavigationItems} />
-                <ArticleList items={articles} />
+                <ArticleList items={read.articles} />
               </div>
             </Transition>
           </div>

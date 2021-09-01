@@ -11,4 +11,4 @@ type NestedCollectionProps = Clickable & {
 
 type NestedCollectionType = ComponentWithoutChildren<NestedCollectionProps>;
 
-export type { NestedCollectionType };
+export type { NestedCollectionType, NestedCollectionProps };

@@ -1,0 +1,38 @@
+@import 'styles/index';
+
+.base {
+  padding: 4px;
+  font-family: var(--font-family-sans-serif-medium);
+  font-size: rem(14px);
+  font-weight: normal;
+  pointer-events: none;
+  transition: outline-offset 200ms var(--easing-ease-out-cubic),
+    color 200ms var(--easing-ease-out-cubic);
+
+  &.dark:focus {
+    outline: 1px dashed var(--color-dark-decoration);
+    outline-offset: 2px;
+  }
+
+  &.light:focus {
+    outline: 1px dashed var(--color-light-decoration);
+    outline-offset: 2px;
+  }
+}
+
+.menuOpen {
+  pointer-events: auto;
+}
+
+.icon {
+  margin-left: 7px;
+  transition: fill 200ms var(--easing-ease-out-cubic);
+
+  .dark & {
+    fill: var(--color-secondary);
+  }
+
+  .light & {
+    fill: var(--color-primary);
+  }
+}

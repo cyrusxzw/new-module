@@ -6,4 +6,4 @@ type HeaderProps = {
 
 type HeaderType = ComponentWithoutChildren<HeaderProps>;
 
-export type { HeaderType };
+export type { HeaderType, HeaderProps };

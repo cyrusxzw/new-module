@@ -1,8 +1,9 @@
-const ArticleCardFixture = {
+import type { ArticleCardProps } from './ArticleCard.types';
+
+const ArticleCardFixture: ArticleCardProps = {
   id: 'article',
   label: 'Article Card Label',
   title: 'See all Skin Care Card',
-  type: 'article' as const,
   url: '#article',
   metaLabel: 'Article Card  •  Meta Label',
   image: {

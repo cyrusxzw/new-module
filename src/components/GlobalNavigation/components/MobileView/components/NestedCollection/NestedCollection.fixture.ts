@@ -1,8 +1,9 @@
-const NestedCollectionFixture = {
+import type { NestedCollectionProps } from './NestedCollection.types';
+
+const NestedCollectionFixture: NestedCollectionProps = {
   id: 'nested-collection',
   label: 'Nested Collection',
   title: 'Nested Collection',
-  type: 'nested-collection' as const,
   items: [
     {
       id: 'nested-link',

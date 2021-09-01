@@ -3,7 +3,7 @@ import type { Clickable } from '~/components/GlobalNavigation/GlobalNavigation.t
 
 type ArticleCardProps = Clickable & {
   isVisible?: boolean;
-  metaLabel: string;
+  metaLabel?: string;
   url: string;
   image?: {
     altText: string;

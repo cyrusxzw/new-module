@@ -3,6 +3,6 @@
 // import { ListItem } from './ListItem';
 // import { ListItemFixture } from './ListItem.fixture';
 
-describe('<ListItem />', () => {
+describe('<GlobalNavigation.MobileView.ListItem />', () => {
   it.todo('should assert something');
 });

@@ -1,8 +1,9 @@
-const PromotionCardFixture = {
+import type { PromotionCardProps } from './PromotionCard.types';
+
+const PromotionCardFixture: PromotionCardProps = {
   id: 'see-all-skin-care-card',
   label: 'See all Skin Care Card Label',
   title: 'See all Skin Care Card',
-  type: 'promotion' as const,
   url: '#see-all-skin-care-card',
   heading: 'See all Skin Care Card Heading',
   image: {

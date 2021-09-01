@@ -1,8 +1,9 @@
-const CollectionFixture = {
+import type { CollectionProps } from './Collection.types';
+
+const CollectionFixture: CollectionProps = {
   id: 'collection',
   label: 'Collection',
   title: 'Collection',
-  type: 'collection' as const,
   items: [
     {
       id: 'ink',

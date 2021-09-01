@@ -1,13 +1,12 @@
 import React from 'react';
 import { useFocusOnFirst } from '~/customHooks';
-import { ListItem } from '../../components';
+import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import { ListItem } from '../ListItem';
 import type { PrimaryNavigationType } from './PrimaryNavigation.types';
 import compositionStyles from '../../MobileView.module.css';
 
-import { useMobileViewContext } from '~/components/GlobalNavigation/components/MobileView/MobileView.context';
-
 const PrimaryNavigation: PrimaryNavigationType = ({ isVisible, items }) => {
-  const { activeCollectionId } = useMobileViewContext();
+  const { activeCollectionId } = useGlobalNavigationStateContext();
 
   const [listRef] = useFocusOnFirst(
     isVisible && activeCollectionId === 'top',
@@ -15,7 +14,7 @@ const PrimaryNavigation: PrimaryNavigationType = ({ isVisible, items }) => {
   );
 
   return (
-    <nav aria-hidden={!isVisible} aria-label="navigation" role="navigation">
+    <nav aria-hidden={!isVisible} aria-label="primary" role="navigation">
       <ul className={compositionStyles.list} ref={listRef}>
         {items.map((props) => (
           <ListItem

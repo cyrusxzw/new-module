@@ -30,18 +30,18 @@
 }
 
 .action {
-  transition: color 300ms var(--easing-ease-out-cubic),
-    outline-offset 300ms var(--easing-ease-out-cubic);
+  transition: color 200ms var(--easing-ease-out-cubic),
+    outline-offset 200ms var(--easing-ease-out-cubic);
 
   .dark &:focus,
   .darkClosed &:focus {
-    outline: 1px dashed var(--color-dark-copy-alternate);
+    outline: 1px dashed var(--color-dark-decoration);
     outline-offset: 2px;
   }
 
   .light &:focus,
   .lightClosed &:focus {
-    outline: 1px dashed var(--color-light-copy-alternate);
+    outline: 1px dashed var(--color-light-decoration);
     outline-offset: 2px;
   }
 }

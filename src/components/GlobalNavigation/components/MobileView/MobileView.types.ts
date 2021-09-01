@@ -1,18 +1,23 @@
 import type { ComponentWithoutChildren, ComponentWithChildren } from '~/types';
 
 type MobileViewContextType = {
-  activeCollectionId: string;
   activeNestedCollectionIds: string;
-  onBackButtonClick: () => void;
-  onCollectionClick: (id: string) => void;
+  closedClassName?: string;
   onNestedCollectionClick: (id: string) => void;
-  setActiveCollectionId: (id: string) => void;
+  openClassName?: string;
   setActiveNestedCollectionIds: (ids: string[]) => void;
 };
 
-type MobileViewContextProviderType = ComponentWithChildren;
+type MobileViewContextProviderProps = {
+  closedClassName?: string;
+  openClassName?: string;
+};
 
-type UseMobileViewContextStore = () => MobileViewContextType;
+type MobileViewContextProviderType = ComponentWithChildren<MobileViewContextProviderProps>;
+
+type UseMobileViewContextStore = (
+  props: MobileViewContextProviderProps,
+) => MobileViewContextType;
 
 type MobileViewProps = {
   className?: string;

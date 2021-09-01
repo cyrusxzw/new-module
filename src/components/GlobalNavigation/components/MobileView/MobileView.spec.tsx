@@ -43,14 +43,14 @@ const collections = [
   },
 ];
 
-describe('<MobileView />', () => {
+describe('<GlobalNavigation.MobileView />', () => {
   it('should render all items within nested elements', () => {
     render(
       <GlobalNavigationStateContextProvider>
         <GlobalNavigationContextProvider
           value={{
             actions: GlobalNavigationFixture.actions,
-            articles: GlobalNavigationFixture.articles,
+            read: GlobalNavigationFixture.read,
             collections: collections,
           }}
         >

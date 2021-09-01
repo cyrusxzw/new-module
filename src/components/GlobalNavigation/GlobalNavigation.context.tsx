@@ -1,32 +1,48 @@
 import React, { createContext, useContext, useState } from 'react';
+import { useActiveView } from './GlobalNavigation.hooks';
 import type {
-  GlobalNavigationStateContextProviderType,
-  GlobalNavigationStateContextType,
-  UseGlobalNavigationStateStore,
   GlobalNavigationContextProviderType,
   GlobalNavigationContextType,
+  GlobalNavigationStateContextProviderType,
+  UseGlobalNavigationStateContext,
+  UseGlobalNavigationStateStore,
   UseGlobalNavigationStore,
 } from './GlobalNavigation.types';
 
 const GlobalNavigationStateContext = createContext(undefined);
 
-const useGlobalNavigationStateStore: UseGlobalNavigationStateStore = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const useGlobalNavigationStateStore: UseGlobalNavigationStateStore = ({
+  isOpen: initialIsOpen = false,
+  activeCollectionId: initialActiveCollectionId = 'top',
+}) => {
+  const [isOpen, setIsOpen] = useState(initialIsOpen);
+  const [activeView] = useActiveView();
+  const [activeCollectionId, setActiveCollectionId] = useState(
+    initialActiveCollectionId,
+  );
 
-  return { isOpen, setIsOpen };
+  return {
+    activeCollectionId,
+    activeView,
+    isOpen,
+    setActiveCollectionId,
+    setIsOpen,
+  };
 };
 
 const GlobalNavigationStateContextProvider: GlobalNavigationStateContextProviderType = ({
   children,
+  isOpen,
+  activeCollectionId,
 }) => (
   <GlobalNavigationStateContext.Provider
-    value={useGlobalNavigationStateStore()}
+    value={useGlobalNavigationStateStore({ isOpen, activeCollectionId })}
   >
     {children}
   </GlobalNavigationStateContext.Provider>
 );
 
-const useGlobalNavigationStateContext = (): GlobalNavigationStateContextType => {
+const useGlobalNavigationStateContext: UseGlobalNavigationStateContext = () => {
   const context = useContext(GlobalNavigationStateContext);
 
   if (context === undefined) {
@@ -40,7 +56,6 @@ const useGlobalNavigationStateContext = (): GlobalNavigationStateContextType => 
 
 const GlobalNavigationContext = createContext(undefined);
 
-/** keeping store incase of any programatic changes */
 const useGlobalNavigationStore: UseGlobalNavigationStore = (
   value: GlobalNavigationContextType,
 ): GlobalNavigationContextType => value;
@@ -67,8 +82,8 @@ const useGlobalNavigationContext = (): GlobalNavigationContextType => {
 };
 
 export {
-  GlobalNavigationStateContextProvider,
-  useGlobalNavigationStateContext,
   GlobalNavigationContextProvider,
+  GlobalNavigationStateContextProvider,
   useGlobalNavigationContext,
+  useGlobalNavigationStateContext,
 };

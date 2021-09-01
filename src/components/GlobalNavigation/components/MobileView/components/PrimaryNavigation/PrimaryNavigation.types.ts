@@ -8,4 +8,4 @@ type PrimaryNavigationProps = {
 
 type PrimaryNavigationType = ComponentWithoutChildren<PrimaryNavigationProps>;
 
-export type { PrimaryNavigationType };
+export type { PrimaryNavigationType, PrimaryNavigationProps };

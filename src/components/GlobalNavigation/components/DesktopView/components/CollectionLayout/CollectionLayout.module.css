@@ -1,0 +1,36 @@
+@import 'styles/index';
+
+:root {
+  --offset: 90px;
+}
+
+.nestedCollectionsWrapper {
+  display: flex;
+}
+
+.nestedCollections,
+.notableNestedCollections {
+  width: calc(50% + 30px);
+  padding-right: 30px;
+}
+
+.collectionsWrapper {
+  width: calc(100% * 2 / 12 + 30px);
+  padding-right: 30px;
+  margin-top: var(--offset);
+  margin-bottom: 40px;
+  margin-left: calc(100% * 2 / 12);
+}
+
+.supplementary {
+  display: flex;
+  width: calc(100% * 4 / 12);
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: var(--offset);
+  margin-bottom: 40px;
+}
+
+.promotion {
+  width: calc(100% * 9 / 12);
+}

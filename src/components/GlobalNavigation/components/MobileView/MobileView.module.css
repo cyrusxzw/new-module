@@ -6,15 +6,15 @@
 
 .base {
   position: relative;
-  z-index: var(--z-index-mobile-menu);
+  z-index: var(--z-index-menu);
   width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
-  transition: background-color 300ms linear;
+  transition: background-color 200ms linear;
 
   &.open {
     position: fixed;
-    z-index: var(--z-index-fixed-mobile-menu);
+    z-index: var(--z-index-fixed-menu);
     top: 0;
     right: 0;
     bottom: 0;
@@ -39,13 +39,13 @@
 
 .main {
   position: relative;
-  z-index: var(--z-index-fixed-mobile-menu);
+  z-index: var(--z-index-fixed-menu);
   height: 100%;
   pointer-events: none;
-}
 
-.open {
-  pointer-events: auto;
+  &.open {
+    pointer-events: auto;
+  }
 }
 
 .list {
@@ -144,11 +144,11 @@
   line-height: 1.4;
   outline-offset: 0;
   text-align: left;
-  transition: outline-offset 300ms var(--easing-ease-out-cubic),
-    color 300ms var(--easing-ease-out-cubic);
+  transition: outline-offset 200ms var(--easing-ease-out-cubic),
+    color 200ms var(--easing-ease-out-cubic);
 
   polygon {
-    transition: fill 300ms var(--easing-ease-out-cubic);
+    transition: fill 200ms var(--easing-ease-out-cubic);
   }
 
   .dark & {
@@ -178,12 +178,21 @@
   }
 
   .dark &:focus {
-    outline: 1px dashed var(--color-dark-copy-alternate);
+    outline: 1px dashed var(--color-dark-decoration);
     outline-offset: 2px;
   }
 
   .light &:focus {
-    outline: 1px dashed var(--color-light-copy-alternate);
+    outline: 1px dashed var(--color-light-decoration);
     outline-offset: 2px;
   }
+}
+
+.slide {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
