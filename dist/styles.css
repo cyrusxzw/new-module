@@ -566,10 +566,22 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  pointer-events: none;
+}
+.Loading-module_start__10H2S {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.Loading-module_center__2FQYN {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  pointer-events: none;
+}
+.Loading-module_end__2fmjm {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 .Loading-module_small__2H7s_.Loading-module_isLoading__2jmYF{
     height: 5px;
@@ -656,6 +668,22 @@
       -webkit-animation-delay: 150ms;
               animation-delay: 150ms;
     }
+[dir="ltr"] :export {
+  start-top: Loading-module_start__10H2S;
+  start-left: Loading-module_start__10H2S;
+}
+[dir="rtl"] :export {
+  start-top: Loading-module_start__10H2S;
+  start-right: Loading-module_start__10H2S;
+}
+[dir="ltr"] :export {
+  end-bottom: Loading-module_end__2fmjm;
+  end-right: Loading-module_end__2fmjm;
+}
+[dir="rtl"] :export {
+  end-bottom: Loading-module_end__2fmjm;
+  end-left: Loading-module_end__2fmjm;
+}
 
 :root {
   /* Base colours */
