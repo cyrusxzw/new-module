@@ -3,24 +3,25 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { ArticleList } from './ArticleList';
 import { ArticleListFixture } from './ArticleList.fixture';
-import * as globalNavigationContextFile from '~/components/GlobalNavigation/GlobalNavigation.context';
+import {
+  GlobalNavigationStateContextProvider,
+  useGlobalNavigationStateContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
 import * as articleCardFile from '../ArticleCard/ArticleCard';
 
+jest.mock('~/components/GlobalNavigation/GlobalNavigation.context');
+
 describe('<ArticleList />', () => {
-  let useGlobalNavigationStateContextSpy: jest.SpyInstance;
   let articleCardSpy: jest.SpyInstance;
 
   const TestBed = ({ items }) => (
-    <globalNavigationContextFile.GlobalNavigationStateContextProvider>
+    <GlobalNavigationStateContextProvider>
       <ArticleList items={items} />
-    </globalNavigationContextFile.GlobalNavigationStateContextProvider>
+    </GlobalNavigationStateContextProvider>
   );
 
   beforeEach(() => {
     jest.clearAllMocks();
-    useGlobalNavigationStateContextSpy = jest
-      .spyOn(globalNavigationContextFile, 'useGlobalNavigationStateContext')
-      .mockReturnValue({ isOpen: false, activeCollectionId: 'top' } as any);
     articleCardSpy = jest
       .spyOn(articleCardFile, 'ArticleCard')
       .mockImplementation(() => null);
@@ -41,7 +42,7 @@ describe('<ArticleList />', () => {
   });
 
   it('should render with items and show cards', () => {
-    useGlobalNavigationStateContextSpy.mockReturnValue({
+    (useGlobalNavigationStateContext as jest.Mock).mockReturnValue({
       isOpen: true,
       activeCollectionId: 'top',
     });
@@ -49,8 +50,22 @@ describe('<ArticleList />', () => {
     render(<TestBed items={ArticleListFixture.items} />);
 
     expect(articleCardSpy).toHaveBeenCalledWith(
-      expect.objectContaining({ isVisible: true }), // Props
-      expect.anything(), // Context
+      expect.objectContaining({ isVisible: true }),
+      expect.anything(),
+    );
+  });
+
+  it('should render with items and not show cards as active collection not on top', () => {
+    (useGlobalNavigationStateContext as jest.Mock).mockReturnValue({
+      isOpen: true,
+      activeCollectionId: 'Skin',
+    });
+
+    render(<TestBed items={ArticleListFixture.items} />);
+
+    expect(articleCardSpy).toHaveBeenCalledWith(
+      expect.objectContaining({ isVisible: false }),
+      expect.anything(),
     );
   });
 });
