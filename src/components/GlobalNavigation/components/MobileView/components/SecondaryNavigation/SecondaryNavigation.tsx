@@ -21,7 +21,7 @@ const SecondaryNavigation: SecondaryNavigationType = ({ items }) => {
 
   const currentTheme = useThemeContext(null, 'dark');
 
-  if (!items && !items?.length) return null;
+  if (!items?.length) return null;
 
   const isVisible = isOpen && activeCollectionId === 'top';
   const handleSetActiveCollectionId = (id: string) => setActiveCollectionId(id);

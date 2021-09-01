@@ -41,7 +41,7 @@ const Icon: IconType = ({
 
   return (
     <svg
-      aria-hidden={aria?.hidden ?? null}
+      aria-hidden={aria?.hidden || undefined}
       aria-labelledby={uidAriaLabelBy}
       className={classSet}
       data-ref={dataRef}

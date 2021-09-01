@@ -225,6 +225,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       id: 'skin-care',
       label: 'Skin Care',
       title: 'Skin Care',
+      topLevelCollectionLabel: 'Category',
       type: 'collection' as const,
       promotion: {
         id: 'see-all-skin-care-card',
@@ -411,6 +412,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       id: 'body-and-hand',
       label: 'Body & Hand',
       title: 'Body & Hand',
+      topLevelCollectionLabel: 'Category',
       type: 'collection' as const,
       items: [
         {
@@ -485,6 +487,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       id: 'hair',
       label: 'Hair',
       title: 'Hair',
+      topLevelCollectionLabel: 'Category',
       type: 'collection' as const,
       promotion: {
         id: 'classic-hair-care-trio',
@@ -556,6 +559,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       id: 'fragrance',
       label: 'Fragrance',
       title: 'Fragrance',
+      topLevelCollectionLabel: 'Category',
       type: 'collection' as const,
       promotion: {
         id: 'classic-hair-care-trio',
@@ -684,6 +688,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       id: 'home',
       label: 'Home',
       title: 'Home',
+      topLevelCollectionLabel: 'Category',
       type: 'collection' as const,
       items: [
         {
@@ -722,6 +727,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       id: 'kits-and-travel',
       label: 'Kits & Travel',
       title: 'Kits & Travel',
+      topLevelCollectionLabel: 'Category',
       type: 'collection' as const,
       items: [
         {
@@ -771,10 +777,10 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       },
       backgroundColor: '#e8e7db',
       backLabel: 'All Collections',
-      topLevelCollectionLabel: 'Gift Guide',
       id: 'gift-guide',
       label: 'Gifts',
       title: 'Gifts',
+      topLevelCollectionLabel: 'Gift Guide',
       type: 'collection' as const,
       items: [
         {

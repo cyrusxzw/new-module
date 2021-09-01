@@ -21,8 +21,8 @@ const CollectionList: CollectionListType = ({ heading, items, eyebrow }) => {
       {heading && <strong className={styles.heading}>{heading}</strong>}
 
       <ul aria-hidden={!isActive} aria-label="submenu" className={listClassSet}>
-        {items.map((props) => (
-          <CollectionItem {...props} key={props.id} />
+        {items.map((itemProps) => (
+          <CollectionItem {...itemProps} key={itemProps.id} />
         ))}
       </ul>
     </>

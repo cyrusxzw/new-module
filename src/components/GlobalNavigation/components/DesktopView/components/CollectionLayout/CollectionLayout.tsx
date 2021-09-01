@@ -32,7 +32,7 @@ const CollectionLayout: CollectionLayoutType = ({
     <>
       <div className={styles.collectionsWrapper}>
         <CollectionList
-          heading={topLevelCollectionLabel || 'Category'}
+          heading={topLevelCollectionLabel}
           items={topLevelCollections}
         />
 
