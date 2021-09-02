@@ -6,6 +6,8 @@ import {
   GlobalNavigationContextProvider,
   useGlobalNavigationContext,
 } from './GlobalNavigation.context';
+import { DesktopViewContextProvider } from './components/DesktopView/DesktopView.context';
+import { MobileViewContextProvider } from './components/MobileView/MobileView.context';
 
 export {
   GlobalNavigation,
@@ -14,4 +16,6 @@ export {
   useGlobalNavigationStateContext,
   GlobalNavigationContextProvider,
   useGlobalNavigationContext,
+  DesktopViewContextProvider,
+  MobileViewContextProvider,
 };
