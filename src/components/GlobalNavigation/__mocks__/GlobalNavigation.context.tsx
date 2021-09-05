@@ -2,13 +2,17 @@ import React from 'react';
 
 const GlobalNavigationStateContextProvider = ({ children }) => <>{children}</>;
 
-const useGlobalNavigationStateContext = jest
-  .fn()
-  .mockReturnValue({ isOpen: false, activeCollectionId: 'top' });
+const isOpen = false;
+const activeCollectionId = 'top';
+const setActiveCollectionId = jest.fn();
+
+const useGlobalNavigationStateContext = jest.fn();
 
 const GlobalNavigationContextProvider = ({ children }) => <>{children}</>;
 
-const useGlobalNavigationContext = jest.fn().mockReturnValue({}); // TODO: Set default value here later
+const useGlobalNavigationContext = jest
+  .fn()
+  .mockReturnValue({ isOpen, activeCollectionId, setActiveCollectionId }); // TODO: Set default value here later
 
 export {
   GlobalNavigationContextProvider,

@@ -22,6 +22,10 @@ describe('<ArticleList />', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    (useGlobalNavigationStateContext as jest.Mock).mockReturnValue({
+      isOpen: false,
+      activeCollectionId: 'top',
+    });
     articleCardSpy = jest
       .spyOn(articleCardFile, 'ArticleCard')
       .mockImplementation(() => null);
