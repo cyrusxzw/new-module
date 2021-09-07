@@ -24,6 +24,5 @@ describe('<ContentHubArticle />', () => {
     );
 
     expect(screen.getAllByRole('link', { name: 'title' }).length).toEqual(3);
-    expect(screen.getByRole('heading', { name: 'title' })).toBeInTheDocument();
   });
 });
