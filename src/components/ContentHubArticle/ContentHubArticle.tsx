@@ -114,9 +114,7 @@ const ContentHubArticle: ContentHubArticleType = ({
             title={longTitle}
             url={uri}
           >
-            <h1>
-              <span>{longTitle}</span>
-            </h1>
+            <span>{longTitle}</span>
           </Hyperlink>
         </div>
         {readingTime && (

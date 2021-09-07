@@ -53,11 +53,9 @@ exports[`<ReadMore /> should render base component correctly 1`] = `
           target="_self"
           title="1. Senorial consectetur adipiscing elit."
         >
-          <h1>
-            <span>
-              1. Senorial consectetur adipiscing elit.
-            </span>
-          </h1>
+          <span>
+            1. Senorial consectetur adipiscing elit.
+          </span>
         </a>
       </div>
       <div
@@ -116,11 +114,9 @@ exports[`<ReadMore /> should render base component correctly 1`] = `
           target="_self"
           title="2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante."
         >
-          <h1>
-            <span>
-              2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
-            </span>
-          </h1>
+          <span>
+            2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare mauris, id dictum ante.
+          </span>
         </a>
       </div>
       <div
@@ -179,11 +175,9 @@ exports[`<ReadMore /> should render base component correctly 1`] = `
           target="_self"
           title="3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante."
         >
-          <h1>
-            <span>
-              3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
-            </span>
-          </h1>
+          <span>
+            3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et ornare, id dictum ante. Suspendisse et ornare mauris, id dictum ante.
+          </span>
         </a>
       </div>
       <div
