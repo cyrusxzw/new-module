@@ -1,0 +1,1 @@
+"use strict";var e=require("react"),r=require("./useOnScreen.js");exports.useExecuteOnImpression=function(n,s,i){void 0===i&&(i={});var t=i.threshold,u=void 0===t?.2:t,c=i.isExecutableOnReEntry,o=void 0===c||c,v=r.useOnScreen(n,u,void 0,o);e.useEffect((function(){v&&s()}),[s,v])};

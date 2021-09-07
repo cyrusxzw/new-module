@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../sharedChunks/ProductDetailContext.js");require("react"),exports.ProductDetailContextProvider=e.ProductDetailContextProvider,exports.useProductDetailContext=e.useProductDetailContext;
