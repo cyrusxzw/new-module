@@ -1131,8 +1131,15 @@ declare type DesktopViewProps = {
     className?: string;
 };
 declare type DesktopViewType = ComponentWithoutChildren<DesktopViewProps>;
+declare type DesktopViewContextType = {
+    closedClassName?: string;
+    openClassName?: string;
+};
+declare type DesktopViewContextProviderType = ComponentWithChildren<DesktopViewContextType>;
 
 declare const DesktopView: DesktopViewType;
+
+declare const DesktopViewContextProvider: DesktopViewContextProviderType;
 
 declare type CollectionImage = {
     altText: string;
@@ -2035,6 +2042,7 @@ declare const index_d$a_MobileViewContextProvider: typeof MobileViewContextProvi
 declare const index_d$a_TabletView: typeof TabletView;
 declare const index_d$a_TabletViewContextProvider: typeof TabletViewContextProvider;
 declare const index_d$a_DesktopView: typeof DesktopView;
+declare const index_d$a_DesktopViewContextProvider: typeof DesktopViewContextProvider;
 declare const index_d$a_GlobalNavigationContextProvider: typeof GlobalNavigationContextProvider;
 declare const index_d$a_GlobalNavigationStateContextProvider: typeof GlobalNavigationStateContextProvider;
 declare const index_d$a_useGlobalNavigationStateContext: typeof useGlobalNavigationStateContext;
@@ -2111,6 +2119,7 @@ declare namespace index_d$a {
     index_d$a_TabletView as TabletView,
     index_d$a_TabletViewContextProvider as TabletViewContextProvider,
     index_d$a_DesktopView as DesktopView,
+    index_d$a_DesktopViewContextProvider as DesktopViewContextProvider,
     index_d$a_GlobalNavigationContextProvider as GlobalNavigationContextProvider,
     index_d$a_GlobalNavigationStateContextProvider as GlobalNavigationStateContextProvider,
     index_d$a_useGlobalNavigationStateContext as useGlobalNavigationStateContext,
@@ -2870,4 +2879,4 @@ declare namespace index_d {
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DesktopView, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, MobileView, MobileViewContextProvider, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TabletView, TabletViewContextProvider, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$a as components, index_d$9 as constants, index_d$8 as contexts, index_d$7 as customHooks, index_d$6 as environment, index_d$4 as objects, index_d$2 as product, index_d$b as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useFocusOnFirst, useGlobalNavigationStateContext, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useTrapFocus, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DesktopView, DesktopViewContextProvider, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, MobileView, MobileViewContextProvider, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TabletView, TabletViewContextProvider, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$a as components, index_d$9 as constants, index_d$8 as contexts, index_d$7 as customHooks, index_d$6 as environment, index_d$4 as objects, index_d$2 as product, index_d$b as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useFocusOnFirst, useGlobalNavigationStateContext, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useTrapFocus, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };

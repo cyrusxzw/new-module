@@ -8,18 +8,15 @@
   position: relative;
   z-index: var(--z-index-menu);
   width: 100%;
+  opacity: 0;
   overflow-x: hidden;
   overflow-y: hidden;
-  transition: background-color 200ms var(--easing-ease-in-out-cubic);
+  transition: background-color 200ms var(--easing-ease-in-out-cubic),
+    opacity 200ms var(--easing-ease-in-out-cubic);
 
   /* Added to more elegantly transition between breakpoints */
-  & > * {
-    opacity: 0;
-    transition: opacity 200ms var(--easing-ease-in-out-cubic);
-
-    @media (--viewport-xs-sm-only) {
-      opacity: 1;
-    }
+  @media (--viewport-xs-sm-only) {
+    opacity: 1;
   }
 
   &.open {

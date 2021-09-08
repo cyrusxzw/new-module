@@ -72,6 +72,7 @@ export {
   TabletView,
   TabletViewContextProvider,
   DesktopView,
+  DesktopViewContextProvider,
   GlobalNavigationContextProvider,
   GlobalNavigationStateContextProvider,
   useGlobalNavigationStateContext,
