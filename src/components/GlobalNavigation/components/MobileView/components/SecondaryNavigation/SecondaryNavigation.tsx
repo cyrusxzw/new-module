@@ -25,10 +25,12 @@ const SecondaryNavigation: SecondaryNavigationType = ({ items }) => {
 
   const isVisible = isOpen && activeCollectionId === 'top';
   const handleSetActiveCollectionId = (id: string) => setActiveCollectionId(id);
-  const classSet = cx(
-    styles.base,
+  const classSet = cx(styles.base, styles[currentTheme]);
+
+  const elementClassName = cx(
+    styles.element,
     { [styles.hidden]: activeCollectionId !== 'top' },
-    styles[currentTheme],
+    compositionStyles.ornamentalWrapper,
   );
 
   const getElement = (props: SecondaryNavigationItem) => {
@@ -36,7 +38,7 @@ const SecondaryNavigation: SecondaryNavigationType = ({ items }) => {
 
     return props.type === 'link' ? (
       <Hyperlink
-        className={cx(styles.element, compositionStyles.ornamentalWrapper)}
+        className={elementClassName}
         dataTestRef={props.dataTestRef}
         tabIndex={!isVisible ? -1 : null}
         title={props.title}
@@ -47,7 +49,7 @@ const SecondaryNavigation: SecondaryNavigationType = ({ items }) => {
     ) : (
       <>
         <Button
-          className={cx(styles.element, compositionStyles.ornamentalWrapper)}
+          className={elementClassName}
           dataTestRef={props.dataTestRef}
           isInline={true}
           onClick={() =>
@@ -62,6 +64,7 @@ const SecondaryNavigation: SecondaryNavigationType = ({ items }) => {
             {props.label}
           </span>
         </Button>
+
         {props.type === 'read-collection' && (
           <Collection
             {...props}

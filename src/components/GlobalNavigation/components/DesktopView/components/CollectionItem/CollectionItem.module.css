@@ -26,12 +26,12 @@
     color: var(--color-primary);
   }
 
-  .dark &:focus {
+  .dark &:focus-visible {
     outline: 1px dashed var(--color-dark-decoration);
     outline-offset: 2px;
   }
 
-  .light &:focus {
+  .light &:focus-visible {
     outline: 1px dashed var(--color-light-decoration);
     outline-offset: 2px;
   }

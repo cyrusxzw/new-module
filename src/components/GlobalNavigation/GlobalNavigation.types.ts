@@ -26,6 +26,7 @@ type Trigger = Clickable & {
 
 type Link = Clickable & {
   alternateLabel?: string;
+  isExternal?: boolean;
   type: 'link';
   url: string;
 };
@@ -51,6 +52,7 @@ type Read = Clickable & {
   articlesListHeading?: string;
   backLabel?: string;
   backgroundColor?: string;
+  baseUrl?: string;
   image?: CollectionImage;
   items: (Link | NestedCollection)[];
   topLevelCollectionLabel?: string;
@@ -58,13 +60,24 @@ type Read = Clickable & {
 };
 
 type Actions = {
-  account: Link | Trigger;
+  account: (
+    | (Link & {
+        recentOrders?: { url?: string; title?: string; label?: string };
+      })
+    | Trigger
+  ) & {
+    isAuthenticated?: boolean;
+  };
   cart: Trigger;
   logo: Link;
+  shop: Omit<Trigger, 'onClick'> & {
+    onClick?: () => void;
+  };
   support: Trigger;
   menu: Omit<Trigger, 'onClick'> & {
     closeLabel: string;
     closeTitle: string;
+    onClick?: () => void;
   };
   search: Trigger & {
     component: () => ReactElement;

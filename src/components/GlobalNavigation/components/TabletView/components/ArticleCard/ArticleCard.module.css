@@ -1,0 +1,58 @@
+@import 'styles/index';
+
+.base {
+  box-sizing: border-box;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  &.dark {
+    color: var(--color-dark-label);
+  }
+
+  &.light {
+    color: var(--color-light-label);
+  }
+
+  &.dark:hover {
+    color: var(--color-secondary);
+  }
+
+  &.light:hover {
+    color: var(--color-primary);
+  }
+}
+
+.image {
+  overflow: hidden;
+  max-height: 240px;
+
+  /* aspect-ratio: 4 / 3; */
+  aspect-ratio: 16 / 9;
+  pointer-events: none;
+
+  img {
+    width: 100%;
+    height: auto;
+
+    /* aspect-ratio: 4 / 3; */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}
+
+.metaLabel {
+  margin-bottom: 6px;
+  font-family: var(--font-family-sans-serif-regular);
+  line-height: 1.4;
+}
+
+.label {
+  margin-bottom: 14px;
+  font-size: rem(20px);
+  line-height: 1.33;
+}
+
+.leftAligned {
+  flex-direction: column;
+  align-items: start;
+}

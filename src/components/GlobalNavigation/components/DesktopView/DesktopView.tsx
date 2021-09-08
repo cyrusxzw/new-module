@@ -17,10 +17,12 @@ import styles from './DesktopView.module.css';
 
 const DesktopView: DesktopViewType = ({ className }) => {
   const {
+    activeCollectionId,
     isOpen,
     setIsOpen,
     setActiveCollectionId,
   } = useGlobalNavigationStateContext();
+
   const { isVisuallyObstructed, onClose, theme } = useGlobalNavigationContext();
   const { closedClassName, openClassName } = useDesktopViewContext();
   const contextTheme = useThemeContext(theme, 'dark');

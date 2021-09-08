@@ -44,11 +44,9 @@ const CollectionLayout: CollectionLayoutType = ({
       <div className={styles.supplementary}>
         <div className={styles.nestedCollectionsWrapper}>
           <div className={styles.nestedCollections}>
-            {[...nestedCollections]
-              .filter(Boolean)
-              .map(({ label, id, items }) => (
-                <CollectionList heading={label} items={items} key={id} />
-              ))}
+            {nestedCollections.filter(Boolean).map(({ label, id, items }) => (
+              <CollectionList heading={label} items={items} key={id} />
+            ))}
 
             {!!taxonomyOfDesignElement && (
               <CollectionList items={[taxonomyOfDesignElement]} />

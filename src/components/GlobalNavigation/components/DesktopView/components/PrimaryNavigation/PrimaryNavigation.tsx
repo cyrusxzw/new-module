@@ -9,7 +9,6 @@ import { Icon } from '~/components/Icon';
 import { ScreenReaderOnly } from '~/components/ScreenReaderOnly';
 import { CloseButton } from '../CloseButton';
 import { CollectionLayout } from '../CollectionLayout';
-import { Logo } from '../Logo';
 import { MenuItem } from '../MenuItem';
 import { Panel } from '../Panel';
 import type { PrimaryNavigationType } from './PrimaryNavigation.types';
@@ -19,8 +18,11 @@ const PrimaryNavigation: PrimaryNavigationType = ({ onClose }) => {
   const {
     isOpen,
     setIsOpen,
+    activeCollectionId,
     setActiveCollectionId,
   } = useGlobalNavigationStateContext();
+
+  console.log(activeCollectionId);
 
   const {
     actions: { search, stores },
@@ -28,22 +30,31 @@ const PrimaryNavigation: PrimaryNavigationType = ({ onClose }) => {
     collections,
     onOpen,
   } = useGlobalNavigationContext();
+
   const currentTheme = useThemeContext(undefined, 'dark');
+
+  /* If the state of the menu is open, but no collection is active, close the menu */
+  if (isOpen && activeCollectionId === 'top') {
+    setIsOpen(false);
+  }
 
   const handleOnCollectionClick = (id: string, callback?: () => void) => {
     setActiveCollectionId(id);
     setIsOpen(id !== 'top');
+
     callback?.();
     if (!isOpen) {
       onOpen?.();
     }
   };
 
-  const handleOnSearchClick = () =>
+  const handleOnSearchClick = () => {
     handleOnCollectionClick(search.id, search.onClick);
+  };
 
-  const handleOnStoresClick = () =>
+  const handleOnStoresClick = () => {
     handleOnCollectionClick(stores.id, stores.onClick);
+  };
 
   const SearchComponent = search.component;
   const StoresComponent = stores.component;

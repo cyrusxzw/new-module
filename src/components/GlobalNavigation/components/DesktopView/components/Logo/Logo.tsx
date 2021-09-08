@@ -12,7 +12,7 @@ import type { LogoType } from './Logo.types';
 import styles from './Logo.module.css';
 
 const Logo: LogoType = () => {
-  const { isOpen } = useGlobalNavigationStateContext();
+  const { isOpen, activeView } = useGlobalNavigationStateContext();
   const {
     actions: {
       logo: { dataTestRef, title, url, label },
@@ -24,6 +24,7 @@ const Logo: LogoType = () => {
 
   const classSet = cx(styles.base, styles[currentTheme], {
     [styles.active]: isOpen,
+    [styles.tablet]: activeView === 'tablet',
   });
 
   const iconClassSet = cx(styles.icon, styles[desktopViewLogoTheme]);
@@ -37,10 +38,10 @@ const Logo: LogoType = () => {
     >
       <Icon
         className={iconClassSet}
-        height={40}
+        height={activeView === 'tablet' ? 30 : 40}
         name="aesop"
         tabIndex={-1}
-        width={120}
+        width={activeView === 'tablet' ? 80 : 120}
       />
 
       <ScreenReaderOnly>{label}</ScreenReaderOnly>

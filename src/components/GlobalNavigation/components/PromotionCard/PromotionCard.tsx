@@ -11,6 +11,7 @@ import compositionStyles from '../MobileView/MobileView.module.css';
 import styles from './PromotionCard.module.css';
 
 const PromotionCard: PromotionCardType = ({
+  className,
   heading,
   image,
   isFlush = false,
@@ -27,9 +28,10 @@ const PromotionCard: PromotionCardType = ({
     styles.base,
     styles[currentTheme],
     compositionStyles.itemElement,
-    compositionStyles.ornamentalWrapper,
+    styles.ornamentalWrapper,
     styles.leftAligned,
     { [styles.flush]: isFlush },
+    className,
   );
 
   return (
@@ -51,7 +53,7 @@ const PromotionCard: PromotionCardType = ({
       </Heading>
 
       <Paragraph className={styles.label} isFlush={true} theme={currentTheme}>
-        <span className={compositionStyles.ornamentalHover}>{label}</span>{' '}
+        <span className={styles.ornamentalHover}>{label}</span>{' '}
         <Icon height={14} name="rightArrow" theme={currentTheme} width={14} />
       </Paragraph>
 

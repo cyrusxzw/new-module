@@ -10,11 +10,13 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function ImageRef(
     altText,
     className,
     cta,
+    height,
     isLazyLoaded = true,
     sizes,
     style,
     type,
     theme = 'dark',
+    width,
   },
   ref: LegacyRef<HTMLImageElement>,
 ) {
@@ -36,9 +38,11 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function ImageRef(
 
       <img
         alt={altText}
+        height={height}
         loading={isLazyLoaded ? 'lazy' : 'eager'}
         ref={ref}
         src={getDefaultImageSource(sizes)}
+        width={width}
       />
     </picture>
   );

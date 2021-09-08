@@ -9,7 +9,14 @@ const getCollectionLists: GetCollectionLists = (items) => {
   const topLevelCollections: Link[] = [];
   const nestedCollections: NestedCollection[] = [];
   const notableNestedCollections: NotableNestedCollection[] = [];
-  let taxonomyOfDesignElement = null; /* @TODO Future-proof edge case items */
+  /** @todo
+   * Future-proof edge case items
+   */
+  let taxonomyOfDesignElement = null;
+
+  /** @todo
+   * Refactor into individual functions
+   */
 
   items.forEach((item) => {
     if (item.type === 'link') {

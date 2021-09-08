@@ -13,6 +13,7 @@ import {
 } from './GlobalNavigation.context';
 import { MobileViewContextProvider } from './components/MobileView/MobileView.context';
 import { DesktopViewContextProvider } from './components/DesktopView/DesktopView.context';
+import { TabletViewContextProvider } from './components/TabletView/TabletView.context';
 import {
   GlobalNavigationFixture,
   actionAccountAuthenticated,
@@ -73,7 +74,7 @@ import {
           <GlobalNavigationStateContextProvider>
             <GlobalNavigationContextProvider
               value={{
-                actions: actions,
+                actions,
                 read: fixture.read,
                 collections: fixture.collections,
                 isVisuallyObstructed: accountOpen || cartOpen,
@@ -87,12 +88,14 @@ import {
                 openClassName={'desktop-open'}
                 closedClassName={'desktop-closed'}
               >
-                <MobileViewContextProvider
-                  openClassName={'mobile-open'}
-                  closedClassName={'mobile-closed'}
-                >
-                  <GlobalNavigation />
-                </MobileViewContextProvider>
+                <TabletViewContextProvider>
+                  <MobileViewContextProvider
+                    openClassName={'mobile-open'}
+                    closedClassName={'mobile-closed'}
+                  >
+                    <GlobalNavigation />
+                  </MobileViewContextProvider>
+                </TabletViewContextProvider>
               </DesktopViewContextProvider>
             </GlobalNavigationContextProvider>
           </GlobalNavigationStateContextProvider>
@@ -199,9 +202,14 @@ import {
                 openClassName={'desktop-open'}
                 closedClassName={'desktop-closed'}
               >
-                <MobileViewContextProvider>
-                  <GlobalNavigation />
-                </MobileViewContextProvider>
+                <TabletViewContextProvider>
+                  <MobileViewContextProvider
+                    openClassName={'mobile-open'}
+                    closedClassName={'mobile-closed'}
+                  >
+                    <GlobalNavigation />
+                  </MobileViewContextProvider>
+                </TabletViewContextProvider>
               </DesktopViewContextProvider>
             </GlobalNavigationContextProvider>
           </GlobalNavigationStateContextProvider>

@@ -1,10 +1,33 @@
-import type { Themes, ComponentWithChildren } from '~/types';
+import type { Dispatch, SetStateAction } from 'react';
+import type { ComponentWithChildren } from '~/types';
 
 type TabletViewProps = {
   className?: string;
-  theme?: Themes;
 };
 
 type TabletViewType = ComponentWithChildren<TabletViewProps>;
 
-export type { TabletViewType };
+type TabletViewContextType = {
+  closedClassName?: string;
+  openClassName?: string;
+  isShopOpen: boolean;
+  setIsShopOpen: Dispatch<SetStateAction<boolean>>;
+};
+
+type TabletViewContextProviderProps = {
+  closedClassName?: string;
+  openClassName?: string;
+};
+
+type TabletViewContextProviderType = ComponentWithChildren<TabletViewContextProviderProps>;
+
+type UseTabletViewContextStore = (
+  props: TabletViewContextProviderProps,
+) => TabletViewContextType;
+
+export type {
+  TabletViewContextProviderType,
+  TabletViewContextType,
+  TabletViewType,
+  UseTabletViewContextStore,
+};

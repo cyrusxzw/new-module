@@ -33,14 +33,14 @@
   transition: color 200ms var(--easing-ease-out-cubic),
     outline-offset 200ms var(--easing-ease-out-cubic);
 
-  .dark &:focus,
-  .darkClosed &:focus {
+  .dark &:focus-visible,
+  .darkClosed &:focus-visible {
     outline: 1px dashed var(--color-dark-decoration);
     outline-offset: 2px;
   }
 
-  .light &:focus,
-  .lightClosed &:focus {
+  .light &:focus-visible,
+  .lightClosed &:focus-visible {
     outline: 1px dashed var(--color-light-decoration);
     outline-offset: 2px;
   }

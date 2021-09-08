@@ -2,13 +2,6 @@
 
 .base {
   margin-top: 40px;
-  opacity: 1;
-  transition: opacity 200ms var(--easing-ease-out-cubic);
-}
-
-.hidden {
-  opacity: 0;
-  pointer-events: none;
 }
 
 .list {
@@ -32,9 +25,17 @@
   padding-left: 5px;
   font-family: var(--font-family-sans-serif-regular);
   font-size: rem(14px);
+  opacity: 1;
   outline-offset: 0;
-  transition: outline-offset 200ms var(--easing-ease-out-cubic),
+  transition: opacity 200ms var(--easing-ease-out-cubic);
+  transition: opacity 200ms var(--easing-ease-out-cubic),
+    outline-offset 200ms var(--easing-ease-out-cubic),
     color 200ms var(--easing-ease-out-cubic);
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
 
   &:hover {
     .ornamentalHover::after {
@@ -58,12 +59,12 @@
     color: var(--color-white);
   }
 
-  .dark &:focus {
+  .dark &:focus-visible {
     outline: 1px dashed var(--color-dark-decoration);
     outline-offset: 2px;
   }
 
-  .light &:focus {
+  .light &:focus-visible {
     outline: 1px dashed var(--color-dark-decoration);
     outline-offset: 2px;
   }

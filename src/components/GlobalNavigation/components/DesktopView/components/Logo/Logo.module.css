@@ -13,12 +13,21 @@
     top: calc(80px + 74px);
   }
 
-  &.dark:focus:not(:hover) {
+  &.tablet {
+    top: calc(50px + 74px + 40px);
+    left: 34px;
+  }
+
+  &.tablet.active {
+    top: 50px;
+  }
+
+  &.dark:focus-visible {
     outline: 1px dashed var(--color-dark-decoration);
     outline-offset: 2px;
   }
 
-  &.light:focus:not(:hover) {
+  &.light:focus-visible {
     outline: 1px dashed var(--color-light-decoration);
     outline-offset: 2px;
   }
