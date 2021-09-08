@@ -8,6 +8,7 @@ declare type ImageProps = {
         openInANewWindow?: boolean;
         url?: string;
     };
+    height?: string;
     id?: string;
     isFullBleedImage?: boolean;
     isLazyLoaded?: boolean;
@@ -21,6 +22,7 @@ declare type ImageProps = {
     style?: CSSProperties;
     type?: string;
     theme?: Themes;
+    width?: string;
 };
 
 export { ImageProps as I };

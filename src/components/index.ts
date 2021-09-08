@@ -40,6 +40,7 @@ export { MediaWithContent } from './MediaWithContent';
 export { MobileView } from './GlobalNavigation/components/MobileView';
 export { MobileViewContextProvider } from './GlobalNavigation/components/MobileView/MobileView.context';
 export { TabletView } from './GlobalNavigation/components/TabletView';
+export { TabletViewContextProvider } from './GlobalNavigation/components/TabletView/TabletView.context';
 export { DesktopView } from './GlobalNavigation/components/DesktopView';
 export {
   GlobalNavigationContextProvider,

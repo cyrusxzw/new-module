@@ -70,6 +70,7 @@ export {
   MobileView,
   MobileViewContextProvider,
   TabletView,
+  TabletViewContextProvider,
   DesktopView,
   GlobalNavigationContextProvider,
   GlobalNavigationStateContextProvider,

@@ -16,6 +16,16 @@
   pointer-events: none;
   transition: background-color 200ms var(--easing-ease-in-out-cubic);
 
+  /* Added to more elegantly transition between breakpoints */
+  & > * {
+    opacity: 0;
+    transition: opacity 200ms var(--easing-ease-in-out-cubic);
+
+    @media (--viewport-lg) {
+      opacity: 1;
+    }
+  }
+
   &.open {
     position: fixed;
     z-index: var(--z-index-fixed-menu);

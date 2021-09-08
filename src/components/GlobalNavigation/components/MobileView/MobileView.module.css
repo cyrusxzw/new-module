@@ -10,7 +10,17 @@
   width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
-  transition: background-color 200ms linear;
+  transition: background-color 200ms var(--easing-ease-in-out-cubic);
+
+  /* Added to more elegantly transition between breakpoints */
+  & > * {
+    opacity: 0;
+    transition: opacity 200ms var(--easing-ease-in-out-cubic);
+
+    @media (--viewport-xs-sm-only) {
+      opacity: 1;
+    }
+  }
 
   &.open {
     position: fixed;
