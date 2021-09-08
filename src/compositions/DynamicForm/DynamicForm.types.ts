@@ -43,12 +43,14 @@ type FieldSchema = {
 
 type FormFieldsRow = FieldSchema[];
 
+export type FormSchema = FormFieldsRow[];
+
 export type DynamicFormProps = {
   children?: ReactNode;
   className?: string;
   defaultValues?: Record<string, string>;
   formName?: string;
-  formSchema?: FormFieldsRow[];
+  formSchema?: FormSchema;
   onSubmit: (formData: Record<string, string>) => void;
   theme?: Themes;
   validationMode?: Mode;
