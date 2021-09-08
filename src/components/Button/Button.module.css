@@ -94,11 +94,11 @@
 
 .disabled[disabled] {
   background-color: transparent;
-  color: var(--color-dark-disabled);
+  color: var(--color-grey-30);
   cursor: default;
 
   &.blockStyle {
-    border-color: var(--color-dark-disabled);
+    border-color: var(--color-grey-rgba-20);
 
     &.alternate {
       background-color: var(--color-dark-disabled);
@@ -109,13 +109,13 @@
   &:hover,
   &:focus {
     background-color: transparent;
-    color: var(--color-dark-disabled);
+    color: var(--color-grey-30);
 
     &.blockStyle {
-      border-color: var(--color-dark-disabled);
+      border-color: var(--color-grey-rgba-20);
 
       &.alternate {
-        border-color: var(--color-dark-disabled);
+        border-color: var(--color-grey-rgba-20);
         background-color: var(--color-dark-disabled);
       }
     }

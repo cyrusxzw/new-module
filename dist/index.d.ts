@@ -2172,12 +2172,13 @@ declare type FieldSchema = {
     validation?: FieldValidation;
 };
 declare type FormFieldsRow = FieldSchema[];
+declare type FormSchema = FormFieldsRow[];
 declare type DynamicFormProps = {
     children?: ReactNode;
     className?: string;
     defaultValues?: Record<string, string>;
     formName?: string;
-    formSchema?: FormFieldsRow[];
+    formSchema?: FormSchema;
     onSubmit: (formData: Record<string, string>) => void;
     theme?: Themes;
     validationMode?: Mode;
