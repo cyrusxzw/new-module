@@ -54,12 +54,13 @@ declare type FieldSchema = {
     validation?: FieldValidation;
 };
 declare type FormFieldsRow = FieldSchema[];
+declare type FormSchema = FormFieldsRow[];
 declare type DynamicFormProps = {
     children?: ReactNode;
     className?: string;
     defaultValues?: Record<string, string>;
     formName?: string;
-    formSchema?: FormFieldsRow[];
+    formSchema?: FormSchema;
     onSubmit: (formData: Record<string, string>) => void;
     theme?: Themes;
     validationMode?: Mode;
@@ -67,4 +68,4 @@ declare type DynamicFormProps = {
 
 declare const DynamicForm: React.ForwardRefExoticComponent<DynamicFormProps & React.RefAttributes<HTMLFormElement>>;
 
-export { DynamicForm };
+export { DynamicForm, FormSchema };
