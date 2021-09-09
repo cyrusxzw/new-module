@@ -121,4 +121,20 @@ declare const useGlobalNavigationStateContext: UseGlobalNavigationStateContext;
 declare const GlobalNavigationContextProvider: GlobalNavigationContextProviderType;
 declare const useGlobalNavigationContext: () => GlobalNavigationContextType;
 
-export { GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GlobalNavigationType, useGlobalNavigationContext, useGlobalNavigationStateContext };
+declare type DesktopViewContextType = {
+    closedClassName?: string;
+    openClassName?: string;
+};
+declare type DesktopViewContextProviderType = ComponentWithChildren<DesktopViewContextType>;
+
+declare const DesktopViewContextProvider: DesktopViewContextProviderType;
+
+declare type MobileViewContextProviderProps = {
+    closedClassName?: string;
+    openClassName?: string;
+};
+declare type MobileViewContextProviderType = ComponentWithChildren<MobileViewContextProviderProps>;
+
+declare const MobileViewContextProvider: MobileViewContextProviderType;
+
+export { DesktopViewContextProvider, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GlobalNavigationType, MobileViewContextProvider, useGlobalNavigationContext, useGlobalNavigationStateContext };
