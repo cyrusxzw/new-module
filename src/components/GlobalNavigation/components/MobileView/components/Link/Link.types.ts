@@ -6,6 +6,7 @@ type LinkProps = Clickable & {
   isTop?: boolean;
   isVisible?: boolean;
   url: string;
+  isExternal?: boolean;
 };
 
 type LinkType = ComponentWithoutChildren<LinkProps>;

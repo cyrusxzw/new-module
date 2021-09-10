@@ -26,6 +26,7 @@ const MobileView: MobileViewType = ({ className }) => {
     isOpen,
     setActiveCollectionId,
     setIsOpen,
+    activeCollectionId,
   } = useGlobalNavigationStateContext();
 
   const {
@@ -47,6 +48,8 @@ const MobileView: MobileViewType = ({ className }) => {
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
 
   useOverflowHidden(isOpen);
+
+  const { search } = actions;
 
   const handleOnClose = () => {
     setActiveCollectionId('top');
@@ -82,7 +85,10 @@ const MobileView: MobileViewType = ({ className }) => {
 
             <Transition isActive={isOpen} type="fadeIn">
               <div className={cx(styles.main, { [styles.open]: isOpen })}>
-                <PrimaryNavigation isVisible={isOpen} items={collections} />
+                <PrimaryNavigation
+                  isVisible={isOpen && activeCollectionId !== search.id}
+                  items={collections}
+                />
                 <SecondaryNavigation items={secondaryNavigationItems} />
                 <ArticleList items={read.articles} />
               </div>

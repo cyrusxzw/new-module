@@ -10,6 +10,7 @@ import { Button } from '~/components/Button';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
 import { ScreenReaderOnly } from '~/components/ScreenReaderOnly';
+import { Transition } from '~/components/Transition';
 import type { HeaderType } from './Header.types';
 import compositionStyles from '../../MobileView.module.css';
 import styles from './Header.module.css';
@@ -18,6 +19,8 @@ const Header: HeaderType = ({ onClose }) => {
   const {
     isOpen: isMenuOpen,
     setIsOpen: setIsMenuOpen,
+    setActiveCollectionId,
+    activeCollectionId,
   } = useGlobalNavigationStateContext();
 
   const {
@@ -30,14 +33,26 @@ const Header: HeaderType = ({ onClose }) => {
 
   useWindowHasResized();
 
-  const { logo, search, cart, menu } = actions;
+  const { logo, search, cart, menu, stores } = actions;
   const currentClosedTheme = mobileViewClosedTheme || currentTheme;
-  const handleOnSearchClick = () => search.onClick();
+  const handleOnSearchClick = () => {
+    search.onClick();
+    setIsMenuOpen(true);
+    setActiveCollectionId(search.id);
+  };
+
   const handleOnCartClick = () => cart.onClick();
 
   const handleOnMenuButtonClick = () => {
     if (isMenuOpen) {
-      onClose();
+      if (
+        activeCollectionId === search.id ||
+        activeCollectionId === stores.id
+      ) {
+        setActiveCollectionId('top');
+      } else {
+        onClose();
+      }
     } else {
       setIsMenuOpen(true);
       onOpen?.();
@@ -85,6 +100,16 @@ const Header: HeaderType = ({ onClose }) => {
                 width={16}
               />
             </Button>
+            <Transition
+              isActive={activeCollectionId === search.id}
+              shouldMountOnEnter={true}
+              shouldUnmountOnExit={true}
+              type="slideLeft"
+            >
+              <div className={cx(compositionStyles.slide, styles.search)}>
+                <search.component />
+              </div>
+            </Transition>
           </li>
 
           <li className={styles.item}>

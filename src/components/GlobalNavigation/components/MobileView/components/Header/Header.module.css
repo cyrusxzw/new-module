@@ -1,13 +1,12 @@
 @import 'styles/index';
 
 .base {
-  position: relative;
   background-color: transparent;
 }
 
 .list {
   display: flex;
-  height: 80px;
+  height: 90px;
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
@@ -227,5 +226,21 @@
   .lightClosed &:hover::before,
   .lightClosed &:hover::after {
     background-color: var(--color-primary);
+  }
+}
+
+.search {
+  z-index: calc(var(--z-index-fixed-menu) + 1);
+  top: 90px;
+  height: 100%;
+
+  .dark & {
+    border-top: 1px solid var(--color-grey-60);
+    background-color: var(--color-primary);
+  }
+
+  .light & {
+    border-top: 1px solid var(--color-white);
+    background-color: var(--color-secondary);
   }
 }

@@ -9,7 +9,10 @@ import {
   GlobalNavigationContextProvider,
   GlobalNavigationStateContextProvider,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
-import { GlobalNavigationFixture } from '~/components/GlobalNavigation/GlobalNavigation.fixture';
+import {
+  GlobalNavigationFixture,
+  actionAccountAuthenticated,
+} from '~/components/GlobalNavigation/GlobalNavigation.fixture';
 import { MobileView } from './MobileView';
 import { MobileViewContextProvider } from './MobileView.context';
 
@@ -26,22 +29,37 @@ import { MobileViewContextProvider } from './MobileView.context';
 # MobileView
 
 <Canvas>
-  <Story name="Base component">
+  <Story
+    name="Base component"
+    parameters={{
+      viewport: {
+        defaultViewport: 'iphonex',
+      },
+    }}
+  >
     {(() => {
+      const [accountOpen, setAccountOpen] = React.useState(false);
+      const handleOnAccountClick = () => {
+        setAccountOpen(true);
+        console.log({ accountOpen }, 'hey');
+      };
+      const handleOnAccountCloseClick = () => setAccountOpen(false);
+      const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+      const handleOnLoginClick = () => {
+        setIsLoggedIn(true);
+        setAccountOpen(false);
+      };
       const [cartOpen, setCartOpen] = React.useState(false);
       const handleOnCartClick = () => setCartOpen(true);
       const handleOnCartCloseClick = () => setCartOpen(false);
-      const [loginOpen, setLoginOpen] = React.useState(false);
-      const handleOnLoginClick = () => setLoginOpen(true);
-      const handleOnLoginCloseClick = () => setLoginOpen(false);
-      const mobileViewClosedTheme = knobs.select(
-        'mobileViewClosedTheme',
+      const theme = knobs.select(
+        'theme',
         ['dark', 'light'],
         'dark',
         'Presentation',
       );
-      const theme = knobs.select(
-        'theme',
+      const mobileViewClosedTheme = knobs.select(
+        'mobileViewClosedTheme',
         ['dark', 'light'],
         'dark',
         'Presentation',
@@ -56,26 +74,55 @@ import { MobileViewContextProvider } from './MobileView.context';
           ),
         },
       };
-      const fixture = { ...GlobalNavigationFixture };
-      fixture.actions.cart.onClick = handleOnCartClick;
+      const fixture = Object.create(GlobalNavigationFixture);
+      const actions = fixture.actions;
+      actions.cart.onClick = handleOnCartClick;
+      actions.support.onClick = () => {
+        alert(
+          'Would you like a personalised skin care consultation? Aesop consultants are available to speak now.',
+        );
+      };
+      if (isLoggedIn) {
+        actions.account = actionAccountAuthenticated;
+      } else {
+        // is anonymous
+        actions.account = GlobalNavigationFixture.actions.account;
+        actions.account.onClick = handleOnAccountClick;
+      }
       return (
         <>
           <GlobalNavigationStateContextProvider>
             <GlobalNavigationContextProvider
               value={{
-                actions: fixture.actions,
-                read: fixture.read,
+                actions,
                 collections: fixture.collections,
-                isVisuallyObstructed: cartOpen || loginOpen || cartOpen,
+                isVisuallyObstructed: accountOpen || cartOpen,
                 mobileViewClosedTheme,
+                onClose: fixture.onClose,
+                onOpen: fixture.onOpen,
+                read: fixture.read,
                 theme,
               }}
             >
-              <MobileViewContextProvider>
+              <MobileViewContextProvider
+                openClassName="mobile-open"
+                closedClassName="mobile-closed"
+              >
                 <MobileView />
               </MobileViewContextProvider>
             </GlobalNavigationContextProvider>
           </GlobalNavigationStateContextProvider>
+          <Modal
+            copy={{
+              close: 'Close Modal',
+            }}
+            isVisible={accountOpen}
+            onClose={handleOnAccountCloseClick}
+          >
+            <Button title="login" onClick={handleOnLoginClick} isInline={true}>
+              Login
+            </Button>
+          </Modal>
           <Modal
             copy={{
               close: 'Close Modal',
@@ -95,80 +142,3 @@ import { MobileViewContextProvider } from './MobileView.context';
 ## API
 
 <ArgsTable of={MobileView} />
-
-## Variations
-
-### With content
-
-<Canvas>
-  <Story name="With content">
-    {(() => {
-      const [cartOpen, setCartOpen] = React.useState(false);
-      const handleOnCartClick = () => setCartOpen(true);
-      const handleOnCartCloseClick = () => setCartOpen(false);
-      const [loginOpen, setLoginOpen] = React.useState(false);
-      const handleOnLoginClick = () => setLoginOpen(true);
-      const handleOnLoginCloseClick = () => setLoginOpen(false);
-      const implementation = {
-        gridOverlay: {
-          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
-          hasInvertedColours: knobs.boolean(
-            'Invert grid overlay colours',
-            false,
-            'Implementation',
-          ),
-        },
-      };
-      const fixture = { ...GlobalNavigationFixture };
-      fixture.actions.cart.onClick = handleOnCartClick;
-      return (
-        <>
-          <GlobalNavigationStateContextProvider>
-            <GlobalNavigationContextProvider
-              value={{
-                actions: fixture.actions,
-                read: fixture.read,
-                collections: fixture.collections,
-                isVisuallyObstructed: cartOpen || loginOpen || cartOpen,
-                mobileViewClosedTheme: 'light',
-                desktopViewLogoTheme: 'light',
-              }}
-            >
-              <MobileViewContextProvider>
-                <MobileView />
-              </MobileViewContextProvider>
-            </GlobalNavigationContextProvider>
-          </GlobalNavigationStateContextProvider>
-          <HeroBanner
-            backgroundColor="#202b52"
-            theme="light"
-            hasTopOffset={true}
-            copy={HeroBannerFixture.copy.default}
-            media={
-              <Image
-                sizes={{
-                  large:
-                    'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
-                  medium:
-                    'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
-                  small:
-                    'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
-                }}
-              />
-            }
-          />
-          <Modal
-            copy={{
-              close: 'Close Modal',
-            }}
-            isVisible={cartOpen}
-            onClose={handleOnCartCloseClick}
-          >
-            You have 0 items in you cart.
-          </Modal>
-          <StorybookGridOverlay {...implementation.gridOverlay} />
-        </>
-      );
-    })()}
-  </Story>
-</Canvas>

@@ -22,8 +22,6 @@ const PrimaryNavigation: PrimaryNavigationType = ({ onClose }) => {
     setActiveCollectionId,
   } = useGlobalNavigationStateContext();
 
-  console.log(activeCollectionId);
-
   const {
     actions: { search, stores },
     read,

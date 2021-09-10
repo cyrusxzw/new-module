@@ -69,3 +69,18 @@
     outline-offset: 2px;
   }
 }
+
+.stores {
+  z-index: calc(var(--z-index-fixed-menu) + 1);
+  height: 100%;
+
+  .dark & {
+    border-top: 1px solid var(--color-grey-60);
+    background-color: var(--color-primary);
+  }
+
+  .light & {
+    border-top: 1px solid var(--color-white);
+    background-color: var(--color-secondary);
+  }
+}

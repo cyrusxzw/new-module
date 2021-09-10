@@ -20,7 +20,14 @@ import { DesktopViewFixture } from './DesktopView.fixture';
 # DesktopView
 
 <Canvas>
-  <Story name="Base component">
+  <Story
+    name="Base component"
+    parameters={{
+      viewport: {
+        defaultViewport: 'desktop',
+      },
+    }}
+  >
     {(() => {
       const [accountOpen, setAccountOpen] = React.useState(false);
       const handleOnAccountClick = () => setAccountOpen(true);
@@ -33,12 +40,6 @@ import { DesktopViewFixture } from './DesktopView.fixture';
       const [cartOpen, setCartOpen] = React.useState(false);
       const handleOnCartClick = () => setCartOpen(true);
       const handleOnCartCloseClick = () => setCartOpen(false);
-      const mobileViewClosedTheme = knobs.select(
-        'mobileViewClosedTheme',
-        ['dark', 'light'],
-        'dark',
-        'Presentation',
-      );
       const theme = knobs.select(
         'theme',
         ['dark', 'light'],
@@ -58,6 +59,11 @@ import { DesktopViewFixture } from './DesktopView.fixture';
       const fixture = Object.create(GlobalNavigationFixture);
       const actions = fixture.actions;
       actions.cart.onClick = handleOnCartClick;
+      actions.support.onClick = () => {
+        alert(
+          'Would you like a personalised skin care consultation? Aesop consultants are available to speak now.',
+        );
+      };
       if (isLoggedIn) {
         actions.account = actionAccountAuthenticated;
       } else {
@@ -71,14 +77,18 @@ import { DesktopViewFixture } from './DesktopView.fixture';
             <GlobalNavigationContextProvider
               value={{
                 actions: fixture.actions,
-                read: fixture.read,
                 collections: fixture.collections,
                 isVisuallyObstructed: cartOpen || accountOpen,
-                mobileViewClosedTheme,
+                read: fixture.read,
+                onClose: fixture.onClose,
+                onOpen: fixture.onOpen,
                 theme,
               }}
             >
-              <DesktopViewContextProvider>
+              <DesktopViewContextProvider
+                openClassName="desktop-open"
+                closedClassName="desktop-closed"
+              >
                 <DesktopView />
               </DesktopViewContextProvider>
             </GlobalNavigationContextProvider>

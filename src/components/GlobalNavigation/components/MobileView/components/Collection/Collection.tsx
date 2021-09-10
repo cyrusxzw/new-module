@@ -75,7 +75,7 @@ const Collection: CollectionType = ({
             haspopup: true,
             hidden: !isActive,
           }}
-          className={cx(compositionStyles.itemElement)}
+          className={compositionStyles.itemElement}
           isInline={true}
           onClick={handleOnClick}
           tabIndex={activeCollectionId === 'top' && isVisible ? null : -1}

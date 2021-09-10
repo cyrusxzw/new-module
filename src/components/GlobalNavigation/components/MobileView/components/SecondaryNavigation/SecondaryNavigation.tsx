@@ -1,9 +1,13 @@
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import {
+  useGlobalNavigationStateContext,
+  useGlobalNavigationContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { Button } from '~/components/Button';
 import { Hyperlink } from '~/components/Hyperlink';
+import { Transition } from '~/components/Transition';
 import { Collection } from '../Collection';
 import type {
   SecondaryNavigationType,
@@ -19,6 +23,10 @@ const SecondaryNavigation: SecondaryNavigationType = ({ items }) => {
     setActiveCollectionId,
   } = useGlobalNavigationStateContext();
 
+  const {
+    actions: { stores },
+  } = useGlobalNavigationContext();
+
   const currentTheme = useThemeContext(null, 'dark');
 
   if (!items?.length) return null;
@@ -33,8 +41,23 @@ const SecondaryNavigation: SecondaryNavigationType = ({ items }) => {
     compositionStyles.ornamentalWrapper,
   );
 
+  const handleOnStoresClick = () => {
+    stores?.onClick();
+    setActiveCollectionId(stores.id);
+  };
+
   const getElement = (props: SecondaryNavigationItem) => {
     if (!props) return null;
+
+    const handleOnClick = () => {
+      if (props.type === 'read-collection') {
+        handleSetActiveCollectionId(props.id);
+      } else if (props.id === stores.id) {
+        handleOnStoresClick();
+      } else if (props.type === 'trigger') {
+        props.onClick();
+      }
+    };
 
     return props.type === 'link' ? (
       <Hyperlink
@@ -52,11 +75,7 @@ const SecondaryNavigation: SecondaryNavigationType = ({ items }) => {
           className={elementClassName}
           dataTestRef={props.dataTestRef}
           isInline={true}
-          onClick={() =>
-            props.type === 'read-collection'
-              ? handleSetActiveCollectionId(props.id)
-              : props.onClick
-          }
+          onClick={handleOnClick}
           tabIndex={!isVisible ? -1 : null}
           title={props.title}
         >
@@ -71,6 +90,19 @@ const SecondaryNavigation: SecondaryNavigationType = ({ items }) => {
             isVisible={activeCollectionId === 'read-collection'}
             shouldHideTopCollection={true}
           />
+        )}
+
+        {props.id === stores.id && (
+          <Transition
+            isActive={activeCollectionId === stores.id}
+            shouldMountOnEnter={true}
+            shouldUnmountOnExit={true}
+            type="slideLeft"
+          >
+            <div className={cx(compositionStyles.slide, styles.stores)}>
+              <stores.component />
+            </div>
+          </Transition>
         )}
       </>
     );
