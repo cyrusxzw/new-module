@@ -68,6 +68,7 @@ declare type Variant$1 = {
     alternateAction?: {
         url?: string;
         label?: string;
+        openInANewWindow?: boolean;
     };
     cartDisclaimer?: string;
     hasAgeVerificationRequirement?: boolean;

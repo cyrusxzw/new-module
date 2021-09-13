@@ -62,6 +62,7 @@ const AddToCartButton: AddToCartButtonType = ({
       <Hyperlink
         className={classSet}
         dataTestRef={dataTestRef}
+        hasTargetInNewWindow={alternateAction?.openInANewWindow}
         isAlternate={true}
         style={HYPERLINK_STYLE_TYPES.INTERNAL_NO_ICON_BUTTON_LINK}
         theme={theme}
