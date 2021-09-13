@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { Transition } from '~/components/Transition';
-import { Logo } from '../../../DesktopView/components/Logo';
+import { Logo } from '~/components/GlobalNavigation/components/Logo';
 import type { SelectionPanelType } from './SelectionPanel.types';
 import styles from './SelectionPanel.module.css';
 

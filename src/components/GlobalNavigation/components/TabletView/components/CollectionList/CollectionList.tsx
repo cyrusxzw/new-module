@@ -6,7 +6,6 @@ import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
 import type { CollectionListType } from './CollectionList.types';
 import compositionStyles from '../../TabletView.module.css';
-// import styles from './CollectionList.module.css';
 
 const CollectionList: CollectionListType = ({ heading, id, items }) => {
   const { activeCollectionId } = useGlobalNavigationStateContext();

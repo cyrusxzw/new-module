@@ -10,6 +10,7 @@ import { GlobalNavigation } from './GlobalNavigation';
 import {
   GlobalNavigationContextProvider,
   GlobalNavigationStateContextProvider,
+  useGlobalNavigationStateContext,
 } from './GlobalNavigation.context';
 import { MobileViewContextProvider } from './components/MobileView/MobileView.context';
 import { DesktopViewContextProvider } from './components/DesktopView/DesktopView.context';
@@ -43,7 +44,7 @@ import {
         'dark',
         'Presentation',
       );
-      const mobileViewClosedTheme = knobs.select(
+      const  = knobs.select(
         'mobileViewClosedTheme',
         ['dark', 'light'],
         'dark',
@@ -72,32 +73,32 @@ import {
       return (
         <>
           <GlobalNavigationStateContextProvider>
-            <GlobalNavigationContextProvider
-              value={{
-                actions,
-                read: fixture.read,
-                collections: fixture.collections,
-                isVisuallyObstructed: accountOpen || cartOpen,
-                mobileViewClosedTheme,
-                theme,
-                onClose: fixture.onClose,
-                onOpen: fixture.onOpen,
-              }}
-            >
-              <DesktopViewContextProvider
-                openClassName={'desktop-open'}
-                closedClassName={'desktop-closed'}
+              <GlobalNavigationContextProvider
+                value={{
+                  actions,
+                  read: fixture.read,
+                  collections: fixture.collections,
+                  isVisuallyObstructed: accountOpen || cartOpen,
+                  theme,
+                  onClose: fixture.onClose,
+                  onOpen: fixture.onOpen,
+                }}
               >
-                <TabletViewContextProvider>
-                  <MobileViewContextProvider
-                    openClassName={'mobile-open'}
-                    closedClassName={'mobile-closed'}
-                  >
-                    <GlobalNavigation />
-                  </MobileViewContextProvider>
-                </TabletViewContextProvider>
-              </DesktopViewContextProvider>
-            </GlobalNavigationContextProvider>
+                <DesktopViewContextProvider
+                  openClassName="desktop-open"
+                  closedClassName="desktop-closed"
+                >
+                  <TabletViewContextProvider>
+                    <MobileViewContextProvider
+                      openClassName="mobile-open"
+                      closedClassName="mobile-closed"
+                      closedTheme={mobileViewClosedTheme}
+                    >
+                      <GlobalNavigation />
+                    </MobileViewContextProvider>
+                  </TabletViewContextProvider>
+                </DesktopViewContextProvider>
+              </GlobalNavigationContextProvider>
           </GlobalNavigationStateContextProvider>
           <Modal
             copy={{
@@ -123,6 +124,7 @@ import {
         </>
       );
     })()}
+
   </Story>
 </Canvas>
 
@@ -192,20 +194,20 @@ import {
                 read: fixture.read,
                 collections: fixture.collections,
                 isVisuallyObstructed: accountOpen || cartOpen,
-                mobileViewClosedTheme: 'light',
-                desktopViewLogoTheme: 'light',
                 theme,
                 onClose: fixture.onClose,
               }}
             >
               <DesktopViewContextProvider
-                openClassName={'desktop-open'}
-                closedClassName={'desktop-closed'}
+                openClassName="desktop-open"
+                closedClassName="desktop-closed"
+                closedLogoTheme="light"
               >
                 <TabletViewContextProvider>
                   <MobileViewContextProvider
-                    openClassName={'mobile-open'}
-                    closedClassName={'mobile-closed'}
+                    openClassName="mobile-open"
+                    closedClassName="mobile-closed"
+                    closedTheme="light"
                   >
                     <GlobalNavigation />
                   </MobileViewContextProvider>

@@ -31,6 +31,7 @@ const Collection: CollectionType = ({
 
   const { setActiveNestedCollectionIds } = useMobileViewContext();
   const currentTheme = useThemeContext(null, 'dark');
+
   const [listRef] = useFocusOnFirst(
     isActive,
     'a:not([tabindex="-1"]), button:not([tabindex="-1"])',

@@ -1,11 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import { ConditionalWrapper } from '~/components/ConditionalWrapper';
-import { Button } from '~/components/Button';
-import { Hyperlink } from '~/components/Hyperlink';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { MenuItemContextProvider } from './MenuItem.context';
+import { Button } from '~/components/Button';
+import { ConditionalWrapper } from '~/components/ConditionalWrapper';
+import { Hyperlink } from '~/components/Hyperlink';
 import type { MenuItemType } from './MenuItem.types';
 import styles from './MenuItem.module.css';
 
@@ -23,6 +23,7 @@ const MenuItem: MenuItemType = ({
   const currentTheme = useThemeContext(undefined, 'dark');
 
   const isActive = activeCollectionId === id;
+
   const sharedProps = {
     className: cx(styles.element, styles[currentTheme]),
     dataTestRef,

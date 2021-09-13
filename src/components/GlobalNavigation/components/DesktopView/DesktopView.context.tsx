@@ -10,19 +10,17 @@ const DesktopViewContext = createContext(undefined);
 
 const useDesktopViewContextStore: UseDesktopViewContextStore = ({
   closedClassName,
+  closedLogoTheme,
   openClassName,
 }) => {
-  return { closedClassName, openClassName };
+  return { closedClassName, closedLogoTheme, openClassName };
 };
 
 const DesktopViewContextProvider: DesktopViewContextProviderType = ({
   children,
-  closedClassName,
-  openClassName,
+  ...restProps
 }) => (
-  <DesktopViewContext.Provider
-    value={useDesktopViewContextStore({ closedClassName, openClassName })}
-  >
+  <DesktopViewContext.Provider value={useDesktopViewContextStore(restProps)}>
     {children}
   </DesktopViewContext.Provider>
 );

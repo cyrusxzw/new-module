@@ -1,0 +1,9 @@
+@import 'styles/index';
+
+.searchIcon {
+  transform: translateY(2px);
+}
+
+.icon {
+  margin-left: 4px;
+}

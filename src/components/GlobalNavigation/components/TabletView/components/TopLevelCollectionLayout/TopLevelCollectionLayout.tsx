@@ -7,7 +7,7 @@ import {
   useGlobalNavigationStateContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useTabletViewContext } from '../../TabletView.context';
-import { getCollectionLists } from '../../../DesktopView/components/CollectionLayout/CollectionLayout.utils';
+import { getCollectionLists } from '~/components/GlobalNavigation/GlobalNavigation.utils';
 import { PromotionCard } from '../../../PromotionCard';
 import { DetailsPanel } from '../DetailsPanel';
 import { CollectionList } from '../CollectionList';

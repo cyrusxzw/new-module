@@ -1,10 +1,10 @@
 import React from 'react';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import { useMenuItemContext } from '../MenuItem/MenuItem.context';
+import { getCollectionLists } from '~/components/GlobalNavigation/GlobalNavigation.utils';
 import { PromotionCard } from '~/components/GlobalNavigation/components/PromotionCard';
-import { useMenuItemContext } from '~/components/GlobalNavigation/components/DesktopView/components/MenuItem/MenuItem.context';
 import { CollectionList } from '../CollectionList';
 import { CollectionImage } from '../CollectionImage';
-import { getCollectionLists } from './CollectionLayout.utils';
 import type { CollectionLayoutType } from './CollectionLayout.types';
 import styles from './CollectionLayout.module.css';
 

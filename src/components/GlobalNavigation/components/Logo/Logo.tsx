@@ -1,0 +1,55 @@
+import React from 'react';
+import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
+import {
+  useGlobalNavigationContext,
+  useGlobalNavigationStateContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
+import { Hyperlink } from '~/components/Hyperlink';
+import { Icon } from '~/components/Icon';
+import { ScreenReaderOnly } from '~/components/ScreenReaderOnly';
+import type { LogoType } from './Logo.types';
+import styles from './Logo.module.css';
+
+const Logo: LogoType = ({ closedTheme }) => {
+  const { isOpen, activeView } = useGlobalNavigationStateContext();
+  const {
+    actions: {
+      logo: { dataTestRef, title, url, label },
+    },
+  } = useGlobalNavigationContext();
+
+  const currentTheme = useThemeContext(undefined, 'dark');
+  const currentClosedTheme = closedTheme || currentTheme;
+
+  const classSet = cx(styles.base, {
+    [styles.active]: isOpen,
+    [styles.tablet]: activeView === 'tablet',
+  });
+
+  const iconClassSet = cx(
+    styles.icon,
+    styles[isOpen ? currentTheme : currentClosedTheme],
+  );
+
+  return (
+    <Hyperlink
+      className={classSet}
+      dataTestRef={dataTestRef ?? 'NAV_LOGO'}
+      title={title}
+      url={url}
+    >
+      <Icon
+        className={iconClassSet}
+        height={activeView === 'tablet' ? 30 : 40}
+        name="aesop"
+        tabIndex={-1}
+        width={activeView === 'tablet' ? 80 : 120}
+      />
+
+      <ScreenReaderOnly>{label}</ScreenReaderOnly>
+    </Hyperlink>
+  );
+};
+
+export { Logo };

@@ -23,6 +23,7 @@ declare type Trigger = Clickable & {
 declare type Link = Clickable & {
     alternateLabel?: string;
     isExternal?: boolean;
+    onClick?: () => void;
     type: 'link';
     url: string;
 };
@@ -115,9 +116,7 @@ declare type GlobalNavigationContextType = {
     actions: Actions;
     className?: string;
     collections: Collection[];
-    desktopViewLogoTheme?: Themes;
     isVisuallyObstructed?: boolean;
-    mobileViewClosedTheme?: Themes;
     onClose?: () => void;
     onOpen?: () => void;
     read: Read;
@@ -137,6 +136,7 @@ declare const useGlobalNavigationContext: () => GlobalNavigationContextType;
 
 declare type DesktopViewContextType = {
     closedClassName?: string;
+    closedLogoTheme?: Themes;
     openClassName?: string;
 };
 declare type DesktopViewContextProviderType = ComponentWithChildren<DesktopViewContextType>;
@@ -145,6 +145,7 @@ declare const DesktopViewContextProvider: DesktopViewContextProviderType;
 
 declare type MobileViewContextProviderProps = {
     closedClassName?: string;
+    closedTheme?: Themes;
     openClassName?: string;
 };
 declare type MobileViewContextProviderType = ComponentWithChildren<MobileViewContextProviderProps>;

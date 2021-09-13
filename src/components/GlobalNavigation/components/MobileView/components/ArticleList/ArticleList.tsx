@@ -13,6 +13,7 @@ const ArticleList: ArticleListType = ({ className, theme, items }) => {
   if (!items?.length) return null;
 
   const isVisible = isOpen && activeCollectionId === 'top';
+
   const classSet = cx(
     styles.base,
     { [styles.hidden]: activeCollectionId !== 'top' },

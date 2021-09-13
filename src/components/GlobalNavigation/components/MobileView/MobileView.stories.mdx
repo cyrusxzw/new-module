@@ -41,7 +41,6 @@ import { MobileViewContextProvider } from './MobileView.context';
       const [accountOpen, setAccountOpen] = React.useState(false);
       const handleOnAccountClick = () => {
         setAccountOpen(true);
-        console.log({ accountOpen }, 'hey');
       };
       const handleOnAccountCloseClick = () => setAccountOpen(false);
       const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -97,7 +96,6 @@ import { MobileViewContextProvider } from './MobileView.context';
                 actions,
                 collections: fixture.collections,
                 isVisuallyObstructed: accountOpen || cartOpen,
-                mobileViewClosedTheme,
                 onClose: fixture.onClose,
                 onOpen: fixture.onOpen,
                 read: fixture.read,
@@ -107,6 +105,7 @@ import { MobileViewContextProvider } from './MobileView.context';
               <MobileViewContextProvider
                 openClassName="mobile-open"
                 closedClassName="mobile-closed"
+                closeTheme={mobileViewClosedTheme}
               >
                 <MobileView />
               </MobileViewContextProvider>

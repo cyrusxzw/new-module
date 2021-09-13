@@ -27,6 +27,7 @@ type Trigger = Clickable & {
 type Link = Clickable & {
   alternateLabel?: string;
   isExternal?: boolean;
+  onClick?: () => void;
   type: 'link';
   url: string;
 };
@@ -136,9 +137,7 @@ type GlobalNavigationContextType = {
   actions: Actions;
   className?: string;
   collections: Collection[];
-  desktopViewLogoTheme?: Themes;
   isVisuallyObstructed?: boolean;
-  mobileViewClosedTheme?: Themes;
   onClose?: () => void;
   onOpen?: () => void;
   read: Read;
@@ -155,12 +154,28 @@ type UseGlobalNavigationStore = (
   value: GlobalNavigationContextType,
 ) => GlobalNavigationContextType;
 
+type AllCollectionChildTypes = (
+  | Link
+  | NestedCollection
+  | NotableNestedCollection
+)[];
+
+type GetCollectionLists = (
+  items: AllCollectionChildTypes,
+) => {
+  nestedCollections: NestedCollection[];
+  notableNestedCollections: NotableNestedCollection[];
+  taxonomyOfDesignElement: Link | null;
+  topLevelCollections: Link[];
+};
+
 export type {
   Actions,
   Article,
   Clickable,
   Collection,
   CollectionImage,
+  GetCollectionLists,
   GlobalNavigationContextProviderType,
   GlobalNavigationContextType,
   GlobalNavigationStateContextProviderType,

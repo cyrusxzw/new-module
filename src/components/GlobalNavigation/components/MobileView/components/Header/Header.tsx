@@ -5,6 +5,7 @@ import {
   useGlobalNavigationContext,
   useGlobalNavigationStateContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import { useMobileViewContext } from '../../MobileView.context';
 import { useWindowHasResized } from '~/customHooks';
 import { Button } from '~/components/Button';
 import { Hyperlink } from '~/components/Hyperlink';
@@ -23,18 +24,17 @@ const Header: HeaderType = ({ onClose }) => {
     activeCollectionId,
   } = useGlobalNavigationStateContext();
 
-  const {
-    actions,
-    mobileViewClosedTheme,
-    onOpen,
-  } = useGlobalNavigationContext();
+  const { actions, onOpen } = useGlobalNavigationContext();
+
+  const { closedTheme } = useMobileViewContext();
 
   const currentTheme = useThemeContext(null, 'dark');
 
   useWindowHasResized();
 
   const { logo, search, cart, menu, stores } = actions;
-  const currentClosedTheme = mobileViewClosedTheme || currentTheme;
+  const currentClosedTheme = closedTheme || currentTheme;
+
   const handleOnSearchClick = () => {
     search.onClick();
     setIsMenuOpen(true);

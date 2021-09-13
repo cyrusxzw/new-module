@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGlobalNavigationContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
-import { getCollectionLists } from '../../../DesktopView/components/CollectionLayout/CollectionLayout.utils';
+import { getCollectionLists } from '~/components/GlobalNavigation/GlobalNavigation.utils';
 import { CollectionList } from '../CollectionList';
 import type { ReadMenuType } from './ReadMenu.types';
 
