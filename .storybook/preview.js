@@ -52,17 +52,6 @@ const parameters = {
       ...INITIAL_VIEWPORTS,
     },
   },
-  // viewport: {
-  //   veiwports: {
-  //      desktop: {
-  //        name: "Desktop",
-  //        styles: {height: "1080px", width: "1920px"},
-  //        type: "desktop",
-  //      },
-  //      ...MINIMAL_VIEWPORTS,
-  //      ...INITIAL_VIEWPORTS
-  //   }
-  // }
 };
 
 export { parameters };
