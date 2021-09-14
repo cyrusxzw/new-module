@@ -1,7 +1,6 @@
 @import 'styles/index';
 
 .wrapper {
-  border: 5px solid red;
   @media (--viewport-md) {
     padding: 18px 14px 14px 0px;
   }
