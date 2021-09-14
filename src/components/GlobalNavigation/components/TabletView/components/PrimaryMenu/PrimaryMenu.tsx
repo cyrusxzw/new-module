@@ -97,8 +97,7 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
 
           <SelectionPanel isActive={isShopOpen && isOpen}>
             <TopLevelCollectionLayout />
-
-            <SupportMenu />
+            <SupportMenu isVisible={isShopOpen && isOpen} />
 
             <DetailsPanel
               isActive={isShopOpen && isOpen && activeCollectionId === 'top'}

@@ -1,9 +1,13 @@
 @import 'styles/index';
 
+:root {
+  --menu-height: 74px;
+}
+
 .base {
   position: absolute;
   z-index: 10;
-  top: 74px;
+  top: var(--menu-height);
   right: 0;
   bottom: 0;
   left: -35px;

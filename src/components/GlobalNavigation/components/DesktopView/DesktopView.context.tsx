@@ -8,13 +8,7 @@ import type {
 
 const DesktopViewContext = createContext(undefined);
 
-const useDesktopViewContextStore: UseDesktopViewContextStore = ({
-  closedClassName,
-  closedLogoTheme,
-  openClassName,
-}) => {
-  return { closedClassName, closedLogoTheme, openClassName };
-};
+const useDesktopViewContextStore: UseDesktopViewContextStore = (props) => props;
 
 const DesktopViewContextProvider: DesktopViewContextProviderType = ({
   children,

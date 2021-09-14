@@ -30,12 +30,14 @@ const TabletView: TabletViewType = ({ className }) => {
     closedClassName,
     openClassName,
     setIsShopOpen,
+    closedLogoTheme,
   } = useTabletViewContext();
 
   const contextTheme = useThemeContext(theme, 'dark');
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
 
   const currentTheme = isOpen ? 'dark' : contextTheme;
+  const currentCloseLogoTheme = closedLogoTheme || currentTheme;
 
   const handleOnClose = () => {
     setActiveCollectionId('top');
@@ -60,10 +62,8 @@ const TabletView: TabletViewType = ({ className }) => {
     <ThemeContextProvider theme={currentTheme}>
       <div className={classSet} ref={focusTrapRef}>
         <PrimaryMenu onClose={handleOnClose} />
-
         <SecondaryMenu />
-
-        {!isOpen && <Logo />}
+        {!isOpen && <Logo closedTheme={currentCloseLogoTheme} />}
       </div>
 
       <div aria-hidden={true} className={styles.absoluteBuffer} />

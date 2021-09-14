@@ -8,10 +8,11 @@ import {
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
 import { ScreenReaderOnly } from '~/components/ScreenReaderOnly';
+import { getDimentionsByView } from './Logo.utils';
 import type { LogoType } from './Logo.types';
 import styles from './Logo.module.css';
 
-const Logo: LogoType = ({ closedTheme }) => {
+const Logo: LogoType = ({ closedTheme, isVisible = true }) => {
   const { isOpen, activeView } = useGlobalNavigationStateContext();
   const {
     actions: {
@@ -22,31 +23,32 @@ const Logo: LogoType = ({ closedTheme }) => {
   const currentTheme = useThemeContext(undefined, 'dark');
   const currentClosedTheme = closedTheme || currentTheme;
 
-  const classSet = cx(styles.base, {
-    [styles.active]: isOpen,
-    [styles.tablet]: activeView === 'tablet',
-  });
+  const { width, height } = getDimentionsByView(activeView);
 
-  const iconClassSet = cx(
-    styles.icon,
+  const classSet = cx(
+    styles.base,
+    styles[activeView],
     styles[isOpen ? currentTheme : currentClosedTheme],
+    {
+      [styles.active]: isOpen,
+    },
   );
 
   return (
     <Hyperlink
       className={classSet}
       dataTestRef={dataTestRef ?? 'NAV_LOGO'}
+      tabIndex={!isVisible ? -1 : null}
       title={title}
       url={url}
     >
       <Icon
-        className={iconClassSet}
-        height={activeView === 'tablet' ? 30 : 40}
+        className={styles.icon}
+        height={height}
         name="aesop"
         tabIndex={-1}
-        width={activeView === 'tablet' ? 80 : 120}
+        width={width}
       />
-
       <ScreenReaderOnly>{label}</ScreenReaderOnly>
     </Hyperlink>
   );

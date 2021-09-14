@@ -84,12 +84,17 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
 
         <CollectionList
           heading={topLevelCollectionLabel}
-          id={id}
+          isVisible={activeCollectionId === id}
           items={topLevelCollections}
         />
 
         {allNestedCollections.map(({ id, items, label }) => (
-          <CollectionList heading={label} id={id} items={items} key={id} />
+          <CollectionList
+            heading={label}
+            isVisible={activeCollectionId === id}
+            items={items}
+            key={id}
+          />
         ))}
       </DetailsPanel>
     </li>

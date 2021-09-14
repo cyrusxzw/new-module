@@ -1,5 +1,9 @@
 import type { ComponentWithoutChildren } from '~/types';
 
-type SupportMenuType = ComponentWithoutChildren;
+type SupportMenuProps = {
+  isVisible?: boolean;
+};
+
+type SupportMenuType = ComponentWithoutChildren<SupportMenuProps>;
 
 export type { SupportMenuType };

@@ -8,22 +8,16 @@ import type {
 
 const TabletViewContext = createContext(undefined);
 
-const useTabletViewContextStore: UseTabletViewContextStore = ({
-  closedClassName,
-  openClassName,
-}) => {
+const useTabletViewContextStore: UseTabletViewContextStore = (props) => {
   const [isShopOpen, setIsShopOpen] = useState(false);
-  return { closedClassName, openClassName, isShopOpen, setIsShopOpen };
+  return { ...props, isShopOpen, setIsShopOpen };
 };
 
 const TabletViewContextProvider: TabletViewContextProviderType = ({
   children,
-  closedClassName,
-  openClassName,
+  ...restProps
 }) => (
-  <TabletViewContext.Provider
-    value={useTabletViewContextStore({ closedClassName, openClassName })}
-  >
+  <TabletViewContext.Provider value={useTabletViewContextStore(restProps)}>
     {children}
   </TabletViewContext.Provider>
 );

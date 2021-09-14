@@ -4,6 +4,8 @@
   box-sizing: border-box;
   margin-top: 15px;
   margin-bottom: 15px;
+  transition: outline-offset 200ms var(--easing-ease-out-cubic),
+    color 200ms var(--easing-ease-out-cubic);
 
   &.dark {
     color: var(--color-dark-label);
@@ -11,6 +13,16 @@
 
   &.light {
     color: var(--color-light-label);
+  }
+
+  &.dark:focus-visible {
+    outline: 1px dashed var(--color-dark-decoration);
+    outline-offset: 2px;
+  }
+
+  &.light:focus-visible {
+    outline: 1px dashed var(--color-light-decoration);
+    outline-offset: 2px;
   }
 
   &.dark:hover {
@@ -25,16 +37,12 @@
 .image {
   overflow: hidden;
   max-height: 240px;
-
-  /* aspect-ratio: 4 / 3; */
   aspect-ratio: 16 / 9;
   pointer-events: none;
 
   img {
     width: 100%;
     height: auto;
-
-    /* aspect-ratio: 4 / 3; */
     aspect-ratio: 16 / 9;
     object-fit: cover;
   }

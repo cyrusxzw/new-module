@@ -1,10 +1,15 @@
 import React from 'react';
-import { useGlobalNavigationContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import {
+  useGlobalNavigationContext,
+  useGlobalNavigationStateContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { getCollectionLists } from '~/components/GlobalNavigation/GlobalNavigation.utils';
 import { CollectionList } from '../CollectionList';
 import type { ReadMenuType } from './ReadMenu.types';
 
 const ReadMenu: ReadMenuType = () => {
+  const { activeCollectionId } = useGlobalNavigationStateContext();
+
   const { read } = useGlobalNavigationContext();
 
   const {
@@ -18,10 +23,18 @@ const ReadMenu: ReadMenuType = () => {
   return (
     <>
       {readCollections.map(({ id, items, label }) => (
-        <CollectionList heading={label} id={id} items={items} key={id} />
+        <CollectionList
+          heading={label}
+          isVisible={activeCollectionId === read.id}
+          items={items}
+          key={id}
+        />
       ))}
 
-      <CollectionList id={read.id} items={[taxonomyOfDesignElement]} />
+      <CollectionList
+        isVisible={activeCollectionId === read.id}
+        items={[taxonomyOfDesignElement]}
+      />
     </>
   );
 };

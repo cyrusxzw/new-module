@@ -8,10 +8,10 @@ import {
 import { useMobileViewContext } from '../../MobileView.context';
 import { useWindowHasResized } from '~/customHooks';
 import { Button } from '~/components/Button';
-import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
 import { ScreenReaderOnly } from '~/components/ScreenReaderOnly';
 import { Transition } from '~/components/Transition';
+import { Logo } from '~/components/GlobalNavigation/components/Logo';
 import type { HeaderType } from './Header.types';
 import compositionStyles from '../../MobileView.module.css';
 import styles from './Header.module.css';
@@ -25,14 +25,12 @@ const Header: HeaderType = ({ onClose }) => {
   } = useGlobalNavigationStateContext();
 
   const { actions, onOpen } = useGlobalNavigationContext();
-
   const { closedTheme } = useMobileViewContext();
-
   const currentTheme = useThemeContext(null, 'dark');
 
   useWindowHasResized();
 
-  const { logo, search, cart, menu, stores } = actions;
+  const { search, cart, menu, stores } = actions;
   const currentClosedTheme = closedTheme || currentTheme;
 
   const handleOnSearchClick = () => {
@@ -73,15 +71,7 @@ const Header: HeaderType = ({ onClose }) => {
       >
         <ul className={styles.list}>
           <li className={cx(styles.item, styles.itemLogo)}>
-            <Hyperlink
-              className={cx(styles.action, styles.actionLogo)}
-              dataTestRef={logo.dataTestRef ?? 'NAV_LOGO'}
-              title={logo.title}
-              url={logo.url}
-            >
-              <Icon height={22} name="aesop" tabIndex={-1} width={70} />
-              <ScreenReaderOnly>{logo.label}</ScreenReaderOnly>
-            </Hyperlink>
+            <Logo closedTheme={closedTheme} />
           </li>
 
           <li className={styles.item}>

@@ -47,6 +47,12 @@ import { TabletViewFixture } from './TabletView.fixture';
         'dark',
         'Presentation',
       );
+      const closedLogoTheme = knobs.select(
+        'closedLogoTheme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
       const implementation = {
         gridOverlay: {
           isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
@@ -82,8 +88,9 @@ import { TabletViewFixture } from './TabletView.fixture';
               }}
             >
               <TabletViewContextProvider
-                openClassName="tablet-open"
                 closedClassName="tablet-closed"
+                closedLogoTheme={closedLogoTheme}
+                openClassName="tablet-open"
               >
                 <TabletView />
               </TabletViewContextProvider>

@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
-import type { ComponentWithChildren } from '~/types';
+import type { Themes, ComponentWithChildren } from '~/types';
 
 type TabletViewProps = {
   className?: string;
@@ -9,13 +9,15 @@ type TabletViewType = ComponentWithChildren<TabletViewProps>;
 
 type TabletViewContextType = {
   closedClassName?: string;
-  openClassName?: string;
+  closedLogoTheme?: Themes;
   isShopOpen: boolean;
+  openClassName?: string;
   setIsShopOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 type TabletViewContextProviderProps = {
   closedClassName?: string;
+  closedLogoTheme?: Themes;
   openClassName?: string;
 };
 

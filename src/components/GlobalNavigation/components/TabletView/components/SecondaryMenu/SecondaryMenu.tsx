@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import { useThemeContext } from '~/contexts';
 import { Button } from '~/components/Button';
 import { Hyperlink } from '~/components/Hyperlink';
 import { useGlobalNavigationContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
@@ -13,6 +14,8 @@ const SecondaryMenu: SecondaryMenuType = () => {
     actions: { account, cart },
   } = useGlobalNavigationContext();
 
+  const currentTheme = useThemeContext(undefined, 'dark');
+
   const { dataTestRef, id, title } = account;
 
   const sharedAccountProps = {
@@ -22,9 +25,11 @@ const SecondaryMenu: SecondaryMenuType = () => {
     title,
   };
 
+  const classSet = cx(compositionStyles.menuList, styles[currentTheme]);
+
   return (
     <nav aria-label="supplementary" role="navigation">
-      <ul className={compositionStyles.menuList}>
+      <ul className={classSet}>
         <MenuItem>
           {account.type === 'link' ? (
             <Hyperlink {...sharedAccountProps} url={account.url}>

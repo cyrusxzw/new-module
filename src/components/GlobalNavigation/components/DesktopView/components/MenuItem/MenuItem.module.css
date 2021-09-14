@@ -1,8 +1,12 @@
 @import 'styles/index';
 
+:root {
+  --menu-height: 74px;
+}
+
 .base {
   display: flex;
-  height: 74px;
+  height: var(--menu-height);
   align-items: center;
   border-bottom: 2px solid transparent;
   margin-right: 20px;
@@ -15,8 +19,6 @@
 }
 
 .active {
-  z-index: 11;
-
   &.dark {
     border-bottom-color: var(--color-secondary);
   }

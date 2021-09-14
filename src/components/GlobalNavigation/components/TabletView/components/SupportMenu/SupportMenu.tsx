@@ -9,7 +9,7 @@ import type { SupportMenuType } from './SupportMenu.types';
 import compositionStyles from '../../TabletView.module.css';
 import styles from './SupportMenu.module.css';
 
-const SupportMenu: SupportMenuType = () => {
+const SupportMenu: SupportMenuType = ({ isVisible = true }) => {
   const {
     actions: { account, support },
   } = useGlobalNavigationContext();
@@ -28,7 +28,7 @@ const SupportMenu: SupportMenuType = () => {
   const classSet = cx(styles.base, styles[currentTheme]);
 
   return (
-    <ul className={classSet}>
+    <ul aria-hidden={!isVisible} className={classSet}>
       <li className={styles.item}>
         <Button
           className={cx(styles.element, compositionStyles.ornamentalWrapper)}
@@ -36,6 +36,7 @@ const SupportMenu: SupportMenuType = () => {
           id={support.id}
           isInline={true}
           onClick={handleOnSupportClick}
+          tabIndex={!isVisible ? -1 : null}
           title={support.title}
         >
           <span className={compositionStyles.ornamentalHover}>
@@ -48,6 +49,7 @@ const SupportMenu: SupportMenuType = () => {
         <li className={styles.item}>
           <Hyperlink
             className={cx(styles.element, compositionStyles.ornamentalWrapper)}
+            tabIndex={!isVisible ? -1 : null}
             title={account.type === 'link' && account?.recentOrders?.title}
             url={account.type === 'link' && account?.recentOrders?.url}
           >

@@ -123,13 +123,6 @@
   }
 }
 
-.collectionHeading {
-  display: block;
-  margin-bottom: 14px;
-  font-family: var(--font-family-sans-serif-medium);
-  font-weight: normal;
-}
-
 .absoluteBuffer {
   height: 74px;
   pointer-events: none;

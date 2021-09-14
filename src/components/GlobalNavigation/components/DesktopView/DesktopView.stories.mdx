@@ -13,7 +13,6 @@ import {
 } from '~/components/GlobalNavigation/GlobalNavigation.fixture';
 import { DesktopViewContextProvider } from './DesktopView.context';
 import { DesktopView } from './DesktopView';
-import { DesktopViewFixture } from './DesktopView.fixture';
 
 <Meta title="Components/GlobalNavigation/DesktopView" component={DesktopView} />
 
@@ -40,6 +39,12 @@ import { DesktopViewFixture } from './DesktopView.fixture';
       const [cartOpen, setCartOpen] = React.useState(false);
       const handleOnCartClick = () => setCartOpen(true);
       const handleOnCartCloseClick = () => setCartOpen(false);
+      const closedLogoTheme = knobs.select(
+        'closedLogoTheme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
       const theme = knobs.select(
         'theme',
         ['dark', 'light'],
@@ -88,6 +93,7 @@ import { DesktopViewFixture } from './DesktopView.fixture';
               <DesktopViewContextProvider
                 openClassName="desktop-open"
                 closedClassName="desktop-closed"
+                closedLogoTheme={closedLogoTheme}
               >
                 <DesktopView />
               </DesktopViewContextProvider>

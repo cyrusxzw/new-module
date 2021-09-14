@@ -20,7 +20,7 @@ const PromotionCard: PromotionCardType = ({
   title,
   url,
 }) => {
-  const currentTheme = useThemeContext(null, 'dark');
+  const currentTheme = useThemeContext(undefined, 'dark');
 
   if (!heading || !label) return null;
 

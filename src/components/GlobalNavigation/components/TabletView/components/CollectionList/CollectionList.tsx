@@ -1,44 +1,45 @@
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
 import type { CollectionListType } from './CollectionList.types';
 import compositionStyles from '../../TabletView.module.css';
+import styles from './CollectionList.module.css';
 
-const CollectionList: CollectionListType = ({ heading, id, items }) => {
-  const { activeCollectionId } = useGlobalNavigationStateContext();
+const CollectionList: CollectionListType = ({
+  heading,
+  isVisible = true,
+  items,
+}) => {
   const currentTheme = useThemeContext(undefined, 'dark');
+
+  const headingClassSet = cx(
+    styles.collectionHeading,
+    compositionStyles.collectionItemLabel,
+  );
+
+  const elementClassSet = cx(
+    compositionStyles.collectionItemLabel,
+    compositionStyles.ornamentalWrapper,
+  );
 
   return (
     <>
-      {!!heading && (
-        <strong
-          className={cx(
-            compositionStyles.collectionHeading,
-            compositionStyles.collectionItemLabel,
-          )}
-        >
-          {heading}
-        </strong>
-      )}
+      {heading && <strong className={headingClassSet}>{heading}</strong>}
 
       <ul
-        aria-hidden={activeCollectionId !== id}
+        aria-hidden={!isVisible}
         aria-label="submenu"
         className={compositionStyles.list}
       >
         {items.map((item) => (
           <li className={compositionStyles.collectionItem} key={item.id}>
             <Hyperlink
-              className={cx(
-                compositionStyles.collectionItemLabel,
-                compositionStyles.ornamentalWrapper,
-              )}
+              className={elementClassSet}
               dataTestRef={item.dataTestRef}
               id={item.id}
-              tabIndex={activeCollectionId !== id ? -1 : null}
+              tabIndex={!isVisible ? -1 : null}
               title={item.title}
               url={item.url}
             >

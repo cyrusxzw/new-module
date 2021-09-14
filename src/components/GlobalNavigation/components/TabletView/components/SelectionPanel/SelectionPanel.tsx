@@ -21,7 +21,7 @@ const SelectionPanel: SelectionPanelType = ({ children, isActive = false }) => {
     <Transition isActive={isActive} type="fade">
       <div>
         <div className={classSet}>
-          {isOpen && <Logo />}
+          {isOpen && <Logo isVisible={isActive} />}
           {children}
         </div>
       </div>

@@ -6,11 +6,13 @@ import { Transition } from '~/components/Transition';
 import type { PanelType } from './Panel.types';
 import styles from './Panel.module.css';
 
+const defaultBackgroundColor = '#fffef3';
+
 const Panel: PanelType = ({
   /** @todo
    * source this from a variable
    */
-  backgroundColor = '#fffef3',
+  backgroundColor = defaultBackgroundColor,
   children,
   id,
   shouldOnlyMountWhenActive = false,

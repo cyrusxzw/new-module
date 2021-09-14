@@ -34,7 +34,6 @@ const DesktopView: DesktopViewType = ({ className }) => {
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
   const contextTheme = useThemeContext(theme, 'dark');
 
-  const currentTheme = isOpen ? 'dark' : contextTheme;
   const handleOnClose = () => {
     setActiveCollectionId('top');
     setIsOpen(false);
@@ -43,6 +42,8 @@ const DesktopView: DesktopViewType = ({ className }) => {
 
   useOverflowHidden(isOpen);
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
+
+  const currentTheme = isOpen ? 'dark' : contextTheme;
 
   const classSet = cx(
     styles.base,

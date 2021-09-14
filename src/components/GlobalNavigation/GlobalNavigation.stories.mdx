@@ -44,8 +44,14 @@ import {
         'dark',
         'Presentation',
       );
-      const  = knobs.select(
+      const mobileViewClosedTheme = knobs.select(
         'mobileViewClosedTheme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const closedLogoTheme = knobs.select(
+        'closedLogoTheme',
         ['dark', 'light'],
         'dark',
         'Presentation',
@@ -73,32 +79,37 @@ import {
       return (
         <>
           <GlobalNavigationStateContextProvider>
-              <GlobalNavigationContextProvider
-                value={{
-                  actions,
-                  read: fixture.read,
-                  collections: fixture.collections,
-                  isVisuallyObstructed: accountOpen || cartOpen,
-                  theme,
-                  onClose: fixture.onClose,
-                  onOpen: fixture.onOpen,
-                }}
+            <GlobalNavigationContextProvider
+              value={{
+                actions,
+                collections: fixture.collections,
+                isVisuallyObstructed: accountOpen || cartOpen,
+                onClose: fixture.onClose,
+                onOpen: fixture.onOpen,
+                read: fixture.read,
+                theme,
+              }}
+            >
+              <DesktopViewContextProvider
+                closedClassName="desktop-closed"
+                closedLogoTheme={closedLogoTheme}
+                openClassName="desktop-open"
               >
-                <DesktopViewContextProvider
+                <TabletViewContextProvider
                   openClassName="desktop-open"
                   closedClassName="desktop-closed"
+                  closedLogoTheme={closedLogoTheme}
                 >
-                  <TabletViewContextProvider>
-                    <MobileViewContextProvider
-                      openClassName="mobile-open"
-                      closedClassName="mobile-closed"
-                      closedTheme={mobileViewClosedTheme}
-                    >
-                      <GlobalNavigation />
-                    </MobileViewContextProvider>
-                  </TabletViewContextProvider>
-                </DesktopViewContextProvider>
-              </GlobalNavigationContextProvider>
+                  <MobileViewContextProvider
+                    openClassName="mobile-open"
+                    closedClassName="mobile-closed"
+                    closedTheme={mobileViewClosedTheme}
+                  >
+                    <GlobalNavigation />
+                  </MobileViewContextProvider>
+                </TabletViewContextProvider>
+              </DesktopViewContextProvider>
+            </GlobalNavigationContextProvider>
           </GlobalNavigationStateContextProvider>
           <Modal
             copy={{
@@ -124,7 +135,6 @@ import {
         </>
       );
     })()}
-
   </Story>
 </Canvas>
 
@@ -198,17 +208,9 @@ import {
                 onClose: fixture.onClose,
               }}
             >
-              <DesktopViewContextProvider
-                openClassName="desktop-open"
-                closedClassName="desktop-closed"
-                closedLogoTheme="light"
-              >
-                <TabletViewContextProvider>
-                  <MobileViewContextProvider
-                    openClassName="mobile-open"
-                    closedClassName="mobile-closed"
-                    closedTheme="light"
-                  >
+              <DesktopViewContextProvider closedLogoTheme="light">
+                <TabletViewContextProvider closedLogoTheme="light">
+                  <MobileViewContextProvider closedTheme="light">
                     <GlobalNavigation />
                   </MobileViewContextProvider>
                 </TabletViewContextProvider>
