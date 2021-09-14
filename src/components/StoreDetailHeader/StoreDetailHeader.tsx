@@ -96,7 +96,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
     <TwoColumnLayout
       className={classSet}
       content={
-        <>
+        <div className="wrapper">
           <Heading level="1" size="large" theme={currentTheme}>
             {storeName}
           </Heading>
@@ -117,7 +117,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
                 </div>
               ))}
           </div>
-        </>
+        </div>
       }
       hasFullWidthContent={true}
       isReversed={true}
