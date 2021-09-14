@@ -98,7 +98,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
       className={classSet}
       content={
         <div className={wrapperClass}>
-          <Heading level="1" size="large" theme={currentTheme}>
+          <Heading level="1" size="xLarge" theme={currentTheme}>
             {storeName}
           </Heading>
           <div className={styles.detailBlock}>

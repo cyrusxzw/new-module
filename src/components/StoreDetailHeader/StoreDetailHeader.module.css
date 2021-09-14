@@ -23,7 +23,7 @@
   display: flex;
   flex-wrap: wrap;
   font-family: var(--font-family-sans-serif-regular);
-  font-size: rem(15px);
+  font-size: rem(14px);
   line-height: 1.4;
 }
 
@@ -47,6 +47,7 @@
 }
 
 .detailContent {
+  font-family: var(--font-family-sans-serif-regular);
   white-space: pre-wrap;
   word-break: break-word;
 

@@ -6836,7 +6836,6 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 .StoreHoursList-module_item__2tt42 {
   padding: 0;
   margin: 0;
-  margin-bottom: 4px;
 }
 .StoreHoursList-module_dark__1Ri68 .StoreHoursList-module_item__2tt42 {
     color: #666;
@@ -14952,7 +14951,7 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-family: 'Suisse Regular', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.4;
 }
 .StoreDetailHeader-module_detail___dDdT {
@@ -14975,6 +14974,7 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   font-family: 'Suisse Medium', sans-serif;
 }
 .StoreDetailHeader-module_detailContent__9KI3h {
+  font-family: 'Suisse Regular', sans-serif;
   white-space: pre-wrap;
   word-break: break-word;
 }
