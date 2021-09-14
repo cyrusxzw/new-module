@@ -2,7 +2,7 @@
 
 .base {
   font-family: var(--font-family-sans-serif-regular);
-  font-size: rem(15px);
+  font-size: rem(14px);
 
   &,
   & * {
@@ -36,7 +36,7 @@
 }
 
 .dayName {
-  font-family: var(--font-family-sans-serif-medium);
+  font-family: var(--font-family-sans-serif-regular);
   font-size: rem(14px);
 
   &::after {
@@ -45,8 +45,8 @@
 }
 
 .hours {
-  font-family: var(--font-family-sans-serif-regular);
-  font-size: rem(13px);
+  font-family: var(--font-family-sans-serif-medium);
+  font-size: rem(14px);
 }
 
 .alternateHours {
@@ -65,7 +65,7 @@
 
 .alternateHoursNote {
   margin-bottom: 15px;
-  font-size: rem(13px);
+  font-size: rem(14px);
 
   .dark & {
     color: var(--color-dark-adjustment);
