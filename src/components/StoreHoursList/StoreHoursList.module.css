@@ -64,6 +64,7 @@
 }
 
 .alternateHoursNote {
+  font-family: var(--font-family-sans-serif-medium);
   margin-bottom: 15px;
   font-size: rem(14px);
 
