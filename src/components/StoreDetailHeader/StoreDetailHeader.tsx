@@ -26,6 +26,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
 }) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const classSet = cx(styles.base, styles[currentTheme], className);
+  const wrapperClass = cx(styles.wrapper, className);
 
   const contentBlocks = [
     {
@@ -96,8 +97,8 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
     <TwoColumnLayout
       className={classSet}
       content={
-        <>
-          <Heading level="1" size="large" theme={currentTheme}>
+        <div className={wrapperClass}>
+          <Heading level="1" size="xLarge" theme={currentTheme}>
             {storeName}
           </Heading>
           <div className={styles.detailBlock}>
@@ -117,7 +118,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
                 </div>
               ))}
           </div>
-        </>
+        </div>
       }
       hasFullWidthContent={true}
       isReversed={true}
