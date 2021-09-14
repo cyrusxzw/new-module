@@ -15,6 +15,10 @@
   pointer-events: none;
   transition: border-top-color 200ms var(--easing-ease-in-out-cubic);
 
+  &.active {
+    z-index: 11;
+  }
+
   &.menuOpen {
     border-top: 1px solid var(--color-grey-70);
     pointer-events: auto;
@@ -29,10 +33,9 @@
   overflow-y: auto;
   pointer-events: none;
   transition: opacity 200ms var(--easing-ease-in-out-cubic);
-}
 
-.active {
-  z-index: 11;
-  opacity: 1;
-  pointer-events: auto;
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }

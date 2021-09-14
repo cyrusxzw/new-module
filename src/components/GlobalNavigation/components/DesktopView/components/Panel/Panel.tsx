@@ -18,10 +18,15 @@ const Panel: PanelType = ({
   shouldOnlyMountWhenActive = false,
 }) => {
   const { isOpen, activeCollectionId } = useGlobalNavigationStateContext();
-  const { id: currentId } = useMenuItemContext(id);
+  const { isActive } = useMenuItemContext(id);
+
+  const classSet = cx(styles.base, {
+    [styles.menuOpen]: isOpen,
+    [styles.active]: isActive,
+  });
 
   const innerClassSet = cx(styles.content, {
-    [styles.active]: activeCollectionId === currentId,
+    [styles.active]: isActive,
   });
 
   return (
@@ -31,7 +36,7 @@ const Panel: PanelType = ({
       shouldUnmountOnExit={shouldOnlyMountWhenActive}
       type="fadeIn"
     >
-      <div className={cx(styles.base, { [styles.menuOpen]: isOpen })}>
+      <div className={classSet}>
         <div className={innerClassSet} style={{ backgroundColor }}>
           {children}
         </div>
