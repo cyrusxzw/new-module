@@ -261,6 +261,7 @@ declare type ImageProps = {
         openInANewWindow?: boolean;
         url?: string;
     };
+    height?: string;
     id?: string;
     isFullBleedImage?: boolean;
     isLazyLoaded?: boolean;
@@ -274,6 +275,7 @@ declare type ImageProps = {
     style?: CSSProperties;
     type?: string;
     theme?: Themes;
+    width?: string;
 };
 
 declare type TextAlign = 'center' | 'left' | 'right';
@@ -1099,6 +1101,7 @@ declare const MediaWithContent: React$1.ForwardRefExoticComponent<MediaWithConte
 
 declare type MobileViewContextProviderProps = {
     closedClassName?: string;
+    closedTheme?: Themes;
     openClassName?: string;
 };
 declare type MobileViewContextProviderType = ComponentWithChildren<MobileViewContextProviderProps>;
@@ -1113,18 +1116,33 @@ declare const MobileViewContextProvider: MobileViewContextProviderType;
 
 declare type TabletViewProps = {
     className?: string;
-    theme?: Themes;
 };
 declare type TabletViewType = ComponentWithChildren<TabletViewProps>;
+declare type TabletViewContextProviderProps = {
+    closedClassName?: string;
+    closedLogoTheme?: Themes;
+    openClassName?: string;
+};
+declare type TabletViewContextProviderType = ComponentWithChildren<TabletViewContextProviderProps>;
 
 declare const TabletView: TabletViewType;
+
+declare const TabletViewContextProvider: TabletViewContextProviderType;
 
 declare type DesktopViewProps = {
     className?: string;
 };
 declare type DesktopViewType = ComponentWithoutChildren<DesktopViewProps>;
+declare type DesktopViewContextType = {
+    closedClassName?: string;
+    closedLogoTheme?: Themes;
+    openClassName?: string;
+};
+declare type DesktopViewContextProviderType = ComponentWithChildren<DesktopViewContextType>;
 
 declare const DesktopView: DesktopViewType;
+
+declare const DesktopViewContextProvider: DesktopViewContextProviderType;
 
 declare type CollectionImage = {
     altText: string;
@@ -1146,6 +1164,8 @@ declare type Trigger = Clickable & {
 };
 declare type Link = Clickable & {
     alternateLabel?: string;
+    isExternal?: boolean;
+    onClick?: () => void;
     type: 'link';
     url: string;
 };
@@ -1168,19 +1188,32 @@ declare type Read = Clickable & {
     articlesListHeading?: string;
     backLabel?: string;
     backgroundColor?: string;
+    baseUrl?: string;
     image?: CollectionImage;
     items: (Link | NestedCollection)[];
     topLevelCollectionLabel?: string;
     type: 'read-collection';
 };
 declare type Actions = {
-    account: Link | Trigger;
+    account: ((Link & {
+        recentOrders?: {
+            url?: string;
+            title?: string;
+            label?: string;
+        };
+    }) | Trigger) & {
+        isAuthenticated?: boolean;
+    };
     cart: Trigger;
     logo: Link;
+    shop: Omit<Trigger, 'onClick'> & {
+        onClick?: () => void;
+    };
     support: Trigger;
     menu: Omit<Trigger, 'onClick'> & {
         closeLabel: string;
         closeTitle: string;
+        onClick?: () => void;
     };
     search: Trigger & {
         component: () => ReactElement;
@@ -1225,10 +1258,10 @@ declare type GlobalNavigationContextType = {
     actions: Actions;
     className?: string;
     collections: Collection[];
-    desktopViewLogoTheme?: Themes;
     isVisuallyObstructed?: boolean;
-    mobileViewClosedTheme?: Themes;
+    /** User created on Navigation close event callback */
     onClose?: () => void;
+    /** User created on Navigation open event callback */
     onOpen?: () => void;
     read: Read;
     theme?: Themes;
@@ -2011,7 +2044,9 @@ declare const index_d$a_MediaWithContent: typeof MediaWithContent;
 declare const index_d$a_MobileView: typeof MobileView;
 declare const index_d$a_MobileViewContextProvider: typeof MobileViewContextProvider;
 declare const index_d$a_TabletView: typeof TabletView;
+declare const index_d$a_TabletViewContextProvider: typeof TabletViewContextProvider;
 declare const index_d$a_DesktopView: typeof DesktopView;
+declare const index_d$a_DesktopViewContextProvider: typeof DesktopViewContextProvider;
 declare const index_d$a_GlobalNavigationContextProvider: typeof GlobalNavigationContextProvider;
 declare const index_d$a_GlobalNavigationStateContextProvider: typeof GlobalNavigationStateContextProvider;
 declare const index_d$a_useGlobalNavigationStateContext: typeof useGlobalNavigationStateContext;
@@ -2086,7 +2121,9 @@ declare namespace index_d$a {
     index_d$a_MobileView as MobileView,
     index_d$a_MobileViewContextProvider as MobileViewContextProvider,
     index_d$a_TabletView as TabletView,
+    index_d$a_TabletViewContextProvider as TabletViewContextProvider,
     index_d$a_DesktopView as DesktopView,
+    index_d$a_DesktopViewContextProvider as DesktopViewContextProvider,
     index_d$a_GlobalNavigationContextProvider as GlobalNavigationContextProvider,
     index_d$a_GlobalNavigationStateContextProvider as GlobalNavigationStateContextProvider,
     index_d$a_useGlobalNavigationStateContext as useGlobalNavigationStateContext,
@@ -2846,4 +2883,4 @@ declare namespace index_d {
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DesktopView, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, MobileView, MobileViewContextProvider, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TabletView, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$a as components, index_d$9 as constants, index_d$8 as contexts, index_d$7 as customHooks, index_d$6 as environment, index_d$4 as objects, index_d$2 as product, index_d$b as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useFocusOnFirst, useGlobalNavigationStateContext, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useTrapFocus, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DesktopView, DesktopViewContextProvider, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, MobileView, MobileViewContextProvider, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TabletView, TabletViewContextProvider, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$a as components, index_d$9 as constants, index_d$8 as contexts, index_d$7 as customHooks, index_d$6 as environment, index_d$4 as objects, index_d$2 as product, index_d$b as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useFocusOnFirst, useGlobalNavigationStateContext, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useTrapFocus, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };

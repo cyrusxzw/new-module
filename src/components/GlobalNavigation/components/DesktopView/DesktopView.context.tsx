@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createContext, useContext } from 'react';
 import type {
   DesktopViewContextProviderType,
@@ -8,21 +8,13 @@ import type {
 
 const DesktopViewContext = createContext(undefined);
 
-const useDesktopViewContextStore: UseDesktopViewContextStore = ({
-  closedClassName,
-  openClassName,
-}) => {
-  return { closedClassName, openClassName };
-};
+const useDesktopViewContextStore: UseDesktopViewContextStore = (props) => props;
 
 const DesktopViewContextProvider: DesktopViewContextProviderType = ({
   children,
-  closedClassName,
-  openClassName,
+  ...restProps
 }) => (
-  <DesktopViewContext.Provider
-    value={useDesktopViewContextStore({ closedClassName, openClassName })}
-  >
+  <DesktopViewContext.Provider value={useDesktopViewContextStore(restProps)}>
     {children}
   </DesktopViewContext.Provider>
 );

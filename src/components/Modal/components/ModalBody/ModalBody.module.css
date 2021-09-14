@@ -64,12 +64,12 @@
     right: 20px;
   }
 
-  .dark &:focus {
+  .dark &:focus-visible {
     outline: 1px dashed var(--color-dark-copy-alternate);
     outline-offset: 2px;
   }
 
-  .light &:focus {
+  .light &:focus-visible {
     outline: 1px dashed var(--color-light-copy-alternate);
     outline-offset: 2px;
   }

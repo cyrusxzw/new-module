@@ -22,6 +22,8 @@ declare type Trigger = Clickable & {
 };
 declare type Link = Clickable & {
     alternateLabel?: string;
+    isExternal?: boolean;
+    onClick?: () => void;
     type: 'link';
     url: string;
 };
@@ -44,19 +46,32 @@ declare type Read = Clickable & {
     articlesListHeading?: string;
     backLabel?: string;
     backgroundColor?: string;
+    baseUrl?: string;
     image?: CollectionImage;
     items: (Link | NestedCollection)[];
     topLevelCollectionLabel?: string;
     type: 'read-collection';
 };
 declare type Actions = {
-    account: Link | Trigger;
+    account: ((Link & {
+        recentOrders?: {
+            url?: string;
+            title?: string;
+            label?: string;
+        };
+    }) | Trigger) & {
+        isAuthenticated?: boolean;
+    };
     cart: Trigger;
     logo: Link;
+    shop: Omit<Trigger, 'onClick'> & {
+        onClick?: () => void;
+    };
     support: Trigger;
     menu: Omit<Trigger, 'onClick'> & {
         closeLabel: string;
         closeTitle: string;
+        onClick?: () => void;
     };
     search: Trigger & {
         component: () => ReactElement;
@@ -101,10 +116,10 @@ declare type GlobalNavigationContextType = {
     actions: Actions;
     className?: string;
     collections: Collection[];
-    desktopViewLogoTheme?: Themes;
     isVisuallyObstructed?: boolean;
-    mobileViewClosedTheme?: Themes;
+    /** User created on Navigation close event callback */
     onClose?: () => void;
+    /** User created on Navigation open event callback */
     onOpen?: () => void;
     read: Read;
     theme?: Themes;
@@ -123,6 +138,7 @@ declare const useGlobalNavigationContext: () => GlobalNavigationContextType;
 
 declare type DesktopViewContextType = {
     closedClassName?: string;
+    closedLogoTheme?: Themes;
     openClassName?: string;
 };
 declare type DesktopViewContextProviderType = ComponentWithChildren<DesktopViewContextType>;
@@ -131,6 +147,7 @@ declare const DesktopViewContextProvider: DesktopViewContextProviderType;
 
 declare type MobileViewContextProviderProps = {
     closedClassName?: string;
+    closedTheme?: Themes;
     openClassName?: string;
 };
 declare type MobileViewContextProviderType = ComponentWithChildren<MobileViewContextProviderProps>;

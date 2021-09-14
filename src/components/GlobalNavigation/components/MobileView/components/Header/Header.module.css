@@ -1,13 +1,12 @@
 @import 'styles/index';
 
 .base {
-  position: relative;
   background-color: transparent;
 }
 
 .list {
   display: flex;
-  height: 80px;
+  height: 90px;
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
@@ -33,14 +32,14 @@
   transition: color 200ms var(--easing-ease-out-cubic),
     outline-offset 200ms var(--easing-ease-out-cubic);
 
-  .dark &:focus,
-  .darkClosed &:focus {
+  .dark &:focus-visible,
+  .darkClosed &:focus-visible {
     outline: 1px dashed var(--color-dark-decoration);
     outline-offset: 2px;
   }
 
-  .light &:focus,
-  .lightClosed &:focus {
+  .light &:focus-visible,
+  .lightClosed &:focus-visible {
     outline: 1px dashed var(--color-light-decoration);
     outline-offset: 2px;
   }
@@ -48,38 +47,6 @@
 
 .itemLogo {
   flex-grow: 1;
-}
-
-.actionLogo {
-  width: 70px;
-  height: 22px;
-  box-sizing: content-box;
-  padding: 5px;
-  font-family: var(--font-family-sans-serif-regular);
-  font-size: rem(20px);
-  transform: translate(-5px, -5px);
-
-  svg {
-    .dark &,
-    .darkClosed & {
-      fill: var(--color-secondary);
-    }
-
-    .light &,
-    .lightClosed & {
-      fill: var(--color-primary);
-    }
-  }
-
-  .dark &:hover svg,
-  .darkClosed &:hover svg {
-    fill: var(--color-black);
-  }
-
-  .light &:hover svg,
-  .lightClosed &:hover svg {
-    fill: var(--color-white);
-  }
 }
 
 .actionSearch {
@@ -94,26 +61,12 @@
   .dark &,
   .darkClosed & {
     path {
-      fill: var(--color-dark-label);
+      fill: var(--color-secondary);
     }
   }
 
   .light &,
   .lightClosed & {
-    path {
-      fill: var(--color-light-label);
-    }
-  }
-
-  .dark .actionSearch:hover &,
-  .darkClosed .actionSearch:hover & {
-    path {
-      fill: var(--color-secondary);
-    }
-  }
-
-  .light .actionSearch:hover &,
-  .lightClosed .actionSearch:hover & {
     path {
       fill: var(--color-primary);
     }
@@ -130,21 +83,11 @@
 
   .dark &,
   .darkClosed & {
-    color: var(--color-dark-label);
+    color: var(--color-secondary);
   }
 
   .light &,
   .lightClosed & {
-    color: var(--color-light-label);
-  }
-
-  .dark &:hover,
-  .darkClosed &:hover {
-    color: var(--color-secondary);
-  }
-
-  .light &:hover,
-  .lightClosed &:hover {
     color: var(--color-primary);
   }
 }
@@ -205,27 +148,29 @@
   .dark &::after,
   .darkClosed &::before,
   .darkClosed &::after {
-    background-color: var(--color-dark-label);
+    background-color: var(--color-secondary);
   }
 
   .light &::before,
   .light &::after,
   .lightClosed &::before,
   .lightClosed &::after {
-    background-color: var(--color-light-label);
-  }
-
-  .dark &:hover::before,
-  .dark &:hover::after,
-  .darkClosed &:hover::before,
-  .darkClosed &:hover::after {
-    background-color: var(--color-secondary);
-  }
-
-  .light &:hover::before,
-  .light &:hover::after,
-  .lightClosed &:hover::before,
-  .lightClosed &:hover::after {
     background-color: var(--color-primary);
+  }
+}
+
+.search {
+  z-index: calc(var(--z-index-fixed-menu) + 1);
+  top: 90px;
+  height: 100%;
+
+  .dark & {
+    border-top: 1px solid var(--color-grey-60);
+    background-color: var(--color-primary);
+  }
+
+  .light & {
+    border-top: 1px solid var(--color-white);
+    background-color: var(--color-secondary);
   }
 }

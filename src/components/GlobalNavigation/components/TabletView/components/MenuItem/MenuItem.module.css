@@ -1,0 +1,27 @@
+@import 'styles/index';
+
+.base {
+  display: flex;
+  height: 74px;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  margin-right: 20px;
+  pointer-events: auto;
+  transition: border-bottom-color 200ms var(--easing-ease-in-out-cubic);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.active {
+  z-index: 11;
+
+  &.dark {
+    border-bottom-color: var(--color-secondary);
+  }
+
+  &.light {
+    border-bottom-color: var(--color-primary);
+  }
+}

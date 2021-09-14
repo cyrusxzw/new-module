@@ -1,0 +1,13 @@
+@import 'styles/index';
+
+.base {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  opacity: 1;
+  transition: opacity 200ms var(--easing-ease-out-cubic);
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

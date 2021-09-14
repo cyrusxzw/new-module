@@ -1,13 +1,18 @@
 import React from 'react';
 import cx from 'classnames';
-import { Transition } from '~/components/Transition';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useMenuItemContext } from '~/components/GlobalNavigation/components/DesktopView/components/MenuItem/MenuItem.context';
+import { Transition } from '~/components/Transition';
 import type { PanelType } from './Panel.types';
 import styles from './Panel.module.css';
 
+const defaultBackgroundColor = '#fffef3';
+
 const Panel: PanelType = ({
-  backgroundColor = '#fffef3', // @TODO source this from a variable
+  /** @todo
+   * source this from a variable
+   */
+  backgroundColor = defaultBackgroundColor,
   children,
   id,
   shouldOnlyMountWhenActive = false,

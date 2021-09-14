@@ -5,11 +5,13 @@ import {
   useGlobalNavigationContext,
   useGlobalNavigationStateContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import { useMobileViewContext } from '../../MobileView.context';
 import { useWindowHasResized } from '~/customHooks';
 import { Button } from '~/components/Button';
-import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
 import { ScreenReaderOnly } from '~/components/ScreenReaderOnly';
+import { Transition } from '~/components/Transition';
+import { Logo } from '~/components/GlobalNavigation/components/Logo';
 import type { HeaderType } from './Header.types';
 import compositionStyles from '../../MobileView.module.css';
 import styles from './Header.module.css';
@@ -18,26 +20,37 @@ const Header: HeaderType = ({ onClose }) => {
   const {
     isOpen: isMenuOpen,
     setIsOpen: setIsMenuOpen,
+    setActiveCollectionId,
+    activeCollectionId,
   } = useGlobalNavigationStateContext();
 
-  const {
-    actions,
-    mobileViewClosedTheme,
-    onOpen,
-  } = useGlobalNavigationContext();
-
+  const { actions, onOpen } = useGlobalNavigationContext();
+  const { closedTheme } = useMobileViewContext();
   const currentTheme = useThemeContext(null, 'dark');
 
   useWindowHasResized();
 
-  const { logo, search, cart, menu } = actions;
-  const currentClosedTheme = mobileViewClosedTheme || currentTheme;
-  const handleOnSearchClick = () => search.onClick();
+  const { search, cart, menu, stores } = actions;
+  const currentClosedTheme = closedTheme || currentTheme;
+
+  const handleOnSearchClick = () => {
+    search.onClick();
+    setIsMenuOpen(true);
+    setActiveCollectionId(search.id);
+  };
+
   const handleOnCartClick = () => cart.onClick();
 
   const handleOnMenuButtonClick = () => {
     if (isMenuOpen) {
-      onClose();
+      if (
+        activeCollectionId === search.id ||
+        activeCollectionId === stores.id
+      ) {
+        setActiveCollectionId('top');
+      } else {
+        onClose();
+      }
     } else {
       setIsMenuOpen(true);
       onOpen?.();
@@ -58,15 +71,7 @@ const Header: HeaderType = ({ onClose }) => {
       >
         <ul className={styles.list}>
           <li className={cx(styles.item, styles.itemLogo)}>
-            <Hyperlink
-              className={cx(styles.action, styles.actionLogo)}
-              dataTestRef={logo.dataTestRef ?? 'NAV_LOGO'}
-              title={logo.title}
-              url={logo.url}
-            >
-              <Icon height={22} name="aesop" tabIndex={-1} width={70} />
-              <ScreenReaderOnly>{logo.label}</ScreenReaderOnly>
-            </Hyperlink>
+            <Logo closedTheme={closedTheme} />
           </li>
 
           <li className={styles.item}>
@@ -85,6 +90,16 @@ const Header: HeaderType = ({ onClose }) => {
                 width={16}
               />
             </Button>
+            <Transition
+              isActive={activeCollectionId === search.id}
+              shouldMountOnEnter={true}
+              shouldUnmountOnExit={true}
+              type="slideLeft"
+            >
+              <div className={cx(compositionStyles.slide, styles.search)}>
+                <search.component />
+              </div>
+            </Transition>
           </li>
 
           <li className={styles.item}>

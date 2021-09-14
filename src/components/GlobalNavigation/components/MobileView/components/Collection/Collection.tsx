@@ -31,6 +31,7 @@ const Collection: CollectionType = ({
 
   const { setActiveNestedCollectionIds } = useMobileViewContext();
   const currentTheme = useThemeContext(null, 'dark');
+
   const [listRef] = useFocusOnFirst(
     isActive,
     'a:not([tabindex="-1"]), button:not([tabindex="-1"])',
@@ -75,7 +76,7 @@ const Collection: CollectionType = ({
             haspopup: true,
             hidden: !isActive,
           }}
-          className={cx(compositionStyles.itemElement)}
+          className={compositionStyles.itemElement}
           isInline={true}
           onClick={handleOnClick}
           tabIndex={activeCollectionId === 'top' && isVisible ? null : -1}
