@@ -6,7 +6,7 @@ import { CollectionItem } from '../CollectionItem';
 import type { CollectionListType } from './CollectionList.types';
 import styles from './CollectionList.module.css';
 
-const CollectionList: CollectionListType = ({ heading, items, eyebrow }) => {
+const CollectionList: CollectionListType = ({ heading, items, eyebrow, dataTestRef}) => {
   const { isActive } = useMenuItemContext();
   const currentTheme = useThemeContext(undefined, 'dark');
 
@@ -15,12 +15,12 @@ const CollectionList: CollectionListType = ({ heading, items, eyebrow }) => {
   return (
     <>
       {eyebrow && (
-        <small className={cx(styles.eyebrow, styles.small)}>{eyebrow}</small>
+        <small className={cx(styles.eyebrow, styles.small)} data-test-ref={`${dataTestRef}_EYEBROW`}>{eyebrow}</small>
       )}
 
-      {heading && <strong className={styles.heading}>{heading}</strong>}
+      {heading && <strong className={styles.heading} data-test-ref={`${dataTestRef}_HEADING`}>{heading}</strong>}
 
-      <ul aria-hidden={!isActive} aria-label="submenu" className={listClassSet}>
+      <ul aria-hidden={!isActive} aria-label="submenu" className={listClassSet} data-test-ref={`${dataTestRef}_ITEMLIST`}>
         {items.map((itemProps) => (
           <CollectionItem {...itemProps} key={itemProps.id} />
         ))}

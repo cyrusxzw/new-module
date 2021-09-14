@@ -17,6 +17,7 @@ const PromotionCard: PromotionCardType = ({
   isFlush = false,
   isVisible = true,
   label,
+  dataTestRef,
   title,
   url,
 }) => {
@@ -37,6 +38,7 @@ const PromotionCard: PromotionCardType = ({
   return (
     <Hyperlink
       className={classSet}
+      dataTestRef={dataTestRef}
       tabIndex={!isVisible ? -1 : null}
       theme={currentTheme}
       title={title}
