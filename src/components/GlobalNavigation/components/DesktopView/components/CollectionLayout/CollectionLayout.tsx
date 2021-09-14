@@ -32,30 +32,54 @@ const CollectionLayout: CollectionLayoutType = ({
     <>
       <div className={styles.collectionsWrapper}>
         <CollectionList
+          dataTestRef={`NAV_${currentId.toUpperCase()}_TLC`}
           heading={topLevelCollectionLabel}
           items={topLevelCollections}
         />
 
         {type === 'read-collection' && (
-          <CollectionList eyebrow={articlesListHeading} items={articles} />
+          <CollectionList
+            dataTestRef={`NAV_${currentId.toUpperCase()}_TLC_READ`}
+            eyebrow={articlesListHeading}
+            items={articles}
+          />
         )}
       </div>
 
       <div className={styles.supplementary}>
         <div className={styles.nestedCollectionsWrapper}>
           <div className={styles.nestedCollections}>
-            {nestedCollections.filter(Boolean).map(({ label, id, items }) => (
-              <CollectionList heading={label} items={items} key={id} />
-            ))}
+            {nestedCollections
+              .filter(Boolean)
+              .map(({ label, id, items }, index) => (
+                <CollectionList
+                  dataTestRef={`NAV_${currentId.toUpperCase()}_NECO_${
+                    index + 1
+                  }`}
+                  heading={label}
+                  items={items}
+                  key={id}
+                />
+              ))}
 
             {!!taxonomyOfDesignElement && (
-              <CollectionList items={[taxonomyOfDesignElement]} />
+              <CollectionList
+                dataTestRef={`NAV_${currentId.toUpperCase()}_NECO_TOD`}
+                items={[taxonomyOfDesignElement]}
+              />
             )}
           </div>
 
           <div className={styles.notableNestedCollections}>
-            {notableNestedCollections.map(({ label, items, id }) => (
-              <CollectionList heading={label} items={items} key={id} />
+            {notableNestedCollections.map(({ label, items, id }, index) => (
+              <CollectionList
+                dataTestRef={`NAV_${currentId.toUpperCase()}_NONECO_${
+                  index + 1
+                }`}
+                heading={label}
+                items={items}
+                key={id}
+              />
             ))}
           </div>
         </div>
@@ -64,6 +88,7 @@ const CollectionLayout: CollectionLayoutType = ({
           <div className={styles.promotion}>
             <PromotionCard
               {...promotion}
+              dataTestRef={`NAV_${currentId.toUpperCase()}_PROMO_CARD`}
               isFlush={true}
               isVisible={isOpen && activeCollectionId === currentId}
             />
@@ -71,7 +96,10 @@ const CollectionLayout: CollectionLayoutType = ({
         )}
       </div>
 
-      <CollectionImage {...image} />
+      <CollectionImage
+        {...image}
+        dataTestRef={`NAV_${currentId.toUpperCase()}_COLLECTION_IMAGE`}
+      />
     </>
   );
 };

@@ -6,6 +6,7 @@ import type {
 
 type PromotionCardProps = Clickable & {
   className?: string;
+  dataTestRef?: string;
   heading: string;
   isFlush?: boolean;
   isVisible?: boolean;
