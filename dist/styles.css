@@ -10895,6 +10895,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -webkit-transition: border-top-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: border-top-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+.Panel-module_base__mPrkp.Panel-module_active__1Ghln {
+    z-index: 11;
+  }
 .Panel-module_base__mPrkp.Panel-module_menuOpen__dFAZk {
     border-top: 1px solid #e5e5e5;
     pointer-events: auto;
@@ -10913,11 +10916,10 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -webkit-transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.Panel-module_active__1Ghln {
-  z-index: 11;
-  opacity: 1;
-  pointer-events: auto;
-}
+.Panel-module_content__3JV2C.Panel-module_active__1Ghln {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
 :root {
   /* Base colours */
