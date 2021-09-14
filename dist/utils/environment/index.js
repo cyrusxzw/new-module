@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var s=require("../../sharedChunks/environment.js");exports.isBlink=s.isBlink,exports.isChrome=s.isChrome,exports.isEdge=s.isEdge,exports.isFirefox=s.isFirefox,exports.isIE=s.isIE,exports.isInBrowser=s.isInBrowser,exports.isOpera=s.isOpera,exports.isSafari=s.isSafari;
