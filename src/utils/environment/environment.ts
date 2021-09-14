@@ -1,4 +1,9 @@
 const isInBrowser = (): boolean => typeof window !== 'undefined';
+declare global {
+  interface Window {
+    StyleMedia?: HTMLElement | null;
+  }
+}
 
 /**
  * Device detection. https://stackoverflow.com/questions/49328382/browser-detection-in-reactjs

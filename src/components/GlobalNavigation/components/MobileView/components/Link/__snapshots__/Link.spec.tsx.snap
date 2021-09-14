@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GlobalNavigation.MobileView.Link /> should render base component correctly 1`] = `
+<div>
+  <a
+    class="base left dark base dark itemElement"
+    href="#link"
+    tabindex="-1"
+    target="_self"
+    title="Link"
+  >
+    Link
+  </a>
+</div>
+`;
