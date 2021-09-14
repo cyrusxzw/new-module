@@ -1,4 +1,4 @@
-const dimentions = {
+const dimensions = {
   mobile: {
     width: 70,
     height: 22,
@@ -19,6 +19,6 @@ const dimentions = {
 
 type Views = 'none' | 'mobile' | 'tablet' | 'desktop';
 
-const getDimentionsByView = (view: Views) => dimentions[view];
+const getDimensionsByView = (view: Views) => dimensions[view];
 
-export { getDimentionsByView };
+export { getDimensionsByView };

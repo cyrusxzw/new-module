@@ -8,7 +8,7 @@ import {
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
 import { ScreenReaderOnly } from '~/components/ScreenReaderOnly';
-import { getDimentionsByView } from './Logo.utils';
+import { getDimensionsByView } from './Logo.utils';
 import type { LogoType } from './Logo.types';
 import styles from './Logo.module.css';
 
@@ -23,7 +23,7 @@ const Logo: LogoType = ({ closedTheme, isVisible = true }) => {
   const currentTheme = useThemeContext(undefined, 'dark');
   const currentClosedTheme = closedTheme || currentTheme;
 
-  const { width, height } = getDimentionsByView(activeView);
+  const { width, height } = getDimensionsByView(activeView);
 
   const classSet = cx(
     styles.base,
