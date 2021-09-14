@@ -1120,6 +1120,7 @@ declare type TabletViewProps = {
 declare type TabletViewType = ComponentWithChildren<TabletViewProps>;
 declare type TabletViewContextProviderProps = {
     closedClassName?: string;
+    closedLogoTheme?: Themes;
     openClassName?: string;
 };
 declare type TabletViewContextProviderType = ComponentWithChildren<TabletViewContextProviderProps>;
@@ -1258,7 +1259,9 @@ declare type GlobalNavigationContextType = {
     className?: string;
     collections: Collection[];
     isVisuallyObstructed?: boolean;
+    /** User created on Navigation close event callback */
     onClose?: () => void;
+    /** User created on Navigation open event callback */
     onOpen?: () => void;
     read: Read;
     theme?: Themes;
