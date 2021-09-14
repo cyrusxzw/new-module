@@ -14927,6 +14927,9 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 } */
 /* Dark theme UI elements */
 /* Light theme UI elements */
+.StoreDetailHeader-module_wrapper__1dMan {
+  border: 5px solid red;  
+}
 @media (min-width: 640px) {
 .StoreDetailHeader-module_wrapper__1dMan {
     padding: 18px 14px 14px 0px  
