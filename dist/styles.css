@@ -14927,9 +14927,18 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 } */
 /* Dark theme UI elements */
 /* Light theme UI elements */
+@media (min-width: 640px) {
+.StoreDetailHeader-module_wrapper__1dMan {
+    padding: 34px 34px 34px 0px  
+}
+  }
+@media (min-width: 1220px) {
+.StoreDetailHeader-module_wrapper__1dMan {
+    padding: 39px 40px 40px 20px  
+}
+  }
 .StoreDetailHeader-module_base__1Ud60 {
   font-family: 'Suisse Regular', sans-serif;
-  border: 5px solid rgb(250, 38, 162);
 }
 .StoreDetailHeader-module_base__1Ud60,
   .StoreDetailHeader-module_base__1Ud60 * {
@@ -14949,7 +14958,6 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 .StoreDetailHeader-module_detail___dDdT {
   width: 100%;
   margin-bottom: 14px;
-  border: 5px solid rgb(0, 255, 76);
 }
 @media (min-width: 640px) {
 .StoreDetailHeader-module_detail___dDdT {

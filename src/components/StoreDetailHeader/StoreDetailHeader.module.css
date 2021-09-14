@@ -1,8 +1,17 @@
 @import 'styles/index';
 
+.wrapper {
+  @media (--viewport-md) {
+    padding: 34px 34px 34px 0px;
+  }
+
+  @media (--viewport-xl) {
+    padding: 39px 40px 40px 20px;
+  }  
+}
+
 .base {
   font-family: var(--font-family-sans-serif-regular);
-  border: 5px solid rgb(250, 38, 162);
 
   &,
   & * {
@@ -21,7 +30,6 @@
 .detail {
   width: 100%;
   margin-bottom: 14px;
-  border: 5px solid rgb(0, 255, 76);
 
   @media (--viewport-md) {
     width: calc(100% * 1 / 2);

@@ -1,1 +1,0 @@
-"use strict";exports.CLUSTER_IMAGE_PATH="./assets/Map-cluster-icon.svg",exports.DIRECTIONS_URL_PREFIX="https://www.google.com/maps?saddr=Current+Location&daddr=",exports.MARKER_TYPE={PIN:"PIN",PLACE:"PLACE"};
