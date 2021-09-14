@@ -1,4 +1,8 @@
-import type { ComponentWithChildren, ComponentWithoutChildren } from '~/types';
+import type {
+  ComponentWithChildren,
+  ComponentWithoutChildren,
+  Themes,
+} from '~/types';
 
 type DesktopViewProps = {
   className?: string;
@@ -8,6 +12,7 @@ type DesktopViewType = ComponentWithoutChildren<DesktopViewProps>;
 
 type DesktopViewContextType = {
   closedClassName?: string;
+  closedLogoTheme?: Themes;
   openClassName?: string;
 };
 

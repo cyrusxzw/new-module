@@ -1,10 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import { Button } from '~/components/Button';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useMobileViewContext } from '~/components/GlobalNavigation/components/MobileView/MobileView.context';
 import { useVariableHeightStyle } from '~/components/GlobalNavigation/components/MobileView/MobileView.hooks';
+import { Button } from '~/components/Button';
 import { ListItem } from '../ListItem';
 import type { NestedCollectionType } from './NestedCollection.types';
 import compositionStyles from '../../MobileView.module.css';

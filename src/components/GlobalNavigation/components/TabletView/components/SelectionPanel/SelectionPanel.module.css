@@ -1,0 +1,28 @@
+@import 'styles/index';
+
+.base {
+  position: absolute;
+  top: 75px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  width: 100%;
+  height: auto;
+  padding-top: 135px;
+  padding-left: 34px;
+  pointer-events: none;
+  transition: border-top-color 200ms var(--easing-ease-in-out-cubic);
+}
+
+.dark {
+  background-color: var(--color-primary);
+}
+
+.light {
+  background-color: var(--color-secondary);
+}
+
+.active {
+  pointer-events: auto;
+}

@@ -10,9 +10,11 @@ import { GlobalNavigation } from './GlobalNavigation';
 import {
   GlobalNavigationContextProvider,
   GlobalNavigationStateContextProvider,
+  useGlobalNavigationStateContext,
 } from './GlobalNavigation.context';
 import { MobileViewContextProvider } from './components/MobileView/MobileView.context';
 import { DesktopViewContextProvider } from './components/DesktopView/DesktopView.context';
+import { TabletViewContextProvider } from './components/TabletView/TabletView.context';
 import {
   GlobalNavigationFixture,
   actionAccountAuthenticated,
@@ -48,6 +50,12 @@ import {
         'dark',
         'Presentation',
       );
+      const closedLogoTheme = knobs.select(
+        'closedLogoTheme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
       const implementation = {
         gridOverlay: {
           isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
@@ -73,26 +81,33 @@ import {
           <GlobalNavigationStateContextProvider>
             <GlobalNavigationContextProvider
               value={{
-                actions: actions,
-                read: fixture.read,
+                actions,
                 collections: fixture.collections,
                 isVisuallyObstructed: accountOpen || cartOpen,
-                mobileViewClosedTheme,
-                theme,
                 onClose: fixture.onClose,
                 onOpen: fixture.onOpen,
+                read: fixture.read,
+                theme,
               }}
             >
               <DesktopViewContextProvider
-                openClassName={'desktop-open'}
-                closedClassName={'desktop-closed'}
+                closedClassName="desktop-closed"
+                closedLogoTheme={closedLogoTheme}
+                openClassName="desktop-open"
               >
-                <MobileViewContextProvider
-                  openClassName={'mobile-open'}
-                  closedClassName={'mobile-closed'}
+                <TabletViewContextProvider
+                  openClassName="desktop-open"
+                  closedClassName="desktop-closed"
+                  closedLogoTheme={closedLogoTheme}
                 >
-                  <GlobalNavigation />
-                </MobileViewContextProvider>
+                  <MobileViewContextProvider
+                    openClassName="mobile-open"
+                    closedClassName="mobile-closed"
+                    closedTheme={mobileViewClosedTheme}
+                  >
+                    <GlobalNavigation />
+                  </MobileViewContextProvider>
+                </TabletViewContextProvider>
               </DesktopViewContextProvider>
             </GlobalNavigationContextProvider>
           </GlobalNavigationStateContextProvider>
@@ -189,19 +204,16 @@ import {
                 read: fixture.read,
                 collections: fixture.collections,
                 isVisuallyObstructed: accountOpen || cartOpen,
-                mobileViewClosedTheme: 'light',
-                desktopViewLogoTheme: 'light',
                 theme,
                 onClose: fixture.onClose,
               }}
             >
-              <DesktopViewContextProvider
-                openClassName={'desktop-open'}
-                closedClassName={'desktop-closed'}
-              >
-                <MobileViewContextProvider>
-                  <GlobalNavigation />
-                </MobileViewContextProvider>
+              <DesktopViewContextProvider closedLogoTheme="light">
+                <TabletViewContextProvider closedLogoTheme="light">
+                  <MobileViewContextProvider closedTheme="light">
+                    <GlobalNavigation />
+                  </MobileViewContextProvider>
+                </TabletViewContextProvider>
               </DesktopViewContextProvider>
             </GlobalNavigationContextProvider>
           </GlobalNavigationStateContextProvider>

@@ -26,6 +26,8 @@ type Trigger = Clickable & {
 
 type Link = Clickable & {
   alternateLabel?: string;
+  isExternal?: boolean;
+  onClick?: () => void;
   type: 'link';
   url: string;
 };
@@ -51,6 +53,7 @@ type Read = Clickable & {
   articlesListHeading?: string;
   backLabel?: string;
   backgroundColor?: string;
+  baseUrl?: string;
   image?: CollectionImage;
   items: (Link | NestedCollection)[];
   topLevelCollectionLabel?: string;
@@ -58,13 +61,24 @@ type Read = Clickable & {
 };
 
 type Actions = {
-  account: Link | Trigger;
+  account: (
+    | (Link & {
+        recentOrders?: { url?: string; title?: string; label?: string };
+      })
+    | Trigger
+  ) & {
+    isAuthenticated?: boolean;
+  };
   cart: Trigger;
   logo: Link;
+  shop: Omit<Trigger, 'onClick'> & {
+    onClick?: () => void;
+  };
   support: Trigger;
   menu: Omit<Trigger, 'onClick'> & {
     closeLabel: string;
     closeTitle: string;
+    onClick?: () => void;
   };
   search: Trigger & {
     component: () => ReactElement;
@@ -123,10 +137,10 @@ type GlobalNavigationContextType = {
   actions: Actions;
   className?: string;
   collections: Collection[];
-  desktopViewLogoTheme?: Themes;
   isVisuallyObstructed?: boolean;
-  mobileViewClosedTheme?: Themes;
+  /** User created on Navigation close event callback */
   onClose?: () => void;
+  /** User created on Navigation open event callback */
   onOpen?: () => void;
   read: Read;
   theme?: Themes;
@@ -142,12 +156,28 @@ type UseGlobalNavigationStore = (
   value: GlobalNavigationContextType,
 ) => GlobalNavigationContextType;
 
+type AllCollectionChildTypes = (
+  | Link
+  | NestedCollection
+  | NotableNestedCollection
+)[];
+
+type GetCollectionLists = (
+  items: AllCollectionChildTypes,
+) => {
+  nestedCollections: NestedCollection[];
+  notableNestedCollections: NotableNestedCollection[];
+  taxonomyOfDesignElement: Link | null;
+  topLevelCollections: Link[];
+};
+
 export type {
   Actions,
   Article,
   Clickable,
   Collection,
   CollectionImage,
+  GetCollectionLists,
   GlobalNavigationContextProviderType,
   GlobalNavigationContextType,
   GlobalNavigationStateContextProviderType,

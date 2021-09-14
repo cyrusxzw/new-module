@@ -11,12 +11,7 @@ import {
   useGlobalNavigationContext,
   useGlobalNavigationStateContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
-import {
-  ArticleList,
-  Header,
-  PrimaryNavigation,
-  SecondaryNavigation,
-} from './components';
+import { ArticleList, Header, PrimaryMenu, SecondaryMenu } from './components';
 import { useMobileViewContext } from './MobileView.context';
 import type { MobileViewType } from './MobileView.types';
 import styles from './MobileView.module.css';
@@ -26,6 +21,7 @@ const MobileView: MobileViewType = ({ className }) => {
     isOpen,
     setActiveCollectionId,
     setIsOpen,
+    activeCollectionId,
   } = useGlobalNavigationStateContext();
 
   const {
@@ -47,6 +43,8 @@ const MobileView: MobileViewType = ({ className }) => {
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
 
   useOverflowHidden(isOpen);
+
+  const { search } = actions;
 
   const handleOnClose = () => {
     setActiveCollectionId('top');
@@ -82,8 +80,11 @@ const MobileView: MobileViewType = ({ className }) => {
 
             <Transition isActive={isOpen} type="fadeIn">
               <div className={cx(styles.main, { [styles.open]: isOpen })}>
-                <PrimaryNavigation isVisible={isOpen} items={collections} />
-                <SecondaryNavigation items={secondaryNavigationItems} />
+                <PrimaryMenu
+                  isVisible={isOpen && activeCollectionId !== search.id}
+                  items={collections}
+                />
+                <SecondaryMenu items={secondaryNavigationItems} />
                 <ArticleList items={read.articles} />
               </div>
             </Transition>

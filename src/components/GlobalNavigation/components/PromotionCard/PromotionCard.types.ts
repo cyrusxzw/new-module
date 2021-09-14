@@ -5,6 +5,7 @@ import type {
 } from '~/components/GlobalNavigation/GlobalNavigation.types';
 
 type PromotionCardProps = Clickable & {
+  className?: string;
   heading: string;
   isFlush?: boolean;
   isVisible?: boolean;

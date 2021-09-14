@@ -1,3 +1,0 @@
-const DesktopViewFixture = {};
-
-export { DesktopViewFixture };

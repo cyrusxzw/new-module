@@ -35,7 +35,9 @@ const ListItem: ListItemType = ({
   }
 
   const classSet = cx(compositionStyles.listItem, {
-    [compositionStyles.nestedItem]: itemProps.type === 'nested-collection',
+    [compositionStyles.nestedItem]:
+      itemProps.type === 'nested-collection' ||
+      itemProps.type === 'notable-nested-collection',
     [compositionStyles.nestedCollectionLink]:
       itemProps.type === 'link' && isNestedItem,
   });
