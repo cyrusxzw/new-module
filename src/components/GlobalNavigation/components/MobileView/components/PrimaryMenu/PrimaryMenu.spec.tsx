@@ -10,9 +10,6 @@ import {
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
 
 jest.mock('~/components/GlobalNavigation/GlobalNavigation.context');
-jest.mock(
-  '~/components/GlobalNavigation/components/MobileView/MobileView.context',
-);
 
 import * as listItemFile from '../ListItem/ListItem';
 

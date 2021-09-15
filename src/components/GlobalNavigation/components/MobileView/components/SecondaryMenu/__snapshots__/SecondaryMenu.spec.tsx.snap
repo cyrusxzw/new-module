@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GlobalNavigation.MobileView.SecondaryMenu /> should render base component correctly 1`] = `
+<div>
+  <nav
+    aria-hidden="true"
+    aria-label="supplementary"
+    class="base dark"
+    role="navigation"
+  >
+    <ul
+      class="list"
+    >
+      <li
+        class="item"
+      >
+        <a
+          class="base left dark element ornamentalWrapper"
+          href="#link-one"
+          tabindex="-1"
+          target="_self"
+          title="Link One"
+        >
+          <span
+            class="ornamentalHover"
+          >
+            Link One
+          </span>
+        </a>
+      </li>
+      <li
+        class="item"
+      >
+        <a
+          class="base left dark element ornamentalWrapper"
+          href="#link-two"
+          tabindex="-1"
+          target="_self"
+          title="Link Two"
+        >
+          <span
+            class="ornamentalHover"
+          >
+            Link Two
+          </span>
+        </a>
+      </li>
+      <li
+        class="item"
+      >
+        <button
+          class="base dark element ornamentalWrapper"
+          tabindex="-1"
+          title="Collection One"
+          type="button"
+        >
+          <span
+            class="ornamentalHover"
+          >
+            Collection One
+          </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
