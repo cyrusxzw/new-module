@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GlobalNavigation.MobileView.ListItem /> should render base component correctly as nested collection 1`] = `
+<div>
+  <li
+    class="listItem nestedItem"
+  >
+    <div>
+      nested collection
+    </div>
+  </li>
+</div>
+`;
+
+exports[`<GlobalNavigation.MobileView.ListItem /> should render collection 1`] = `
+<div>
+  <li
+    class="listItem"
+  >
+    <div>
+      collection
+    </div>
+  </li>
+</div>
+`;
+
+exports[`<GlobalNavigation.MobileView.ListItem /> should render link 1`] = `
+<div>
+  <li
+    class="listItem"
+  >
+    <div>
+      link
+    </div>
+  </li>
+</div>
+`;
+
+exports[`<GlobalNavigation.MobileView.ListItem /> should render notable collection 1`] = `
+<div>
+  <li
+    class="listItem nestedItem"
+  >
+    <div>
+      nested collection
+    </div>
+  </li>
+</div>
+`;
+
+exports[`<GlobalNavigation.MobileView.ListItem /> should render promotion card 1`] = `
+<div>
+  <li
+    class="listItem"
+  >
+    <div>
+      promotion
+    </div>
+  </li>
+</div>
+`;

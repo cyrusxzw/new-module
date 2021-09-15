@@ -21,6 +21,10 @@ jest.mock(
 );
 
 describe('<GlobalNavigation.MobileView.Header />', () => {
+  const logoSpy: jest.SpyInstance = jest
+    .spyOn(logoFile, 'Logo')
+    .mockImplementation(() => null);
+
   const mockActions = {
     stores: { component: 'stores', id: 'stores' },
     search: { component: 'search', id: 'search' },
@@ -55,9 +59,6 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     (useMobileViewContext as jest.Mock).mockReturnValue({
       ...testMobileNavigationContext,
     });
-    const logoSpy: jest.SpyInstance = jest
-      .spyOn(logoFile, 'Logo')
-      .mockImplementation(() => null);
   });
 
   const TestBed = ({ onClose }: { onClose?: () => void }) => {
