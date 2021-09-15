@@ -8,6 +8,7 @@ import {
 } from './GlobalNavigation.context';
 import { DesktopViewContextProvider } from './components/DesktopView/DesktopView.context';
 import { MobileViewContextProvider } from './components/MobileView/MobileView.context';
+import { TabletViewContextProvider } from './components/TabletView/TabletView.context';
 
 export {
   GlobalNavigation,
@@ -18,4 +19,5 @@ export {
   useGlobalNavigationContext,
   DesktopViewContextProvider,
   MobileViewContextProvider,
+  TabletViewContextProvider,
 };
