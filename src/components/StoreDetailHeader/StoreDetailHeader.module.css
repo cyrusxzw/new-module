@@ -2,7 +2,7 @@
 
 .wrapper {
   @media (--viewport-md) {
-    padding: 18px 14px 14px 0px;
+    padding: 18px 14px 14px 0;
   }
 
   @media (--viewport-xl) {

@@ -117,14 +117,14 @@ type GlobalNavigationStateContextProviderProps = {
 
 type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavigationStateContextProviderProps>;
 
-type SetActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
+type ActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
 
 type GlobalNavigationStateContextType = {
   activeCollectionId: string;
   isOpen: boolean;
   setActiveCollectionId: (id: string) => void;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
-  activeView: SetActiveViewTypes;
+  activeView: ActiveViewTypes;
 };
 
 type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
@@ -188,7 +188,7 @@ export type {
   NotableNestedCollection,
   Promotion,
   Read,
-  SetActiveViewTypes,
+  ActiveViewTypes,
   Trigger,
   UseGlobalNavigationStateContext,
   UseGlobalNavigationStateStore,
