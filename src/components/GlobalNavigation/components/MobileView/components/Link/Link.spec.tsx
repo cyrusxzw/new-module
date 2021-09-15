@@ -11,4 +11,18 @@ describe('<GlobalNavigation.MobileView.Link />', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it('should be tabbable', () => {
+    render(<Link {...LinkFixture} isVisible={true} />);
+
+    const link = screen.getByRole('link');
+    expect(link).not.toHaveAttribute('tabIndex');
+  });
+
+  it('should be an external link', () => {
+    render(<Link {...LinkFixture} isExternal={true} />);
+
+    const link = screen.getByRole('img');
+    expect(link).not.toHaveAttribute('height', 14);
+  });
 });

@@ -8,25 +8,40 @@ import {
   useGlobalNavigationStateContext,
   useGlobalNavigationContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import {
+  MobileViewContextProvider,
+  useMobileViewContext,
+} from '~/components/GlobalNavigation/components/MobileView/MobileView.context';
+
+import * as logoFile from '../../../Logo/Logo';
 
 jest.mock('~/components/GlobalNavigation/GlobalNavigation.context');
+jest.mock(
+  '~/components/GlobalNavigation/components/MobileView/MobileView.context',
+);
 
 describe('<GlobalNavigation.MobileView.Header />', () => {
-  it.todo('should assert something');
-
   const mockActions = {
-    logo: 'logo',
-    search: 'search',
+    stores: { component: 'stores', id: 'stores' },
+    search: { component: 'search', id: 'search' },
     cart: 'cart',
     menu: 'menu',
   };
 
   const testGlobalNavigationContext = {
+    actions: mockActions,
+    onOpen: jest.fn(),
+  };
+
+  const testGlobalNavigationStateContext = {
     activeCollectionId: 'top',
     setActiveCollectionId: jest.fn(),
-    actions: mockActions,
-    mobileViewClosedTheme: 'dark',
-    onOpen: jest.fn(),
+    isOpen: false,
+    setIsOpen: jest.fn(),
+  };
+
+  const testMobileNavigationContext = {
+    closed: 'dark',
   };
 
   beforeEach(() => {
@@ -35,15 +50,22 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
       ...testGlobalNavigationContext,
     });
     (useGlobalNavigationStateContext as jest.Mock).mockReturnValue({
-      isOpen: false,
-      setIsOpen: jest.fn(),
+      ...testGlobalNavigationStateContext,
     });
+    (useMobileViewContext as jest.Mock).mockReturnValue({
+      ...testMobileNavigationContext,
+    });
+    const logoSpy: jest.SpyInstance = jest
+      .spyOn(logoFile, 'Logo')
+      .mockImplementation(() => null);
   });
 
   const TestBed = ({ onClose }: { onClose?: () => void }) => {
     return (
       <GlobalNavigationStateContextProvider>
-        <Header {...HeaderFixture} onClose={onClose} />;
+        <MobileViewContextProvider>
+          <Header {...HeaderFixture} onClose={onClose} />;
+        </MobileViewContextProvider>
       </GlobalNavigationStateContextProvider>
     );
   };
@@ -57,7 +79,9 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
   it('should use default theme', () => {
     (useGlobalNavigationContext as jest.Mock).mockReturnValue({
       ...testGlobalNavigationContext,
-      mobileViewClosedTheme: null,
+    });
+    (useMobileViewContext as jest.Mock).mockReturnValue({
+      closedTheme: null,
     });
     const { container } = render(<TestBed />);
 
@@ -67,6 +91,8 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
   it('should click menu button to close menu', () => {
     const mockOnCloseFn = jest.fn();
     (useGlobalNavigationStateContext as jest.Mock).mockReturnValue({
+      activeCollectionId: 'top',
+      setActiveCollectionId: jest.fn(),
       isOpen: true,
       setIsOpen: jest.fn(),
     });
@@ -76,6 +102,38 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     closeBtn.click();
 
     expect(mockOnCloseFn).toHaveBeenCalledTimes(1);
+  });
+
+  it('should click menu button to close product search menu', () => {
+    (useGlobalNavigationStateContext as jest.Mock).mockReturnValue({
+      activeCollectionId: 'search',
+      setActiveCollectionId: jest.fn(),
+      isOpen: true,
+      setIsOpen: jest.fn(),
+    });
+    render(<TestBed />);
+
+    const { setActiveCollectionId } = useGlobalNavigationStateContext();
+    const closeBtn = screen.getAllByRole('button')[2];
+    closeBtn.click();
+
+    expect(setActiveCollectionId).toHaveBeenCalledTimes(1);
+  });
+
+  it('should click menu button to close store search menu', () => {
+    (useGlobalNavigationStateContext as jest.Mock).mockReturnValue({
+      activeCollectionId: 'stores',
+      setActiveCollectionId: jest.fn(),
+      isOpen: true,
+      setIsOpen: jest.fn(),
+    });
+    render(<TestBed />);
+
+    const { setActiveCollectionId } = useGlobalNavigationStateContext();
+    const closeBtn = screen.getAllByRole('button')[2];
+    closeBtn.click();
+
+    expect(setActiveCollectionId).toHaveBeenCalledTimes(1);
   });
 
   it('should click menu button to open menu', () => {
@@ -110,7 +168,6 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
 
   it('should use default data test refs', () => {
     const actions = {
-      logo: { dataTestRef: 'Custom logo dataTestRef', url: '/' },
       search: { dataTestRef: 'Custom search dataTestRef', url: '/' },
       cart: { dataTestRef: 'Custom cart dataTestRef', url: '/' },
       menu: { dataTestRef: 'Custom menu dataTestRef', url: '/' },
@@ -123,13 +180,11 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
 
     render(<TestBed />);
 
-    const navLogo = screen.getAllByRole('link')[0];
     const buttons = screen.getAllByRole('button');
     const navSearch = buttons[0];
     const navCart = buttons[1];
     const navMobileMenu = buttons[2];
 
-    expect(navLogo).toHaveAttribute('data-test-ref', 'Custom logo dataTestRef');
     expect(navSearch).toHaveAttribute(
       'data-test-ref',
       'Custom search dataTestRef',

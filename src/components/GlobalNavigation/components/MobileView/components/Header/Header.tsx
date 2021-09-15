@@ -44,8 +44,8 @@ const Header: HeaderType = ({ onClose }) => {
   const handleOnMenuButtonClick = () => {
     if (isMenuOpen) {
       if (
-        activeCollectionId === search.id ||
-        activeCollectionId === stores.id
+        activeCollectionId === search?.id ||
+        activeCollectionId === stores?.id
       ) {
         setActiveCollectionId('top');
       } else {
