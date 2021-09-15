@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GlobalNavigation.MobileView.NestedCollection /> should render base component correctly 1`] = `
+<div>
+  <button
+    aria-expanded="true"
+    aria-haspopup="true"
+    aria-hidden="false"
+    class="base dark itemElement nestedButton"
+    tabindex="-1"
+    title="Nested Collection"
+    type="button"
+  >
+    Nested Collection
+    <span
+      class="icon expanded dark"
+    />
+  </button>
+  <ul
+    aria-hidden="false"
+    aria-label="submenu"
+    class="list sublist collapse"
+    style="max-height: 0px;"
+  />
+  ,
+</div>
+`;

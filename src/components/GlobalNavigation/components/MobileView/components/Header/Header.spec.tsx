@@ -1,3 +1,4 @@
+/* eslint-disable init-declarations */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Header } from './Header';
@@ -21,9 +22,7 @@ jest.mock(
 );
 
 describe('<GlobalNavigation.MobileView.Header />', () => {
-  const logoSpy: jest.SpyInstance = jest
-    .spyOn(logoFile, 'Logo')
-    .mockImplementation(() => null);
+  let logoSpy: jest.SpyInstance;
 
   const mockActions = {
     stores: { component: 'stores', id: 'stores' },
@@ -44,8 +43,11 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     setIsOpen: jest.fn(),
   };
 
-  const testMobileNavigationContext = {
-    closed: 'dark',
+  const testMobileViewContext = {
+    setActiveNestedCollectionIds: jest.fn(),
+    onNestedCollectionClick: jest.fn(),
+    activeNestedCollectionIds: ['by skin type'],
+    closedTheme: 'dark',
   };
 
   beforeEach(() => {
@@ -57,8 +59,9 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
       ...testGlobalNavigationStateContext,
     });
     (useMobileViewContext as jest.Mock).mockReturnValue({
-      ...testMobileNavigationContext,
+      ...testMobileViewContext,
     });
+    logoSpy = jest.spyOn(logoFile, 'Logo').mockImplementation(() => null);
   });
 
   const TestBed = ({ onClose }: { onClose?: () => void }) => {
