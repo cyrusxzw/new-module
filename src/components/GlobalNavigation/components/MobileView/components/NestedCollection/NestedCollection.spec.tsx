@@ -25,6 +25,13 @@ describe('<GlobalNavigation.MobileView.NestedCollection />', () => {
 
   let listItemSpy: jest.SpyInstance;
 
+  const testGlobalNavigationStateContext = {
+    activeCollectionId: 'top',
+    setActiveCollectionId: jest.fn(),
+    isOpen: false,
+    setIsOpen: jest.fn(),
+  };
+
   const testMobileViewContext = {
     setActiveNestedCollectionIds: jest.fn(),
     onNestedCollectionClick: jest.fn(),
@@ -34,6 +41,9 @@ describe('<GlobalNavigation.MobileView.NestedCollection />', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    (useGlobalNavigationStateContext as jest.Mock).mockReturnValue({
+      ...testGlobalNavigationStateContext,
+    });
     (useMobileViewContext as jest.Mock).mockReturnValue({
       ...testMobileViewContext,
     });
