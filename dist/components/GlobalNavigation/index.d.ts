@@ -154,4 +154,13 @@ declare type MobileViewContextProviderType = ComponentWithChildren<MobileViewCon
 
 declare const MobileViewContextProvider: MobileViewContextProviderType;
 
-export { DesktopViewContextProvider, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GlobalNavigationType, MobileViewContextProvider, useGlobalNavigationContext, useGlobalNavigationStateContext };
+declare type TabletViewContextProviderProps = {
+    closedClassName?: string;
+    closedLogoTheme?: Themes;
+    openClassName?: string;
+};
+declare type TabletViewContextProviderType = ComponentWithChildren<TabletViewContextProviderProps>;
+
+declare const TabletViewContextProvider: TabletViewContextProviderType;
+
+export { DesktopViewContextProvider, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GlobalNavigationType, MobileViewContextProvider, TabletViewContextProvider, useGlobalNavigationContext, useGlobalNavigationStateContext };
