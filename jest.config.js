@@ -21,6 +21,7 @@ module.exports = {
     },
   },
   coverageReporters: ['lcov', 'text', 'text-summary'],
+  reporters: ['jest-progress-bar-reporter'],
   moduleFileExtensions: ['js', 'json', 'node', 'ts', 'tsx'],
   testMatch: [
     '**/__tests__/**/*.+(ts|tsx|js)',
