@@ -675,8 +675,8 @@ declare const FullWidthHeroScroll: React$1.ForwardRefExoticComponent<Pick<any, s
 
 declare function GoogleMap({ center, className, copy, customMarker, hasMarkerIndexes, id, initialZoom, places, theme, }: {
     center: any;
-    className: any;
-    copy: any;
+    className?: any;
+    copy?: {};
     customMarker: any;
     hasMarkerIndexes: any;
     id: any;
