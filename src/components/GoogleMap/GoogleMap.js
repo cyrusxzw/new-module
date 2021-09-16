@@ -5,7 +5,7 @@ import isFunction from 'lodash/isFunction';
 import { renderToStaticMarkup } from 'react-dom/server.browser';
 import MarkerClusterer from '@googlemaps/markerclustererplus';
 import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS, STORES } from '~/constants';
-import { useGoogleMapsContext } from '~/contexts';
+import { useGoogleMapsContext, useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
 import { isViewport } from '~/utils/viewport';
 import { Hyperlink } from '~/components/Hyperlink';
@@ -24,6 +24,7 @@ const GoogleMap = ({
   id,
   initialZoom,
   places,
+  theme,
 }) => {
   const { googleMap, isLoading } = useGoogleMapsContext();
   const mapContainerRef = useRef();
@@ -35,6 +36,8 @@ const GoogleMap = ({
   const [activeInfoBlockData, setActiveInfoBlockData] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [markerCluster, setMarkerCluster] = useState([]);
+
+  const currentTheme = useThemeContext(theme, 'dark');
 
   useWindowHasResized(() => {
     if (activeInfoCard.current) {
@@ -242,7 +245,7 @@ const GoogleMap = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [markers]);
 
-  const classSet = cx(styles.base, className);
+  const classSet = cx(styles.base, styles[currentTheme], className);
 
   return (
     <div className={classSet}>
@@ -328,6 +331,7 @@ GoogleMap.propTypes = {
       openingHours: PropTypes.array,
     }),
   ),
+  theme: PropTypes.string,
 };
 
 GoogleMap.defaultProps = {
@@ -351,6 +355,7 @@ GoogleMap.defaultProps = {
   id: undefined,
   initialZoom: GoogleMapOptions.MAP_INITIAL_ZOOM,
   places: [],
+  theme: 'dark',
 };
 
 export { GoogleMap };
