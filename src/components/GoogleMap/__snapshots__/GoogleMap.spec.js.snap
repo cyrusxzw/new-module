@@ -24,7 +24,11 @@ exports[`<GoogleMap /> should render base component correctly 1`] = `
       <div
         class="viewStoreLabel"
       >
-        Visit our nearby stores.
+        <p
+          class="base dark flush"
+        >
+          Visit our nearby stores.
+        </p>
       </div>
       <div
         class="viewStoreLinkWrapper"
