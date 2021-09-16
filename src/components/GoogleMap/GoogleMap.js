@@ -275,7 +275,7 @@ const GoogleMap = ({
       </Transition>
       <footer className={styles.footer}>
         <div className={styles.viewStoreLabel}>
-          <Paragraph theme={currentTheme}>
+          <Paragraph isFlush={true} theme={currentTheme}>
             {copy.storeLocator?.message}
           </Paragraph>
         </div>
