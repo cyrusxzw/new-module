@@ -63,8 +63,8 @@ describe('<PersonalInfoSummary />', () => {
     const { firstName, lastName, suffix } = userDetails;
     render(
       <PersonalInfoSummary
-        userDetails={userDetails}
         shouldRemoveNameSpace={true}
+        userDetails={userDetails}
       />,
     );
 
