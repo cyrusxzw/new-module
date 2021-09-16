@@ -18,8 +18,8 @@ import styles from './GoogleMap.module.css';
 
 const GoogleMap = ({
   center,
-  className,
-  copy,
+  className = undefined,
+  copy = {},
   customMarker,
   hasMarkerIndexes,
   id,
