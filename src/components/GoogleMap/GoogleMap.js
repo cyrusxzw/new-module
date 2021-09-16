@@ -274,9 +274,11 @@ const GoogleMap = ({
         />
       </Transition>
       <footer className={styles.footer}>
-        <Paragraph className={styles.viewStoreLabel} isFlush={true} theme={currentTheme}>
-          {copy.storeLocator?.message}
-        </Paragraph>
+        <div className={styles.viewStoreLabel}>
+          <Paragraph theme={currentTheme}>
+            {copy.storeLocator?.message}
+          </Paragraph>
+        </div>
         <div className={styles.viewStoreLinkWrapper}>
           <Hyperlink
             className={styles.viewStoreLink}
