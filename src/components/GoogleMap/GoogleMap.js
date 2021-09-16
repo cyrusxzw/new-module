@@ -156,7 +156,6 @@ const GoogleMap = ({
             openingHours={openingHours}
             phoneNumber={phoneNumber}
             storeName={storeName}
-            theme={theme}
           />,
         ),
       });
@@ -191,7 +190,6 @@ const GoogleMap = ({
       hasMarkerIndexes,
       isMediumViewport,
       isXSmallOrSmallOnlyViewport,
-      theme,
     ],
   );
 
@@ -250,7 +248,9 @@ const GoogleMap = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [markers]);
 
-  const classSet = cx(styles.base, className);
+  const classSet = cx(styles.base, styles[currentTheme], className);
+
+  console.log('---classSet: ', classSet);
 
   return (
     <div className={classSet}>
@@ -276,7 +276,6 @@ const GoogleMap = ({
           openingHours={activeInfoBlockData?.openingHours}
           phoneNumber={activeInfoBlockData?.phoneNumber}
           storeName={activeInfoBlockData?.storeName}
-          theme={theme}
         />
       </Transition>
       <footer className={styles.footer}>
