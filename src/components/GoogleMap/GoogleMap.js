@@ -12,7 +12,7 @@ import { Hyperlink } from '~/components/Hyperlink';
 import { Loading } from '~/components/Loading';
 import { Transition } from '~/components/Transition';
 import { GoogleMapOptions } from './GoogleMap.options';
-import { InfoCard } from './components/InfoCard/index.ts';
+import { InfoCard } from './components/InfoCard';
 import styles from './GoogleMap.module.css';
 
 const GoogleMap = ({
@@ -156,6 +156,7 @@ const GoogleMap = ({
             openingHours={openingHours}
             phoneNumber={phoneNumber}
             storeName={storeName}
+            theme={theme}
           />,
         ),
       });
@@ -190,6 +191,7 @@ const GoogleMap = ({
       hasMarkerIndexes,
       isMediumViewport,
       isXSmallOrSmallOnlyViewport,
+      theme,
     ],
   );
 
@@ -248,7 +250,7 @@ const GoogleMap = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [markers]);
 
-  const classSet = cx(styles.base, styles[currentTheme], className);
+  const classSet = cx(styles.base, className);
 
   return (
     <div className={classSet}>
@@ -274,6 +276,7 @@ const GoogleMap = ({
           openingHours={activeInfoBlockData?.openingHours}
           phoneNumber={activeInfoBlockData?.phoneNumber}
           storeName={activeInfoBlockData?.storeName}
+          theme={theme}
         />
       </Transition>
       <footer className={styles.footer}>
@@ -284,6 +287,7 @@ const GoogleMap = ({
           <Hyperlink
             className={styles.viewStoreLink}
             style={HYPERLINK_STYLE_TYPES.INTERNAL_TEXT_LINK}
+            theme={theme}
             title={copy.storeLocator?.title}
             url={copy.storeLocator?.url}
           >
