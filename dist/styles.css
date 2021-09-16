@@ -6864,8 +6864,8 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     content: '*';
   }
 .StoreHoursList-module_alternateHoursNote__-5uP2 {
-  margin-bottom: 15px;
   font-family: 'Suisse Medium', sans-serif;
+  margin-bottom: 15px;
   font-size: 14px;
 }
 .StoreHoursList-module_dark__1Ri68 .StoreHoursList-module_alternateHoursNote__-5uP2 {
@@ -16217,7 +16217,7 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 /* Light theme UI elements */
 @media (min-width: 640px) {
 .StoreDetailHeader-module_wrapper__1dMan {
-    padding: 18px 14px 14px 0  
+    padding: 18px 14px 14px 0px  
 }
   }
 @media (min-width: 1220px) {

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-declare function GoogleMap({ center, className, copy, customMarker, hasMarkerIndexes, id, initialZoom, places, }: {
+declare function GoogleMap({ center, className, copy, customMarker, hasMarkerIndexes, id, initialZoom, places, theme, }: {
     center: any;
     className: any;
     copy: any;
@@ -9,6 +9,7 @@ declare function GoogleMap({ center, className, copy, customMarker, hasMarkerInd
     id: any;
     initialZoom: any;
     places: any;
+    theme: any;
 }): JSX.Element;
 declare namespace GoogleMap {
     namespace propTypes {
@@ -48,6 +49,7 @@ declare namespace GoogleMap {
             phoneNumber: PropTypes.Requireable<string>;
             openingHours: PropTypes.Requireable<any[]>;
         }>[]>;
+        const theme: PropTypes.Requireable<string>;
     }
     namespace defaultProps {
         const center_1: {};
@@ -78,6 +80,8 @@ declare namespace GoogleMap {
         export { initialZoom_1 as initialZoom };
         const places_1: any[];
         export { places_1 as places };
+        const theme_1: number;
+        export { theme_1 as theme };
     }
 }
 
