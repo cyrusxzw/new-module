@@ -39,6 +39,9 @@ const GoogleMap = ({
 
   const currentTheme = useThemeContext(theme, 'dark');
 
+  console.log('---theme: ', theme);
+  console.log('---currentTheme: ', currentTheme);
+
   useWindowHasResized(() => {
     if (activeInfoCard.current) {
       activeInfoCard.current.close();
@@ -355,7 +358,7 @@ GoogleMap.defaultProps = {
   id: undefined,
   initialZoom: GoogleMapOptions.MAP_INITIAL_ZOOM,
   places: [],
-  theme: 'dark',
+  theme: 'dark' | 'light',
 };
 
 export { GoogleMap };
