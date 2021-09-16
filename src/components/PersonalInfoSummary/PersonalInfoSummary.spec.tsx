@@ -45,31 +45,18 @@ describe('<PersonalInfoSummary />', () => {
     expect(screen.getByText(dateOfBirth)).toBeInTheDocument();
   });
 
-  it(`should reverse the order of the name if shouldSwapFullNameOrder is true`, () => {
+  it(`should reverse the order of the name and remove the name space if shouldSwapFullNameOrder and shouldRemoveNameSpace are true`, () => {
     const { firstName, lastName, suffix } = userDetails;
     render(
       <PersonalInfoSummary
+        shouldRemoveNameSpace={true}
         shouldSwapFullNameOrder={true}
         userDetails={userDetails}
       />,
     );
 
     expect(
-      screen.getByText(`${mockPrefix} ${lastName} ${firstName} ${suffix}`),
-    ).toBeInTheDocument();
-  });
-
-  it(`should remove the space between names when shouldRemoveNameSpace is true`, () => {
-    const { firstName, lastName, suffix } = userDetails;
-    render(
-      <PersonalInfoSummary
-        shouldRemoveNameSpace={true}
-        userDetails={userDetails}
-      />,
-    );
-
-    expect(
-      screen.getByText(`${mockPrefix} ${firstName}${lastName} ${suffix}`),
+      screen.getByText(`${mockPrefix} ${lastName}${firstName} ${suffix}`),
     ).toBeInTheDocument();
   });
 
