@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { Hyperlink } from '~/components/Hyperlink';
+import { Icon } from '~/components/Icon';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useMenuItemContext } from '~/components/GlobalNavigation/components/DesktopView/components/MenuItem/MenuItem.context';
 import type { CollectionItemType } from './CollectionItem.types';
@@ -49,6 +50,17 @@ const CollectionItem: CollectionItemType = (props) => {
 
         {!!currentMetaDuration && (
           <small className={styles.small}>{currentMetaDuration}</small>
+        )}
+        {props.type === 'link' && props.isExternal && (
+          <>
+            {' '}
+            <Icon
+              height={14}
+              name="rightArrow"
+              theme={currentTheme}
+              width={14}
+            />
+          </>
         )}
       </Hyperlink>
     </li>

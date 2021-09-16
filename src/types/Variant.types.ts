@@ -2,6 +2,7 @@ type Variant = {
   alternateAction?: {
     url?: string;
     label?: string;
+    openInANewWindow?: boolean;
   };
   cartDisclaimer?: string;
   hasAgeVerificationRequirement?: boolean;

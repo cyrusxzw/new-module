@@ -1,8 +1,13 @@
-import type { ComponentWithoutChildren, ComponentWithChildren } from '~/types';
+import type {
+  ComponentWithoutChildren,
+  ComponentWithChildren,
+  Themes,
+} from '~/types';
 
 type MobileViewContextType = {
   activeNestedCollectionIds: string;
   closedClassName?: string;
+  closedTheme?: Themes;
   onNestedCollectionClick: (id: string) => void;
   openClassName?: string;
   setActiveNestedCollectionIds: (ids: string[]) => void;
@@ -10,6 +15,7 @@ type MobileViewContextType = {
 
 type MobileViewContextProviderProps = {
   closedClassName?: string;
+  closedTheme?: Themes;
   openClassName?: string;
 };
 

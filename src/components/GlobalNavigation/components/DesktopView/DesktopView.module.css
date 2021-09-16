@@ -1,7 +1,8 @@
 @import 'styles/index';
 
 :root {
-  --offset: 90px;
+  --container-margin: 40px;
+  --menu-height: 74px;
 }
 
 .base {
@@ -11,15 +12,28 @@
   width: 100%;
   height: 100vh;
   justify-content: space-between;
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: var(--container-margin);
+  padding-left: var(--container-margin);
   pointer-events: none;
   transition: background-color 200ms var(--easing-ease-in-out-cubic);
+
+  /* Added to more elegantly transition between breakpoints */
+  & > * {
+    opacity: 0;
+    transition: opacity 200ms var(--easing-ease-in-out-cubic);
+
+    @media (--viewport-lg) {
+      opacity: 1;
+    }
+  }
 
   &.open {
     position: fixed;
     z-index: var(--z-index-fixed-menu);
     top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background-color: var(--color-primary);
   }
 
@@ -33,7 +47,7 @@
     left: 0;
     display: block;
     width: 100%;
-    height: 74px;
+    height: var(--menu-height);
     background-color: var(--color-primary);
     content: '';
     transition: background-color 200ms var(--easing-ease-in-out-cubic);
@@ -76,7 +90,7 @@
 }
 
 .absoluteBuffer {
-  height: 74px;
+  height: var(--menu-height);
   pointer-events: none;
   visibility: hidden;
 }

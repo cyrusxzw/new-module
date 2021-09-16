@@ -11,15 +11,17 @@ import compositionStyles from '../MobileView/MobileView.module.css';
 import styles from './PromotionCard.module.css';
 
 const PromotionCard: PromotionCardType = ({
+  className,
   heading,
   image,
   isFlush = false,
   isVisible = true,
   label,
+  dataTestRef,
   title,
   url,
 }) => {
-  const currentTheme = useThemeContext(null, 'dark');
+  const currentTheme = useThemeContext(undefined, 'dark');
 
   if (!heading || !label) return null;
 
@@ -27,14 +29,16 @@ const PromotionCard: PromotionCardType = ({
     styles.base,
     styles[currentTheme],
     compositionStyles.itemElement,
-    compositionStyles.ornamentalWrapper,
+    styles.ornamentalWrapper,
     styles.leftAligned,
     { [styles.flush]: isFlush },
+    className,
   );
 
   return (
     <Hyperlink
       className={classSet}
+      dataTestRef={dataTestRef}
       tabIndex={!isVisible ? -1 : null}
       theme={currentTheme}
       title={title}
@@ -51,7 +55,7 @@ const PromotionCard: PromotionCardType = ({
       </Heading>
 
       <Paragraph className={styles.label} isFlush={true} theme={currentTheme}>
-        <span className={compositionStyles.ornamentalHover}>{label}</span>{' '}
+        <span className={styles.ornamentalHover}>{label}</span>{' '}
         <Icon height={14} name="rightArrow" theme={currentTheme} width={14} />
       </Paragraph>
 

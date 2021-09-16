@@ -1,7 +1,6 @@
 @import 'styles/index';
 
 .base {
-  /* max-width: calc(220px + 30px); */
   box-sizing: border-box;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -13,29 +12,17 @@
   &.light {
     color: var(--color-light-label);
   }
-
-  &.dark:hover {
-    color: var(--color-secondary);
-  }
-
-  &.light:hover {
-    color: var(--color-primary);
-  }
 }
 
 .image {
   overflow: hidden;
   max-height: 240px;
-
-  /* aspect-ratio: 4 / 3; */
   aspect-ratio: 16 / 9;
   pointer-events: none;
 
   img {
     width: 100%;
     height: auto;
-
-    /* aspect-ratio: 4 / 3; */
     aspect-ratio: 16 / 9;
     object-fit: cover;
   }

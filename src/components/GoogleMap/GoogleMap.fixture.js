@@ -150,6 +150,7 @@ const GoogleMapFixture = {
       ],
     },
   ],
+  theme: 'dark',
 };
 
 export { GoogleMapFixture };

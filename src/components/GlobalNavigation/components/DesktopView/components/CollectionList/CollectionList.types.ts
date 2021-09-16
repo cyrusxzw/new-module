@@ -5,6 +5,7 @@ import {
 } from '~/components/GlobalNavigation/GlobalNavigation.types';
 
 type CollectionListProps = {
+  dataTestRef?: string;
   eyebrow?: string;
   heading?: string;
   items: (Article | Link)[];

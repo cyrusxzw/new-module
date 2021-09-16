@@ -1,10 +1,42 @@
 import React from 'react';
 import type { GlobalNavigationContextType } from './GlobalNavigation.types';
 
+const actionAccountAuthenticated = {
+  dataTestRef: 'NAV_LOGIN',
+  id: 'actions-accountAuthenticated',
+  label: 'Aesop Customer',
+  url: '#accountAuthenticated',
+  recentOrders: {
+    url: '#recent-orders',
+    label: 'Recent Orders',
+    title: 'veiw recent orders',
+  },
+  title: 'Aesop Customer page',
+  type: 'link' as const,
+  isAuthenticated: true,
+};
+
 const GlobalNavigationFixture: GlobalNavigationContextType = {
   onClose: (): void => console.log('Clicked: close'), // eslint-disable-line no-console
   onOpen: (): void => console.log('Clicked: open'), // eslint-disable-line no-console
   actions: {
+    account: {
+      isAuthenticated: false,
+      dataTestRef: 'NAV_LOGIN',
+      id: 'actions-account',
+      label: 'Log in',
+      onClick: (): void => console.log('Clicked: log-in'), // eslint-disable-line no-console
+      title: 'Log in',
+      type: 'trigger' as const,
+    },
+    cart: {
+      dataTestRef: 'NAV_CART',
+      id: 'actions-cart',
+      label: 'Cart',
+      onClick: (): void => console.log('Clicked: cart'), // eslint-disable-line no-console
+      title: 'open the cart component',
+      type: 'trigger' as const,
+    },
     logo: {
       dataTestRef: 'NAV_LOGO',
       id: 'actions-logo',
@@ -12,6 +44,15 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       title: 'link to the home page',
       type: 'link' as const,
       url: '#home',
+    },
+    menu: {
+      closeLabel: 'Close',
+      closeTitle: 'click to close the menu',
+      dataTestRef: 'NAV_MENU',
+      id: 'actions-menu',
+      label: 'Open',
+      title: 'click to open the menu',
+      type: 'trigger' as const,
     },
     search: {
       dataTestRef: 'NAV_SEARCH',
@@ -32,29 +73,11 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
         />
       ),
     },
-    cart: {
-      dataTestRef: 'NAV_CART',
-      id: 'actions-cart',
-      label: 'Cart',
-      onClick: (): void => console.log('Clicked: cart'), // eslint-disable-line no-console
-      title: 'open the cart component',
-      type: 'trigger' as const,
-    },
-    menu: {
-      closeLabel: 'Close',
-      closeTitle: 'click to close the menu',
-      dataTestRef: 'NAV_MENU',
-      id: 'actions-menu',
-      label: 'Open',
-      title: 'click to open the menu',
-      type: 'trigger' as const,
-    },
-    account: {
-      dataTestRef: 'NAV_LOGIN',
-      id: 'actions-account',
-      label: 'Log in',
-      onClick: (): void => console.log('Clicked: log-in'), // eslint-disable-line no-console
-      title: 'Log in',
+    shop: {
+      dataTestRef: 'NAV_SHOP',
+      id: 'actions-shop',
+      label: 'Shop',
+      title: 'click to open the shop menu',
       type: 'trigger' as const,
     },
     stores: {
@@ -88,6 +111,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
   read: {
     articlesListHeading: 'Latest Editions',
     backgroundColor: '#fefef1',
+    baseUrl: '#read-base-url',
     dataTestRef: 'NAV_READ',
     id: 'read-collection',
     label: 'Read',
@@ -208,6 +232,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
         title: 'Taxonomy of Design',
         type: 'link' as const,
         url: '#taxonomy-of-design',
+        isExternal: true,
       },
     ],
   },
@@ -793,15 +818,6 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       ],
     },
   ],
-};
-
-const actionAccountAuthenticated = {
-  dataTestRef: 'NAV_LOGIN',
-  id: 'actions-accountAuthenticated',
-  label: 'Aesop Customer',
-  url: '#accountAuthenticated',
-  title: 'Aesop Customer page',
-  type: 'link' as const,
 };
 
 export { GlobalNavigationFixture, actionAccountAuthenticated };

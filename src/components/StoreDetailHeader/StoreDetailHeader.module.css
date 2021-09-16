@@ -1,5 +1,15 @@
 @import 'styles/index';
 
+.wrapper {
+  @media (--viewport-md) {
+    padding: 18px 14px 14px 0;
+  }
+
+  @media (--viewport-xl) {
+    padding: 19px 20px 14px 5px;
+  }  
+}
+
 .base {
   font-family: var(--font-family-sans-serif-regular);
 
@@ -13,8 +23,8 @@
   display: flex;
   flex-wrap: wrap;
   font-family: var(--font-family-sans-serif-regular);
-  font-size: rem(15px);
-  line-height: 1.4;
+  font-size: rem(14px);
+  line-height: 1.5;
 }
 
 .detail {
@@ -37,6 +47,7 @@
 }
 
 .detailContent {
+  font-family: var(--font-family-sans-serif-regular);
   white-space: pre-wrap;
   word-break: break-word;
 

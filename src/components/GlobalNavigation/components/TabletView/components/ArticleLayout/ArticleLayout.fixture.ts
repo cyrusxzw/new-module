@@ -1,0 +1,3 @@
+const ArticleLayoutFixture = {};
+
+export { ArticleLayoutFixture };

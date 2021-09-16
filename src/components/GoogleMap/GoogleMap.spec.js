@@ -14,6 +14,7 @@ describe('<GoogleMap />', () => {
         id="google-map"
         initialZoom={GoogleMapFixture.initialZoom}
         places={GoogleMapFixture.places}
+        theme={GoogleMapFixture.theme}
       />,
     );
 

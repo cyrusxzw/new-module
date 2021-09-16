@@ -2,6 +2,7 @@
 
 :root {
   --offset: 90px;
+  --column-spacing: 30px;
 }
 
 .nestedCollectionsWrapper {
@@ -10,13 +11,13 @@
 
 .nestedCollections,
 .notableNestedCollections {
-  width: calc(50% + 30px);
-  padding-right: 30px;
+  width: calc(50% + var(--column-spacing));
+  padding-right: var(--column-spacing);
 }
 
 .collectionsWrapper {
-  width: calc(100% * 2 / 12 + 30px);
-  padding-right: 30px;
+  width: calc(100% * 2 / 12 + var(--column-spacing));
+  padding-right: var(--column-spacing);
   margin-top: var(--offset);
   margin-bottom: 40px;
   margin-left: calc(100% * 2 / 12);

@@ -8,9 +8,16 @@
   position: relative;
   z-index: var(--z-index-menu);
   width: 100%;
+  opacity: 0;
   overflow-x: hidden;
   overflow-y: hidden;
-  transition: background-color 200ms linear;
+  transition: background-color 200ms var(--easing-ease-in-out-cubic),
+    opacity 200ms var(--easing-ease-in-out-cubic);
+
+  /* Added to more elegantly transition between breakpoints */
+  @media (--viewport-xs-sm-only) {
+    opacity: 1;
+  }
 
   &.open {
     position: fixed;
@@ -177,12 +184,12 @@
     }
   }
 
-  .dark &:focus {
+  .dark &:focus-visible {
     outline: 1px dashed var(--color-dark-decoration);
     outline-offset: 2px;
   }
 
-  .light &:focus {
+  .light &:focus-visible {
     outline: 1px dashed var(--color-light-decoration);
     outline-offset: 2px;
   }

@@ -5,5 +5,5 @@ export { Header } from './Header';
 export { Link } from './Link';
 export { ListItem } from './ListItem';
 export { NestedCollection } from './NestedCollection';
-export { PrimaryNavigation } from './PrimaryNavigation';
-export { SecondaryNavigation } from './SecondaryNavigation';
+export { PrimaryMenu } from './PrimaryMenu';
+export { SecondaryMenu } from './SecondaryMenu';

@@ -5,25 +5,27 @@ import isFunction from 'lodash/isFunction';
 import { renderToStaticMarkup } from 'react-dom/server.browser';
 import MarkerClusterer from '@googlemaps/markerclustererplus';
 import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS, STORES } from '~/constants';
-import { useGoogleMapsContext } from '~/contexts';
+import { useGoogleMapsContext, useThemeContext } from '~/contexts';
 import { useWindowHasResized } from '~/customHooks';
 import { isViewport } from '~/utils/viewport';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Loading } from '~/components/Loading';
+import { Paragraph } from '~/components/Paragraph';
 import { Transition } from '~/components/Transition';
 import { GoogleMapOptions } from './GoogleMap.options';
-import { InfoCard } from './components/InfoCard/index.ts';
+import { InfoCard } from './components/InfoCard';
 import styles from './GoogleMap.module.css';
 
 const GoogleMap = ({
   center,
-  className,
-  copy,
+  className = undefined,
+  copy = {},
   customMarker,
   hasMarkerIndexes,
   id,
   initialZoom,
   places,
+  theme,
 }) => {
   const { googleMap, isLoading } = useGoogleMapsContext();
   const mapContainerRef = useRef();
@@ -35,6 +37,7 @@ const GoogleMap = ({
   const [activeInfoBlockData, setActiveInfoBlockData] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [markerCluster, setMarkerCluster] = useState([]);
+  const currentTheme = useThemeContext(theme, 'dark');
 
   useWindowHasResized(() => {
     if (activeInfoCard.current) {
@@ -247,7 +250,11 @@ const GoogleMap = ({
   return (
     <div className={classSet}>
       <div className={styles.wrapper}>
-        <Loading className={styles.loading} isLoading={isLoading} />
+        <Loading
+          className={styles.loading}
+          isLoading={isLoading}
+          theme={currentTheme}
+        />
         <div className={styles.map} id={id} ref={mapContainerRef} />
       </div>
       <Transition
@@ -272,12 +279,15 @@ const GoogleMap = ({
       </Transition>
       <footer className={styles.footer}>
         <div className={styles.viewStoreLabel}>
-          {copy.storeLocator?.message}
+          <Paragraph isFlush={true} theme={currentTheme}>
+            {copy.storeLocator?.message}
+          </Paragraph>
         </div>
         <div className={styles.viewStoreLinkWrapper}>
           <Hyperlink
             className={styles.viewStoreLink}
             style={HYPERLINK_STYLE_TYPES.INTERNAL_TEXT_LINK}
+            theme={currentTheme}
             title={copy.storeLocator?.title}
             url={copy.storeLocator?.url}
           >
@@ -328,6 +338,7 @@ GoogleMap.propTypes = {
       openingHours: PropTypes.array,
     }),
   ),
+  theme: PropTypes.string,
 };
 
 GoogleMap.defaultProps = {
@@ -351,6 +362,7 @@ GoogleMap.defaultProps = {
   id: undefined,
   initialZoom: GoogleMapOptions.MAP_INITIAL_ZOOM,
   places: [],
+  theme: 'dark' | 'light',
 };
 
 export { GoogleMap };

@@ -3,11 +3,15 @@ import { Image } from '~/components/Image';
 import type { CollectionImageType } from './CollectionImage.types';
 import styles from './CollectionImage.module.css';
 
-const CollectionImage: CollectionImageType = ({ altText, sizes }) => {
+const CollectionImage: CollectionImageType = ({
+  altText,
+  sizes,
+  dataTestRef,
+}) => {
   if (!sizes) return null;
 
   return (
-    <div className={styles.base}>
+    <div className={styles.base} data-test-ref={dataTestRef}>
       <Image
         altText={altText}
         className={styles.image}

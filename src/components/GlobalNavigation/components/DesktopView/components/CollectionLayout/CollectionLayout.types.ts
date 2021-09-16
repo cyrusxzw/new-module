@@ -8,12 +8,6 @@ import {
   Promotion,
 } from '~/components/GlobalNavigation/GlobalNavigation.types';
 
-type AllCollectionChildTypes = (
-  | Link
-  | NestedCollection
-  | NotableNestedCollection
-)[];
-
 type CollectionLayoutProps = {
   articles?: Article[];
   articlesListHeading?: string;
@@ -25,15 +19,6 @@ type CollectionLayoutProps = {
   type: 'collection' | 'read-collection';
 };
 
-type GetCollectionLists = (
-  items: AllCollectionChildTypes,
-) => {
-  nestedCollections: NestedCollection[];
-  notableNestedCollections: NotableNestedCollection[];
-  taxonomyOfDesignElement: Link | null;
-  topLevelCollections: Link[];
-};
-
 type CollectionLayoutType = ComponentWithoutChildren<CollectionLayoutProps>;
 
-export type { CollectionLayoutType, CollectionLayoutProps, GetCollectionLists };
+export type { CollectionLayoutType, CollectionLayoutProps };

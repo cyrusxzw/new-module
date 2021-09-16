@@ -23,7 +23,7 @@
 }
 
 %font-theme-dark-decoration {
-  color: var(---color-dark-decoration);
+  color: var(--color-dark-decoration);
 }
 
 %font-theme-dark-disabled {
@@ -53,7 +53,7 @@
 }
 
 %font-theme-light-decoration {
-  color: var(---color-light-decoration);
+  color: var(--color-light-decoration);
 }
 
 %font-theme-light-disabled {
