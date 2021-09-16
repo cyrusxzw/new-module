@@ -10,6 +10,7 @@ import { useWindowHasResized } from '~/customHooks';
 import { isViewport } from '~/utils/viewport';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Loading } from '~/components/Loading';
+import { Paragraph } from '~/components/Paragraph';
 import { Transition } from '~/components/Transition';
 import { GoogleMapOptions } from './GoogleMap.options';
 import { InfoCard } from './components/InfoCard';
@@ -36,11 +37,7 @@ const GoogleMap = ({
   const [activeInfoBlockData, setActiveInfoBlockData] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [markerCluster, setMarkerCluster] = useState([]);
-
   const currentTheme = useThemeContext(theme, 'dark');
-
-  console.log('---theme: ', theme);
-  console.log('---currentTheme: ', currentTheme);
 
   useWindowHasResized(() => {
     if (activeInfoCard.current) {
@@ -248,14 +245,12 @@ const GoogleMap = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [markers]);
 
-  const classSet = cx(styles.base, styles[currentTheme], className);
-
-  console.log('---classSet: ', classSet);
+  const classSet = cx(styles.base, className);
 
   return (
     <div className={classSet}>
       <div className={styles.wrapper}>
-        <Loading className={styles.loading} isLoading={isLoading} />
+        <Loading className={styles.loading} isLoading={isLoading} theme={currentTheme} />
         <div className={styles.map} id={id} ref={mapContainerRef} />
       </div>
       <Transition
@@ -279,14 +274,14 @@ const GoogleMap = ({
         />
       </Transition>
       <footer className={styles.footer}>
-        <div className={styles.viewStoreLabel}>
+        <Paragraph className={styles.viewStoreLabel} isFlush={true} theme={currentTheme}>
           {copy.storeLocator?.message}
-        </div>
+        </Paragraph>
         <div className={styles.viewStoreLinkWrapper}>
           <Hyperlink
             className={styles.viewStoreLink}
             style={HYPERLINK_STYLE_TYPES.INTERNAL_TEXT_LINK}
-            theme={theme}
+            theme={currentTheme}
             title={copy.storeLocator?.title}
             url={copy.storeLocator?.url}
           >
