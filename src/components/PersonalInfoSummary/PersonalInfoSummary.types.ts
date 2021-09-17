@@ -6,8 +6,8 @@ type PersonalInfoSummaryProps = {
   theme?: Themes;
   prefixOptions?: { value: string; text: string }[];
   shouldShowPrefix?: boolean;
+  shouldHaveNameSpace?: boolean;
   shouldSwapFullNameOrder?: boolean;
-  shouldRemoveNameSpace?: boolean;
   userDetails?: {
     suffix?: string;
     prefix?: string;

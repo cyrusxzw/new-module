@@ -86,11 +86,11 @@ describe('<PersonalInfoSummary />', () => {
     ).toBeInTheDocument();
   });
 
-  it(`should delete the space between names if shouldRemoveNameSpace is true`, () => {
+  it(`should delete the space between names if shouldHaveNameSpace is false`, () => {
     const { firstName, lastName, suffix } = userDetails;
     render(
       <PersonalInfoSummary
-        shouldRemoveNameSpace={true}
+        shouldHaveNameSpace={false}
         userDetails={userDetails}
       />,
     );

@@ -9,8 +9,8 @@ declare type PersonalInfoSummaryProps = {
         text: string;
     }[];
     shouldShowPrefix?: boolean;
+    shouldHaveNameSpace?: boolean;
     shouldSwapFullNameOrder?: boolean;
-    shouldRemoveNameSpace?: boolean;
     userDetails?: {
         suffix?: string;
         prefix?: string;
