@@ -49,6 +49,7 @@ exports[`<GlobalNavigation.MobileView.Collection /> should render base component
         aria-hidden="false"
         aria-label="back"
         class="base dark itemElement backButton"
+        title="Return from collection"
         type="button"
       >
         <svg
@@ -76,7 +77,7 @@ exports[`<GlobalNavigation.MobileView.Collection /> should render base component
           </g>
         </svg>
          
-        Collection
+        Return from collection
       </button>
     </li>
   </ul>

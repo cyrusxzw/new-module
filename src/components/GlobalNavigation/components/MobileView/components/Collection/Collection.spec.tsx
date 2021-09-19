@@ -3,7 +3,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Collection } from './Collection';
 import { CollectionFixture } from './Collection.fixture';
-import type { Promotion } from '~/components/GlobalNavigation/GlobalNavigation.types';
 import {
   GlobalNavigationStateContextProvider,
   useGlobalNavigationStateContext,
@@ -12,6 +11,7 @@ import {
   MobileViewContextProvider,
   useMobileViewContext,
 } from '~/components/GlobalNavigation/components/MobileView/MobileView.context';
+
 import * as ListItemFile from '../ListItem/ListItem';
 
 jest.mock('~/components/GlobalNavigation/GlobalNavigation.context');
@@ -20,8 +20,6 @@ jest.mock(
 );
 
 describe('<GlobalNavigation.MobileView.Collection />', () => {
-  it.todo('should assert something');
-
   let listItemSpy: jest.SpyInstance;
 
   beforeEach(() => {
@@ -38,30 +36,11 @@ describe('<GlobalNavigation.MobileView.Collection />', () => {
     });
   });
 
-  const TestBed = ({
-    backLabel,
-    id,
-    isVisible,
-    promotion,
-    shouldHideTopCollection,
-  }: {
-    backLabel?: string;
-    id?: string;
-    isVisible?: boolean;
-    promotion?: Promotion;
-    shouldHideTopCollection?: boolean;
-  }) => {
+  const TestBed = (props) => {
     return (
       <GlobalNavigationStateContextProvider>
         <MobileViewContextProvider>
-          <Collection
-            {...CollectionFixture}
-            backLabel={backLabel}
-            id={id || CollectionFixture.id}
-            isVisible={isVisible || CollectionFixture.isVisible}
-            promotion={promotion}
-            shouldHideTopCollection={shouldHideTopCollection}
-          />
+          <Collection {...CollectionFixture} {...props} />
         </MobileViewContextProvider>
       </GlobalNavigationStateContextProvider>
     );
@@ -73,7 +52,7 @@ describe('<GlobalNavigation.MobileView.Collection />', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should not render top collection', () => {
+  it('should not render top collection when hidden', () => {
     render(<TestBed shouldHideTopCollection={true} />);
     const buttons = screen.getAllByRole('button');
 
@@ -87,14 +66,14 @@ describe('<GlobalNavigation.MobileView.Collection />', () => {
       setActiveCollectionId: jest.fn(),
     });
 
-    const { activeCollectionId } = useGlobalNavigationStateContext();
+    const {
+      activeCollectionId,
+      setActiveCollectionId,
+    } = useGlobalNavigationStateContext();
 
     render(<TestBed id={activeCollectionId} />);
 
-    const { setActiveCollectionId } = useGlobalNavigationStateContext();
-
-    const buttons = screen.getAllByRole('button');
-    const topCollectionButton = buttons[0];
+    const topCollectionButton = screen.getByTitle(CollectionFixture.title);
     topCollectionButton.click();
 
     expect(setActiveCollectionId).toHaveBeenCalledTimes(1);
@@ -109,7 +88,7 @@ describe('<GlobalNavigation.MobileView.Collection />', () => {
     const { activeCollectionId } = useGlobalNavigationStateContext();
     render(<TestBed id={activeCollectionId} isVisible={true} />);
 
-    const topCollectionButton = screen.getAllByRole('button')[0];
+    const topCollectionButton = screen.getByTitle(CollectionFixture.title);
 
     expect(topCollectionButton).not.toHaveAttribute('tabIndex');
   });
@@ -138,11 +117,17 @@ describe('<GlobalNavigation.MobileView.Collection />', () => {
     nestedCollectionButton.click();
 
     expect(setActiveNestedCollectionIds).toHaveBeenCalledTimes(1);
+    expect(setActiveNestedCollectionIds).toHaveBeenCalledWith([]);
   });
 
   it('should render promotion list item', () => {
     render(<TestBed promotion={CollectionFixture.promotion} />);
 
-    expect(listItemSpy).toHaveBeenCalledTimes(2);
+    // Always either 1 or 0
+    const promotionCount = CollectionFixture.promotion ? 1 : 0;
+
+    const listItemCount = CollectionFixture.items.length + promotionCount;
+
+    expect(listItemSpy).toHaveBeenCalledTimes(listItemCount);
   });
 });
