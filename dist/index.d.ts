@@ -1249,13 +1249,13 @@ declare type GlobalNavigationStateContextProviderProps = {
     isOpen?: boolean;
 };
 declare type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavigationStateContextProviderProps>;
-declare type SetActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
+declare type ActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
 declare type GlobalNavigationStateContextType = {
     activeCollectionId: string;
     isOpen: boolean;
     setActiveCollectionId: (id: string) => void;
     setIsOpen: Dispatch<SetStateAction<boolean>>;
-    activeView: SetActiveViewTypes;
+    activeView: ActiveViewTypes;
 };
 declare type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
 declare type GlobalNavigationContextType = {

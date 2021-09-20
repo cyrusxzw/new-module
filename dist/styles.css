@@ -58,6 +58,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Icon-module_base__iPRbu {
@@ -212,6 +235,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Accordion-module_base__3VTZg {
@@ -378,6 +424,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Button-module_base__3aZlL {
@@ -556,6 +625,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Loading-module_base__11pIy {
@@ -745,6 +837,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Hyperlink-module_base__uoaww {
@@ -953,6 +1068,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .AddToCartButton-module_base__37_2I {
@@ -1106,6 +1244,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Heading-module_base__Afh6b {
@@ -1257,6 +1418,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .AudioHeader-module_base__2R0Mj {
@@ -1326,6 +1510,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PausePlayButton-module_base__2Iu7e {
@@ -1453,6 +1660,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SeekButton-module_icon__37sV3 {
@@ -1536,6 +1766,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .AudioFooter-module_base__2P0Zr {
@@ -1717,6 +1970,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Audio-module_base__zNk7y {
@@ -1832,6 +2108,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SectionHeading-module_base__MQ5b- {
@@ -1968,6 +2267,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .BodyCopy-module_base__1ZoAL {
@@ -2092,6 +2414,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Breadcrumbs-module_base__1qjpj {
@@ -2928,6 +3273,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CarouselIntroduction-module_base__2sFJp {
@@ -3053,6 +3421,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .NextButton-module_base__3zqIF {
@@ -3159,6 +3550,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Pagination-module_base___SWdb {
@@ -3283,6 +3697,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PreviousButton-module_base__1J-Kp {
@@ -3391,6 +3828,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Image-module_base__18W0_ {
@@ -3523,6 +3983,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Slide-module_heading__2KIs0 {
@@ -3627,6 +4110,29 @@ a:hover .Slide-module_heading__2KIs0,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Carousel-module_base__2Zak0 {
@@ -3895,6 +4401,29 @@ a:hover .Slide-module_heading__2KIs0,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Checkbox-module_base__1NqY3 {
@@ -4050,6 +4579,29 @@ a:hover .Slide-module_heading__2KIs0,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ContentHubArticle-module_base__2Wc0c {
@@ -4254,6 +4806,29 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ContentHubArticleList-module_base__3EQb3 {
@@ -4489,6 +5064,29 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .DefinitionList-module_base__2OnV9 {
@@ -4669,6 +5267,29 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Paragraph-module_base__2wcSK {
@@ -4880,6 +5501,29 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .DialogBanner-module_base__1sS5X {
@@ -5035,6 +5679,29 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Figure-module_base__2Vmj2 {
@@ -5154,6 +5821,29 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Controls-module_base__1kwN_,
@@ -5497,6 +6187,29 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Poster-module_base__1YXtU {
@@ -5581,6 +6294,29 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .VideoPlayer-module_base__1NW0T {
@@ -5695,6 +6431,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Video-module_base__3wxiY {
@@ -5870,6 +6629,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .MediaBlock-module_figure__3ovYx:first-of-type {
@@ -6033,6 +6815,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 @media (min-width: 640px) {
@@ -6106,6 +6911,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .FlyinPanel-module_base__1Tlwv {
@@ -6235,6 +7063,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .FooterBlock_base__30nq0 {
@@ -6372,6 +7223,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TextInputV2-module_wrapper__1XeEy {
@@ -6540,6 +7414,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .FullscreenSection-module_base__1U6IB {
@@ -6636,6 +7533,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .FullWidthHeroScroll-module_base__Hui8j {
@@ -6812,6 +7732,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .StoreHoursList-module_base__3dYCe {
@@ -6938,6 +7881,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .InfoCard-module_base__Px7B2 {
@@ -7059,6 +8025,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .GoogleMap-module_base__1P8dt {
@@ -7235,6 +8224,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .HeroBannerMedia-module_base__aeFwR {
@@ -7460,6 +8472,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .HeroBannerContent-module_base__3vBef {
@@ -7706,6 +8741,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .HeroBanner-module_base__3tCWJ {
@@ -7799,6 +8857,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .LinkButtonGroup-module_base__2mut8 {
@@ -7924,6 +9005,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductAccordionItem-module_base__CB7Pp {
@@ -8347,6 +9451,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductAccordion-module_base__3w-nf {
@@ -8425,6 +9552,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .List-module_base__wbAa2 {
@@ -8504,6 +9654,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .KitList-module_base__ojyC- {
@@ -8639,6 +9812,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .LoadMoreButton-module_base__3mmr4 {
@@ -8733,6 +9929,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Media-module_base__3Naat {
@@ -8908,6 +10127,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Content-module_base__2wNf2 {
@@ -9078,6 +10320,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .MediaWithContent-module_base__27eiZ {
@@ -9164,6 +10429,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .MobileView-module_presentationalWrapper__3-2ca {
@@ -9264,18 +10552,18 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   height: 1px;
   margin: 0 auto;
   content: '';
-  -webkit-transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .MobileView-module_dark__1RRSp .MobileView-module_ornamentalHover__2N8jT::after {
-    background-color: #333;
-  }
+  background-color: #333;
+}
 .MobileView-module_light__15qBl .MobileView-module_ornamentalHover__2N8jT::after {
-    background-color: #fffef0;
-  }
+  background-color: #fffef0;
+}
 .MobileView-module_ornamentalWrapper__1Z9bd:hover .MobileView-module_ornamentalHover__2N8jT::after {
-      width: 100%;
-    }
+    width: 100%;
+  }
 .MobileView-module_itemElement__3Jn5o {
   position: relative;
   display: -webkit-box;
@@ -9419,6 +10707,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ArticleCard-module_base__2ZuMd {
@@ -9526,6 +10837,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ArticleList-module_base__5-9n5 {
@@ -9600,6 +10934,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Link-module_base__3_2bL:not(.Link-module_top__2Qiyh) {
@@ -9669,6 +11026,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .NestedCollection-module_collapse__1C-lb {
@@ -9806,6 +11186,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Logo-module_base__2cZDD.Logo-module_base__2cZDD {
@@ -9953,6 +11356,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CloseButton-module_base__jJbZC {
@@ -10065,6 +11491,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CollectionImage-module_base__2-iYy {
@@ -10139,6 +11588,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PromotionCard-module_base__2gHJW {
@@ -10242,18 +11714,18 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   height: 1px;
   margin: 0 auto;
   content: '';
-  -webkit-transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .PromotionCard-module_dark__2Fv63 .PromotionCard-module_ornamentalHover__2WMH3::after {
-    background-color: #333;
-  }
+  background-color: #333;
+}
 .PromotionCard-module_light__ZhsKy .PromotionCard-module_ornamentalHover__2WMH3::after {
-    background-color: #fffef0;
-  }
+  background-color: #fffef0;
+}
 .PromotionCard-module_ornamentalWrapper__UjhQy:hover .PromotionCard-module_ornamentalHover__2WMH3::after {
-      width: 100%;
-    }
+    width: 100%;
+  }
 
 :root {
   /* Base colours */
@@ -10315,6 +11787,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .DesktopView-module_base__3pahs {
@@ -10384,18 +11879,18 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   height: 1px;
   margin: 0 auto;
   content: '';
-  -webkit-transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .DesktopView-module_dark__2RL-2 .DesktopView-module_ornamentalHover__3Ip0W::after {
-    background-color: #333;
-  }
+  background-color: #333;
+}
 .DesktopView-module_light__t5S8I .DesktopView-module_ornamentalHover__3Ip0W::after {
-    background-color: #fffef0;
-  }
+  background-color: #fffef0;
+}
 .DesktopView-module_ornamentalWrapper__3ztQ_:hover .DesktopView-module_ornamentalHover__3Ip0W::after {
-      width: 100%;
-    }
+    width: 100%;
+  }
 .DesktopView-module_absoluteBuffer__3spQ4 {
   height: 74px;
   pointer-events: none;
@@ -10462,6 +11957,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CollectionItem-module_base__3gZMh:not(:last-child) {
@@ -10577,6 +12095,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CollectionList-module_eyebrow__3vv2j {
@@ -10663,6 +12204,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CollectionLayout-module_nestedCollectionsWrapper__IC3ru {
@@ -10761,6 +12325,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .MenuItem-module_base__h3cyh {
@@ -10881,6 +12468,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Panel-module_base__mPrkp {
@@ -10981,6 +12591,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PrimaryMenu-module_base__1DfJA {
@@ -11079,6 +12712,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SecondaryMenu-module_base__jc9ek {
@@ -11157,6 +12813,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .MenuItem-module_base__Un89O {
@@ -11246,6 +12925,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TabletView-module_base__1wd4G {
@@ -11417,18 +13119,18 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   height: 1px;
   margin: 0 auto;
   content: '';
-  -webkit-transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .TabletView-module_dark__2lN-Z .TabletView-module_ornamentalHover__1CrdF::after {
-    background-color: #333;
-  }
+  background-color: #333;
+}
 .TabletView-module_light__WoVrJ .TabletView-module_ornamentalHover__1CrdF::after {
-    background-color: #fffef0;
-  }
+  background-color: #fffef0;
+}
 .TabletView-module_ornamentalWrapper__3Wehv:hover .TabletView-module_ornamentalHover__1CrdF::after {
-      width: 100%;
-    }
+    width: 100%;
+  }
 .TabletView-module_articlesListHeading__61sXj {
   display: block;
   margin-top: 20px;
@@ -11518,6 +13220,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SecondaryMenu-module_element__3Eut0 {
@@ -11613,6 +13338,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SelectionPanel-module_base__D-PVv {
@@ -11700,6 +13448,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .DetailsPanel-module_base__2Nbhf {
@@ -11783,6 +13554,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SupportMenu-module_base__3pceR {
@@ -11891,6 +13685,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CollectionList-module_collectionHeading__2pN-Q {
@@ -11960,6 +13777,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ArticleCard-module_base__2yiMH {
@@ -12101,6 +13941,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ArticleList-module_base__276ik {
@@ -12175,6 +14038,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TopLevelCollectionLayout-module_base__3ERq- {
@@ -12244,6 +14130,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PrimaryMenu-module_searchIcon__2nP92 {
@@ -12314,6 +14223,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Collection-module_backButton__17y_X {
@@ -12404,6 +14336,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Header-module_base__1u5bw {
@@ -12642,6 +14597,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SecondaryMenu-module_base__CMJ17 {
@@ -12793,6 +14771,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ModalBody-module_base__3I-jF {
@@ -12937,6 +14938,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Modal-module_base__1XCSr {
@@ -13043,6 +15067,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .NavigationBar-module_wrapper__1gvhE {
@@ -13254,6 +15301,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .NotificationModal-module_base__2-kkO {
@@ -13381,6 +15451,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PersonalInfoSummary-module_base__F5l6g {
@@ -13459,6 +15552,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Podium-module_base__3-gFX {
@@ -13630,6 +15746,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .RadioGroup-module_base__1BFm6 {
@@ -13823,6 +15962,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductCommerce-module_base__3XaIQ {
@@ -14046,6 +16208,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductExtract-module_base__3ICJf {
@@ -14255,6 +16440,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductGridItem-module_base__2qKh0 {
@@ -14664,6 +16872,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductDetailBody-module_base__1VWkM {
@@ -15016,6 +17247,29 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductDetailImage-module_base__377HI {
@@ -15123,6 +17377,29 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductDetailHeader-module_base__3-VX6 {
@@ -15310,6 +17587,29 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Quote-module_base__2H3wf {
@@ -15440,6 +17740,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 @media (min-width: 640px) and (max-width: 1024px) {
@@ -15543,6 +17866,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Message-module_base__1Nwji {
@@ -15679,6 +18025,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SecondaryMessage-module_base__2yn2H {
@@ -15808,6 +18177,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Select-module_base__2hN67 {
@@ -15996,6 +18388,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TwoColumnLayout-module_base__2yBvR {
@@ -16213,6 +18628,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 @media (min-width: 640px) {
@@ -16346,6 +18784,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SubNav-module_base__3LIXq {
@@ -16455,6 +18916,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Textarea-module_base__1PESt {
@@ -16569,6 +19053,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TextInput-module_formText__1dkzA {
@@ -16734,6 +19241,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TextOverFullWidthAsset-module_base__1Eq4j {
@@ -16863,6 +19393,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TwoColumnList-module_base__rFZFc,
@@ -16997,6 +19550,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .DynamicForm-module_formRowWrapper__3_Xi_ > * {
@@ -17119,6 +19695,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .NewsletterSignUp_base__3CwHo {
@@ -17285,6 +19884,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Footer_base__18Zrv {
