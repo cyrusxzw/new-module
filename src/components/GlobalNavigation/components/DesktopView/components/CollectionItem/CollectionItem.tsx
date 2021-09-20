@@ -14,7 +14,7 @@ const CollectionItem: CollectionItemType = (props) => {
   const { isActive } = useMenuItemContext();
   const currentTheme = useThemeContext(undefined, 'dark');
 
-  const { id, label, url, title } = props;
+  const { label, url, title } = props;
   let currentMetaDuration = '';
   let currentLabel = label;
 
@@ -33,13 +33,14 @@ const CollectionItem: CollectionItemType = (props) => {
   );
 
   const linkClassSet = cx(styles.element, compositionStyles.ornamentalWrapper);
+
   const labelClassSet = cx(
     { [styles.label]: !!currentMetaDuration },
     compositionStyles.ornamentalHover,
   );
 
   return (
-    <li className={classSet} key={id}>
+    <li className={classSet}>
       <Hyperlink
         className={linkClassSet}
         tabIndex={!isOpen || !isActive ? -1 : null}

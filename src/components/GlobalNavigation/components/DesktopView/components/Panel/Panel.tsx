@@ -9,9 +9,6 @@ import styles from './Panel.module.css';
 const defaultBackgroundColor = '#fffef3';
 
 const Panel: PanelType = ({
-  /** @todo
-   * source this from a variable
-   */
   backgroundColor = defaultBackgroundColor,
   children,
   id,
@@ -20,10 +17,13 @@ const Panel: PanelType = ({
   const { isOpen, activeCollectionId } = useGlobalNavigationStateContext();
   const { isActive } = useMenuItemContext(id);
 
-  const classSet = cx(styles.base, {
-    [styles.menuOpen]: isOpen,
-    [styles.active]: isActive,
-  });
+  const classSet = cx(
+    styles.base,
+    {
+      [styles.menuOpen]: isOpen,
+    },
+    { [styles.active]: isActive },
+  );
 
   const innerClassSet = cx(styles.content, {
     [styles.active]: isActive,

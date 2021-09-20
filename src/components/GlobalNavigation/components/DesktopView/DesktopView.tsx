@@ -50,10 +50,8 @@ const DesktopView: DesktopViewType = ({ className }) => {
     {
       [closedClassName]: !isOpen,
     },
-    {
-      [styles.open]: isOpen,
-      [openClassName]: isOpen,
-    },
+    { [styles.open]: isOpen },
+    { [openClassName]: isOpen },
     styles[currentTheme],
     className,
   );

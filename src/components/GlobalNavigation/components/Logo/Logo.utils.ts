@@ -19,6 +19,11 @@ const dimensions = {
 
 type Views = 'none' | 'mobile' | 'tablet' | 'desktop';
 
-const getDimensionsByView = (view: Views) => dimensions[view];
+type Dimensions = {
+  width: number;
+  height: number;
+};
+
+const getDimensionsByView = (view: Views): Dimensions => dimensions[view];
 
 export { getDimensionsByView };

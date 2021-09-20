@@ -16,7 +16,7 @@ const useGlobalNavigationStateStore: UseGlobalNavigationStateStore = ({
   activeCollectionId: initialActiveCollectionId = 'top',
 }) => {
   const [isOpen, setIsOpen] = useState(initialIsOpen);
-  const [activeView] = useActiveView();
+  const { activeView } = useActiveView();
   const [activeCollectionId, setActiveCollectionId] = useState(
     initialActiveCollectionId,
   );

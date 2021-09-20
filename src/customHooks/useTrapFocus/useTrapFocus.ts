@@ -32,7 +32,9 @@ const useTrapFocus: UseTrapFocus = (
     const refCurrent = ref?.current;
 
     const handleFocus = (event: KeyboardEvent) => {
-      /** @TODO get focusableElements into state to update on UI change */
+      /** @todo
+       * get focusableElements into state to update on UI change
+       */
       const focusableElements = refCurrent.querySelectorAll(query);
       const first = focusableElements[0];
       const last = focusableElements[focusableElements.length - 1];
