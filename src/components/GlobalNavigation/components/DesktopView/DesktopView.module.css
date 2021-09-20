@@ -37,6 +37,10 @@
     background-color: var(--color-primary);
   }
 
+  &.legacyMenu {
+    height: 0;
+  }
+
   &,
   & * {
     box-sizing: border-box;

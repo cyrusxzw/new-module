@@ -58,7 +58,14 @@ const GlobalNavigationContext = createContext(undefined);
 
 const useGlobalNavigationStore: UseGlobalNavigationStore = (
   value: GlobalNavigationContextType,
-): GlobalNavigationContextType => value;
+): GlobalNavigationContextType => {
+  const { activeCollectionId } = useGlobalNavigationStateContext();
+
+  return {
+    ...value,
+    legacyMenu: value.actions?.[activeCollectionId]?.legacyMenu,
+  };
+};
 
 const GlobalNavigationContextProvider: GlobalNavigationContextProviderType = ({
   children,

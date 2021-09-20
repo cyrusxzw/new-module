@@ -23,7 +23,12 @@ const DesktopView: DesktopViewType = ({ className }) => {
     setActiveCollectionId,
   } = useGlobalNavigationStateContext();
 
-  const { isVisuallyObstructed, onClose, theme } = useGlobalNavigationContext();
+  const {
+    isVisuallyObstructed,
+    onClose,
+    theme,
+    legacyMenu,
+  } = useGlobalNavigationContext();
 
   const {
     closedClassName,
@@ -50,6 +55,7 @@ const DesktopView: DesktopViewType = ({ className }) => {
     {
       [closedClassName]: !isOpen,
     },
+    { [styles.legacyMenu]: legacyMenu },
     { [styles.open]: isOpen },
     { [openClassName]: isOpen },
     styles[currentTheme],
@@ -61,7 +67,7 @@ const DesktopView: DesktopViewType = ({ className }) => {
       <div className={classSet} ref={focusTrapRef}>
         <PrimaryMenu onClose={handleOnClose} />
         <SecondaryMenu />
-        <Logo closedTheme={closedLogoTheme} />
+        {!legacyMenu && <Logo closedTheme={closedLogoTheme} />}
       </div>
 
       <div aria-hidden={true} className={styles.absoluteBuffer} />

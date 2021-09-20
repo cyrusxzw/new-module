@@ -1,6 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
-import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import {
+  useGlobalNavigationStateContext,
+  useGlobalNavigationContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useMenuItemContext } from '~/components/GlobalNavigation/components/DesktopView/components/MenuItem/MenuItem.context';
 import { Transition } from '~/components/Transition';
 import type { PanelType } from './Panel.types';
@@ -15,6 +18,7 @@ const Panel: PanelType = ({
   shouldOnlyMountWhenActive = false,
 }) => {
   const { isOpen, activeCollectionId } = useGlobalNavigationStateContext();
+  const { legacyMenu } = useGlobalNavigationContext();
   const { isActive } = useMenuItemContext(id);
 
   const classSet = cx(
@@ -28,6 +32,8 @@ const Panel: PanelType = ({
   const innerClassSet = cx(styles.content, {
     [styles.active]: isActive,
   });
+
+  if (legacyMenu) return null;
 
   return (
     <Transition

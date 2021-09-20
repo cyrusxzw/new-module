@@ -1,4 +1,4 @@
-import { ReactElement, Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, ReactElement } from 'react';
 import { a as ComponentWithChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
@@ -19,6 +19,8 @@ declare type Clickable = {
 declare type Trigger = Clickable & {
     onClick: () => void;
     type: 'trigger';
+    component?: () => ReactElement;
+    legacyMenu?: boolean;
 };
 declare type Link = Clickable & {
     alternateLabel?: string;
@@ -73,12 +75,8 @@ declare type Actions = {
         closeTitle: string;
         onClick?: () => void;
     };
-    search: Trigger & {
-        component: () => ReactElement;
-    };
-    stores: Trigger & {
-        component: () => ReactElement;
-    };
+    search: Trigger;
+    stores: Trigger;
 };
 declare type NotableNestedCollection = Clickable & {
     items: Link[];
@@ -123,6 +121,7 @@ declare type GlobalNavigationContextType = {
     onOpen?: () => void;
     read: Read;
     theme?: Themes;
+    legacyMenu?: boolean;
 };
 declare type GlobalNavigationContextProviderProps = {
     value: GlobalNavigationContextType;

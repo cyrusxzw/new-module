@@ -22,6 +22,8 @@ type Clickable = {
 type Trigger = Clickable & {
   onClick: () => void;
   type: 'trigger';
+  component?: () => ReactElement;
+  legacyMenu?: boolean;
 };
 
 type Link = Clickable & {
@@ -80,12 +82,8 @@ type Actions = {
     closeTitle: string;
     onClick?: () => void;
   };
-  search: Trigger & {
-    component: () => ReactElement;
-  };
-  stores: Trigger & {
-    component: () => ReactElement;
-  };
+  search: Trigger;
+  stores: Trigger;
 };
 
 type NotableNestedCollection = Clickable & {
@@ -144,6 +142,7 @@ type GlobalNavigationContextType = {
   onOpen?: () => void;
   read: Read;
   theme?: Themes;
+  legacyMenu?: boolean;
 };
 
 type GlobalNavigationContextProviderProps = {

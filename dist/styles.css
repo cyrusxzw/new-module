@@ -11849,6 +11849,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     left: 0;
     background-color: #fffef0;
   }
+.DesktopView-module_base__3pahs.DesktopView-module_legacyMenu__2_BlM {
+    height: 0;
+  }
 .DesktopView-module_base__3pahs,
   .DesktopView-module_base__3pahs * {
     -webkit-box-sizing: border-box;
