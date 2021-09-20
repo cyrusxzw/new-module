@@ -9,57 +9,71 @@ import * as promotionCardFile from '../../../PromotionCard/PromotionCard';
 import * as linkFile from '../Link/Link';
 
 describe('<GlobalNavigation.MobileView.ListItem />', () => {
-  const collectionSpy: jest.SpyInstance = jest
-    .spyOn(collectionFile, 'Collection')
-    .mockImplementation(() => <div>collection</div>);
-  const nestedCollectionSpy: jest.SpyInstance = jest
-    .spyOn(nestedCollectionFile, 'NestedCollection')
-    .mockImplementation(() => <div>nested collection</div>);
-  const promotionCardSpy: jest.SpyInstance = jest
-    .spyOn(promotionCardFile, 'PromotionCard')
-    .mockImplementation(() => <div>promotion</div>);
-  const linkSpy: jest.SpyInstance = jest
-    .spyOn(linkFile, 'Link')
-    .mockImplementation(() => <div>link</div>);
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
   it('should render base component correctly as nested collection', () => {
+    const nestedCollectionSpy: jest.SpyInstance = jest
+      .spyOn(nestedCollectionFile, 'NestedCollection')
+      .mockImplementation(() => <div>nested collection</div>);
+
+    /* ListItemFixture is a nested collection
+     ** For mocking purposes, the above spy is provided
+     */
     const { container } = render(<ListItem {...ListItemFixture} />);
 
-    expect(container).toMatchSnapshot();
+    expect(container).not.toBeEmptyDOMElement();
   });
 
   it('should render collection', () => {
+    const collectionSpy: jest.SpyInstance = jest
+      .spyOn(collectionFile, 'Collection')
+      .mockImplementation(() => <div>collection</div>);
     const collectionListItemFixture = { ...ListItemFixture };
     collectionListItemFixture.itemProps.type = 'collection';
-    const { container } = render(<ListItem {...collectionListItemFixture} />);
+    render(<ListItem {...collectionListItemFixture} />);
 
-    expect(container).toMatchSnapshot();
+    expect(collectionSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('should render notable collection', () => {
+  it('should render notable nested collection', () => {
+    const nestedCollectionSpy: jest.SpyInstance = jest
+      .spyOn(nestedCollectionFile, 'NestedCollection')
+      .mockImplementation(() => <div>nested collection</div>);
+
+    /* Having a notable or nested collection results in the same component being rendered
+     ** i.e. The <NestedCollection /> component
+     */
     const notableCollectionListItemFixture = { ...ListItemFixture };
     notableCollectionListItemFixture.itemProps.type =
       'notable-nested-collection';
-    const { container } = render(
-      <ListItem {...notableCollectionListItemFixture} />,
-    );
+    render(<ListItem {...notableCollectionListItemFixture} />);
 
-    expect(container).toMatchSnapshot();
+    expect(nestedCollectionSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should render promotion card', () => {
+    const promotionCardSpy: jest.SpyInstance = jest
+      .spyOn(promotionCardFile, 'PromotionCard')
+      .mockImplementation(() => <div>promotion</div>);
+
     const promoCardListItemFixture = { ...ListItemFixture };
     promoCardListItemFixture.itemProps.type = 'promotion';
-    const { container } = render(<ListItem {...promoCardListItemFixture} />);
+    render(<ListItem {...promoCardListItemFixture} />);
 
-    expect(container).toMatchSnapshot();
+    expect(promotionCardSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should render link', () => {
+    const linkSpy: jest.SpyInstance = jest
+      .spyOn(linkFile, 'Link')
+      .mockImplementation(() => <div>link</div>);
+
     const linkListItemFixture = { ...ListItemFixture };
     linkListItemFixture.itemProps.type = 'link';
-    const { container } = render(<ListItem {...linkListItemFixture} />);
+    render(<ListItem {...linkListItemFixture} />);
 
-    expect(container).toMatchSnapshot();
+    expect(linkSpy).toHaveBeenCalledTimes(1);
   });
 });

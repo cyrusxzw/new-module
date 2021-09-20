@@ -54,7 +54,7 @@ describe('<GlobalNavigation.MobileView.SecondaryMenu />', () => {
       <TestBed items={SecondaryMenuFixture.items} />,
     );
 
-    expect(container).toMatchSnapshot();
+    expect(container).not.toBeEmptyDOMElement();
   });
 
   it('should return null with no items passed', () => {

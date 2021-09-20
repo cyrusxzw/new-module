@@ -32,12 +32,18 @@ describe('<ArticleList />', () => {
   });
 
   it('should render base component correctly', () => {
-    const { container } = render(<TestBed items={undefined} />);
+    const { container } = render(<TestBed {...ArticleListFixture} />);
 
-    expect(container).toMatchSnapshot();
+    expect(container).not.toBeEmptyDOMElement();
   });
 
-  it('should render with items', () => {
+  it('should not render base when items is undefined', () => {
+    const { container } = render(<TestBed items={undefined} />);
+
+    expect(container).toBeEmptyDOMElement();
+  });
+
+  it('should render component when items provided', () => {
     render(<TestBed items={ArticleListFixture.items} />);
 
     expect(articleCardSpy).toHaveBeenCalledTimes(
@@ -45,7 +51,7 @@ describe('<ArticleList />', () => {
     );
   });
 
-  it('should render with items and show cards', () => {
+  it('should render with items and show cards when open and active collection', () => {
     (useGlobalNavigationStateContext as jest.Mock).mockReturnValue({
       isOpen: true,
       activeCollectionId: 'top',

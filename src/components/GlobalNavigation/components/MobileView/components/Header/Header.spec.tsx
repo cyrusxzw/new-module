@@ -77,19 +77,7 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
   it('should render base component correctly', () => {
     const { container } = render(<TestBed />);
 
-    expect(container).toMatchSnapshot();
-  });
-
-  it('should use default theme', () => {
-    (useGlobalNavigationContext as jest.Mock).mockReturnValue({
-      ...testGlobalNavigationContext,
-    });
-    (useMobileViewContext as jest.Mock).mockReturnValue({
-      closedTheme: null,
-    });
-    const { container } = render(<TestBed />);
-
-    expect(container).toMatchSnapshot();
+    expect(container).not.toBeEmptyDOMElement();
   });
 
   it('should click menu button to close menu', () => {

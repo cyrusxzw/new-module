@@ -49,7 +49,7 @@ describe('<GlobalNavigation.MobileView.Collection />', () => {
   it('should render base component correctly', () => {
     const { container } = render(<TestBed />);
 
-    expect(container).toMatchSnapshot();
+    expect(container).not.toBeEmptyDOMElement();
   });
 
   it('should not render top collection when hidden', () => {

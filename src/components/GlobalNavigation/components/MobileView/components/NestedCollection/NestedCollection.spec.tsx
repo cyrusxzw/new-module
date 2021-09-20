@@ -78,7 +78,7 @@ describe('<GlobalNavigation.MobileView.NestedCollection />', () => {
       <TestBed items={NestedCollectionFixture.items} />,
     );
 
-    expect(container).toMatchSnapshot();
+    expect(container).not.toBeEmptyDOMElement();
   });
 
   it('should click on nested collection', () => {

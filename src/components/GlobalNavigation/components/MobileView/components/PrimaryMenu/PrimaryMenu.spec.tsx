@@ -46,7 +46,7 @@ describe('<GlobalNavigation.MobileView.PrimaryMenu />', () => {
   it('should render base component correctly', () => {
     const { container } = render(<TestBed />);
 
-    expect(container).toMatchSnapshot();
+    expect(container).not.toBeEmptyDOMElement();
   });
 
   it('should make top level collections visible', () => {

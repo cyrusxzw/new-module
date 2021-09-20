@@ -7,7 +7,7 @@ describe('<GlobalNavigation.MobileView.Link />', () => {
   it('should render base component correctly', () => {
     const { container } = render(<Link {...LinkFixture} />);
 
-    expect(container).toMatchSnapshot();
+    expect(container).not.toBeEmptyDOMElement();
   });
 
   it('should be tabbable', () => {
