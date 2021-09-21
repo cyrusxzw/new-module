@@ -16,6 +16,13 @@ const SecondaryMenuFixture: SecondaryMenuProps = {
       type: 'link' as const,
       url: '#link-two',
     },
+    {
+      id: 'collection-one',
+      label: 'Collection One',
+      title: 'Collection One',
+      type: 'trigger' as const,
+      onClick: () => null,
+    },
   ],
 };
 
