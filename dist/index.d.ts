@@ -355,7 +355,7 @@ declare type CheckboxProps = {
     theme?: Themes;
 };
 
-declare const Checkbox$1: React$1.ForwardRefExoticComponent<CheckboxProps & React$1.RefAttributes<HTMLInputElement>>;
+declare const Checkbox: React$1.ForwardRefExoticComponent<CheckboxProps & React$1.RefAttributes<HTMLInputElement>>;
 
 declare type Wrapper = (children: ReactNode) => ReactElement;
 declare type ConditionalWrapperProps = {
@@ -412,6 +412,27 @@ declare type ContentHubArticleListProps = {
 declare type ContentHubArticleListType = ComponentWithoutChildren<ContentHubArticleListProps>;
 
 declare const ContentHubArticleList: ContentHubArticleListType;
+
+declare type DateSelectorProps = {
+    className?: string;
+    copy?: {
+        day?: string;
+        month?: string;
+        /** `['January', 'February', etc ]` */
+        monthLabels?: string[];
+        year?: string;
+    };
+    /** Maximum number of years to show in the year dropdown */
+    maxYears?: number;
+    name?: string;
+    onChange?: (date: string) => void;
+    theme?: Themes;
+    /** An ISO data, e.g. 2021-09-20 */
+    value?: string;
+};
+declare type DateSelectorType = ComponentWithoutChildren<DateSelectorProps>;
+
+declare const DateSelector: DateSelectorType;
 
 declare const DefinitionList: React$1.ForwardRefExoticComponent<DefinitionListProps & React$1.RefAttributes<HTMLDListElement>>;
 
@@ -2019,9 +2040,11 @@ declare const index_d$a_BodyCopy: typeof BodyCopy;
 declare const index_d$a_Button: typeof Button;
 declare const index_d$a_BynderWidget: typeof BynderWidget;
 declare const index_d$a_Carousel: typeof Carousel;
+declare const index_d$a_Checkbox: typeof Checkbox;
 declare const index_d$a_ConditionalWrapper: typeof ConditionalWrapper;
 declare const index_d$a_ContentHubArticle: typeof ContentHubArticle;
 declare const index_d$a_ContentHubArticleList: typeof ContentHubArticleList;
+declare const index_d$a_DateSelector: typeof DateSelector;
 declare const index_d$a_DefinitionList: typeof DefinitionList;
 declare const index_d$a_DialogBanner: typeof DialogBanner;
 declare const index_d$a_DoubleMedia: typeof DoubleMedia;
@@ -2093,10 +2116,11 @@ declare namespace index_d$a {
     index_d$a_Button as Button,
     index_d$a_BynderWidget as BynderWidget,
     index_d$a_Carousel as Carousel,
-    Checkbox$1 as Checkbox,
+    index_d$a_Checkbox as Checkbox,
     index_d$a_ConditionalWrapper as ConditionalWrapper,
     index_d$a_ContentHubArticle as ContentHubArticle,
     index_d$a_ContentHubArticleList as ContentHubArticleList,
+    index_d$a_DateSelector as DateSelector,
     index_d$a_DefinitionList as DefinitionList,
     index_d$a_DialogBanner as DialogBanner,
     index_d$a_DoubleMedia as DoubleMedia,
@@ -2183,13 +2207,19 @@ declare type FieldValidation = {
     };
 };
 
-declare const Checkbox = "Checkbox";
-declare const Select = "Select";
-declare const TextField = "TextField";
-declare type AvailableFormFieldTypes = typeof Checkbox | typeof Select | typeof TextField;
-
+declare type CheckBox = {
+    type: 'Checkbox';
+};
+declare type Select = {
+    type: 'Select';
+    options: SelectProps['options'];
+};
+declare type TextField = {
+    type: 'TextField';
+    subtype: TextInputV2Props['type'];
+};
 declare type FieldSchema = {
-    /** An initial value for the field. The value in `defaultValues` prop for the same field will take presedence */
+    /** An initial value for the field. The value in `defaultValues` prop for the same field will take precedence */
     defaultValue?: string;
     /** The field's HTML id attribute */
     id?: string;
@@ -2197,22 +2227,16 @@ declare type FieldSchema = {
     label?: string;
     /** An identifier of the field to the form */
     name: string;
-    /** Needed for the Select field type, passed on as the drop down options */
-    options?: SelectProps['options'];
     /** Contains properties relating to the field's appearance */
     styling?: {
         /** Corresponds to the css `flex` property. Can be a value of 1, 2 or 3 */
         flex?: number;
     };
-    /** Used as the type for the TextField field type */
-    subtype?: TextInputV2Props['type'];
     /** Passed to fields as `dataTestRef` */
     testRef?: string;
-    /** Defines the field type */
-    type: AvailableFormFieldTypes;
     /** Contains validation rules for the form field */
     validation?: FieldValidation;
-};
+} & (CheckBox | Select | TextField);
 declare type FormFieldsRow = FieldSchema[];
 declare type FormSchema = FormFieldsRow[];
 declare type DynamicFormProps = {
@@ -2887,4 +2911,4 @@ declare namespace index_d {
   };
 }
 
-export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox$1 as Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DefinitionList, DesktopView, DesktopViewContextProvider, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, MobileView, MobileViewContextProvider, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TabletView, TabletViewContextProvider, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$a as components, index_d$9 as constants, index_d$8 as contexts, index_d$7 as customHooks, index_d$6 as environment, index_d$4 as objects, index_d$2 as product, index_d$b as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useFocusOnFirst, useGlobalNavigationStateContext, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useTrapFocus, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };
+export { Accordion, AddToCartButton, AddToCartContextProvider, Audio, BodyCopy, Breadcrumbs$1 as Breadcrumbs, Button, BynderWidget, Carousel, Checkbox, ConditionalWrapper, ContentHubArticle, ContentHubArticleList, DateSelector, DefinitionList, DesktopView, DesktopViewContextProvider, DialogBanner, DoubleMedia, DynamicForm, ErrorContextProvider, Figure, FlyinPanel, FooterBlock, FullWidthHeroScroll, GlobalNavigation, GlobalNavigationContextProvider, GlobalNavigationStateContextProvider, GoogleMap, GoogleMapsContextProvider, Heading, HeroBanner, Hidden, ProductAccordion as HorizontalProductDisplayAccordion, Hyperlink, Icon, IconLink, Image, ImageCarousel, KitList, LinkButtonGroup, List$1 as List, LoadMoreButton, LoadMoreContextProvider, Loading, MediaWithContent, MobileView, MobileViewContextProvider, Modal, NavBarThemeContextProvider, NavigationBar, NotificationContextProvider, NotificationModal, Overlay, Paragraph as P, Paragraph, ParagraphSet, PersonalInfoSummary, Podium, ProductAccordion, ProductCommerce, ProductDetailContextProvider, ProductDetailHeader, ProductExtract, ProductGridItem, Quote, RadioGroup, ReadMore, SecondaryMessage, SectionHeading, Select$1 as Select, StoreDetailHeader, StoreHoursList, SubNav, TabletView, TabletViewContextProvider, TextInput, TextInputV2, TextOverFullWidthAsset, Textarea, ThemeContextProvider, Transition, TwoColumnLayout, TwoColumnList, VariantSelectContextProvider, Video, index_d$a as components, index_d$9 as constants, index_d$8 as contexts, index_d$7 as customHooks, index_d$6 as environment, index_d$4 as objects, index_d$2 as product, index_d$b as types, useAddToCartContext, useErrorContext, useEscapeKeyListener, useExecuteOnImpression, useFocusOnFirst, useGlobalNavigationStateContext, useGoogleMapsContext, useHasMounted, useImageTransition, useLoadMoreContext, useNavBarThemeContext, useNotificationContext, useOnScreen, useOverflowHidden, useProductDetailContext, useScript, useThemeContext, useTrapFocus, useVariantSelectContext, useWindowHasResized, index_d as utils, index_d$1 as viewport };
