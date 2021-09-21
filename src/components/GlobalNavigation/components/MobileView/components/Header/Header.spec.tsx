@@ -1,4 +1,3 @@
-/* eslint-disable init-declarations */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Header } from './Header';
@@ -22,8 +21,6 @@ jest.mock(
 );
 
 describe('<GlobalNavigation.MobileView.Header />', () => {
-  let logoSpy: jest.SpyInstance;
-
   const mockActions = {
     stores: { component: 'stores', id: 'stores' },
     search: { component: 'search', id: 'search' },
@@ -61,7 +58,7 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     (useMobileViewContext as jest.Mock).mockReturnValue({
       ...testMobileViewContext,
     });
-    logoSpy = jest.spyOn(logoFile, 'Logo').mockImplementation(() => null);
+    jest.spyOn(logoFile, 'Logo').mockImplementation(() => null);
   });
 
   const TestBed = ({ onClose }: { onClose?: () => void }) => {
@@ -90,7 +87,8 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     });
     render(<TestBed onClose={mockOnCloseFn} />);
 
-    const closeBtn = screen.getAllByRole('button')[2];
+    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU');
+
     closeBtn.click();
 
     expect(mockOnCloseFn).toHaveBeenCalledTimes(1);
@@ -106,7 +104,8 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     render(<TestBed />);
 
     const { setActiveCollectionId } = useGlobalNavigationStateContext();
-    const closeBtn = screen.getAllByRole('button')[2];
+    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU');
+
     closeBtn.click();
 
     expect(setActiveCollectionId).toHaveBeenCalledTimes(1);
@@ -122,7 +121,8 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     render(<TestBed />);
 
     const { setActiveCollectionId } = useGlobalNavigationStateContext();
-    const closeBtn = screen.getAllByRole('button')[2];
+    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU');
+
     closeBtn.click();
 
     expect(setActiveCollectionId).toHaveBeenCalledTimes(1);
@@ -134,7 +134,8 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
 
     render(<TestBed />);
 
-    const openBtn = screen.getAllByRole('button')[2];
+    const openBtn = screen.getByTestId('NAV_MOBILE_MENU');
+
     openBtn.click();
 
     expect(onOpen).toHaveBeenCalledTimes(1);
@@ -151,7 +152,8 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
 
     render(<TestBed />);
 
-    const closeBtn = screen.getAllByRole('button')[2];
+    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU');
+
     closeBtn.click();
 
     expect(onOpen).toEqual(null);
@@ -172,10 +174,10 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
 
     render(<TestBed />);
 
-    const buttons = screen.getAllByRole('button');
-    const navSearch = buttons[0];
-    const navCart = buttons[1];
-    const navMobileMenu = buttons[2];
+    // const buttons = screen.getAllByRole('button');
+    const navSearch = screen.getByTestId('NAV_SEARCH');
+    const navCart = screen.getByTestId('NAV_CART');
+    const navMobileMenu = screen.getByTestId('NAV_MOBILE_MENU');
 
     expect(navSearch).toHaveAttribute(
       'data-test-ref',
@@ -204,7 +206,7 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
 
     render(<TestBed />);
 
-    const navSearch = screen.getAllByRole('button')[0];
+    const navSearch = screen.getByTestId('NAV_SEARCH');
 
     navSearch.click();
 
@@ -228,7 +230,7 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
 
     render(<TestBed />);
 
-    const navCart = screen.getAllByRole('button')[1];
+    const navCart = screen.getByTestId('NAV_CART');
 
     navCart.click();
 

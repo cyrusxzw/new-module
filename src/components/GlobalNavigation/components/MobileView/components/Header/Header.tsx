@@ -77,6 +77,7 @@ const Header: HeaderType = ({ onClose }) => {
           <li className={styles.item}>
             <Button
               className={cx(styles.action, styles.actionSearch)}
+              data-testid={'NAV_SEARCH'}
               dataTestRef={search.dataTestRef ?? 'NAV_SEARCH'}
               isInline={true}
               onClick={handleOnSearchClick}
@@ -109,6 +110,7 @@ const Header: HeaderType = ({ onClose }) => {
                 styles.actionCart,
                 compositionStyles.ornamentalWrapper,
               )}
+              data-testid={'NAV_CART'}
               dataTestRef={cart.dataTestRef ?? 'NAV_CART'}
               isInline={true}
               onClick={handleOnCartClick}
@@ -131,6 +133,7 @@ const Header: HeaderType = ({ onClose }) => {
               className={cx(styles.action, styles.actionMenu, {
                 [styles.openState]: isMenuOpen,
               })}
+              data-testid={'NAV_MOBILE_MENU'}
               dataTestRef={menu.dataTestRef ?? 'NAV_MOBILE_MENU'}
               isInline={true}
               onClick={handleOnMenuButtonClick}

@@ -1,4 +1,3 @@
-/* eslint-disable init-declarations */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Collection } from './Collection';
@@ -54,10 +53,11 @@ describe('<GlobalNavigation.MobileView.Collection />', () => {
 
   it('should not render top collection when hidden', () => {
     render(<TestBed shouldHideTopCollection={true} />);
-    const buttons = screen.getAllByRole('button');
+    const topLevelCollectionBtn = screen.queryByTestId(
+      'MOBILE_COLLECTION_FORWARD_BTN',
+    );
 
-    expect(buttons.length).toEqual(1);
-    expect(buttons[0]).not.toHaveAttribute('title', CollectionFixture.title);
+    expect(topLevelCollectionBtn).not.toBeInTheDocument();
   });
 
   it('should change active collection id on clicking top level collection', () => {
@@ -101,9 +101,9 @@ describe('<GlobalNavigation.MobileView.Collection />', () => {
 
     render(<TestBed />);
 
-    const nestedCollectionButton = screen.getAllByRole('button', {
-      hidden: true,
-    })[1];
+    const nestedCollectionButton = screen.getByTestId(
+      'MOBILE_COLLECTION_BACK_BTN',
+    );
 
     expect(nestedCollectionButton).toHaveAttribute('tabIndex', '-1');
   });
@@ -113,7 +113,9 @@ describe('<GlobalNavigation.MobileView.Collection />', () => {
 
     const { setActiveNestedCollectionIds } = useMobileViewContext();
 
-    const nestedCollectionButton = screen.getByRole('button');
+    const nestedCollectionButton = screen.getByTestId(
+      'MOBILE_COLLECTION_BACK_BTN',
+    );
     nestedCollectionButton.click();
 
     expect(setActiveNestedCollectionIds).toHaveBeenCalledTimes(1);

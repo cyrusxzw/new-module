@@ -22,28 +22,22 @@ describe('<ArticleCard />', () => {
   });
 
   it('should navigate to the article card by tab clicking', () => {
-    render(
-      <>
-        <TestBed />
-      </>,
-    );
+    render(<TestBed />);
 
-    const focusableElements = screen.getAllByRole('link');
-    const one = focusableElements[0];
+    const articleCardLink = screen.getByRole('link');
 
     userEvent.tab();
-    expect(one).not.toHaveAttribute('tabIndex');
-    expect(one).toHaveFocus();
+    expect(articleCardLink).not.toHaveAttribute('tabIndex');
+    expect(articleCardLink).toHaveFocus();
   });
 
   it('should not be able to be navigate to the article card by tab clicking', () => {
     render(<TestBed isVisible={false} />);
 
-    const focusableElements = screen.getAllByRole('link');
-    const one = focusableElements[0];
-    userEvent.tab();
+    const articleCardLink = screen.getByRole('link');
 
-    expect(one).toHaveAttribute('tabIndex', '-1');
-    expect(one).not.toHaveFocus();
+    userEvent.tab();
+    expect(articleCardLink).toHaveAttribute('tabIndex', '-1');
+    expect(articleCardLink).not.toHaveFocus();
   });
 });

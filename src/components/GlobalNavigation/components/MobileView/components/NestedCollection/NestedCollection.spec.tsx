@@ -1,4 +1,3 @@
-/* eslint-disable init-declarations */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { NestedCollection } from './NestedCollection';

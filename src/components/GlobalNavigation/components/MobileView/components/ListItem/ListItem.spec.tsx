@@ -14,7 +14,7 @@ describe('<GlobalNavigation.MobileView.ListItem />', () => {
   });
 
   it('should render base component correctly as nested collection', () => {
-    const nestedCollectionSpy: jest.SpyInstance = jest
+    jest
       .spyOn(nestedCollectionFile, 'NestedCollection')
       .mockImplementation(() => <div>nested collection</div>);
 
