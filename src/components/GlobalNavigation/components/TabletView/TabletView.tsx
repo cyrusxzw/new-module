@@ -18,7 +18,12 @@ import type { TabletViewType } from './TabletView.types';
 import styles from './TabletView.module.css';
 
 const TabletView: TabletViewType = ({ className }) => {
-  const { isVisuallyObstructed, onClose, theme } = useGlobalNavigationContext();
+  const {
+    isVisuallyObstructed,
+    onClose,
+    theme,
+    legacyMenu,
+  } = useGlobalNavigationContext();
 
   const {
     isOpen,
@@ -54,6 +59,7 @@ const TabletView: TabletViewType = ({ className }) => {
     { [styles.open]: isOpen },
     { [closedClassName]: !isOpen },
     { [openClassName]: isOpen },
+    { [styles.legacyMenu]: legacyMenu },
     styles[currentTheme],
     className,
   );

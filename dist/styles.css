@@ -13019,6 +13019,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 .TabletView-module_base__1wd4G.TabletView-module_open__1y-Lr.TabletView-module_light__WoVrJ::before {
     background-color: #333;
   }
+.TabletView-module_base__1wd4G.TabletView-module_legacyMenu__2nXQM {
+    height: 0;
+  }
 .TabletView-module_element__EmdDJ {
   font-family: 'Suisse Regular', sans-serif;
   font-size: 14px;

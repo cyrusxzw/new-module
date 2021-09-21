@@ -63,6 +63,10 @@
   &.open.light::before {
     background-color: var(--color-secondary);
   }
+
+  &.legacyMenu {
+    height: 0;
+  }
 }
 
 .element {

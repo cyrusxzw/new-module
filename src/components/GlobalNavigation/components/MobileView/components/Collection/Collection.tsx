@@ -77,6 +77,7 @@ const Collection: CollectionType = ({
             hidden: !isActive,
           }}
           className={compositionStyles.itemElement}
+          data-testid="MOBILE_COLLECTION_FORWARD_BTN"
           isInline={true}
           onClick={handleOnClick}
           tabIndex={activeCollectionId === 'top' && isVisible ? null : -1}
@@ -108,6 +109,7 @@ const Collection: CollectionType = ({
             <Button
               aria={{ hidden: !isActive, label: 'back' }}
               className={backButtonClassSet}
+              data-testid="MOBILE_COLLECTION_BACK_BTN"
               isInline={true}
               onClick={handleOnBackButtonClick}
               tabIndex={isActive ? null : -1}

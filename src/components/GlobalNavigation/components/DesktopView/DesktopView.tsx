@@ -52,9 +52,7 @@ const DesktopView: DesktopViewType = ({ className }) => {
 
   const classSet = cx(
     styles.base,
-    {
-      [closedClassName]: !isOpen,
-    },
+    { [closedClassName]: !isOpen },
     { [styles.legacyMenu]: legacyMenu },
     { [styles.open]: isOpen },
     { [openClassName]: isOpen },
