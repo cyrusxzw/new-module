@@ -53,11 +53,22 @@
 
   .dark & {
     color: var(--color-dark-copy);
+    
+    &.isDisabled {
+      color: var(--color-dark-disabled);
+      cursor: default;
+    }
   }
 
   .light & {
     color: var(--color-light-copy);
+    
+    &.isDisabled {
+      color: var(--color-light-disabled);
+      cursor: default;
+    }
   }
+
 }
 
 .icon {
