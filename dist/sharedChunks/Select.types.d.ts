@@ -11,6 +11,7 @@ declare type SelectProps = {
     dataTestRef?: string;
     errorMessage?: string;
     isBlock?: boolean;
+    isEnabled?: boolean;
     label?: string;
     name: string;
     onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void;

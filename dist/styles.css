@@ -18244,10 +18244,12 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   line-height: 1.5;
   outline: none;
   text-overflow: ellipsis;
+
 }
 @media (min-width: 640px) {
 .Select-module_input__3pZ0Q {
     font-size: 24px
+
 }
   }
 .Select-module_isBlock__20_Mi .Select-module_input__3pZ0Q {
@@ -18265,9 +18267,17 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 .Select-module_dark__2yToU .Select-module_input__3pZ0Q {
     color: #333;
   }
+.Select-module_dark__2yToU .Select-module_input__3pZ0Q.Select-module_isDisabled__cSMnF {
+      color: #999;
+      cursor: default;
+    }
 .Select-module_light__2YaMZ .Select-module_input__3pZ0Q {
     color: #fffef2;
   }
+.Select-module_light__2YaMZ .Select-module_input__3pZ0Q.Select-module_isDisabled__cSMnF {
+      color: #6b6b6b;
+      cursor: default;
+    }
 .Select-module_icon__2PuKc {
   position: absolute;
   top: 35px;
