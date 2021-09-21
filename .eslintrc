@@ -16,6 +16,12 @@
       }
     },
     {
+      "files": ["*.tsx"],
+      "rules": {
+        "max-lines-per-function": ["warn", { "max": 100 }]
+      }
+    },
+    {
       "files": ["*.js"],
       "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off"
