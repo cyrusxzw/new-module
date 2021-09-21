@@ -20,7 +20,8 @@ describe('<GlobalNavigation.MobileView.Link />', () => {
   it('should be an external link', () => {
     render(<Link {...LinkFixture} isExternal={true} />);
 
-    const link = screen.getByRole('img');
-    expect(link).not.toHaveAttribute('height', 14);
+    const externalLink = screen.queryByTestId('data-testid-Icon');
+
+    expect(externalLink).not.toBeEmptyDOMElement();
   });
 });

@@ -80,7 +80,7 @@ describe('<GlobalNavigation.MobileView.NestedCollection />', () => {
     expect(container).not.toBeEmptyDOMElement();
   });
 
-  it('should click on nested collection', () => {
+  it('should click on nested collection to expand it', () => {
     render(<TestBed items={NestedCollectionFixture.items} />);
 
     const nestedCollectionButton = screen.getByTitle('Nested Collection');

@@ -87,7 +87,7 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     });
     render(<TestBed onClose={mockOnCloseFn} />);
 
-    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU');
+    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU_BTN');
 
     closeBtn.click();
 
@@ -104,7 +104,7 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     render(<TestBed />);
 
     const { setActiveCollectionId } = useGlobalNavigationStateContext();
-    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU');
+    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU_BTN');
 
     closeBtn.click();
 
@@ -121,7 +121,7 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     render(<TestBed />);
 
     const { setActiveCollectionId } = useGlobalNavigationStateContext();
-    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU');
+    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU_BTN');
 
     closeBtn.click();
 
@@ -134,7 +134,7 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
 
     render(<TestBed />);
 
-    const openBtn = screen.getByTestId('NAV_MOBILE_MENU');
+    const openBtn = screen.getByTestId('NAV_MOBILE_MENU_BTN');
 
     openBtn.click();
 
@@ -152,7 +152,7 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
 
     render(<TestBed />);
 
-    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU');
+    const closeBtn = screen.getByTestId('NAV_MOBILE_MENU_BTN');
 
     closeBtn.click();
 
@@ -175,16 +175,19 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     render(<TestBed />);
 
     // const buttons = screen.getAllByRole('button');
-    const navSearch = screen.getByTestId('NAV_SEARCH');
-    const navCart = screen.getByTestId('NAV_CART');
-    const navMobileMenu = screen.getByTestId('NAV_MOBILE_MENU');
+    const navSearchBtn = screen.getByTestId('NAV_SEARCH_BTN');
+    const navCartBtn = screen.getByTestId('NAV_CART_BTN');
+    const navMobileMenuBtn = screen.getByTestId('NAV_MOBILE_MENU_BTN');
 
-    expect(navSearch).toHaveAttribute(
+    expect(navSearchBtn).toHaveAttribute(
       'data-test-ref',
       'Custom search dataTestRef',
     );
-    expect(navCart).toHaveAttribute('data-test-ref', 'Custom cart dataTestRef');
-    expect(navMobileMenu).toHaveAttribute(
+    expect(navCartBtn).toHaveAttribute(
+      'data-test-ref',
+      'Custom cart dataTestRef',
+    );
+    expect(navMobileMenuBtn).toHaveAttribute(
       'data-test-ref',
       'Custom menu dataTestRef',
     );
@@ -206,9 +209,9 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
 
     render(<TestBed />);
 
-    const navSearch = screen.getByTestId('NAV_SEARCH');
+    const navSearchBtn = screen.getByTestId('NAV_SEARCH_BTN');
 
-    navSearch.click();
+    navSearchBtn.click();
 
     expect(actions.search.onClick).toHaveBeenCalledTimes(1);
   });
@@ -230,9 +233,9 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
 
     render(<TestBed />);
 
-    const navCart = screen.getByTestId('NAV_CART');
+    const navCartBtn = screen.getByTestId('NAV_CART_BTN');
 
-    navCart.click();
+    navCartBtn.click();
 
     expect(actions.cart.onClick).toHaveBeenCalledTimes(1);
   });
