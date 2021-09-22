@@ -12,6 +12,7 @@ import styles from './StoreDetailHeader.module.css';
 const DATA_TEST_REF_LOCATION = 'STORE_DETAILS_DIRECTION_LINK';
 const DATA_TEST_REF_EMAIL = 'STORE_DETAILS_DIRECTION_EMAIL';
 const DATA_TEST_REF_PHONE = 'STORE_DETAILS_DIRECTION_PHONE';
+const DATA_TEST_REF_FACIALAPPOINTMENTS = 'STORE_DETAILS_DIRECTION_FACIALAPPOINTMENTS';
 
 const StoreDetailHeader: StoreDetailHeaderType = ({
   alternateHoursNote,
@@ -26,9 +27,6 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
   storeName,
   theme,
 }) => {
-  console.log('--facialAppointments: ', facialAppointments);
-  console.log('--facialAppointmentsLink: ', facialAppointmentsLink);
-
   const currentTheme = useThemeContext(theme, 'dark');
   const classSet = cx(styles.base, styles[currentTheme], className);
   const wrapperClass = cx(styles.wrapper, className);
@@ -84,6 +82,23 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
         </Hyperlink>
       ) : null,
       id: 'phone',
+    },
+    {
+      label: copy?.facialAppointments,
+      content: facialAppointments ? (
+        <Hyperlink
+          className={styles.hyperlink}
+          dataTestRef={DATA_TEST_REF_FACIALAPPOINTMENTS}
+          hasTargetInNewWindow={true}
+          style={HYPERLINK_STYLE_TYPES.EXTERNAL_TEXT_LINK}
+          theme={currentTheme}
+          title={`${copy?.facialAppointmentsLink}`}
+          url={facialAppointmentsLink}
+        >
+          {facialAppointments}
+        </Hyperlink>
+      ) : null,
+      id: 'facialAppointments',
     },
     {
       label: copy?.openingHours,
