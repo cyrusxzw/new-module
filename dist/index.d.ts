@@ -1187,7 +1187,7 @@ declare type Trigger = Clickable & {
     onClick: () => void;
     type: 'trigger';
     component?: () => ReactElement;
-    legacyMenu?: boolean;
+    isLegacyMenu?: boolean;
 };
 declare type Link = Clickable & {
     alternateLabel?: string;
@@ -1288,7 +1288,7 @@ declare type GlobalNavigationContextType = {
     onOpen?: () => void;
     read: Read;
     theme?: Themes;
-    legacyMenu?: boolean;
+    isLegacyMenu?: boolean;
 };
 declare type GlobalNavigationContextProviderProps = {
     value: GlobalNavigationContextType;
