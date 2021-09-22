@@ -32,6 +32,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
   const wrapperClass = cx(styles.wrapper, className);
 
   console.log('-copy: ', copy);
+  console.log('-copy.facialAppointments: ', copy.facialAppointments);
 
   const contentBlocks = [
     {
