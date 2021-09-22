@@ -31,9 +31,6 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
   const classSet = cx(styles.base, styles[currentTheme], className);
   const wrapperClass = cx(styles.wrapper, className);
 
-  console.log('-copy: ', copy);
-  console.log('-copy.facialAppointments: ', copy.facialAppointments);
-
   const contentBlocks = [
     {
       label: copy?.location,
@@ -115,8 +112,6 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
       id: 'openingHours',
     },
   ];
-
-  console.log('-contentBlocks: ', contentBlocks);
 
   return (
     <TwoColumnLayout
