@@ -35,7 +35,8 @@
       },
       "rules": {
         "@typescript-eslint/no-explicit-any": "off",
-        "init-declarations": "off"
+        "init-declarations": "off",
+        "max-lines-per-function": "off"
       }
     },
     {
