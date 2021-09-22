@@ -85,7 +85,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
     },
     {
       label: copy?.facialAppointments,
-      content: facialAppointments ? (
+      content: (
         <Hyperlink
           className={styles.hyperlink}
           dataTestRef={DATA_TEST_REF_FACIALAPPOINTMENTS}
@@ -97,7 +97,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
         >
           {facialAppointments}
         </Hyperlink>
-      ) : null,
+      ),
       id: 'facialAppointments',
     },
     {
