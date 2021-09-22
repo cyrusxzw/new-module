@@ -18,7 +18,7 @@ const Panel: PanelType = ({
   shouldOnlyMountWhenActive = false,
 }) => {
   const { isOpen, activeCollectionId } = useGlobalNavigationStateContext();
-  const { legacyMenu } = useGlobalNavigationContext();
+  const { isLegacyMenu } = useGlobalNavigationContext();
   const { isActive } = useMenuItemContext(id);
 
   const classSet = cx(
@@ -33,7 +33,7 @@ const Panel: PanelType = ({
     [styles.active]: isActive,
   });
 
-  if (legacyMenu) return null;
+  if (isLegacyMenu) return null;
 
   return (
     <Transition

@@ -64,8 +64,9 @@
     background-color: var(--color-secondary);
   }
 
-  &.legacyMenu {
+  &.isLegacyMenu {
     height: 0;
+    min-height: 0;
   }
 }
 

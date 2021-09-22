@@ -23,7 +23,7 @@ type Trigger = Clickable & {
   onClick: () => void;
   type: 'trigger';
   component?: () => ReactElement;
-  legacyMenu?: boolean;
+  isLegacyMenu?: boolean;
 };
 
 type Link = Clickable & {
@@ -142,7 +142,7 @@ type GlobalNavigationContextType = {
   onOpen?: () => void;
   read: Read;
   theme?: Themes;
-  legacyMenu?: boolean;
+  isLegacyMenu?: boolean;
 };
 
 type GlobalNavigationContextProviderProps = {
