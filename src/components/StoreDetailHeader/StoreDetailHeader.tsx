@@ -95,7 +95,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
           hasTargetInNewWindow={true}
           style={HYPERLINK_STYLE_TYPES.EXTERNAL_TEXT_LINK}
           theme={currentTheme}
-          title={`${copy?.facialAppointmentsLink}`}
+          title={copy?.facialAppointmentsLink}
           url={facialAppointmentsLink}
         >
           {facialAppointments}
