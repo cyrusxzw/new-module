@@ -5,6 +5,8 @@ type StoreDetailCopy = {
   location?: string;
   email?: string;
   phone?: string;
+  facialAppointments?: string;
+  facialAppointmentsLink?: string;
   openingHours?: string;
 };
 
