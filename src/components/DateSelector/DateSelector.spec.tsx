@@ -36,7 +36,8 @@ describe('<DateSelector />', () => {
     userEvent.selectOptions(getDayDropDown(), ['01']);
 
     // month and year not selected => returns empty string
-    expect(onChange).toHaveBeenLastCalledWith('');
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith('');
   });
 
   it(`should update the day options when the year/month change`, () => {
