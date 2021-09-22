@@ -98,7 +98,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
           title={copy?.facialAppointmentsLink}
           url={facialAppointmentsLink}
         >
-          {facialAppointments}
+          {copy?.facialAppointmentsLink}
         </Hyperlink>
       ) : null,
       id: 'facialAppointments',
