@@ -12,6 +12,8 @@ type StoreDetailHeaderProps = {
   alternateHoursNote?: string;
   className?: string;
   copy?: StoreDetailCopy;
+  facialAppointments?: boolean;
+  facialAppointmentsLink?: string;
   email?: string;
   location?: string;
   openingHours?: HoursListItem[];

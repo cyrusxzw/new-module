@@ -17,6 +17,8 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
   alternateHoursNote,
   className,
   copy,
+  facialAppointments,
+  facialAppointmentsLink,
   email,
   location,
   openingHours,
@@ -24,6 +26,9 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
   storeName,
   theme,
 }) => {
+  console.log('--facialAppointments: ', facialAppointments);
+  console.log('--facialAppointmentsLink: ', facialAppointmentsLink);
+
   const currentTheme = useThemeContext(theme, 'dark');
   const classSet = cx(styles.base, styles[currentTheme], className);
   const wrapperClass = cx(styles.wrapper, className);
