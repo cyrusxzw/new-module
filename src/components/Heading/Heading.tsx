@@ -14,6 +14,7 @@ const Heading: HeadingType = ({
   level,
   size,
   theme = 'dark',
+  dataTestRef,
 }) => {
   const currentTheme = useThemeContext(theme, 'dark');
 
@@ -31,7 +32,7 @@ const Heading: HeadingType = ({
 
   return React.createElement(
     `h${level}`,
-    { className: classSet, id },
+    { className: classSet, id, 'data-test-ref': dataTestRef },
     children,
   );
 };
