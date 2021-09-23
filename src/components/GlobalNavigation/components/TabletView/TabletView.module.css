@@ -110,6 +110,16 @@
   }
 }
 
+.menuOpen {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.menuClosed {
+  pointer-events: none;
+  visibility: hidden;
+}
+
 .promotionCard {
   transform: translateY(-5px);
 }
