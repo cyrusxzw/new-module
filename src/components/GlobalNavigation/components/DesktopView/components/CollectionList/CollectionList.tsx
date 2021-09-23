@@ -42,7 +42,6 @@ const CollectionList: CollectionListType = ({
 
       <ul
         aria-hidden={!isActive}
-        aria-label="submenu"
         className={listClassSet}
         data-test-ref={`${dataTestRef}_ITEMLIST`}
       >
