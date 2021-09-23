@@ -1399,6 +1399,7 @@ declare type PersonalInfoSummaryProps = {
         text: string;
     }[];
     shouldShowPrefix?: boolean;
+    shouldHaveNameSpace?: boolean;
     shouldSwapFullNameOrder?: boolean;
     userDetails?: {
         suffix?: string;

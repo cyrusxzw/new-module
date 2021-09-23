@@ -32,7 +32,11 @@ import { SelectFixture } from './Select.fixture';
             {(state, setState) => {
               const errorMessage = knobs.text('errorMessage', '', 'Copy');
               const isBlock = knobs.boolean('isBlock', false, 'Presentation');
-              const isEnabled = knobs.boolean('isEnabled', true, 'Presentation');
+              const isEnabled = knobs.boolean(
+                'isEnabled',
+                true,
+                'Presentation',
+              );
               const label = knobs.text('label', SelectFixture.label, 'Copy');
               const name = knobs.text('name', SelectFixture.name, 'Copy');
               const onChange = (event) => {
