@@ -16,7 +16,7 @@ const useGlobalNavigationStateStore: UseGlobalNavigationStateStore = ({
   activeCollectionId: initialActiveCollectionId = 'top',
 }) => {
   const [isOpen, setIsOpen] = useState(initialIsOpen);
-  const [activeView] = useActiveView();
+  const { activeView } = useActiveView();
   const [activeCollectionId, setActiveCollectionId] = useState(
     initialActiveCollectionId,
   );
@@ -58,7 +58,14 @@ const GlobalNavigationContext = createContext(undefined);
 
 const useGlobalNavigationStore: UseGlobalNavigationStore = (
   value: GlobalNavigationContextType,
-): GlobalNavigationContextType => value;
+): GlobalNavigationContextType => {
+  const { activeCollectionId } = useGlobalNavigationStateContext();
+
+  return {
+    ...value,
+    isLegacyMenu: value.actions?.[activeCollectionId]?.isLegacyMenu,
+  };
+};
 
 const GlobalNavigationContextProvider: GlobalNavigationContextProviderType = ({
   children,

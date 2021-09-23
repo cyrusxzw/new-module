@@ -22,6 +22,8 @@ type Clickable = {
 type Trigger = Clickable & {
   onClick: () => void;
   type: 'trigger';
+  component?: () => ReactElement;
+  isLegacyMenu?: boolean;
 };
 
 type Link = Clickable & {
@@ -80,12 +82,8 @@ type Actions = {
     closeTitle: string;
     onClick?: () => void;
   };
-  search: Trigger & {
-    component: () => ReactElement;
-  };
-  stores: Trigger & {
-    component: () => ReactElement;
-  };
+  search: Trigger;
+  stores: Trigger;
 };
 
 type NotableNestedCollection = Clickable & {
@@ -117,14 +115,14 @@ type GlobalNavigationStateContextProviderProps = {
 
 type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavigationStateContextProviderProps>;
 
-type SetActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
+type ActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
 
 type GlobalNavigationStateContextType = {
   activeCollectionId: string;
   isOpen: boolean;
   setActiveCollectionId: (id: string) => void;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
-  activeView: SetActiveViewTypes;
+  activeView: ActiveViewTypes;
 };
 
 type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
@@ -144,6 +142,7 @@ type GlobalNavigationContextType = {
   onOpen?: () => void;
   read: Read;
   theme?: Themes;
+  isLegacyMenu?: boolean;
 };
 
 type GlobalNavigationContextProviderProps = {
@@ -188,7 +187,7 @@ export type {
   NotableNestedCollection,
   Promotion,
   Read,
-  SetActiveViewTypes,
+  ActiveViewTypes,
   Trigger,
   UseGlobalNavigationStateContext,
   UseGlobalNavigationStateStore,

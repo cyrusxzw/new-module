@@ -13,6 +13,7 @@ export {
   ConditionalWrapper,
   ContentHubArticle,
   ContentHubArticleList,
+  DateSelector,
   DefinitionList,
   DialogBanner,
   DoubleMedia,

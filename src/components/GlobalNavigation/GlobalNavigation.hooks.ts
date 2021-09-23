@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { isViewport } from '~/utils/viewport';
 import { useWindowHasResized } from '~/customHooks';
-import type { SetActiveViewTypes } from './GlobalNavigation.types';
+import type { ActiveViewTypes } from './GlobalNavigation.types';
 
-const useActiveView = () => {
-  const [activeView, setActiveView] = useState<SetActiveViewTypes>('none');
+const useActiveView = (): { activeView: ActiveViewTypes } => {
+  const [activeView, setActiveView] = useState<ActiveViewTypes>('none');
 
   useWindowHasResized();
 
@@ -22,7 +22,7 @@ const useActiveView = () => {
     }
   }, [isMobile, isTablet, isDesktop]);
 
-  return [activeView];
+  return { activeView };
 };
 
 export { useActiveView };

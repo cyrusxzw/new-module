@@ -56,11 +56,12 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
     },
     search: {
       dataTestRef: 'NAV_SEARCH',
-      id: 'actions-search',
+      id: 'search',
       label: 'search',
       onClick: (): void => console.log('Clicked: search'), // eslint-disable-line no-console
       title: 'open the search component',
       type: 'trigger' as const,
+      isLegacyMenu: true,
       component: () => (
         <img
           alt="mock"
@@ -87,6 +88,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       onClick: (): void => console.log('Clicked: stores'), // eslint-disable-line no-console
       title: 'Stores',
       type: 'trigger' as const,
+      isLegacyMenu: true,
       component: () => (
         <img
           alt="mock this"

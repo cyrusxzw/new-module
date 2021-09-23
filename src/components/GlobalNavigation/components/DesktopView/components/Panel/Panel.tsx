@@ -1,6 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
-import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import {
+  useGlobalNavigationStateContext,
+  useGlobalNavigationContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useMenuItemContext } from '~/components/GlobalNavigation/components/DesktopView/components/MenuItem/MenuItem.context';
 import { Transition } from '~/components/Transition';
 import type { PanelType } from './Panel.types';
@@ -9,25 +12,28 @@ import styles from './Panel.module.css';
 const defaultBackgroundColor = '#fffef3';
 
 const Panel: PanelType = ({
-  /** @todo
-   * source this from a variable
-   */
   backgroundColor = defaultBackgroundColor,
   children,
   id,
   shouldOnlyMountWhenActive = false,
 }) => {
   const { isOpen, activeCollectionId } = useGlobalNavigationStateContext();
+  const { isLegacyMenu } = useGlobalNavigationContext();
   const { isActive } = useMenuItemContext(id);
 
-  const classSet = cx(styles.base, {
-    [styles.menuOpen]: isOpen,
-    [styles.active]: isActive,
-  });
+  const classSet = cx(
+    styles.base,
+    {
+      [styles.menuOpen]: isOpen,
+    },
+    { [styles.active]: isActive },
+  );
 
   const innerClassSet = cx(styles.content, {
     [styles.active]: isActive,
   });
+
+  if (isLegacyMenu) return null;
 
   return (
     <Transition

@@ -104,4 +104,19 @@ describe('<Select />', () => {
     // const a11lyResults = await axe(container);
     // expect(a11lyResults).toHaveNoViolations();
   });
+
+  it(`should disable the input when isEnabled is false`, () => {
+    render(
+      <Select
+        isEnabled={false}
+        label="disabled dropdown"
+        name={name}
+        onChange={onChange}
+        options={options}
+      />,
+    );
+    const dropDownElement = screen.getByRole('combobox');
+
+    expect(dropDownElement).toBeDisabled();
+  });
 });

@@ -58,6 +58,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Icon-module_base__iPRbu {
@@ -212,6 +235,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Accordion-module_base__3VTZg {
@@ -378,6 +424,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Button-module_base__3aZlL {
@@ -556,6 +625,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Loading-module_base__11pIy {
@@ -745,6 +837,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Hyperlink-module_base__uoaww {
@@ -953,6 +1068,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .AddToCartButton-module_base__37_2I {
@@ -1106,6 +1244,29 @@
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Heading-module_base__Afh6b {
@@ -1257,6 +1418,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .AudioHeader-module_base__2R0Mj {
@@ -1326,6 +1510,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PausePlayButton-module_base__2Iu7e {
@@ -1453,6 +1660,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SeekButton-module_icon__37sV3 {
@@ -1536,6 +1766,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .AudioFooter-module_base__2P0Zr {
@@ -1717,6 +1970,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Audio-module_base__zNk7y {
@@ -1832,6 +2108,29 @@ html[lang*='ko'] .Heading-module_serifFont__pIB5u,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SectionHeading-module_base__MQ5b- {
@@ -1968,6 +2267,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .BodyCopy-module_base__1ZoAL {
@@ -2092,6 +2414,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Breadcrumbs-module_base__1qjpj {
@@ -2928,6 +3273,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CarouselIntroduction-module_base__2sFJp {
@@ -3053,6 +3421,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .NextButton-module_base__3zqIF {
@@ -3159,6 +3550,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Pagination-module_base___SWdb {
@@ -3283,6 +3697,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PreviousButton-module_base__1J-Kp {
@@ -3391,6 +3828,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Image-module_base__18W0_ {
@@ -3523,6 +3983,29 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Slide-module_heading__2KIs0 {
@@ -3627,6 +4110,29 @@ a:hover .Slide-module_heading__2KIs0,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Carousel-module_base__2Zak0 {
@@ -3895,6 +4401,29 @@ a:hover .Slide-module_heading__2KIs0,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Checkbox-module_base__1NqY3 {
@@ -4050,6 +4579,29 @@ a:hover .Slide-module_heading__2KIs0,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ContentHubArticle-module_base__2Wc0c {
@@ -4254,6 +4806,29 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ContentHubArticleList-module_base__3EQb3 {
@@ -4489,6 +5064,376 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
+/* Dark theme UI elements */
+/* Light theme UI elements */
+.Select-module_base__2hN67 {
+  position: relative;
+  display: block;
+  padding-top: 25px;
+  margin-bottom: 15px;
+  font-family: 'Suisse Regular', sans-serif;
+}
+@media (min-width: 640px) {
+.Select-module_base__2hN67 {
+    max-width: 466.66px
+}
+  }
+.Select-module_base__2hN67,
+  .Select-module_base__2hN67 * {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+.Select-module_input__3pZ0Q {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #d5d4c9;
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border-radius: 0;
+  color: #333;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1.5;
+  outline: none;
+  text-overflow: ellipsis;
+
+}
+@media (min-width: 640px) {
+.Select-module_input__3pZ0Q {
+    font-size: 24px
+
+}
+  }
+.Select-module_isBlock__20_Mi .Select-module_input__3pZ0Q {
+    padding: 20px 50px 20px 20px;
+    border-width: 1px;
+    font-size: 16px;
+    -webkit-padding-end: 50px;
+    -webkit-padding-start: 20px;
+  }
+@media (min-width: 640px) {
+.Select-module_isBlock__20_Mi .Select-module_input__3pZ0Q {
+      font-size: 16px
+  }
+    }
+.Select-module_dark__2yToU .Select-module_input__3pZ0Q {
+    color: #333;
+  }
+.Select-module_dark__2yToU .Select-module_input__3pZ0Q.Select-module_isDisabled__cSMnF {
+      color: #999;
+      cursor: default;
+    }
+.Select-module_light__2YaMZ .Select-module_input__3pZ0Q {
+    color: #fffef2;
+  }
+.Select-module_light__2YaMZ .Select-module_input__3pZ0Q.Select-module_isDisabled__cSMnF {
+      color: #6b6b6b;
+      cursor: default;
+    }
+.Select-module_icon__2PuKc {
+  position: absolute;
+  top: 35px;
+  right: 22px;
+  pointer-events: none;
+}
+.Select-module_isBlock__20_Mi .Select-module_icon__2PuKc {
+    top: 50px;
+  }
+.Select-module_dark__2yToU .Select-module_icon__2PuKc {
+    fill: #666;
+  }
+.Select-module_light__2YaMZ .Select-module_icon__2PuKc {
+    fill: #e0dfd6;
+  }
+.Select-module_label__uQB3s {
+  position: absolute;
+  top: 0;
+  font-size: 20px;
+  pointer-events: none;
+  -webkit-transform: translateY(25px);
+          transform: translateY(25px);
+  -webkit-transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+@media (min-width: 640px) {
+.Select-module_label__uQB3s {
+    font-size: 24px
+}
+  }
+.Select-module_isBlock__20_Mi .Select-module_label__uQB3s {
+    font-size: 16px;
+    -webkit-transform: translateY(45px) translateX(20px);
+            transform: translateY(45px) translateX(20px);
+  }
+@media (min-width: 640px) {
+.Select-module_isBlock__20_Mi .Select-module_label__uQB3s {
+      font-size: 16px
+  }
+    }
+.Select-module_dark__2yToU .Select-module_label__uQB3s {
+    color: #666;
+  }
+.Select-module_light__2YaMZ .Select-module_label__uQB3s {
+    color: #e0dfd6;
+  }
+.Select-module_hasFocus__3bMed .Select-module_label__uQB3s {
+    font-size: 14px;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+.Select-module_errorMessage__16VE8 {
+  display: block;
+  height: 14px;
+  margin: 10px 0 0;
+  color: #ea6956;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.Select-module_hasError__3LYC4 .Select-module_input__3pZ0Q {
+    border-color: #ea6956;
+  }
+.Select-module_hasError__3LYC4 .Select-module_icon__2PuKc {
+    fill: #ea6956;
+  }
+
+:root {
+  /* Base colours */
+
+  /* UI colours light theme */
+
+  /* UI colours dark theme */
+
+  /* Background colours */
+
+  /* System colours */
+
+  /* Secondary Message background colour */
+}
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
+/** https://github.com/postcss/postcss-custom-properties/issues/24
+ :root {
+  --breakpoint-xs-min: 0;
+  --breakpoint-xs-max: 320px;
+  --breakpoint-sm-min: 321px;
+  --breakpoint-sm-max: 639px;
+  --breakpoint-md-min: 640px;
+  --breakpoint-md-max: 1024px;
+  --breakpoint-lg-min: 1025px;
+  --breakpoint-lg-max: 1219px;
+  --breakpoint-xl-min: 1220px;
+  --breakpoint-xl-max: 1599px;
+  --breakpoint-x2l-min: 1600px;
+  --breakpoint-x2l-max: 1919px;
+  --breakpoint-x3l-min: 1920px;
+  --breakpoint-x3l-max: 2399px;
+  --breakpoint-x4l-min: 2400px;
+} */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
+/* Dark theme UI elements */
+/* Light theme UI elements */
+.DateSelector-module_base__3eNoN {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 640px) {
+.DateSelector-module_base__3eNoN {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row
+}
+  }
+.DateSelector-module_dropDown__1Og_e {
+  width: 100%;
+  max-width: none;
+  margin-bottom: 30px;
+}
+.DateSelector-module_dropDown__1Og_e:last-of-type {
+    margin-bottom: 0;
+    
+  }
+@media (min-width: 640px) {
+.DateSelector-module_dropDown__1Og_e {
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-left: 10px
+}
+
+    .DateSelector-module_dropDown__1Og_e:first-of-type {
+      margin-left: 0;
+    }
+    .DateSelector-module_dropDown__1Og_e:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+:root {
+  /* Base colours */
+
+  /* UI colours light theme */
+
+  /* UI colours dark theme */
+
+  /* Background colours */
+
+  /* System colours */
+
+  /* Secondary Message background colour */
+}
+/* 320w (568h) */
+/* 639w (800h) */
+/* 1024w (768h) */
+/* 1219w (720h) */
+/* 1599w (900h) */
+/* 1919w (1080h) */
+/* 2399w (1200h) */
+/* 2560w (1440h) */
+/**
+ * Device breakpoints - Google Chrome recomendations
+ * Mobile S -    0 - 320w  (568h)
+ * Mobile M -  321 - 375w  (812h)
+ * Mobile L -  376 - 425w  (736h)
+ * Tablet   -  426 - 768w  (1024h)
+ * Laptop   -  769 - 1024w (576h)
+ * Laptop L - 1025 - 1440w (900h)
+ * 4K       - 1441 - 2560w (1440h)
+ * Cinema   - 2561w ~
+ *
+ * Aesop Device breakpoints
+ * Extra Small   -    0 - 320w  (568h)
+ * Small         -  321 - 639w  (800h)
+ * Medium        -  640 - 1024w (768h)
+ * Large         - 1025 - 1219w (720h)
+ * Extra Large   - 1220 - 1599w (900h)
+ * Extra Large 2 - 1600 - 1919w (1080h)
+ * Extra Large 3 - 1920 - 2399w (1200h)
+ * Extra Large 4 - 2400 - 2560w (1440h)
+ */
+/** https://github.com/postcss/postcss-custom-properties/issues/24
+ :root {
+  --breakpoint-xs-min: 0;
+  --breakpoint-xs-max: 320px;
+  --breakpoint-sm-min: 321px;
+  --breakpoint-sm-max: 639px;
+  --breakpoint-md-min: 640px;
+  --breakpoint-md-max: 1024px;
+  --breakpoint-lg-min: 1025px;
+  --breakpoint-lg-max: 1219px;
+  --breakpoint-xl-min: 1220px;
+  --breakpoint-xl-max: 1599px;
+  --breakpoint-x2l-min: 1600px;
+  --breakpoint-x2l-max: 1919px;
+  --breakpoint-x3l-min: 1920px;
+  --breakpoint-x3l-max: 2399px;
+  --breakpoint-x4l-min: 2400px;
+} */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .DefinitionList-module_base__2OnV9 {
@@ -4669,6 +5614,29 @@ html[lang*='ko'] .ContentHubArticle-module_title__1SnEp span,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Paragraph-module_base__2wcSK {
@@ -4880,6 +5848,29 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .DialogBanner-module_base__1sS5X {
@@ -5035,6 +6026,29 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Figure-module_base__2Vmj2 {
@@ -5154,6 +6168,29 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Controls-module_base__1kwN_,
@@ -5497,6 +6534,29 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Poster-module_base__1YXtU {
@@ -5581,6 +6641,29 @@ html[lang*='ko'] .Paragraph-module_serifFont__30f9k,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .VideoPlayer-module_base__1NW0T {
@@ -5695,6 +6778,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Video-module_base__3wxiY {
@@ -5870,6 +6976,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .MediaBlock-module_figure__3ovYx:first-of-type {
@@ -6033,6 +7162,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 @media (min-width: 640px) {
@@ -6106,6 +7258,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .FlyinPanel-module_base__1Tlwv {
@@ -6235,6 +7410,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .FooterBlock_base__30nq0 {
@@ -6372,6 +7570,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TextInputV2-module_wrapper__1XeEy {
@@ -6436,11 +7657,17 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     caret-color: #333;
     color: #333;
   }
+.TextInputV2-module_input__2hmK6.TextInputV2-module_dark__3iXGf.TextInputV2-module_isDisabled__3lFrB {
+      color: #999;
+    }
 .TextInputV2-module_input__2hmK6.TextInputV2-module_light__1ddA2 {
     border-color: #e0dfd6;
     caret-color: #fffef2;
     color: #fffef2;
   }
+.TextInputV2-module_input__2hmK6.TextInputV2-module_light__1ddA2.TextInputV2-module_isDisabled__3lFrB {
+      color: #6b6b6b;
+    }
 .TextInputV2-module_input__2hmK6.TextInputV2-module_hasError__1PxZj {
     border-color: #ea6956;
   }
@@ -6540,6 +7767,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .FullscreenSection-module_base__1U6IB {
@@ -6636,6 +7886,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .FullWidthHeroScroll-module_base__Hui8j {
@@ -6812,6 +8085,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .StoreHoursList-module_base__3dYCe {
@@ -6938,6 +8234,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .InfoCard-module_base__Px7B2 {
@@ -7059,6 +8378,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .GoogleMap-module_base__1P8dt {
@@ -7235,6 +8577,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .HeroBannerMedia-module_base__aeFwR {
@@ -7460,6 +8825,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .HeroBannerContent-module_base__3vBef {
@@ -7706,6 +9094,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .HeroBanner-module_base__3tCWJ {
@@ -7799,6 +9210,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .LinkButtonGroup-module_base__2mut8 {
@@ -7924,6 +9358,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductAccordionItem-module_base__CB7Pp {
@@ -8347,6 +9804,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductAccordion-module_base__3w-nf {
@@ -8425,6 +9905,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .List-module_base__wbAa2 {
@@ -8504,6 +10007,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .KitList-module_base__ojyC- {
@@ -8639,6 +10165,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .LoadMoreButton-module_base__3mmr4 {
@@ -8733,6 +10282,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Media-module_base__3Naat {
@@ -8908,6 +10480,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Content-module_base__2wNf2 {
@@ -9078,6 +10673,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .MediaWithContent-module_base__27eiZ {
@@ -9164,6 +10782,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .MobileView-module_presentationalWrapper__3-2ca {
@@ -9264,18 +10905,18 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   height: 1px;
   margin: 0 auto;
   content: '';
-  -webkit-transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .MobileView-module_dark__1RRSp .MobileView-module_ornamentalHover__2N8jT::after {
-    background-color: #333;
-  }
+  background-color: #333;
+}
 .MobileView-module_light__15qBl .MobileView-module_ornamentalHover__2N8jT::after {
-    background-color: #fffef0;
-  }
+  background-color: #fffef0;
+}
 .MobileView-module_ornamentalWrapper__1Z9bd:hover .MobileView-module_ornamentalHover__2N8jT::after {
-      width: 100%;
-    }
+    width: 100%;
+  }
 .MobileView-module_itemElement__3Jn5o {
   position: relative;
   display: -webkit-box;
@@ -9419,6 +11060,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ArticleCard-module_base__2ZuMd {
@@ -9526,6 +11190,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ArticleList-module_base__5-9n5 {
@@ -9600,6 +11287,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Link-module_base__3_2bL:not(.Link-module_top__2Qiyh) {
@@ -9669,6 +11379,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .NestedCollection-module_collapse__1C-lb {
@@ -9806,6 +11539,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Logo-module_base__2cZDD.Logo-module_base__2cZDD {
@@ -9953,6 +11709,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CloseButton-module_base__jJbZC {
@@ -10065,6 +11844,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CollectionImage-module_base__2-iYy {
@@ -10139,6 +11941,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PromotionCard-module_base__2gHJW {
@@ -10242,18 +12067,18 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   height: 1px;
   margin: 0 auto;
   content: '';
-  -webkit-transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .PromotionCard-module_dark__2Fv63 .PromotionCard-module_ornamentalHover__2WMH3::after {
-    background-color: #333;
-  }
+  background-color: #333;
+}
 .PromotionCard-module_light__ZhsKy .PromotionCard-module_ornamentalHover__2WMH3::after {
-    background-color: #fffef0;
-  }
+  background-color: #fffef0;
+}
 .PromotionCard-module_ornamentalWrapper__UjhQy:hover .PromotionCard-module_ornamentalHover__2WMH3::after {
-      width: 100%;
-    }
+    width: 100%;
+  }
 
 :root {
   /* Base colours */
@@ -10315,6 +12140,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .DesktopView-module_base__3pahs {
@@ -10354,6 +12202,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     left: 0;
     background-color: #fffef0;
   }
+.DesktopView-module_base__3pahs.DesktopView-module_isLegacyMenu__3st2m {
+    height: 0;
+  }
 .DesktopView-module_base__3pahs,
   .DesktopView-module_base__3pahs * {
     -webkit-box-sizing: border-box;
@@ -10384,18 +12235,18 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   height: 1px;
   margin: 0 auto;
   content: '';
-  -webkit-transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .DesktopView-module_dark__2RL-2 .DesktopView-module_ornamentalHover__3Ip0W::after {
-    background-color: #333;
-  }
+  background-color: #333;
+}
 .DesktopView-module_light__t5S8I .DesktopView-module_ornamentalHover__3Ip0W::after {
-    background-color: #fffef0;
-  }
+  background-color: #fffef0;
+}
 .DesktopView-module_ornamentalWrapper__3ztQ_:hover .DesktopView-module_ornamentalHover__3Ip0W::after {
-      width: 100%;
-    }
+    width: 100%;
+  }
 .DesktopView-module_absoluteBuffer__3spQ4 {
   height: 74px;
   pointer-events: none;
@@ -10462,6 +12313,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CollectionItem-module_base__3gZMh:not(:last-child) {
@@ -10577,6 +12451,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CollectionList-module_eyebrow__3vv2j {
@@ -10663,6 +12560,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CollectionLayout-module_nestedCollectionsWrapper__IC3ru {
@@ -10761,6 +12681,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .MenuItem-module_base__h3cyh {
@@ -10881,6 +12824,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Panel-module_base__mPrkp {
@@ -10981,6 +12947,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PrimaryMenu-module_base__1DfJA {
@@ -11079,6 +13068,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SecondaryMenu-module_base__jc9ek {
@@ -11157,6 +13169,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .MenuItem-module_base__Un89O {
@@ -11246,6 +13281,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TabletView-module_base__1wd4G {
@@ -11313,6 +13371,10 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   }
 .TabletView-module_base__1wd4G.TabletView-module_open__1y-Lr.TabletView-module_light__WoVrJ::before {
     background-color: #333;
+  }
+.TabletView-module_base__1wd4G.TabletView-module_isLegacyMenu__k3ZnB {
+    height: 0;
+    min-height: 0;
   }
 .TabletView-module_element__EmdDJ {
   font-family: 'Suisse Regular', sans-serif;
@@ -11417,18 +13479,18 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   height: 1px;
   margin: 0 auto;
   content: '';
-  -webkit-transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: width 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .TabletView-module_dark__2lN-Z .TabletView-module_ornamentalHover__1CrdF::after {
-    background-color: #333;
-  }
+  background-color: #333;
+}
 .TabletView-module_light__WoVrJ .TabletView-module_ornamentalHover__1CrdF::after {
-    background-color: #fffef0;
-  }
+  background-color: #fffef0;
+}
 .TabletView-module_ornamentalWrapper__3Wehv:hover .TabletView-module_ornamentalHover__1CrdF::after {
-      width: 100%;
-    }
+    width: 100%;
+  }
 .TabletView-module_articlesListHeading__61sXj {
   display: block;
   margin-top: 20px;
@@ -11518,6 +13580,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SecondaryMenu-module_element__3Eut0 {
@@ -11613,6 +13698,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SelectionPanel-module_base__D-PVv {
@@ -11700,6 +13808,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .DetailsPanel-module_base__2Nbhf {
@@ -11783,6 +13914,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SupportMenu-module_base__3pceR {
@@ -11891,6 +14045,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CollectionList-module_collectionHeading__2pN-Q {
@@ -11960,6 +14137,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ArticleCard-module_base__2yiMH {
@@ -12101,6 +14301,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ArticleList-module_base__276ik {
@@ -12175,6 +14398,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TopLevelCollectionLayout-module_base__3ERq- {
@@ -12244,6 +14490,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PrimaryMenu-module_searchIcon__2nP92 {
@@ -12314,6 +14583,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Collection-module_backButton__17y_X {
@@ -12404,6 +14696,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Header-module_base__1u5bw {
@@ -12642,6 +14957,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SecondaryMenu-module_base__CMJ17 {
@@ -12793,6 +15131,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ModalBody-module_base__3I-jF {
@@ -12937,6 +15298,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Modal-module_base__1XCSr {
@@ -13043,6 +15427,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .NavigationBar-module_wrapper__1gvhE {
@@ -13254,6 +15661,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .NotificationModal-module_base__2-kkO {
@@ -13381,6 +15811,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .PersonalInfoSummary-module_base__F5l6g {
@@ -13459,6 +15912,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Podium-module_base__3-gFX {
@@ -13630,6 +16106,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .RadioGroup-module_base__1BFm6 {
@@ -13823,6 +16322,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductCommerce-module_base__3XaIQ {
@@ -14046,6 +16568,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductExtract-module_base__3ICJf {
@@ -14255,6 +16800,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductGridItem-module_base__2qKh0 {
@@ -14664,6 +17232,29 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductDetailBody-module_base__1VWkM {
@@ -15016,6 +17607,29 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductDetailImage-module_base__377HI {
@@ -15123,6 +17737,29 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ProductDetailHeader-module_base__3-VX6 {
@@ -15310,6 +17947,29 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Quote-module_base__2H3wf {
@@ -15440,6 +18100,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 @media (min-width: 640px) and (max-width: 1024px) {
@@ -15543,6 +18226,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Message-module_base__1Nwji {
@@ -15679,6 +18385,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SecondaryMessage-module_base__2yn2H {
@@ -15808,194 +18537,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
-/* Dark theme UI elements */
-/* Light theme UI elements */
-.Select-module_base__2hN67 {
-  position: relative;
-  display: block;
-  padding-top: 25px;
-  margin-bottom: 15px;
-  font-family: 'Suisse Regular', sans-serif;
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
 }
-@media (min-width: 640px) {
-.Select-module_base__2hN67 {
-    max-width: 466.66px
-}
-  }
-.Select-module_base__2hN67,
-  .Select-module_base__2hN67 * {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-.Select-module_input__3pZ0Q {
-  display: inline-block;
-  width: 100%;
-  padding: 0;
-  border-width: 0 0 1px 0;
-  border-style: solid;
-  border-color: #d5d4c9;
-  margin: 0;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: transparent;
-  border-radius: 0;
-  color: #333;
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 1.5;
-  outline: none;
-  text-overflow: ellipsis;
-}
-@media (min-width: 640px) {
-.Select-module_input__3pZ0Q {
-    font-size: 24px
-}
-  }
-.Select-module_isBlock__20_Mi .Select-module_input__3pZ0Q {
-    padding: 20px 50px 20px 20px;
-    border-width: 1px;
-    font-size: 16px;
-    -webkit-padding-end: 50px;
-    -webkit-padding-start: 20px;
-  }
-@media (min-width: 640px) {
-.Select-module_isBlock__20_Mi .Select-module_input__3pZ0Q {
-      font-size: 16px
-  }
-    }
-.Select-module_dark__2yToU .Select-module_input__3pZ0Q {
-    color: #333;
-  }
-.Select-module_light__2YaMZ .Select-module_input__3pZ0Q {
-    color: #fffef2;
-  }
-.Select-module_icon__2PuKc {
-  position: absolute;
-  top: 35px;
-  right: 22px;
-  pointer-events: none;
-}
-.Select-module_isBlock__20_Mi .Select-module_icon__2PuKc {
-    top: 50px;
-  }
-.Select-module_dark__2yToU .Select-module_icon__2PuKc {
-    fill: #666;
-  }
-.Select-module_light__2YaMZ .Select-module_icon__2PuKc {
-    fill: #e0dfd6;
-  }
-.Select-module_label__uQB3s {
-  position: absolute;
-  top: 0;
-  font-size: 20px;
-  pointer-events: none;
-  -webkit-transform: translateY(25px);
-          transform: translateY(25px);
-  -webkit-transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-@media (min-width: 640px) {
-.Select-module_label__uQB3s {
-    font-size: 24px
-}
-  }
-.Select-module_isBlock__20_Mi .Select-module_label__uQB3s {
-    font-size: 16px;
-    -webkit-transform: translateY(45px) translateX(20px);
-            transform: translateY(45px) translateX(20px);
-  }
-@media (min-width: 640px) {
-.Select-module_isBlock__20_Mi .Select-module_label__uQB3s {
-      font-size: 16px
-  }
-    }
-.Select-module_dark__2yToU .Select-module_label__uQB3s {
-    color: #666;
-  }
-.Select-module_light__2YaMZ .Select-module_label__uQB3s {
-    color: #e0dfd6;
-  }
-.Select-module_hasFocus__3bMed .Select-module_label__uQB3s {
-    font-size: 14px;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-.Select-module_errorMessage__16VE8 {
-  display: block;
-  height: 14px;
-  margin: 10px 0 0;
-  color: #ea6956;
-  font-size: 14px;
-  line-height: 1.4;
-}
-.Select-module_hasError__3LYC4 .Select-module_input__3pZ0Q {
-    border-color: #ea6956;
-  }
-.Select-module_hasError__3LYC4 .Select-module_icon__2PuKc {
-    fill: #ea6956;
-  }
 
-:root {
-  /* Base colours */
-
-  /* UI colours light theme */
-
-  /* UI colours dark theme */
-
-  /* Background colours */
-
-  /* System colours */
-
-  /* Secondary Message background colour */
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
 }
-/* 320w (568h) */
-/* 639w (800h) */
-/* 1024w (768h) */
-/* 1219w (720h) */
-/* 1599w (900h) */
-/* 1919w (1080h) */
-/* 2399w (1200h) */
-/* 2560w (1440h) */
-/**
- * Device breakpoints - Google Chrome recomendations
- * Mobile S -    0 - 320w  (568h)
- * Mobile M -  321 - 375w  (812h)
- * Mobile L -  376 - 425w  (736h)
- * Tablet   -  426 - 768w  (1024h)
- * Laptop   -  769 - 1024w (576h)
- * Laptop L - 1025 - 1440w (900h)
- * 4K       - 1441 - 2560w (1440h)
- * Cinema   - 2561w ~
- *
- * Aesop Device breakpoints
- * Extra Small   -    0 - 320w  (568h)
- * Small         -  321 - 639w  (800h)
- * Medium        -  640 - 1024w (768h)
- * Large         - 1025 - 1219w (720h)
- * Extra Large   - 1220 - 1599w (900h)
- * Extra Large 2 - 1600 - 1919w (1080h)
- * Extra Large 3 - 1920 - 2399w (1200h)
- * Extra Large 4 - 2400 - 2560w (1440h)
- */
-/** https://github.com/postcss/postcss-custom-properties/issues/24
- :root {
-  --breakpoint-xs-min: 0;
-  --breakpoint-xs-max: 320px;
-  --breakpoint-sm-min: 321px;
-  --breakpoint-sm-max: 639px;
-  --breakpoint-md-min: 640px;
-  --breakpoint-md-max: 1024px;
-  --breakpoint-lg-min: 1025px;
-  --breakpoint-lg-max: 1219px;
-  --breakpoint-xl-min: 1220px;
-  --breakpoint-xl-max: 1599px;
-  --breakpoint-x2l-min: 1600px;
-  --breakpoint-x2l-max: 1919px;
-  --breakpoint-x3l-min: 1920px;
-  --breakpoint-x3l-max: 2399px;
-  --breakpoint-x4l-min: 2400px;
-} */
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TwoColumnLayout-module_base__2yBvR {
@@ -16213,6 +18777,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 @media (min-width: 640px) {
@@ -16346,6 +18933,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .SubNav-module_base__3LIXq {
@@ -16455,6 +19065,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Textarea-module_base__1PESt {
@@ -16569,6 +19202,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TextInput-module_formText__1dkzA {
@@ -16734,6 +19390,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TextOverFullWidthAsset-module_base__1Eq4j {
@@ -16863,6 +19542,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .TwoColumnList-module_base__rFZFc,
@@ -16997,6 +19699,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .DynamicForm-module_formRowWrapper__3_Xi_ > * {
@@ -17119,6 +19844,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .NewsletterSignUp_base__3CwHo {
@@ -17285,6 +20033,29 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
   --breakpoint-x3l-max: 2399px;
   --breakpoint-x4l-min: 2400px;
 } */
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .Footer_base__18Zrv {

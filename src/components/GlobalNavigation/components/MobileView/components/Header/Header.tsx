@@ -44,8 +44,8 @@ const Header: HeaderType = ({ onClose }) => {
   const handleOnMenuButtonClick = () => {
     if (isMenuOpen) {
       if (
-        activeCollectionId === search.id ||
-        activeCollectionId === stores.id
+        activeCollectionId === search?.id ||
+        activeCollectionId === stores?.id
       ) {
         setActiveCollectionId('top');
       } else {
@@ -77,7 +77,8 @@ const Header: HeaderType = ({ onClose }) => {
           <li className={styles.item}>
             <Button
               className={cx(styles.action, styles.actionSearch)}
-              dataTestRef={search.dataTestRef ?? 'NAV_SEARCH'}
+              data-testid={'NAV_SEARCH_BTN'}
+              dataTestRef={search.dataTestRef ?? 'NAV_SEARCH_BTN'}
               isInline={true}
               onClick={handleOnSearchClick}
               title={search.title}
@@ -109,7 +110,8 @@ const Header: HeaderType = ({ onClose }) => {
                 styles.actionCart,
                 compositionStyles.ornamentalWrapper,
               )}
-              dataTestRef={cart.dataTestRef ?? 'NAV_CART'}
+              data-testid={'NAV_CART_BTN'}
+              dataTestRef={cart.dataTestRef ?? 'NAV_CART_BTN'}
               isInline={true}
               onClick={handleOnCartClick}
               title={cart.title}
@@ -131,7 +133,8 @@ const Header: HeaderType = ({ onClose }) => {
               className={cx(styles.action, styles.actionMenu, {
                 [styles.openState]: isMenuOpen,
               })}
-              dataTestRef={menu.dataTestRef ?? 'NAV_MOBILE_MENU'}
+              data-testid={'NAV_MOBILE_MENU_BTN'}
+              dataTestRef={menu.dataTestRef ?? 'NAV_MOBILE_MENU_BTN'}
               isInline={true}
               onClick={handleOnMenuButtonClick}
               title={isMenuOpen ? menu.closeTitle : menu.title}
