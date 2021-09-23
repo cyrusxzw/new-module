@@ -7657,11 +7657,17 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     caret-color: #333;
     color: #333;
   }
+.TextInputV2-module_input__2hmK6.TextInputV2-module_dark__3iXGf.TextInputV2-module_isDisabled__3lFrB {
+      color: #999;
+    }
 .TextInputV2-module_input__2hmK6.TextInputV2-module_light__1ddA2 {
     border-color: #e0dfd6;
     caret-color: #fffef2;
     color: #fffef2;
   }
+.TextInputV2-module_input__2hmK6.TextInputV2-module_light__1ddA2.TextInputV2-module_isDisabled__3lFrB {
+      color: #6b6b6b;
+    }
 .TextInputV2-module_input__2hmK6.TextInputV2-module_hasError__1PxZj {
     border-color: #ea6956;
   }
