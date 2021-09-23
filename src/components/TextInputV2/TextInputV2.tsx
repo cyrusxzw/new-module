@@ -49,6 +49,7 @@ const TextInputV2 = forwardRef<HTMLInputElement, TextInputV2Props>(
               styles.input,
               styles[theme],
               { [styles.hasError]: errorMessage },
+              { [styles.isDisabled]: !isEnabled },
               classNames?.input,
             )}
             data-test-ref={dataTestRef}
