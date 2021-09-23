@@ -65,12 +65,20 @@
     border-color: var(--color-dark-copy-alternate);
     caret-color: var(--color-dark-copy);
     color: var(--color-dark-copy);
+
+    &.isDisabled {
+      color: var(--color-dark-disabled);
+    }
   }
 
   &.light {
     border-color: var(--color-light-copy-alternate);
     caret-color: var(--color-light-copy);
     color: var(--color-light-copy);
+
+    &.isDisabled {
+      color: var(--color-light-disabled);
+    }
   }
 
   &.hasError {
