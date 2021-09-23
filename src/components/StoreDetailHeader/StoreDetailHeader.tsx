@@ -27,8 +27,6 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
   storeName,
   theme,
 }) => {
-  console.log('----openingHours: ', openingHours);
-
   const currentTheme = useThemeContext(theme, 'dark');
   const classSet = cx(styles.base, styles[currentTheme], className);
   const wrapperClass = cx(styles.wrapper, className);
