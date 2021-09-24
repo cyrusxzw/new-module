@@ -250,7 +250,11 @@ const GoogleMap = ({
   return (
     <div className={classSet}>
       <div className={styles.wrapper}>
-        <Loading className={styles.loading} isLoading={isLoading} theme={currentTheme} />
+        <Loading
+          className={styles.loading}
+          isLoading={isLoading}
+          theme={currentTheme}
+        />
         <div className={styles.map} id={id} ref={mapContainerRef} />
       </div>
       <Transition

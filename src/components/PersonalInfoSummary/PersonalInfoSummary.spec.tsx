@@ -55,7 +55,7 @@ describe('<PersonalInfoSummary />', () => {
     );
 
     expect(
-      screen.getByText(`${mockPrefix} ${lastName}${firstName} ${suffix}`),
+      screen.getByText(`${mockPrefix} ${lastName} ${firstName} ${suffix}`),
     ).toBeInTheDocument();
   });
 
@@ -83,6 +83,20 @@ describe('<PersonalInfoSummary />', () => {
 
     expect(
       screen.getByText(`${mockPrefix} ${firstName} ${lastName}`),
+    ).toBeInTheDocument();
+  });
+
+  it(`should delete the space between names if shouldHaveNameSpace is false`, () => {
+    const { firstName, lastName, suffix } = userDetails;
+    render(
+      <PersonalInfoSummary
+        shouldHaveNameSpace={false}
+        userDetails={userDetails}
+      />,
+    );
+
+    expect(
+      screen.getByText(`${mockPrefix} ${firstName}${lastName} ${suffix}`),
     ).toBeInTheDocument();
   });
 });
