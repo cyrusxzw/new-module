@@ -3,6 +3,17 @@
 .collectionHeading {
   display: block;
   margin-bottom: 14px;
+  color: var(--color-black);
   font-family: var(--font-family-sans-serif-medium);
   font-weight: normal;
+}
+
+.menuOpen {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.menuClosed {
+  pointer-events: none;
+  visibility: hidden;
 }
