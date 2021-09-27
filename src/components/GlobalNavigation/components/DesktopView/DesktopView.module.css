@@ -3,6 +3,8 @@
 :root {
   --container-margin: 40px;
   --menu-height: 74px;
+  --alert-banner-height: 41px;
+  --shipping-banner-height: 43px;
 }
 
 .base {
@@ -55,6 +57,21 @@
     background-color: var(--color-primary);
     content: '';
     transition: background-color 200ms var(--easing-ease-in-out-cubic);
+  }
+
+  &.isVisibleStickyNav,
+  &.isInvisibleStickyNav {
+    position: fixed;
+    height: 74px;
+    transition: top 300ms var(--easing-ease-in-out-cubic);
+  }
+
+  &.isVisibleStickyNav {
+    top: 0;
+  }
+
+  &.isInvisibleStickyNav {
+    top: -74px;
   }
 
   &.light::before {

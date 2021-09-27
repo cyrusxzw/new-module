@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable max-lines-per-function */
+import { useEffect, useState, useRef, MutableRefObject } from 'react';
 import { isViewport } from '~/utils/viewport';
 import { useWindowHasResized } from '~/customHooks';
-import type { ActiveViewTypes } from './GlobalNavigation.types';
+import type { ActiveViewTypes, StickyNavType } from './GlobalNavigation.types';
 
 const useActiveView = (): { activeView: ActiveViewTypes } => {
   const [activeView, setActiveView] = useState<ActiveViewTypes>('none');
@@ -25,4 +26,64 @@ const useActiveView = (): { activeView: ActiveViewTypes } => {
   return { activeView };
 };
 
-export { useActiveView };
+const useStickyNav = (
+  stickyNavRef: MutableRefObject<HTMLElement>,
+  stickyNavProps: StickyNavType,
+  setStickyNavProps: (stickyNavProps: StickyNavType) => void,
+): { stickyNavProps: StickyNavType } => {
+  const prevScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentOffset = (stickyNavRef.current.offsetParent as HTMLElement)
+        .offsetTop;
+
+      if (currentOffset !== stickyNavProps.topOffset) {
+        setStickyNavProps({ ...stickyNavProps, topOffset: currentOffset });
+      }
+
+      const NAV_HEIGHT = stickyNavRef.current.offsetHeight;
+      const heightBeforeSticky = NAV_HEIGHT + stickyNavProps.topOffset;
+      const currentScrollY = window.scrollY;
+
+      if (
+        currentScrollY <= stickyNavProps.topOffset &&
+        stickyNavProps.isFixed
+      ) {
+        setStickyNavProps({
+          ...stickyNavProps,
+          isFixed: false,
+          isHidden: false,
+        });
+      }
+      if (currentScrollY > heightBeforeSticky) {
+        if (currentScrollY < prevScrollY.current && stickyNavProps.isHidden) {
+          setStickyNavProps({
+            ...stickyNavProps,
+            isFixed: true,
+            isHidden: false,
+          });
+        } else if (
+          currentScrollY > prevScrollY.current &&
+          !stickyNavProps.isHidden
+        ) {
+          setStickyNavProps({
+            ...stickyNavProps,
+            isFixed: true,
+            isHidden: true,
+          });
+        }
+      }
+
+      prevScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [stickyNavProps]);
+
+  return { stickyNavProps };
+};
+
+export { useActiveView, useStickyNav };

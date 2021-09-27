@@ -117,12 +117,20 @@ type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavi
 
 type ActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
 
+type StickyNavType = {
+  isFixed: boolean;
+  isHidden: boolean;
+  topOffset: number;
+};
+
 type GlobalNavigationStateContextType = {
   activeCollectionId: string;
   isOpen: boolean;
   setActiveCollectionId: (id: string) => void;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   activeView: ActiveViewTypes;
+  stickyNavProps: StickyNavType;
+  setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
 };
 
 type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
@@ -171,8 +179,9 @@ type GetCollectionLists = (
 };
 
 export type {
-  Actions,
   Article,
+  Actions,
+  ActiveViewTypes,
   Clickable,
   Collection,
   CollectionImage,
@@ -187,7 +196,7 @@ export type {
   NotableNestedCollection,
   Promotion,
   Read,
-  ActiveViewTypes,
+  StickyNavType,
   Trigger,
   UseGlobalNavigationStateContext,
   UseGlobalNavigationStateStore,

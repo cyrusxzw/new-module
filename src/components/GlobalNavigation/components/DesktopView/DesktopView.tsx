@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
 import {
@@ -6,6 +6,7 @@ import {
   useGlobalNavigationStateContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useDesktopViewContext } from './DesktopView.context';
+import { useStickyNav } from '../../GlobalNavigation.hooks';
 import {
   useEscapeKeyListener,
   useOverflowHidden,
@@ -18,12 +19,6 @@ import styles from './DesktopView.module.css';
 
 const DesktopView: DesktopViewType = ({ className }) => {
   const {
-    isOpen,
-    setIsOpen,
-    setActiveCollectionId,
-  } = useGlobalNavigationStateContext();
-
-  const {
     isVisuallyObstructed,
     onClose,
     theme,
@@ -31,10 +26,22 @@ const DesktopView: DesktopViewType = ({ className }) => {
   } = useGlobalNavigationContext();
 
   const {
+    isOpen,
+    setIsOpen,
+    setActiveCollectionId,
+    stickyNavProps,
+    setStickyNavProps,
+  } = useGlobalNavigationStateContext();
+
+  const {
     closedClassName,
     closedLogoTheme,
     openClassName,
   } = useDesktopViewContext();
+
+  const stickyNavRef = useRef();
+
+  useStickyNav(stickyNavRef, stickyNavProps, setStickyNavProps);
 
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
   const contextTheme = useThemeContext(theme, 'dark');
@@ -53,6 +60,14 @@ const DesktopView: DesktopViewType = ({ className }) => {
   const classSet = cx(
     styles.base,
     { [closedClassName]: !isOpen },
+    {
+      [styles.isVisibleStickyNav]:
+        stickyNavProps.isFixed && !stickyNavProps.isHidden && !isOpen,
+    },
+    {
+      [styles.isInvisibleStickyNav]:
+        stickyNavProps.isFixed && stickyNavProps.isHidden && !isOpen,
+    },
     { [styles.isLegacyMenu]: isLegacyMenu },
     { [styles.open]: isOpen },
     { [openClassName]: isOpen },
@@ -65,10 +80,14 @@ const DesktopView: DesktopViewType = ({ className }) => {
       <div className={classSet} ref={focusTrapRef}>
         <PrimaryMenu onClose={handleOnClose} />
         <SecondaryMenu />
-        {!isLegacyMenu && <Logo closedTheme={closedLogoTheme} />}
+        {!isLegacyMenu && isOpen && <Logo closedTheme={closedLogoTheme} />}
       </div>
-
-      <div aria-hidden={true} className={styles.absoluteBuffer} />
+      <div
+        aria-hidden={true}
+        className={styles.absoluteBuffer}
+        ref={stickyNavRef}
+      />
+      {!isLegacyMenu && !isOpen && <Logo closedTheme={closedLogoTheme} />}
     </ThemeContextProvider>
   );
 };

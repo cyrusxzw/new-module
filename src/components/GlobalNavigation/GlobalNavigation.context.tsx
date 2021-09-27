@@ -21,12 +21,20 @@ const useGlobalNavigationStateStore: UseGlobalNavigationStateStore = ({
     initialActiveCollectionId,
   );
 
+  const [stickyNavProps, setStickyNavProps] = useState({
+    isFixed: false,
+    isHidden: false,
+    topOffset: 0,
+  });
+
   return {
     activeCollectionId,
     activeView,
     isOpen,
     setActiveCollectionId,
     setIsOpen,
+    stickyNavProps,
+    setStickyNavProps,
   };
 };
 
