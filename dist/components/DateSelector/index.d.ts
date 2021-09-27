@@ -11,6 +11,7 @@ declare type DateSelectorProps = {
         monthLabels?: string[];
         year?: string;
     };
+    isEnabled?: boolean;
     /** Maximum number of years to show in the year dropdown */
     maxYears?: number;
     name?: string;
