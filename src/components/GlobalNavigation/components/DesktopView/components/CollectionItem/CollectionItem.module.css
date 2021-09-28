@@ -14,7 +14,7 @@
 
 .element {
   font-family: var(--font-family-sans-serif-normal);
-  font-size: rem(18px);
+  font-size: rem(16px);
   line-height: 1.33;
   transition: outline-offset 200ms var(--easing-ease-out-cubic);
 
@@ -46,4 +46,19 @@
   display: block;
   color: var(--color-dark-label);
   font-size: rem(14px);
+}
+
+
+/* responsive menu font */
+
+@media (min-width: 1600px) and (max-width: 1920px) {
+  .element {
+    font-size: calc(16px + .111vw);
+  }
+}
+
+@media (min-width: 1920px) {
+  .element {
+    font-size: rem(20px);
+  }
 }

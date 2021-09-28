@@ -71,12 +71,29 @@
 
 .label {
   font-family: var(--font-family-sans-serif-regular);
-  font-size: rem(20px);
+  font-size: rem(16px);
 
-  .flush & {
-    font-size: rem(18px);
+ /* .flush & {
+    font-size: rem(16px);
+  }*/
+}
+
+/* responsive menu font */
+
+@media (min-width: 1600px) and (max-width: 1920px) {
+  .label {
+    font-size: calc(16px + .111vw);
   }
 }
+
+@media (min-width: 1920px) {
+  .label {
+    font-size: rem(20px);
+  }
+} 
+
+
+ 
 
 .leftAligned {
   flex-direction: column;
@@ -104,3 +121,4 @@
     width: 100%;
   }
 }
+

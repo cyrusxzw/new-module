@@ -12,11 +12,24 @@
 
 .heading {
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   font-family: var(--font-family-sans-serif-medium);
-  font-size: rem(18px);
+  font-size: rem(16px);
   font-weight: normal;
   line-height: 1.33;
+}
+
+/* responsive font */
+@media (min-width: 1600px) and (max-width: 1920px) {
+  .heading {
+    font-size: calc(16px + .111vw);
+  }
+}
+
+@media (min-width: 1920px) {
+  .heading {
+    font-size: rem(20px);
+  }
 }
 
 .list {
