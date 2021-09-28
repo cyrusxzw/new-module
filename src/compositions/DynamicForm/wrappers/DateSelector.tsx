@@ -1,21 +1,20 @@
 import React, { VFC } from 'react';
 import { Controller } from 'react-hook-form/dist/index.ie11';
-import { Select } from '~/components/Select';
-import type { SelectProps } from '~/components/Select/Select.types';
+import { DateSelector } from '~/components/DateSelector';
+import { DateSelectorProps } from '~/components/DateSelector/DateSelector.types';
 import type { CommonWrapperProps } from './wrappers.types';
 
-type SelectWrapperProps = CommonWrapperProps & Pick<SelectProps, 'options'>;
+type DateSelectorWrapperProps = CommonWrapperProps &
+  Pick<DateSelectorProps, 'copy' | 'maxYears'>;
 
-export const SelectWrapper: VFC<SelectWrapperProps> = ({
+export const DateSelectorWrapper: VFC<DateSelectorWrapperProps> = ({
   className,
   control,
-  dataTestRef,
+  copy,
   defaultValue,
-  errorMessage,
   isEnabled,
-  label,
+  maxYears,
   name,
-  options,
   rules,
   theme,
 }) => (
@@ -24,15 +23,15 @@ export const SelectWrapper: VFC<SelectWrapperProps> = ({
     defaultValue={defaultValue || ''}
     name={name}
     render={({ onChange, value }) => (
-      <Select
+      <DateSelector
         className={className}
-        dataTestRef={dataTestRef}
-        errorMessage={errorMessage}
+        copy={copy}
         isEnabled={isEnabled}
-        label={label}
+        maxYears={maxYears}
         name={name}
-        onChange={onChange}
-        options={options}
+        onChange={(date) => {
+          onChange(date);
+        }}
         theme={theme}
         value={value}
       />

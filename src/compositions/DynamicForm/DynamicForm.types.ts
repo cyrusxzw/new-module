@@ -1,13 +1,18 @@
 import type { ReactNode } from 'react';
 import type { Mode } from 'react-hook-form/dist/index.ie11';
+import type { DateSelectorProps } from '~/components/DateSelector/DateSelector.types';
 import type { SelectProps } from '~/components/Select/Select.types';
 import type { TextInputV2Props } from '~/components/TextInputV2/TextInputV2.types';
 import type { Themes } from '~/types';
 import type { FieldValidation } from './validators/validators.types';
 
 type CheckBox = { type: 'Checkbox' };
-type Select = { type: 'Select'; options: SelectProps['options'] };
-type TextField = { type: 'TextField'; subtype: TextInputV2Props['type'] };
+type DateSelector = { type: 'DateSelector' } & Pick<
+  DateSelectorProps,
+  'copy' | 'maxYears'
+>;
+type Select = { type: 'Select' } & Pick<SelectProps, 'options'>;
+type TextField = { type: 'TextField'; subtype?: TextInputV2Props['type'] };
 
 export type FieldSchema = {
   /** An initial value for the field. The value in `defaultValues` prop for the same field will take precedence */
@@ -15,6 +20,8 @@ export type FieldSchema = {
 
   /** The field's HTML id attribute */
   id?: string;
+
+  isEnabled?: boolean;
 
   /** The field's label, often used for accessibility */
   label?: string;
@@ -33,7 +40,7 @@ export type FieldSchema = {
 
   /** Contains validation rules for the form field */
   validation?: FieldValidation;
-} & (CheckBox | Select | TextField);
+} & (CheckBox | DateSelector | Select | TextField);
 
 type FormFieldsRow = FieldSchema[];
 
