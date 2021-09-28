@@ -19726,13 +19726,22 @@ html[lang*='ko'] .Quote-module_blockquote__1Ap9l,
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .DynamicForm-module_formRowWrapper__3_Xi_ > * {
-    margin: 20px 0;
+    margin: 10px 0;
   }
+.DynamicForm-module_formRowWrapper__3_Xi_ {
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 @media (min-width: 640px) {
 .DynamicForm-module_formRowWrapper__3_Xi_ {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
