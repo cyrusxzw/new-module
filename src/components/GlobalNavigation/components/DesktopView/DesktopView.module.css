@@ -3,8 +3,6 @@
 :root {
   --container-margin: 40px;
   --menu-height: 74px;
-  --alert-banner-height: 41px;
-  --shipping-banner-height: 43px;
 }
 
 .base {

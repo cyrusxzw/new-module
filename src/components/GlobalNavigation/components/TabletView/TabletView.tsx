@@ -84,7 +84,6 @@ const TabletView: TabletViewType = ({ className }) => {
       <div className={classSet} ref={focusTrapRef}>
         <PrimaryMenu onClose={handleOnClose} />
         <SecondaryMenu />
-        {/* {!isLegacyMenu && !isOpen && <Logo closedTheme={currentCloseLogoTheme} />} */}
       </div>
       {!isLegacyMenu && !isOpen && <Logo closedTheme={currentCloseLogoTheme} />}
       <div

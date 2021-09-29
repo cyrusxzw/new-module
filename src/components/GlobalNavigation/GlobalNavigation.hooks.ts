@@ -30,7 +30,7 @@ const useStickyNav = (
   stickyNavRef: MutableRefObject<HTMLElement>,
   stickyNavProps: StickyNavType,
   setStickyNavProps: (stickyNavProps: StickyNavType) => void,
-): { stickyNavProps: StickyNavType } => {
+): void => {
   const prevScrollY = useRef(0);
 
   useEffect(() => {
@@ -92,8 +92,6 @@ const useStickyNav = (
       window.removeEventListener('scroll', handleScroll);
     };
   }, [stickyNavProps]);
-
-  return { stickyNavProps };
 };
 
 export { useActiveView, useStickyNav };
