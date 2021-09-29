@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
 import {
@@ -6,6 +6,7 @@ import {
   useGlobalNavigationStateContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useTabletViewContext } from './TabletView.context';
+import { useStickyNav } from '../../GlobalNavigation.hooks';
 import {
   useEscapeKeyListener,
   useOverflowHidden,
@@ -29,6 +30,8 @@ const TabletView: TabletViewType = ({ className }) => {
     isOpen,
     setActiveCollectionId,
     setIsOpen,
+    stickyNavProps,
+    setStickyNavProps,
   } = useGlobalNavigationStateContext();
 
   const {
@@ -51,12 +54,24 @@ const TabletView: TabletViewType = ({ className }) => {
     onClose?.();
   };
 
+  const stickyNavRef = useRef();
+
+  useStickyNav(stickyNavRef, stickyNavProps, setStickyNavProps);
+
   useOverflowHidden(isOpen);
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
 
   const classSet = cx(
     styles.base,
     { [styles.open]: isOpen },
+    {
+      [styles.isVisibleStickyNav]:
+        stickyNavProps.isFixed && !stickyNavProps.isHidden && !isOpen,
+    },
+    {
+      [styles.isInvisibleStickyNav]:
+        stickyNavProps.isFixed && stickyNavProps.isHidden && !isOpen,
+    },
     { [closedClassName]: !isOpen },
     { [openClassName]: isOpen },
     { [styles.isLegacyMenu]: isLegacyMenu },
@@ -69,10 +84,14 @@ const TabletView: TabletViewType = ({ className }) => {
       <div className={classSet} ref={focusTrapRef}>
         <PrimaryMenu onClose={handleOnClose} />
         <SecondaryMenu />
-        {!isOpen && <Logo closedTheme={currentCloseLogoTheme} />}
+        {/* {!isLegacyMenu && !isOpen && <Logo closedTheme={currentCloseLogoTheme} />} */}
       </div>
-
-      <div aria-hidden={true} className={styles.absoluteBuffer} />
+      {!isLegacyMenu && !isOpen && <Logo closedTheme={currentCloseLogoTheme} />}
+      <div
+        aria-hidden={true}
+        className={styles.absoluteBuffer}
+        ref={stickyNavRef}
+      />
     </ThemeContextProvider>
   );
 };
