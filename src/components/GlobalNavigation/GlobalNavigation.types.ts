@@ -121,6 +121,7 @@ type StickyNavType = {
   isFixed: boolean;
   isHidden: boolean;
   topOffset: number;
+  isLoaded: boolean;
 };
 
 type GlobalNavigationStateContextType = {

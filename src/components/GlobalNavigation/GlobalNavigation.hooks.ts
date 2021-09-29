@@ -34,6 +34,9 @@ const useStickyNav = (
   const prevScrollY = useRef(0);
 
   useEffect(() => {
+    const handleLoad = () => {
+      setStickyNavProps({ ...stickyNavProps, isLoaded: true });
+    };
     const handleScroll = () => {
       const currentOffset = (stickyNavRef.current.offsetParent as HTMLElement)
         .offsetTop;
@@ -78,9 +81,16 @@ const useStickyNav = (
       prevScrollY.current = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('load', handleLoad);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    if (stickyNavProps.isLoaded) {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [stickyNavProps]);
 
   return { stickyNavProps };

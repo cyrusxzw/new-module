@@ -25,6 +25,7 @@ const useGlobalNavigationStateStore: UseGlobalNavigationStateStore = ({
     isFixed: false,
     isHidden: false,
     topOffset: 0,
+    isLoaded: false,
   });
 
   return {
