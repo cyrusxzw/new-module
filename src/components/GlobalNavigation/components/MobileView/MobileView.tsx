@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
+import { useStickyNav } from '../../GlobalNavigation.hooks';
 import {
   useEscapeKeyListener,
   useOverflowHidden,
@@ -22,6 +23,8 @@ const MobileView: MobileViewType = ({ className }) => {
     setActiveCollectionId,
     setIsOpen,
     activeCollectionId,
+    stickyNavProps,
+    setStickyNavProps,
   } = useGlobalNavigationStateContext();
 
   const {
@@ -55,9 +58,21 @@ const MobileView: MobileViewType = ({ className }) => {
 
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
 
+  const stickyNavRef = useRef();
+
+  useStickyNav(stickyNavRef, stickyNavProps, setStickyNavProps);
+
   const classSet = cx(
     styles.base,
     { [styles.open]: isOpen },
+    {
+      [styles.isVisibleStickyNav]:
+        stickyNavProps.isFixed && !stickyNavProps.isHidden && !isOpen,
+    },
+    {
+      [styles.isInvisibleStickyNav]:
+        stickyNavProps.isFixed && stickyNavProps.isHidden && !isOpen,
+    },
     { [closedClassName]: !isOpen },
     { [openClassName]: isOpen },
     styles[currentTheme],
@@ -77,7 +92,6 @@ const MobileView: MobileViewType = ({ className }) => {
         <Transition isActive={isOpen} type="fixed">
           <div className={classSet} ref={focusTrapRef}>
             <Header onClose={handleOnClose} />
-
             <Transition isActive={isOpen} type="fadeIn">
               <div className={cx(styles.main, { [styles.open]: isOpen })}>
                 <PrimaryMenu
@@ -91,6 +105,11 @@ const MobileView: MobileViewType = ({ className }) => {
           </div>
         </Transition>
       </div>
+      <div
+        aria-hidden={true}
+        className={styles.absoluteBuffer}
+        ref={stickyNavRef}
+      />
     </ThemeContextProvider>
   );
 };

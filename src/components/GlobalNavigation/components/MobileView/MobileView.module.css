@@ -19,6 +19,28 @@
     opacity: 1;
   }
 
+  &.isVisibleStickyNav,
+  &.isInvisibleStickyNav {
+    position: fixed;
+    height: 90px;
+    transition: top 300ms var(--easing-ease-in-out-cubic);
+    &.dark {
+      background-color: var(--color-primary);
+    }
+
+    &.light {
+      background-color: var(--color-secondary);
+    }
+  }
+
+  &.isVisibleStickyNav {
+    top: 0;
+  }
+
+  &.isInvisibleStickyNav {
+    top: -90px;
+  }
+
   &.open {
     position: fixed;
     z-index: var(--z-index-fixed-menu);
@@ -193,4 +215,11 @@
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.absoluteBuffer {
+  position: absolute;
+  height: 90px;
+  pointer-events: none;
+  visibility: hidden;
 }
