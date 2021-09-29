@@ -10,7 +10,7 @@
   padding-right: 34px;
   padding-left: 34px;
   background-color: transparent;
-  pointer-events: none;
+  pointer-events: auto;
   transition: background-color 200ms var(--easing-ease-in-out-cubic);
 
   /* Added to more elegantly transition between breakpoints */
