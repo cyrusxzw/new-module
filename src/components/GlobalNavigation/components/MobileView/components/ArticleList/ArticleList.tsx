@@ -23,11 +23,13 @@ const ArticleList: ArticleListType = ({ className, theme, items }) => {
 
   return (
     <div className={classSet}>
+      <div className={styles.articleCarousel}>
       <aside aria-label="navigation read articles">
         {items?.map((item) => (
-          <ArticleCard {...item} isVisible={isVisible} key={item.id} />
+          <ArticleCard {...item} isVisible={isVisible} key={item.id}/>
         ))}
       </aside>
+      </div>
     </div>
   );
 };
