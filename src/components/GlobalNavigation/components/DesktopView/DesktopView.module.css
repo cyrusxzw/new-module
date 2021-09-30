@@ -60,7 +60,7 @@
   &.isVisibleStickyNav,
   &.isInvisibleStickyNav {
     position: fixed;
-    height: 74px;
+    height: var(--menu-height); 
     transition: top 300ms var(--easing-ease-in-out-cubic);
   }
 
@@ -69,7 +69,7 @@
   }
 
   &.isInvisibleStickyNav {
-    top: -74px;
+    top: calc(0 - var(--menu-height));
   }
 
   &.light::before {

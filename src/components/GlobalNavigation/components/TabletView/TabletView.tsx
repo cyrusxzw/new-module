@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
 import {
@@ -9,6 +9,7 @@ import { useTabletViewContext } from './TabletView.context';
 import { useStickyNav } from '../../GlobalNavigation.hooks';
 import {
   useEscapeKeyListener,
+  useOnScreen,
   useOverflowHidden,
   useTrapFocus,
 } from '~/customHooks';
@@ -42,10 +43,14 @@ const TabletView: TabletViewType = ({ className }) => {
   } = useTabletViewContext();
 
   const contextTheme = useThemeContext(theme, 'dark');
-  const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
-
   const currentTheme = isOpen ? 'dark' : contextTheme;
   const currentCloseLogoTheme = closedLogoTheme || currentTheme;
+
+  const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
+  const stickyNavRef = useStickyNav(stickyNavProps, setStickyNavProps);
+  const isCompletelyOnScreen = useOnScreen(stickyNavRef, 1, undefined, true);
+
+  useOverflowHidden(isOpen);
 
   const handleOnClose = () => {
     setActiveCollectionId('top');
@@ -54,11 +59,6 @@ const TabletView: TabletViewType = ({ className }) => {
     onClose?.();
   };
 
-  const stickyNavRef = useRef();
-
-  useStickyNav(stickyNavRef, stickyNavProps, setStickyNavProps);
-
-  useOverflowHidden(isOpen);
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
 
   const classSet = cx(
@@ -66,11 +66,17 @@ const TabletView: TabletViewType = ({ className }) => {
     { [styles.open]: isOpen },
     {
       [styles.isVisibleStickyNav]:
-        stickyNavProps.isFixed && !stickyNavProps.isHidden && !isOpen,
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        !stickyNavProps.isHidden &&
+        !isOpen,
     },
     {
       [styles.isInvisibleStickyNav]:
-        stickyNavProps.isFixed && stickyNavProps.isHidden && !isOpen,
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        stickyNavProps.isHidden &&
+        !isOpen,
     },
     { [closedClassName]: !isOpen },
     { [openClassName]: isOpen },

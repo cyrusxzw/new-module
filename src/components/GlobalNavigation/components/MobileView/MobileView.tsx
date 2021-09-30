@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
 import { useStickyNav } from '../../GlobalNavigation.hooks';
 import {
   useEscapeKeyListener,
+  useOnScreen,
   useOverflowHidden,
   useTrapFocus,
 } from '~/customHooks';
@@ -44,6 +45,8 @@ const MobileView: MobileViewType = ({ className }) => {
 
   const currentTheme = useThemeContext(theme, 'dark');
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
+  const stickyNavRef = useStickyNav(stickyNavProps, setStickyNavProps);
+  const isCompletelyOnScreen = useOnScreen(stickyNavRef, 1, undefined, true);
 
   useOverflowHidden(isOpen);
 
@@ -58,20 +61,22 @@ const MobileView: MobileViewType = ({ className }) => {
 
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
 
-  const stickyNavRef = useRef();
-
-  useStickyNav(stickyNavRef, stickyNavProps, setStickyNavProps);
-
   const classSet = cx(
     styles.base,
     { [styles.open]: isOpen },
     {
       [styles.isVisibleStickyNav]:
-        stickyNavProps.isFixed && !stickyNavProps.isHidden && !isOpen,
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        !stickyNavProps.isHidden &&
+        !isOpen,
     },
     {
       [styles.isInvisibleStickyNav]:
-        stickyNavProps.isFixed && stickyNavProps.isHidden && !isOpen,
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        stickyNavProps.isHidden &&
+        !isOpen,
     },
     { [closedClassName]: !isOpen },
     { [openClassName]: isOpen },

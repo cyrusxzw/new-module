@@ -24,8 +24,7 @@ const useGlobalNavigationStateStore: UseGlobalNavigationStateStore = ({
   const [stickyNavProps, setStickyNavProps] = useState({
     isFixed: false,
     isHidden: false,
-    topOffset: 0,
-    isLoaded: false,
+    offsetTop: 0,
   });
 
   return {

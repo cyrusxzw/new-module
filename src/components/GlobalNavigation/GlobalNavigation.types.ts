@@ -1,4 +1,9 @@
-import type { Dispatch, SetStateAction, ReactElement } from 'react';
+import type {
+  Dispatch,
+  SetStateAction,
+  ReactElement,
+  MutableRefObject,
+} from 'react';
 import type { Themes, ComponentWithChildren } from '~/types';
 
 // type Tracking = {}; // @TODO https://aesoponline.atlassian.net/browse/CON-315
@@ -120,8 +125,15 @@ type ActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
 type StickyNavType = {
   isFixed: boolean;
   isHidden: boolean;
-  topOffset: number;
-  isLoaded: boolean;
+  offsetTop: number;
+};
+
+type StickyNavScrollType = {
+  stickyNavProps: StickyNavType;
+  setStickyNavProps: (stickyNavProps: StickyNavType) => void;
+  stickyNavRef?: MutableRefObject<HTMLDivElement | null>;
+  prevScrollY?: MutableRefObject<number>;
+  currentOffset?: number;
 };
 
 type GlobalNavigationStateContextType = {
@@ -198,6 +210,7 @@ export type {
   Promotion,
   Read,
   StickyNavType,
+  StickyNavScrollType,
   Trigger,
   UseGlobalNavigationStateContext,
   UseGlobalNavigationStateStore,

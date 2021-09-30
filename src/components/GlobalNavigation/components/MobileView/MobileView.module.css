@@ -1,5 +1,12 @@
 @import 'styles/index';
 
+:root {
+  /* Represents final menu height of nav container 
+  ** Mobile height set by Header component of Padding 20 20 20 20 & Height: 50px
+  */ 
+  --menu-height: 90px;
+}
+
 .presentationalWrapper {
   height: 80px;
 }
@@ -22,7 +29,7 @@
   &.isVisibleStickyNav,
   &.isInvisibleStickyNav {
     position: fixed;
-    height: 90px;
+    height: var(--menu-height);
     transition: top 300ms var(--easing-ease-in-out-cubic);
     &.dark {
       background-color: var(--color-primary);
@@ -38,7 +45,7 @@
   }
 
   &.isInvisibleStickyNav {
-    top: -90px;
+    top: calc(0 - var(--menu-height));
   }
 
   &.open {
@@ -219,7 +226,10 @@
 
 .absoluteBuffer {
   position: absolute;
-  height: 90px;
+  top: 0;
+  width: 100%;
+  height: var(--menu-height); 
   pointer-events: none;
   visibility: hidden;
 }
+

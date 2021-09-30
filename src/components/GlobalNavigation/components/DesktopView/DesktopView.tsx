@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
 import {
@@ -9,6 +9,7 @@ import { useDesktopViewContext } from './DesktopView.context';
 import { useStickyNav } from '../../GlobalNavigation.hooks';
 import {
   useEscapeKeyListener,
+  useOnScreen,
   useOverflowHidden,
   useTrapFocus,
 } from '~/customHooks';
@@ -39,12 +40,12 @@ const DesktopView: DesktopViewType = ({ className }) => {
     openClassName,
   } = useDesktopViewContext();
 
-  const stickyNavRef = useRef();
-
-  useStickyNav(stickyNavRef, stickyNavProps, setStickyNavProps);
+  const contextTheme = useThemeContext(theme, 'dark');
+  const currentTheme = isOpen ? 'dark' : contextTheme;
 
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
-  const contextTheme = useThemeContext(theme, 'dark');
+  const stickyNavRef = useStickyNav(stickyNavProps, setStickyNavProps);
+  const isCompletelyOnScreen = useOnScreen(stickyNavRef, 1, undefined, true);
 
   const handleOnClose = () => {
     setActiveCollectionId('top');
@@ -55,18 +56,22 @@ const DesktopView: DesktopViewType = ({ className }) => {
   useOverflowHidden(isOpen);
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
 
-  const currentTheme = isOpen ? 'dark' : contextTheme;
-
   const classSet = cx(
     styles.base,
     { [closedClassName]: !isOpen },
     {
       [styles.isVisibleStickyNav]:
-        stickyNavProps.isFixed && !stickyNavProps.isHidden && !isOpen,
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        !stickyNavProps.isHidden &&
+        !isOpen,
     },
     {
       [styles.isInvisibleStickyNav]:
-        stickyNavProps.isFixed && stickyNavProps.isHidden && !isOpen,
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        stickyNavProps.isHidden &&
+        !isOpen,
     },
     { [styles.isLegacyMenu]: isLegacyMenu },
     { [styles.open]: isOpen },
