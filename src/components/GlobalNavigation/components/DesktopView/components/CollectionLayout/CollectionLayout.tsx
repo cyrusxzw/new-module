@@ -24,7 +24,6 @@ const CollectionLayout: CollectionLayoutType = ({
   const {
     nestedCollections,
     notableNestedCollections,
-    taxonomyOfDesignElement,
     topLevelCollections,
   } = getCollectionLists(items);
 
@@ -61,13 +60,6 @@ const CollectionLayout: CollectionLayoutType = ({
                   key={id}
                 />
               ))}
-
-            {!!taxonomyOfDesignElement && (
-              <CollectionList
-                dataTestRef={`NAV_${currentId.toUpperCase()}_NECO_TOD`}
-                items={[taxonomyOfDesignElement]}
-              />
-            )}
           </div>
 
           <div className={styles.notableNestedCollections}>

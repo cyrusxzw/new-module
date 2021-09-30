@@ -166,7 +166,6 @@ type GetCollectionLists = (
 ) => {
   nestedCollections: NestedCollection[];
   notableNestedCollections: NotableNestedCollection[];
-  taxonomyOfDesignElement: Link | null;
   topLevelCollections: Link[];
 };
 
