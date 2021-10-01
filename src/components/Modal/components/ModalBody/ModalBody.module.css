@@ -34,23 +34,43 @@
 }
 
 .closeIcon {
-  fill: var(--color-grey-10);
+  .dark & {
+    fill: var(--color-dark-label);
+  }
+
+  .light & {
+    fill: var(--color-light-label);
+  }
+
+  .dark .closeButton:hover & {
+    fill: var(--color-secondary);
+  }
+
+  .light .closeButton:hover & {
+    fill: var(--color-primary);
+  }
 }
 
 .closeButton {
   position: absolute;
   top: var(--layout-sm-spacing);
   right: var(--layout-sm-spacing);
-  width: 30px;
-  height: 30px;
-  padding: 2px 4px 0 4px;
+  width: 14px;
+  height: 14px;
+  transition: outline-offset 300ms var(--easing-ease-out-cubic);
 
   @media (--viewport-md) {
     top: 18px;
     right: 20px;
   }
 
-  &:focus {
-    outline-color: var(--color-grey-20);
+  .dark &:focus-visible {
+    outline: 1px dashed var(--color-dark-copy-alternate);
+    outline-offset: 2px;
+  }
+
+  .light &:focus-visible {
+    outline: 1px dashed var(--color-light-copy-alternate);
+    outline-offset: 2px;
   }
 }

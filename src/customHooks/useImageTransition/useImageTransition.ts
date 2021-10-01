@@ -43,7 +43,15 @@ const useImageTransition: UseImageTransition = (
         currentRef.removeEventListener('load', handleOnImageLoad);
       }
     };
-  }, [image, ref]); // eslint-disable-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    image?.sizes?.large,
+    image?.sizes?.medium,
+    image?.sizes?.small,
+    image?.sizes?.xLarge,
+    image?.sizes?.xSmall,
+    ref,
+  ]);
 
   return [currentImage, isImageActive];
 };

@@ -1,7 +1,7 @@
 @import 'styles/variables/index';
 
-%transition-opacity-500ms-linear {
-  transition: opacity 500ms linear;
+%transition-opacity-200ms-linear {
+  transition: opacity 200ms linear;
 }
 
 %transition-opacity-1500ms-linear {
@@ -13,15 +13,18 @@
 }
 
 %transition-transform-1500ms-ease-out-opacity-1500ms-linear {
-  transition:
-    transform 1500ms var(--easing-ease-out-cubic),
+  transition: transform 1500ms var(--easing-ease-out-cubic),
     opacity 1500ms linear;
 }
 
 %transition-transform-800ms-ease-out-visibility-800ms-ease-out {
-  transition:
-    transform 800ms var(--easing-ease-out-cubic),
+  transition: transform 800ms var(--easing-ease-out-cubic),
     visibility 800ms var(--easing-ease-out-cubic);
+}
+
+%transition-transform-400ms-ease-out-visibility-400ms-ease-out {
+  transition: transform 400ms var(--easing-ease-out-cubic),
+    visibility 400ms var(--easing-ease-out-cubic);
 }
 
 .fadeEnter {
@@ -29,7 +32,7 @@
 }
 
 .fadeEnterActive {
-  @extend %transition-opacity-500ms-linear;
+  @extend %transition-opacity-200ms-linear;
 
   opacity: 1;
 }
@@ -43,13 +46,84 @@
 }
 
 .fadeExitActive {
-  @extend %transition-opacity-500ms-linear;
+  @extend %transition-opacity-200ms-linear;
 
   opacity: 0;
 }
 
 .fadeExitDone {
   opacity: 0;
+}
+
+.fadeInEnter {
+  position: absolute !important;
+  right: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.fadeInEnterActive {
+  @extend %transition-opacity-200ms-linear;
+
+  position: relative;
+  opacity: 1;
+}
+
+.fadeInEnterDone {
+  opacity: 1;
+}
+
+.fadeInExit {
+  opacity: 1;
+}
+
+.fadeInExitActive {
+  @extend %transition-opacity-200ms-linear;
+
+  opacity: 0;
+}
+
+.fadeInExitDone {
+  position: absolute !important;
+  right: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.fixedEnter {
+  position: relative;
+}
+
+.fixedEnterActive {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.fixedEnterDone {
+  position: fixed;
+}
+
+.fixedExit {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.fixedExitActive {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.fixedExitDone {
+  position: relative;
 }
 
 .shiftInDownEnter {
@@ -219,6 +293,40 @@
 
 .slideRightExitDone {
   transform: translate3d(-100%, 0, 0);
+  visibility: hidden;
+}
+
+.slideLeftEnter {
+  transform: translate3d(100%, 0, 0);
+  visibility: hidden;
+}
+
+.slideLeftEnterActive {
+  @extend %transition-transform-400ms-ease-out-visibility-400ms-ease-out;
+
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+}
+
+.slideLeftEnterDone {
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+}
+
+.slideLeftExit {
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+}
+
+.slideLeftExitActive {
+  @extend %transition-transform-400ms-ease-out-visibility-400ms-ease-out;
+
+  transform: translate3d(100%, 0, 0);
+  visibility: hidden;
+}
+
+.slideLeftExitDone {
+  transform: translate3d(100%, 0, 0);
   visibility: hidden;
 }
 

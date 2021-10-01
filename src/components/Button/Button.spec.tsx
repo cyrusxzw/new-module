@@ -17,7 +17,7 @@ describe('<Button />', () => {
     const button = screen.getByRole('button', { name: /button/i });
 
     expect(container).toMatchSnapshot();
-    expect(button).toBeTruthy();
+    expect(button).toBeInTheDocument();
   });
 
   it('should return `null` if no children are passed', () => {

@@ -17,6 +17,7 @@
   --color-grey-90: #f5f5f5;
   --color-grey-80: #eee;
   --color-grey-70: #e5e5e5;
+  --color-grey-67: #d8d8d8;
   --color-grey-65: #d5d4c9;
   --color-grey-63: #ccc;
   --color-grey-60: #bcbbb4;
@@ -36,7 +37,7 @@
   --color-light-label: var(--color-white-darker);
   --color-light-link: var(--color-white);
   --color-light-link-hover: var(--color-white-dark);
-  --color-light-decoration: var(--color-white-darker);
+  --color-light-decoration: var(--color-grey-60);
   --color-light-disabled: var(--color-grey-40);
 
   /* UI colours dark theme */
@@ -45,7 +46,7 @@
   --color-dark-label: var(--color-grey-30);
   --color-dark-link: var(--color-secondary);
   --color-dark-link-hover: var(--color-secondary);
-  --color-dark-decoration: var(--color-grey-30);
+  --color-dark-decoration: var(--color-grey-60);
   --color-dark-disabled: var(--color-grey-57);
 
   /* Background colours */

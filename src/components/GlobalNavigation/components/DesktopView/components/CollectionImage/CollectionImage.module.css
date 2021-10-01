@@ -1,0 +1,14 @@
+@import 'styles/index';
+
+.base {
+  width: calc(100% * 4 / 12);
+}
+
+.image {
+  height: 100%;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}

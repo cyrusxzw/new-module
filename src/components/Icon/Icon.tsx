@@ -2,22 +2,25 @@ import React from 'react';
 import cx from 'classnames';
 import { useUID } from 'react-uid';
 import find from 'lodash/find';
+import { useThemeContext } from '~/contexts';
 import { svgs } from './Icon.svgs';
 import { generateSvgBlueprint } from './Icon.utils';
 import type { IconType } from './Icon.types';
 import styles from './Icon.module.css';
 
 const Icon: IconType = ({
+  aria,
   className,
   dataRef,
   height = 12,
   isActive = false,
   name,
   tabIndex = -1,
-  theme = 'dark',
+  theme,
   title,
   width = 12,
 }) => {
+  const contextTheme = useThemeContext(theme, 'dark');
   const uid = useUID();
   const svg = find(svgs, { name });
 
@@ -31,7 +34,7 @@ const Icon: IconType = ({
   const classSet = cx(
     styles.base,
     styles[name],
-    styles[theme],
+    styles[contextTheme],
     {
       [styles.isActive]: isActive,
     },
@@ -40,6 +43,7 @@ const Icon: IconType = ({
 
   return (
     <svg
+      aria-hidden={aria?.hidden || undefined}
       aria-labelledby={uidAriaLabelBy}
       className={classSet}
       data-ref={dataRef}

@@ -38,9 +38,12 @@ const AddToCartButton: AddToCartButtonType = ({
     price,
     sku,
   } = selectedVariant;
-  const cartActionLabel = !copy?.postTaxPrice
+
+  const cartActionText = copy?.cartAction
     ? `${copy?.cartAction} — ${price}`
-    : `${copy?.cartAction} — ${price} ${copy?.postTaxPrice}`;
+    : price;
+  const postTaxPriceText = copy?.postTaxPrice ? ` ${copy?.postTaxPrice}` : '';
+  const cartActionLabel = cartActionText + postTaxPriceText;
 
   const classSet = cx(
     styles.base,
@@ -59,6 +62,7 @@ const AddToCartButton: AddToCartButtonType = ({
       <Hyperlink
         className={classSet}
         dataTestRef={dataTestRef}
+        hasTargetInNewWindow={alternateAction?.openInANewWindow}
         isAlternate={true}
         style={HYPERLINK_STYLE_TYPES.INTERNAL_NO_ICON_BUTTON_LINK}
         theme={theme}

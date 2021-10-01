@@ -11,6 +11,7 @@ type ImageProps = {
     openInANewWindow?: boolean;
     url?: string;
   };
+  height?: string;
   id?: string;
   isFullBleedImage?: boolean;
   isLazyLoaded?: boolean;
@@ -24,6 +25,7 @@ type ImageProps = {
   style?: CSSProperties;
   type?: string;
   theme?: Themes;
+  width?: string;
 };
 
 export type { ImageProps, ImageSizeName, ImageSizeCode };

@@ -84,7 +84,7 @@ describe('<Select />', () => {
     const errorMessageElement = screen.getByText(errorMessage);
 
     expect(errorMessageElement).toBeVisible();
-    expect(dropDownElement).toHaveDescription(errorMessage);
+    expect(dropDownElement).toHaveAccessibleDescription(errorMessage);
 
     const a11lyResults = await axe(container);
     expect(a11lyResults).toHaveNoViolations();
@@ -103,5 +103,20 @@ describe('<Select />', () => {
     // TODO: suffers from this issue https://github.com/nickcolley/jest-axe/issues/147
     // const a11lyResults = await axe(container);
     // expect(a11lyResults).toHaveNoViolations();
+  });
+
+  it(`should disable the input when isEnabled is false`, () => {
+    render(
+      <Select
+        isEnabled={false}
+        label="disabled dropdown"
+        name={name}
+        onChange={onChange}
+        options={options}
+      />,
+    );
+    const dropDownElement = screen.getByRole('combobox');
+
+    expect(dropDownElement).toBeDisabled();
   });
 });

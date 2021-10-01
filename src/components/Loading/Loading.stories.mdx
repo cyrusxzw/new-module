@@ -10,7 +10,18 @@ import { Loading } from './Loading';
 <Canvas>
   <Story name="Base component">
     {(() => {
+      const align = knobs.select(
+        'align',
+        ['start', 'center', 'end'],
+        'center',
+        'Presentation',
+      );
       const isLoading = knobs.boolean('isLoading', true, 'Presentation');
+      const screenReaderText = knobs.text(
+        'screenReaderText',
+        'Loading',
+        'Presentation',
+      );
       const shouldFillSpace = knobs.boolean(
         'shouldFillSpace',
         false,
@@ -41,7 +52,9 @@ import { Loading } from './Loading';
       return (
         <>
           <Loading
+            align={align}
             isLoading={isLoading}
+            screenReaderText={screenReaderText}
             shouldFillSpace={shouldFillSpace}
             size={size}
             theme={theme}

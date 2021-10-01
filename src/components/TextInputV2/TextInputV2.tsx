@@ -42,13 +42,14 @@ const TextInputV2 = forwardRef<HTMLInputElement, TextInputV2Props>(
       <div className={cx(styles.wrapper, classNames?.wrapper)}>
         <div>
           <input
-            aria-describedby={errorMessageId}
+            aria-describedby={errorMessage ? errorMessageId : undefined}
             aria-invalid={!!errorMessage}
             autoComplete={autoComplete}
             className={cx(
               styles.input,
               styles[theme],
               { [styles.hasError]: errorMessage },
+              { [styles.isDisabled]: !isEnabled },
               classNames?.input,
             )}
             data-test-ref={dataTestRef}

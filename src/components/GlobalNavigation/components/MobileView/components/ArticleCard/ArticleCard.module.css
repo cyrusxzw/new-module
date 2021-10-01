@@ -1,0 +1,46 @@
+@import 'styles/index';
+
+.base {
+  box-sizing: border-box;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  &.dark {
+    color: var(--color-dark-label);
+  }
+
+  &.light {
+    color: var(--color-light-label);
+  }
+}
+
+.image {
+  overflow: hidden;
+  max-height: 240px;
+  aspect-ratio: 16 / 9;
+  pointer-events: none;
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}
+
+.metaLabel {
+  margin-top: 12px;
+  font-family: var(--font-family-sans-serif-regular);
+  line-height: 1.4;
+}
+
+.label {
+  margin-bottom: 0;
+  font-size: rem(20px);
+  line-height: 1.33;
+}
+
+.leftAligned {
+  flex-direction: column;
+  align-items: start;
+}

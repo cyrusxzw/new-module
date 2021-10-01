@@ -1,0 +1,21 @@
+@import 'styles/index';
+
+.base {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: fit-content;
+  min-height: 100%;
+  padding: 135px 34px 80px;
+  pointer-events: none;
+}
+
+.offset {
+  transform: translateY(-5px);
+}
+
+.active {
+  pointer-events: auto;
+}

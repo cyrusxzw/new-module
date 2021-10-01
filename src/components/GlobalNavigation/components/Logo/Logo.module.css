@@ -1,0 +1,93 @@
+@import 'styles/index';
+
+:root {
+  --top-spacing: 40px;
+  --menu-height: 74px;
+  --desktop-offset: 80px;
+  --desktop-closed-offset: 25px;
+  --tablet-offset: 50px;
+  --tablet-closed-offset: 40px;
+}
+
+.base.base {
+  padding: 5px;
+  transition: color 200ms var(--easing-ease-out-cubic),
+    outline-offset 200ms var(--easing-ease-out-cubic);
+
+  &,
+  & * {
+    box-sizing: content-box;
+  }
+
+  &.dark:focus-visible {
+    outline: 1px dashed var(--color-dark-decoration);
+    outline-offset: 2px;
+  }
+
+  &.light:focus-visible {
+    outline: 1px dashed var(--color-light-decoration);
+    outline-offset: 2px;
+  }
+}
+
+.desktop,
+.tablet {
+  position: absolute;
+  z-index: 20;
+  pointer-events: auto;
+  transform: translateX(-5px);
+}
+
+.desktop {
+  top: calc(
+    var(--desktop-offset) + var(--menu-height) + var(--desktop-closed-offset)
+  );
+  left: 40px;
+
+  &.active {
+    top: calc(var(--desktop-offset) + var(--menu-height));
+  }
+}
+
+.tablet {
+  top: calc(
+    var(--tablet-offset) + var(--menu-height) + var(--tablet-closed-offset)
+  );
+  left: 34px;
+
+  &.active {
+    top: var(--tablet-offset);
+  }
+}
+
+.mobile {
+  width: 70px;
+  height: 22px;
+  transform: translate(-5px, -5px);
+}
+
+.icon {
+  .dark & {
+    fill: var(--color-secondary);
+  }
+
+  .light & {
+    fill: var(--color-primary);
+  }
+
+  .dark.active & {
+    fill: var(--color-secondary);
+  }
+
+  .light.active & {
+    fill: var(--color-primary);
+  }
+
+  .base.dark:hover & {
+    fill: var(--color-black);
+  }
+
+  .base.light:hover & {
+    fill: var(--color-white);
+  }
+}

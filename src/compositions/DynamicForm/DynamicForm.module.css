@@ -2,11 +2,13 @@
 
 .formRowWrapper {
   > * {
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
+  display: flex;
+  flex-direction: column;
+
   @media (--viewport-md) {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 15px 0;

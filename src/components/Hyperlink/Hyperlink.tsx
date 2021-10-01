@@ -20,8 +20,10 @@ const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
       hasTargetInNewWindow = false,
       isAlternate,
       isDownload,
+      kind,
       onClick,
-      style = 'Internal No Icon Link',
+      style,
+      tabIndex,
       textAlign = 'left',
       theme = 'dark',
       title,
@@ -29,9 +31,10 @@ const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
     },
     ref,
   ) => {
-    const isInline = checkIsInlineFromStyle(style);
-    const isExternal = checkIsExternalFromStyle(style);
-    const hasIcon = hasIconFromStyle(style);
+    const linkStyle = style || kind || 'Internal No Icon Link';
+    const isInline = checkIsInlineFromStyle(linkStyle);
+    const isExternal = checkIsExternalFromStyle(linkStyle);
+    const hasIcon = hasIconFromStyle(linkStyle);
     const target = getTargetType(hasTargetInNewWindow);
     const classSet = cx(
       styles.base,
@@ -60,6 +63,7 @@ const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
         href={url}
         onClick={onClick}
         ref={ref}
+        tabIndex={tabIndex}
         target={target}
         title={title}
       >

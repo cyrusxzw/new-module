@@ -1,5 +1,7 @@
-import { addDecorator } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
+import {
+  INITIAL_VIEWPORTS,
+  MINIMAL_VIEWPORTS,
+} from '@storybook/addon-viewport';
 
 const parameters = {
   a11y: {
@@ -30,8 +32,26 @@ const parameters = {
       order: ['Compositions', 'Contexts', 'Hooks', 'Form Elements'],
     },
   },
+  viewport: {
+    viewports: {
+      ...MINIMAL_VIEWPORTS,
+      desktop: {
+        name: 'Desktop',
+        styles: {
+          height: '1025px',
+          width: '1440px',
+        },
+      },
+      wideDesktop: {
+        name: 'Wide Desktop',
+        styles: {
+          height: '1080px',
+          width: '1920px',
+        },
+      },
+      ...INITIAL_VIEWPORTS,
+    },
+  },
 };
-
-addDecorator(withKnobs);
 
 export { parameters };

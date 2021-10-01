@@ -6,7 +6,7 @@ import {
   useVariantSelectContext,
 } from '~/contexts';
 import { Breadcrumbs } from '~/components/Breadcrumbs';
-import { Hidden } from '~/components/Hidden/index.ts';
+import { Hidden } from '~/components/Hidden';
 import { ProductDetailBody } from './components/ProductDetailBody';
 import { ProductDetailImage } from './components/ProductDetailImage';
 import type { BreadcrumbItem } from '~/components/Breadcrumbs/Breadcrumbs.types';
@@ -45,7 +45,7 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
           className={styles.content}
           data-testid="data-testid-ProductDetailHeader-content"
         >
-          <Hidden isSmall={true}>
+          <Hidden when={['sm']}>
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}
@@ -72,7 +72,7 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
           className={imageClassSet}
           data-testid="data-testid-ProductDetailHeader-image"
         >
-          <Hidden isLarge={true} isMedium={true} isXLarge={true}>
+          <Hidden when={['md', 'lg', 'xl']}>
             <Breadcrumbs
               className={styles.breadcrumbs}
               items={breadcrumbs.items}

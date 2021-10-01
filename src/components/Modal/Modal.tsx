@@ -2,7 +2,13 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import { useEscapeKeyListener, useOverflowHidden } from '~/customHooks';
+import {
+  useEscapeKeyListener,
+  useFocusOnFirst,
+  useOverflowHidden,
+  useTrapFocus,
+} from '~/customHooks';
+import { mergeRefs } from '~/utils/mergeRefs';
 import { getPortalRoot } from '~/utils/portal';
 import { ModalBody } from './components/ModalBody';
 import { Overlay } from '~/components/Overlay';
@@ -13,6 +19,7 @@ import styles from './Modal.module.css';
 const modalRoot = getPortalRoot('aesop-gel-modal-root');
 
 const Modal: ModalType = ({
+  aria,
   children,
   className,
   copy,
@@ -20,10 +27,14 @@ const Modal: ModalType = ({
   onClose,
   theme,
 }) => {
+  const [modalRef] = useFocusOnFirst(isVisible);
+  const [focusTrapRef] = useTrapFocus(isVisible);
+  const currentTheme = useThemeContext(theme, 'dark');
+
   useEscapeKeyListener(onClose);
   useOverflowHidden(isVisible);
 
-  const currentTheme = useThemeContext(theme, 'dark');
+  const ref = mergeRefs(modalRef, focusTrapRef);
   const classSet = cx(styles.base, styles[currentTheme], className);
 
   return (
@@ -39,9 +50,11 @@ const Modal: ModalType = ({
           >
             <aside
               aria-hidden={!isVisible}
+              aria-label={aria?.label}
               aria-modal="true"
               className={classSet}
               data-testid="data-testid-Modal"
+              ref={ref}
               role="dialog"
             >
               <div className={styles.inner}>

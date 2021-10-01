@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import { Heading } from '~/components/Heading/index.ts';
+import { Heading } from '~/components/Heading';
 import { getEyebrowLevel, getSubHeadingLevel } from './SectionHeading.utils';
 import type { SectionHeadingType } from './SectionHeading.types';
 import styles from './SectionHeading.module.css';

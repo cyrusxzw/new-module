@@ -59,7 +59,7 @@ const Footer = ({
         </div>
         <div className={styles.bottom}>
           <span>&copy; Aesop</span>
-          <Hidden isLarge={true} isXLarge={true}>
+          <Hidden when={['lg', 'xl']}>
             <div>
               {iconLinks?.length &&
                 iconLinks.map((icon) => (

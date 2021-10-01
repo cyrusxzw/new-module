@@ -1,0 +1,37 @@
+@import 'styles/index';
+
+:root {
+  --offset: 90px;
+  --column-spacing: 30px;
+}
+
+.nestedCollectionsWrapper {
+  display: flex;
+}
+
+.nestedCollections,
+.notableNestedCollections {
+  width: calc(50% + var(--column-spacing));
+  padding-right: var(--column-spacing);
+}
+
+.collectionsWrapper {
+  width: calc(100% * 2 / 12 + var(--column-spacing));
+  padding-right: var(--column-spacing);
+  margin-top: var(--offset);
+  margin-bottom: 40px;
+  margin-left: calc(100% * 2 / 12);
+}
+
+.supplementary {
+  display: flex;
+  width: calc(100% * 4 / 12);
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: var(--offset);
+  margin-bottom: 40px;
+}
+
+.promotion {
+  width: calc(100% * 9 / 12);
+}

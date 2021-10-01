@@ -20,8 +20,11 @@ type HyperlinkProps = {
   id?: string;
   isAlternate?: boolean;
   isDownload?: boolean;
+  kind?: LinkStyle;
   onClick?: (event: MouseEvent) => void;
+  /** @deprecated use `kind` instead */
   style?: LinkStyle;
+  tabIndex?: number;
   textAlign?: TextAlign;
   theme?: Themes;
   title?: string;

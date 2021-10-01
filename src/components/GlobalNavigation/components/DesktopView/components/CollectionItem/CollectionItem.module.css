@@ -1,0 +1,49 @@
+@import 'styles/index';
+
+.base {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.article {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.element {
+  font-family: var(--font-family-sans-serif-normal);
+  font-size: rem(18px);
+  line-height: 1.33;
+  transition: outline-offset 200ms var(--easing-ease-out-cubic);
+
+  .dark & {
+    color: var(--color-secondary);
+  }
+
+  .light & {
+    color: var(--color-primary);
+  }
+
+  .dark &:focus-visible {
+    outline: 1px dashed var(--color-dark-decoration);
+    outline-offset: 2px;
+  }
+
+  .light &:focus-visible {
+    outline: 1px dashed var(--color-light-decoration);
+    outline-offset: 2px;
+  }
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.small {
+  display: block;
+  color: var(--color-dark-label);
+  font-size: rem(14px);
+}

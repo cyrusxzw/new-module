@@ -2,12 +2,15 @@ import type { ReactElement } from 'react';
 
 type TransitionTypeLabel =
   | 'fade'
+  | 'fadeIn'
   | 'shiftInDown'
   | 'shiftInLeft'
   | 'shiftInUp'
   | 'slideDown'
+  | 'slideLeft'
   | 'slideRight'
   | 'slowFade'
+  | 'fixed'
   | 'zoom';
 
 type TransitionProps = {

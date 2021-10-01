@@ -368,7 +368,7 @@ exports[`<Carousel /> should render base component correctly 1`] = `
     >
       <button
         class="base dark base hidden"
-        title="next slide"
+        title="previous slide"
         type="button"
       >
         <svg

@@ -2,21 +2,24 @@ import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import { HYPERLINK_STYLE_TYPES, GOOGLE_MAPS } from '~/constants';
-import { Heading } from '~/components/Heading/index.ts';
+import { Heading } from '~/components/Heading';
 import { Hyperlink } from '~/components/Hyperlink';
-import { StoreHoursList } from '~/components/StoreHoursList/index.ts';
-import { TwoColumnLayout } from '~/components/TwoColumnLayout/index.ts';
+import { StoreHoursList } from '~/components/StoreHoursList';
+import { TwoColumnLayout } from '~/components/TwoColumnLayout';
 import type { StoreDetailHeaderType } from './StoreDetailHeader.types';
 import styles from './StoreDetailHeader.module.css';
 
 const DATA_TEST_REF_LOCATION = 'STORE_DETAILS_DIRECTION_LINK';
 const DATA_TEST_REF_EMAIL = 'STORE_DETAILS_DIRECTION_EMAIL';
 const DATA_TEST_REF_PHONE = 'STORE_DETAILS_DIRECTION_PHONE';
+const DATA_TEST_REF_FACIALAPPOINTMENTS = 'STORE_DETAILS_DIRECTION_FACIALAPPOINTMENTS';
 
 const StoreDetailHeader: StoreDetailHeaderType = ({
   alternateHoursNote,
   className,
   copy,
+  facialAppointments,
+  facialAppointmentsLink,
   email,
   location,
   openingHours,
@@ -26,6 +29,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
 }) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const classSet = cx(styles.base, styles[currentTheme], className);
+  const wrapperClass = cx(styles.wrapper, className);
 
   const contentBlocks = [
     {
@@ -80,6 +84,23 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
       id: 'phone',
     },
     {
+      label: copy?.facialAppointments,
+      content: facialAppointments ? (
+        <Hyperlink
+          className={styles.hyperlink}
+          dataTestRef={DATA_TEST_REF_FACIALAPPOINTMENTS}
+          hasTargetInNewWindow={true}
+          style={HYPERLINK_STYLE_TYPES.EXTERNAL_TEXT_LINK}
+          theme={currentTheme}
+          title={copy?.facialAppointmentsLink}
+          url={facialAppointmentsLink}
+        >
+          {copy?.facialAppointmentsLink}
+        </Hyperlink>
+      ) : null,
+      id: 'facialAppointments',
+    },
+    {
       label: copy?.openingHours,
       content: (
         <StoreHoursList
@@ -96,8 +117,8 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
     <TwoColumnLayout
       className={classSet}
       content={
-        <>
-          <Heading level="1" size="large" theme={currentTheme}>
+        <div className={wrapperClass}>
+          <Heading level="1" size="xLarge" theme={currentTheme}>
             {storeName}
           </Heading>
           <div className={styles.detailBlock}>
@@ -117,7 +138,7 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
                 </div>
               ))}
           </div>
-        </>
+        </div>
       }
       hasFullWidthContent={true}
       isReversed={true}

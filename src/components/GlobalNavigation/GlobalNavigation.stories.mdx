@@ -1,0 +1,263 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
+import { Button } from '~/components/Button';
+import { HeroBanner } from '~/components/HeroBanner';
+import { HeroBannerFixture } from '~/components/HeroBanner/HeroBanner.fixture';
+import { Image } from '~/components/Image';
+import { Modal } from '~/components/Modal';
+import { GlobalNavigation } from './GlobalNavigation';
+import {
+  GlobalNavigationContextProvider,
+  GlobalNavigationStateContextProvider,
+  useGlobalNavigationStateContext,
+} from './GlobalNavigation.context';
+import { MobileViewContextProvider } from './components/MobileView/MobileView.context';
+import { DesktopViewContextProvider } from './components/DesktopView/DesktopView.context';
+import { TabletViewContextProvider } from './components/TabletView/TabletView.context';
+import {
+  GlobalNavigationFixture,
+  actionAccountAuthenticated,
+} from './GlobalNavigation.fixture';
+
+<Meta title="Components/GlobalNavigation" component={GlobalNavigation} />
+
+# GlobalNavigation
+
+<Canvas>
+  <Story name="Base component">
+    {(() => {
+      const [accountOpen, setAccountOpen] = React.useState(false);
+      const handleOnAccountClick = () => setAccountOpen(true);
+      const handleOnAccountCloseClick = () => setAccountOpen(false);
+      const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+      const handleOnLoginClick = () => {
+        setIsLoggedIn(true);
+        setAccountOpen(false);
+      };
+      const [cartOpen, setCartOpen] = React.useState(false);
+      const handleOnCartClick = () => setCartOpen(true);
+      const handleOnCartCloseClick = () => setCartOpen(false);
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const mobileViewClosedTheme = knobs.select(
+        'mobileViewClosedTheme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const closedLogoTheme = knobs.select(
+        'closedLogoTheme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      const fixture = Object.create(GlobalNavigationFixture);
+      const actions = fixture.actions;
+      actions.cart.onClick = handleOnCartClick;
+      if (isLoggedIn) {
+        actions.account = actionAccountAuthenticated;
+      } else {
+        // is anonymous
+        actions.account = GlobalNavigationFixture.actions.account;
+        actions.account.onClick = handleOnAccountClick;
+      }
+      return (
+        <>
+          <GlobalNavigationStateContextProvider>
+            <GlobalNavigationContextProvider
+              value={{
+                actions,
+                collections: fixture.collections,
+                isVisuallyObstructed: accountOpen || cartOpen,
+                onClose: fixture.onClose,
+                onOpen: fixture.onOpen,
+                read: fixture.read,
+                theme,
+              }}
+            >
+              <DesktopViewContextProvider
+                closedClassName="desktop-closed"
+                closedLogoTheme={closedLogoTheme}
+                openClassName="desktop-open"
+              >
+                <TabletViewContextProvider
+                  openClassName="desktop-open"
+                  closedClassName="desktop-closed"
+                  closedLogoTheme={closedLogoTheme}
+                >
+                  <MobileViewContextProvider
+                    openClassName="mobile-open"
+                    closedClassName="mobile-closed"
+                    closedTheme={mobileViewClosedTheme}
+                  >
+                    <GlobalNavigation />
+                  </MobileViewContextProvider>
+                </TabletViewContextProvider>
+              </DesktopViewContextProvider>
+            </GlobalNavigationContextProvider>
+          </GlobalNavigationStateContextProvider>
+          <Modal
+            copy={{
+              close: 'Close Modal',
+            }}
+            isVisible={accountOpen}
+            onClose={handleOnAccountCloseClick}
+          >
+            <Button title="login" onClick={handleOnLoginClick} isInline={true}>
+              Login
+            </Button>
+          </Modal>
+          <Modal
+            copy={{
+              close: 'Close Modal',
+            }}
+            isVisible={cartOpen}
+            onClose={handleOnCartCloseClick}
+          >
+            You have 0 items in you cart.
+          </Modal>
+          <StorybookGridOverlay {...implementation.gridOverlay} />
+        </>
+      );
+    })()}
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of={GlobalNavigation} />
+
+## Variations
+
+### With content
+
+<Canvas>
+  <Story name="With content">
+    {(() => {
+      const [accountOpen, setAccountOpen] = React.useState(false);
+      const handleOnAccountClick = () => setAccountOpen(true);
+      const handleOnAccountCloseClick = () => setAccountOpen(false);
+      const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+      const handleOnLoginClick = () => {
+        setIsLoggedIn(true);
+        setAccountOpen(false);
+      };
+      const [cartOpen, setCartOpen] = React.useState(false);
+      const handleOnCartClick = () => setCartOpen(true);
+      const handleOnCartCloseClick = () => setCartOpen(false);
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      const fixture = Object.create(GlobalNavigationFixture);
+      const actions = fixture.actions;
+      actions.cart.onClick = handleOnCartClick;
+      if (isLoggedIn) {
+        actions.account = actionAccountAuthenticated;
+      } else {
+        // is anonymous
+        actions.account = GlobalNavigationFixture.actions.account;
+        actions.account.onClick = handleOnAccountClick;
+      }
+      const nofiticationBannerStyle = {
+        backgroundColor: '#a15b2d',
+        color: '#fff',
+        padding: '10px 40px',
+        zIndex: 11,
+        position: 'relative',
+        textAlign: 'center',
+      };
+      return (
+        <>
+          <div style={nofiticationBannerStyle}>Notification Banner</div>
+          <GlobalNavigationStateContextProvider>
+            <GlobalNavigationContextProvider
+              value={{
+                actions: actions,
+                read: fixture.read,
+                collections: fixture.collections,
+                isVisuallyObstructed: accountOpen || cartOpen,
+                theme,
+                onClose: fixture.onClose,
+              }}
+            >
+              <DesktopViewContextProvider closedLogoTheme="light">
+                <TabletViewContextProvider closedLogoTheme="light">
+                  <MobileViewContextProvider closedTheme="light">
+                    <GlobalNavigation />
+                  </MobileViewContextProvider>
+                </TabletViewContextProvider>
+              </DesktopViewContextProvider>
+            </GlobalNavigationContextProvider>
+          </GlobalNavigationStateContextProvider>
+          <HeroBanner
+            backgroundColor="#202b52"
+            theme="light"
+            hasTopOffset={true}
+            copy={HeroBannerFixture.copy.default}
+            media={
+              <Image
+                sizes={{
+                  large:
+                    'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
+                  medium:
+                    'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
+                  small:
+                    'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
+                }}
+              />
+            }
+          />
+          <Modal
+            copy={{
+              close: 'Close Modal',
+            }}
+            isVisible={accountOpen}
+            onClose={handleOnAccountCloseClick}
+          >
+            <Button title="login" onClick={handleOnLoginClick} isInline={true}>
+              Login
+            </Button>
+          </Modal>
+          <Modal
+            copy={{
+              close: 'Close Modal',
+            }}
+            isVisible={cartOpen}
+            onClose={handleOnCartCloseClick}
+          >
+            You have 0 items in you cart.
+          </Modal>
+          <StorybookGridOverlay {...implementation.gridOverlay} />
+        </>
+      );
+    })()}
+  </Story>
+</Canvas>

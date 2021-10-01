@@ -8,6 +8,11 @@ exports[`<GoogleMap /> should render base component correctly 1`] = `
     <div
       class="wrapper"
     >
+      <span
+        class="base center medium dark loading"
+        data-testid="data-testid-loading"
+        role="status"
+      />
       <div
         class="map"
         id="google-map"
@@ -19,7 +24,11 @@ exports[`<GoogleMap /> should render base component correctly 1`] = `
       <div
         class="viewStoreLabel"
       >
-        Visit our nearby stores.
+        <p
+          class="base dark flush"
+        >
+          Visit our nearby stores.
+        </p>
       </div>
       <div
         class="viewStoreLinkWrapper"

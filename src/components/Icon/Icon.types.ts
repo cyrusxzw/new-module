@@ -1,22 +1,23 @@
-import type { ComponentWithoutChildren, Themes } from '~/types';
+import type { Aria, ComponentWithoutChildren, Themes } from '~/types';
 
 type SvgName =
   | ''
-  | 'rightArrow'
-  | 'warning'
-  | 'rightUpArrow'
-  | 'downArrow'
-  | 'plusAndCloseWithCircle'
+  | 'aesop'
   | 'chevron'
   | 'close'
-  | 'play'
-  | 'pause'
-  | 'muted'
-  | 'unmuted'
-  | 'aesop'
+  | 'downArrow'
   | 'download'
+  | 'muted'
+  | 'pause'
+  | 'play'
+  | 'plusAndCloseWithCircle'
+  | 'rightArrow'
+  | 'rightUpArrow'
+  | 'scrolldown'
+  | 'search'
   | 'seek'
-  | 'scrolldown';
+  | 'unmuted'
+  | 'warning';
 
 type Svg = {
   data: { [key: string]: unknown }[];
@@ -27,6 +28,7 @@ type Svg = {
 };
 
 type IconProps = {
+  aria?: Pick<Aria, 'hidden'>;
   className?: string;
   dataRef?: string;
   height?: number;

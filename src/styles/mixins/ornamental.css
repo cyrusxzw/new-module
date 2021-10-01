@@ -1,0 +1,48 @@
+@import 'styles/variables/index.css';
+
+%ornamentalHover {
+  position: relative;
+}
+
+%ornamentalHoverAfter {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  margin: 0 auto;
+  content: '';
+  transition: width 400ms var(--easing-ease-out-cubic);
+}
+
+%ornamentalHoverDarkTheme {
+  background-color: var(--color-secondary);
+}
+
+%ornamentalHoverLightTheme {
+  background-color: var(--color-primary);
+}
+
+/** Current use case
+.ornamentalHover {
+  @extend %ornamentalHover;
+}
+
+.ornamentalHover::after {
+  @extend %ornamentalHoverAfter;
+}
+
+.dark .ornamentalHover::after {
+  @extend %ornamentalHoverDarkTheme;
+}
+
+.light .ornamentalHover::after {
+  @extend %ornamentalHoverLightTheme;
+}
+
+.ornamentalWrapper:hover {
+  .ornamentalHover::after {
+    width: 100%;
+  }
+}
+*/

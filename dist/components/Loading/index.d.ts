@@ -4,8 +4,10 @@ import 'react';
 
 declare type LoadingSizes = 'small' | 'medium' | 'large';
 declare type LoadingProps = {
+    align?: 'start' | 'center' | 'end';
     className?: string;
     isLoading: boolean;
+    screenReaderText?: string;
     shouldFillSpace?: boolean;
     size?: LoadingSizes;
     theme?: Themes;

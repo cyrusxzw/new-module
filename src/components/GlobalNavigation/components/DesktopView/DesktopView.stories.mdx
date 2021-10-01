@@ -1,0 +1,131 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as knobs from '@storybook/addon-knobs';
+import { StorybookGridOverlay } from '~.storybook/components';
+import { Modal } from '~/components/Modal';
+import { Button } from '~/components/Button';
+import {
+  GlobalNavigationContextProvider,
+  GlobalNavigationStateContextProvider,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
+import {
+  GlobalNavigationFixture,
+  actionAccountAuthenticated,
+} from '~/components/GlobalNavigation/GlobalNavigation.fixture';
+import { DesktopViewContextProvider } from './DesktopView.context';
+import { DesktopView } from './DesktopView';
+
+<Meta title="Components/GlobalNavigation/DesktopView" component={DesktopView} />
+
+# DesktopView
+
+<Canvas>
+  <Story
+    name="Base component"
+    parameters={{
+      viewport: {
+        defaultViewport: 'desktop',
+      },
+    }}
+  >
+    {(() => {
+      const [accountOpen, setAccountOpen] = React.useState(false);
+      const handleOnAccountClick = () => setAccountOpen(true);
+      const handleOnAccountCloseClick = () => setAccountOpen(false);
+      const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+      const handleOnLoginClick = () => {
+        setIsLoggedIn(true);
+        setAccountOpen(false);
+      };
+      const [cartOpen, setCartOpen] = React.useState(false);
+      const handleOnCartClick = () => setCartOpen(true);
+      const handleOnCartCloseClick = () => setCartOpen(false);
+      const closedLogoTheme = knobs.select(
+        'closedLogoTheme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const theme = knobs.select(
+        'theme',
+        ['dark', 'light'],
+        'dark',
+        'Presentation',
+      );
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+      };
+      const fixture = Object.create(GlobalNavigationFixture);
+      const actions = fixture.actions;
+      actions.cart.onClick = handleOnCartClick;
+      actions.support.onClick = () => {
+        alert(
+          'Would you like a personalised skin care consultation? Aesop consultants are available to speak now.',
+        );
+      };
+      if (isLoggedIn) {
+        actions.account = actionAccountAuthenticated;
+      } else {
+        // is anonymous
+        actions.account = GlobalNavigationFixture.actions.account;
+        actions.account.onClick = handleOnAccountClick;
+      }
+      return (
+        <>
+          <GlobalNavigationStateContextProvider>
+            <GlobalNavigationContextProvider
+              value={{
+                actions: fixture.actions,
+                collections: fixture.collections,
+                isVisuallyObstructed: cartOpen || accountOpen,
+                read: fixture.read,
+                onClose: fixture.onClose,
+                onOpen: fixture.onOpen,
+                theme,
+              }}
+            >
+              <DesktopViewContextProvider
+                openClassName="desktop-open"
+                closedClassName="desktop-closed"
+                closedLogoTheme={closedLogoTheme}
+              >
+                <DesktopView />
+              </DesktopViewContextProvider>
+            </GlobalNavigationContextProvider>
+          </GlobalNavigationStateContextProvider>
+          <Modal
+            copy={{
+              close: 'Close Modal',
+            }}
+            isVisible={accountOpen}
+            onClose={handleOnAccountCloseClick}
+          >
+            <Button title="login" onClick={handleOnLoginClick} isInline={true}>
+              Login
+            </Button>
+          </Modal>
+          <Modal
+            copy={{
+              close: 'Close Modal',
+            }}
+            isVisible={cartOpen}
+            onClose={handleOnCartCloseClick}
+          >
+            You have 0 items in you cart.
+          </Modal>
+          <StorybookGridOverlay {...implementation.gridOverlay} />
+        </>
+      );
+    })()}
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of={DesktopView} />

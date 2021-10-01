@@ -1,0 +1,32 @@
+@import 'styles/index';
+
+.backButton {
+  justify-content: flex-start;
+}
+
+.directionIcon {
+  flex: none;
+  margin-right: 12px;
+
+  &.dark {
+    polygon {
+      fill: var(--color-grey-45);
+    }
+  }
+
+  &.light {
+    polygon {
+      fill: var(--color-grey-65);
+    }
+  }
+}
+
+.forward {
+  margin-left: 12px;
+  transform: rotate(-90deg) translateY(10px);
+}
+
+.backwards {
+  margin-right: 12px;
+  transform: rotate(90deg);
+}
