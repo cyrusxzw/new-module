@@ -1,6 +1,6 @@
 {
   "name": "@aesop-engineering/gel",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "description": "UI Component Library and Design System for Aēsop.com",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
