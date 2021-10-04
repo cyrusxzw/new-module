@@ -8,6 +8,7 @@
   pointer-events: none;
   transition: outline-offset 200ms var(--easing-ease-out-cubic),
     color 200ms var(--easing-ease-out-cubic);
+  visibility: hidden;
 
   &.dark:focus-visible {
     outline: 1px dashed var(--color-dark-decoration);
@@ -22,6 +23,7 @@
 
 .menuOpen {
   pointer-events: auto;
+  visibility: visible;
 }
 
 .icon {

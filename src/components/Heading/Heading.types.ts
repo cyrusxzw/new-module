@@ -12,6 +12,7 @@ type HeadingSizes =
 
 type HeadingProps = {
   className?: string;
+  dataTestRef?: string;
   hasMediumWeightFont?: boolean;
   hasSerifFont?: boolean;
   id?: string;
