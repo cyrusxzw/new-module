@@ -16,6 +16,7 @@ const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
     {
       children,
       className,
+      dataTestId,
       dataTestRef,
       hasTargetInNewWindow = false,
       isAlternate,
@@ -58,6 +59,7 @@ const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
     return (
       <a
         className={classSet}
+        data-test-id={dataTestId}
         data-test-ref={dataTestRef}
         download={isDownload}
         href={url}
