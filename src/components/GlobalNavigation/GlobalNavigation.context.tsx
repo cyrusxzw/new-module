@@ -63,7 +63,7 @@ const useGlobalNavigationStore: UseGlobalNavigationStore = (
 
   return {
     ...value,
-    legacyMenu: value.actions?.[activeCollectionId]?.legacyMenu,
+    isLegacyMenu: value.actions?.[activeCollectionId]?.isLegacyMenu,
   };
 };
 

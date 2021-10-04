@@ -10,6 +10,7 @@ export { Checkbox } from './Checkbox';
 export { ConditionalWrapper } from './ConditionalWrapper';
 export { ContentHubArticle } from './ContentHubArticle';
 export { ContentHubArticleList } from './ContentHubArticleList';
+export { DateSelector } from './DateSelector';
 export { DefinitionList } from './DefinitionList';
 export { DialogBanner } from './DialogBanner';
 export { DoubleMedia } from './DoubleMedia';

@@ -12,6 +12,7 @@ export const SelectWrapper: VFC<SelectWrapperProps> = ({
   dataTestRef,
   defaultValue,
   errorMessage,
+  isEnabled,
   label,
   name,
   options,
@@ -27,6 +28,7 @@ export const SelectWrapper: VFC<SelectWrapperProps> = ({
         className={className}
         dataTestRef={dataTestRef}
         errorMessage={errorMessage}
+        isEnabled={isEnabled}
         label={label}
         name={name}
         onChange={onChange}

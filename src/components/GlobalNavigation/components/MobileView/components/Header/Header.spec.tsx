@@ -101,14 +101,15 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
       isOpen: true,
       setIsOpen: jest.fn(),
     });
-    render(<TestBed />);
 
-    const { setActiveCollectionId } = useGlobalNavigationStateContext();
+    const onClose = jest.fn();
+    render(<TestBed onClose={onClose} />);
+
     const closeBtn = screen.getByTestId('NAV_MOBILE_MENU_BTN');
 
     closeBtn.click();
 
-    expect(setActiveCollectionId).toHaveBeenCalledTimes(1);
+    expect(onClose).toHaveBeenCalledTimes(1);
   });
 
   it('should click menu button to close store search menu', () => {
@@ -118,14 +119,15 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
       isOpen: true,
       setIsOpen: jest.fn(),
     });
-    render(<TestBed />);
 
-    const { setActiveCollectionId } = useGlobalNavigationStateContext();
+    const onClose = jest.fn();
+    render(<TestBed onClose={onClose} />);
+
     const closeBtn = screen.getByTestId('NAV_MOBILE_MENU_BTN');
 
     closeBtn.click();
 
-    expect(setActiveCollectionId).toHaveBeenCalledTimes(1);
+    expect(onClose).toHaveBeenCalledTimes(1);
   });
 
   it('should click menu button to open menu', () => {

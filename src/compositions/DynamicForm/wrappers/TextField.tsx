@@ -15,6 +15,7 @@ export const TextFieldWrapper: VFC<TextFieldWrapperProps> = ({
   defaultValue,
   errorMessage,
   id,
+  isEnabled,
   label,
   name,
   rules,
@@ -31,6 +32,7 @@ export const TextFieldWrapper: VFC<TextFieldWrapperProps> = ({
         dataTestRef={dataTestRef}
         errorMessage={errorMessage}
         id={id}
+        isEnabled={isEnabled}
         label={label}
         name={name}
         onChange={onChange}

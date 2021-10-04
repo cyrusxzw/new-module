@@ -11,6 +11,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function SelectRef(
     dataTestRef,
     errorMessage,
     isBlock = false,
+    isEnabled = true,
     label,
     name,
     onBlur,
@@ -26,7 +27,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function SelectRef(
   const [hasFocus, setHasFocus] = useState(false);
   const errorMessageId = `${name}-error-message`;
 
-  const classSet = cx(
+  const baseClassSet = cx(
     styles.base,
     { [styles.isBlock]: isBlock },
     {
@@ -36,6 +37,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function SelectRef(
     styles[currentTheme],
     className,
   );
+  const inputClassSet = cx(styles.input, { [styles.isDisabled]: !isEnabled });
 
   const handleFocus = (event: React.FocusEvent<HTMLSelectElement>) => {
     onFocus?.(event);
@@ -50,7 +52,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function SelectRef(
   };
 
   return (
-    <div className={classSet}>
+    <div className={baseClassSet}>
       <label className={cx(styles.label)} htmlFor={name}>
         {label}
       </label>
@@ -58,8 +60,9 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function SelectRef(
         aria-describedby={errorMessage ? errorMessageId : undefined}
         aria-invalid={!!errorMessage}
         aria-label={label || name}
-        className={styles.input}
+        className={inputClassSet}
         data-test-ref={dataTestRef}
+        disabled={!isEnabled}
         id={name}
         name={name}
         onBlur={handleBlur}

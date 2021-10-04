@@ -1,5 +1,5 @@
 import { DynamicForm } from './DynamicForm';
-import type { FormSchema } from './DynamicForm.types';
+import type { FormSchema, FieldSchema } from './DynamicForm.types';
 
-export type { FormSchema };
+export type { FormSchema, FieldSchema };
 export { DynamicForm };

@@ -9,6 +9,7 @@ const PersonalInfoSummary: PersonalInfoSummaryType = ({
   className,
   prefixOptions = [],
   shouldShowPrefix = true,
+  shouldHaveNameSpace = true,
   shouldSwapFullNameOrder = false,
   theme,
   userDetails,
@@ -25,9 +26,11 @@ const PersonalInfoSummary: PersonalInfoSummaryType = ({
     ? matchCodeToText(prefixOptions, userDetails.prefix)
     : '';
 
+  const nameSpace = shouldHaveNameSpace ? ' ' : '';
+
   const fullName = shouldSwapFullNameOrder
-    ? `${userDetails.lastName}${userDetails.firstName}`
-    : `${userDetails.firstName} ${userDetails.lastName}`;
+    ? `${userDetails.lastName}${nameSpace}${userDetails.firstName}`
+    : `${userDetails.firstName}${nameSpace}${userDetails.lastName}`;
 
   const suffix = userDetails.suffix ?? '';
 

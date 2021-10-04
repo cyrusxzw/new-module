@@ -9,6 +9,7 @@ export type CommonWrapperProps = {
   defaultValue: string;
   errorMessage?: string;
   id: string;
+  isEnabled?: boolean;
   label: string;
   name: string;
   rules: ValidationRules;

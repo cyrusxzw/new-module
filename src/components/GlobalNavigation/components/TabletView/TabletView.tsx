@@ -22,7 +22,7 @@ const TabletView: TabletViewType = ({ className }) => {
     isVisuallyObstructed,
     onClose,
     theme,
-    legacyMenu,
+    isLegacyMenu,
   } = useGlobalNavigationContext();
 
   const {
@@ -59,7 +59,7 @@ const TabletView: TabletViewType = ({ className }) => {
     { [styles.open]: isOpen },
     { [closedClassName]: !isOpen },
     { [openClassName]: isOpen },
-    { [styles.legacyMenu]: legacyMenu },
+    { [styles.isLegacyMenu]: isLegacyMenu },
     styles[currentTheme],
     className,
   );

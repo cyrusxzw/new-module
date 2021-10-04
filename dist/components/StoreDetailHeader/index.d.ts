@@ -7,12 +7,16 @@ declare type StoreDetailCopy = {
     location?: string;
     email?: string;
     phone?: string;
+    facialAppointments?: string;
+    facialAppointmentsLink?: string;
     openingHours?: string;
 };
 declare type StoreDetailHeaderProps = {
     alternateHoursNote?: string;
     className?: string;
     copy?: StoreDetailCopy;
+    facialAppointments?: boolean;
+    facialAppointmentsLink?: string;
     email?: string;
     location?: string;
     openingHours?: HoursListItem[];

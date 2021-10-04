@@ -20,6 +20,7 @@ import type { PrimaryMenuType } from './PrimaryMenu.types';
 import compositionStyles from '../../TabletView.module.css';
 import styles from './PrimaryMenu.module.css';
 
+// eslint-disable-next-line max-lines-per-function
 const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
   const {
     actions: { search, stores, menu, shop },

@@ -13,7 +13,7 @@ import styles from './SelectionPanel.module.css';
 const SelectionPanel: SelectionPanelType = ({ children, isActive = false }) => {
   const { isOpen } = useGlobalNavigationStateContext();
   const currentTheme = useThemeContext(undefined, 'dark');
-  const { legacyMenu } = useGlobalNavigationContext();
+  const { isLegacyMenu } = useGlobalNavigationContext();
 
   const classSet = cx(
     styles.base,
@@ -21,7 +21,7 @@ const SelectionPanel: SelectionPanelType = ({ children, isActive = false }) => {
     styles[currentTheme],
   );
 
-  if (legacyMenu) return null;
+  if (isLegacyMenu) return null;
 
   return (
     <Transition isActive={isActive} type="fade">
