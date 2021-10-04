@@ -15,6 +15,7 @@ type LinkStyle =
 type HyperlinkProps = {
   children: ReactNode;
   className?: string;
+  dataTestId?: string;
   dataTestRef?: string;
   hasTargetInNewWindow?: boolean;
   id?: string;

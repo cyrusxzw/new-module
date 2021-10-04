@@ -283,6 +283,7 @@ declare type LinkStyle = 'External Button Link' | 'External No Icon Button Link'
 declare type HyperlinkProps = {
     children: ReactNode;
     className?: string;
+    dataTestId?: string;
     dataTestRef?: string;
     hasTargetInNewWindow?: boolean;
     id?: string;
@@ -784,6 +785,7 @@ declare type HeadingLevels = '1' | '2' | '3' | '4' | '5' | '6';
 declare type HeadingSizes = 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
 declare type HeadingProps = {
     className?: string;
+    dataTestRef?: string;
     hasMediumWeightFont?: boolean;
     hasSerifFont?: boolean;
     id?: string;
@@ -1270,12 +1272,19 @@ declare type GlobalNavigationStateContextProviderProps = {
 };
 declare type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavigationStateContextProviderProps>;
 declare type ActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
+declare type StickyNavType = {
+    isFixed: boolean;
+    isHidden: boolean;
+    offsetTop: number;
+};
 declare type GlobalNavigationStateContextType = {
     activeCollectionId: string;
     isOpen: boolean;
     setActiveCollectionId: (id: string) => void;
     setIsOpen: Dispatch<SetStateAction<boolean>>;
     activeView: ActiveViewTypes;
+    stickyNavProps: StickyNavType;
+    setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
 };
 declare type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
 declare type GlobalNavigationContextType = {

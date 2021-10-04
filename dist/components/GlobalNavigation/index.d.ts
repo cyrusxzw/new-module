@@ -102,12 +102,19 @@ declare type GlobalNavigationStateContextProviderProps = {
 };
 declare type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavigationStateContextProviderProps>;
 declare type ActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
+declare type StickyNavType = {
+    isFixed: boolean;
+    isHidden: boolean;
+    offsetTop: number;
+};
 declare type GlobalNavigationStateContextType = {
     activeCollectionId: string;
     isOpen: boolean;
     setActiveCollectionId: (id: string) => void;
     setIsOpen: Dispatch<SetStateAction<boolean>>;
     activeView: ActiveViewTypes;
+    stickyNavProps: StickyNavType;
+    setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
 };
 declare type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
 declare type GlobalNavigationContextType = {

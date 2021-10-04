@@ -6,8 +6,10 @@ import {
   useGlobalNavigationStateContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useDesktopViewContext } from './DesktopView.context';
+import { useStickyNav } from '../../GlobalNavigation.hooks';
 import {
   useEscapeKeyListener,
+  useOnScreen,
   useOverflowHidden,
   useTrapFocus,
 } from '~/customHooks';
@@ -18,12 +20,6 @@ import styles from './DesktopView.module.css';
 
 const DesktopView: DesktopViewType = ({ className }) => {
   const {
-    isOpen,
-    setIsOpen,
-    setActiveCollectionId,
-  } = useGlobalNavigationStateContext();
-
-  const {
     isVisuallyObstructed,
     onClose,
     theme,
@@ -31,13 +27,25 @@ const DesktopView: DesktopViewType = ({ className }) => {
   } = useGlobalNavigationContext();
 
   const {
+    isOpen,
+    setIsOpen,
+    setActiveCollectionId,
+    stickyNavProps,
+    setStickyNavProps,
+  } = useGlobalNavigationStateContext();
+
+  const {
     closedClassName,
     closedLogoTheme,
     openClassName,
   } = useDesktopViewContext();
 
-  const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
   const contextTheme = useThemeContext(theme, 'dark');
+  const currentTheme = isOpen ? 'dark' : contextTheme;
+
+  const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
+  const stickyNavRef = useStickyNav(stickyNavProps, setStickyNavProps);
+  const isCompletelyOnScreen = useOnScreen(stickyNavRef, 1, undefined, true);
 
   const handleOnClose = () => {
     setActiveCollectionId('top');
@@ -48,11 +56,23 @@ const DesktopView: DesktopViewType = ({ className }) => {
   useOverflowHidden(isOpen);
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
 
-  const currentTheme = isOpen ? 'dark' : contextTheme;
-
   const classSet = cx(
     styles.base,
     { [closedClassName]: !isOpen },
+    {
+      [styles.isVisibleStickyNav]:
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        !stickyNavProps.isHidden &&
+        !isOpen,
+    },
+    {
+      [styles.isInvisibleStickyNav]:
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        stickyNavProps.isHidden &&
+        !isOpen,
+    },
     { [styles.isLegacyMenu]: isLegacyMenu },
     { [styles.open]: isOpen },
     { [openClassName]: isOpen },
@@ -65,10 +85,14 @@ const DesktopView: DesktopViewType = ({ className }) => {
       <div className={classSet} ref={focusTrapRef}>
         <PrimaryMenu onClose={handleOnClose} />
         <SecondaryMenu />
-        {!isLegacyMenu && <Logo closedTheme={closedLogoTheme} />}
+        {!isLegacyMenu && isOpen && <Logo closedTheme={closedLogoTheme} />}
       </div>
-
-      <div aria-hidden={true} className={styles.absoluteBuffer} />
+      <div
+        aria-hidden={true}
+        className={styles.absoluteBuffer}
+        ref={stickyNavRef}
+      />
+      {!isLegacyMenu && !isOpen && <Logo closedTheme={closedLogoTheme} />}
     </ThemeContextProvider>
   );
 };

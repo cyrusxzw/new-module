@@ -1,4 +1,9 @@
-import type { Dispatch, SetStateAction, ReactElement } from 'react';
+import type {
+  Dispatch,
+  SetStateAction,
+  ReactElement,
+  MutableRefObject,
+} from 'react';
 import type { Themes, ComponentWithChildren } from '~/types';
 
 // type Tracking = {}; // @TODO https://aesoponline.atlassian.net/browse/CON-315
@@ -117,12 +122,28 @@ type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavi
 
 type ActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
 
+type StickyNavType = {
+  isFixed: boolean;
+  isHidden: boolean;
+  offsetTop: number;
+};
+
+type StickyNavScrollType = {
+  stickyNavProps: StickyNavType;
+  setStickyNavProps: (stickyNavProps: StickyNavType) => void;
+  stickyNavRef?: MutableRefObject<HTMLDivElement | null>;
+  prevScrollY?: MutableRefObject<number>;
+  currentOffset?: number;
+};
+
 type GlobalNavigationStateContextType = {
   activeCollectionId: string;
   isOpen: boolean;
   setActiveCollectionId: (id: string) => void;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   activeView: ActiveViewTypes;
+  stickyNavProps: StickyNavType;
+  setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
 };
 
 type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
@@ -170,8 +191,9 @@ type GetCollectionLists = (
 };
 
 export type {
-  Actions,
   Article,
+  Actions,
+  ActiveViewTypes,
   Clickable,
   Collection,
   CollectionImage,
@@ -186,7 +208,8 @@ export type {
   NotableNestedCollection,
   Promotion,
   Read,
-  ActiveViewTypes,
+  StickyNavType,
+  StickyNavScrollType,
   Trigger,
   UseGlobalNavigationStateContext,
   UseGlobalNavigationStateStore,

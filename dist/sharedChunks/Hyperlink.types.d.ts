@@ -6,6 +6,7 @@ declare type LinkStyle = 'External Button Link' | 'External No Icon Button Link'
 declare type HyperlinkProps = {
     children: ReactNode;
     className?: string;
+    dataTestId?: string;
     dataTestRef?: string;
     hasTargetInNewWindow?: boolean;
     id?: string;
