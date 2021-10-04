@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, MutableRefObject } from 'react';
 import { isViewport } from '~/utils/viewport';
 import { useWindowHasResized } from '~/customHooks';
-import type { ActiveViewTypes } from './GlobalNavigation.types';
+import type { ActiveViewTypes, StickyNavType } from './GlobalNavigation.types';
+import { stickyScrollHandler } from './GlobalNavigation.utils';
+import debounce from 'lodash/debounce';
 
 const useActiveView = (): { activeView: ActiveViewTypes } => {
   const [activeView, setActiveView] = useState<ActiveViewTypes>('none');
@@ -25,4 +27,35 @@ const useActiveView = (): { activeView: ActiveViewTypes } => {
   return { activeView };
 };
 
-export { useActiveView };
+const useStickyNav = (
+  stickyNavProps: StickyNavType,
+  setStickyNavProps: (stickyNavProps: StickyNavType) => void,
+): MutableRefObject<HTMLDivElement> => {
+  const prevScrollY = useRef(0);
+  const stickyNavRef = useRef(null);
+
+  useEffect(() => {
+    const handleDebouncedScrollListener = debounce(
+      () => {
+        stickyScrollHandler({
+          stickyNavRef,
+          stickyNavProps,
+          setStickyNavProps,
+          prevScrollY,
+        });
+      },
+      100,
+      { leading: true },
+    );
+
+    window.addEventListener('scroll', handleDebouncedScrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', handleDebouncedScrollListener);
+    };
+  }, [stickyNavProps, setStickyNavProps]);
+
+  return stickyNavRef;
+};
+
+export { useActiveView, useStickyNav };

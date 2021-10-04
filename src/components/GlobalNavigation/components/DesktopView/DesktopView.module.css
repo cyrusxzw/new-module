@@ -14,7 +14,7 @@
   justify-content: space-between;
   padding-right: var(--container-margin);
   padding-left: var(--container-margin);
-  pointer-events: none;
+  pointer-events: auto;
   transition: background-color 200ms var(--easing-ease-in-out-cubic);
 
   /* Added to more elegantly transition between breakpoints */
@@ -55,6 +55,21 @@
     background-color: var(--color-primary);
     content: '';
     transition: background-color 200ms var(--easing-ease-in-out-cubic);
+  }
+
+  &.isVisibleStickyNav,
+  &.isInvisibleStickyNav {
+    position: fixed;
+    height: var(--menu-height); 
+    transition: top 300ms var(--easing-ease-in-out-cubic);
+  }
+
+  &.isVisibleStickyNav {
+    top: 0;
+  }
+
+  &.isInvisibleStickyNav {
+    top: calc(0 - var(--menu-height));
   }
 
   &.light::before {
