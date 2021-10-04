@@ -13,10 +13,14 @@ type VariantSelectContextType = {
   variants: Variant[];
 };
 
-type UseVariantSelectStore = (variants?: Variant[]) => VariantSelectContextType;
+type UseVariantSelectStore = (
+  variants?: Variant[],
+  selectedVariantIndex?: number,
+) => VariantSelectContextType;
 
 type VariantSelectContextProps = {
   variants: Variant[];
+  selectedVariantIndex?: number;
 };
 
 type VariantSelectContextProviderType = ComponentWithChildren<VariantSelectContextProps>;
