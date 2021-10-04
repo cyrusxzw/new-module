@@ -42,7 +42,8 @@ const CollectionList: CollectionListType = ({
           <li className={compositionStyles.collectionItem} key={item.id}>
             <Hyperlink
               className={elementClassSet}
-              dataTestRef={item.dataTestRef}
+              dataTestId={item.id}
+              dataTestRef={item.dataTestRef || 'CollectionItem'}
               id={item.id}
               tabIndex={!isVisible ? -1 : null}
               title={item.title}

@@ -43,6 +43,8 @@ const CollectionItem: CollectionItemType = (props) => {
     <li className={classSet}>
       <Hyperlink
         className={linkClassSet}
+        dataTestId={props.id}
+        dataTestRef="CollectionItem"
         tabIndex={!isOpen || !isActive ? -1 : null}
         title={title}
         url={url}
