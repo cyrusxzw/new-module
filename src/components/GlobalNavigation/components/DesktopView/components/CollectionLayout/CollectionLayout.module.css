@@ -35,3 +35,7 @@
 .promotion {
   width: calc(100% * 9 / 12);
 }
+
+.hidden {
+  visibility: hidden;
+}

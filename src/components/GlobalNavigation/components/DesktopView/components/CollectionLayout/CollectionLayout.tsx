@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useMenuItemContext } from '../MenuItem/MenuItem.context';
 import { getCollectionLists } from '~/components/GlobalNavigation/GlobalNavigation.utils';
@@ -33,6 +34,7 @@ const CollectionLayout: CollectionLayoutType = ({
         <CollectionList
           dataTestRef={`NAV_${currentId.toUpperCase()}_TLC`}
           heading={topLevelCollectionLabel}
+          isVisible={isOpen}
           items={topLevelCollections}
         />
 
@@ -40,6 +42,7 @@ const CollectionLayout: CollectionLayoutType = ({
           <CollectionList
             dataTestRef={`NAV_${currentId.toUpperCase()}_TLC_READ`}
             eyebrow={articlesListHeading}
+            isVisible={isOpen}
             items={articles}
           />
         )}
@@ -56,6 +59,7 @@ const CollectionLayout: CollectionLayoutType = ({
                     index + 1
                   }`}
                   heading={label}
+                  isVisible={isOpen}
                   items={items}
                   key={id}
                 />
@@ -69,6 +73,7 @@ const CollectionLayout: CollectionLayoutType = ({
                   index + 1
                 }`}
                 heading={label}
+                isVisible={isOpen}
                 items={items}
                 key={id}
               />
@@ -77,7 +82,7 @@ const CollectionLayout: CollectionLayoutType = ({
         </div>
 
         {type === 'collection' && promotion && (
-          <div className={styles.promotion}>
+          <div className={cx(styles.promotion, { [styles.hidden]: !isOpen })}>
             <PromotionCard
               {...promotion}
               dataTestRef={`NAV_${currentId.toUpperCase()}_PROMO_CARD`}
@@ -91,6 +96,7 @@ const CollectionLayout: CollectionLayoutType = ({
       <CollectionImage
         {...image}
         dataTestRef={`NAV_${currentId.toUpperCase()}_COLLECTION_IMAGE`}
+        isVisible={isOpen}
       />
     </>
   );

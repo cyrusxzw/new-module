@@ -12,6 +12,7 @@ const CollectionList: CollectionListType = ({
   items,
   eyebrow,
   dataTestRef,
+  isVisible,
 }) => {
   const { isActive } = useMenuItemContext();
   const currentTheme = useThemeContext(undefined, 'dark');
@@ -22,7 +23,9 @@ const CollectionList: CollectionListType = ({
     <>
       {eyebrow && (
         <small
-          className={cx(styles.eyebrow, styles.small)}
+          className={cx(styles.eyebrow, styles.small, {
+            [styles.hidden]: !isVisible,
+          })}
           data-test-ref={`${dataTestRef}_EYEBROW`}
         >
           {eyebrow}
@@ -31,7 +34,7 @@ const CollectionList: CollectionListType = ({
 
       {heading && (
         <Heading
-          className={styles.heading}
+          className={cx(styles.heading, { [styles.hidden]: !isVisible })}
           dataTestRef={`${dataTestRef}_HEADING`}
           level={'2'}
           size={'small'}

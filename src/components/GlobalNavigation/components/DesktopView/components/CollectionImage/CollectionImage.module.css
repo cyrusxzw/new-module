@@ -4,6 +4,10 @@
   width: calc(100% * 4 / 12);
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .image {
   height: 100%;
 
