@@ -10,7 +10,7 @@
   z-index: var(--z-index-menu);
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: var(--menu-height);
   justify-content: space-between;
   padding-right: var(--container-margin);
   padding-left: var(--container-margin);
@@ -34,7 +34,9 @@
     right: 0;
     bottom: 0;
     left: 0;
+    height: 100vh;
     background-color: var(--color-primary);
+    transition: height 200ms var(--easing-ease-in-out-cubic);
   }
 
   &.isLegacyMenu {
@@ -60,7 +62,7 @@
   &.isVisibleStickyNav,
   &.isInvisibleStickyNav {
     position: fixed;
-    height: var(--menu-height); 
+    height: var(--menu-height);
     transition: top 300ms var(--easing-ease-in-out-cubic);
   }
 
