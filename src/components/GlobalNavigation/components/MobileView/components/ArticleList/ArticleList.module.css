@@ -1,7 +1,6 @@
 @import 'styles/index';
 
 .base {
-  margin-top: 24px;
   margin-bottom: 40px;
   opacity: 1;
   transition: opacity 200ms var(--easing-ease-out-cubic);
@@ -19,9 +18,4 @@
 .articleCarousel aside {
   display: flex;
   width: max-content;
-}
-
-
-.mobileArticle {
-  width: 80vw;
 }
