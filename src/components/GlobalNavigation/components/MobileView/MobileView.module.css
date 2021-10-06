@@ -136,12 +136,16 @@
   margin-right: 5px;
   margin-left: 5px;
   font-family: var(--font-family-sans-serif-regular);
-  font-size: rem(20px);
+  font-size: rem(18px);
   line-height: 1.4;
   outline-offset: 0;
   text-align: left;
   transition: outline-offset 200ms var(--easing-ease-out-cubic),
     color 200ms var(--easing-ease-out-cubic);
+
+  @media (min-height: 736px) {
+    font-size: rem(20px);
+  }
 
   polygon {
     transition: fill 200ms var(--easing-ease-out-cubic);
