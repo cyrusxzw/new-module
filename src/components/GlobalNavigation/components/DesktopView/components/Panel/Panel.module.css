@@ -32,7 +32,7 @@
   opacity: 0;
   overflow-y: auto;
   pointer-events: none;
-  transition: opacity 200ms var(--easing-ease-in-out-cubic);
+  transition: opacity 400ms var(--easing-ease-in-out-cubic);
 
   &.active {
     opacity: 1;
