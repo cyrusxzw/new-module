@@ -24,7 +24,6 @@ const ArticleCard: ArticleCardType = ({
     compositionStyles.itemElement,
     compositionStyles.ornamentalWrapper,
     styles.leftAligned,
-    styles.mobileArticle,
   );
 
   return (
