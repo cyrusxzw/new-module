@@ -22,7 +22,7 @@
 /* responsive font */
 @media (min-width: 1600px) and (max-width: 1920px) {
   .heading {
-    font-size: calc(16px + .111vw);
+    font-size: rem(calc(16px + .111vw));
   }
 }
 

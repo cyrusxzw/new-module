@@ -10,12 +10,3 @@
   opacity: 0;
   pointer-events: none;
 }
-
-.articleCarousel {
-  overflow-x: scroll;
-}
-
-.articleCarousel aside {
-  display: flex;
-  width: max-content;
-}
