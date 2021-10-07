@@ -11120,10 +11120,12 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .ArticleCard-module_base__2ZuMd {
+  min-width: 80vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-top: 16px;
   padding-bottom: 16px;
+  scroll-snap-align: center;
 }
 .ArticleCard-module_base__2ZuMd.ArticleCard-module_dark__UIL6n {
     color: #666;
@@ -11256,6 +11258,18 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -webkit-transition: opacity 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: opacity 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+.ArticleList-module_base__5-9n5 aside {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    overflow-x: auto;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+  }
 .ArticleList-module_hidden__2NykM {
   opacity: 0;
   pointer-events: none;
