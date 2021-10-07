@@ -6,8 +6,10 @@ import {
   useGlobalNavigationStateContext,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useTabletViewContext } from './TabletView.context';
+import { useStickyNav } from '../../GlobalNavigation.hooks';
 import {
   useEscapeKeyListener,
+  useOnScreen,
   useOverflowHidden,
   useTrapFocus,
 } from '~/customHooks';
@@ -29,6 +31,8 @@ const TabletView: TabletViewType = ({ className }) => {
     isOpen,
     setActiveCollectionId,
     setIsOpen,
+    stickyNavProps,
+    setStickyNavProps,
   } = useGlobalNavigationStateContext();
 
   const {
@@ -39,10 +43,14 @@ const TabletView: TabletViewType = ({ className }) => {
   } = useTabletViewContext();
 
   const contextTheme = useThemeContext(theme, 'dark');
-  const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
-
   const currentTheme = isOpen ? 'dark' : contextTheme;
   const currentCloseLogoTheme = closedLogoTheme || currentTheme;
+
+  const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
+  const stickyNavRef = useStickyNav(stickyNavProps, setStickyNavProps);
+  const isCompletelyOnScreen = useOnScreen(stickyNavRef, 1, undefined, true);
+
+  useOverflowHidden(isOpen);
 
   const handleOnClose = () => {
     setActiveCollectionId('top');
@@ -51,12 +59,25 @@ const TabletView: TabletViewType = ({ className }) => {
     onClose?.();
   };
 
-  useOverflowHidden(isOpen);
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
 
   const classSet = cx(
     styles.base,
     { [styles.open]: isOpen },
+    {
+      [styles.isVisibleStickyNav]:
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        !stickyNavProps.isHidden &&
+        !isOpen,
+    },
+    {
+      [styles.isInvisibleStickyNav]:
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        stickyNavProps.isHidden &&
+        !isOpen,
+    },
     { [closedClassName]: !isOpen },
     { [openClassName]: isOpen },
     { [styles.isLegacyMenu]: isLegacyMenu },
@@ -69,10 +90,13 @@ const TabletView: TabletViewType = ({ className }) => {
       <div className={classSet} ref={focusTrapRef}>
         <PrimaryMenu onClose={handleOnClose} />
         <SecondaryMenu />
-        {!isOpen && <Logo closedTheme={currentCloseLogoTheme} />}
       </div>
-
-      <div aria-hidden={true} className={styles.absoluteBuffer} />
+      {!isLegacyMenu && !isOpen && <Logo closedTheme={currentCloseLogoTheme} />}
+      <div
+        aria-hidden={true}
+        className={styles.absoluteBuffer}
+        ref={stickyNavRef}
+      />
     </ThemeContextProvider>
   );
 };

@@ -1,8 +1,10 @@
 import React, { ReactNode } from 'react';
 import { Mode } from 'react-hook-form/dist/index.ie11';
+import { a as DateSelectorProps } from '../../sharedChunks/DateSelector.types';
 import { S as SelectProps } from '../../sharedChunks/Select.types';
 import { T as TextInputV2Props } from '../../sharedChunks/TextInputV2.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
+import '../../sharedChunks/Component.types';
 
 declare type FieldValidation = {
     isRequired?: {
@@ -25,19 +27,22 @@ declare type FieldValidation = {
 declare type CheckBox = {
     type: 'Checkbox';
 };
+declare type DateSelector = {
+    type: 'DateSelector';
+} & Pick<DateSelectorProps, 'copy' | 'maxYears'>;
 declare type Select = {
     type: 'Select';
-    options: SelectProps['options'];
-};
+} & Pick<SelectProps, 'options'>;
 declare type TextField = {
     type: 'TextField';
-    subtype: TextInputV2Props['type'];
+    subtype?: TextInputV2Props['type'];
 };
 declare type FieldSchema = {
     /** An initial value for the field. The value in `defaultValues` prop for the same field will take precedence */
     defaultValue?: string;
     /** The field's HTML id attribute */
     id?: string;
+    isEnabled?: boolean;
     /** The field's label, often used for accessibility */
     label?: string;
     /** An identifier of the field to the form */
@@ -51,7 +56,7 @@ declare type FieldSchema = {
     testRef?: string;
     /** Contains validation rules for the form field */
     validation?: FieldValidation;
-} & (CheckBox | Select | TextField);
+} & (CheckBox | DateSelector | Select | TextField);
 declare type FormFieldsRow = FieldSchema[];
 declare type FormSchema = FormFieldsRow[];
 declare type DynamicFormProps = {

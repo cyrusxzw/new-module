@@ -16,6 +16,7 @@ import { DateSelector } from './DateSelector';
         'dark',
         'Presentation',
       );
+      const isEnabled = knobs.boolean('isEnabled', true);
       const implementation = {
         gridOverlay: {
           isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
@@ -29,7 +30,11 @@ import { DateSelector } from './DateSelector';
       const onChange = (date) => console.log('Date is ', date);
       return (
         <>
-          <DateSelector theme={theme} onChange={onChange} />
+          <DateSelector
+            isEnabled={isEnabled}
+            theme={theme}
+            onChange={onChange}
+          />
           <StorybookGridOverlay {...implementation.gridOverlay} />
         </>
       );

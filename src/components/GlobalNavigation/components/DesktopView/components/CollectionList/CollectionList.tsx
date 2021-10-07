@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import { Heading } from '~/components/Heading';
 import { useThemeContext } from '~/contexts';
 import { useMenuItemContext } from '~/components/GlobalNavigation/components/DesktopView/components/MenuItem/MenuItem.context';
 import { CollectionItem } from '../CollectionItem';
@@ -11,6 +12,7 @@ const CollectionList: CollectionListType = ({
   items,
   eyebrow,
   dataTestRef,
+  isVisible,
 }) => {
   const { isActive } = useMenuItemContext();
   const currentTheme = useThemeContext(undefined, 'dark');
@@ -21,7 +23,9 @@ const CollectionList: CollectionListType = ({
     <>
       {eyebrow && (
         <small
-          className={cx(styles.eyebrow, styles.small)}
+          className={cx(styles.eyebrow, styles.small, {
+            [styles.hidden]: !isVisible,
+          })}
           data-test-ref={`${dataTestRef}_EYEBROW`}
         >
           {eyebrow}
@@ -29,17 +33,18 @@ const CollectionList: CollectionListType = ({
       )}
 
       {heading && (
-        <strong
-          className={styles.heading}
-          data-test-ref={`${dataTestRef}_HEADING`}
+        <Heading
+          className={cx(styles.heading, { [styles.hidden]: !isVisible })}
+          dataTestRef={`${dataTestRef}_HEADING`}
+          level={'2'}
+          size={'small'}
         >
           {heading}
-        </strong>
+        </Heading>
       )}
 
       <ul
         aria-hidden={!isActive}
-        aria-label="submenu"
         className={listClassSet}
         data-test-ref={`${dataTestRef}_ITEMLIST`}
       >

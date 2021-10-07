@@ -6,15 +6,16 @@ import {
   generateDayOptions,
   generateMonthOptions,
   generateYearOptions,
+  getMaxDaysInAMonth,
   splitIsoDate,
   useUpdateDayOptions,
-  useUpdateDayValue,
 } from './DateSelector.utils';
 import type { DatePortion, DateSelectorType } from './DateSelector.types';
 import styles from './DateSelector.module.css';
 
 const DateSelector: DateSelectorType = ({
   copy,
+  isEnabled = true,
   maxYears = 100,
   name = 'date-selector',
   onChange,
@@ -30,10 +31,16 @@ const DateSelector: DateSelectorType = ({
 
   const updateDate = useCallback(
     (portion: DatePortion, value: string) => {
-      const newDay = portion === 'day' ? value : day;
+      let newDay = portion === 'day' ? value : day;
       const newMonth = portion === 'month' ? value : month;
       const newYear = portion === 'year' ? value : year;
-      const isNewDateValid = !!newDay && !!newMonth && !!newYear;
+      const maxDaysInMonth = getMaxDaysInAMonth(newMonth, newYear);
+
+      const shouldResetDayValue = parseInt(newDay, 10) > maxDaysInMonth;
+      newDay = shouldResetDayValue ? '' : newDay;
+
+      const areAllSegmentsDefined = !!newDay && !!newMonth && !!newYear;
+      const isNewDateValid = areAllSegmentsDefined && !shouldResetDayValue;
 
       setDate(() => {
         const newDate = [newYear, newMonth, newDay].join('-');
@@ -45,12 +52,12 @@ const DateSelector: DateSelectorType = ({
   );
 
   useUpdateDayOptions(date, setDayOptions);
-  useUpdateDayValue(date, updateDate);
 
   return (
     <div className={classSet}>
       <Select
         className={cx(styles.dropDown)}
+        isEnabled={isEnabled}
         label={copy?.day ?? 'Day'}
         name={`${name}-day`}
         onChange={(event) => {
@@ -62,6 +69,7 @@ const DateSelector: DateSelectorType = ({
       />
       <Select
         className={cx(styles.dropDown)}
+        isEnabled={isEnabled}
         label={copy?.month ?? 'Month'}
         name={`${name}-month`}
         onChange={(event) => {
@@ -73,6 +81,7 @@ const DateSelector: DateSelectorType = ({
       />
       <Select
         className={cx(styles.dropDown)}
+        isEnabled={isEnabled}
         label={copy?.year ?? 'Year'}
         name={`${name}-year`}
         onChange={(event) => {

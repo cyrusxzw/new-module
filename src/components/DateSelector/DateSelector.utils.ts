@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import type { SelectProps } from '~/components/Select/Select.types';
-import type { DatePortion } from './DateSelector.types';
 
 type SelectOptions = SelectProps['options'];
 
@@ -94,20 +93,6 @@ const useUpdateDayOptions = (
   }, [date, setDayOptions]);
 };
 
-const useUpdateDayValue = (
-  date: string,
-  updateDate: (portion: DatePortion, value: string) => void,
-): void => {
-  useEffect(() => {
-    const { day, month, year } = splitIsoDate(date);
-    const maxDaysInMonth = getMaxDaysInAMonth(month, year);
-
-    if (parseInt(day, 10) > maxDaysInMonth) {
-      updateDate('day', '');
-    }
-  }, [date, updateDate]);
-};
-
 export {
   generateDayOptions,
   generateMonthOptions,
@@ -115,5 +100,4 @@ export {
   getMaxDaysInAMonth,
   splitIsoDate,
   useUpdateDayOptions,
-  useUpdateDayValue,
 };
