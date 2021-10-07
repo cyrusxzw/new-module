@@ -45,6 +45,7 @@
   left: 40px;
 
   &.active {
+    z-index: var(--z-index-fixed-menu);
     top: calc(var(--desktop-offset) + var(--menu-height));
   }
 }

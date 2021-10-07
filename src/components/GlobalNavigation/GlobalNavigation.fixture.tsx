@@ -228,14 +228,6 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           },
         ],
       },
-      {
-        id: 'taxonomy-of-design',
-        label: 'Taxonomy of Design',
-        title: 'Taxonomy of Design',
-        type: 'link' as const,
-        url: '#taxonomy-of-design',
-        isExternal: true,
-      },
     ],
   },
   collections: [

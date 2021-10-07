@@ -6,6 +6,7 @@ declare type HeadingLevels = '1' | '2' | '3' | '4' | '5' | '6';
 declare type HeadingSizes = 'xXSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
 declare type HeadingProps = {
     className?: string;
+    dataTestRef?: string;
     hasMediumWeightFont?: boolean;
     hasSerifFont?: boolean;
     id?: string;

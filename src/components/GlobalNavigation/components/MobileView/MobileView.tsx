@@ -1,8 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
+import { useStickyNav } from '../../GlobalNavigation.hooks';
 import {
   useEscapeKeyListener,
+  useOnScreen,
   useOverflowHidden,
   useTrapFocus,
 } from '~/customHooks';
@@ -22,6 +24,8 @@ const MobileView: MobileViewType = ({ className }) => {
     setActiveCollectionId,
     setIsOpen,
     activeCollectionId,
+    stickyNavProps,
+    setStickyNavProps,
   } = useGlobalNavigationStateContext();
 
   const {
@@ -41,6 +45,8 @@ const MobileView: MobileViewType = ({ className }) => {
 
   const currentTheme = useThemeContext(theme, 'dark');
   const [focusTrapRef] = useTrapFocus(isOpen && !isVisuallyObstructed);
+  const stickyNavRef = useStickyNav(stickyNavProps, setStickyNavProps);
+  const isCompletelyOnScreen = useOnScreen(stickyNavRef, 1, undefined, true);
 
   useOverflowHidden(isOpen);
 
@@ -58,6 +64,20 @@ const MobileView: MobileViewType = ({ className }) => {
   const classSet = cx(
     styles.base,
     { [styles.open]: isOpen },
+    {
+      [styles.isVisibleStickyNav]:
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        !stickyNavProps.isHidden &&
+        !isOpen,
+    },
+    {
+      [styles.isInvisibleStickyNav]:
+        !isCompletelyOnScreen &&
+        stickyNavProps.isFixed &&
+        stickyNavProps.isHidden &&
+        !isOpen,
+    },
     { [closedClassName]: !isOpen },
     { [openClassName]: isOpen },
     styles[currentTheme],
@@ -77,7 +97,6 @@ const MobileView: MobileViewType = ({ className }) => {
         <Transition isActive={isOpen} type="fixed">
           <div className={classSet} ref={focusTrapRef}>
             <Header onClose={handleOnClose} />
-
             <Transition isActive={isOpen} type="fadeIn">
               <div className={cx(styles.main, { [styles.open]: isOpen })}>
                 <PrimaryMenu
@@ -91,6 +110,11 @@ const MobileView: MobileViewType = ({ className }) => {
           </div>
         </Transition>
       </div>
+      <div
+        aria-hidden={true}
+        className={styles.absoluteBuffer}
+        ref={stickyNavRef}
+      />
     </ThemeContextProvider>
   );
 };

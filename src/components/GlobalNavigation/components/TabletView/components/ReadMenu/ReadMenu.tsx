@@ -12,11 +12,9 @@ const ReadMenu: ReadMenuType = () => {
 
   const { read } = useGlobalNavigationContext();
 
-  const {
-    nestedCollections,
-    notableNestedCollections,
-    taxonomyOfDesignElement,
-  } = getCollectionLists(read.items);
+  const { nestedCollections, notableNestedCollections } = getCollectionLists(
+    read.items,
+  );
 
   const readCollections = [...nestedCollections, ...notableNestedCollections];
 
@@ -30,11 +28,6 @@ const ReadMenu: ReadMenuType = () => {
           key={id}
         />
       ))}
-
-      <CollectionList
-        isVisible={activeCollectionId === read.id}
-        items={[taxonomyOfDesignElement]}
-      />
     </>
   );
 };

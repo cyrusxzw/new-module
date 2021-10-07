@@ -33,7 +33,12 @@ const CollectionItem: CollectionItemType = ({
   };
 
   return rest.type === 'link' ? (
-    <Hyperlink {...sharedProps} url={rest.url}>
+    <Hyperlink
+      dataTestId={id}
+      dataTestRef="CollectionItem"
+      {...sharedProps}
+      url={rest.url}
+    >
       <span className={compositionStyles.ornamentalHover}>{label}</span>
     </Hyperlink>
   ) : (

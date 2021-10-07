@@ -1,4 +1,10 @@
-const DynamicFormFixture = {
+import type { FormSchema } from './DynamicForm.types';
+
+const DynamicFormFixture: {
+  auSignUp: FormSchema;
+  krSignUp: FormSchema;
+  onSubmit: any;
+} = {
   auSignUp: [
     [
       {
@@ -44,6 +50,7 @@ const DynamicFormFixture = {
         styling: {
           flex: 3,
         },
+        subtype: 'text',
       },
       {
         name: 'lastname',
@@ -62,6 +69,7 @@ const DynamicFormFixture = {
         styling: {
           flex: 3,
         },
+        subtype: 'text',
       },
     ],
     [
@@ -79,6 +87,14 @@ const DynamicFormFixture = {
             message: 'Your email must be bruce@batcave.com',
           },
         },
+        subtype: 'text',
+      },
+    ],
+    [
+      {
+        type: 'DateSelector',
+        name: 'dob',
+        defaultValue: '2020-02-29',
       },
     ],
     [
@@ -130,6 +146,7 @@ const DynamicFormFixture = {
             message: 'Your last name is too long',
           },
         },
+        subtype: 'text',
       },
     ],
     [
@@ -147,6 +164,7 @@ const DynamicFormFixture = {
             message: 'Your first name is too long',
           },
         },
+        subtype: 'text',
       },
     ],
     [
@@ -164,6 +182,7 @@ const DynamicFormFixture = {
             message: 'Your email must be bruce@batcave.com',
           },
         },
+        subtype: 'text',
       },
     ],
     [

@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import { Heading } from '~/components/Heading';
 import { useThemeContext } from '~/contexts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
@@ -17,6 +18,10 @@ const CollectionList: CollectionListType = ({
   const headingClassSet = cx(
     styles.collectionHeading,
     compositionStyles.collectionItemLabel,
+    {
+      [styles.menuOpen]: isVisible,
+      [styles.menuClosed]: !isVisible,
+    },
   );
 
   const elementClassSet = cx(
@@ -26,13 +31,13 @@ const CollectionList: CollectionListType = ({
 
   return (
     <>
-      {heading && <strong className={headingClassSet}>{heading}</strong>}
+      {heading && (
+        <Heading className={headingClassSet} level={'2'} size={'small'}>
+          {heading}
+        </Heading>
+      )}
 
-      <ul
-        aria-hidden={!isVisible}
-        aria-label="submenu"
-        className={compositionStyles.list}
-      >
+      <ul aria-hidden={!isVisible} className={compositionStyles.list}>
         {items.map((item) => (
           <li className={compositionStyles.collectionItem} key={item.id}>
             <Hyperlink

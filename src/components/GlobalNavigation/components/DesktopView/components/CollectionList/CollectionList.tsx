@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import { Heading } from '~/components/Heading';
 import { useThemeContext } from '~/contexts';
 import { useMenuItemContext } from '~/components/GlobalNavigation/components/DesktopView/components/MenuItem/MenuItem.context';
 import { CollectionItem } from '../CollectionItem';
@@ -29,17 +30,18 @@ const CollectionList: CollectionListType = ({
       )}
 
       {heading && (
-        <strong
+        <Heading
           className={styles.heading}
-          data-test-ref={`${dataTestRef}_HEADING`}
+          dataTestRef={`${dataTestRef}_HEADING`}
+          level={'2'}
+          size={'small'}
         >
           {heading}
-        </strong>
+        </Heading>
       )}
 
       <ul
         aria-hidden={!isActive}
-        aria-label="submenu"
         className={listClassSet}
         data-test-ref={`${dataTestRef}_ITEMLIST`}
       >

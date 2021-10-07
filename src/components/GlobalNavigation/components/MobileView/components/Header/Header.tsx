@@ -30,7 +30,7 @@ const Header: HeaderType = ({ onClose }) => {
 
   useWindowHasResized();
 
-  const { search, cart, menu, stores } = actions;
+  const { search, cart, menu } = actions;
   const currentClosedTheme = closedTheme || currentTheme;
 
   const handleOnSearchClick = () => {
@@ -43,14 +43,7 @@ const Header: HeaderType = ({ onClose }) => {
 
   const handleOnMenuButtonClick = () => {
     if (isMenuOpen) {
-      if (
-        activeCollectionId === search?.id ||
-        activeCollectionId === stores?.id
-      ) {
-        setActiveCollectionId('top');
-      } else {
-        onClose();
-      }
+      onClose();
     } else {
       setIsMenuOpen(true);
       onOpen?.();

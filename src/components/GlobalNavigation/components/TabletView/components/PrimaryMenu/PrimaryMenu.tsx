@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
 import {
   useGlobalNavigationContext,
@@ -38,6 +39,11 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
   const { isShopOpen, setIsShopOpen } = useTabletViewContext();
 
   const currentTheme = useThemeContext(undefined, 'dark');
+
+  const closeButtonSet = cx(compositionStyles.element, {
+    [compositionStyles.menuOpen]: isOpen,
+    [compositionStyles.menuClosed]: !isOpen,
+  });
 
   const handleOnCollectionClick = (id: string, callback?: () => void) => {
     setActiveCollectionId(id);
@@ -190,7 +196,7 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
           <Transition isActive={isOpen} type="fade">
             <div>
               <Button
-                className={compositionStyles.element}
+                className={closeButtonSet}
                 dataTestRef="NAV_MENU_CLOSE"
                 isInline={true}
                 onClick={onClose}

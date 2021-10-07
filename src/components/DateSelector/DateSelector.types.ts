@@ -11,6 +11,8 @@ type DateSelectorProps = {
     year?: string;
   };
 
+  isEnabled?: boolean;
+
   /** Maximum number of years to show in the year dropdown */
   maxYears?: number;
   name?: string;
@@ -25,4 +27,4 @@ type DateSelectorType = ComponentWithoutChildren<DateSelectorProps>;
 
 type DatePortion = 'day' | 'month' | 'year';
 
-export type { DateSelectorType, DatePortion };
+export type { DateSelectorProps, DateSelectorType, DatePortion };

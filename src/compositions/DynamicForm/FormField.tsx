@@ -21,6 +21,7 @@ export const FormField: VFC<FormFieldProps> = ({
   const {
     defaultValue: defaultValueFromSchema,
     id,
+    isEnabled,
     label,
     name,
     testRef,
@@ -36,29 +37,40 @@ export const FormField: VFC<FormFieldProps> = ({
     return null;
   }
 
+  const genericFieldProps = {
+    className: formFieldClassSet,
+    control,
+    dataTestRef: testRef,
+    defaultValue: defaultValues?.[name] || defaultValueFromSchema,
+    errorMessage: errors[name]?.message,
+    id,
+    isEnabled,
+    label,
+    name,
+    rules: getValidationRules(validation, type, getValues),
+    theme,
+  };
+
+  const specificFieldProps = {
+    copy:
+      fieldSpecificValues.type === 'DateSelector'
+        ? fieldSpecificValues.copy
+        : undefined,
+    maxYears:
+      fieldSpecificValues.type === 'DateSelector'
+        ? fieldSpecificValues.maxYears
+        : undefined,
+    options:
+      fieldSpecificValues.type === 'Select'
+        ? fieldSpecificValues.options
+        : undefined,
+    subtype:
+      fieldSpecificValues.type === 'TextField'
+        ? fieldSpecificValues.subtype
+        : undefined,
+  };
+
   return (
-    <InputField
-      className={formFieldClassSet}
-      control={control}
-      dataTestRef={testRef}
-      defaultValue={defaultValues?.[name] || defaultValueFromSchema}
-      errorMessage={errors[name]?.message}
-      id={id}
-      key={name}
-      label={label}
-      name={name}
-      options={
-        fieldSpecificValues.type === 'Select'
-          ? fieldSpecificValues.options
-          : undefined
-      }
-      rules={getValidationRules(validation, type, getValues)}
-      subtype={
-        fieldSpecificValues.type === 'TextField'
-          ? fieldSpecificValues.subtype
-          : undefined
-      }
-      theme={theme}
-    />
+    <InputField key={name} {...genericFieldProps} {...specificFieldProps} />
   );
 };
