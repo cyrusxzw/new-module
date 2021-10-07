@@ -9,7 +9,6 @@
   overflow: auto;
   width: 100%;
   height: auto;
-  padding-top: 135px;
   padding-left: 34px;
   pointer-events: none;
   transition: border-top-color 200ms var(--easing-ease-in-out-cubic);
@@ -24,5 +23,6 @@
 }
 
 .active {
+  padding-top: 135px; /* Make tablet animation transition of open/close state consistent */
   pointer-events: auto;
 }

@@ -8,6 +8,7 @@ type CollectionListProps = {
   dataTestRef?: string;
   eyebrow?: string;
   heading?: string;
+  isVisible?: boolean;
   items: (Article | Link)[];
 };
 
