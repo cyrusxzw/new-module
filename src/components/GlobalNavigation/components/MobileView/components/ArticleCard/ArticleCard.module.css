@@ -1,9 +1,11 @@
 @import 'styles/index';
 
 .base {
+  min-width: 80vw;
   box-sizing: border-box;
   padding-top: 16px;
   padding-bottom: 16px;
+  scroll-snap-align: center;
 
   &.dark {
     color: var(--color-dark-label);
