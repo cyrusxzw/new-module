@@ -13,7 +13,6 @@
 .heading {
   display: block;
   margin-bottom: 10px;
-  color: var(--color-black);
   font-family: var(--font-family-sans-serif-medium);
   font-size: rem(16px);
   font-weight: normal;

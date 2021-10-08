@@ -9,7 +9,7 @@
   height: var(--menu-height);
   align-items: center;
   border-bottom: 2px solid transparent;
-  margin-right: 20px;
+  margin-right: 1.3vw;
   pointer-events: auto;
   transition: border-bottom-color 200ms var(--easing-ease-in-out-cubic);
 
@@ -44,5 +44,20 @@
   &.light:focus-visible {
     outline: 1px dashed var(--color-light-decoration);
     outline-offset: 2px;
+  }
+}
+
+
+/* responsive menu font */
+
+@media (min-width: 1600px) and (max-width: 1920px) {
+  .element {
+    font-size: rem(calc(14px + .111vw));
+  }
+}
+
+@media (min-width: 1920px) {
+  .element {
+    font-size: rem(18px);
   }
 }

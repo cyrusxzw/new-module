@@ -38,3 +38,17 @@
     fill: var(--color-primary);
   }
 }
+
+/* responsive menu font */
+
+@media (min-width: 1600px) and (max-width: 1920px) {
+  .base {
+    font-size: rem(calc(14px + .111vw));
+  }
+}
+
+@media (min-width: 1920px) {
+  .base {
+    font-size: rem(18px);
+  }
+}
