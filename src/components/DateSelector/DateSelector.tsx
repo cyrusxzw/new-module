@@ -14,6 +14,7 @@ import type { DatePortion, DateSelectorType } from './DateSelector.types';
 import styles from './DateSelector.module.css';
 
 const DateSelector: DateSelectorType = ({
+  className,
   copy,
   isEnabled = true,
   maxYears = 100,
@@ -27,7 +28,7 @@ const DateSelector: DateSelectorType = ({
   const { day, month, year } = splitIsoDate(date);
   const [dayOptions, setDayOptions] = useState(generateDayOptions(31));
 
-  const classSet = cx(styles.base, styles[currentTheme]);
+  const classSet = cx(styles.base, styles[currentTheme], className);
 
   const updateDate = useCallback(
     (portion: DatePortion, value: string) => {
