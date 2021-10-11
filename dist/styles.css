@@ -10849,6 +10849,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     }
 .MobileView-module_base__2w8A0.MobileView-module_isVisibleStickyNav__uX_qH {
     top: 0;
+    outline: 1px solid rgba(51, 51, 51, 0.2);
   }
 .MobileView-module_base__2w8A0.MobileView-module_isInvisibleStickyNav__1iusv {
     top: calc(0 - 90px);
@@ -12287,6 +12288,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   }
 .DesktopView-module_base__3pahs.DesktopView-module_isVisibleStickyNav__bOmdp {
     top: 0;
+    outline: 1px solid rgba(51, 51, 51, 0.2);
   }
 .DesktopView-module_base__3pahs.DesktopView-module_isInvisibleStickyNav__31BbB {
     top: calc(0 - 74px);
@@ -13434,6 +13436,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   }
 .TabletView-module_base__1wd4G.TabletView-module_isVisibleStickyNav__2o1yT {
     top: 0;
+    outline: 2px solid rgba(51, 51, 51, 0.2); /* extra -1px to adjust nav partially sticking out */
   }
 .TabletView-module_base__1wd4G.TabletView-module_isInvisibleStickyNav__KKD5v {
     top: calc(
