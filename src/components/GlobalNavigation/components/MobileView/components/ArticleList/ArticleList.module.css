@@ -4,16 +4,20 @@
   margin-bottom: 40px;
   opacity: 1;
   transition: opacity 200ms var(--easing-ease-out-cubic);
+}
 
-  aside {
-    display: flex;
-    flex-flow: row nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
+aside {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  overflow-x: auto;
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
 }
 
 .hidden {
   opacity: 0;
   pointer-events: none;
 }
+

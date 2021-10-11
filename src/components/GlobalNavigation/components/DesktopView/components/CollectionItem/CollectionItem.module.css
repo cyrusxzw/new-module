@@ -53,7 +53,7 @@
 
 @media (min-width: 1600px) and (max-width: 1920px) {
   .element {
-    font-size: rem(calc(16px + .111vw));
+    font-size: calc(16px + .111vw);
   }
 }
 
