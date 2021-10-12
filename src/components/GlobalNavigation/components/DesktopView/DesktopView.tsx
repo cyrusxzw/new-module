@@ -24,10 +24,13 @@ const DesktopView: DesktopViewType = ({ className }) => {
     onClose,
     theme,
     isLegacyMenu,
+    trackingCallbacks,
   } = useGlobalNavigationContext();
 
   const {
     isOpen,
+    menuType,
+    menuCategoryLabel,
     setIsOpen,
     setActiveCollectionId,
     stickyNavProps,
@@ -47,7 +50,16 @@ const DesktopView: DesktopViewType = ({ className }) => {
   const stickyNavRef = useStickyNav(stickyNavProps, setStickyNavProps);
   const isCompletelyOnScreen = useOnScreen(stickyNavRef, 1, undefined, true);
 
+  const handleTracking = () =>
+    trackingCallbacks.desktop.menuItemClick({
+      menuType: menuType,
+      menuLabel: 'Menu',
+      menuCategory: menuCategoryLabel,
+      action: 'Close',
+    });
+
   const handleOnClose = () => {
+    handleTracking(); /* TODO{issue-11-nonFixture}: Add english menulabel */
     setActiveCollectionId('top');
     setIsOpen(false);
     onClose?.();
@@ -56,6 +68,7 @@ const DesktopView: DesktopViewType = ({ className }) => {
   useOverflowHidden(isOpen);
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
 
+  console.log('Tracking types: ', trackingCallbacks);
   const classSet = cx(
     styles.base,
     { [closedClassName]: !isOpen },

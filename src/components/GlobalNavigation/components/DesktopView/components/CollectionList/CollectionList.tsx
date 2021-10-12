@@ -8,11 +8,13 @@ import type { CollectionListType } from './CollectionList.types';
 import styles from './CollectionList.module.css';
 
 const CollectionList: CollectionListType = ({
+  dataTestRef,
+  eyebrow,
   heading,
   items,
-  eyebrow,
-  dataTestRef,
   isVisible,
+  menuType,
+  panel,
 }) => {
   const { isActive } = useMenuItemContext();
   const currentTheme = useThemeContext(undefined, 'dark');
@@ -49,7 +51,13 @@ const CollectionList: CollectionListType = ({
         data-test-ref={`${dataTestRef}_ITEMLIST`}
       >
         {items.map((itemProps) => (
-          <CollectionItem {...itemProps} key={itemProps.id} />
+          <CollectionItem
+            {...itemProps}
+            key={itemProps.id}
+            menuSubnav={heading || eyebrow}
+            menuType={menuType}
+            panel={panel}
+          />
         ))}
       </ul>
     </>

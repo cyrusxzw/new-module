@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import React from 'react';
 import cx from 'classnames';
 import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
@@ -15,6 +16,7 @@ const CollectionLayout: CollectionLayoutType = ({
   id,
   image,
   items,
+  menuType,
   promotion,
   topLevelCollectionLabel,
   type,
@@ -36,6 +38,8 @@ const CollectionLayout: CollectionLayoutType = ({
           heading={topLevelCollectionLabel}
           isVisible={isOpen}
           items={topLevelCollections}
+          menuType={menuType}
+          panel={'Panel 1'} // Refer to con-315 tracking word doc for panel numbering
         />
 
         {type === 'read-collection' && (
@@ -44,6 +48,8 @@ const CollectionLayout: CollectionLayoutType = ({
             eyebrow={articlesListHeading}
             isVisible={isOpen}
             items={articles}
+            menuType={menuType}
+            panel={'Panel 1'} // Refer to con-315 tracking word doc for panel numbering
           />
         )}
       </div>
@@ -62,6 +68,8 @@ const CollectionLayout: CollectionLayoutType = ({
                   isVisible={isOpen}
                   items={items}
                   key={id}
+                  menuType={menuType}
+                  panel={'Panel 2'}
                 />
               ))}
           </div>
@@ -76,6 +84,8 @@ const CollectionLayout: CollectionLayoutType = ({
                 isVisible={isOpen}
                 items={items}
                 key={id}
+                menuType={menuType}
+                panel={'Panel 2'} // Refer to con-315 tracking word doc for panel numbering
               />
             ))}
           </div>
@@ -88,6 +98,8 @@ const CollectionLayout: CollectionLayoutType = ({
               dataTestRef={`NAV_${currentId.toUpperCase()}_PROMO_CARD`}
               isFlush={true}
               isVisible={isOpen && activeCollectionId === currentId}
+              menuType={menuType}
+              panel={'Panel 2'} // Refer to con-315 tracking word doc for panel numbering
             />
           </div>
         )}

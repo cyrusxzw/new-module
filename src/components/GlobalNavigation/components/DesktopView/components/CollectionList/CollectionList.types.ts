@@ -10,6 +10,8 @@ type CollectionListProps = {
   heading?: string;
   isVisible?: boolean;
   items: (Article | Link)[];
+  menuType: 'Shop' | 'Read';
+  panel: 'Panel 1' | 'Panel 2';
 };
 
 type CollectionListType = ComponentWithoutChildren<CollectionListProps>;

@@ -1,5 +1,19 @@
 import type { PrimaryMenuProps } from './PrimaryMenu.types';
 
+/* TODO{issue-8}: Improve fixture to be more reflective of tracking data
+ * Currently implemented type to satisfy typescript for this fixture
+ */
+
+type NavTrackingPropsType = {
+  menuType: 'Shop' | 'Read';
+  panel: 'Panel 1' | 'Panel 2';
+};
+
+const navTrackingProps: NavTrackingPropsType = {
+  menuType: 'Shop',
+  panel: 'Panel 1',
+};
+
 const PrimaryMenuFixture: PrimaryMenuProps = {
   items: [
     {
@@ -14,6 +28,7 @@ const PrimaryMenuFixture: PrimaryMenuProps = {
           title: 'Primary navigation item title',
           type: 'link' as const,
           url: '#primary-navigation-item',
+          ...navTrackingProps,
         },
       ],
     },

@@ -15,6 +15,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ButtonRef(
     isEnabled = true,
     isInline = false,
     onClick,
+    onMouseEnter,
     tabIndex,
     title,
     type = 'button',
@@ -47,6 +48,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ButtonRef(
       disabled={!isEnabled}
       id={id}
       onClick={onClick}
+      onMouseEnter={onMouseEnter}
       ref={ref}
       tabIndex={tabIndex}
       title={title}

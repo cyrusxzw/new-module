@@ -1,5 +1,19 @@
 import type { NestedCollectionProps } from './NestedCollection.types';
 
+/* TODO{issue-9}: Improve fixture to be more reflective of tracking data
+ * Currently implemented type to satisfy typescript for this fixture
+ */
+
+type NavTrackingPropsType = {
+  menuType: 'Shop' | 'Read';
+  panel: 'Panel 1' | 'Panel 2';
+};
+
+const navTrackingProps: NavTrackingPropsType = {
+  menuType: 'Shop',
+  panel: 'Panel 1',
+};
+
 const NestedCollectionFixture: NestedCollectionProps = {
   id: 'nested-collection',
   label: 'Nested Collection',
@@ -11,6 +25,7 @@ const NestedCollectionFixture: NestedCollectionProps = {
       title: 'Nested Link',
       type: 'link' as const,
       url: '#nested-link',
+      ...navTrackingProps,
     },
   ],
 };

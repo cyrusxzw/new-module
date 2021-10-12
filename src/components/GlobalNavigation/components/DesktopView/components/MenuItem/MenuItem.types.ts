@@ -6,6 +6,7 @@ type MenuItemProps = {
   id: string;
   label: ReactNode;
   onClick?: () => void;
+  onMouseEnter?: () => void;
   title: string;
   type: 'trigger' | 'link';
   url?: string;

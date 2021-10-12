@@ -23,6 +23,7 @@ const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
       isDownload,
       kind,
       onClick,
+      onMouseEnter,
       style,
       tabIndex,
       textAlign = 'left',
@@ -64,6 +65,7 @@ const Hyperlink = forwardRef<HTMLAnchorElement, HyperlinkProps>(
         download={isDownload}
         href={url}
         onClick={onClick}
+        onMouseEnter={onMouseEnter}
         ref={ref}
         tabIndex={tabIndex}
         target={target}

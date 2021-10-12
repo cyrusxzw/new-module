@@ -17,6 +17,7 @@ describe('<GlobalNavigation />', () => {
             collections: GlobalNavigationFixture.collections,
             isVisuallyObstructed: false,
             read: GlobalNavigationFixture.read,
+            trackingCallbacks: GlobalNavigationFixture.trackingCallbacks,
           }}
         >
           <GlobalNavigation />

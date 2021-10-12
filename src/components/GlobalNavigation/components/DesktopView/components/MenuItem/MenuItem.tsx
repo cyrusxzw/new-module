@@ -15,6 +15,7 @@ const MenuItem: MenuItemType = ({
   id,
   label,
   onClick,
+  onMouseEnter,
   title,
   type,
   url,
@@ -52,6 +53,7 @@ const MenuItem: MenuItemType = ({
             }}
             isInline={true}
             onClick={onClick}
+            onMouseEnter={onMouseEnter}
           >
             {children}
           </Button>

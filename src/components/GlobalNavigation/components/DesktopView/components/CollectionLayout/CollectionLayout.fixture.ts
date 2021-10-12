@@ -1,6 +1,20 @@
 import type { CollectionLayoutProps } from './CollectionLayout.types';
 
+/* TODO{issue-2}: Improve fixture to be more reflective of tracking data
+ * Currently implemented type to satisfy typescript for this fixture
+ */
+type NavTrackingPropsType = {
+  menuType: 'Shop' | 'Read';
+  panel: 'Panel 1' | 'Panel 2';
+};
+
+const navTrackingProps: NavTrackingPropsType = {
+  menuType: 'Shop',
+  panel: 'Panel 1',
+};
+
 const CollectionLayoutFixture: CollectionLayoutProps = {
+  ...navTrackingProps,
   articles: [
     {
       id: 'collection-layout-article',
@@ -21,6 +35,7 @@ const CollectionLayoutFixture: CollectionLayoutProps = {
             'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
         },
       },
+      ...navTrackingProps,
     },
   ],
   articlesListHeading: 'Collection layout - articles list heading',
@@ -44,6 +59,7 @@ const CollectionLayoutFixture: CollectionLayoutProps = {
       title: 'Collections list item title',
       type: 'link' as const,
       url: '#collection-list-item',
+      ...navTrackingProps,
     },
   ],
   promotion: {

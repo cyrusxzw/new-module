@@ -8,6 +8,56 @@ import type { Themes, ComponentWithChildren } from '~/types';
 
 // type Tracking = {}; // @TODO https://aesoponline.atlassian.net/browse/CON-315
 
+type TrackingCallback = {
+  desktop: {
+    promotionCardClick: (
+      promotionCardTrackingProps: PromotionCardClickTracking,
+    ) => void;
+    promotionCardImpression: (
+      promotionCardTrackingProps: PromotionCardImpressionTracking,
+    ) => void;
+    menuItemClick: (menuItemTrackingProps: MenuItemTrackingWithAction) => void;
+    categoryItemClick: (
+      categoryItemTrackingProps: CategoryItemTrackingWithAction,
+    ) => void;
+  };
+  tablet: () => void;
+  mobile: () => void;
+};
+
+type PromotionCardImpressionTracking = {
+  id: string;
+  creative: string;
+  position: string;
+  currencyCode: string /* TODO{issue-15-nonFixture}: Finalize type of currency code */;
+  isVisible: boolean;
+};
+
+type PromotionCardClickTracking = PromotionCardImpressionTracking & {
+  englishLabel: string;
+};
+
+type MenuType = 'Shop' | 'Read' | 'Stores' | 'Search' | 'Menu';
+
+type CategoryItemTracking = {
+  menuCategory: string;
+  menuLabel: string;
+  menuSection: 'Panel 1' | 'Panel 2';
+  menuSubnav: string;
+  menuType: MenuType;
+};
+
+type MenuItemTrackingWithAction = {
+  menuCategory: string;
+  menuLabel: string;
+  menuType: MenuType;
+  action: 'Open' | 'Close' | 'Click' | 'Hover';
+};
+
+type CategoryItemTrackingWithAction = CategoryItemTracking & {
+  action: 'Open' | 'Close' | 'Click' | 'Hover';
+};
+
 type CollectionImage = {
   altText: string;
   sizes: {
@@ -35,6 +85,9 @@ type Link = Clickable & {
   alternateLabel?: string;
   isExternal?: boolean;
   onClick?: () => void;
+  menuSubnav?: string;
+  menuType: 'Shop' | 'Read';
+  panel: 'Panel 1' | 'Panel 2';
   type: 'link';
   url: string;
 };
@@ -51,6 +104,9 @@ type Article = Clickable & {
   isVisible?: boolean;
   metaDuration?: string;
   metaLabel?: string;
+  menuSubnav?: string;
+  menuType: 'Shop' | 'Read';
+  panel: 'Panel 1' | 'Panel 2';
   type: 'article';
   url: string;
 };
@@ -139,10 +195,14 @@ type StickyNavScrollType = {
 type GlobalNavigationStateContextType = {
   activeCollectionId: string;
   isOpen: boolean;
+  menuCategoryLabel: string;
+  menuType: MenuType;
   setActiveCollectionId: (id: string) => void;
+  setMenuCategoryLabel: (categoryLabel: string) => void;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   activeView: ActiveViewTypes;
   stickyNavProps: StickyNavType;
+  setMenuType: (menuType: MenuType) => void;
   setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
 };
 
@@ -164,6 +224,7 @@ type GlobalNavigationContextType = {
   read: Read;
   theme?: Themes;
   isLegacyMenu?: boolean;
+  trackingCallbacks: TrackingCallback;
 };
 
 type GlobalNavigationContextProviderProps = {
@@ -194,6 +255,8 @@ export type {
   Article,
   Actions,
   ActiveViewTypes,
+  CategoryItemTracking,
+  CategoryItemTrackingWithAction,
   Clickable,
   Collection,
   CollectionImage,
@@ -204,9 +267,13 @@ export type {
   GlobalNavigationStateContextType,
   GlobalNavigationType,
   Link,
+  MenuItemTrackingWithAction,
+  MenuType,
   NestedCollection,
   NotableNestedCollection,
   Promotion,
+  PromotionCardImpressionTracking,
+  PromotionCardClickTracking,
   Read,
   StickyNavType,
   StickyNavScrollType,
