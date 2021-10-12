@@ -25,10 +25,13 @@ const TabletView: TabletViewType = ({ className }) => {
     onClose,
     theme,
     isLegacyMenu,
+    trackingCallbacks,
   } = useGlobalNavigationContext();
 
   const {
     isOpen,
+    menuType,
+    menuCategoryLabel,
     setActiveCollectionId,
     setIsOpen,
     stickyNavProps,
@@ -52,7 +55,17 @@ const TabletView: TabletViewType = ({ className }) => {
 
   useOverflowHidden(isOpen);
 
+  const handleTracking = () =>
+    isOpen &&
+    trackingCallbacks.tablet.tabletMenuItemClick({
+      menuType: menuType,
+      menuLabel: 'Menu',
+      menuCategory: menuCategoryLabel,
+      action: 'Close',
+    });
+
   const handleOnClose = () => {
+    handleTracking();
     setActiveCollectionId('top');
     setIsShopOpen(false);
     setIsOpen(false);

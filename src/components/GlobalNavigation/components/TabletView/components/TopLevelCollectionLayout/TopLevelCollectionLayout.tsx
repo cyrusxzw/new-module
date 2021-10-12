@@ -12,6 +12,7 @@ import { PromotionCard } from '../../../PromotionCard';
 import { DetailsPanel } from '../DetailsPanel';
 import { CollectionList } from '../CollectionList';
 import type {
+  CategoryItemTrackingWithAction,
   TopLevelCollectionLayoutType,
   TopLevelCollectionListsType,
 } from './TopLevelCollectionLayout.types';
@@ -33,6 +34,8 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
     setActiveCollectionId,
   } = useGlobalNavigationStateContext();
 
+  const { trackingCallbacks } = useGlobalNavigationContext();
+
   const { isShopOpen } = useTabletViewContext();
 
   const {
@@ -51,6 +54,15 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
     compositionStyles.ornamentalWrapper,
   );
 
+  /* TODO{issue-20-nonFixture}: Change tracking func name */
+  const handleCollectionClick = (
+    id,
+    menuItemTrackingProps: CategoryItemTrackingWithAction,
+  ) => {
+    trackingCallbacks.tablet.tabletCategoryItemClick(menuItemTrackingProps);
+    setActiveCollectionId(id);
+  };
+
   return (
     <li className={compositionStyles.collectionItem}>
       <Button
@@ -61,7 +73,16 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
         className={buttonClassName}
         dataTestRef={dataTestRef}
         isInline={true}
-        onClick={() => setActiveCollectionId(id)}
+        onClick={() =>
+          handleCollectionClick(id, {
+            menuType: 'Shop',
+            menuLabel: label,
+            menuCategory:
+              'None' /* TODO{issue-22-nonFixture}: Dedicate function for this non-Category. Clicking menu item rather than category */,
+            menuSection: 'Panel 1',
+            action: isShopOpen ? 'Click' : 'Open',
+          })
+        }
         tabIndex={!isShopOpen ? -1 : null}
         title={title}
       >

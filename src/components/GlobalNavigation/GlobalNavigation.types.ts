@@ -21,7 +21,14 @@ type TrackingCallback = {
       categoryItemTrackingProps: CategoryItemTrackingWithAction,
     ) => void;
   };
-  tablet: () => void;
+  tablet: {
+    tabletMenuItemClick: (
+      tabletMenuItemTrackingProps: MenuItemTrackingWithAction,
+    ) => void;
+    tabletCategoryItemClick: (
+      tabletCategoryItemTrackingProps: CategoryItemTrackingWithAction,
+    ) => void;
+  };
   mobile: () => void;
 };
 
@@ -40,10 +47,10 @@ type PromotionCardClickTracking = PromotionCardImpressionTracking & {
 type MenuType = 'Shop' | 'Read' | 'Stores' | 'Search' | 'Menu';
 
 type CategoryItemTracking = {
-  menuCategory: string;
+  menuCategory?: string;
   menuLabel: string;
   menuSection: 'Panel 1' | 'Panel 2';
-  menuSubnav: string;
+  menuSubnav?: string;
   menuType: MenuType;
 };
 

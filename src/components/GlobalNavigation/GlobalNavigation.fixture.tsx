@@ -43,7 +43,12 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       categoryItemClick: (categoryItemTrackingProps) =>
         console.log('Menu is being tracked'),
     },
-    tablet: () => null,
+    tablet: {
+      tabletMenuItemClick: (tabletMenuItemTrackingProps) =>
+        console.log('Tablet Menu is being tracked'),
+      tabletCategoryItemClick: (categoryItemTrackingProps) =>
+        console.log('Tablet Category is being tracked'),
+    },
     mobile: () => null,
   },
   actions: {

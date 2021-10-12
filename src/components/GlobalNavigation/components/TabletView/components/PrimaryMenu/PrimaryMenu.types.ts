@@ -1,4 +1,5 @@
 import type { ComponentWithoutChildren } from '~/types';
+import type { MenuItemTrackingWithAction } from '~/components/GlobalNavigation/GlobalNavigation.types';
 
 type PrimaryMenuProps = {
   onClose: () => void;
@@ -6,4 +7,6 @@ type PrimaryMenuProps = {
 
 type PrimaryMenuType = ComponentWithoutChildren<PrimaryMenuProps>;
 
-export type { PrimaryMenuType };
+type MenuItemTrackingWithActionType = MenuItemTrackingWithAction;
+
+export type { PrimaryMenuType, MenuItemTrackingWithActionType };
