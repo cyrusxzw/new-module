@@ -37,10 +37,10 @@ const ArticleCard: ArticleCardType = ({
 
   const handleTracking = () => {
     trackingCallbacks.mobile.mobileCategoryItemClick({
-      menuCategory: 'None', // TODO{issue-21-nonFixture}: add translated english label value here in {context}
-      menuLabel: read.topLevelCollectionLabel, // TODO{issue-21-nonFixture}: add translated english label value here in {currentLabel}
+      menuCategory: 'None',
+      menuLabel: read.topLevelCollectionLabel,
       menuSection: 'Panel 1',
-      menuSubnav: read.articlesListHeading, // TODO{issue-21-nonFixture}: add translated english label value here in {PROP}
+      menuSubnav: read.articlesListHeading,
       menuType: menuType,
       action: 'Click',
     } as CategoryItemTrackingWithMobileActionType);

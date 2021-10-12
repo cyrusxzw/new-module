@@ -10,12 +10,6 @@ import type { Themes, ComponentWithChildren } from '~/types';
 
 type TrackingCallback = {
   desktop: {
-    promotionCardClick: (
-      promotionCardTrackingProps: PromotionCardClickTracking,
-    ) => void;
-    promotionCardImpression: (
-      promotionCardTrackingProps: PromotionCardImpressionTracking,
-    ) => void;
     menuItemClick: (menuItemTrackingProps: MenuItemTrackingWithAction) => void;
     categoryItemClick: (
       categoryItemTrackingProps: CategoryItemTrackingWithAction,
@@ -29,7 +23,22 @@ type TrackingCallback = {
       tabletCategoryItemTrackingProps: CategoryItemTrackingWithAction,
     ) => void;
   };
-  mobile: () => void;
+  mobile: {
+    mobileMenuItemClick: (
+      mobileMenuItemTrackingProps: MenuItemTrackingWithMobileAction,
+    ) => void;
+    mobileCategoryItemClick: (
+      mobileCategoryItemTrackingProps: CategoryItemTrackingWithMobileAction,
+    ) => void;
+  };
+  common: {
+    promotionCardClick: (
+      promotionCardTrackingProps: PromotionCardClickTracking,
+    ) => void;
+    promotionCardImpression: (
+      promotionCardTrackingProps: PromotionCardImpressionTracking,
+    ) => void;
+  };
 };
 
 type PromotionCardImpressionTracking = {
@@ -46,28 +55,58 @@ type PromotionCardClickTracking = PromotionCardImpressionTracking & {
 type MenuType = 'Shop' | 'Read' | 'Stores' | 'Search' | 'Menu';
 
 type CategoryItemTracking = {
-  menuCategory?: string;
+  menuCategory: string;
   menuLabel: string;
-  menuSection: 'Panel 1' | 'Panel 2';
-  menuSubnav?: string;
+  menuSection: 'Panel 1' | 'Panel 2' | 'Navbar';
+  menuSubnav: string;
   menuType: MenuType;
 };
 
-type MenuItemTrackingWithAction = {
+type MenuItemTracking = {
   menuCategory: string;
   menuLabel: string;
   menuType: MenuType;
+  menuSection: 'Panel 1' | 'Navbar';
+};
+
+type MenuItemNavBarTracking = MenuItemTracking & {
+  menuSection: 'Navbar';
+};
+
+type MenuItemFirstPanelTracking = MenuItemTracking & {
+  menuSection: 'Panel 1';
+};
+
+type DesktopAndTabletTrackingActions = {
   action: 'Open' | 'Close' | 'Click' | 'Hover';
 };
 
-type CategoryItemTrackingWithAction = CategoryItemTracking & {
-  action: 'Open' | 'Close' | 'Click' | 'Hover';
+type MobileTrackingActions = {
+  action: 'Open' | 'Close' | 'Click' | 'Hover' | 'Expand' | 'Collapse' | 'Back';
 };
+
+type CategoryItemTrackingWithAction = CategoryItemTracking &
+  DesktopAndTabletTrackingActions;
+
+type CategoryItemTrackingWithMobileAction = CategoryItemTracking &
+  MobileTrackingActions;
+
+type MenuItemTrackingWithAction = MenuItemTracking &
+  DesktopAndTabletTrackingActions;
+
+type MenuItemTrackingWithMobileAction = MenuItemTracking &
+  MobileTrackingActions;
+
+type MenuItemNavBarTrackingWithAction = MenuItemNavBarTracking &
+  DesktopAndTabletTrackingActions;
+
+type MenuItemFirstPanelTrackingWithAction = MenuItemFirstPanelTracking &
+  DesktopAndTabletTrackingActions;
 
 type CollectionImage = {
-  id: string;
+  id?: string;
   altText: string;
-  creative: string;
+  creative?: string;
   sizes: {
     medium?: string;
     large?: string;
@@ -265,6 +304,7 @@ export type {
   ActiveViewTypes,
   CategoryItemTracking,
   CategoryItemTrackingWithAction,
+  CategoryItemTrackingWithMobileAction,
   Clickable,
   Collection,
   CollectionImage,
@@ -275,7 +315,10 @@ export type {
   GlobalNavigationStateContextType,
   GlobalNavigationType,
   Link,
+  MenuItemFirstPanelTrackingWithAction,
+  MenuItemNavBarTrackingWithAction,
   MenuItemTrackingWithAction,
+  MenuItemTrackingWithMobileAction,
   MenuType,
   NestedCollection,
   NotableNestedCollection,

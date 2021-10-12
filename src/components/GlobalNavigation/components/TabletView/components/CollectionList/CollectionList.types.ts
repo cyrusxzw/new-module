@@ -8,6 +8,9 @@ type CollectionListProps = {
   heading?: string;
   isVisible?: boolean;
   items: Link[];
+  menuCategory?: 'Read';
+  menuSection?: 'Panel 1' /* To accomodate {About Us} for tablet Read Menu */;
+  menuSubnav?: string;
 };
 
 type CollectionListType = ComponentWithoutChildren<CollectionListProps>;

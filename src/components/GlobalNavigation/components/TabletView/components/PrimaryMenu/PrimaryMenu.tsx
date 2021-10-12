@@ -20,7 +20,7 @@ import { ArticleLayout } from '../ArticleLayout';
 import { TopLevelCollectionLayout } from '../TopLevelCollectionLayout';
 import type {
   PrimaryMenuType,
-  MenuItemTrackingWithActionType,
+  MenuItemNavBarTrackingWithActionType,
 } from './PrimaryMenu.types';
 import compositionStyles from '../../TabletView.module.css';
 import styles from './PrimaryMenu.module.css';
@@ -64,45 +64,41 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
   };
 
   const handleTracking = (
-    menuItemTrackingProps: MenuItemTrackingWithActionType,
+    menuItemNavBarProps: MenuItemNavBarTrackingWithActionType,
   ) => {
-    trackingCallbacks.tablet.tabletMenuItemClick(menuItemTrackingProps);
-    setMenuCategoryLabel(menuItemTrackingProps.menuCategory);
-    setMenuType(menuItemTrackingProps.menuType);
+    trackingCallbacks.tablet.tabletMenuItemClick(menuItemNavBarProps);
+    setMenuCategoryLabel(menuItemNavBarProps.menuLabel);
+    setMenuType(menuItemNavBarProps.menuType);
   };
 
   const handleOnShopClick = (
-    menuItemTrackingProps: MenuItemTrackingWithActionType,
+    menuItemNavBarProps: MenuItemNavBarTrackingWithActionType,
   ) => {
-    /* Add Tracking here */
-    handleTracking(menuItemTrackingProps);
+    handleTracking(menuItemNavBarProps);
     setIsShopOpen(true);
     handleOnCollectionClick('top', shop.onClick);
   };
 
   const handleOnReadClick = (
-    menuItemTrackingProps: MenuItemTrackingWithActionType,
+    menuItemNavBarProps: MenuItemNavBarTrackingWithActionType,
   ) => {
-    /* Add Tracking here */
-    handleTracking(menuItemTrackingProps);
+    handleTracking(menuItemNavBarProps);
     setIsShopOpen(false);
     handleOnCollectionClick(read.id);
   };
 
   const handleOnStoresClick = (
-    menuItemTrackingProps: MenuItemTrackingWithActionType,
+    menuItemNavBarProps: MenuItemNavBarTrackingWithActionType,
   ) => {
-    /* Add Tracking here */
-    handleTracking(menuItemTrackingProps);
+    handleTracking(menuItemNavBarProps);
     setIsShopOpen(false);
     handleOnCollectionClick(stores.id, stores.onClick);
   };
 
   const handleOnSearchClick = (
-    menuItemTrackingProps: MenuItemTrackingWithActionType,
+    menuItemNavBarProps: MenuItemNavBarTrackingWithActionType,
   ) => {
-    /* Add Tracking here */
-    handleTracking(menuItemTrackingProps);
+    handleTracking(menuItemNavBarProps);
     setIsShopOpen(false);
     handleOnCollectionClick(search.id, search.onClick);
   };
@@ -129,9 +125,10 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
             isInline={true}
             onClick={() =>
               handleOnShopClick({
+                menuCategory: 'None',
+                menuLabel: shop.id,
+                menuSection: 'Navbar',
                 menuType: 'Shop',
-                menuLabel: shop.label,
-                menuCategory: shop.label,
                 action: isOpen ? 'Click' : 'Open',
               })
             }
@@ -165,9 +162,10 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
             isInline={true}
             onClick={() =>
               handleOnReadClick({
+                menuCategory: 'None',
+                menuLabel: read.id,
+                menuSection: 'Navbar',
                 menuType: 'Read',
-                menuLabel: read.label,
-                menuCategory: read.label,
                 action: isOpen ? 'Click' : 'Open',
               })
             }
@@ -198,9 +196,10 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
             isInline={true}
             onClick={() =>
               handleOnStoresClick({
+                menuCategory: 'None',
+                menuLabel: stores.id,
+                menuSection: 'Navbar',
                 menuType: 'Stores',
-                menuLabel: stores.label,
-                menuCategory: stores.label,
                 action: isOpen ? 'Click' : 'Open',
               })
             }
@@ -226,9 +225,10 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
             isInline={true}
             onClick={() =>
               handleOnSearchClick({
+                menuCategory: 'None',
+                menuLabel: search.id,
+                menuSection: 'Navbar',
                 menuType: 'Search',
-                menuLabel: search.label,
-                menuCategory: search.label,
                 action: isOpen ? 'Click' : 'Open',
               })
             }

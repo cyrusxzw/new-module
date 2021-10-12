@@ -8,7 +8,10 @@ import {
 import { Hyperlink } from '~/components/Hyperlink';
 import { Image } from '~/components/Image';
 import { Paragraph } from '~/components/Paragraph';
-import type { ArticleCardType } from './ArticleCard.types';
+import type {
+  ArticleCardType,
+  CategoryItemTrackingWithActionType,
+} from './ArticleCard.types';
 import compositionStyles from '../../TabletView.module.css';
 import styles from './ArticleCard.module.css';
 
@@ -31,15 +34,18 @@ const ArticleCard: ArticleCardType = ({
     styles.leftAligned,
   );
 
-  const handleOnClick = () => {
+  const handleTracking = () => {
     trackingCallbacks.tablet.tabletCategoryItemClick({
+      menuCategory: menuCategoryLabel,
       menuSection: 'Panel 2',
+      menuSubnav: `${read.id}-category`,
       menuType: menuType,
-      menuLabel: read.topLevelCollectionLabel, // TODO{issue-21-nonFixture}: add translated english label value here in {currentLabel}
-      menuCategory: menuCategoryLabel, // TODO{issue-21-nonFixture}: add translated english label value here in {context}
-      menuSubnav: read.articlesListHeading, // TODO{issue-21-nonFixture}: add translated english label value here in {PROP}
       action: 'Click',
-    });
+    } as CategoryItemTrackingWithActionType);
+  };
+
+  const handleOnClick = () => {
+    handleTracking();
   };
 
   return (

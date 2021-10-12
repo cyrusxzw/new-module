@@ -15,6 +15,7 @@ import {
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
 
 const Link: LinkType = ({
+  id,
   isTop,
   isNested,
   isVisible,
@@ -32,7 +33,7 @@ const Link: LinkType = ({
   const handleTracking = () => {
     const categoryItemTrackingProps: CategoryItemTrackingWithMobileActionType = {
       menuCategory: menuCategoryLabel,
-      menuLabel: label,
+      menuLabel: id,
       menuSection: 'Panel 2',
       menuSubnav: menuSubnav,
       menuType: menuType,

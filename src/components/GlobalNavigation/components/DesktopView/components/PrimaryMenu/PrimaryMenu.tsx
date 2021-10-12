@@ -15,7 +15,7 @@ import { MenuItem } from '../MenuItem';
 import { Panel } from '../Panel';
 import type {
   PrimaryMenuType,
-  MenuItemTrackingWithActionType,
+  MenuItemNavBarTrackingWithActionType,
 } from './PrimaryMenu.types';
 import styles from './PrimaryMenu.module.css';
 
@@ -44,16 +44,15 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
     setIsOpen(false);
   }
 
-  /* TODO{issue-12-nonFixture}: Add english menulabel & change var names for tracking */
   const handleOnCollectionClick = (
     id: string,
-    menuItemTrackingProps: MenuItemTrackingWithActionType,
+    menuItemNavBarTrackingProps: MenuItemNavBarTrackingWithActionType,
     callback?: () => void,
   ) => {
     setActiveCollectionId(id);
     setIsOpen(id !== 'top');
-    setMenuCategoryLabel(menuItemTrackingProps.menuCategory);
-    setMenuType(menuItemTrackingProps.menuType);
+    setMenuCategoryLabel(menuItemNavBarTrackingProps.menuLabel);
+    setMenuType(menuItemNavBarTrackingProps.menuType);
 
     callback?.();
     if (!isOpen) {
@@ -63,32 +62,40 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
 
   /* Handles both click + hover tracking */
   const handleTracking = (
-    menuItemTrackingProps: MenuItemTrackingWithActionType,
+    menuItemNavBarTrackingProps: MenuItemNavBarTrackingWithActionType,
   ) => {
-    trackingCallbacks.desktop.menuItemClick(menuItemTrackingProps);
+    trackingCallbacks.desktop.menuItemClick(menuItemNavBarTrackingProps);
   };
 
   /* Handles Collections other than {Stores} & {Search} */
   const handleOnOtherCollectionClick = (
     id: string,
-    menuItemTrackingProps: MenuItemTrackingWithActionType,
+    menuItemNavBarTrackingProps: MenuItemNavBarTrackingWithActionType,
   ) => {
-    handleTracking(menuItemTrackingProps);
-    handleOnCollectionClick(id, menuItemTrackingProps);
+    handleTracking(menuItemNavBarTrackingProps);
+    handleOnCollectionClick(id, menuItemNavBarTrackingProps);
   };
 
   const handleOnStoresClick = (
-    menuItemTrackingProps: MenuItemTrackingWithActionType,
+    menuItemNavBarTrackingProps: MenuItemNavBarTrackingWithActionType,
   ) => {
-    handleTracking(menuItemTrackingProps);
-    handleOnCollectionClick(stores.id, menuItemTrackingProps, stores.onClick);
+    handleTracking(menuItemNavBarTrackingProps);
+    handleOnCollectionClick(
+      stores.id,
+      menuItemNavBarTrackingProps,
+      stores.onClick,
+    );
   };
 
   const handleOnSearchClick = (
-    menuItemTrackingProps: MenuItemTrackingWithActionType,
+    menuItemNavBarTrackingProps: MenuItemNavBarTrackingWithActionType,
   ) => {
-    handleTracking(menuItemTrackingProps);
-    handleOnCollectionClick(search.id, menuItemTrackingProps, search.onClick);
+    handleTracking(menuItemNavBarTrackingProps);
+    handleOnCollectionClick(
+      search.id,
+      menuItemNavBarTrackingProps,
+      search.onClick,
+    );
   };
 
   const StoresComponent = stores.component;
@@ -117,19 +124,20 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
                 key={id}
                 label={label}
                 onClick={() =>
-                  /* TODO{issue-13-nonFixture}: Explain why 'Shop' hardcoded here */
                   handleOnOtherCollectionClick(id, {
+                    menuCategory: 'None',
+                    menuLabel: id,
+                    menuSection: 'Navbar',
                     menuType: 'Shop',
-                    menuLabel: label,
-                    menuCategory: label,
                     action: isOpen ? 'Click' : 'Open',
                   })
                 }
                 onMouseEnter={() =>
                   handleTracking({
+                    menuCategory: 'None',
+                    menuLabel: id,
+                    menuSection: 'Navbar',
                     menuType: 'Shop',
-                    menuLabel: label,
-                    menuCategory: label,
                     action: 'Hover',
                   })
                 }
@@ -156,19 +164,20 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
           id={read.id}
           label={read.label}
           onClick={() =>
-            /* TODO{issue-13-nonFixture}: Explain why 'Read' hardcoded here */
             handleOnOtherCollectionClick(read.id, {
+              menuCategory: 'None',
+              menuLabel: read.id,
+              menuSection: 'Navbar',
               menuType: 'Read',
-              menuLabel: read.label,
-              menuCategory: read.label,
               action: isOpen ? 'Click' : 'Open',
             })
           }
           onMouseEnter={() =>
             handleTracking({
+              menuCategory: 'None',
+              menuLabel: read.id,
+              menuSection: 'Navbar',
               menuType: 'Read',
-              menuLabel: read.label,
-              menuCategory: read.label,
               action: 'Hover',
             })
           }
@@ -192,20 +201,21 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
           dataTestRef={stores.dataTestRef ?? 'NAV_STORES'}
           id={stores.id}
           label={stores.label}
-          /* TODO{issue-13-nonFixture}: Explain why 'Stores' hardcoded here */
           onClick={() =>
             handleOnStoresClick({
+              menuCategory: 'None',
+              menuLabel: stores.id,
+              menuSection: 'Navbar',
               menuType: 'Stores',
-              menuLabel: stores.label,
-              menuCategory: stores.label,
               action: isOpen ? 'Click' : 'Open',
             })
           }
           onMouseEnter={() =>
             handleTracking({
+              menuCategory: 'None',
+              menuLabel: stores.id,
+              menuSection: 'Navbar',
               menuType: 'Stores',
-              menuLabel: stores.label,
-              menuCategory: stores.label,
               action: 'Hover',
             })
           }
@@ -232,20 +242,21 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
               <ScreenReaderOnly>{search.label}</ScreenReaderOnly>
             </>
           }
-          /* TODO{issue-13-nonFixture}: Explain why 'Search' hardcoded here */
           onClick={() =>
             handleOnSearchClick({
+              menuCategory: 'None',
+              menuLabel: search.id,
+              menuSection: 'Navbar',
               menuType: 'Search',
-              menuLabel: search.label,
-              menuCategory: search.label,
               action: isOpen ? 'Click' : 'Open',
             })
           }
           onMouseEnter={() =>
             handleTracking({
+              menuCategory: 'None',
+              menuLabel: search.id,
+              menuSection: 'Navbar',
               menuType: 'Search',
-              menuLabel: search.label,
-              menuCategory: search.label,
               action: 'Hover',
             })
           }

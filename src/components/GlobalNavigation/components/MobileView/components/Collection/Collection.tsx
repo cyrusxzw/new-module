@@ -65,9 +65,7 @@ const Collection: CollectionType = ({
     menuItemTrackingProps: MenuItemTrackingWithMobileActionType,
   ) => {
     handleTracking(menuItemTrackingProps, true);
-    setMenuCategoryLabel(
-      label,
-    ); /* TODO{issue-28-nonFixture}: Explain why setting category label but not menu type here */
+    setMenuCategoryLabel(id);
     setActiveCollectionId(id);
   };
 
@@ -117,7 +115,7 @@ const Collection: CollectionType = ({
           onClick={() =>
             handleOnClick({
               menuCategory: 'None',
-              menuLabel: label,
+              menuLabel: id,
               menuSection: 'Panel 1',
               menuType: 'Shop',
               action: 'Click',
@@ -157,7 +155,7 @@ const Collection: CollectionType = ({
               onClick={() =>
                 handleOnBackButtonClick({
                   menuCategory: 'None',
-                  menuLabel: backLabel || label,
+                  menuLabel: id,
                   menuSection: 'Panel 2',
                   menuSubnav: 'None',
                   menuType: 'Shop',

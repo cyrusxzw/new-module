@@ -96,8 +96,7 @@ const Header: HeaderType = ({ onClose }) => {
                 handleOnSearchClick({
                   menuCategory: 'None',
                   menuType: 'Search',
-                  menuLabel:
-                    'Search' /* TODO{issue-23-nonFixture}: Explain hardcoded Search label */,
+                  menuLabel: 'Search',
                   menuSection: 'Navbar',
                   action: 'Click',
                 })
@@ -161,8 +160,7 @@ const Header: HeaderType = ({ onClose }) => {
                 handleOnMenuButtonClick({
                   menuCategory: 'None',
                   menuType: 'Shop',
-                  menuLabel:
-                    'Menu' /* TODO{issue-24-nonFixture}: Explain menuLabel */,
+                  menuLabel: 'Menu',
                   menuSection: 'Navbar',
                   action: 'Open',
                 })

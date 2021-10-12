@@ -29,6 +29,7 @@ const CollectionListFixture: CollectionListProps = {
   ],
   ...navTrackingProps,
   eyebrow: 'Collection list eyebrow',
+  menuSubnav: 'Collection list menu subnav',
 };
 
 export { CollectionListFixture };

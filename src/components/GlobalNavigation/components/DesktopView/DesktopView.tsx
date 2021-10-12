@@ -15,7 +15,10 @@ import {
 } from '~/customHooks';
 import { Logo } from '../Logo';
 import { PrimaryMenu, SecondaryMenu } from './components';
-import type { DesktopViewType } from './DesktopView.types';
+import type {
+  DesktopViewType,
+  MenuItemNavBarTrackingWithActionType,
+} from './DesktopView.types';
 import styles from './DesktopView.module.css';
 
 const DesktopView: DesktopViewType = ({ className }) => {
@@ -51,15 +54,17 @@ const DesktopView: DesktopViewType = ({ className }) => {
   const isCompletelyOnScreen = useOnScreen(stickyNavRef, 1, undefined, true);
 
   const handleTracking = () =>
+    isOpen &&
     trackingCallbacks.desktop.menuItemClick({
       menuType: menuType,
       menuLabel: 'Menu',
+      menuSection: 'Navbar',
       menuCategory: menuCategoryLabel,
       action: 'Close',
-    });
+    } as MenuItemNavBarTrackingWithActionType);
 
   const handleOnClose = () => {
-    handleTracking(); /* TODO{issue-11-nonFixture}: Add english menulabel */
+    handleTracking();
     setActiveCollectionId('top');
     setIsOpen(false);
     onClose?.();
@@ -68,7 +73,6 @@ const DesktopView: DesktopViewType = ({ className }) => {
   useOverflowHidden(isOpen);
   useEscapeKeyListener(handleOnClose, !isVisuallyObstructed);
 
-  console.log('Tracking types: ', trackingCallbacks);
   const classSet = cx(
     styles.base,
     { [closedClassName]: !isOpen },

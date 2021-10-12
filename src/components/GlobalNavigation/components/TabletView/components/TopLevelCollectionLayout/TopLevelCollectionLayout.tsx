@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
@@ -12,7 +13,7 @@ import { PromotionCard } from '../../../PromotionCard';
 import { DetailsPanel } from '../DetailsPanel';
 import { CollectionList } from '../CollectionList';
 import type {
-  CategoryItemTrackingWithAction,
+  MenuItemFirstPanelTrackingWithActionType,
   TopLevelCollectionLayoutType,
   TopLevelCollectionListsType,
 } from './TopLevelCollectionLayout.types';
@@ -32,6 +33,7 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
   const {
     activeCollectionId,
     setActiveCollectionId,
+    setMenuCategoryLabel,
   } = useGlobalNavigationStateContext();
 
   const { trackingCallbacks } = useGlobalNavigationContext();
@@ -54,12 +56,20 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
     compositionStyles.ornamentalWrapper,
   );
 
-  /* TODO{issue-20-nonFixture}: Change tracking func name */
+  const handleTracking = (
+    menuItemFirstPanelTrackingProps: MenuItemFirstPanelTrackingWithActionType,
+  ) => {
+    trackingCallbacks.tablet.tabletMenuItemClick(
+      menuItemFirstPanelTrackingProps,
+    );
+  };
+
   const handleCollectionClick = (
     id,
-    menuItemTrackingProps: CategoryItemTrackingWithAction,
+    menuItemFirstPanelTrackingProps: MenuItemFirstPanelTrackingWithActionType,
   ) => {
-    trackingCallbacks.tablet.tabletCategoryItemClick(menuItemTrackingProps);
+    handleTracking(menuItemFirstPanelTrackingProps);
+    setMenuCategoryLabel(menuItemFirstPanelTrackingProps.menuLabel);
     setActiveCollectionId(id);
   };
 
@@ -76,9 +86,8 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
         onClick={() =>
           handleCollectionClick(id, {
             menuType: 'Shop',
-            menuLabel: label,
-            menuCategory:
-              'None' /* TODO{issue-22-nonFixture}: Dedicate function for this non-Category. Clicking menu item rather than category */,
+            menuLabel: id,
+            menuCategory: 'None',
             menuSection: 'Panel 1',
             action: isShopOpen ? 'Click' : 'Open',
           })
@@ -107,6 +116,7 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
           heading={topLevelCollectionLabel}
           isVisible={activeCollectionId === id}
           items={topLevelCollections}
+          menuSubnav="None"
         />
 
         {allNestedCollections.map(({ id, items, label }) => (
@@ -115,6 +125,7 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
             isVisible={activeCollectionId === id}
             items={items}
             key={id}
+            menuSubnav={id}
           />
         ))}
       </DetailsPanel>

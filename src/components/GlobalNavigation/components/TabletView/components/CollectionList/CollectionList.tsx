@@ -19,9 +19,11 @@ const CollectionList: CollectionListType = ({
   heading,
   isVisible = true,
   items,
+  menuSection,
+  menuSubnav,
 }) => {
   const currentTheme = useThemeContext(undefined, 'dark');
-  const { menuType } = useGlobalNavigationStateContext();
+  const { menuType, menuCategoryLabel } = useGlobalNavigationStateContext();
   const { trackingCallbacks } = useGlobalNavigationContext();
 
   const headingClassSet = cx(
@@ -38,12 +40,18 @@ const CollectionList: CollectionListType = ({
     compositionStyles.ornamentalWrapper,
   );
 
-  const handleOnClick = (
+  const handleTracking = (
     categoryItemTrackingWithActionProps: CategoryItemTrackingWithActionType,
   ) => {
     trackingCallbacks.tablet.tabletCategoryItemClick(
       categoryItemTrackingWithActionProps,
     );
+  };
+
+  const handleOnClick = (
+    categoryItemTrackingWithActionProps: CategoryItemTrackingWithActionType,
+  ) => {
+    handleTracking(categoryItemTrackingWithActionProps);
   };
 
   return (
@@ -64,11 +72,11 @@ const CollectionList: CollectionListType = ({
               id={item.id}
               onClick={() =>
                 handleOnClick({
-                  menuSection: 'Panel 2',
+                  menuCategory: menuCategoryLabel,
+                  menuLabel: item.id,
+                  menuSection: menuSection || 'Panel 2',
+                  menuSubnav: menuSubnav,
                   menuType: menuType,
-                  menuLabel: item.label, // TODO{issue-21-nonFixture}: add translated english label value here in {currentLabel}
-                  menuCategory: heading, // TODO{issue-21-nonFixture}: add translated english label value here in {context}
-                  menuSubnav: heading, // TODO{issue-21-nonFixture}: add translated english label value here in {PROP}
                   action: 'Click',
                 })
               }

@@ -13,12 +13,6 @@ type PromotionCardProps = Clickable & {
   isFlush?: boolean;
   image?: CollectionImage;
   isVisible?: boolean;
-  menuType?:
-    | 'Shop'
-    | 'Read' /* TODO{issue-3-nonFixture}: Remove optional condition when tablet tracking implemented */;
-  panel?:
-    | 'Panel 1'
-    | 'Panel 2' /* TODO{issue-3-nonFixture}: Remove optional condition when tablet tracking implemented */;
   url: string;
 };
 

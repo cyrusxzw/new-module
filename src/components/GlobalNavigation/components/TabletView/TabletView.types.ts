@@ -1,9 +1,12 @@
 import type { Dispatch, SetStateAction } from 'react';
 import type { Themes, ComponentWithChildren } from '~/types';
+import type { MenuItemNavBarTrackingWithAction } from '~/components/GlobalNavigation/GlobalNavigation.types';
 
 type TabletViewProps = {
   className?: string;
 };
+
+type MenuItemNavBarTrackingWithActionType = MenuItemNavBarTrackingWithAction;
 
 type TabletViewType = ComponentWithChildren<TabletViewProps>;
 
@@ -28,6 +31,7 @@ type UseTabletViewContextStore = (
 ) => TabletViewContextType;
 
 export type {
+  MenuItemNavBarTrackingWithActionType,
   TabletViewContextProviderType,
   TabletViewContextType,
   TabletViewType,

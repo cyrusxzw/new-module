@@ -38,8 +38,9 @@ const CollectionLayout: CollectionLayoutType = ({
           heading={topLevelCollectionLabel}
           isVisible={isOpen}
           items={topLevelCollections}
+          menuSubnav={`None`}
           menuType={menuType}
-          panel={'Panel 1'} // Refer to con-315 tracking word doc for panel numbering
+          panel={'Panel 1'}
         />
 
         {type === 'read-collection' && (
@@ -48,8 +49,9 @@ const CollectionLayout: CollectionLayoutType = ({
             eyebrow={articlesListHeading}
             isVisible={isOpen}
             items={articles}
+            menuSubnav={`None`}
             menuType={menuType}
-            panel={'Panel 1'} // Refer to con-315 tracking word doc for panel numbering
+            panel={'Panel 1'}
           />
         )}
       </div>
@@ -68,6 +70,7 @@ const CollectionLayout: CollectionLayoutType = ({
                   isVisible={isOpen}
                   items={items}
                   key={id}
+                  menuSubnav={id}
                   menuType={menuType}
                   panel={'Panel 2'}
                 />
@@ -84,8 +87,9 @@ const CollectionLayout: CollectionLayoutType = ({
                 isVisible={isOpen}
                 items={items}
                 key={id}
+                menuSubnav={id}
                 menuType={menuType}
-                panel={'Panel 2'} // Refer to con-315 tracking word doc for panel numbering
+                panel={'Panel 2'}
               />
             ))}
           </div>
@@ -98,8 +102,6 @@ const CollectionLayout: CollectionLayoutType = ({
               dataTestRef={`NAV_${currentId.toUpperCase()}_PROMO_CARD`}
               isFlush={true}
               isVisible={isOpen && activeCollectionId === currentId}
-              menuType={menuType}
-              panel={'Panel 2'} // Refer to con-315 tracking word doc for panel numbering
             />
           </div>
         )}

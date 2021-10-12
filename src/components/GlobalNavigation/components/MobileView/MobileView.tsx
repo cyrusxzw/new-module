@@ -59,7 +59,7 @@ const MobileView: MobileViewType = ({ className }) => {
       menuCategory: 'None',
       menuSection: 'Navbar',
       menuType: 'Shop',
-      menuLabel: 'Menu' /* TODO{issue-25-nonFixture}: Explain menuLabel */,
+      menuLabel: 'Menu',
       action: 'Close',
     });
   };

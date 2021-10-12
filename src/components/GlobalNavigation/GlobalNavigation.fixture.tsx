@@ -34,10 +34,6 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
   onOpen: (): void => console.log('Clicked: open'), // eslint-disable-line no-console
   trackingCallbacks: {
     desktop: {
-      promotionCardClick: (promotionCardTrackingProps) =>
-        console.log('Promotion Card Click desktop tracking'),
-      promotionCardImpression: (promotionCardTrackingProps) =>
-        console.log('Promotion Card Impression desktop tracking'),
       menuItemClick: (menuItemTrackingProps) =>
         console.log('Menu is being tracked'),
       categoryItemClick: (categoryItemTrackingProps) =>
@@ -49,7 +45,18 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       tabletCategoryItemClick: (categoryItemTrackingProps) =>
         console.log('Tablet Category is being tracked'),
     },
-    mobile: () => null,
+    mobile: {
+      mobileMenuItemClick: (tabletMenuItemTrackingProps) =>
+        console.log('Mobile Menu is being tracked'),
+      mobileCategoryItemClick: (mobileCategoryItemTrackingProps) =>
+        console.log('Mobile Category is being tracked'),
+    },
+    common: {
+      promotionCardClick: (promotionCardTrackingProps) =>
+        console.log('Promotion Card click tracking'),
+      promotionCardImpression: (promotionCardTrackingProps) =>
+        console.log('Promotion Card Impression tracking'),
+    },
   },
   actions: {
     account: {
@@ -659,6 +666,8 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
         url: '#see-all-skin-care-card',
         heading: 'Floral, green, woody',
         image: {
+          id: 'introducing-rozu-a-fragrance-of-tender-intensity',
+          creative: 'Thematic Product',
           altText: 'Introducing Rōzu: a fragrance of tender intensity',
           sizes: {
             large:
@@ -779,6 +788,8 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
     },
     {
       image: {
+        id: 'test-id',
+        creative: 'Thematic Product',
         altText: 'alt text',
         sizes: {
           large:
@@ -821,6 +832,8 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
     },
     {
       image: {
+        id: 'test-id',
+        creative: 'Thematic Product',
         altText: 'alt text',
         sizes: {
           large:
@@ -879,6 +892,8 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
     },
     {
       image: {
+        id: 'test-id',
+        creative: 'Thematic Product',
         altText: 'alt text',
         sizes: {
           large:

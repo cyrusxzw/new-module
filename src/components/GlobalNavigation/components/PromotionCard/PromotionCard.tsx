@@ -28,8 +28,6 @@ const PromotionCard: PromotionCardType = ({
   isFlush = false,
   isVisible = true,
   label,
-  menuType,
-  panel,
   title,
   url,
 }) => {
@@ -39,12 +37,7 @@ const PromotionCard: PromotionCardType = ({
   const { menuCategoryLabel } = useGlobalNavigationStateContext();
   const promotionCardRef = useRef();
 
-  console.log(`%c Image props: `, 'color: pink');
-  console.log(`%c${JSON.stringify(image)}`, 'color: white');
-  console.log('------------------------');
-
   /* Tracking Information */
-  /* TODO{issue-16-nonFixture}: Get Creative, currencyCode and englishLabel for PromoCard */
   const promotionCardImpressionTrackingProps: PromotionCardImpressionTrackingType = {
     id,
     creative: image.creative,
@@ -53,7 +46,7 @@ const PromotionCard: PromotionCardType = ({
   };
   const promotionCardClickTrackingProps: PromotionCardClickTrackingType = {
     ...promotionCardImpressionTrackingProps,
-    englishLabel: 'TODO: Get english label impression',
+    englishLabel: image.id,
   };
 
   const promotionCardImpressionOptions = {
@@ -64,14 +57,14 @@ const PromotionCard: PromotionCardType = ({
   useExecuteOnImpression(
     promotionCardRef,
     () =>
-      trackingCallbacks.desktop.promotionCardImpression(
+      trackingCallbacks.common.promotionCardImpression(
         promotionCardImpressionTrackingProps,
       ),
     promotionCardImpressionOptions,
   );
 
   const handleTracking = () => {
-    trackingCallbacks.desktop.promotionCardClick(
+    trackingCallbacks.common.promotionCardClick(
       promotionCardClickTrackingProps,
     );
   };

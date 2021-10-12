@@ -42,19 +42,17 @@ const NestedCollection: NestedCollectionType = ({
 
   const handleTracking = () => {
     const categoryItemTrackingProps: CategoryItemTrackingWithMobileActionType = {
-      menuLabel: label,
+      menuLabel: id,
       menuType: menuType,
       menuSection: 'Panel 2',
       menuCategory: menuCategoryLabel,
-      menuSubnav:
-        'None' /* TODO{issue-27-nonFixture}: Possibly create own component */,
+      menuSubnav: 'None',
       action: !isActive ? 'Expand' : 'Collapse',
     };
     trackingCallbacks.mobile.mobileCategoryItemClick(categoryItemTrackingProps);
   };
 
   const handleOnNestedClick = () => {
-    console.log('Mobile Menu: Clicking nested collection from panel 2');
     handleTracking();
     onNestedCollectionClick(id);
   };
@@ -102,9 +100,7 @@ const NestedCollection: NestedCollectionType = ({
             isVisible={isActive}
             itemProps={props}
             key={props.label}
-            menuSubnav={
-              label
-            } /* TODO{issue-26-nonFixture}: Explain menuSubnav coming from nested component */
+            menuSubnav={id}
           />
         ))}
       </ul>

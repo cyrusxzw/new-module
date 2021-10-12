@@ -19,10 +19,6 @@ const BaseComponentWithProviders = () => (
         read: GlobalNavigationFixture.read,
         trackingCallbacks: {
           desktop: {
-            promotionCardClick: (promotionCardTrackingProps) =>
-              console.log('Promotion Card Click desktop tracking'),
-            promotionCardImpression: (promotionCardTrackingProps) =>
-              console.log('Promotion Card Impression desktop tracking'),
             menuItemClick: (menuItemTrackingProps) =>
               console.log('Menu is being tracked'),
             categoryItemClick: (categoryItemTrackingProps) =>
@@ -40,6 +36,12 @@ const BaseComponentWithProviders = () => (
             mobileCategoryItemClick: (mobileCategoryItemTrackingProps) =>
               console.log('Mobile Category is being tracked'),
           },
+          common: {
+            promotionCardClick: (promotionCardTrackingProps) =>
+              console.log('Promotion Card Click tracking'),
+            promotionCardImpression: (promotionCardTrackingProps) =>
+              console.log('Promotion Card Impression tracking'),
+          },
         },
       }}
     >
@@ -48,6 +50,7 @@ const BaseComponentWithProviders = () => (
           eyebrow={CollectionListFixture.eyebrow}
           heading={CollectionListFixture.heading}
           items={CollectionListFixture.items}
+          menuSubnav={CollectionListFixture.menuSubnav}
           menuType={'Shop'}
           panel={'Panel 1'}
         />

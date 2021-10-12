@@ -13,6 +13,7 @@ const CollectionList: CollectionListType = ({
   heading,
   items,
   isVisible,
+  menuSubnav,
   menuType,
   panel,
 }) => {
@@ -54,7 +55,7 @@ const CollectionList: CollectionListType = ({
           <CollectionItem
             {...itemProps}
             key={itemProps.id}
-            menuSubnav={heading || eyebrow}
+            menuSubnav={menuSubnav}
             menuType={menuType}
             panel={panel}
           />

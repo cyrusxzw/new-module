@@ -49,32 +49,31 @@ const CollectionItem: CollectionItemType = (props) => {
   const { trackingCallbacks } = useGlobalNavigationContext();
 
   const categoryItemTrackingProps: CategoryItemTrackingType = {
+    menuCategory: menuCategoryLabel,
+    menuLabel: props.id,
     menuSection: props.panel,
+    menuSubnav: props.menuSubnav,
     menuType: props.menuType,
-    menuLabel: currentLabel, // TODO{issue-14-nonFixture}: add translated english label value here in {currentLabel}
-    menuCategory: menuCategoryLabel, // TODO{issue-14-nonFixture}: add translated english label value here in {context}
-    menuSubnav: props.menuSubnav, // TODO{issue-14-nonFixture}: add translated english label value here in {PROP}
+  };
+
+  const handleTracking = (
+    categoryItemTrackingProps: CategoryItemTrackingWithActionType,
+  ) => {
+    trackingCallbacks.desktop.categoryItemClick(categoryItemTrackingProps);
   };
 
   const handleOnClick = () => {
-    /* TODO{issue-14-nonFixture}: Refine Tracking */
-    const categoryItemTrackingWithActionProps: CategoryItemTrackingWithActionType = {
+    handleTracking({
       ...categoryItemTrackingProps,
       action: 'Click',
-    };
-    trackingCallbacks.desktop.categoryItemClick(
-      categoryItemTrackingWithActionProps,
-    );
+    });
   };
 
   const handleOnMouseEnter = () => {
-    const categoryItemTrackingWithActionProps: CategoryItemTrackingWithActionType = {
+    handleTracking({
       ...categoryItemTrackingProps,
       action: 'Hover',
-    };
-    trackingCallbacks.desktop.categoryItemClick(
-      categoryItemTrackingWithActionProps,
-    );
+    });
   };
 
   return (
