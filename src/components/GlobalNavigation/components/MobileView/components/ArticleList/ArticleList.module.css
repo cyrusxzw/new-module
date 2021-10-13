@@ -6,7 +6,7 @@
   transition: opacity 200ms var(--easing-ease-out-cubic);
 }
 
-aside {
+.articleScroll {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: row nowrap;
@@ -20,4 +20,3 @@ aside {
   opacity: 0;
   pointer-events: none;
 }
-

@@ -17,18 +17,14 @@
   font-size: rem(16px);
   font-weight: normal;
   line-height: 1.33;
-}
 
-/* responsive font */
-@media (min-width: 1600px) and (max-width: 1920px) {
-  .heading {
-    font-size: rem(calc(16px + 0.111vw));
+  /* responsive font */
+  @media (--viewport-x2l) {
+    font-size: calc(16px + 0.111vw);
   }
-}
 
-@media (min-width: 1920px) {
-  .heading {
-    font-size: rem(20px);
+  @media (--viewport-x3l) {
+    font-size: 20px;
   }
 }
 
@@ -37,7 +33,6 @@
 }
 
 .list {
- /* padding-right: 40px; */  
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 45px;

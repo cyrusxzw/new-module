@@ -18,6 +18,15 @@
   line-height: 1.33;
   transition: outline-offset 200ms var(--easing-ease-out-cubic);
 
+  /* responsive menu font */
+  @media (--viewport-x2l) {
+    font-size: calc(16px + 0.111vw);
+  }
+
+  @media (--viewport-x3l) {
+    font-size: 20px;
+  }
+
   .dark & {
     color: var(--color-secondary);
   }
@@ -46,19 +55,4 @@
   display: block;
   color: var(--color-dark-label);
   font-size: rem(14px);
-}
-
-
-/* responsive menu font */
-
-@media (min-width: 1600px) and (max-width: 1920px) {
-  .element {
-    font-size: calc(16px + .111vw);
-  }
-}
-
-@media (min-width: 1920px) {
-  .element {
-    font-size: rem(20px);
-  }
 }

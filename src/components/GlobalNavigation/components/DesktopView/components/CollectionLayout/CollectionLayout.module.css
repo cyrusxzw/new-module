@@ -17,7 +17,6 @@
 
 .collectionsWrapper {
   width: calc(100% * 2 / 12);
-  /* padding-right: var(--column-spacing);*/
   margin-top: var(--offset);
   margin-bottom: 40px;
   margin-left: calc(100% * 2 / 12 + var(--column-spacing));
