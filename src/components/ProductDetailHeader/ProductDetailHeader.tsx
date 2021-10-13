@@ -59,6 +59,7 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
               size: copy?.size,
               upSellProductLabel: copy?.upSellProductLabel,
               flyinPanelHeading: copy?.flyinPanelHeading,
+              notifyWhenAvailable: copy?.notifyWhenAvailable,
             }}
             onFlyinOpenCloseClick={handleOnFlyinOpenCloseClick}
             onUpsellClick={onUpsellClick}

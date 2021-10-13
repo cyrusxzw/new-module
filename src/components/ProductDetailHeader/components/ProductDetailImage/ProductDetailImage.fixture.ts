@@ -9,6 +9,7 @@ const ProductDetailImageFixture = {
       sku: 'ARD33',
       price: '$56.45',
       isInStock: true,
+      disableOutOfStockFeature: false,
       image: {
         altText: 'ATL TAG',
         sizes: {
@@ -24,6 +25,7 @@ const ProductDetailImageFixture = {
       sku: 'ARD32',
       price: '$86.97',
       isInStock: true,
+      disableOutOfStockFeature: false,
       image: {
         altText: 'ATL TAG',
         sizes: {

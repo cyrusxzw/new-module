@@ -15,6 +15,7 @@ type ProductDetailBodyCopy = {
   };
   upSellProductLabel?: string;
   flyinPanelHeading?: string;
+  notifyWhenAvailable?: string;
 };
 
 type ProductDetailBodyProps = {

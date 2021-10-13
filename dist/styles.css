@@ -17635,6 +17635,28 @@ dt:first-child .ProductDetailBody-module_flyinPanelTrigger__2qUx5 {
 .ProductDetailBody-module_paymentWidget__v_icY.ProductDetailBody-module_hasBottomBorder__E7Wso {
     border-bottom: 1px solid #d5d4c9;
   }
+.ProductDetailBody-module_backInStockBtn__14P31 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  min-width: auto;
+  max-width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 15px 20px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+@media (min-width: 1025px) {
+.ProductDetailBody-module_backInStockBtn__14P31 {
+    max-width: 470px
+}
+  }
+.ProductDetailBody-module_fullWidth__25ty8 {
+  width: 100%;
+}
 
 :root {
   /* Base colours */
