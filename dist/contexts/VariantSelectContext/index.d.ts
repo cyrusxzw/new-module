@@ -11,7 +11,6 @@ declare type VariantSelectContextType = {
 };
 declare type VariantSelectContextProps = {
     variants: Variant[];
-    selectedVariantIndex?: number;
 };
 declare type VariantSelectContextProviderType = ComponentWithChildren<VariantSelectContextProps>;
 
