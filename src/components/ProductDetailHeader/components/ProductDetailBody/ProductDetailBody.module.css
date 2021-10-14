@@ -264,22 +264,3 @@
     border-bottom: 1px solid var(--color-grey-65);
   }
 }
-
-.backInStockBtn {
-  width: min-content;
-  min-width: auto;
-  max-width: 100%;
-  justify-content: center;
-  padding: 20px 15px 20px;
-  margin-top: 10px;
-  font-size: rem(14px);
-  text-align: center;
-
-  @media (--viewport-lg) {
-    max-width: 470px;
-  }
-}
-
-.fullWidth {
-  width: 100%;
-}
