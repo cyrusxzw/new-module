@@ -1,14 +1,11 @@
 @import 'styles/index';
 
-.base {
-  margin-top: 4vh;
-}
 
 .list {
   padding-right: 15px;
   padding-left: 15px;
-  margin-top: 0;
-  margin-bottom: 4vh;
+  margin-top: 30px;
+  margin-bottom: 30px;
   list-style: none;
 }
 

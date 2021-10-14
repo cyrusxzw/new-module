@@ -19,8 +19,12 @@
   line-height: 1.5;
 
   /* responsive font */
+  @media (--viewport-xl) {
+    font-size: calc(14px + 0.13889vw);
+  }
+
   @media (--viewport-x2l) {
-    font-size: calc(14px + 0.111vw);
+    font-size: calc(16px + 0.1vw);
   }
 
   @media (--viewport-x3l) {

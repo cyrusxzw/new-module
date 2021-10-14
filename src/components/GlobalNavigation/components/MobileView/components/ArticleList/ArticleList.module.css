@@ -20,3 +20,12 @@
   opacity: 0;
   pointer-events: none;
 }
+
+.cardHeading {
+  font-size: 18px;
+  font-family: var(--font-family-sans-serif-regular);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-secondary);
+  margin: 5px;
+  padding: 0 15px 0px;
+}

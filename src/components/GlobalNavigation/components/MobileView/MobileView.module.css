@@ -158,9 +158,9 @@
   width: calc(100% - 10px);
   align-items: center;
   justify-content: space-between;
-  padding-top: 6px;
+  padding-top: 10px;
   padding-right: 15px;
-  padding-bottom: 6px;
+  padding-bottom: 10px;
   padding-left: 15px;
   margin-right: 5px;
   margin-left: 5px;
@@ -172,9 +172,6 @@
   transition: outline-offset 200ms var(--easing-ease-out-cubic),
     color 200ms var(--easing-ease-out-cubic);
 
-  @media (min-height: 736px) {
-    font-size: rem(20px);
-  }
 
   polygon {
     transition: fill 200ms var(--easing-ease-out-cubic);
@@ -234,4 +231,5 @@
   pointer-events: none;
   visibility: hidden;
 }
+
 

@@ -19,8 +19,12 @@
   transition: outline-offset 200ms var(--easing-ease-out-cubic);
 
   /* responsive menu font */
+  @media (--viewport-xl) {
+    font-size: calc(14px + 0.13889vw);
+  }
+
   @media (--viewport-x2l) {
-    font-size: calc(14px + 0.111vw);
+    font-size: calc(16px + 0.1vw);
   }
 
   @media (--viewport-x3l) {
