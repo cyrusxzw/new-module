@@ -73,6 +73,7 @@ declare type Variant$1 = {
         openInANewWindow?: boolean;
     };
     cartDisclaimer?: string;
+    disableOutOfStockFeature?: boolean;
     hasAgeVerificationRequirement?: boolean;
     id?: string;
     isInStock: boolean;
