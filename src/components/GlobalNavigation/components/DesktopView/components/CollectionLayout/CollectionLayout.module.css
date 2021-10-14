@@ -2,7 +2,7 @@
 
 :root {
   --offset: 90px;
-  --column-spacing: 30px;
+  --column-spacing: 40px;
 }
 
 .nestedCollectionsWrapper {
@@ -20,6 +20,7 @@
   margin-top: var(--offset);
   margin-bottom: 40px;
   margin-left: calc(100% * 2 / 12 + var(--column-spacing));
+  padding-right: 40px
 }
 
 .supplementary {
