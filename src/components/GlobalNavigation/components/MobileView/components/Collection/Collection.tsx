@@ -1,3 +1,5 @@
+/* eslint-disable max-lines */
+/* eslint-disable max-lines-per-function */
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
@@ -5,10 +7,17 @@ import { useFocusOnFirst } from '~/customHooks';
 import { Transition } from '~/components/Transition';
 import { Button } from '~/components/Button';
 import { Icon } from '~/components/Icon';
-import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import {
+  useGlobalNavigationContext,
+  useGlobalNavigationStateContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useMobileViewContext } from '~/components/GlobalNavigation/components/MobileView/MobileView.context';
 import { ListItem } from '../ListItem';
-import type { CollectionType } from './Collection.types';
+import type {
+  CategoryItemTrackingWithMobileActionType,
+  CollectionType,
+  MenuItemTrackingWithMobileActionType,
+} from './Collection.types';
 import compositionStyles from '../../MobileView.module.css';
 import styles from './Collection.module.css';
 
@@ -25,7 +34,10 @@ const Collection: CollectionType = ({
   const {
     activeCollectionId,
     setActiveCollectionId,
+    setMenuCategoryLabel,
   } = useGlobalNavigationStateContext();
+
+  const { trackingCallbacks } = useGlobalNavigationContext();
 
   const isActive = activeCollectionId === id;
 
@@ -37,9 +49,32 @@ const Collection: CollectionType = ({
     'a:not([tabindex="-1"]), button:not([tabindex="-1"])',
   );
 
-  const handleOnClick = () => setActiveCollectionId(id);
+  const handleTracking = (itemTrackingProps, isMenuItem: boolean) => {
+    if (isMenuItem) {
+      trackingCallbacks.mobile.mobileCategoryItemClick(
+        itemTrackingProps as CategoryItemTrackingWithMobileActionType,
+      );
+    } else {
+      trackingCallbacks.mobile.mobileMenuItemClick(
+        itemTrackingProps as MenuItemTrackingWithMobileActionType,
+      );
+    }
+  };
 
-  const handleOnBackButtonClick = () => {
+  const handleOnClick = (
+    menuItemTrackingProps: MenuItemTrackingWithMobileActionType,
+  ) => {
+    handleTracking(menuItemTrackingProps, true);
+    setMenuCategoryLabel(
+      label,
+    ); /* TODO{issue-28-nonFixture}: Explain why setting category label but not menu type here */
+    setActiveCollectionId(id);
+  };
+
+  const handleOnBackButtonClick = (
+    categoryItemTrackingProps: CategoryItemTrackingWithMobileActionType,
+  ) => {
+    handleTracking(categoryItemTrackingProps, false);
     setActiveCollectionId('top');
     setActiveNestedCollectionIds([]);
   };
@@ -79,7 +114,15 @@ const Collection: CollectionType = ({
           className={compositionStyles.itemElement}
           data-testid="MOBILE_COLLECTION_FORWARD_BTN"
           isInline={true}
-          onClick={handleOnClick}
+          onClick={() =>
+            handleOnClick({
+              menuCategory: 'None',
+              menuLabel: label,
+              menuSection: 'Panel 1',
+              menuType: 'Shop',
+              action: 'Click',
+            })
+          }
           tabIndex={activeCollectionId === 'top' && isVisible ? null : -1}
           theme={currentTheme}
           title={title}
@@ -111,7 +154,16 @@ const Collection: CollectionType = ({
               className={backButtonClassSet}
               data-testid="MOBILE_COLLECTION_BACK_BTN"
               isInline={true}
-              onClick={handleOnBackButtonClick}
+              onClick={() =>
+                handleOnBackButtonClick({
+                  menuCategory: 'None',
+                  menuLabel: backLabel || label,
+                  menuSection: 'Panel 2',
+                  menuSubnav: 'None',
+                  menuType: 'Shop',
+                  action: 'Back',
+                })
+              }
               tabIndex={isActive ? null : -1}
               theme={currentTheme}
               title={backLabel}

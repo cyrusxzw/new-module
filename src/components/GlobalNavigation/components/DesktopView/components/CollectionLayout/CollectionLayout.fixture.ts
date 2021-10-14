@@ -25,6 +25,8 @@ const CollectionLayoutFixture: CollectionLayoutProps = {
       metaLabel: 'Collection layout article card meta label',
       metaDuration: 'Collection layout article card metaDuration',
       image: {
+        id: 'collection-layout-article-card-image-alt-text',
+        creative: 'Thematic Product',
         altText: 'Collection layout article card image alt text',
         sizes: {
           large:
@@ -41,6 +43,8 @@ const CollectionLayoutFixture: CollectionLayoutProps = {
   articlesListHeading: 'Collection layout - articles list heading',
   id: 'collection-layout-id',
   image: {
+    id: 'collection-layout-image-alt-text',
+    creative: 'Thematic Product',
     altText: 'Collection layout image alt text',
     sizes: {
       large:
@@ -70,6 +74,8 @@ const CollectionLayoutFixture: CollectionLayoutProps = {
     url: '#collection-layout-promotion',
     heading: 'Collections list promotion heading',
     image: {
+      id: 'collections-list-promotion-image-alt-text',
+      creative: 'Thematic Product',
       altText: 'Collections list promotion image alt text',
       sizes: {
         large:

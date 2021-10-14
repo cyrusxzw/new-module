@@ -39,13 +39,16 @@ const PromotionCard: PromotionCardType = ({
   const { menuCategoryLabel } = useGlobalNavigationStateContext();
   const promotionCardRef = useRef();
 
+  console.log(`%c Image props: `, 'color: pink');
+  console.log(`%c${JSON.stringify(image)}`, 'color: white');
+  console.log('------------------------');
+
   /* Tracking Information */
   /* TODO{issue-16-nonFixture}: Get Creative, currencyCode and englishLabel for PromoCard */
   const promotionCardImpressionTrackingProps: PromotionCardImpressionTrackingType = {
     id,
-    creative: 'TODO: Get creative',
+    creative: image.creative,
     position: menuCategoryLabel,
-    currencyCode: 'TODO: Get currency code',
     isVisible: isVisible,
   };
   const promotionCardClickTrackingProps: PromotionCardClickTrackingType = {

@@ -1,12 +1,18 @@
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import {
+  useGlobalNavigationContext,
+  useGlobalNavigationStateContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useMobileViewContext } from '~/components/GlobalNavigation/components/MobileView/MobileView.context';
 import { useVariableHeightStyle } from '~/components/GlobalNavigation/components/MobileView/MobileView.hooks';
 import { Button } from '~/components/Button';
 import { ListItem } from '../ListItem';
-import type { NestedCollectionType } from './NestedCollection.types';
+import type {
+  CategoryItemTrackingWithMobileActionType,
+  NestedCollectionType,
+} from './NestedCollection.types';
 import compositionStyles from '../../MobileView.module.css';
 import styles from './NestedCollection.module.css';
 
@@ -17,7 +23,12 @@ const NestedCollection: NestedCollectionType = ({
   label,
   title,
 }) => {
-  const { activeCollectionId } = useGlobalNavigationStateContext();
+  const {
+    activeCollectionId,
+    menuType,
+    menuCategoryLabel,
+  } = useGlobalNavigationStateContext();
+  const { trackingCallbacks } = useGlobalNavigationContext();
 
   const {
     activeNestedCollectionIds,
@@ -29,7 +40,24 @@ const NestedCollection: NestedCollectionType = ({
   const currentTheme = useThemeContext(null, 'dark');
   const { ref, style } = useVariableHeightStyle(isActive);
 
-  const handleOnNestedClick = () => onNestedCollectionClick(id);
+  const handleTracking = () => {
+    const categoryItemTrackingProps: CategoryItemTrackingWithMobileActionType = {
+      menuLabel: label,
+      menuType: menuType,
+      menuSection: 'Panel 2',
+      menuCategory: menuCategoryLabel,
+      menuSubnav:
+        'None' /* TODO{issue-27-nonFixture}: Possibly create own component */,
+      action: !isActive ? 'Expand' : 'Collapse',
+    };
+    trackingCallbacks.mobile.mobileCategoryItemClick(categoryItemTrackingProps);
+  };
+
+  const handleOnNestedClick = () => {
+    console.log('Mobile Menu: Clicking nested collection from panel 2');
+    handleTracking();
+    onNestedCollectionClick(id);
+  };
 
   const listClassSet = cx(
     compositionStyles.list,
@@ -74,6 +102,9 @@ const NestedCollection: NestedCollectionType = ({
             isVisible={isActive}
             itemProps={props}
             key={props.label}
+            menuSubnav={
+              label
+            } /* TODO{issue-26-nonFixture}: Explain menuSubnav coming from nested component */
           />
         ))}
       </ul>

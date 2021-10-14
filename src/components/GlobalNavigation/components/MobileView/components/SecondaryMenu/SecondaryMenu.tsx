@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
@@ -10,6 +11,7 @@ import { Hyperlink } from '~/components/Hyperlink';
 import { Transition } from '~/components/Transition';
 import { Collection } from '../Collection';
 import type {
+  MenuItemTrackingWithMobileActionType,
   SecondaryMenuType,
   SecondaryMenuItem,
 } from './SecondaryMenu.types';
@@ -21,10 +23,12 @@ const SecondaryMenu: SecondaryMenuType = ({ items }) => {
     activeCollectionId,
     isOpen,
     setActiveCollectionId,
+    setMenuCategoryLabel,
   } = useGlobalNavigationStateContext();
 
   const {
     actions: { stores },
+    trackingCallbacks,
   } = useGlobalNavigationContext();
 
   const currentTheme = useThemeContext(null, 'dark');
@@ -41,7 +45,32 @@ const SecondaryMenu: SecondaryMenuType = ({ items }) => {
     compositionStyles.ornamentalWrapper,
   );
 
+  const handleTracking = (
+    menuItemTrackingProps: MenuItemTrackingWithMobileActionType,
+  ) => {
+    trackingCallbacks.mobile.mobileMenuItemClick(menuItemTrackingProps);
+  };
+
+  const handleOnReadClick = (props: SecondaryMenuItem) => {
+    handleTracking({
+      menuCategory: 'None',
+      menuLabel: props.label,
+      menuSection: 'Panel 1',
+      menuType: 'Read',
+      action: 'Open',
+    });
+    setMenuCategoryLabel(props.label);
+    handleSetActiveCollectionId(props.id);
+  };
+
   const handleOnStoresClick = () => {
+    handleTracking({
+      menuCategory: 'None',
+      menuLabel: 'Stores',
+      menuSection: 'Panel 1',
+      menuType: 'Stores',
+      action: 'Open',
+    });
     stores?.onClick();
     setActiveCollectionId(stores.id);
   };
@@ -51,7 +80,7 @@ const SecondaryMenu: SecondaryMenuType = ({ items }) => {
 
     const handleOnClick = () => {
       if (props.type === 'read-collection') {
-        handleSetActiveCollectionId(props.id);
+        handleOnReadClick(props);
       } else if (props.id === stores.id) {
         handleOnStoresClick();
       } else if (props.type === 'trigger') {

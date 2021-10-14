@@ -37,11 +37,11 @@ const useGlobalNavigationStateStore: UseGlobalNavigationStateStore = ({
     menuCategoryLabel,
     menuType,
     setActiveCollectionId,
-    setMenuCategoryLabel,
     setIsOpen,
-    stickyNavProps,
+    setMenuCategoryLabel,
     setMenuType,
     setStickyNavProps,
+    stickyNavProps,
   };
 };
 

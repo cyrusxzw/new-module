@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react';
 import { Link } from './Link';
 import { LinkFixture } from './Link.fixture';
 
+jest.mock('~/components/GlobalNavigation/GlobalNavigation.context');
+
 describe('<GlobalNavigation.MobileView.Link />', () => {
   it('should render base component correctly', () => {
     const { container } = render(<Link {...LinkFixture} />);

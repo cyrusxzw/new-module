@@ -31,6 +31,22 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
   const testGlobalNavigationContext = {
     actions: mockActions,
     onOpen: jest.fn(),
+    trackingCallbacks: {
+      desktop: {
+        promotionCardClick: jest.fn(),
+        promotionCardImpression: jest.fn(),
+        menuItemClick: jest.fn(),
+        categoryItemClick: jest.fn(),
+      },
+      tablet: {
+        tabletMenuItemClick: jest.fn(),
+        tabletCategoryItemClick: jest.fn(),
+      },
+      mobile: {
+        mobileMenuItemClick: jest.fn(),
+        mobileCategoryItemClick: jest.fn(),
+      },
+    },
   };
 
   const testGlobalNavigationStateContext = {
@@ -38,6 +54,10 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     setActiveCollectionId: jest.fn(),
     isOpen: false,
     setIsOpen: jest.fn(),
+    menuType: 'Shop',
+    menuCategoryLabel: 'Category',
+    setMenuType: jest.fn(),
+    setCategoryLabel: jest.fn(),
   };
 
   const testMobileViewContext = {
@@ -84,6 +104,10 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
       setActiveCollectionId: jest.fn(),
       isOpen: true,
       setIsOpen: jest.fn(),
+      menuType: 'Shop',
+      menuCategoryLabel: 'Category',
+      setMenuType: jest.fn(),
+      setCategoryLabel: jest.fn(),
     });
     render(<TestBed onClose={mockOnCloseFn} />);
 
@@ -100,6 +124,10 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
       setActiveCollectionId: jest.fn(),
       isOpen: true,
       setIsOpen: jest.fn(),
+      menuType: 'Shop',
+      menuCategoryLabel: 'Category',
+      setMenuType: jest.fn(),
+      setCategoryLabel: jest.fn(),
     });
 
     const onClose = jest.fn();
@@ -118,6 +146,10 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
       setActiveCollectionId: jest.fn(),
       isOpen: true,
       setIsOpen: jest.fn(),
+      menuType: 'Shop',
+      menuCategoryLabel: 'Category',
+      setMenuType: jest.fn(),
+      setCategoryLabel: jest.fn(),
     });
 
     const onClose = jest.fn();

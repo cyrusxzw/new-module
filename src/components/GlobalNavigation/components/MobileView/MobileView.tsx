@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import React from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
@@ -35,6 +36,7 @@ const MobileView: MobileViewType = ({ className }) => {
     onClose,
     read,
     theme,
+    trackingCallbacks,
   } = useGlobalNavigationContext();
 
   const {
@@ -52,7 +54,18 @@ const MobileView: MobileViewType = ({ className }) => {
 
   const { search } = actions;
 
+  const handleTracking = () => {
+    trackingCallbacks.mobile.mobileMenuItemClick({
+      menuCategory: 'None',
+      menuSection: 'Navbar',
+      menuType: 'Shop',
+      menuLabel: 'Menu' /* TODO{issue-25-nonFixture}: Explain menuLabel */,
+      action: 'Close',
+    });
+  };
+
   const handleOnClose = () => {
+    handleTracking();
     setActiveCollectionId('top');
     setActiveNestedCollectionIds([]);
     setIsOpen(false);

@@ -3,6 +3,7 @@ import type {
   Trigger,
   Link,
   Read,
+  MenuItemTrackingWithMobileAction,
 } from '~/components/GlobalNavigation/GlobalNavigation.types';
 
 type SecondaryMenuItem = Trigger | Link | Read;
@@ -14,4 +15,11 @@ type SecondaryMenuProps = {
 
 type SecondaryMenuType = ComponentWithoutChildren<SecondaryMenuProps>;
 
-export type { SecondaryMenuType, SecondaryMenuProps, SecondaryMenuItem };
+type MenuItemTrackingWithMobileActionType = MenuItemTrackingWithMobileAction;
+
+export type {
+  MenuItemTrackingWithMobileActionType,
+  SecondaryMenuType,
+  SecondaryMenuProps,
+  SecondaryMenuItem,
+};

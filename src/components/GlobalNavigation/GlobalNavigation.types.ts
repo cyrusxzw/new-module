@@ -36,7 +36,6 @@ type PromotionCardImpressionTracking = {
   id: string;
   creative: string;
   position: string;
-  currencyCode: string /* TODO{issue-15-nonFixture}: Finalize type of currency code */;
   isVisible: boolean;
 };
 
@@ -66,7 +65,9 @@ type CategoryItemTrackingWithAction = CategoryItemTracking & {
 };
 
 type CollectionImage = {
+  id: string;
   altText: string;
+  creative: string;
   sizes: {
     medium?: string;
     large?: string;
@@ -201,16 +202,16 @@ type StickyNavScrollType = {
 
 type GlobalNavigationStateContextType = {
   activeCollectionId: string;
+  activeView: ActiveViewTypes;
   isOpen: boolean;
   menuCategoryLabel: string;
   menuType: MenuType;
   setActiveCollectionId: (id: string) => void;
-  setMenuCategoryLabel: (categoryLabel: string) => void;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
-  activeView: ActiveViewTypes;
-  stickyNavProps: StickyNavType;
+  setMenuCategoryLabel: (categoryLabel: string) => void;
   setMenuType: (menuType: MenuType) => void;
   setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
+  stickyNavProps: StickyNavType;
 };
 
 type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;

@@ -34,7 +34,12 @@ const BaseComponentWithProviders = () => (
             tabletCategoryItemClick: (categoryItemTrackingProps) =>
               console.log('Tablet Category is being tracked'),
           },
-          mobile: () => null,
+          mobile: {
+            mobileMenuItemClick: (tabletMenuItemTrackingProps) =>
+              console.log('Mobile Menu is being tracked'),
+            mobileCategoryItemClick: (mobileCategoryItemTrackingProps) =>
+              console.log('Mobile Category is being tracked'),
+          },
         },
       }}
     >

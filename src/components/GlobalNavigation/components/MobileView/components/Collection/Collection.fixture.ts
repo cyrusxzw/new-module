@@ -39,6 +39,8 @@ const CollectionFixture: CollectionProps = {
     url: '#see-all-skin-care-card',
     heading: 'See all Skin Care Card Heading',
     image: {
+      id: 'image-of-see-all-skin-care',
+      creative: 'Thematic Product',
       altText: 'Image of See all Skin Care',
       sizes: {
         large:
