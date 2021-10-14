@@ -2,7 +2,7 @@
 
 .base {
   &:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 }
 
@@ -14,17 +14,21 @@
 
 .element {
   font-family: var(--font-family-sans-serif-normal);
-  font-size: rem(16px);
-  line-height: 1.33;
+  font-size: rem(14px);
+  line-height: 1.5;
   transition: outline-offset 200ms var(--easing-ease-out-cubic);
 
   /* responsive menu font */
+  @media (--viewport-xl) {
+    font-size: calc(14px + 0.13889vw);
+  }
+
   @media (--viewport-x2l) {
-    font-size: calc(16px + 0.111vw);
+    font-size: calc(16px + 0.1vw);
   }
 
   @media (--viewport-x3l) {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .dark & {
