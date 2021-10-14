@@ -9,7 +9,6 @@ const ProductDetailBodyFixture = {
     cart:
       ' Quisque in felis id tellus condimentum scelerisque. Aliquam quis vestibulum felis, quis porta tellus',
     flyinPanelHeading: 'Ingredients',
-    notifyWhenAvailable: 'Notify when available',
   },
   definitionList: [
     {

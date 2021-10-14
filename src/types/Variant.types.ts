@@ -8,7 +8,6 @@ type Variant = {
   hasAgeVerificationRequirement?: boolean;
   id?: string;
   isInStock: boolean;
-  disableOutOfStockFeature?: boolean;
   isSellable?: boolean;
   image?: {
     altText?: string;

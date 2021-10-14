@@ -20,7 +20,6 @@ declare type ProductDetailBodyCopy = {
     };
     upSellProductLabel?: string;
     flyinPanelHeading?: string;
-    notifyWhenAvailable?: string;
 };
 
 declare type Breadcrumbs = {
@@ -36,6 +35,7 @@ declare type ProductDetailHeaderProps = {
     onUpsellClick?: () => void;
     onUpsellScrollIntoView?: () => void;
     paymentWidget?: React.ReactNode;
+    backInStockNotificationBtn?: React.ReactNode;
     theme?: Themes;
 };
 declare type ProductDetailHeaderType = ComponentWithoutChildren<ProductDetailHeaderProps>;

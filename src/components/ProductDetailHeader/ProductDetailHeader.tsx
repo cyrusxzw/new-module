@@ -22,6 +22,7 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
   onUpsellScrollIntoView,
   onUpsellClick,
   paymentWidget,
+  backInStockNotificationBtn,
   theme,
 }) => {
   const currentTheme = useThemeContext(theme, 'dark');
@@ -54,12 +55,12 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
             />
           </Hidden>
           <ProductDetailBody
+            backInStockNotificationBtn={backInStockNotificationBtn}
             copy={{
               addToCart: copy?.addToCart,
               size: copy?.size,
               upSellProductLabel: copy?.upSellProductLabel,
               flyinPanelHeading: copy?.flyinPanelHeading,
-              notifyWhenAvailable: copy?.notifyWhenAvailable,
             }}
             onFlyinOpenCloseClick={handleOnFlyinOpenCloseClick}
             onUpsellClick={onUpsellClick}

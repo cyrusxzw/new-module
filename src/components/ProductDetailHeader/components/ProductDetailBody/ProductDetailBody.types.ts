@@ -15,7 +15,6 @@ type ProductDetailBodyCopy = {
   };
   upSellProductLabel?: string;
   flyinPanelHeading?: string;
-  notifyWhenAvailable?: string;
 };
 
 type ProductDetailBodyProps = {
@@ -26,6 +25,7 @@ type ProductDetailBodyProps = {
   onUpsellClick?: () => void;
   onUpsellScrollIntoView?: () => void;
   paymentWidget?: React.ReactNode;
+  backInStockNotificationBtn?: React.ReactNode;
 };
 
 type ProductDetailBodyType = ComponentWithoutChildren<ProductDetailBodyProps>;

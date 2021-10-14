@@ -16,7 +16,6 @@ import { FlyinPanel } from '~/components/FlyinPanel';
 import { Heading } from '~/components/Heading';
 import { Hidden } from '~/components/Hidden';
 import { Icon } from '~/components/Icon';
-import { Modal } from '~/components/Modal';
 import { Paragraph } from '~/components/Paragraph';
 import { ProductExtract } from '~/components/ProductExtract';
 import { RadioGroup } from '~/components/RadioGroup';
@@ -32,10 +31,10 @@ const ProductDetailBody: ProductDetailBodyType = ({
   onUpsellScrollIntoView,
   onUpsellClick,
   paymentWidget,
+  backInStockNotificationBtn,
 }) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const [isFlyinPanelVisible, setIsFlyinPanelVisible] = useState(false);
-  const [isModalOpened, setIsModalOpened] = useState(false);
   const upsellRef = useRef(null);
   const { productDetail } = useProductDetailContext();
   const handleOnUpsellScrollIntoView = () => {
@@ -97,8 +96,6 @@ const ProductDetailBody: ProductDetailBodyType = ({
     },
     className,
   );
-
-  const backInStockBtnClassSet = cx(styles.backInStockBtn, styles.fullWidth);
 
   const RADIO_GROUP_NAME = 'sku';
   const RADIO_GROUP_DATA_TEST_REF = 'PRODUCT_DETAIL_VARIANT_SELECT';
@@ -208,31 +205,9 @@ const ProductDetailBody: ProductDetailBodyType = ({
             dataTestRef="ADD_TO_CART"
             theme={currentTheme}
           />
-          {selectedVariant?.isInStock == false &&
-            selectedVariant?.disableOutOfStockFeature === false && (
-              <>
-                <Modal
-                  copy={{ close: 'Close Modal' }}
-                  isVisible={isModalOpened}
-                  onClose={() => {
-                    setIsModalOpened(false);
-                  }}
-                >
-                  ...form
-                </Modal>
-                <Button
-                  className={backInStockBtnClassSet}
-                  isAlternate={true}
-                  onClick={() => {
-                    setIsModalOpened(true);
-                  }}
-                  theme={currentTheme}
-                  title={copy?.notifyWhenAvailable}
-                >
-                  {copy?.notifyWhenAvailable}
-                </Button>
-              </>
-            )}
+          {backInStockNotificationBtn && (
+            <div>{backInStockNotificationBtn}</div>
+          )}
           {paymentWidget && (
             <div className={paymentWidgetClassSet}>{paymentWidget}</div>
           )}

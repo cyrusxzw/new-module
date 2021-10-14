@@ -76,7 +76,6 @@ declare type Variant$1 = {
     hasAgeVerificationRequirement?: boolean;
     id?: string;
     isInStock: boolean;
-    disableOutOfStockFeature?: boolean;
     isSellable?: boolean;
     image?: {
         altText?: string;
@@ -1503,7 +1502,6 @@ declare type ProductDetailBodyCopy = {
     };
     upSellProductLabel?: string;
     flyinPanelHeading?: string;
-    notifyWhenAvailable?: string;
 };
 
 declare type Breadcrumbs = {
@@ -1519,6 +1517,7 @@ declare type ProductDetailHeaderProps = {
     onUpsellClick?: () => void;
     onUpsellScrollIntoView?: () => void;
     paymentWidget?: React.ReactNode;
+    backInStockNotificationBtn?: React.ReactNode;
     theme?: Themes;
 };
 declare type ProductDetailHeaderType = ComponentWithoutChildren<ProductDetailHeaderProps>;

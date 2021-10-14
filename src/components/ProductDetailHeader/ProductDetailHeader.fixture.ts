@@ -65,7 +65,6 @@ const ProductDetailHeaderFixture = {
         sku: 'ARD33',
         price: '$26.45',
         isInStock: true,
-        disableOutOfStockFeature: false,
         image: {
           altText: 'alt-tag-ARD33',
           sizes: {
@@ -84,7 +83,6 @@ const ProductDetailHeaderFixture = {
         sku: 'ARD32',
         price: '$86.97',
         isInStock: false,
-        disableOutOfStockFeature: false,
         image: {
           altText: 'alt-tag-ARD32',
           sizes: {
@@ -103,7 +101,6 @@ const ProductDetailHeaderFixture = {
       sku: 'ARD33',
       price: '$26.45',
       isInStock: false,
-      disableOutOfStockFeature: false,
       image: {
         altText: 'alt-tag-ARD33',
         sizes: {
@@ -125,7 +122,6 @@ const ProductDetailHeaderFixture = {
       sku: 'ARD33',
       price: '$26.45',
       isInStock: false,
-      disableOutOfStockFeature: false,
       image: {
         altText: 'alt-tag-ARD33',
         sizes: {

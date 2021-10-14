@@ -48,7 +48,6 @@ import { ProductDetailHeaderFixture } from './ProductDetailHeader.fixture';
         size: ProductDetailBodyFixture.copy.size,
         upSellProductLabel: ProductDetailBodyFixture.copy.upSellProductLabel,
         flyinPanelHeading: ProductDetailBodyFixture.copy.flyinPanelHeading,
-        notifyWhenAvailable: ProductDetailBodyFixture.copy.notifyWhenAvailable,
       };
       const implementation = {
         gridOverlay: {
@@ -79,6 +78,11 @@ import { ProductDetailHeaderFixture } from './ProductDetailHeader.fixture';
                     <div>
                       <span>Payment Widget Placeholder</span>
                     </div>
+                  }
+                  backInStockNotificationBtn={
+                    <button>
+                      <span>Notify when available</span>
+                    </button>
                   }
                   theme={theme}
                 />
