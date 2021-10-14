@@ -11,13 +11,10 @@
   visibility: hidden;
 
   /* responsive menu font */
-  @media (--viewport-x2l) {
-    font-size: calc(14px + 0.111vw);
+  @media only screen and (min-width:1025px) and (max-width:1440px){
+    font-size: calc(12px + 0.11vw);
   }
 
-  @media (--viewport-x3l) {
-    font-size: 18px;
-  }
 
   &.dark:focus-visible {
     outline: 1px dashed var(--color-dark-decoration);

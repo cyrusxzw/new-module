@@ -12,19 +12,19 @@
 
 .heading {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-family: var(--font-family-sans-serif-medium);
-  font-size: rem(16px);
+  font-size: rem(14px);
   font-weight: normal;
-  line-height: 1.33;
+  line-height: 1.5;
 
   /* responsive font */
   @media (--viewport-x2l) {
-    font-size: calc(16px + 0.111vw);
+    font-size: calc(14px + 0.111vw);
   }
 
   @media (--viewport-x3l) {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
