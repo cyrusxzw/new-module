@@ -3,7 +3,7 @@ import { isViewport } from '~/utils/viewport';
 import { useWindowHasResized } from '~/customHooks';
 import type { ActiveViewTypes, StickyNavType } from './GlobalNavigation.types';
 import { stickyScrollHandler } from './GlobalNavigation.utils';
-import debounce from 'lodash/debounce';
+import throttle from 'lodash/throttle';
 
 const useActiveView = (): { activeView: ActiveViewTypes } => {
   const [activeView, setActiveView] = useState<ActiveViewTypes>('none');
@@ -35,7 +35,7 @@ const useStickyNav = (
   const stickyNavRef = useRef(null);
 
   useEffect(() => {
-    const handleDebouncedScrollListener = debounce(
+    const handleDebouncedScrollListener = throttle(
       () => {
         stickyScrollHandler({
           stickyNavRef,
@@ -45,7 +45,7 @@ const useStickyNav = (
         });
       },
       100,
-      { leading: true },
+      { leading: true, trailing: true },
     );
 
     window.addEventListener('scroll', handleDebouncedScrollListener);

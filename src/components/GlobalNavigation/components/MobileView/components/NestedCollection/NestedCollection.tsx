@@ -64,7 +64,6 @@ const NestedCollection: NestedCollectionType = ({
 
       <ul
         aria-hidden={!isActive}
-        aria-label="submenu"
         className={listClassSet}
         ref={ref}
         style={style}

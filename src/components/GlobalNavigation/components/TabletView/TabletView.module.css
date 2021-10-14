@@ -48,6 +48,7 @@
 
   &.isVisibleStickyNav {
     top: 0;
+    outline: 2px solid var(--color-grey-rgba-20); /* extra -1px to adjust nav partially sticking out */
   }
 
   &.isInvisibleStickyNav {
