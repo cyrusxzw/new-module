@@ -13,6 +13,10 @@
   pointer-events: auto;
   transition: border-bottom-color 200ms var(--easing-ease-in-out-cubic);
 
+  @media (--viewport-x3l) {
+    margin-right: 25px;
+  }
+
   &:last-child {
     margin-right: 0;
   }
@@ -37,10 +41,9 @@
     color 200ms var(--easing-ease-out-cubic);
 
   /* responsive font */
-  @media only screen and (min-width:1025px) and (max-width:1440px){
+  @media (--viewport-lg-only) {
     font-size: calc(12px + 0.11vw);
   }
-
 
   &.dark:focus-visible {
     outline: 1px dashed var(--color-dark-decoration);

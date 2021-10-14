@@ -3,7 +3,7 @@
 :root {
   /* Represents final menu height of nav container 
   ** Mobile height set by Header component of Padding 20 20 20 20 & Height: 50px
-  */ 
+  */
   --menu-height: 90px;
 }
 
@@ -173,7 +173,6 @@
   transition: outline-offset 200ms var(--easing-ease-out-cubic),
     color 200ms var(--easing-ease-out-cubic);
 
-
   polygon {
     transition: fill 200ms var(--easing-ease-out-cubic);
   }
@@ -228,9 +227,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: var(--menu-height); 
+  height: var(--menu-height);
   pointer-events: none;
   visibility: hidden;
 }
-
-
