@@ -57,7 +57,6 @@
 
 .image {
   overflow: hidden;
-  max-height: 182px;
   aspect-ratio: 16 / 9;
   pointer-events: none;
 
@@ -71,10 +70,15 @@
 
 .label {
   font-family: var(--font-family-sans-serif-regular);
-  font-size: rem(20px);
+  font-size: rem(16px);
 
-  .flush & {
-    font-size: rem(18px);
+  /* responsive menu font */
+  @media (--viewport-x2l) {
+    font-size: calc(16px + 0.111vw);
+  }
+
+  @media (--viewport-x3l) {
+    font-size: 20px;
   }
 }
 
