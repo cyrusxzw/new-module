@@ -10901,13 +10901,13 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   margin-bottom: 0;
 }
 .MobileView-module_dark__1RRSp .MobileView-module_listItem__B2Zr7 {
-    border-top: 1px solid #bcbbb4;
+    border-top: 1px solid rgba(51, 51, 51, 0.2);
   }
 .MobileView-module_light__15qBl .MobileView-module_listItem__B2Zr7 {
     border-top: 1px solid #fffef2;
   }
 .MobileView-module_dark__1RRSp .MobileView-module_listItem__B2Zr7:last-child {
-    border-bottom: 1px solid #bcbbb4;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.2);
   }
 .MobileView-module_light__15qBl .MobileView-module_listItem__B2Zr7:last-child {
     border-bottom: 1px solid #fffef2;
@@ -10953,9 +10953,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 6px;
+  padding-top: 10px;
   padding-right: 15px;
-  padding-bottom: 6px;
+  padding-bottom: 10px;
   padding-left: 15px;
   margin-right: 5px;
   margin-left: 5px;
@@ -10969,11 +10969,6 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   transition: outline-offset 200ms cubic-bezier(0.215, 0.61, 0.355, 1),
     color 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-@media (min-height: 736px) {
-.MobileView-module_itemElement__3Jn5o {
-    font-size: 20px
-}
-  }
 .MobileView-module_itemElement__3Jn5o polygon {
     -webkit-transition: fill 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
     transition: fill 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -11032,11 +11027,10 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   position: absolute;
   top: 0;
   width: 100%;
-  height: 90px; 
+  height: 90px;
   pointer-events: none;
   visibility: hidden;
 }
-
 
 :root {
   /* Base colours */
@@ -11156,7 +11150,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 }
 .ArticleCard-module_label__2d-B8 {
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.33;
 }
 .ArticleCard-module_leftAligned__3ISKC {
@@ -11276,6 +11270,15 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   opacity: 0;
   pointer-events: none;
 }
+/* TODO: Apply on Athenaeum title when in contentful model */
+/* .cardHeading {
+  font-size: 18px;
+  font-family: var(--font-family-sans-serif-regular);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-secondary);
+  margin: 5px;
+  padding: 0 15px 0px;
+} */
 
 :root {
   /* Base colours */
@@ -11798,14 +11801,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   visibility: hidden;
 }
 /* responsive menu font */
-@media (min-width: 1600px) {
+@media (min-width: 1025px) and (max-width: 1219px) {
 .CloseButton-module_base__jJbZC {
-    font-size: calc(14px + 0.111vw)
-}
-  }
-@media (min-width: 1920px) {
-.CloseButton-module_base__jJbZC {
-    font-size: 18px
+    font-size: calc(12px + 0.11vw)
 }
   }
 .CloseButton-module_base__jJbZC.CloseButton-module_dark__121l3.focus-visible {
@@ -12118,7 +12116,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   }
 @media (min-width: 1920px) {
 .PromotionCard-module_label__2HVdR {
-    font-size: 20px
+    font-size: 18px
 }
   }
 .PromotionCard-module_leftAligned__2UU_- {
@@ -12430,27 +12428,32 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 /* Dark theme UI elements */
 /* Light theme UI elements */
 .CollectionItem-module_base__3gZMh:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 .CollectionItem-module_article__UOAU-:not(:last-child) {
     margin-bottom: 20px;
   }
 .CollectionItem-module_element__3I4gf {
   font-family: var(--font-family-sans-serif-normal);
-  font-size: 16px;
-  line-height: 1.33;
+  font-size: 14px;
+  line-height: 1.5;
   -webkit-transition: outline-offset 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: outline-offset 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 /* responsive menu font */
+@media (min-width: 1220px) {
+.CollectionItem-module_element__3I4gf {
+    font-size: calc(14px + 0.13889vw)
+}
+  }
 @media (min-width: 1600px) {
 .CollectionItem-module_element__3I4gf {
-    font-size: calc(16px + 0.111vw)
+    font-size: calc(16px + 0.1vw)
 }
   }
 @media (min-width: 1920px) {
 .CollectionItem-module_element__3I4gf {
-    font-size: 20px
+    font-size: 18px
 }
   }
 .CollectionItem-module_dark__3sk2r .CollectionItem-module_element__3I4gf {
@@ -12588,21 +12591,26 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 }
 .CollectionList-module_heading__1LcGk {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-family: 'Suisse Medium', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
-  line-height: 1.33;
+  line-height: 1.5;
 }
 /* responsive font */
+@media (min-width: 1220px) {
+.CollectionList-module_heading__1LcGk {
+    font-size: calc(14px + 0.13889vw)
+}
+  }
 @media (min-width: 1600px) {
 .CollectionList-module_heading__1LcGk {
-    font-size: calc(16px + 0.111vw)
+    font-size: calc(16px + 0.1vw)
 }
   }
 @media (min-width: 1920px) {
 .CollectionList-module_heading__1LcGk {
-    font-size: 20px
+    font-size: 18px
 }
   }
 .CollectionList-module_hidden__3ECEy {
@@ -12707,14 +12715,15 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 }
 .CollectionLayout-module_nestedCollections__2cYlO,
 .CollectionLayout-module_notableNestedCollections__1oaDa {
-  width: calc(50% + 30px);
-  padding-right: 30px;
+  width: calc(50% + 3vw);
+  padding-right: 3vw;
 }
 .CollectionLayout-module_collectionsWrapper__35Qi5 {
   width: calc(100% * 2 / 12);
+  padding-right: 3vw;
   margin-top: 90px;
   margin-bottom: 40px;
-  margin-left: calc(100% * 2 / 12 + 30px);
+  margin-left: calc(100% * 2 / 12 + 3vw);
 }
 .CollectionLayout-module_supplementary__3IGCR {
   display: -webkit-box;
@@ -12729,7 +12738,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 90px;
-  margin-bottom: 10vh;
+  margin-bottom: 5vw;
 }
 .CollectionLayout-module_promotion__ruBZF {
   width: calc(100% * 9 / 12);
@@ -12837,6 +12846,11 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -webkit-transition: border-bottom-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: border-bottom-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+@media (min-width: 1920px) {
+.MenuItem-module_base__h3cyh {
+    margin-right: 25px
+}
+  }
 .MenuItem-module_base__h3cyh:last-child {
     margin-right: 0;
   }
@@ -12857,14 +12871,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     color 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 /* responsive font */
-@media (min-width: 1600px) {
+@media (min-width: 1025px) and (max-width: 1219px) {
 .MenuItem-module_element__IwV1H {
-    font-size: calc(14px + 0.111vw)
-}
-  }
-@media (min-width: 1920px) {
-.MenuItem-module_element__IwV1H {
-    font-size: 18px
+    font-size: calc(12px + 0.11vw)
 }
   }
 .MenuItem-module_element__IwV1H.MenuItem-module_dark__Oa69E.focus-visible {
@@ -15150,14 +15159,11 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 */
 /* Dark theme UI elements */
 /* Light theme UI elements */
-.SecondaryMenu-module_base__CMJ17 {
-  margin-top: 4vh;
-}
 .SecondaryMenu-module_list__3LoFa {
   padding-right: 15px;
   padding-left: 15px;
-  margin-top: 0;
-  margin-bottom: 4vh;
+  margin-top: 30px;
+  margin-bottom: 30px;
   list-style: none;
 }
 .SecondaryMenu-module_item__2gmXU {
@@ -15165,9 +15171,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   width: 50%;
 }
 .SecondaryMenu-module_element__gzm1N {
-  padding-top: 5px;
+  padding-top: 10px;
   padding-right: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   padding-left: 5px;
   font-family: 'Suisse Regular', sans-serif;
   font-size: 14px;
