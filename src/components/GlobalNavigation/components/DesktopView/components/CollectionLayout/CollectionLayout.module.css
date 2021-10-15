@@ -29,7 +29,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin-top: var(--offset);
-  margin-bottom: 6vh;
+  margin-bottom: 5vw;
 }
 
 .promotion {
