@@ -1,22 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './Textarea.module.css';
+import type { TextareaType } from './Textarea.types';
 
-const Textarea = ({
+const Textarea: TextareaType = ({
   className,
   dataTestRef,
   defaultValue,
   id,
-  isEnabled,
   inputRef,
+  isEnabled = true,
   maxLength,
   name,
   onBlur,
   onChange,
   rows,
   textareaClassName,
-  theme,
+  theme = 'dark',
   value,
 }) => {
   const baseClassSet = cx(styles.base, styles[theme], className);
@@ -45,40 +45,6 @@ const Textarea = ({
       </div>
     </label>
   );
-};
-
-Textarea.propTypes = {
-  className: PropTypes.string,
-  dataTestRef: PropTypes.string,
-  defaultValue: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  isEnabled: PropTypes.bool,
-  inputRef: PropTypes.func,
-  maxLength: PropTypes.number,
-  name: PropTypes.string,
-  textareaClassName: PropTypes.string,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  rows: PropTypes.number,
-  theme: PropTypes.oneOf(['dark', 'light']),
-  value: PropTypes.string,
-};
-
-Textarea.defaultProps = {
-  className: undefined,
-  dataTestRef: undefined,
-  defaultValue: undefined,
-  id: undefined,
-  isEnabled: true,
-  inputRef: undefined,
-  maxLength: undefined,
-  name: undefined,
-  textareaClassName: undefined,
-  onBlur: undefined,
-  onChange: undefined,
-  rows: undefined,
-  theme: 'dark',
-  value: undefined,
 };
 
 export { Textarea };
