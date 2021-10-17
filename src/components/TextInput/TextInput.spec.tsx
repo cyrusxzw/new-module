@@ -28,11 +28,7 @@ describe('<TextInput />', () => {
 
   it.skip('should be accessible with a placeholder attribute', async () => {
     const { container } = render(
-      <TextInput
-        data-test-ref="test-data-ref"
-        id="test-textinput"
-        placeholder="placeholder"
-      />,
+      <TextInput data-test-ref="test-data-ref" id="test-textinput" />,
     );
 
     /** @TODO This component needs to be refactored to correctly (not)render label html */
