@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/aesop/aesop-gel/compare/v1.21.0...v1.22.0) (2021-10-17)
+
+
+### Features
+
+* **TextInput:** migrate to TypeScript ([#590](https://github.com/aesop/aesop-gel/issues/590)) ([b8e75cd](https://github.com/aesop/aesop-gel/commit/b8e75cdcbb2937473675c8068dcde04ae04f12a3))
+
 # [1.21.0](https://github.com/aesop/aesop-gel/compare/v1.20.0...v1.21.0) (2021-10-16)
 
 
