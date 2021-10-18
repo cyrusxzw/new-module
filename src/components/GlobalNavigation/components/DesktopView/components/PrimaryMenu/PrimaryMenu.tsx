@@ -60,7 +60,12 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
   const classSet = cx(styles.base, styles[currentTheme]);
 
   return (
-    <nav aria-label="primary" className={classSet} role="navigation">
+    <nav
+      aria-label="primary"
+      className={classSet}
+      data-test-ref="NAV_PRIMARY"
+      role="navigation"
+    >
       <ul className={styles.list}>
         {collections.map(
           ({
@@ -75,7 +80,8 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
           }) => {
             return (
               <MenuItem
-                dataTestRef={`NAV_${id.toUpperCase()}`}
+                dataTestId={`NAV_${id.toUpperCase()}`}
+                dataTestRef="NAV_PRIMARY_BUTTON"
                 id={id}
                 key={id}
                 label={label}
@@ -98,7 +104,8 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
         )}
 
         <MenuItem
-          dataTestRef={`NAV_${read.id.toUpperCase()}`}
+          dataTestId={`NAV_${read.id.toUpperCase()}`}
+          dataTestRef="NAV_PRIMARY_BUTTON"
           id={read.id}
           label={read.label}
           onClick={() => handleOnCollectionClick(read.id)}
@@ -118,7 +125,8 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
         </MenuItem>
 
         <MenuItem
-          dataTestRef={stores.dataTestRef ?? 'NAV_STORES'}
+          dataTestId={stores.dataTestRef ?? 'NAV_STORES'}
+          dataTestRef="NAV_PRIMARY_BUTTON"
           id={stores.id}
           label={stores.label}
           onClick={handleOnStoresClick}
@@ -131,7 +139,8 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
         </MenuItem>
 
         <MenuItem
-          dataTestRef={search.dataTestRef ?? 'NAV_SEARCH'}
+          dataTestId={search.dataTestRef ?? 'NAV_SEARCH'}
+          dataTestRef="NAV_PRIMARY_BUTTON"
           id={search.id}
           label={
             <>

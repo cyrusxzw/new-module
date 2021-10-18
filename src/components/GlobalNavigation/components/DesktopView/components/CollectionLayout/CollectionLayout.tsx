@@ -32,7 +32,7 @@ const CollectionLayout: CollectionLayoutType = ({
     <>
       <div className={styles.collectionsWrapper}>
         <CollectionList
-          dataTestRef={`NAV_${currentId.toUpperCase()}_TLC`}
+          dataTestRef={`NAV_${currentId.toUpperCase()}_COLLECTION_LIST`}
           heading={topLevelCollectionLabel}
           isVisible={isOpen}
           items={topLevelCollections}
@@ -40,7 +40,7 @@ const CollectionLayout: CollectionLayoutType = ({
 
         {type === 'read-collection' && (
           <CollectionList
-            dataTestRef={`NAV_${currentId.toUpperCase()}_TLC_READ`}
+            dataTestRef={`NAV_${currentId.toUpperCase()}_COLLECTION_LIST`}
             eyebrow={articlesListHeading}
             isVisible={isOpen}
             items={articles}
@@ -51,27 +51,21 @@ const CollectionLayout: CollectionLayoutType = ({
       <div className={styles.supplementary}>
         <div className={styles.nestedCollectionsWrapper}>
           <div className={styles.nestedCollections}>
-            {nestedCollections
-              .filter(Boolean)
-              .map(({ label, id, items }, index) => (
-                <CollectionList
-                  dataTestRef={`NAV_${currentId.toUpperCase()}_NECO_${
-                    index + 1
-                  }`}
-                  heading={label}
-                  isVisible={isOpen}
-                  items={items}
-                  key={id}
-                />
-              ))}
+            {nestedCollections.filter(Boolean).map(({ label, id, items }) => (
+              <CollectionList
+                dataTestRef={`NAV_${currentId.toUpperCase()}_COLLECTION_LIST`}
+                heading={label}
+                isVisible={isOpen}
+                items={items}
+                key={id}
+              />
+            ))}
           </div>
 
           <div className={styles.notableNestedCollections}>
-            {notableNestedCollections.map(({ label, items, id }, index) => (
+            {notableNestedCollections.map(({ label, items, id }) => (
               <CollectionList
-                dataTestRef={`NAV_${currentId.toUpperCase()}_NONECO_${
-                  index + 1
-                }`}
+                dataTestRef={`NAV_${currentId.toUpperCase()}_PRODUCT_LIST`}
                 heading={label}
                 isVisible={isOpen}
                 items={items}

@@ -9,6 +9,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ButtonRef(
     aria,
     children,
     className,
+    dataTestId,
     dataTestRef,
     id,
     isAlternate = false,
@@ -43,6 +44,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ButtonRef(
       aria-hidden={aria?.hidden ?? null}
       aria-label={aria?.label ?? null}
       className={classSet}
+      data-test-id={dataTestId}
       data-test-ref={dataTestRef}
       disabled={!isEnabled}
       id={id}
