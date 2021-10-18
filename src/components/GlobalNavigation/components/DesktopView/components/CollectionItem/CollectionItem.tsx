@@ -59,7 +59,9 @@ const CollectionItem: CollectionItemType = (props) => {
   const handleTracking = (
     categoryItemTrackingProps: CategoryItemTrackingWithActionType,
   ) => {
-    trackingCallbacks.desktop.categoryItemClick(categoryItemTrackingProps);
+    trackingCallbacks.desktop.desktopCategoryItemClickOrHover(
+      categoryItemTrackingProps,
+    );
   };
 
   const handleOnClick = () => {

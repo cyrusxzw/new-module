@@ -19,9 +19,9 @@ const BaseComponentWithProviders = () => (
         read: GlobalNavigationFixture.read,
         trackingCallbacks: {
           desktop: {
-            menuItemClick: (menuItemTrackingProps) =>
+            desktopMenuItemClickOrHover: (menuItemTrackingProps) =>
               console.log('Menu is being tracked'),
-            categoryItemClick: (categoryItemTrackingProps) =>
+            desktopCategoryItemClickOrHover: (categoryItemTrackingProps) =>
               console.log('Menu is being tracked'),
           },
           tablet: {

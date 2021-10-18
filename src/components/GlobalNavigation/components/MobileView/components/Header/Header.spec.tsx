@@ -33,10 +33,8 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
     onOpen: jest.fn(),
     trackingCallbacks: {
       desktop: {
-        promotionCardClick: jest.fn(),
-        promotionCardImpression: jest.fn(),
-        menuItemClick: jest.fn(),
-        categoryItemClick: jest.fn(),
+        desktopMenuItemClickOrHover: jest.fn(),
+        desktopCategoryItemClickOrHover: jest.fn(),
       },
       tablet: {
         tabletMenuItemClick: jest.fn(),
@@ -45,6 +43,10 @@ describe('<GlobalNavigation.MobileView.Header />', () => {
       mobile: {
         mobileMenuItemClick: jest.fn(),
         mobileCategoryItemClick: jest.fn(),
+      },
+      common: {
+        promotionCardClick: jest.fn(),
+        promotionCardImpression: jest.fn(),
       },
     },
   };

@@ -34,9 +34,9 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
   onOpen: (): void => console.log('Clicked: open'), // eslint-disable-line no-console
   trackingCallbacks: {
     desktop: {
-      menuItemClick: (menuItemTrackingProps) =>
+      desktopMenuItemClickOrHover: (menuItemTrackingProps) =>
         console.log('Menu is being tracked'),
-      categoryItemClick: (categoryItemTrackingProps) =>
+      desktopCategoryItemClickOrHover: (categoryItemTrackingProps) =>
         console.log('Menu is being tracked'),
     },
     tablet: {

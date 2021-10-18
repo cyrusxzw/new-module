@@ -64,7 +64,9 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
   const handleTracking = (
     menuItemNavBarTrackingProps: MenuItemNavBarTrackingWithActionType,
   ) => {
-    trackingCallbacks.desktop.menuItemClick(menuItemNavBarTrackingProps);
+    trackingCallbacks.desktop.desktopMenuItemClickOrHover(
+      menuItemNavBarTrackingProps,
+    );
   };
 
   /* Handles Collections other than {Stores} & {Search} */

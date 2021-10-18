@@ -10,8 +10,10 @@ import type { Themes, ComponentWithChildren } from '~/types';
 
 type TrackingCallback = {
   desktop: {
-    menuItemClick: (menuItemTrackingProps: MenuItemTrackingWithAction) => void;
-    categoryItemClick: (
+    desktopMenuItemClickOrHover: (
+      menuItemTrackingProps: MenuItemTrackingWithAction,
+    ) => void;
+    desktopCategoryItemClickOrHover: (
       categoryItemTrackingProps: CategoryItemTrackingWithAction,
     ) => void;
   };

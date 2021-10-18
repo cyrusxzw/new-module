@@ -55,7 +55,7 @@ const DesktopView: DesktopViewType = ({ className }) => {
 
   const handleTracking = () =>
     isOpen &&
-    trackingCallbacks.desktop.menuItemClick({
+    trackingCallbacks.desktop.desktopMenuItemClickOrHover({
       menuType: menuType,
       menuLabel: 'Menu',
       menuSection: 'Navbar',
