@@ -7,6 +7,7 @@ declare type ButtonProps = {
     aria?: Pick<Aria, 'expanded' | 'haspopup' | 'hidden' | 'label'>;
     children?: ReactNode;
     className?: string;
+    dataTestId?: string;
     dataTestRef?: string;
     id?: string;
     isAlternate?: boolean;

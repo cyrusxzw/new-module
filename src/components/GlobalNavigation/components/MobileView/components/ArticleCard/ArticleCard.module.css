@@ -3,7 +3,6 @@
 .base {
   min-width: 80vw;
   box-sizing: border-box;
-  padding-top: 16px;
   padding-bottom: 16px;
   scroll-snap-align: center;
 
@@ -38,7 +37,7 @@
 
 .label {
   margin-bottom: 0;
-  font-size: rem(20px);
+  font-size: rem(18px);
   line-height: 1.33;
 }
 

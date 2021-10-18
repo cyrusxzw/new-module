@@ -1,32 +1,28 @@
 @import 'styles/index';
 
-.base {
-  margin-top: 40px;
-}
-
 .list {
   padding-right: 15px;
   padding-left: 15px;
-  margin-top: 0;
-  margin-bottom: -10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   list-style: none;
 }
 
 .item {
   display: inline-block;
   width: 50%;
-  margin-bottom: 10px;
 }
 
 .element {
-  padding-top: 5px;
+  padding-top: 10px;
   padding-right: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   padding-left: 5px;
   font-family: var(--font-family-sans-serif-regular);
   font-size: rem(14px);
   opacity: 1;
   outline-offset: 0;
+  text-align: left;
   transition: opacity 200ms var(--easing-ease-out-cubic);
   transition: opacity 200ms var(--easing-ease-out-cubic),
     outline-offset 200ms var(--easing-ease-out-cubic),

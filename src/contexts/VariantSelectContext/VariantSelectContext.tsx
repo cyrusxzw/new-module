@@ -10,8 +10,11 @@ const VariantSelectContext = createContext(undefined);
 const VariantSelectContextProvider: VariantSelectContextProviderType = ({
   children,
   variants,
+  selectedVariantIndex,
 }) => (
-  <VariantSelectContext.Provider value={useVariantSelectStore(variants)}>
+  <VariantSelectContext.Provider
+    value={useVariantSelectStore(variants, selectedVariantIndex)}
+  >
     {children}
   </VariantSelectContext.Provider>
 );

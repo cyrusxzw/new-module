@@ -27,6 +27,16 @@
     visibility 400ms var(--easing-ease-out-cubic);
 }
 
+%transition-transform-400ms-ease-out-visibility-400ms-ease-decelerate {
+  transition: transform 400ms var(--easing-ease-out-decelerate),
+    visibility 400ms var(--easing-ease-out-decelerate);
+}
+
+%transition-transform-400ms-ease-out-visibility-400ms-ease-acelerate {
+  transition: transform 350ms var(--easing-ease-out-acelerate),
+    visibility 350ms var(--easing-ease-out-decelerate);
+}
+
 .fadeEnter {
   opacity: 0;
 }
@@ -302,7 +312,7 @@
 }
 
 .slideLeftEnterActive {
-  @extend %transition-transform-400ms-ease-out-visibility-400ms-ease-out;
+  @extend %transition-transform-400ms-ease-out-visibility-400ms-ease-decelerate;
 
   transform: translate3d(0, 0, 0);
   visibility: visible;
@@ -319,7 +329,7 @@
 }
 
 .slideLeftExitActive {
-  @extend %transition-transform-400ms-ease-out-visibility-400ms-ease-out;
+  @extend %transition-transform-400ms-ease-out-visibility-400ms-ease-acelerate;
 
   transform: translate3d(100%, 0, 0);
   visibility: hidden;

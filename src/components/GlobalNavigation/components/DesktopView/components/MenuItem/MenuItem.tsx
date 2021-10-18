@@ -12,6 +12,7 @@ import styles from './MenuItem.module.css';
 const MenuItem: MenuItemType = ({
   children,
   dataTestRef,
+  dataTestId,
   id,
   label,
   onClick,
@@ -28,6 +29,7 @@ const MenuItem: MenuItemType = ({
   const sharedProps = {
     className: cx(styles.element, styles[currentTheme]),
     dataTestRef,
+    dataTestId,
     title,
   };
 
