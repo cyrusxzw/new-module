@@ -1518,7 +1518,7 @@ declare type ProductDetailHeaderProps = {
     onUpsellClick?: () => void;
     onUpsellScrollIntoView?: () => void;
     paymentWidget?: React.ReactNode;
-    backInStockNotificationBtn?: React.ReactNode;
+    backInStockNotification?: React.ReactNode;
     theme?: Themes;
 };
 declare type ProductDetailHeaderType = ComponentWithoutChildren<ProductDetailHeaderProps>;
