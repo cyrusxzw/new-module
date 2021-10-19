@@ -73,6 +73,7 @@ declare type Variant$1 = {
         openInANewWindow?: boolean;
     };
     cartDisclaimer?: string;
+    disableOutOfStockFeature?: boolean;
     hasAgeVerificationRequirement?: boolean;
     id?: string;
     isInStock: boolean;
@@ -1517,6 +1518,7 @@ declare type ProductDetailHeaderProps = {
     onUpsellClick?: () => void;
     onUpsellScrollIntoView?: () => void;
     paymentWidget?: React.ReactNode;
+    backInStockNotification?: React.ReactNode;
     theme?: Themes;
 };
 declare type ProductDetailHeaderType = ComponentWithoutChildren<ProductDetailHeaderProps>;
