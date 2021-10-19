@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/aesop/aesop-gel/compare/v1.22.0...v1.23.0) (2021-10-19)
+
+
+### Features
+
+* ret-452 back in stock notification cta ([9f62e3a](https://github.com/aesop/aesop-gel/commit/9f62e3acbce9a6bea5aa893e3c5dfacd5b2f043d))
+
 # [1.22.0](https://github.com/aesop/aesop-gel/compare/v1.21.0...v1.22.0) (2021-10-17)
 
 ### Features
