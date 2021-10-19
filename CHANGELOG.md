@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/aesop/aesop-gel/compare/v1.24.0...v1.25.0) (2021-10-19)
+
+
+### Features
+
+* **ReadMore:** migrate to TypeScript ([#598](https://github.com/aesop/aesop-gel/issues/598)) ([1321187](https://github.com/aesop/aesop-gel/commit/13211873d0693f8b7f879f409cfc119a2d29aa14))
+
 # [1.24.0](https://github.com/aesop/aesop-gel/compare/v1.23.0...v1.24.0) (2021-10-19)
 
 

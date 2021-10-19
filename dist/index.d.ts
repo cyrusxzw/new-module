@@ -1551,22 +1551,13 @@ declare type RadioGroupType = ComponentWithoutChildren<RadioGroupProps>;
 
 declare const RadioGroup: RadioGroupType;
 
-declare function ReadMore({ articles, className }: {
-    articles: any;
-    className: any;
-}): JSX.Element;
-declare namespace ReadMore {
-    namespace propTypes {
-        const articles: PropTypes.Requireable<any[]>;
-        const className: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const articles_1: any;
-        export { articles_1 as articles };
-        const className_1: any;
-        export { className_1 as className };
-    }
-}
+declare type ReadMoreProps = {
+    articles: Article$1[];
+    className?: string;
+};
+declare type ReadMoreType = ComponentWithoutChildren<ReadMoreProps>;
+
+declare const ReadMore: ReadMoreType;
 
 declare type ScreenReaderOnlyProps = {
     as?: keyof JSX.IntrinsicElements;
