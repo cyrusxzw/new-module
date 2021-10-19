@@ -18,6 +18,7 @@ import { RadioGroupFixture } from './RadioGroup.fixture';
       {(state, setState) => {
         return (
           <RadioGroup
+            errorMessage={knobs.text('errorMessage', '', 'Content')}
             name={knobs.text('name', 'radioGroup', 'Content')}
             onChange={(event) => {
               event.persist();
