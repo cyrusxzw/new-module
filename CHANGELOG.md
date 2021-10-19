@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/aesop/aesop-gel/compare/v1.25.0...v1.26.0) (2021-10-19)
+
+
+### Features
+
+* **NavigationBar:** migrate to TypeScript ([#599](https://github.com/aesop/aesop-gel/issues/599)) ([6f79976](https://github.com/aesop/aesop-gel/commit/6f79976daa02aaccdfcbccc1758f5809d8e2e3b5))
+
 # [1.25.0](https://github.com/aesop/aesop-gel/compare/v1.24.0...v1.25.0) (2021-10-19)
 
 

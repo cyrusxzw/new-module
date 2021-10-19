@@ -626,7 +626,7 @@ declare type FlyinPanelType = ComponentWithChildren<FlyinPanelProps>;
 
 declare const FlyinPanel: FlyinPanelType;
 
-declare type Link$1 = {
+declare type Link$2 = {
     id?: string;
     openInANewWindow?: boolean;
     text: string;
@@ -638,7 +638,7 @@ declare type FooterBlockProps = {
     heading?: string;
     headingClassName?: string;
     isVisibleOnTabletAndMobile?: boolean;
-    links?: Link$1[];
+    links?: Link$2[];
     listClassName?: string;
     listItemClassName?: string;
     theme?: Themes;
@@ -1143,7 +1143,7 @@ declare type Trigger = Clickable & {
     component?: () => ReactElement;
     isLegacyMenu?: boolean;
 };
-declare type Link = Clickable & {
+declare type Link$1 = Clickable & {
     alternateLabel?: string;
     isExternal?: boolean;
     onClick?: () => void;
@@ -1171,12 +1171,12 @@ declare type Read = Clickable & {
     backgroundColor?: string;
     baseUrl?: string;
     image?: CollectionImage;
-    items: (Link | NestedCollection)[];
+    items: (Link$1 | NestedCollection)[];
     topLevelCollectionLabel?: string;
     type: 'read-collection';
 };
 declare type Actions = {
-    account: ((Link & {
+    account: ((Link$1 & {
         recentOrders?: {
             url?: string;
             title?: string;
@@ -1186,7 +1186,7 @@ declare type Actions = {
         isAuthenticated?: boolean;
     };
     cart: Trigger;
-    logo: Link;
+    logo: Link$1;
     shop: Omit<Trigger, 'onClick'> & {
         onClick?: () => void;
     };
@@ -1200,18 +1200,18 @@ declare type Actions = {
     stores: Trigger;
 };
 declare type NotableNestedCollection = Clickable & {
-    items: Link[];
+    items: Link$1[];
     type: 'notable-nested-collection';
 };
 declare type NestedCollection = Clickable & {
-    items: Link[];
+    items: Link$1[];
     type: 'nested-collection';
 };
 declare type Collection = Clickable & {
     backLabel?: string;
     backgroundColor?: string;
     image?: CollectionImage;
-    items: (Link | NestedCollection | NotableNestedCollection)[];
+    items: (Link$1 | NestedCollection | NotableNestedCollection)[];
     promotion?: Promotion;
     topLevelCollectionLabel?: string;
     type: 'collection';
@@ -1282,38 +1282,18 @@ declare type ModalType = ComponentWithChildren<ModalProps>;
 
 declare const Modal: ModalType;
 
-declare function NavigationBar({ childLinks, className, parentLink, selectedUrl }: {
-    childLinks: any;
-    className: any;
-    parentLink: any;
-    selectedUrl: any;
-}): JSX.Element;
-declare namespace NavigationBar {
-    namespace propTypes {
-        const childLinks: PropTypes.Requireable<PropTypes.InferProps<{
-            hasTargetInNewWindow: PropTypes.Requireable<boolean>;
-            text: PropTypes.Validator<string>;
-            url: PropTypes.Validator<string>;
-        }>[]>;
-        const className: PropTypes.Requireable<string>;
-        const parentLink: PropTypes.Requireable<PropTypes.InferProps<{
-            hasTargetInNewWindow: PropTypes.Requireable<boolean>;
-            text: PropTypes.Validator<string>;
-            url: PropTypes.Validator<string>;
-        }>>;
-        const selectedUrl: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const childLinks_1: any[];
-        export { childLinks_1 as childLinks };
-        const className_1: any;
-        export { className_1 as className };
-        const parentLink_1: any;
-        export { parentLink_1 as parentLink };
-        const selectedUrl_1: any;
-        export { selectedUrl_1 as selectedUrl };
-    }
-}
+declare type Link = Pick<HyperlinkProps, 'hasTargetInNewWindow' | 'url'> & {
+    text: string;
+};
+declare type NavigationBarProps = {
+    childLinks?: Link[];
+    className?: string;
+    parentLink?: Link;
+    selectedUrl?: string;
+};
+declare type NavigationBarType = ComponentWithoutChildren<NavigationBarProps>;
+
+declare const NavigationBar: NavigationBarType;
 
 declare type NotificationModalProps = {
     backgroundColor?: string;
