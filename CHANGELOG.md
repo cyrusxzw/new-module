@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/aesop/aesop-gel/compare/v1.23.0...v1.24.0) (2021-10-19)
+
+
+### Features
+
+* **RadioGroup:** migrate to TypeScript ([#597](https://github.com/aesop/aesop-gel/issues/597)) ([56c1271](https://github.com/aesop/aesop-gel/commit/56c127176f0913642759aaae7c543b6dde91a08b))
+
 # [1.23.0](https://github.com/aesop/aesop-gel/compare/v1.22.0...v1.23.0) (2021-10-19)
 
 
