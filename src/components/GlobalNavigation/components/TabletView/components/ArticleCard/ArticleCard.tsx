@@ -16,6 +16,7 @@ import compositionStyles from '../../TabletView.module.css';
 import styles from './ArticleCard.module.css';
 
 const ArticleCard: ArticleCardType = ({
+  id,
   image,
   isVisible = true,
   label,
@@ -25,7 +26,7 @@ const ArticleCard: ArticleCardType = ({
 }) => {
   const currentTheme = useThemeContext(null, 'dark');
   const { menuType, menuCategoryLabel } = useGlobalNavigationStateContext();
-  const { read, trackingCallbacks } = useGlobalNavigationContext();
+  const { trackingCallbacks } = useGlobalNavigationContext();
 
   const classSet = cx(
     styles.base,
@@ -37,8 +38,9 @@ const ArticleCard: ArticleCardType = ({
   const handleTracking = () => {
     trackingCallbacks.tablet.tabletCategoryItemClick({
       menuCategory: menuCategoryLabel,
+      menuLabel: id,
       menuSection: 'Panel 2',
-      menuSubnav: `${read.id}-category`,
+      menuSubnav: `None`,
       menuType: menuType,
       action: 'Click',
     } as CategoryItemTrackingWithActionType);

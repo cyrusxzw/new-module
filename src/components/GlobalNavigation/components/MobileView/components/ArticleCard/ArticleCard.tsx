@@ -16,6 +16,7 @@ import compositionStyles from '../../MobileView.module.css';
 import styles from './ArticleCard.module.css';
 
 const ArticleCard: ArticleCardType = ({
+  id,
   image,
   isVisible = true,
   label,
@@ -38,9 +39,9 @@ const ArticleCard: ArticleCardType = ({
   const handleTracking = () => {
     trackingCallbacks.mobile.mobileCategoryItemClick({
       menuCategory: 'None',
-      menuLabel: read.topLevelCollectionLabel,
+      menuLabel: id,
       menuSection: 'Panel 1',
-      menuSubnav: read.articlesListHeading,
+      menuSubnav: 'None',
       menuType: menuType,
       action: 'Click',
     } as CategoryItemTrackingWithMobileActionType);
