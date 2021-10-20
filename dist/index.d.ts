@@ -237,6 +237,7 @@ declare type ButtonProps = {
     isEnabled?: boolean;
     isInline?: boolean;
     onClick?: (event: MouseEvent) => void;
+    onMouseEnter?: (event: MouseEvent) => void;
     tabIndex?: number;
     title?: string;
     type?: ButtonBehaviourType;
@@ -292,6 +293,7 @@ declare type HyperlinkProps = {
     isDownload?: boolean;
     kind?: LinkStyle;
     onClick?: (event: MouseEvent) => void;
+    onMouseEnter?: (event: MouseEvent) => void;
     /** @deprecated use `kind` instead */
     style?: LinkStyle;
     tabIndex?: number;
@@ -1143,38 +1145,61 @@ declare const MobileView: MobileViewType;
 
 declare const MobileViewContextProvider: MobileViewContextProviderType;
 
-declare type TabletViewProps = {
-    className?: string;
+declare type TrackingCallback = {
+    desktop: {
+        desktopMenuItemClickOrHover: (menuItemTrackingProps: MenuItemTrackingWithAction) => void;
+        desktopCategoryItemClickOrHover: (categoryItemTrackingProps: CategoryItemTrackingWithAction) => void;
+    };
+    tablet: {
+        tabletMenuItemClick: (tabletMenuItemTrackingProps: MenuItemTrackingWithAction) => void;
+        tabletCategoryItemClick: (tabletCategoryItemTrackingProps: CategoryItemTrackingWithAction) => void;
+    };
+    mobile: {
+        mobileMenuItemClick: (mobileMenuItemTrackingProps: MenuItemTrackingWithMobileAction) => void;
+        mobileCategoryItemClick: (mobileCategoryItemTrackingProps: CategoryItemTrackingWithMobileAction) => void;
+    };
+    common: {
+        promotionCardClick: (promotionCardTrackingProps: PromotionCardClickTracking) => void;
+        promotionCardImpression: (promotionCardTrackingProps: PromotionCardImpressionTracking) => void;
+    };
 };
-declare type TabletViewType = ComponentWithChildren<TabletViewProps>;
-declare type TabletViewContextProviderProps = {
-    closedClassName?: string;
-    closedLogoTheme?: Themes;
-    openClassName?: string;
+declare type PromotionCardImpressionTracking = {
+    id: string;
+    creative: string;
+    position: string;
+    isVisible: boolean;
 };
-declare type TabletViewContextProviderType = ComponentWithChildren<TabletViewContextProviderProps>;
-
-declare const TabletView: TabletViewType;
-
-declare const TabletViewContextProvider: TabletViewContextProviderType;
-
-declare type DesktopViewProps = {
-    className?: string;
+declare type PromotionCardClickTracking = PromotionCardImpressionTracking & {
+    englishLabel: string;
 };
-declare type DesktopViewType = ComponentWithoutChildren<DesktopViewProps>;
-declare type DesktopViewContextType = {
-    closedClassName?: string;
-    closedLogoTheme?: Themes;
-    openClassName?: string;
+declare type MenuType = 'Shop' | 'Read' | 'Stores' | 'Search' | 'Menu';
+declare type CategoryItemTracking = {
+    menuCategory: string;
+    menuLabel: string;
+    menuSection: 'Panel 1' | 'Panel 2' | 'Navbar';
+    menuSubnav: string;
+    menuType: MenuType;
 };
-declare type DesktopViewContextProviderType = ComponentWithChildren<DesktopViewContextType>;
-
-declare const DesktopView: DesktopViewType;
-
-declare const DesktopViewContextProvider: DesktopViewContextProviderType;
-
+declare type MenuItemTracking = {
+    menuCategory: string;
+    menuLabel: string;
+    menuType: MenuType;
+    menuSection: 'Panel 1' | 'Navbar';
+};
+declare type DesktopAndTabletTrackingActions = {
+    action: 'Open' | 'Close' | 'Click' | 'Hover';
+};
+declare type MobileTrackingActions = {
+    action: 'Open' | 'Close' | 'Click' | 'Hover' | 'Expand' | 'Collapse' | 'Back';
+};
+declare type CategoryItemTrackingWithAction = CategoryItemTracking & DesktopAndTabletTrackingActions;
+declare type CategoryItemTrackingWithMobileAction = CategoryItemTracking & MobileTrackingActions;
+declare type MenuItemTrackingWithAction = MenuItemTracking & DesktopAndTabletTrackingActions;
+declare type MenuItemTrackingWithMobileAction = MenuItemTracking & MobileTrackingActions;
 declare type CollectionImage = {
+    id?: string;
     altText: string;
+    creative?: string;
     sizes: {
         medium?: string;
         large?: string;
@@ -1197,6 +1222,9 @@ declare type Link = Clickable & {
     alternateLabel?: string;
     isExternal?: boolean;
     onClick?: () => void;
+    menuSubnav?: string;
+    menuType: 'Shop' | 'Read';
+    panel: 'Panel 1' | 'Panel 2';
     type: 'link';
     url: string;
 };
@@ -1211,6 +1239,9 @@ declare type Article = Clickable & {
     isVisible?: boolean;
     metaDuration?: string;
     metaLabel?: string;
+    menuSubnav?: string;
+    menuType: 'Shop' | 'Read';
+    panel: 'Panel 1' | 'Panel 2';
     type: 'article';
     url: string;
 };
@@ -1280,12 +1311,16 @@ declare type StickyNavType = {
 };
 declare type GlobalNavigationStateContextType = {
     activeCollectionId: string;
+    activeView: ActiveViewTypes;
     isOpen: boolean;
+    menuCategoryLabel: string;
+    menuType: MenuType;
     setActiveCollectionId: (id: string) => void;
     setIsOpen: Dispatch<SetStateAction<boolean>>;
-    activeView: ActiveViewTypes;
-    stickyNavProps: StickyNavType;
+    setMenuCategoryLabel: (categoryLabel: string) => void;
+    setMenuType: (menuType: MenuType) => void;
     setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
+    stickyNavProps: StickyNavType;
 };
 declare type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
 declare type GlobalNavigationContextType = {
@@ -1300,11 +1335,42 @@ declare type GlobalNavigationContextType = {
     read: Read;
     theme?: Themes;
     isLegacyMenu?: boolean;
+    trackingCallbacks: TrackingCallback;
 };
 declare type GlobalNavigationContextProviderProps = {
     value: GlobalNavigationContextType;
 };
 declare type GlobalNavigationContextProviderType = ComponentWithChildren<GlobalNavigationContextProviderProps>;
+
+declare type TabletViewProps = {
+    className?: string;
+};
+declare type TabletViewType = ComponentWithChildren<TabletViewProps>;
+declare type TabletViewContextProviderProps = {
+    closedClassName?: string;
+    closedLogoTheme?: Themes;
+    openClassName?: string;
+};
+declare type TabletViewContextProviderType = ComponentWithChildren<TabletViewContextProviderProps>;
+
+declare const TabletView: TabletViewType;
+
+declare const TabletViewContextProvider: TabletViewContextProviderType;
+
+declare type DesktopViewProps = {
+    className?: string;
+};
+declare type DesktopViewType = ComponentWithoutChildren<DesktopViewProps>;
+declare type DesktopViewContextType = {
+    closedClassName?: string;
+    closedLogoTheme?: Themes;
+    openClassName?: string;
+};
+declare type DesktopViewContextProviderType = ComponentWithChildren<DesktopViewContextType>;
+
+declare const DesktopView: DesktopViewType;
+
+declare const DesktopViewContextProvider: DesktopViewContextProviderType;
 
 declare const GlobalNavigationStateContextProvider: GlobalNavigationStateContextProviderType;
 declare const useGlobalNavigationStateContext: UseGlobalNavigationStateContext;

@@ -3128,9 +3128,9 @@ html[lang*='ko'] .SectionHeading-module_ZapfTitleFont__74AFB,
     visibility 350ms cubic-bezier(0, 0, 0.2, 1),
     -webkit-transform 350ms cubic-bezier(0, 0, 0.2, 1);
 }
-.Transition-module_slideLeftExitActive__1WKVn {;
+.Transition-module_slideLeftExitActive__1WKVn {
 
-  -webkit-transform: translate3d(100%, 0, 0);;
+  -webkit-transform: translate3d(100%, 0, 0);
 
           transform: translate3d(100%, 0, 0);
   visibility: hidden;
