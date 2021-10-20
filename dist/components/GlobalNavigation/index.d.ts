@@ -185,6 +185,7 @@ declare type GlobalNavigationContextType = {
     className?: string;
     collections: Collection[];
     isVisuallyObstructed?: boolean;
+    isOpenSearchBackToMenu?: boolean;
     /** User created on Navigation close event callback */
     onClose?: () => void;
     /** User created on Navigation open event callback */
