@@ -1,6 +1,6 @@
 import type { NestedCollectionProps } from './NestedCollection.types';
 
-/* TODO{issue-9}: Improve fixture to be more reflective of tracking data
+/* TODO{issue-11}: Improve fixture to be more reflective of tracking data
  * Currently implemented type to satisfy typescript for this fixture
  */
 

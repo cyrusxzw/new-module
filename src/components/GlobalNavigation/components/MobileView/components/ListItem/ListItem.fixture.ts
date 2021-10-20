@@ -1,6 +1,6 @@
 import type { ListItemProps } from './ListItem.types';
 
-/* TODO{issue-7}: Improve fixture to be more reflective of tracking data
+/* TODO{issue-10}: Improve fixture to be more reflective of tracking data
  * Currently implemented type to satisfy typescript for this fixture
  */
 

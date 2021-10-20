@@ -1,6 +1,6 @@
 import type { SecondaryMenuProps } from './SecondaryMenu.types';
 
-/* TODO{issue-10}: Improve fixture to be more reflective of tracking data
+/* TODO{issue-14}: Improve fixture to be more reflective of tracking data
  * Currently implemented type to satisfy typescript for this fixture
  */
 

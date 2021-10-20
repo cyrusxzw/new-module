@@ -59,7 +59,7 @@ const BaseComponentWithProviders = () => (
   </GlobalNavigationStateContextProvider>
 );
 
-/* TODO{issue-17-nonFixture}: Fix test */
+/* TODO{issue-6-nonFixture}: Fix test */
 describe('<GlobalNavigation.DesktopView.CollectionList />', () => {
   it('should be accessible', async () => {
     const { container } = render(<BaseComponentWithProviders />);

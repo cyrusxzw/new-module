@@ -80,7 +80,7 @@ describe('<GlobalNavigation.MobileView.NestedCollection />', () => {
     expect(container).not.toBeEmptyDOMElement();
   });
 
-  /* TODO{issue-2-nonFixture}: Fix broken test  */
+  /* TODO{issue-12-nonFixture}: Fix broken test  */
   // it('should click on nested collection to expand it', () => {
   //   render(<TestBed items={NestedCollectionFixture.items} />);
 

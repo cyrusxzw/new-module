@@ -10,7 +10,7 @@ import { GlobalNavigationFixture } from '~/components/GlobalNavigation/GlobalNav
 import { MobileView } from './MobileView';
 import { MobileViewContextProvider } from './MobileView.context';
 
-/* TODO{issue-19-nonFixture}: Improve fixture to be more reflective of tracking data */
+/* TODO{issue-7-nonFixture}: Improve fixture to be more reflective of tracking data */
 const collections = [
   {
     id: 'skin-care',

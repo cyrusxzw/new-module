@@ -1,6 +1,6 @@
 import type { PrimaryMenuProps } from './PrimaryMenu.types';
 
-/* TODO{issue-8}: Improve fixture to be more reflective of tracking data
+/* TODO{issue-13}: Improve fixture to be more reflective of tracking data
  * Currently implemented type to satisfy typescript for this fixture
  */
 

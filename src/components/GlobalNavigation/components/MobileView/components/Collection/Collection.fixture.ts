@@ -1,6 +1,6 @@
 import type { CollectionProps } from './Collection.types';
 
-/* TODO{issue-6}: Improve fixture to be more reflective of tracking data
+/* TODO{issue-8}: Improve fixture to be more reflective of tracking data
  * Currently implemented type to satisfy typescript for this fixture
  */
 

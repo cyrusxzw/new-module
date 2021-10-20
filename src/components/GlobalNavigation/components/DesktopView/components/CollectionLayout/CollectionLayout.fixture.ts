@@ -1,6 +1,6 @@
 import type { CollectionLayoutProps } from './CollectionLayout.types';
 
-/* TODO{issue-2}: Improve fixture to be more reflective of tracking data
+/* TODO{issue-4}: Improve fixture to be more reflective of tracking data
  * Currently implemented type to satisfy typescript for this fixture
  */
 type NavTrackingPropsType = {

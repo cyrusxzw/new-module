@@ -60,7 +60,7 @@ describe('<GlobalNavigation.MobileView.Collection />', () => {
     expect(topLevelCollectionBtn).not.toBeInTheDocument();
   });
 
-  /* TODO{issue-1-nonFixture}: Fix broken test  */
+  /* TODO{issue-9-nonFixture}: Fix broken test  */
   // it('should change active collection id on clicking top level collection', () => {
   //   (useGlobalNavigationStateContext as jest.Mock).mockReturnValue({
   //     activeCollectionId: 'top',
@@ -109,7 +109,7 @@ describe('<GlobalNavigation.MobileView.Collection />', () => {
     expect(nestedCollectionButton).toHaveAttribute('tabIndex', '-1');
   });
 
-  /* TODO{issue-1-nonFixture}: Fix broken test  */
+  /* TODO{issue-9-nonFixture}: Fix broken test  */
   // it('should return to top level collection by clicking back button', () => {
   //   render(<TestBed shouldHideTopCollection={true} />);
 

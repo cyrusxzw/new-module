@@ -1,4 +1,3 @@
-/* eslint-disable max-lines */
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';

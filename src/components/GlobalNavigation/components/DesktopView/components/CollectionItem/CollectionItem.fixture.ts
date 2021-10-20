@@ -1,6 +1,6 @@
 import type { CollectionItemProps } from './CollectionItem.types';
 
-/* TODO{issue-4}: Improve fixture to be more reflective of tracking data
+/* TODO{issue-2}: Improve fixture to be more reflective of tracking data
  * Currently implemented type to satisfy typescript for this fixture
  */
 type NavTrackingPropsType = {

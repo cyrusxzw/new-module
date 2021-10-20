@@ -24,7 +24,7 @@ const BaseComponentWithProviders = () => (
   </GlobalNavigationStateContextProvider>
 );
 
-/* TODO{issue-18-nonFixture}: Fix test */
+/* TODO{issue-3-nonFixture}: Fix test */
 describe('<GlobalNavigation.DesktopView.CollectionItem />', () => {
   it.todo('Fix test');
   // it('should be accessible', async () => {
