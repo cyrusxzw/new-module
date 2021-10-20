@@ -3,6 +3,7 @@ import type {
   ComponentWithoutChildren,
   Themes,
 } from '~/types';
+import type { MenuItemNavBarTrackingWithAction } from '~/components/GlobalNavigation/GlobalNavigation.types';
 
 type DesktopViewProps = {
   className?: string;
@@ -18,6 +19,8 @@ type DesktopViewContextType = {
 
 type DesktopViewContextProviderType = ComponentWithChildren<DesktopViewContextType>;
 
+type MenuItemNavBarTrackingWithActionType = MenuItemNavBarTrackingWithAction;
+
 type UseDesktopViewContextStore = (
   props: DesktopViewContextType,
 ) => DesktopViewContextType;
@@ -26,5 +29,6 @@ export type {
   DesktopViewContextProviderType,
   DesktopViewContextType,
   DesktopViewType,
+  MenuItemNavBarTrackingWithActionType,
   UseDesktopViewContextStore,
 };

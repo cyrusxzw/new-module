@@ -329,7 +329,7 @@
 }
 
 .slideLeftExitActive {
-  @extend %transition-transform-400ms-ease-out-visibility-400ms-ease-acelerate;;
+  @extend %transition-transform-400ms-ease-out-visibility-400ms-ease-acelerate;
 
   transform: translate3d(100%, 0, 0);
   visibility: hidden;

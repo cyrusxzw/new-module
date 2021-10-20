@@ -2,6 +2,8 @@ import type { ComponentWithoutChildren } from '~/types';
 import type {
   Clickable,
   CollectionImage,
+  PromotionCardClickTracking,
+  PromotionCardImpressionTracking,
 } from '~/components/GlobalNavigation/GlobalNavigation.types';
 
 type PromotionCardProps = Clickable & {
@@ -9,11 +11,20 @@ type PromotionCardProps = Clickable & {
   dataTestRef?: string;
   heading: string;
   isFlush?: boolean;
+  image?: CollectionImage;
   isVisible?: boolean;
   url: string;
-  image?: CollectionImage;
 };
 
 type PromotionCardType = ComponentWithoutChildren<PromotionCardProps>;
 
-export type { PromotionCardType, PromotionCardProps };
+type PromotionCardClickTrackingType = PromotionCardClickTracking;
+
+type PromotionCardImpressionTrackingType = PromotionCardImpressionTracking;
+
+export type {
+  PromotionCardType,
+  PromotionCardProps,
+  PromotionCardClickTrackingType,
+  PromotionCardImpressionTrackingType,
+};

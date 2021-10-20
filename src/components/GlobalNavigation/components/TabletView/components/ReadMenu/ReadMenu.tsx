@@ -26,6 +26,9 @@ const ReadMenu: ReadMenuType = () => {
           isVisible={activeCollectionId === read.id}
           items={items}
           key={id}
+          menuCategory={'Read'}
+          menuSection={'Panel 1'}
+          menuSubnav={id}
         />
       ))}
     </>

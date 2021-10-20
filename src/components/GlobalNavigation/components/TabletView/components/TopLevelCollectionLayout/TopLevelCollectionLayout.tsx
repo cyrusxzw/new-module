@@ -12,6 +12,7 @@ import { PromotionCard } from '../../../PromotionCard';
 import { DetailsPanel } from '../DetailsPanel';
 import { CollectionList } from '../CollectionList';
 import type {
+  MenuItemFirstPanelTrackingWithActionType,
   TopLevelCollectionLayoutType,
   TopLevelCollectionListsType,
 } from './TopLevelCollectionLayout.types';
@@ -31,7 +32,10 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
   const {
     activeCollectionId,
     setActiveCollectionId,
+    setMenuCategoryLabel,
   } = useGlobalNavigationStateContext();
+
+  const { trackingCallbacks } = useGlobalNavigationContext();
 
   const { isShopOpen } = useTabletViewContext();
 
@@ -51,6 +55,23 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
     compositionStyles.ornamentalWrapper,
   );
 
+  const handleTracking = (
+    menuItemFirstPanelTrackingProps: MenuItemFirstPanelTrackingWithActionType,
+  ) => {
+    trackingCallbacks.tablet.tabletMenuItemClick(
+      menuItemFirstPanelTrackingProps,
+    );
+  };
+
+  const handleCollectionClick = (
+    id,
+    menuItemFirstPanelTrackingProps: MenuItemFirstPanelTrackingWithActionType,
+  ) => {
+    handleTracking(menuItemFirstPanelTrackingProps);
+    setMenuCategoryLabel(menuItemFirstPanelTrackingProps.menuLabel);
+    setActiveCollectionId(id);
+  };
+
   return (
     <li className={compositionStyles.collectionItem}>
       <Button
@@ -61,7 +82,15 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
         className={buttonClassName}
         dataTestRef={dataTestRef}
         isInline={true}
-        onClick={() => setActiveCollectionId(id)}
+        onClick={() =>
+          handleCollectionClick(id, {
+            menuType: 'Shop',
+            menuLabel: id,
+            menuCategory: 'None',
+            menuSection: 'Panel 1',
+            action: isShopOpen ? 'Click' : 'Open',
+          })
+        }
         tabIndex={!isShopOpen ? -1 : null}
         title={title}
       >
@@ -86,6 +115,7 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
           heading={topLevelCollectionLabel}
           isVisible={activeCollectionId === id}
           items={topLevelCollections}
+          menuSubnav="None"
         />
 
         {allNestedCollections.map(({ id, items, label }) => (
@@ -94,6 +124,7 @@ const TopLevelCollectionLists: TopLevelCollectionListsType = ({
             isVisible={activeCollectionId === id}
             items={items}
             key={id}
+            menuSubnav={id}
           />
         ))}
       </DetailsPanel>

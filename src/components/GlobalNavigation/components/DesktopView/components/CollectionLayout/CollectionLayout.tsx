@@ -15,6 +15,7 @@ const CollectionLayout: CollectionLayoutType = ({
   id,
   image,
   items,
+  menuType,
   promotion,
   topLevelCollectionLabel,
   type,
@@ -36,6 +37,9 @@ const CollectionLayout: CollectionLayoutType = ({
           heading={topLevelCollectionLabel}
           isVisible={isOpen}
           items={topLevelCollections}
+          menuSubnav={`None`}
+          menuType={menuType}
+          panel={'Panel 1'}
         />
 
         {type === 'read-collection' && (
@@ -44,6 +48,9 @@ const CollectionLayout: CollectionLayoutType = ({
             eyebrow={articlesListHeading}
             isVisible={isOpen}
             items={articles}
+            menuSubnav={`None`}
+            menuType={menuType}
+            panel={'Panel 1'}
           />
         )}
       </div>
@@ -58,6 +65,9 @@ const CollectionLayout: CollectionLayoutType = ({
                 isVisible={isOpen}
                 items={items}
                 key={id}
+                menuSubnav={id}
+                menuType={menuType}
+                panel={'Panel 2'}
               />
             ))}
           </div>
@@ -70,6 +80,9 @@ const CollectionLayout: CollectionLayoutType = ({
                 isVisible={isOpen}
                 items={items}
                 key={id}
+                menuSubnav={id}
+                menuType={menuType}
+                panel={'Panel 2'}
               />
             ))}
           </div>

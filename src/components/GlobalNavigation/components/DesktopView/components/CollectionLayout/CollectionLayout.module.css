@@ -17,10 +17,10 @@
 
 .collectionsWrapper {
   width: calc(100% * 2 / 12);
+  padding-right: 3vw;
   margin-top: var(--offset);
   margin-bottom: 40px;
   margin-left: calc(100% * 2 / 12 + var(--column-spacing));
-  padding-right: 3vw;
 }
 
 .supplementary {

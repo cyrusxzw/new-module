@@ -10,6 +10,7 @@ import { Hyperlink } from '~/components/Hyperlink';
 import { Transition } from '~/components/Transition';
 import { Collection } from '../Collection';
 import type {
+  MenuItemTrackingWithMobileActionType,
   SecondaryMenuType,
   SecondaryMenuItem,
 } from './SecondaryMenu.types';
@@ -21,10 +22,12 @@ const SecondaryMenu: SecondaryMenuType = ({ items }) => {
     activeCollectionId,
     isOpen,
     setActiveCollectionId,
+    setMenuCategoryLabel,
   } = useGlobalNavigationStateContext();
 
   const {
     actions: { stores },
+    trackingCallbacks,
   } = useGlobalNavigationContext();
 
   const currentTheme = useThemeContext(null, 'dark');
@@ -33,7 +36,7 @@ const SecondaryMenu: SecondaryMenuType = ({ items }) => {
 
   const isVisible = isOpen && activeCollectionId === 'top';
   const handleSetActiveCollectionId = (id: string) => setActiveCollectionId(id);
-  const classSet = cx(styles.base, styles[currentTheme]);
+  const classSet = cx(styles[currentTheme]);
 
   const elementClassName = cx(
     styles.element,
@@ -41,7 +44,32 @@ const SecondaryMenu: SecondaryMenuType = ({ items }) => {
     compositionStyles.ornamentalWrapper,
   );
 
+  const handleTracking = (
+    menuItemTrackingProps: MenuItemTrackingWithMobileActionType,
+  ) => {
+    trackingCallbacks.mobile.mobileMenuItemClick(menuItemTrackingProps);
+  };
+
+  const handleOnReadClick = (props: SecondaryMenuItem) => {
+    handleTracking({
+      menuCategory: 'None',
+      menuLabel: props.id,
+      menuSection: 'Panel 1',
+      menuType: 'Read',
+      action: 'Open',
+    });
+    setMenuCategoryLabel(props.id);
+    handleSetActiveCollectionId(props.id);
+  };
+
   const handleOnStoresClick = () => {
+    handleTracking({
+      menuCategory: 'None',
+      menuLabel: 'Stores',
+      menuSection: 'Panel 1',
+      menuType: 'Stores',
+      action: 'Open',
+    });
     stores?.onClick();
     setActiveCollectionId(stores.id);
   };
@@ -51,7 +79,7 @@ const SecondaryMenu: SecondaryMenuType = ({ items }) => {
 
     const handleOnClick = () => {
       if (props.type === 'read-collection') {
-        handleSetActiveCollectionId(props.id);
+        handleOnReadClick(props);
       } else if (props.id === stores.id) {
         handleOnStoresClick();
       } else if (props.type === 'trigger') {

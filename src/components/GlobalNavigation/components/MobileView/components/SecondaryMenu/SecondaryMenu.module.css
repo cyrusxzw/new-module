@@ -1,6 +1,5 @@
 @import 'styles/index';
 
-
 .list {
   padding-right: 15px;
   padding-left: 15px;
@@ -15,7 +14,6 @@
 }
 
 .element {
-  text-align: left;
   padding-top: 10px;
   padding-right: 5px;
   padding-bottom: 10px;
@@ -24,6 +22,7 @@
   font-size: rem(14px);
   opacity: 1;
   outline-offset: 0;
+  text-align: left;
   transition: opacity 200ms var(--easing-ease-out-cubic);
   transition: opacity 200ms var(--easing-ease-out-cubic),
     outline-offset 200ms var(--easing-ease-out-cubic),

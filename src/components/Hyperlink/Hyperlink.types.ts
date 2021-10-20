@@ -23,6 +23,7 @@ type HyperlinkProps = {
   isDownload?: boolean;
   kind?: LinkStyle;
   onClick?: (event: MouseEvent) => void;
+  onMouseEnter?: (event: MouseEvent) => void;
   /** @deprecated use `kind` instead */
   style?: LinkStyle;
   tabIndex?: number;

@@ -17,6 +17,7 @@ const BaseComponentWithProviders = () => (
         actions: GlobalNavigationFixture.actions,
         collections: GlobalNavigationFixture.collections,
         read: GlobalNavigationFixture.read,
+        trackingCallbacks: GlobalNavigationFixture.trackingCallbacks,
       }}
     >
       <MenuItemContextProvider id="collection-list-id" isActive={true}>
@@ -26,6 +27,7 @@ const BaseComponentWithProviders = () => (
           id={CollectionLayoutFixture.id}
           image={CollectionLayoutFixture.image}
           items={CollectionLayoutFixture.items}
+          menuType={CollectionLayoutFixture.menuType}
           promotion={CollectionLayoutFixture.promotion}
           topLevelCollectionLabel={
             CollectionLayoutFixture.topLevelCollectionLabel

@@ -1,5 +1,8 @@
 import type { ComponentWithoutChildren } from '~/types';
-import type { Collection } from '~/components/GlobalNavigation/GlobalNavigation.types';
+import type {
+  Collection,
+  MenuItemFirstPanelTrackingWithAction,
+} from '~/components/GlobalNavigation/GlobalNavigation.types';
 
 type TopLevelCollectionListsProps = Collection;
 
@@ -7,4 +10,10 @@ type TopLevelCollectionListsType = ComponentWithoutChildren<TopLevelCollectionLi
 
 type TopLevelCollectionLayoutType = ComponentWithoutChildren;
 
-export type { TopLevelCollectionLayoutType, TopLevelCollectionListsType };
+type MenuItemFirstPanelTrackingWithActionType = MenuItemFirstPanelTrackingWithAction;
+
+export type {
+  MenuItemFirstPanelTrackingWithActionType,
+  TopLevelCollectionLayoutType,
+  TopLevelCollectionListsType,
+};

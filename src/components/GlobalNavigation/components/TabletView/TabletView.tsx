@@ -16,7 +16,10 @@ import {
 import { Logo } from '../Logo';
 import { SecondaryMenu } from './components/SecondaryMenu';
 import { PrimaryMenu } from './components/PrimaryMenu';
-import type { TabletViewType } from './TabletView.types';
+import type {
+  MenuItemNavBarTrackingWithActionType,
+  TabletViewType,
+} from './TabletView.types';
 import styles from './TabletView.module.css';
 
 const TabletView: TabletViewType = ({ className }) => {
@@ -25,10 +28,13 @@ const TabletView: TabletViewType = ({ className }) => {
     onClose,
     theme,
     isLegacyMenu,
+    trackingCallbacks,
   } = useGlobalNavigationContext();
 
   const {
     isOpen,
+    menuType,
+    menuCategoryLabel,
     setActiveCollectionId,
     setIsOpen,
     stickyNavProps,
@@ -52,7 +58,18 @@ const TabletView: TabletViewType = ({ className }) => {
 
   useOverflowHidden(isOpen);
 
+  const handleTracking = () =>
+    isOpen &&
+    trackingCallbacks.tablet.tabletMenuItemClick({
+      menuCategory: menuCategoryLabel,
+      menuLabel: 'Menu',
+      menuSection: 'Navbar',
+      menuType: menuType,
+      action: 'Close',
+    } as MenuItemNavBarTrackingWithActionType);
+
   const handleOnClose = () => {
+    handleTracking();
     setActiveCollectionId('top');
     setIsShopOpen(false);
     setIsOpen(false);

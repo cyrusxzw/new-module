@@ -14,6 +14,7 @@ type ButtonProps = {
   isEnabled?: boolean;
   isInline?: boolean;
   onClick?: (event: MouseEvent) => void;
+  onMouseEnter?: (event: MouseEvent) => void;
   tabIndex?: number;
   title?: string;
   type?: ButtonBehaviourType;

@@ -6,9 +6,9 @@ import styles from './CollectionImage.module.css';
 
 const CollectionImage: CollectionImageType = ({
   altText,
-  sizes,
-  isVisible,
   dataTestRef,
+  isVisible,
+  sizes,
 }) => {
   if (!sizes) return null;
 

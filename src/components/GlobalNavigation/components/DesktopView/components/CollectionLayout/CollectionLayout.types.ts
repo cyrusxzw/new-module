@@ -14,6 +14,7 @@ type CollectionLayoutProps = {
   id?: string;
   image?: CollectionImage;
   items: (Link | NestedCollection | NotableNestedCollection)[];
+  menuType: 'Shop' | 'Read';
   promotion?: Promotion;
   topLevelCollectionLabel?: string;
   type: 'collection' | 'read-collection';
