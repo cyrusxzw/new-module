@@ -23,6 +23,7 @@ const SecondaryMenu: SecondaryMenuType = ({ items }) => {
     isOpen,
     setActiveCollectionId,
     setMenuCategoryLabel,
+    setMenuType,
   } = useGlobalNavigationStateContext();
 
   const {
@@ -48,6 +49,7 @@ const SecondaryMenu: SecondaryMenuType = ({ items }) => {
     menuItemTrackingProps: MenuItemTrackingWithMobileActionType,
   ) => {
     trackingCallbacks.mobile.mobileMenuItemClick(menuItemTrackingProps);
+    setMenuType(menuItemTrackingProps.menuType);
   };
 
   const handleOnReadClick = (props: SecondaryMenuItem) => {
