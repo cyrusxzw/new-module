@@ -266,6 +266,7 @@ type GlobalNavigationContextType = {
   className?: string;
   collections: Collection[];
   isVisuallyObstructed?: boolean;
+  isOpenSearchBackToMenu?: boolean;
   /** User created on Navigation close event callback */
   onClose?: () => void;
   /** User created on Navigation open event callback */
@@ -299,6 +300,11 @@ type GetCollectionLists = (
   notableNestedCollections: NotableNestedCollection[];
   topLevelCollections: Link[];
 };
+
+type UseOpenMenuFromSearch = (
+  isOpenSearchBackToMenu: boolean,
+  setActiveCollectionId: (menu: string) => void,
+) => void;
 
 export type {
   Article,
@@ -334,4 +340,5 @@ export type {
   UseGlobalNavigationStateContext,
   UseGlobalNavigationStateStore,
   UseGlobalNavigationStore,
+  UseOpenMenuFromSearch,
 };
