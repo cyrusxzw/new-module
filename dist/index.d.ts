@@ -217,6 +217,7 @@ declare type BreadcrumbItem = {
     id: string;
     url: string;
     title: string;
+    dataTestRef?: string;
 };
 declare type BreadcrumbsProps = {
     className?: string;

@@ -1,3 +1,10 @@
+# [1.27.0](https://github.com/aesop/aesop-gel/compare/v1.26.0...v1.27.0) (2021-10-21)
+
+
+### Features
+
+* **breadcrumb-testref:** breadcrumb allow testref ([ca47f1f](https://github.com/aesop/aesop-gel/commit/ca47f1fc11b2fddd0fc483e0f5db2be2410280ed))
+
 # [1.26.0](https://github.com/aesop/aesop-gel/compare/v1.25.0...v1.26.0) (2021-10-19)
 
 
