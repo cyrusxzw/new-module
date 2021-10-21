@@ -14,6 +14,7 @@ export const TextFieldWrapper: VFC<TextFieldWrapperProps> = ({
   dataTestRef,
   defaultValue,
   errorMessage,
+  handleOnChange,
   id,
   isEnabled,
   label,
@@ -35,7 +36,10 @@ export const TextFieldWrapper: VFC<TextFieldWrapperProps> = ({
         isEnabled={isEnabled}
         label={label}
         name={name}
-        onChange={onChange}
+        onChange={(e) => {
+          handleOnChange && handleOnChange(e);
+          onChange(e);
+        }}
         theme={theme}
         type={type}
         value={value}

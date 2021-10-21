@@ -88,6 +88,7 @@ const DynamicFormFixture: {
           },
         },
         subtype: 'text',
+        handleOnChange: () => console.log('handle extra on change'),
       },
     ],
     [

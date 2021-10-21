@@ -12,6 +12,7 @@ export const DateSelectorWrapper: VFC<DateSelectorWrapperProps> = ({
   control,
   copy,
   defaultValue,
+  handleOnChange,
   isEnabled,
   maxYears,
   name,
@@ -30,6 +31,7 @@ export const DateSelectorWrapper: VFC<DateSelectorWrapperProps> = ({
         maxYears={maxYears}
         name={name}
         onChange={(date) => {
+          handleOnChange && handleOnChange(date);
           onChange(date);
         }}
         theme={theme}

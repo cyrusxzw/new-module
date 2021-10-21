@@ -8,6 +8,7 @@ export type CommonWrapperProps = {
   dataTestRef?: string;
   defaultValue: string;
   errorMessage?: string;
+  handleOnChange?: any;
   id: string;
   isEnabled?: boolean;
   label: string;
