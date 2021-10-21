@@ -24,6 +24,7 @@ const Breadcrumbs: BreadcrumbsType = ({
       <li className={styles.item} key={item.id}>
         <Hyperlink
           className={styles.link}
+          dataTestRef={item?.dataTestRef}
           id={item.id}
           onClick={handleOnHyperlinkClick}
           theme={theme}

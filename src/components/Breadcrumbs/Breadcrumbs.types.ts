@@ -5,6 +5,7 @@ type BreadcrumbItem = {
   id: string;
   url: string;
   title: string;
+  dataTestRef?: string;
 };
 
 type BreadcrumbsProps = {
