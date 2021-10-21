@@ -23,7 +23,6 @@ exports[`<NewsletterSignUp /> should render base component correctly 1`] = `
                 data-test-ref="EMAIL_SIGN_UP_INPUT"
                 id="newsletter-email"
                 name="newsletter-email"
-                novalidate=""
                 type="text"
                 value=""
               />

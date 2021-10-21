@@ -31,6 +31,7 @@ const ProductDetailBody: ProductDetailBodyType = ({
   onUpsellScrollIntoView,
   onUpsellClick,
   paymentWidget,
+  backInStockNotification,
 }) => {
   const currentTheme = useThemeContext(theme, 'dark');
   const [isFlyinPanelVisible, setIsFlyinPanelVisible] = useState(false);
@@ -204,6 +205,7 @@ const ProductDetailBody: ProductDetailBodyType = ({
             dataTestRef="ADD_TO_CART"
             theme={currentTheme}
           />
+          {backInStockNotification && <div>{backInStockNotification}</div>}
           {paymentWidget && (
             <div className={paymentWidgetClassSet}>{paymentWidget}</div>
           )}

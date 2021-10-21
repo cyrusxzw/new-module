@@ -87,7 +87,7 @@ describe('<RadioGroup />', () => {
     expect(screen.getByText(/error message/i)).toBeInTheDocument();
   });
 
-  it('should be accesible', async () => {
+  it('should be accessible', async () => {
     const { container } = render(
       <RadioGroup
         name={RadioGroupFixture.name}

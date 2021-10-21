@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Heading } from '~/components/Heading/index.ts';
-import { Hidden } from '~/components/Hidden/index.ts';
+import { Heading } from '~/components/Heading';
+import { Hidden } from '~/components/Hidden';
 import { Hyperlink } from '~/components/Hyperlink';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import cx from 'classnames';
+import type { FooterBlockType } from './FooterBlock.types';
 import styles from './FooterBlock.css';
 
 const {
@@ -12,16 +12,16 @@ const {
   INTERNAL_NO_ICON_TEXT_LINK,
 } = HYPERLINK_STYLE_TYPES;
 
-const FooterBlock = ({
+const FooterBlock: FooterBlockType = ({
   className,
   copy,
   heading,
   headingClassName,
-  isVisibleOnTabletAndMobile,
+  isVisibleOnTabletAndMobile = true,
   links,
   listClassName,
   listItemClassName,
-  theme,
+  theme = 'dark',
 }) => {
   const baseClassSet = cx(styles.base, styles[theme], className);
   const copyClassSet = cx(styles.listItem, styles.copy);
@@ -31,10 +31,7 @@ const FooterBlock = ({
   const listItemClassSet = cx(styles.listItem, listItemClassName);
 
   return (
-    <Hidden
-      isMedium={!isVisibleOnTabletAndMobile}
-      isSmall={!isVisibleOnTabletAndMobile}
-    >
+    <Hidden when={isVisibleOnTabletAndMobile ? [] : ['sm', 'md']}>
       <section className={baseClassSet}>
         {heading && (
           <Heading
@@ -75,30 +72,6 @@ const FooterBlock = ({
       </section>
     </Hidden>
   );
-};
-
-FooterBlock.propTypes = {
-  className: PropTypes.string,
-  copy: PropTypes.node,
-  heading: PropTypes.string,
-  headingClassName: PropTypes.string,
-  isVisibleOnTabletAndMobile: PropTypes.bool,
-  links: PropTypes.array,
-  listClassName: PropTypes.string,
-  listItemClassName: PropTypes.string,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-FooterBlock.defaultProps = {
-  className: undefined,
-  copy: undefined,
-  heading: undefined,
-  headingClassName: undefined,
-  isVisibleOnTabletAndMobile: true,
-  links: undefined,
-  listClassName: undefined,
-  listItemClassName: undefined,
-  theme: 'dark',
 };
 
 export { FooterBlock };

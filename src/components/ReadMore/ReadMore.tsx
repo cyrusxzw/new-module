@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { ContentHubArticle } from '~/components/ContentHubArticle/index.ts';
+import { ContentHubArticle } from '~/components/ContentHubArticle';
 import { Transition } from '~/components/Transition';
 import styles from './ReadMore.module.css';
+import type { ReadMoreType } from './ReadMore.types';
 
-const ReadMore = ({ articles, className }) => {
+const ReadMore: ReadMoreType = ({ articles, className }) => {
   const classSet = cx(styles.base, className);
   const readMoreArticleClassSet = cx(styles.readMoreArticle);
 
@@ -34,16 +34,6 @@ const ReadMore = ({ articles, className }) => {
       </section>
     </Transition>
   );
-};
-
-ReadMore.propTypes = {
-  articles: PropTypes.array,
-  className: PropTypes.string,
-};
-
-ReadMore.defaultProps = {
-  articles: undefined,
-  className: undefined,
 };
 
 export { ReadMore };

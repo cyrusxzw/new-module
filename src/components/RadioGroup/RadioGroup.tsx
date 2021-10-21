@@ -1,16 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
+import type { RadioGroupType } from './RadioGroup.types';
 import styles from './RadioGroup.module.css';
 
-const RadioGroup = ({
+const RadioGroup: RadioGroupType = ({
   className,
   dataTestRef,
   errorMessage,
   name,
   onChange,
-  options,
-  theme,
+  options = [],
+  theme = 'dark',
   value,
 }) => {
   const classSet = cx(styles.base, className);
@@ -27,9 +27,7 @@ const RadioGroup = ({
             {options[0].label}
           </span>
         </div>
-        {errorMessage && (
-          <div className={styles.errorMessage}>{errorMessage}</div>
-        )}
+        {errorMessage && <div>{errorMessage}</div>}
       </>
     );
   }
@@ -63,38 +61,9 @@ const RadioGroup = ({
           </li>
         ))}
       </ul>
-      {errorMessage && (
-        <div className={styles.errorMessage}>{errorMessage}</div>
-      )}
+      {errorMessage && <div>{errorMessage}</div>}
     </>
   );
-};
-
-RadioGroup.propTypes = {
-  className: PropTypes.string,
-  dataTestRef: PropTypes.string,
-  errorMessage: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string,
-    }),
-  ),
-  theme: PropTypes.oneOf(['dark', 'light']),
-  value: PropTypes.string,
-};
-
-RadioGroup.defaultProps = {
-  className: undefined,
-  dataTestRef: undefined,
-  errorMessage: undefined,
-  name: undefined,
-  onChange: undefined,
-  options: [],
-  theme: 'dark',
-  value: undefined,
 };
 
 export { RadioGroup };

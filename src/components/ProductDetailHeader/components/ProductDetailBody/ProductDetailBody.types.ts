@@ -25,6 +25,7 @@ type ProductDetailBodyProps = {
   onUpsellClick?: () => void;
   onUpsellScrollIntoView?: () => void;
   paymentWidget?: React.ReactNode;
+  backInStockNotification?: React.ReactNode;
 };
 
 type ProductDetailBodyType = ComponentWithoutChildren<ProductDetailBodyProps>;

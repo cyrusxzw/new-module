@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Hyperlink } from '~/components/Hyperlink';
 import styles from './NavigationBar.module.css';
+import type { NavigationBarType } from './NavigationBar.types';
 
 const testRefs = {
   wrapper: 'NAVIGATION_BAR',
@@ -10,7 +10,12 @@ const testRefs = {
   childLink: 'NAVIGATION_BAR_CHILD_LINK',
 };
 
-const NavigationBar = ({ childLinks, className, parentLink, selectedUrl }) => {
+const NavigationBar: NavigationBarType = ({
+  childLinks = [],
+  className,
+  parentLink,
+  selectedUrl,
+}) => {
   const hasChildren = !!childLinks.length;
 
   if (!hasChildren && !parentLink) {
@@ -66,30 +71,6 @@ const NavigationBar = ({ childLinks, className, parentLink, selectedUrl }) => {
       </ul>
     </div>
   );
-};
-
-NavigationBar.propTypes = {
-  childLinks: PropTypes.arrayOf(
-    PropTypes.shape({
-      hasTargetInNewWindow: PropTypes.bool,
-      text: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    }),
-  ),
-  className: PropTypes.string,
-  parentLink: PropTypes.shape({
-    hasTargetInNewWindow: PropTypes.bool,
-    text: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-  }),
-  selectedUrl: PropTypes.string,
-};
-
-NavigationBar.defaultProps = {
-  childLinks: [],
-  className: undefined,
-  parentLink: undefined,
-  selectedUrl: undefined,
 };
 
 export { NavigationBar };

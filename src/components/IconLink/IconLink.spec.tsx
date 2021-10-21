@@ -12,7 +12,6 @@ describe('<IconLink />', () => {
         hasTargetInNewWindow={true}
         height={25}
         icon={IconLinkFixture.items[0].icon}
-        id={IconLinkFixture.items[0].altText}
         target={IconLinkFixture.items[0].target}
         width={25}
       />,

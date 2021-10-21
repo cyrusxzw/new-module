@@ -12,7 +12,6 @@ exports[`<TextInput /> should render base component correctly 1`] = `
         class="formTextInput dark"
         data-test-ref="test-data-ref"
         id="test-textinput"
-        novalidate=""
         type="text"
         value=""
       />

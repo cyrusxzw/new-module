@@ -5,6 +5,7 @@ type Variant = {
     openInANewWindow?: boolean;
   };
   cartDisclaimer?: string;
+  disableOutOfStockFeature?: boolean;
   hasAgeVerificationRequirement?: boolean;
   id?: string;
   isInStock: boolean;

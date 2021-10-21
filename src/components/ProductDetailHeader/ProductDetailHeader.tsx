@@ -22,6 +22,7 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
   onUpsellScrollIntoView,
   onUpsellClick,
   paymentWidget,
+  backInStockNotification,
   theme,
 }) => {
   const currentTheme = useThemeContext(theme, 'dark');
@@ -54,6 +55,7 @@ const ProductDetailHeader: ProductDetailHeaderType = ({
             />
           </Hidden>
           <ProductDetailBody
+            backInStockNotification={backInStockNotification}
             copy={{
               addToCart: copy?.addToCart,
               size: copy?.size,

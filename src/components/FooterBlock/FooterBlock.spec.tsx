@@ -6,11 +6,7 @@ import { FooterBlockFixture } from './FooterBlock.fixture';
 describe('<FooterBlock />', () => {
   it('should render base component correctly', () => {
     const { container } = render(
-      <FooterBlock
-        copy={FooterBlockFixture.blockNoLink.copy}
-        theme="dark"
-        title={FooterBlockFixture.blockNoLink.title}
-      />,
+      <FooterBlock copy={FooterBlockFixture.blockNoLink.copy} theme="dark" />,
     );
 
     expect(container).toMatchSnapshot();
@@ -22,7 +18,6 @@ describe('<FooterBlock />', () => {
         isVisibleOnTabletAndMobile={false}
         links={FooterBlockFixture.navigation.links}
         theme="dark"
-        title={FooterBlockFixture.navigation.title}
       />,
     );
 
