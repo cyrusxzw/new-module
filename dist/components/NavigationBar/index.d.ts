@@ -1,36 +1,19 @@
-import PropTypes from 'prop-types';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
+import { H as HyperlinkProps } from '../../sharedChunks/Hyperlink.types';
+import 'react';
+import '../../sharedChunks/Themes.types';
 
-declare function NavigationBar({ childLinks, className, parentLink, selectedUrl }: {
-    childLinks: any;
-    className: any;
-    parentLink: any;
-    selectedUrl: any;
-}): JSX.Element;
-declare namespace NavigationBar {
-    namespace propTypes {
-        const childLinks: PropTypes.Requireable<PropTypes.InferProps<{
-            hasTargetInNewWindow: PropTypes.Requireable<boolean>;
-            text: PropTypes.Validator<string>;
-            url: PropTypes.Validator<string>;
-        }>[]>;
-        const className: PropTypes.Requireable<string>;
-        const parentLink: PropTypes.Requireable<PropTypes.InferProps<{
-            hasTargetInNewWindow: PropTypes.Requireable<boolean>;
-            text: PropTypes.Validator<string>;
-            url: PropTypes.Validator<string>;
-        }>>;
-        const selectedUrl: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const childLinks_1: any[];
-        export { childLinks_1 as childLinks };
-        const className_1: any;
-        export { className_1 as className };
-        const parentLink_1: any;
-        export { parentLink_1 as parentLink };
-        const selectedUrl_1: any;
-        export { selectedUrl_1 as selectedUrl };
-    }
-}
+declare type Link = Pick<HyperlinkProps, 'hasTargetInNewWindow' | 'url'> & {
+    text: string;
+};
+declare type NavigationBarProps = {
+    childLinks?: Link[];
+    className?: string;
+    parentLink?: Link;
+    selectedUrl?: string;
+};
+declare type NavigationBarType = ComponentWithoutChildren<NavigationBarProps>;
+
+declare const NavigationBar: NavigationBarType;
 
 export { NavigationBar };

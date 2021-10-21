@@ -1,20 +1,15 @@
-import PropTypes from 'prop-types';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
+import { A as Article } from '../../sharedChunks/ContentHubArticle.types';
+import 'react';
+import '../../sharedChunks/Image.types';
+import '../../sharedChunks/Themes.types';
 
-declare function ReadMore({ articles, className }: {
-    articles: any;
-    className: any;
-}): JSX.Element;
-declare namespace ReadMore {
-    namespace propTypes {
-        const articles: PropTypes.Requireable<any[]>;
-        const className: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const articles_1: any;
-        export { articles_1 as articles };
-        const className_1: any;
-        export { className_1 as className };
-    }
-}
+declare type ReadMoreProps = {
+    articles: Article[];
+    className?: string;
+};
+declare type ReadMoreType = ComponentWithoutChildren<ReadMoreProps>;
+
+declare const ReadMore: ReadMoreType;
 
 export { ReadMore };

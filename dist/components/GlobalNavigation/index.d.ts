@@ -2,61 +2,8 @@ import { Dispatch, SetStateAction, ReactElement } from 'react';
 import { a as ComponentWithChildren } from '../../sharedChunks/Component.types';
 import { T as Themes } from '../../sharedChunks/Themes.types';
 
-declare type TrackingCallback = {
-    desktop: {
-        desktopMenuItemClickOrHover: (menuItemTrackingProps: MenuItemTrackingWithAction) => void;
-        desktopCategoryItemClickOrHover: (categoryItemTrackingProps: CategoryItemTrackingWithAction) => void;
-    };
-    tablet: {
-        tabletMenuItemClick: (tabletMenuItemTrackingProps: MenuItemTrackingWithAction) => void;
-        tabletCategoryItemClick: (tabletCategoryItemTrackingProps: CategoryItemTrackingWithAction) => void;
-    };
-    mobile: {
-        mobileMenuItemClick: (mobileMenuItemTrackingProps: MenuItemTrackingWithMobileAction) => void;
-        mobileCategoryItemClick: (mobileCategoryItemTrackingProps: CategoryItemTrackingWithMobileAction) => void;
-    };
-    common: {
-        promotionCardClick: (promotionCardTrackingProps: PromotionCardClickTracking) => void;
-        promotionCardImpression: (promotionCardTrackingProps: PromotionCardImpressionTracking) => void;
-    };
-};
-declare type PromotionCardImpressionTracking = {
-    id: string;
-    creative: string;
-    position: string;
-    isVisible: boolean;
-};
-declare type PromotionCardClickTracking = PromotionCardImpressionTracking & {
-    englishLabel: string;
-};
-declare type MenuType = 'Shop' | 'Read' | 'Stores' | 'Search' | 'Menu';
-declare type CategoryItemTracking = {
-    menuCategory: string;
-    menuLabel: string;
-    menuSection: 'Panel 1' | 'Panel 2' | 'Navbar';
-    menuSubnav: string;
-    menuType: MenuType;
-};
-declare type MenuItemTracking = {
-    menuCategory: string;
-    menuLabel: string;
-    menuType: MenuType;
-    menuSection: 'Panel 1' | 'Navbar';
-};
-declare type DesktopAndTabletTrackingActions = {
-    action: 'Open' | 'Close' | 'Click' | 'Hover';
-};
-declare type MobileTrackingActions = {
-    action: 'Open' | 'Close' | 'Click' | 'Hover' | 'Expand' | 'Collapse' | 'Back';
-};
-declare type CategoryItemTrackingWithAction = CategoryItemTracking & DesktopAndTabletTrackingActions;
-declare type CategoryItemTrackingWithMobileAction = CategoryItemTracking & MobileTrackingActions;
-declare type MenuItemTrackingWithAction = MenuItemTracking & DesktopAndTabletTrackingActions;
-declare type MenuItemTrackingWithMobileAction = MenuItemTracking & MobileTrackingActions;
 declare type CollectionImage = {
-    id?: string;
     altText: string;
-    creative?: string;
     sizes: {
         medium?: string;
         large?: string;
@@ -79,9 +26,6 @@ declare type Link = Clickable & {
     alternateLabel?: string;
     isExternal?: boolean;
     onClick?: () => void;
-    menuSubnav?: string;
-    menuType: 'Shop' | 'Read';
-    panel: 'Panel 1' | 'Panel 2';
     type: 'link';
     url: string;
 };
@@ -96,9 +40,6 @@ declare type Article = Clickable & {
     isVisible?: boolean;
     metaDuration?: string;
     metaLabel?: string;
-    menuSubnav?: string;
-    menuType: 'Shop' | 'Read';
-    panel: 'Panel 1' | 'Panel 2';
     type: 'article';
     url: string;
 };
@@ -168,16 +109,12 @@ declare type StickyNavType = {
 };
 declare type GlobalNavigationStateContextType = {
     activeCollectionId: string;
-    activeView: ActiveViewTypes;
     isOpen: boolean;
-    menuCategoryLabel: string;
-    menuType: MenuType;
     setActiveCollectionId: (id: string) => void;
     setIsOpen: Dispatch<SetStateAction<boolean>>;
-    setMenuCategoryLabel: (categoryLabel: string) => void;
-    setMenuType: (menuType: MenuType) => void;
-    setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
+    activeView: ActiveViewTypes;
     stickyNavProps: StickyNavType;
+    setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
 };
 declare type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
 declare type GlobalNavigationContextType = {
@@ -185,7 +122,6 @@ declare type GlobalNavigationContextType = {
     className?: string;
     collections: Collection[];
     isVisuallyObstructed?: boolean;
-    isOpenSearchBackToMenu?: boolean;
     /** User created on Navigation close event callback */
     onClose?: () => void;
     /** User created on Navigation open event callback */
@@ -193,7 +129,6 @@ declare type GlobalNavigationContextType = {
     read: Read;
     theme?: Themes;
     isLegacyMenu?: boolean;
-    trackingCallbacks: TrackingCallback;
 };
 declare type GlobalNavigationContextProviderProps = {
     value: GlobalNavigationContextType;

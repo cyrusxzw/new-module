@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import React$1, { ReactElement, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, MutableRefObject, VFC, SetStateAction, MouseEventHandler, RefObject } from 'react';
+import React$1, { FC, ReactNode, Dispatch, MouseEvent, CSSProperties, LegacyRef, ChangeEvent, ReactElement, MutableRefObject, VFC, SetStateAction, Ref, FocusEvent, MouseEventHandler, RefObject } from 'react';
 import PropTypes from 'prop-types';
 import { Mode } from 'react-hook-form/dist/index.ie11';
 
@@ -10,12 +10,14 @@ declare type Aria = {
     label?: string;
 };
 
-declare type DefaultReactComponentReturn = ReactElement<any, any> | null;
-declare type PropsWithChildren<P> = P & {
+declare type PropsWithChildren<Props> = Props & {
     children?: ReactNode;
 };
-declare type ComponentWithChildren<P = {}> = (props: PropsWithChildren<P>) => DefaultReactComponentReturn;
-declare type ComponentWithoutChildren<P = {}> = (props: P) => DefaultReactComponentReturn;
+declare type PropsWithoutChildren<Props> = Props & {
+    children?: never;
+};
+declare type ComponentWithChildren<Props = {}> = FC<PropsWithChildren<Props>>;
+declare type ComponentWithoutChildren<Props = {}> = FC<PropsWithoutChildren<Props>>;
 
 declare type DefinitionListItem = {
     description?: ReactNode;
@@ -71,6 +73,7 @@ declare type Variant$1 = {
         openInANewWindow?: boolean;
     };
     cartDisclaimer?: string;
+    disableOutOfStockFeature?: boolean;
     hasAgeVerificationRequirement?: boolean;
     id?: string;
     isInStock: boolean;
@@ -214,6 +217,7 @@ declare type BreadcrumbItem = {
     id: string;
     url: string;
     title: string;
+    dataTestRef?: string;
 };
 declare type BreadcrumbsProps = {
     className?: string;
@@ -230,14 +234,12 @@ declare type ButtonProps = {
     aria?: Pick<Aria, 'expanded' | 'haspopup' | 'hidden' | 'label'>;
     children?: ReactNode;
     className?: string;
-    dataTestId?: string;
     dataTestRef?: string;
     id?: string;
     isAlternate?: boolean;
     isEnabled?: boolean;
     isInline?: boolean;
     onClick?: (event: MouseEvent) => void;
-    onMouseEnter?: (event: MouseEvent) => void;
     tabIndex?: number;
     title?: string;
     type?: ButtonBehaviourType;
@@ -293,7 +295,6 @@ declare type HyperlinkProps = {
     isDownload?: boolean;
     kind?: LinkStyle;
     onClick?: (event: MouseEvent) => void;
-    onMouseEnter?: (event: MouseEvent) => void;
     /** @deprecated use `kind` instead */
     style?: LinkStyle;
     tabIndex?: number;
@@ -626,50 +627,26 @@ declare type FlyinPanelType = ComponentWithChildren<FlyinPanelProps>;
 
 declare const FlyinPanel: FlyinPanelType;
 
-declare function FooterBlock({ className, copy, heading, headingClassName, isVisibleOnTabletAndMobile, links, listClassName, listItemClassName, theme, }: {
-    className: any;
-    copy: any;
-    heading: any;
-    headingClassName: any;
-    isVisibleOnTabletAndMobile: any;
-    links: any;
-    listClassName: any;
-    listItemClassName: any;
-    theme: any;
-}): JSX.Element;
-declare namespace FooterBlock {
-    namespace propTypes {
-        const className: PropTypes.Requireable<string>;
-        const copy: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-        const heading: PropTypes.Requireable<string>;
-        const headingClassName: PropTypes.Requireable<string>;
-        const isVisibleOnTabletAndMobile: PropTypes.Requireable<boolean>;
-        const links: PropTypes.Requireable<any[]>;
-        const listClassName: PropTypes.Requireable<string>;
-        const listItemClassName: PropTypes.Requireable<string>;
-        const theme: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const className_1: any;
-        export { className_1 as className };
-        const copy_1: any;
-        export { copy_1 as copy };
-        const heading_1: any;
-        export { heading_1 as heading };
-        const headingClassName_1: any;
-        export { headingClassName_1 as headingClassName };
-        const isVisibleOnTabletAndMobile_1: boolean;
-        export { isVisibleOnTabletAndMobile_1 as isVisibleOnTabletAndMobile };
-        const links_1: any;
-        export { links_1 as links };
-        const listClassName_1: any;
-        export { listClassName_1 as listClassName };
-        const listItemClassName_1: any;
-        export { listItemClassName_1 as listItemClassName };
-        const theme_1: string;
-        export { theme_1 as theme };
-    }
-}
+declare type Link$2 = {
+    id?: string;
+    openInANewWindow?: boolean;
+    text: string;
+    url: string;
+};
+declare type FooterBlockProps = {
+    className?: string;
+    copy?: ReactNode;
+    heading?: string;
+    headingClassName?: string;
+    isVisibleOnTabletAndMobile?: boolean;
+    links?: Link$2[];
+    listClassName?: string;
+    listItemClassName?: string;
+    theme?: Themes;
+};
+declare type FooterBlockType = ComponentWithoutChildren<FooterBlockProps>;
+
+declare const FooterBlock: FooterBlockType;
 
 declare type TextInputV2Props = {
     autoComplete?: string;
@@ -952,50 +929,22 @@ declare type IconType = ComponentWithoutChildren<IconProps>;
 
 declare const Icon: IconType;
 
-declare function IconLink({ altText, className, dataTestRef, hasTargetInNewWindow, height, icon, iconImageClassName, target, width, }: {
-    altText: any;
-    className: any;
-    dataTestRef: any;
-    hasTargetInNewWindow: any;
-    height: any;
-    icon: any;
-    iconImageClassName: any;
-    target: any;
-    width: any;
-}): JSX.Element;
-declare namespace IconLink {
-    namespace propTypes {
-        const altText: PropTypes.Requireable<string>;
-        const className: PropTypes.Requireable<string>;
-        const dataTestRef: PropTypes.Requireable<string>;
-        const hasTargetInNewWindow: PropTypes.Requireable<boolean>;
-        const height: PropTypes.Requireable<number>;
-        const icon: PropTypes.Requireable<object>;
-        const iconImageClassName: PropTypes.Requireable<string>;
-        const target: PropTypes.Requireable<string>;
-        const width: PropTypes.Requireable<number>;
-    }
-    namespace defaultProps {
-        const altText_1: any;
-        export { altText_1 as altText };
-        const className_1: any;
-        export { className_1 as className };
-        const dataTestRef_1: any;
-        export { dataTestRef_1 as dataTestRef };
-        const hasTargetInNewWindow_1: boolean;
-        export { hasTargetInNewWindow_1 as hasTargetInNewWindow };
-        const height_1: number;
-        export { height_1 as height };
-        const icon_1: any;
-        export { icon_1 as icon };
-        const iconImageClassName_1: any;
-        export { iconImageClassName_1 as iconImageClassName };
-        const target_1: any;
-        export { target_1 as target };
-        const width_1: number;
-        export { width_1 as width };
-    }
-}
+declare type IconLinkProps = {
+    altText?: string;
+    className?: string;
+    dataTestRef?: string;
+    hasTargetInNewWindow?: boolean;
+    height?: number;
+    icon?: {
+        sizes: ImageProps['sizes'];
+    };
+    iconImageClassName?: string;
+    target?: string;
+    width?: number;
+};
+declare type IconLinkType = ComponentWithoutChildren<IconLinkProps>;
+
+declare const IconLink: IconLinkType;
 
 declare const Image: React$1.ForwardRefExoticComponent<ImageProps & React$1.RefAttributes<HTMLImageElement>>;
 
@@ -1145,204 +1094,6 @@ declare const MobileView: MobileViewType;
 
 declare const MobileViewContextProvider: MobileViewContextProviderType;
 
-declare type TrackingCallback = {
-    desktop: {
-        desktopMenuItemClickOrHover: (menuItemTrackingProps: MenuItemTrackingWithAction) => void;
-        desktopCategoryItemClickOrHover: (categoryItemTrackingProps: CategoryItemTrackingWithAction) => void;
-    };
-    tablet: {
-        tabletMenuItemClick: (tabletMenuItemTrackingProps: MenuItemTrackingWithAction) => void;
-        tabletCategoryItemClick: (tabletCategoryItemTrackingProps: CategoryItemTrackingWithAction) => void;
-    };
-    mobile: {
-        mobileMenuItemClick: (mobileMenuItemTrackingProps: MenuItemTrackingWithMobileAction) => void;
-        mobileCategoryItemClick: (mobileCategoryItemTrackingProps: CategoryItemTrackingWithMobileAction) => void;
-    };
-    common: {
-        promotionCardClick: (promotionCardTrackingProps: PromotionCardClickTracking) => void;
-        promotionCardImpression: (promotionCardTrackingProps: PromotionCardImpressionTracking) => void;
-    };
-};
-declare type PromotionCardImpressionTracking = {
-    id: string;
-    creative: string;
-    position: string;
-    isVisible: boolean;
-};
-declare type PromotionCardClickTracking = PromotionCardImpressionTracking & {
-    englishLabel: string;
-};
-declare type MenuType = 'Shop' | 'Read' | 'Stores' | 'Search' | 'Menu';
-declare type CategoryItemTracking = {
-    menuCategory: string;
-    menuLabel: string;
-    menuSection: 'Panel 1' | 'Panel 2' | 'Navbar';
-    menuSubnav: string;
-    menuType: MenuType;
-};
-declare type MenuItemTracking = {
-    menuCategory: string;
-    menuLabel: string;
-    menuType: MenuType;
-    menuSection: 'Panel 1' | 'Navbar';
-};
-declare type DesktopAndTabletTrackingActions = {
-    action: 'Open' | 'Close' | 'Click' | 'Hover';
-};
-declare type MobileTrackingActions = {
-    action: 'Open' | 'Close' | 'Click' | 'Hover' | 'Expand' | 'Collapse' | 'Back';
-};
-declare type CategoryItemTrackingWithAction = CategoryItemTracking & DesktopAndTabletTrackingActions;
-declare type CategoryItemTrackingWithMobileAction = CategoryItemTracking & MobileTrackingActions;
-declare type MenuItemTrackingWithAction = MenuItemTracking & DesktopAndTabletTrackingActions;
-declare type MenuItemTrackingWithMobileAction = MenuItemTracking & MobileTrackingActions;
-declare type CollectionImage = {
-    id?: string;
-    altText: string;
-    creative?: string;
-    sizes: {
-        medium?: string;
-        large?: string;
-        small?: string;
-    };
-};
-declare type Clickable = {
-    dataTestRef?: string;
-    id: string;
-    label: string;
-    title: string;
-};
-declare type Trigger = Clickable & {
-    onClick: () => void;
-    type: 'trigger';
-    component?: () => ReactElement;
-    isLegacyMenu?: boolean;
-};
-declare type Link = Clickable & {
-    alternateLabel?: string;
-    isExternal?: boolean;
-    onClick?: () => void;
-    menuSubnav?: string;
-    menuType: 'Shop' | 'Read';
-    panel: 'Panel 1' | 'Panel 2';
-    type: 'link';
-    url: string;
-};
-declare type Promotion = Clickable & {
-    heading: string;
-    image?: CollectionImage;
-    type: 'promotion';
-    url: string;
-};
-declare type Article = Clickable & {
-    image?: CollectionImage;
-    isVisible?: boolean;
-    metaDuration?: string;
-    metaLabel?: string;
-    menuSubnav?: string;
-    menuType: 'Shop' | 'Read';
-    panel: 'Panel 1' | 'Panel 2';
-    type: 'article';
-    url: string;
-};
-declare type Read = Clickable & {
-    articles: Article[];
-    articlesListHeading?: string;
-    backLabel?: string;
-    backgroundColor?: string;
-    baseUrl?: string;
-    image?: CollectionImage;
-    items: (Link | NestedCollection)[];
-    topLevelCollectionLabel?: string;
-    type: 'read-collection';
-};
-declare type Actions = {
-    account: ((Link & {
-        recentOrders?: {
-            url?: string;
-            title?: string;
-            label?: string;
-        };
-    }) | Trigger) & {
-        isAuthenticated?: boolean;
-    };
-    cart: Trigger;
-    logo: Link;
-    shop: Omit<Trigger, 'onClick'> & {
-        onClick?: () => void;
-    };
-    support: Trigger;
-    menu: Omit<Trigger, 'onClick'> & {
-        closeLabel: string;
-        closeTitle: string;
-        onClick?: () => void;
-    };
-    search: Trigger;
-    stores: Trigger;
-};
-declare type NotableNestedCollection = Clickable & {
-    items: Link[];
-    type: 'notable-nested-collection';
-};
-declare type NestedCollection = Clickable & {
-    items: Link[];
-    type: 'nested-collection';
-};
-declare type Collection = Clickable & {
-    backLabel?: string;
-    backgroundColor?: string;
-    image?: CollectionImage;
-    items: (Link | NestedCollection | NotableNestedCollection)[];
-    promotion?: Promotion;
-    topLevelCollectionLabel?: string;
-    type: 'collection';
-};
-declare type GlobalNavigationType = ComponentWithChildren;
-declare type GlobalNavigationStateContextProviderProps = {
-    activeCollectionId?: string;
-    isOpen?: boolean;
-};
-declare type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavigationStateContextProviderProps>;
-declare type ActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
-declare type StickyNavType = {
-    isFixed: boolean;
-    isHidden: boolean;
-    offsetTop: number;
-};
-declare type GlobalNavigationStateContextType = {
-    activeCollectionId: string;
-    activeView: ActiveViewTypes;
-    isOpen: boolean;
-    menuCategoryLabel: string;
-    menuType: MenuType;
-    setActiveCollectionId: (id: string) => void;
-    setIsOpen: Dispatch<SetStateAction<boolean>>;
-    setMenuCategoryLabel: (categoryLabel: string) => void;
-    setMenuType: (menuType: MenuType) => void;
-    setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
-    stickyNavProps: StickyNavType;
-};
-declare type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
-declare type GlobalNavigationContextType = {
-    actions: Actions;
-    className?: string;
-    collections: Collection[];
-    isVisuallyObstructed?: boolean;
-    isOpenSearchBackToMenu?: boolean;
-    /** User created on Navigation close event callback */
-    onClose?: () => void;
-    /** User created on Navigation open event callback */
-    onOpen?: () => void;
-    read: Read;
-    theme?: Themes;
-    isLegacyMenu?: boolean;
-    trackingCallbacks: TrackingCallback;
-};
-declare type GlobalNavigationContextProviderProps = {
-    value: GlobalNavigationContextType;
-};
-declare type GlobalNavigationContextProviderType = ComponentWithChildren<GlobalNavigationContextProviderProps>;
-
 declare type TabletViewProps = {
     className?: string;
 };
@@ -1373,6 +1124,139 @@ declare const DesktopView: DesktopViewType;
 
 declare const DesktopViewContextProvider: DesktopViewContextProviderType;
 
+declare type CollectionImage = {
+    altText: string;
+    sizes: {
+        medium?: string;
+        large?: string;
+        small?: string;
+    };
+};
+declare type Clickable = {
+    dataTestRef?: string;
+    id: string;
+    label: string;
+    title: string;
+};
+declare type Trigger = Clickable & {
+    onClick: () => void;
+    type: 'trigger';
+    component?: () => ReactElement;
+    isLegacyMenu?: boolean;
+};
+declare type Link$1 = Clickable & {
+    alternateLabel?: string;
+    isExternal?: boolean;
+    onClick?: () => void;
+    type: 'link';
+    url: string;
+};
+declare type Promotion = Clickable & {
+    heading: string;
+    image?: CollectionImage;
+    type: 'promotion';
+    url: string;
+};
+declare type Article = Clickable & {
+    image?: CollectionImage;
+    isVisible?: boolean;
+    metaDuration?: string;
+    metaLabel?: string;
+    type: 'article';
+    url: string;
+};
+declare type Read = Clickable & {
+    articles: Article[];
+    articlesListHeading?: string;
+    backLabel?: string;
+    backgroundColor?: string;
+    baseUrl?: string;
+    image?: CollectionImage;
+    items: (Link$1 | NestedCollection)[];
+    topLevelCollectionLabel?: string;
+    type: 'read-collection';
+};
+declare type Actions = {
+    account: ((Link$1 & {
+        recentOrders?: {
+            url?: string;
+            title?: string;
+            label?: string;
+        };
+    }) | Trigger) & {
+        isAuthenticated?: boolean;
+    };
+    cart: Trigger;
+    logo: Link$1;
+    shop: Omit<Trigger, 'onClick'> & {
+        onClick?: () => void;
+    };
+    support: Trigger;
+    menu: Omit<Trigger, 'onClick'> & {
+        closeLabel: string;
+        closeTitle: string;
+        onClick?: () => void;
+    };
+    search: Trigger;
+    stores: Trigger;
+};
+declare type NotableNestedCollection = Clickable & {
+    items: Link$1[];
+    type: 'notable-nested-collection';
+};
+declare type NestedCollection = Clickable & {
+    items: Link$1[];
+    type: 'nested-collection';
+};
+declare type Collection = Clickable & {
+    backLabel?: string;
+    backgroundColor?: string;
+    image?: CollectionImage;
+    items: (Link$1 | NestedCollection | NotableNestedCollection)[];
+    promotion?: Promotion;
+    topLevelCollectionLabel?: string;
+    type: 'collection';
+};
+declare type GlobalNavigationType = ComponentWithChildren;
+declare type GlobalNavigationStateContextProviderProps = {
+    activeCollectionId?: string;
+    isOpen?: boolean;
+};
+declare type GlobalNavigationStateContextProviderType = ComponentWithChildren<GlobalNavigationStateContextProviderProps>;
+declare type ActiveViewTypes = 'none' | 'mobile' | 'tablet' | 'desktop';
+declare type StickyNavType = {
+    isFixed: boolean;
+    isHidden: boolean;
+    offsetTop: number;
+};
+declare type GlobalNavigationStateContextType = {
+    activeCollectionId: string;
+    isOpen: boolean;
+    setActiveCollectionId: (id: string) => void;
+    setIsOpen: Dispatch<SetStateAction<boolean>>;
+    activeView: ActiveViewTypes;
+    stickyNavProps: StickyNavType;
+    setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
+};
+declare type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
+declare type GlobalNavigationContextType = {
+    actions: Actions;
+    className?: string;
+    collections: Collection[];
+    isVisuallyObstructed?: boolean;
+    /** User created on Navigation close event callback */
+    onClose?: () => void;
+    /** User created on Navigation open event callback */
+    onOpen?: () => void;
+    read: Read;
+    theme?: Themes;
+    isLegacyMenu?: boolean;
+};
+declare type GlobalNavigationContextProviderProps = {
+    value: GlobalNavigationContextType;
+};
+declare type GlobalNavigationContextProviderType = ComponentWithChildren<GlobalNavigationContextProviderProps>;
+
 declare const GlobalNavigationStateContextProvider: GlobalNavigationStateContextProviderType;
 declare const useGlobalNavigationStateContext: UseGlobalNavigationStateContext;
 declare const GlobalNavigationContextProvider: GlobalNavigationContextProviderType;
@@ -1399,38 +1283,18 @@ declare type ModalType = ComponentWithChildren<ModalProps>;
 
 declare const Modal: ModalType;
 
-declare function NavigationBar({ childLinks, className, parentLink, selectedUrl }: {
-    childLinks: any;
-    className: any;
-    parentLink: any;
-    selectedUrl: any;
-}): JSX.Element;
-declare namespace NavigationBar {
-    namespace propTypes {
-        const childLinks: PropTypes.Requireable<PropTypes.InferProps<{
-            hasTargetInNewWindow: PropTypes.Requireable<boolean>;
-            text: PropTypes.Validator<string>;
-            url: PropTypes.Validator<string>;
-        }>[]>;
-        const className: PropTypes.Requireable<string>;
-        const parentLink: PropTypes.Requireable<PropTypes.InferProps<{
-            hasTargetInNewWindow: PropTypes.Requireable<boolean>;
-            text: PropTypes.Validator<string>;
-            url: PropTypes.Validator<string>;
-        }>>;
-        const selectedUrl: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const childLinks_1: any[];
-        export { childLinks_1 as childLinks };
-        const className_1: any;
-        export { className_1 as className };
-        const parentLink_1: any;
-        export { parentLink_1 as parentLink };
-        const selectedUrl_1: any;
-        export { selectedUrl_1 as selectedUrl };
-    }
-}
+declare type Link = Pick<HyperlinkProps, 'hasTargetInNewWindow' | 'url'> & {
+    text: string;
+};
+declare type NavigationBarProps = {
+    childLinks?: Link[];
+    className?: string;
+    parentLink?: Link;
+    selectedUrl?: string;
+};
+declare type NavigationBarType = ComponentWithoutChildren<NavigationBarProps>;
+
+declare const NavigationBar: NavigationBarType;
 
 declare type NotificationModalProps = {
     backgroundColor?: string;
@@ -1635,6 +1499,7 @@ declare type ProductDetailHeaderProps = {
     onUpsellClick?: () => void;
     onUpsellScrollIntoView?: () => void;
     paymentWidget?: React.ReactNode;
+    backInStockNotification?: React.ReactNode;
     theme?: Themes;
 };
 declare type ProductDetailHeaderType = ComponentWithoutChildren<ProductDetailHeaderProps>;
@@ -1650,66 +1515,30 @@ declare type QuoteProps = {
 
 declare const Quote: React$1.ForwardRefExoticComponent<QuoteProps & React$1.RefAttributes<HTMLDivElement>>;
 
-declare function RadioGroup({ className, dataTestRef, errorMessage, name, onChange, options, theme, value, }: {
-    className: any;
-    dataTestRef: any;
-    errorMessage: any;
-    name: any;
-    onChange: any;
-    options: any;
-    theme: any;
-    value: any;
-}): JSX.Element;
-declare namespace RadioGroup {
-    namespace propTypes {
-        const className: PropTypes.Requireable<string>;
-        const dataTestRef: PropTypes.Requireable<string>;
-        const errorMessage: PropTypes.Requireable<string>;
-        const name: PropTypes.Validator<string>;
-        const onChange: PropTypes.Validator<(...args: any[]) => any>;
-        const options: PropTypes.Requireable<PropTypes.InferProps<{
-            label: PropTypes.Requireable<string>;
-            value: PropTypes.Requireable<string>;
-        }>[]>;
-        const theme: PropTypes.Requireable<string>;
-        const value: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const className_1: any;
-        export { className_1 as className };
-        const dataTestRef_1: any;
-        export { dataTestRef_1 as dataTestRef };
-        const errorMessage_1: any;
-        export { errorMessage_1 as errorMessage };
-        const name_1: any;
-        export { name_1 as name };
-        const onChange_1: any;
-        export { onChange_1 as onChange };
-        const options_1: any[];
-        export { options_1 as options };
-        const theme_1: string;
-        export { theme_1 as theme };
-        const value_1: any;
-        export { value_1 as value };
-    }
-}
+declare type RadioGroupProps = {
+    className?: string;
+    dataTestRef?: string;
+    errorMessage?: string;
+    name: string;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    options?: {
+        label?: string;
+        value?: string;
+    }[];
+    theme?: Themes;
+    value?: string;
+};
+declare type RadioGroupType = ComponentWithoutChildren<RadioGroupProps>;
 
-declare function ReadMore({ articles, className }: {
-    articles: any;
-    className: any;
-}): JSX.Element;
-declare namespace ReadMore {
-    namespace propTypes {
-        const articles: PropTypes.Requireable<any[]>;
-        const className: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const articles_1: any;
-        export { articles_1 as articles };
-        const className_1: any;
-        export { className_1 as className };
-    }
-}
+declare const RadioGroup: RadioGroupType;
+
+declare type ReadMoreProps = {
+    articles: Article$1[];
+    className?: string;
+};
+declare type ReadMoreType = ComponentWithoutChildren<ReadMoreProps>;
+
+declare const ReadMore: ReadMoreType;
 
 declare type ScreenReaderOnlyProps = {
     as?: keyof JSX.IntrinsicElements;
@@ -1850,141 +1679,53 @@ declare type SubNavProps = {
 
 declare const SubNav: React$1.ForwardRefExoticComponent<SubNavProps & React$1.RefAttributes<HTMLElement>>;
 
-declare function Textarea({ className, dataTestRef, defaultValue, id, isEnabled, inputRef, maxLength, name, onBlur, onChange, rows, textareaClassName, theme, value, }: {
-    className: any;
-    dataTestRef: any;
-    defaultValue: any;
-    id: any;
-    isEnabled: any;
-    inputRef: any;
-    maxLength: any;
-    name: any;
-    onBlur: any;
-    onChange: any;
-    rows: any;
-    textareaClassName: any;
-    theme: any;
-    value: any;
-}): JSX.Element;
-declare namespace Textarea {
-    namespace propTypes {
-        const className: PropTypes.Requireable<string>;
-        const dataTestRef: PropTypes.Requireable<string>;
-        const defaultValue: PropTypes.Requireable<string>;
-        const id: PropTypes.Validator<string>;
-        const isEnabled: PropTypes.Requireable<boolean>;
-        const inputRef: PropTypes.Requireable<(...args: any[]) => any>;
-        const maxLength: PropTypes.Requireable<number>;
-        const name: PropTypes.Requireable<string>;
-        const textareaClassName: PropTypes.Requireable<string>;
-        const onBlur: PropTypes.Requireable<(...args: any[]) => any>;
-        const onChange: PropTypes.Requireable<(...args: any[]) => any>;
-        const rows: PropTypes.Requireable<number>;
-        const theme: PropTypes.Requireable<string>;
-        const value: PropTypes.Requireable<string>;
-    }
-    namespace defaultProps {
-        const className_1: any;
-        export { className_1 as className };
-        const dataTestRef_1: any;
-        export { dataTestRef_1 as dataTestRef };
-        const defaultValue_1: any;
-        export { defaultValue_1 as defaultValue };
-        const id_1: any;
-        export { id_1 as id };
-        const isEnabled_1: boolean;
-        export { isEnabled_1 as isEnabled };
-        const inputRef_1: any;
-        export { inputRef_1 as inputRef };
-        const maxLength_1: any;
-        export { maxLength_1 as maxLength };
-        const name_1: any;
-        export { name_1 as name };
-        const textareaClassName_1: any;
-        export { textareaClassName_1 as textareaClassName };
-        const onBlur_1: any;
-        export { onBlur_1 as onBlur };
-        const onChange_1: any;
-        export { onChange_1 as onChange };
-        const rows_1: any;
-        export { rows_1 as rows };
-        const theme_1: string;
-        export { theme_1 as theme };
-        const value_1: any;
-        export { value_1 as value };
-    }
-}
+declare type TextareaProps = {
+    className?: string;
+    dataTestRef?: string;
+    defaultValue?: string;
+    id: string;
+    inputRef?: Ref<HTMLTextAreaElement>;
+    isEnabled?: boolean;
+    maxLength?: number;
+    name?: string;
+    onBlur?: (event: FocusEvent<HTMLTextAreaElement>) => void;
+    onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+    rows?: number;
+    textareaClassName?: string;
+    theme?: Themes;
+    value?: string;
+};
+declare type TextareaType = ComponentWithoutChildren<TextareaProps>;
 
-declare function TextInput({ className, defaultValue, hasContent, hasError, id, isEnabled, inputClassName, inputRef, label, max, min, name, type, maxLength, hasValidation, onBlur, onChange, prefixElement, theme, value, ...moreProps }: {
-    [x: string]: any;
-    className: any;
-    defaultValue: any;
-    hasContent: any;
-    hasError: any;
-    id: any;
-    isEnabled: any;
-    inputClassName: any;
-    inputRef: any;
-    label: any;
-    max: any;
-    min: any;
-    name: any;
-    type: any;
-    maxLength: any;
-    hasValidation: any;
-    onBlur: any;
-    onChange: any;
-    prefixElement: any;
-    theme: any;
-    value: any;
-}): JSX.Element;
-declare namespace TextInput {
-    const propTypes: {
-        className: PropTypes.Requireable<string>;
-        defaultValue: PropTypes.Requireable<string>;
-        hasContent: PropTypes.Requireable<boolean>;
-        hasError: PropTypes.Requireable<boolean>;
-        hasValidation: PropTypes.Requireable<boolean>;
-        id: PropTypes.Validator<string>;
-        inputClassName: PropTypes.Requireable<string>;
-        inputRef: PropTypes.Requireable<(...args: any[]) => any>;
-        isEnabled: PropTypes.Requireable<boolean>;
-        label: PropTypes.Requireable<string>;
-        max: PropTypes.Requireable<number>;
-        min: PropTypes.Requireable<number>;
-        name: PropTypes.Requireable<string>;
-        maxLength: PropTypes.Requireable<string | number>;
-        onBlur: PropTypes.Requireable<(...args: any[]) => any>;
-        onChange: PropTypes.Requireable<(...args: any[]) => any>;
-        prefixElement: PropTypes.Requireable<PropTypes.ReactElementLike>;
-        theme: PropTypes.Requireable<string>;
-        type: PropTypes.Requireable<string>;
-        'data-test-ref': PropTypes.Requireable<string>;
-        value: PropTypes.Requireable<string>;
-    };
-    const defaultProps: {
-        className: any;
-        defaultValue: any;
-        hasContent: boolean;
-        hasError: boolean;
-        hasValidation: boolean;
-        inputClassName: any;
-        inputRef: any;
-        isEnabled: boolean;
-        label: any;
-        max: any;
-        min: any;
-        name: any;
-        maxLength: any;
-        onBlur: any;
-        onChange: any;
-        prefixElement: any;
-        theme: string;
-        type: string;
-        'data-test-ref': any;
-        value: any;
-    };
-}
+declare const Textarea: TextareaType;
+
+declare type TextInputProps = {
+    'data-test-ref'?: string;
+    className?: string;
+    defaultValue?: string;
+    hasContent?: boolean;
+    hasError?: boolean;
+    /** @deprecated no underlying functionality */
+    hasValidation?: boolean;
+    id: string;
+    inputClassName?: string;
+    inputRef?: Ref<HTMLInputElement>;
+    isEnabled?: boolean;
+    label?: string;
+    max?: number;
+    maxLength?: number;
+    min?: number;
+    name?: string;
+    onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+    prefixElement?: ReactElement;
+    theme?: Themes;
+    type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'search';
+    value?: string;
+};
+declare type TextInputType = ComponentWithoutChildren<TextInputProps>;
+
+declare const TextInput: TextInputType;
 
 declare function TextOverFullWidthAsset({ backgroundImage, backgroundVideo, className, content, copyHeight, copySide, mediaType, }: {
     backgroundImage: any;
