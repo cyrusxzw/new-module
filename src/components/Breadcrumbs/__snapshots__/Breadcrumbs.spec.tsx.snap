@@ -14,6 +14,7 @@ exports[`<Breadcrumbs /> should render base component correctly 1`] = `
       >
         <a
           class="base left dark link"
+          data-test-ref="test_id_1"
           href="/"
           target="_self"
           title="Breadcrumb title 1"
@@ -26,6 +27,7 @@ exports[`<Breadcrumbs /> should render base component correctly 1`] = `
       >
         <a
           class="base left dark link"
+          data-test-ref="test_id_2"
           href="/"
           target="_self"
           title="Breadcrumb title 2"
