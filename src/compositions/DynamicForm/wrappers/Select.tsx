@@ -33,7 +33,7 @@ export const SelectWrapper: VFC<SelectWrapperProps> = ({
         label={label}
         name={name}
         onChange={(e) => {
-          handleOnChange && handleOnChange(e);
+          handleOnChange?.(e);
           onChange(e);
         }}
         options={options}

@@ -37,7 +37,7 @@ export const TextFieldWrapper: VFC<TextFieldWrapperProps> = ({
         label={label}
         name={name}
         onChange={(e) => {
-          handleOnChange && handleOnChange(e);
+          handleOnChange?.(e);
           onChange(e);
         }}
         theme={theme}

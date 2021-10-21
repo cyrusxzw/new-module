@@ -33,7 +33,7 @@ export const CheckboxWrapper: VFC<CheckboxWrapperProps> = ({
         isEnabled={isEnabled}
         name={name}
         onChange={(e) => {
-          handleOnChange && handleOnChange(e);
+          handleOnChange?.(e);
           onChange(e.target.checked);
         }}
         theme={theme}

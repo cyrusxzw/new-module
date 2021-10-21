@@ -31,7 +31,7 @@ export const DateSelectorWrapper: VFC<DateSelectorWrapperProps> = ({
         maxYears={maxYears}
         name={name}
         onChange={(date) => {
-          handleOnChange && handleOnChange(date);
+          handleOnChange?.(date);
           onChange(date);
         }}
         theme={theme}
