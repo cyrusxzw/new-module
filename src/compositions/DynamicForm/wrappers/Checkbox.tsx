@@ -11,7 +11,7 @@ export const CheckboxWrapper: VFC<CheckboxWrapperProps> = ({
   dataTestRef,
   defaultValue,
   errorMessage,
-  handleOnChange,
+  onChange,
   id,
   isEnabled,
   label,
@@ -23,7 +23,7 @@ export const CheckboxWrapper: VFC<CheckboxWrapperProps> = ({
     control={control}
     defaultValue={defaultValue || false}
     name={name}
-    render={({ onChange }) => (
+    render={({ onChange: reactHookFormOnChange }) => (
       <Checkbox
         className={className}
         content={label}
@@ -33,8 +33,8 @@ export const CheckboxWrapper: VFC<CheckboxWrapperProps> = ({
         isEnabled={isEnabled}
         name={name}
         onChange={(e) => {
-          handleOnChange?.(e);
-          onChange(e.target.checked);
+          onChange?.(e);
+          reactHookFormOnChange(e.target.checked);
         }}
         theme={theme}
       />

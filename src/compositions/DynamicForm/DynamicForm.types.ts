@@ -18,7 +18,7 @@ export type FieldSchema = {
   /** An initial value for the field. The value in `defaultValues` prop for the same field will take precedence */
   defaultValue?: string;
 
-  handleOnChange?: (data) => void;
+  onChange?: (data) => void;
 
   /** The field's HTML id attribute */
   id?: string;

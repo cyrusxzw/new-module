@@ -14,7 +14,7 @@ export const TextFieldWrapper: VFC<TextFieldWrapperProps> = ({
   dataTestRef,
   defaultValue,
   errorMessage,
-  handleOnChange,
+  onChange,
   id,
   isEnabled,
   label,
@@ -27,7 +27,7 @@ export const TextFieldWrapper: VFC<TextFieldWrapperProps> = ({
     control={control}
     defaultValue={defaultValue || ''}
     name={name}
-    render={({ onChange, value }) => (
+    render={({ onChange: reactHookFormOnChange, value }) => (
       <TextInputV2
         classNames={{ wrapper: className }}
         dataTestRef={dataTestRef}
@@ -37,8 +37,8 @@ export const TextFieldWrapper: VFC<TextFieldWrapperProps> = ({
         label={label}
         name={name}
         onChange={(e) => {
-          handleOnChange?.(e);
-          onChange(e);
+          onChange?.(e);
+          reactHookFormOnChange(e);
         }}
         theme={theme}
         type={type}
