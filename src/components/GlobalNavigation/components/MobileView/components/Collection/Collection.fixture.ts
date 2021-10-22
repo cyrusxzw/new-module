@@ -1,5 +1,19 @@
 import type { CollectionProps } from './Collection.types';
 
+/* TODO{issue-8}: Improve fixture to be more reflective of tracking data
+ * Currently implemented type to satisfy typescript for this fixture
+ */
+
+type NavTrackingPropsType = {
+  menuType: 'Shop' | 'Read';
+  panel: 'Panel 1' | 'Panel 2';
+};
+
+const navTrackingProps: NavTrackingPropsType = {
+  menuType: 'Shop',
+  panel: 'Panel 1',
+};
+
 const CollectionFixture: CollectionProps = {
   id: 'collection',
   backLabel: 'Return from collection',
@@ -14,6 +28,7 @@ const CollectionFixture: CollectionProps = {
       title: 'Link',
       type: 'link' as const,
       url: '#link',
+      ...navTrackingProps,
     },
   ],
   promotion: {
@@ -24,6 +39,8 @@ const CollectionFixture: CollectionProps = {
     url: '#see-all-skin-care-card',
     heading: 'See all Skin Care Card Heading',
     image: {
+      id: 'image-of-see-all-skin-care',
+      creative: 'Thematic Product',
       altText: 'Image of See all Skin Care',
       sizes: {
         large:

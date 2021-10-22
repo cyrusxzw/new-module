@@ -16,9 +16,48 @@ const actionAccountAuthenticated = {
   isAuthenticated: true,
 };
 
+/* TODO{issue-1}: Improve fixture to be more reflective of tracking data
+ * Currently implemented type to satisfy typescript for this fixture
+ */
+type NavTrackingPropsType = {
+  menuType: 'Shop' | 'Read';
+  panel: 'Panel 1' | 'Panel 2';
+};
+
+const navTrackingProps: NavTrackingPropsType = {
+  menuType: 'Shop',
+  panel: 'Panel 1',
+};
+
 const GlobalNavigationFixture: GlobalNavigationContextType = {
   onClose: (): void => console.log('Clicked: close'), // eslint-disable-line no-console
   onOpen: (): void => console.log('Clicked: open'), // eslint-disable-line no-console
+  trackingCallbacks: {
+    desktop: {
+      desktopMenuItemClickOrHover: (menuItemTrackingProps) =>
+        console.log('Menu is being tracked'),
+      desktopCategoryItemClickOrHover: (categoryItemTrackingProps) =>
+        console.log('Menu is being tracked'),
+    },
+    tablet: {
+      tabletMenuItemClick: (tabletMenuItemTrackingProps) =>
+        console.log('Tablet Menu is being tracked'),
+      tabletCategoryItemClick: (categoryItemTrackingProps) =>
+        console.log('Tablet Category is being tracked'),
+    },
+    mobile: {
+      mobileMenuItemClick: (tabletMenuItemTrackingProps) =>
+        console.log('Mobile Menu is being tracked'),
+      mobileCategoryItemClick: (mobileCategoryItemTrackingProps) =>
+        console.log('Mobile Category is being tracked'),
+    },
+    common: {
+      promotionCardClick: (promotionCardTrackingProps) =>
+        console.log('Promotion Card click tracking'),
+      promotionCardImpression: (promotionCardTrackingProps) =>
+        console.log('Promotion Card Impression tracking'),
+    },
+  },
   actions: {
     account: {
       isAuthenticated: false,
@@ -44,6 +83,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
       title: 'link to the home page',
       type: 'link' as const,
       url: '#home',
+      ...navTrackingProps,
     },
     menu: {
       closeLabel: 'Close',
@@ -146,6 +186,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
           },
         },
+        ...navTrackingProps,
       },
       {
         id: 'article-two',
@@ -166,6 +207,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               'https://www.aesop.com/medias/Aesop-Room-Sprays-Hybris-Cythera-Pattern-Desktop-1440x1600.jpg?context=bWFzdGVyfGltYWdlc3w0MTU4Mjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGIyL2g0MS84ODEzNzIxNTUwODc4LmpwZ3wxODAxZWQ5YTdlNzMxNDYxZWZhMThiNzQ1YTJhZTRmMjE3ZWU3YzEzZDJmOGZjZWU0M2Y4ZWJlNjg2YjE1NjQ2',
           },
         },
+        ...navTrackingProps,
       },
     ],
     items: [
@@ -176,6 +218,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
         title: 'The Athenaeum',
         type: 'link' as const,
         url: '#the-athenaeum',
+        ...navTrackingProps,
       },
       {
         id: 'about',
@@ -189,6 +232,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
             title: 'Careers',
             type: 'link' as const,
             url: '#careers',
+            ...navTrackingProps,
           },
           {
             id: 'foundation',
@@ -196,6 +240,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
             title: 'Foundation',
             type: 'link' as const,
             url: '#foundation',
+            ...navTrackingProps,
           },
           {
             id: 'contact-us',
@@ -203,6 +248,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
             title: 'Contact Us',
             type: 'link' as const,
             url: '#contact-us',
+            ...navTrackingProps,
           },
         ],
       },
@@ -218,6 +264,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
             title: 'Design',
             type: 'link' as const,
             url: '#design',
+            ...navTrackingProps,
           },
           {
             id: 'products',
@@ -225,6 +272,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
             title: 'Products',
             type: 'link' as const,
             url: '#products',
+            ...navTrackingProps,
           },
         ],
       },
@@ -272,6 +320,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'See all Skin Care',
           type: 'link' as const,
           url: '#see-all-skin-care',
+          ...navTrackingProps,
         },
         {
           id: 'cleanse',
@@ -279,6 +328,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Cleanse',
           type: 'link' as const,
           url: '#cleanse',
+          ...navTrackingProps,
         },
         {
           id: 'exfoliate',
@@ -286,6 +336,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Exfoliate',
           type: 'link' as const,
           url: '#exfoliate',
+          ...navTrackingProps,
         },
         {
           id: 'treat-and-masque',
@@ -293,6 +344,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Treat & Masque',
           type: 'link' as const,
           url: '#treat-and-masque',
+          ...navTrackingProps,
         },
         {
           id: 'tone',
@@ -300,6 +352,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Tone',
           type: 'link' as const,
           url: '#tone',
+          ...navTrackingProps,
         },
         {
           id: 'hydrate',
@@ -307,6 +360,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Hydrate',
           type: 'link' as const,
           url: '#hydrate',
+          ...navTrackingProps,
         },
         {
           id: 'eyes-and-lips',
@@ -314,6 +368,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Eys & Lips',
           type: 'link' as const,
           url: '#eyes-and-lips',
+          ...navTrackingProps,
         },
         {
           id: 'shave',
@@ -321,6 +376,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Shave',
           type: 'link' as const,
           url: '#shave',
+          ...navTrackingProps,
         },
         {
           id: 'sun-care',
@@ -328,6 +384,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Sun Care',
           type: 'link' as const,
           url: '#sun-care',
+          ...navTrackingProps,
         },
         {
           id: 'skin-care-kits',
@@ -335,6 +392,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Skin Care Kits',
           type: 'link' as const,
           url: '#skin-care-kits',
+          ...navTrackingProps,
         },
         {
           id: 'skin-care-bundles',
@@ -342,6 +400,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Skin Care Bundles',
           type: 'link' as const,
           url: '#skin-care-bundles',
+          ...navTrackingProps,
         },
         {
           id: 'by-skin-type',
@@ -355,6 +414,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Normal',
               type: 'link' as const,
               url: '#normal',
+              ...navTrackingProps,
             },
             {
               id: 'dry',
@@ -362,6 +422,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Dry',
               type: 'link' as const,
               url: '#dry',
+              ...navTrackingProps,
             },
             {
               id: 'oily',
@@ -369,6 +430,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Oily',
               type: 'link' as const,
               url: '#oily',
+              ...navTrackingProps,
             },
             {
               id: 'combination',
@@ -376,6 +438,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Combination',
               type: 'link' as const,
               url: '#combination',
+              ...navTrackingProps,
             },
           ],
         },
@@ -391,6 +454,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Parsley Seed',
               type: 'link' as const,
               url: '#range-parsley-seed',
+              ...navTrackingProps,
             },
             {
               id: 'range-skin-care-plus',
@@ -398,6 +462,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Skin Care +',
               type: 'link' as const,
               url: '#range-skin-care-plus',
+              ...navTrackingProps,
             },
           ],
         },
@@ -413,6 +478,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Parsley Seed Facial Cleanser',
               type: 'link' as const,
               url: '#parsley-seed-facial-cleanser',
+              ...navTrackingProps,
             },
           ],
         },
@@ -440,6 +506,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'See all Body & Hand',
           type: 'link' as const,
           url: '#see-all-body-hand',
+          ...navTrackingProps,
         },
         {
           id: 'hand',
@@ -447,6 +514,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Hand',
           type: 'link' as const,
           url: '#hand',
+          ...navTrackingProps,
         },
         {
           id: 'body',
@@ -454,6 +522,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Body',
           type: 'link' as const,
           url: '#body',
+          ...navTrackingProps,
         },
         {
           id: 'personal-care',
@@ -461,6 +530,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Personal Care',
           type: 'link' as const,
           url: '#personal-care',
+          ...navTrackingProps,
         },
         {
           id: 'body-hand-care-bundles',
@@ -468,6 +538,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Body & Hand Care Bundles',
           type: 'link' as const,
           url: '#body-hand-care-bundles',
+          ...navTrackingProps,
         },
         {
           id: 'body-hand-care-gifts',
@@ -475,6 +546,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Body & Hand Care ',
           type: 'link' as const,
           url: '#body-hand-care-gifts',
+          ...navTrackingProps,
         },
         {
           id: 'body-and-hand-range',
@@ -488,6 +560,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Geranium Leaf',
               type: 'link' as const,
               url: '#geranium-leaf',
+              ...navTrackingProps,
             },
           ],
         },
@@ -534,6 +607,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'See all Hair',
           type: 'link' as const,
           url: '#see-all-hair',
+          ...navTrackingProps,
         },
         {
           id: 'cleanse',
@@ -541,6 +615,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Cleanse',
           type: 'link' as const,
           url: '#cleanse',
+          ...navTrackingProps,
         },
         {
           id: 'condition',
@@ -548,6 +623,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Condition',
           type: 'link' as const,
           url: '#condition',
+          ...navTrackingProps,
         },
         {
           id: 'treat',
@@ -555,6 +631,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Treat',
           type: 'link' as const,
           url: '#treat',
+          ...navTrackingProps,
         },
         {
           id: 'groom',
@@ -562,6 +639,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Groom',
           type: 'link' as const,
           url: '#groom',
+          ...navTrackingProps,
         },
       ],
     },
@@ -588,6 +666,8 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
         url: '#see-all-skin-care-card',
         heading: 'Floral, green, woody',
         image: {
+          id: 'introducing-rozu-a-fragrance-of-tender-intensity',
+          creative: 'Thematic Product',
           altText: 'Introducing Rōzu: a fragrance of tender intensity',
           sizes: {
             large:
@@ -606,6 +686,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'See all Frangrance',
           type: 'link' as const,
           url: '#see-all-frangrance',
+          ...navTrackingProps,
         },
         {
           id: 'miraceti',
@@ -613,6 +694,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Miraceti',
           type: 'link' as const,
           url: '#miraceti',
+          ...navTrackingProps,
         },
         {
           id: 'karst',
@@ -620,6 +702,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Karst',
           type: 'link' as const,
           url: '#karst',
+          ...navTrackingProps,
         },
         {
           id: 'eremia',
@@ -627,6 +710,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Erémia',
           type: 'link' as const,
           url: '#eremia',
+          ...navTrackingProps,
         },
         {
           id: 'rozu',
@@ -634,6 +718,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Rōzu',
           type: 'link' as const,
           url: '#rozu',
+          ...navTrackingProps,
         },
         {
           id: 'hwyl',
@@ -641,6 +726,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Hwyl',
           type: 'link' as const,
           url: '#rozu',
+          ...navTrackingProps,
         },
         {
           id: 'marrakech',
@@ -648,6 +734,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Marrakech',
           type: 'link' as const,
           url: '#marrakech',
+          ...navTrackingProps,
         },
         {
           id: 'tacit',
@@ -655,6 +742,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Tacit',
           type: 'link' as const,
           url: '#tacit',
+          ...navTrackingProps,
         },
         {
           id: 'fragrance-family',
@@ -668,6 +756,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Floral',
               type: 'link' as const,
               url: '#floral',
+              ...navTrackingProps,
             },
             {
               id: 'fresh',
@@ -675,6 +764,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Fresh',
               type: 'link' as const,
               url: '#fresh',
+              ...navTrackingProps,
             },
             {
               id: 'woody',
@@ -682,6 +772,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Woody',
               type: 'link' as const,
               url: '#woody',
+              ...navTrackingProps,
             },
             {
               id: 'opulent',
@@ -689,6 +780,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
               title: 'Opulent',
               type: 'link' as const,
               url: '#opulent',
+              ...navTrackingProps,
             },
           ],
         },
@@ -696,6 +788,8 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
     },
     {
       image: {
+        id: 'test-id',
+        creative: 'Thematic Product',
         altText: 'alt text',
         sizes: {
           large:
@@ -716,6 +810,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'See all Home',
           type: 'link' as const,
           url: '#see-all-home',
+          ...navTrackingProps,
         },
         {
           id: 'literature',
@@ -723,6 +818,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Literature',
           type: 'link' as const,
           url: '#literature',
+          ...navTrackingProps,
         },
         {
           id: 'home-gifts',
@@ -730,11 +826,14 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Home Gifts',
           type: 'link' as const,
           url: '#home-gifts',
+          ...navTrackingProps,
         },
       ],
     },
     {
       image: {
+        id: 'test-id',
+        creative: 'Thematic Product',
         altText: 'alt text',
         sizes: {
           large:
@@ -755,6 +854,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'See all Kits & Travel',
           type: 'link' as const,
           url: '#see-all-kits-and-travel',
+          ...navTrackingProps,
         },
         {
           id: 'gift-kits',
@@ -762,6 +862,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Gift Kits',
           type: 'link' as const,
           url: '#gift-kits',
+          ...navTrackingProps,
         },
         {
           id: 'skin-care-kits',
@@ -769,6 +870,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Skin Care Kits',
           type: 'link' as const,
           url: '#skin-care-kits',
+          ...navTrackingProps,
         },
         {
           id: 'body-and-hand-care-kits',
@@ -776,6 +878,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Body & Hand Care Kits',
           type: 'link' as const,
           url: '#body-and-hand-care-kits',
+          ...navTrackingProps,
         },
         {
           id: 'travel',
@@ -783,11 +886,14 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'Travel',
           type: 'link' as const,
           url: '#travel',
+          ...navTrackingProps,
         },
       ],
     },
     {
       image: {
+        id: 'test-id',
+        creative: 'Thematic Product',
         altText: 'alt text',
         sizes: {
           large:
@@ -808,6 +914,7 @@ const GlobalNavigationFixture: GlobalNavigationContextType = {
           title: 'See all Gifts',
           type: 'link' as const,
           url: '#see-all-gifts',
+          ...navTrackingProps,
         },
       ],
     },

@@ -3,4 +3,6 @@
   --easing-ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   --easing-ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
   --easing-ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --easing-ease-out-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --easing-ease-out-acelerate: cubic-bezier(0, 0, 0.2, 1);
 }

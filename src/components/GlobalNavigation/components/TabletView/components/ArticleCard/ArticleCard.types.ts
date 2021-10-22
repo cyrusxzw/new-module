@@ -1,5 +1,8 @@
 import type { ComponentWithoutChildren } from '~/types';
-import type { Clickable } from '~/components/GlobalNavigation/GlobalNavigation.types';
+import type {
+  Clickable,
+  CategoryItemTrackingWithAction,
+} from '~/components/GlobalNavigation/GlobalNavigation.types';
 
 type ArticleCardProps = Clickable & {
   isVisible?: boolean;
@@ -20,4 +23,10 @@ type ArticleCardProps = Clickable & {
 
 type ArticleCardType = ComponentWithoutChildren<ArticleCardProps>;
 
-export type { ArticleCardType, ArticleCardProps };
+type CategoryItemTrackingWithActionType = CategoryItemTrackingWithAction;
+
+export type {
+  ArticleCardType,
+  ArticleCardProps,
+  CategoryItemTrackingWithActionType,
+};

@@ -9,7 +9,7 @@
   z-index: var(--z-index-menu);
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: var(--menu-height);
   justify-content: space-between;
   padding-right: 34px;
   padding-left: 34px;
@@ -48,10 +48,13 @@
 
   &.isVisibleStickyNav {
     top: 0;
+    outline: 2px solid var(--color-grey-rgba-20); /* extra -1px to adjust nav partially sticking out */
   }
 
   &.isInvisibleStickyNav {
-    top: calc(0 - var(--menu-height) - 1px); /* extra -1px to adjust nav partially sticking out */
+    top: calc(
+      0 - var(--menu-height) - 1px
+    ); /* extra -1px to adjust nav partially sticking out */
   }
 
   &.dark::before {
@@ -76,7 +79,9 @@
     right: 0;
     bottom: 0;
     left: 0;
+    height: 100vh;
     background-color: var(--color-primary);
+    transition: height 200ms var(--easing-ease-in-out-cubic);
   }
 
   &.open.dark::before {
@@ -145,7 +150,7 @@
 
 .collectionItemLabel {
   font-family: var(--font-family-sans-serif-regular);
-  font-size: rem(20px);
+  font-size: rem(18px);
   line-height: 1.3;
   transition: outline-offset 200ms var(--easing-ease-out-cubic),
     color 200ms var(--easing-ease-out-cubic);

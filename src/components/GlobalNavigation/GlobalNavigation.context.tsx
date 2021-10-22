@@ -4,6 +4,7 @@ import type {
   GlobalNavigationContextProviderType,
   GlobalNavigationContextType,
   GlobalNavigationStateContextProviderType,
+  MenuType,
   UseGlobalNavigationStateContext,
   UseGlobalNavigationStateStore,
   UseGlobalNavigationStore,
@@ -20,6 +21,8 @@ const useGlobalNavigationStateStore: UseGlobalNavigationStateStore = ({
   const [activeCollectionId, setActiveCollectionId] = useState(
     initialActiveCollectionId,
   );
+  const [menuCategoryLabel, setMenuCategoryLabel] = useState('');
+  const [menuType, setMenuType] = useState<MenuType>('Menu');
 
   const [stickyNavProps, setStickyNavProps] = useState({
     isFixed: false,
@@ -31,10 +34,14 @@ const useGlobalNavigationStateStore: UseGlobalNavigationStateStore = ({
     activeCollectionId,
     activeView,
     isOpen,
+    menuCategoryLabel,
+    menuType,
     setActiveCollectionId,
     setIsOpen,
-    stickyNavProps,
+    setMenuCategoryLabel,
+    setMenuType,
     setStickyNavProps,
+    stickyNavProps,
   };
 };
 

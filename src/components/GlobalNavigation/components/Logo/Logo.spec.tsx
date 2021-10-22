@@ -15,6 +15,7 @@ const BaseComponentWithProviders = () => (
         actions: GlobalNavigationFixture.actions,
         collections: GlobalNavigationFixture.collections,
         read: GlobalNavigationFixture.read,
+        trackingCallbacks: GlobalNavigationFixture.trackingCallbacks,
       }}
     >
       <Logo />

@@ -15,7 +15,10 @@ import {
 } from '~/customHooks';
 import { Logo } from '../Logo';
 import { PrimaryMenu, SecondaryMenu } from './components';
-import type { DesktopViewType } from './DesktopView.types';
+import type {
+  DesktopViewType,
+  MenuItemNavBarTrackingWithActionType,
+} from './DesktopView.types';
 import styles from './DesktopView.module.css';
 
 const DesktopView: DesktopViewType = ({ className }) => {
@@ -24,10 +27,13 @@ const DesktopView: DesktopViewType = ({ className }) => {
     onClose,
     theme,
     isLegacyMenu,
+    trackingCallbacks,
   } = useGlobalNavigationContext();
 
   const {
     isOpen,
+    menuType,
+    menuCategoryLabel,
     setIsOpen,
     setActiveCollectionId,
     stickyNavProps,
@@ -47,7 +53,18 @@ const DesktopView: DesktopViewType = ({ className }) => {
   const stickyNavRef = useStickyNav(stickyNavProps, setStickyNavProps);
   const isCompletelyOnScreen = useOnScreen(stickyNavRef, 1, undefined, true);
 
+  const handleTracking = () =>
+    isOpen &&
+    trackingCallbacks.desktop.desktopMenuItemClickOrHover({
+      menuType: menuType,
+      menuLabel: 'Menu',
+      menuSection: 'Navbar',
+      menuCategory: menuCategoryLabel,
+      action: 'Close',
+    } as MenuItemNavBarTrackingWithActionType);
+
   const handleOnClose = () => {
+    handleTracking();
     setActiveCollectionId('top');
     setIsOpen(false);
     onClose?.();

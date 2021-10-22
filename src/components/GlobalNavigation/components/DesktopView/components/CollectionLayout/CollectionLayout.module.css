@@ -2,7 +2,7 @@
 
 :root {
   --offset: 90px;
-  --column-spacing: 30px;
+  --column-spacing: 3vw;
 }
 
 .nestedCollectionsWrapper {
@@ -16,11 +16,11 @@
 }
 
 .collectionsWrapper {
-  width: calc(100% * 2 / 12 + var(--column-spacing));
-  padding-right: var(--column-spacing);
+  width: calc(100% * 2 / 12);
+  padding-right: 3vw;
   margin-top: var(--offset);
   margin-bottom: 40px;
-  margin-left: calc(100% * 2 / 12);
+  margin-left: calc(100% * 2 / 12 + var(--column-spacing));
 }
 
 .supplementary {
@@ -29,9 +29,13 @@
   flex-direction: column;
   justify-content: space-between;
   margin-top: var(--offset);
-  margin-bottom: 40px;
+  margin-bottom: 5vw;
 }
 
 .promotion {
   width: calc(100% * 9 / 12);
+}
+
+.hidden {
+  visibility: hidden;
 }

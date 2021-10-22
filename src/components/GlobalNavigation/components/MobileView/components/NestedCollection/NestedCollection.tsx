@@ -1,12 +1,18 @@
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
-import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import {
+  useGlobalNavigationContext,
+  useGlobalNavigationStateContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { useMobileViewContext } from '~/components/GlobalNavigation/components/MobileView/MobileView.context';
 import { useVariableHeightStyle } from '~/components/GlobalNavigation/components/MobileView/MobileView.hooks';
 import { Button } from '~/components/Button';
 import { ListItem } from '../ListItem';
-import type { NestedCollectionType } from './NestedCollection.types';
+import type {
+  CategoryItemTrackingWithMobileActionType,
+  NestedCollectionType,
+} from './NestedCollection.types';
 import compositionStyles from '../../MobileView.module.css';
 import styles from './NestedCollection.module.css';
 
@@ -17,7 +23,12 @@ const NestedCollection: NestedCollectionType = ({
   label,
   title,
 }) => {
-  const { activeCollectionId } = useGlobalNavigationStateContext();
+  const {
+    activeCollectionId,
+    menuType,
+    menuCategoryLabel,
+  } = useGlobalNavigationStateContext();
+  const { trackingCallbacks } = useGlobalNavigationContext();
 
   const {
     activeNestedCollectionIds,
@@ -29,7 +40,22 @@ const NestedCollection: NestedCollectionType = ({
   const currentTheme = useThemeContext(null, 'dark');
   const { ref, style } = useVariableHeightStyle(isActive);
 
-  const handleOnNestedClick = () => onNestedCollectionClick(id);
+  const handleTracking = () => {
+    const categoryItemTrackingProps: CategoryItemTrackingWithMobileActionType = {
+      menuLabel: id,
+      menuType: menuType,
+      menuSection: 'Panel 2',
+      menuCategory: menuCategoryLabel,
+      menuSubnav: 'None',
+      action: !isActive ? 'Expand' : 'Collapse',
+    };
+    trackingCallbacks.mobile.mobileCategoryItemClick(categoryItemTrackingProps);
+  };
+
+  const handleOnNestedClick = () => {
+    handleTracking();
+    onNestedCollectionClick(id);
+  };
 
   const listClassSet = cx(
     compositionStyles.list,
@@ -64,7 +90,6 @@ const NestedCollection: NestedCollectionType = ({
 
       <ul
         aria-hidden={!isActive}
-        aria-label="submenu"
         className={listClassSet}
         ref={ref}
         style={style}
@@ -75,6 +100,7 @@ const NestedCollection: NestedCollectionType = ({
             isVisible={isActive}
             itemProps={props}
             key={props.label}
+            menuSubnav={id}
           />
         ))}
       </ul>

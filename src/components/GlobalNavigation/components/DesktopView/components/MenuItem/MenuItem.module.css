@@ -9,9 +9,13 @@
   height: var(--menu-height);
   align-items: center;
   border-bottom: 2px solid transparent;
-  margin-right: 20px;
+  margin-right: 1.3vw;
   pointer-events: auto;
   transition: border-bottom-color 200ms var(--easing-ease-in-out-cubic);
+
+  @media (--viewport-x3l) {
+    margin-right: 25px;
+  }
 
   &:last-child {
     margin-right: 0;
@@ -35,6 +39,11 @@
   font-weight: normal;
   transition: outline-offset 200ms var(--easing-ease-out-cubic),
     color 200ms var(--easing-ease-out-cubic);
+
+  /* responsive font */
+  @media (--viewport-lg-only) {
+    font-size: calc(12px + 0.11vw);
+  }
 
   &.dark:focus-visible {
     outline: 1px dashed var(--color-dark-decoration);

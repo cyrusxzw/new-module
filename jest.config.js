@@ -11,6 +11,7 @@ module.exports = {
     'fixture.(jsx?|tsx?)',
     '.storybook',
     'index.(js|ts)',
+    'components/GlobalNavigation' /* TODO: add full test coverage for Global Navigation */,
   ],
   coverageThreshold: {
     global: {

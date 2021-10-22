@@ -1,7 +1,6 @@
 {
-  branches: [
-    {name: 'main'},
-    {name: 'develop', prerelease: true},
+  "branches": [
+    {"name": "main"}
   ],
   "plugins": [
     "@semantic-release/commit-analyzer",
@@ -18,8 +17,8 @@
     }],
     ["@semantic-release/github", {
       "successComment": false,
-      "releasedLabels": false,
-    }],
+      "releasedLabels": false
+    }]
   ],
   "preset": "angular"
 }

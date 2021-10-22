@@ -3,9 +3,11 @@ import type { ComponentWithChildren } from '~/types';
 
 type MenuItemProps = {
   dataTestRef?: string;
+  dataTestId?: string;
   id: string;
   label: ReactNode;
   onClick?: () => void;
+  onMouseEnter?: () => void;
   title: string;
   type: 'trigger' | 'link';
   url?: string;

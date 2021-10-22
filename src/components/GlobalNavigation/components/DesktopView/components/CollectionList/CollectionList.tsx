@@ -8,10 +8,14 @@ import type { CollectionListType } from './CollectionList.types';
 import styles from './CollectionList.module.css';
 
 const CollectionList: CollectionListType = ({
+  dataTestRef,
+  eyebrow,
   heading,
   items,
-  eyebrow,
-  dataTestRef,
+  isVisible,
+  menuSubnav,
+  menuType,
+  panel,
 }) => {
   const { isActive } = useMenuItemContext();
   const currentTheme = useThemeContext(undefined, 'dark');
@@ -22,7 +26,9 @@ const CollectionList: CollectionListType = ({
     <>
       {eyebrow && (
         <small
-          className={cx(styles.eyebrow, styles.small)}
+          className={cx(styles.eyebrow, styles.small, {
+            [styles.hidden]: !isVisible,
+          })}
           data-test-ref={`${dataTestRef}_EYEBROW`}
         >
           {eyebrow}
@@ -31,7 +37,7 @@ const CollectionList: CollectionListType = ({
 
       {heading && (
         <Heading
-          className={styles.heading}
+          className={cx(styles.heading, { [styles.hidden]: !isVisible })}
           dataTestRef={`${dataTestRef}_HEADING`}
           level={'2'}
           size={'small'}
@@ -46,7 +52,13 @@ const CollectionList: CollectionListType = ({
         data-test-ref={`${dataTestRef}_ITEMLIST`}
       >
         {items.map((itemProps) => (
-          <CollectionItem {...itemProps} key={itemProps.id} />
+          <CollectionItem
+            {...itemProps}
+            key={itemProps.id}
+            menuSubnav={menuSubnav}
+            menuType={menuType}
+            panel={panel}
+          />
         ))}
       </ul>
     </>

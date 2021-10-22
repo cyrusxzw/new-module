@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef, MutableRefObject } from 'react';
 import { isViewport } from '~/utils/viewport';
 import { useWindowHasResized } from '~/customHooks';
-import type { ActiveViewTypes, StickyNavType } from './GlobalNavigation.types';
+import type { ActiveViewTypes, StickyNavType, UseOpenMenuFromSearch } from './GlobalNavigation.types';
 import { stickyScrollHandler } from './GlobalNavigation.utils';
-import debounce from 'lodash/debounce';
+import throttle from 'lodash/throttle';
 
 const useActiveView = (): { activeView: ActiveViewTypes } => {
   const [activeView, setActiveView] = useState<ActiveViewTypes>('none');
@@ -35,7 +35,7 @@ const useStickyNav = (
   const stickyNavRef = useRef(null);
 
   useEffect(() => {
-    const handleDebouncedScrollListener = debounce(
+    const handleDebouncedScrollListener = throttle(
       () => {
         stickyScrollHandler({
           stickyNavRef,
@@ -45,7 +45,7 @@ const useStickyNav = (
         });
       },
       100,
-      { leading: true },
+      { leading: true, trailing: true },
     );
 
     window.addEventListener('scroll', handleDebouncedScrollListener);
@@ -58,4 +58,19 @@ const useStickyNav = (
   return stickyNavRef;
 };
 
-export { useActiveView, useStickyNav };
+const useOpenMenuFromSearch: UseOpenMenuFromSearch = (
+  isOpenSearchBackToMenu,
+  setActiveCollectionId,
+) => {
+  useEffect(
+    () => {
+      if (isOpenSearchBackToMenu) {
+        setActiveCollectionId('top');
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Every time isOpenSearchBackToMenu change, will result in dispatching setActiveCollectionId.
+    [isOpenSearchBackToMenu],
+  );
+};
+
+export { useActiveView, useStickyNav, useOpenMenuFromSearch };

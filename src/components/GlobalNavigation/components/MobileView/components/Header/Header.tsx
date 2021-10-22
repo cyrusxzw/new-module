@@ -12,7 +12,10 @@ import { Icon } from '~/components/Icon';
 import { ScreenReaderOnly } from '~/components/ScreenReaderOnly';
 import { Transition } from '~/components/Transition';
 import { Logo } from '~/components/GlobalNavigation/components/Logo';
-import type { HeaderType } from './Header.types';
+import type {
+  HeaderType,
+  MenuItemTrackingWithMobileActionType,
+} from './Header.types';
 import compositionStyles from '../../MobileView.module.css';
 import styles from './Header.module.css';
 
@@ -20,11 +23,12 @@ const Header: HeaderType = ({ onClose }) => {
   const {
     isOpen: isMenuOpen,
     setIsOpen: setIsMenuOpen,
+    setMenuType,
     setActiveCollectionId,
     activeCollectionId,
   } = useGlobalNavigationStateContext();
 
-  const { actions, onOpen } = useGlobalNavigationContext();
+  const { actions, onOpen, trackingCallbacks } = useGlobalNavigationContext();
   const { closedTheme } = useMobileViewContext();
   const currentTheme = useThemeContext(null, 'dark');
 
@@ -33,7 +37,17 @@ const Header: HeaderType = ({ onClose }) => {
   const { search, cart, menu } = actions;
   const currentClosedTheme = closedTheme || currentTheme;
 
-  const handleOnSearchClick = () => {
+  const handleTracking = (
+    menuItemTrackingProps: MenuItemTrackingWithMobileActionType,
+  ) => {
+    trackingCallbacks.mobile.mobileMenuItemClick(menuItemTrackingProps);
+  };
+
+  const handleOnSearchClick = (
+    menuItemTrackingProps: MenuItemTrackingWithMobileActionType,
+  ) => {
+    handleTracking(menuItemTrackingProps);
+    setMenuType(menuItemTrackingProps.menuType);
     search.onClick();
     setIsMenuOpen(true);
     setActiveCollectionId(search.id);
@@ -41,13 +55,17 @@ const Header: HeaderType = ({ onClose }) => {
 
   const handleOnCartClick = () => cart.onClick();
 
-  const handleOnMenuButtonClick = () => {
+  const handleOnMenuButtonClick = (
+    menuItemTrackingProps: MenuItemTrackingWithMobileActionType,
+  ) => {
     if (isMenuOpen) {
       onClose();
     } else {
+      handleTracking(menuItemTrackingProps);
       setIsMenuOpen(true);
       onOpen?.();
     }
+    setMenuType(menuItemTrackingProps.menuType);
   };
 
   const classSet = cx(
@@ -73,7 +91,15 @@ const Header: HeaderType = ({ onClose }) => {
               data-testid={'NAV_SEARCH_BTN'}
               dataTestRef={search.dataTestRef ?? 'NAV_SEARCH_BTN'}
               isInline={true}
-              onClick={handleOnSearchClick}
+              onClick={() =>
+                handleOnSearchClick({
+                  menuCategory: 'None',
+                  menuType: 'Search',
+                  menuLabel: 'Search',
+                  menuSection: 'Navbar',
+                  action: 'Click',
+                })
+              }
               title={search.title}
             >
               <Icon
@@ -129,7 +155,15 @@ const Header: HeaderType = ({ onClose }) => {
               data-testid={'NAV_MOBILE_MENU_BTN'}
               dataTestRef={menu.dataTestRef ?? 'NAV_MOBILE_MENU_BTN'}
               isInline={true}
-              onClick={handleOnMenuButtonClick}
+              onClick={() =>
+                handleOnMenuButtonClick({
+                  menuCategory: 'None',
+                  menuType: 'Shop',
+                  menuLabel: 'Menu',
+                  menuSection: 'Navbar',
+                  action: 'Open',
+                })
+              }
               title={isMenuOpen ? menu.closeTitle : menu.title}
             >
               <ScreenReaderOnly>

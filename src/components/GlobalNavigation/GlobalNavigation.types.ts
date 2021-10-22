@@ -8,8 +8,107 @@ import type { Themes, ComponentWithChildren } from '~/types';
 
 // type Tracking = {}; // @TODO https://aesoponline.atlassian.net/browse/CON-315
 
+type TrackingCallback = {
+  desktop: {
+    desktopMenuItemClickOrHover: (
+      menuItemTrackingProps: MenuItemTrackingWithAction,
+    ) => void;
+    desktopCategoryItemClickOrHover: (
+      categoryItemTrackingProps: CategoryItemTrackingWithAction,
+    ) => void;
+  };
+  tablet: {
+    tabletMenuItemClick: (
+      tabletMenuItemTrackingProps: MenuItemTrackingWithAction,
+    ) => void;
+    tabletCategoryItemClick: (
+      tabletCategoryItemTrackingProps: CategoryItemTrackingWithAction,
+    ) => void;
+  };
+  mobile: {
+    mobileMenuItemClick: (
+      mobileMenuItemTrackingProps: MenuItemTrackingWithMobileAction,
+    ) => void;
+    mobileCategoryItemClick: (
+      mobileCategoryItemTrackingProps: CategoryItemTrackingWithMobileAction,
+    ) => void;
+  };
+  common: {
+    promotionCardClick: (
+      promotionCardTrackingProps: PromotionCardClickTracking,
+    ) => void;
+    promotionCardImpression: (
+      promotionCardTrackingProps: PromotionCardImpressionTracking,
+    ) => void;
+  };
+};
+
+type PromotionCardImpressionTracking = {
+  id: string;
+  creative: string;
+  position: string;
+  isVisible: boolean;
+};
+
+type PromotionCardClickTracking = PromotionCardImpressionTracking & {
+  englishLabel: string;
+};
+
+type MenuType = 'Shop' | 'Read' | 'Stores' | 'Search' | 'Menu';
+
+type CategoryItemTracking = {
+  menuCategory: string;
+  menuLabel: string;
+  menuSection: 'Panel 1' | 'Panel 2' | 'Navbar';
+  menuSubnav: string;
+  menuType: MenuType;
+};
+
+type MenuItemTracking = {
+  menuCategory: string;
+  menuLabel: string;
+  menuType: MenuType;
+  menuSection: 'Panel 1' | 'Navbar';
+};
+
+type MenuItemNavBarTracking = MenuItemTracking & {
+  menuSection: 'Navbar';
+};
+
+type MenuItemFirstPanelTracking = MenuItemTracking & {
+  menuSection: 'Panel 1';
+};
+
+type DesktopAndTabletTrackingActions = {
+  action: 'Open' | 'Close' | 'Click' | 'Hover';
+};
+
+type MobileTrackingActions = {
+  action: 'Open' | 'Close' | 'Click' | 'Hover' | 'Expand' | 'Collapse' | 'Back';
+};
+
+type CategoryItemTrackingWithAction = CategoryItemTracking &
+  DesktopAndTabletTrackingActions;
+
+type CategoryItemTrackingWithMobileAction = CategoryItemTracking &
+  MobileTrackingActions;
+
+type MenuItemTrackingWithAction = MenuItemTracking &
+  DesktopAndTabletTrackingActions;
+
+type MenuItemTrackingWithMobileAction = MenuItemTracking &
+  MobileTrackingActions;
+
+type MenuItemNavBarTrackingWithAction = MenuItemNavBarTracking &
+  DesktopAndTabletTrackingActions;
+
+type MenuItemFirstPanelTrackingWithAction = MenuItemFirstPanelTracking &
+  DesktopAndTabletTrackingActions;
+
 type CollectionImage = {
+  id?: string;
   altText: string;
+  creative?: string;
   sizes: {
     medium?: string;
     large?: string;
@@ -35,6 +134,9 @@ type Link = Clickable & {
   alternateLabel?: string;
   isExternal?: boolean;
   onClick?: () => void;
+  menuSubnav?: string;
+  menuType: 'Shop' | 'Read';
+  panel: 'Panel 1' | 'Panel 2';
   type: 'link';
   url: string;
 };
@@ -51,6 +153,9 @@ type Article = Clickable & {
   isVisible?: boolean;
   metaDuration?: string;
   metaLabel?: string;
+  menuSubnav?: string;
+  menuType: 'Shop' | 'Read';
+  panel: 'Panel 1' | 'Panel 2';
   type: 'article';
   url: string;
 };
@@ -138,12 +243,16 @@ type StickyNavScrollType = {
 
 type GlobalNavigationStateContextType = {
   activeCollectionId: string;
+  activeView: ActiveViewTypes;
   isOpen: boolean;
+  menuCategoryLabel: string;
+  menuType: MenuType;
   setActiveCollectionId: (id: string) => void;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
-  activeView: ActiveViewTypes;
-  stickyNavProps: StickyNavType;
+  setMenuCategoryLabel: (categoryLabel: string) => void;
+  setMenuType: (menuType: MenuType) => void;
   setStickyNavProps: Dispatch<SetStateAction<StickyNavType>>;
+  stickyNavProps: StickyNavType;
 };
 
 type UseGlobalNavigationStateContext = () => GlobalNavigationStateContextType;
@@ -157,6 +266,7 @@ type GlobalNavigationContextType = {
   className?: string;
   collections: Collection[];
   isVisuallyObstructed?: boolean;
+  isOpenSearchBackToMenu?: boolean;
   /** User created on Navigation close event callback */
   onClose?: () => void;
   /** User created on Navigation open event callback */
@@ -164,6 +274,7 @@ type GlobalNavigationContextType = {
   read: Read;
   theme?: Themes;
   isLegacyMenu?: boolean;
+  trackingCallbacks: TrackingCallback;
 };
 
 type GlobalNavigationContextProviderProps = {
@@ -190,10 +301,18 @@ type GetCollectionLists = (
   topLevelCollections: Link[];
 };
 
+type UseOpenMenuFromSearch = (
+  isOpenSearchBackToMenu: boolean,
+  setActiveCollectionId: (menu: string) => void,
+) => void;
+
 export type {
   Article,
   Actions,
   ActiveViewTypes,
+  CategoryItemTracking,
+  CategoryItemTrackingWithAction,
+  CategoryItemTrackingWithMobileAction,
   Clickable,
   Collection,
   CollectionImage,
@@ -204,9 +323,16 @@ export type {
   GlobalNavigationStateContextType,
   GlobalNavigationType,
   Link,
+  MenuItemFirstPanelTrackingWithAction,
+  MenuItemNavBarTrackingWithAction,
+  MenuItemTrackingWithAction,
+  MenuItemTrackingWithMobileAction,
+  MenuType,
   NestedCollection,
   NotableNestedCollection,
   Promotion,
+  PromotionCardImpressionTracking,
+  PromotionCardClickTracking,
   Read,
   StickyNavType,
   StickyNavScrollType,
@@ -214,4 +340,5 @@ export type {
   UseGlobalNavigationStateContext,
   UseGlobalNavigationStateStore,
   UseGlobalNavigationStore,
+  UseOpenMenuFromSearch,
 };

@@ -5,10 +5,12 @@ import {
   GlobalNavigationContextProvider,
   GlobalNavigationStateContextProvider,
 } from '~/components/GlobalNavigation/GlobalNavigation.context';
+import { Link } from '~/components/GlobalNavigation/GlobalNavigation.types';
 import { GlobalNavigationFixture } from '~/components/GlobalNavigation/GlobalNavigation.fixture';
 import { MobileView } from './MobileView';
 import { MobileViewContextProvider } from './MobileView.context';
 
+/* TODO{issue-7-nonFixture}: Improve fixture to be more reflective of tracking data */
 const collections = [
   {
     id: 'skin-care',
@@ -29,6 +31,8 @@ const collections = [
             title: 'Normal',
             type: 'link' as const,
             url: '#normal',
+            menuType: 'Shop' as Link['menuType'],
+            panel: 'Panel 1' as Link['panel'],
           },
           {
             id: 'dry',
@@ -36,6 +40,8 @@ const collections = [
             title: 'Dry',
             type: 'link' as const,
             url: '#dry',
+            menuType: 'Shop' as Link['menuType'],
+            panel: 'Panel 1' as Link['panel'],
           },
         ],
       },
@@ -52,6 +58,7 @@ describe('<GlobalNavigation.MobileView />', () => {
             actions: GlobalNavigationFixture.actions,
             read: GlobalNavigationFixture.read,
             collections: collections,
+            trackingCallbacks: GlobalNavigationFixture.trackingCallbacks,
           }}
         >
           <MobileViewContextProvider>

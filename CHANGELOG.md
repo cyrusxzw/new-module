@@ -1,37 +1,32 @@
 # [1.27.0](https://github.com/aesop/aesop-gel/compare/v1.26.0...v1.27.0) (2021-10-21)
 
-
 ### Features
 
-* **breadcrumb-testref:** breadcrumb allow testref ([ca47f1f](https://github.com/aesop/aesop-gel/commit/ca47f1fc11b2fddd0fc483e0f5db2be2410280ed))
+- **breadcrumb-testref:** breadcrumb allow testref ([ca47f1f](https://github.com/aesop/aesop-gel/commit/ca47f1fc11b2fddd0fc483e0f5db2be2410280ed))
 
 # [1.26.0](https://github.com/aesop/aesop-gel/compare/v1.25.0...v1.26.0) (2021-10-19)
 
-
 ### Features
 
-* **NavigationBar:** migrate to TypeScript ([#599](https://github.com/aesop/aesop-gel/issues/599)) ([6f79976](https://github.com/aesop/aesop-gel/commit/6f79976daa02aaccdfcbccc1758f5809d8e2e3b5))
+- **NavigationBar:** migrate to TypeScript ([#599](https://github.com/aesop/aesop-gel/issues/599)) ([6f79976](https://github.com/aesop/aesop-gel/commit/6f79976daa02aaccdfcbccc1758f5809d8e2e3b5))
 
 # [1.25.0](https://github.com/aesop/aesop-gel/compare/v1.24.0...v1.25.0) (2021-10-19)
 
-
 ### Features
 
-* **ReadMore:** migrate to TypeScript ([#598](https://github.com/aesop/aesop-gel/issues/598)) ([1321187](https://github.com/aesop/aesop-gel/commit/13211873d0693f8b7f879f409cfc119a2d29aa14))
+- **ReadMore:** migrate to TypeScript ([#598](https://github.com/aesop/aesop-gel/issues/598)) ([1321187](https://github.com/aesop/aesop-gel/commit/13211873d0693f8b7f879f409cfc119a2d29aa14))
 
 # [1.24.0](https://github.com/aesop/aesop-gel/compare/v1.23.0...v1.24.0) (2021-10-19)
 
-
 ### Features
 
-* **RadioGroup:** migrate to TypeScript ([#597](https://github.com/aesop/aesop-gel/issues/597)) ([56c1271](https://github.com/aesop/aesop-gel/commit/56c127176f0913642759aaae7c543b6dde91a08b))
+- **RadioGroup:** migrate to TypeScript ([#597](https://github.com/aesop/aesop-gel/issues/597)) ([56c1271](https://github.com/aesop/aesop-gel/commit/56c127176f0913642759aaae7c543b6dde91a08b))
 
 # [1.23.0](https://github.com/aesop/aesop-gel/compare/v1.22.0...v1.23.0) (2021-10-19)
 
-
 ### Features
 
-* ret-452 back in stock notification cta ([9f62e3a](https://github.com/aesop/aesop-gel/commit/9f62e3acbce9a6bea5aa893e3c5dfacd5b2f043d))
+- ret-452 back in stock notification cta ([9f62e3a](https://github.com/aesop/aesop-gel/commit/9f62e3acbce9a6bea5aa893e3c5dfacd5b2f043d))
 
 # [1.22.0](https://github.com/aesop/aesop-gel/compare/v1.21.0...v1.22.0) (2021-10-17)
 

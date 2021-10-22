@@ -33,6 +33,7 @@ const BaseComponentWithProviders = () => (
         actions,
         collections: GlobalNavigationFixture.collections,
         read: GlobalNavigationFixture.read,
+        trackingCallbacks: GlobalNavigationFixture.trackingCallbacks,
       }}
     >
       <SecondaryMenu />

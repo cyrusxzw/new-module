@@ -12,9 +12,11 @@ import styles from './MenuItem.module.css';
 const MenuItem: MenuItemType = ({
   children,
   dataTestRef,
+  dataTestId,
   id,
   label,
   onClick,
+  onMouseEnter,
   title,
   type,
   url,
@@ -27,6 +29,7 @@ const MenuItem: MenuItemType = ({
   const sharedProps = {
     className: cx(styles.element, styles[currentTheme]),
     dataTestRef,
+    dataTestId,
     title,
   };
 
@@ -52,6 +55,7 @@ const MenuItem: MenuItemType = ({
             }}
             isInline={true}
             onClick={onClick}
+            onMouseEnter={onMouseEnter}
           >
             {children}
           </Button>

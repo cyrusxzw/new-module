@@ -4,6 +4,8 @@ import { ArticleCard } from './ArticleCard';
 import { ArticleCardFixture } from './ArticleCard.fixture';
 import userEvent from '@testing-library/user-event';
 
+jest.mock('~/components/GlobalNavigation/GlobalNavigation.context');
+
 describe('<ArticleCard />', () => {
   const TestBed = ({ isVisible }: { isVisible?: boolean }) => (
     <ArticleCard
