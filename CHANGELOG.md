@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/aesop/aesop-gel/compare/v1.28.0...v1.29.0) (2021-10-22)
+
+
+### Features
+
+* **LoadMoreButton:** migrate to TypeScript ([#604](https://github.com/aesop/aesop-gel/issues/604)) ([071f4f7](https://github.com/aesop/aesop-gel/commit/071f4f79fc6979865facb55ee83c60d175ceb4c6))
+
 # [1.28.0](https://github.com/aesop/aesop-gel/compare/v1.27.0...v1.28.0) (2021-10-22)
 
 

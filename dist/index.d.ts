@@ -1009,34 +1009,17 @@ declare const LinkButtonGroup: LinkButtonGroupType;
 
 declare const List$1: React$1.ForwardRefExoticComponent<ListProps & React$1.RefAttributes<HTMLUListElement>>;
 
-declare function LoadMoreButton({ className, copy, dataTestRef, isEnabled }: {
-    className: any;
-    copy: any;
-    dataTestRef: any;
-    isEnabled: any;
-}): JSX.Element;
-declare namespace LoadMoreButton {
-    namespace propTypes {
-        const className: PropTypes.Requireable<string>;
-        const copy: PropTypes.Requireable<PropTypes.InferProps<{
-            actionLabel: PropTypes.Requireable<string>;
-        }>>;
-        const dataTestRef: PropTypes.Validator<string>;
-        const isEnabled: PropTypes.Requireable<boolean>;
-    }
-    namespace defaultProps {
-        const className_1: any;
-        export { className_1 as className };
-        export namespace copy_1 {
-            const actionLabel: string;
-        }
-        export { copy_1 as copy };
-        const dataTestRef_1: any;
-        export { dataTestRef_1 as dataTestRef };
-        const isEnabled_1: boolean;
-        export { isEnabled_1 as isEnabled };
-    }
-}
+declare type LoadMoreButtonProps = {
+    className?: string;
+    copy?: {
+        actionLabel?: string;
+    };
+    dataTestRef: string;
+    isEnabled?: boolean;
+};
+declare type LoadMoreButtonType = ComponentWithoutChildren<LoadMoreButtonProps>;
+
+declare const LoadMoreButton: LoadMoreButtonType;
 
 declare type LoadingSizes = 'small' | 'medium' | 'large';
 declare type LoadingProps = {
@@ -2509,7 +2492,7 @@ declare const useErrorContext: () => string;
 declare type LoadMoreContextProps = {
     /**
       A callback function that takes `sku<string>`, `LoadMoreDispatch<function>`, `ADD_TO_CART_ACTION_TYPES<array[string]>`
-      as arguments. See [LoadMoreButton.onClick.js mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/LoadMoreButton/__mocks__/LoadMoreButton.onClick.js)
+      as arguments. See [LoadMoreButton.onClick.ts mock](https://github.com/aesop/aesop-gel/tree/develop/src/components/LoadMoreButton/__mocks__/LoadMoreButton.onClick.ts)
       for an example. ___Required___
      */
     onClick: MouseEventHandler<HTMLButtonElement>;
