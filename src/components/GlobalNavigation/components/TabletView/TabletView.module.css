@@ -1,7 +1,8 @@
 @import 'styles/index';
 
 :root {
-  --menu-height: 74px;
+  --menu-height: 80px;
+  --border-bottom-offset: 1px;
 }
 
 .base {
@@ -32,7 +33,7 @@
     left: 0;
     display: block;
     width: 100%;
-    height: var(--menu-height);
+    height: calc(var(--menu-height) - var(--border-bottom-offset));
     border-bottom: 1px solid transparent;
     content: '';
     transition: background-color 200ms var(--easing-ease-in-out-cubic),
@@ -43,12 +44,14 @@
   &.isInvisibleStickyNav {
     position: fixed;
     height: var(--menu-height);
-    transition: top 300ms var(--easing-ease-in-out-cubic);
+    transition: top 300ms var(--easing-ease-out-cubic);
   }
 
   &.isVisibleStickyNav {
     top: 0;
-    outline: 2px solid var(--color-grey-rgba-20); /* extra -1px to adjust nav partially sticking out */
+    &::before {
+      border-bottom: 1px solid var(--color-grey-rgba-20);
+    }
   }
 
   &.isInvisibleStickyNav {

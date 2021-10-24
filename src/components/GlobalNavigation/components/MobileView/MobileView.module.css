@@ -4,7 +4,7 @@
   /* Represents final menu height of nav container 
   ** Mobile height set by Header component of Padding 20 20 20 20 & Height: 50px
   */
-  --menu-height: 90px;
+  --menu-height: 80px;
 }
 
 .presentationalWrapper {
@@ -15,11 +15,13 @@
   position: relative;
   z-index: var(--z-index-menu);
   width: 100%;
+  border-bottom: 1px solid transparent;
   opacity: 0;
   overflow-x: hidden;
   overflow-y: hidden;
   transition: background-color 200ms var(--easing-ease-in-out-cubic),
-    opacity 200ms var(--easing-ease-in-out-cubic);
+    opacity 200ms var(--easing-ease-in-out-cubic),
+    border-bottom 300ms var(--easing-ease-in-cubic);
 
   /* Added to more elegantly transition between breakpoints */
   @media (--viewport-xs-sm-only) {
@@ -30,7 +32,7 @@
   &.isInvisibleStickyNav {
     position: fixed;
     height: var(--menu-height);
-    transition: top 300ms var(--easing-ease-in-out-cubic);
+    transition: top 300ms var(--easing-ease-out-cubic);
     &.dark {
       background-color: var(--color-primary);
     }
@@ -42,7 +44,7 @@
 
   &.isVisibleStickyNav {
     top: 0;
-    outline: 1px solid var(--color-grey-rgba-20);
+    border-bottom: 1px solid var(--color-grey-rgba-20);
   }
 
   &.isInvisibleStickyNav {
