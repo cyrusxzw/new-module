@@ -20,6 +20,7 @@ export const FormField: VFC<FormFieldProps> = ({
   const { control, errors, getValues } = useFormContext();
   const {
     defaultValue: defaultValueFromSchema,
+    onChange,
     id,
     isEnabled,
     label,
@@ -43,6 +44,7 @@ export const FormField: VFC<FormFieldProps> = ({
     dataTestRef: testRef,
     defaultValue: defaultValues?.[name] || defaultValueFromSchema,
     errorMessage: errors[name]?.message,
+    onChange,
     id,
     isEnabled,
     label,

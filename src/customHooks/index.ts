@@ -8,4 +8,3 @@ export { useOverflowHidden } from './useOverflowHidden';
 export { useScript } from './useScript';
 export { useTrapFocus } from './useTrapFocus';
 export { useWindowHasResized } from './useWindowHasResized';
-

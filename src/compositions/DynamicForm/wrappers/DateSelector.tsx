@@ -12,6 +12,7 @@ export const DateSelectorWrapper: VFC<DateSelectorWrapperProps> = ({
   control,
   copy,
   defaultValue,
+  onChange,
   isEnabled,
   maxYears,
   name,
@@ -22,7 +23,7 @@ export const DateSelectorWrapper: VFC<DateSelectorWrapperProps> = ({
     control={control}
     defaultValue={defaultValue || ''}
     name={name}
-    render={({ onChange, value }) => (
+    render={({ onChange: reactHookFormOnChange, value }) => (
       <DateSelector
         className={className}
         copy={copy}
@@ -30,7 +31,8 @@ export const DateSelectorWrapper: VFC<DateSelectorWrapperProps> = ({
         maxYears={maxYears}
         name={name}
         onChange={(date) => {
-          onChange(date);
+          onChange?.(date);
+          reactHookFormOnChange(date);
         }}
         theme={theme}
         value={value}

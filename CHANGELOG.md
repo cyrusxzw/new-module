@@ -1,40 +1,37 @@
 # [1.29.0](https://github.com/aesop/aesop-gel/compare/v1.28.0...v1.29.0) (2021-10-22)
 
-
 ### Features
 
-* **LoadMoreButton:** migrate to TypeScript ([#604](https://github.com/aesop/aesop-gel/issues/604)) ([071f4f7](https://github.com/aesop/aesop-gel/commit/071f4f79fc6979865facb55ee83c60d175ceb4c6))
+- **LoadMoreButton:** migrate to TypeScript ([#604](https://github.com/aesop/aesop-gel/issues/604)) ([071f4f7](https://github.com/aesop/aesop-gel/commit/071f4f79fc6979865facb55ee83c60d175ceb4c6))
 
 # [1.28.0](https://github.com/aesop/aesop-gel/compare/v1.27.0...v1.28.0) (2021-10-22)
 
-
 ### Bug Fixes
 
-* **tracking:** correct english labels and subnav strings for mobile and tablet read articles ([3c8f2d0](https://github.com/aesop/aesop-gel/commit/3c8f2d084eddb493bac31880503117391b4d633e))
-* **tracking:** set correct menu type when going into read category on mobile ([2f53713](https://github.com/aesop/aesop-gel/commit/2f53713211c2111fc3180f9b392559df3152e7e2))
-* use boolean to avoid impression escape spam, use ids for eng labels, refactor and cleanup ([dc85b7a](https://github.com/aesop/aesop-gel/commit/dc85b7ac7fce7d27727a6a721b945e1eff71012e))
-* use id for secondary menu label in mobile view & address PR comments ([23ca0aa](https://github.com/aesop/aesop-gel/commit/23ca0aa681c0dc93763f55c8888b92ae874b155a))
-* **accessibility:** add accessibility changes for desktop view ([6060cea](https://github.com/aesop/aesop-gel/commit/6060ceacf8bdac4f4db92fd2116d84096ac57dde))
-* **accessibility:** remove aria label submenu from ul ([4c7d95b](https://github.com/aesop/aesop-gel/commit/4c7d95bc7338095de6b5b846cbf87418b494bb1d))
-* **nav polish:** use rem for all font sizes, remove article card scrolling ([f915526](https://github.com/aesop/aesop-gel/commit/f9155261bfbf2c0d22753542d074b911fdbfc0b5))
-* **overlay:** correct overlay issue in tablet and desktop views ([008b7c0](https://github.com/aesop/aesop-gel/commit/008b7c0141099dd9fb101b421e7b40f0677e3f46))
-* **sticky-nav:** correct transition behaviour and add bottom outline ([3d439ac](https://github.com/aesop/aesop-gel/commit/3d439ac3f8709bafa8e0a905117aa8f1f87b3c45))
-* **styling:** adjust font size for collection item label ([5c5e8f7](https://github.com/aesop/aesop-gel/commit/5c5e8f7688e067bd49f8146abe82e6c365bd1aa5))
-* **styling:** adjust styling with media query variables and cleanup ([0fe3f20](https://github.com/aesop/aesop-gel/commit/0fe3f2040203300702b120af284aa70b28cd7e6a))
-
+- **tracking:** correct english labels and subnav strings for mobile and tablet read articles ([3c8f2d0](https://github.com/aesop/aesop-gel/commit/3c8f2d084eddb493bac31880503117391b4d633e))
+- **tracking:** set correct menu type when going into read category on mobile ([2f53713](https://github.com/aesop/aesop-gel/commit/2f53713211c2111fc3180f9b392559df3152e7e2))
+- use boolean to avoid impression escape spam, use ids for eng labels, refactor and cleanup ([dc85b7a](https://github.com/aesop/aesop-gel/commit/dc85b7ac7fce7d27727a6a721b945e1eff71012e))
+- use id for secondary menu label in mobile view & address PR comments ([23ca0aa](https://github.com/aesop/aesop-gel/commit/23ca0aa681c0dc93763f55c8888b92ae874b155a))
+- **accessibility:** add accessibility changes for desktop view ([6060cea](https://github.com/aesop/aesop-gel/commit/6060ceacf8bdac4f4db92fd2116d84096ac57dde))
+- **accessibility:** remove aria label submenu from ul ([4c7d95b](https://github.com/aesop/aesop-gel/commit/4c7d95bc7338095de6b5b846cbf87418b494bb1d))
+- **nav polish:** use rem for all font sizes, remove article card scrolling ([f915526](https://github.com/aesop/aesop-gel/commit/f9155261bfbf2c0d22753542d074b911fdbfc0b5))
+- **overlay:** correct overlay issue in tablet and desktop views ([008b7c0](https://github.com/aesop/aesop-gel/commit/008b7c0141099dd9fb101b421e7b40f0677e3f46))
+- **sticky-nav:** correct transition behaviour and add bottom outline ([3d439ac](https://github.com/aesop/aesop-gel/commit/3d439ac3f8709bafa8e0a905117aa8f1f87b3c45))
+- **styling:** adjust font size for collection item label ([5c5e8f7](https://github.com/aesop/aesop-gel/commit/5c5e8f7688e067bd49f8146abe82e6c365bd1aa5))
+- **styling:** adjust styling with media query variables and cleanup ([0fe3f20](https://github.com/aesop/aesop-gel/commit/0fe3f2040203300702b120af284aa70b28cd7e6a))
 
 ### Features
 
-* add desktop tracking for new navigation ([711fa69](https://github.com/aesop/aesop-gel/commit/711fa692d41b863e379981bfe289973bb36865be))
-* add ignore pattern for global navigation tests and address testing in near future ([2574b05](https://github.com/aesop/aesop-gel/commit/2574b05d9a017544028da37345c81ad4f6b547c1))
-* add mobile tracking for navigation ([95b614a](https://github.com/aesop/aesop-gel/commit/95b614a97d08b895380811238157bcfb35aa8163))
-* add tablet tracking for new navigation ([ddf6ba5](https://github.com/aesop/aesop-gel/commit/ddf6ba5bf962a53bbf3262317d25173ad559c0a7))
-* **automation-testing:** adding data test refs and ids to aid automation ([f89cd81](https://github.com/aesop/aesop-gel/commit/f89cd815b5100745866b9854d7f6cb0ff8cf840f))
-* **con-843:** fixing scrolling behaviour for article cards on mobile ([f80ee61](https://github.com/aesop/aesop-gel/commit/f80ee619ab3c050cf954751d3133eb553d21c81b))
-* **nav polish:** add height media query ([aad82d2](https://github.com/aesop/aesop-gel/commit/aad82d23e178ed289152d10b6a2ac2a33635f42f))
-* **nav polish:** slow down panel fade ([386dd97](https://github.com/aesop/aesop-gel/commit/386dd97a1588ba4622954692f67cf94f1982fd48))
-* **navigation:** set up navigation release stream ([be1421f](https://github.com/aesop/aesop-gel/commit/be1421fe2042f7041b6af2677a6f12d765352436))
-* **test ids:** adding test IDs to navigation views ([596394e](https://github.com/aesop/aesop-gel/commit/596394e21c2a412642119170528efe0ca45719b7))
+- add desktop tracking for new navigation ([711fa69](https://github.com/aesop/aesop-gel/commit/711fa692d41b863e379981bfe289973bb36865be))
+- add ignore pattern for global navigation tests and address testing in near future ([2574b05](https://github.com/aesop/aesop-gel/commit/2574b05d9a017544028da37345c81ad4f6b547c1))
+- add mobile tracking for navigation ([95b614a](https://github.com/aesop/aesop-gel/commit/95b614a97d08b895380811238157bcfb35aa8163))
+- add tablet tracking for new navigation ([ddf6ba5](https://github.com/aesop/aesop-gel/commit/ddf6ba5bf962a53bbf3262317d25173ad559c0a7))
+- **automation-testing:** adding data test refs and ids to aid automation ([f89cd81](https://github.com/aesop/aesop-gel/commit/f89cd815b5100745866b9854d7f6cb0ff8cf840f))
+- **con-843:** fixing scrolling behaviour for article cards on mobile ([f80ee61](https://github.com/aesop/aesop-gel/commit/f80ee619ab3c050cf954751d3133eb553d21c81b))
+- **nav polish:** add height media query ([aad82d2](https://github.com/aesop/aesop-gel/commit/aad82d23e178ed289152d10b6a2ac2a33635f42f))
+- **nav polish:** slow down panel fade ([386dd97](https://github.com/aesop/aesop-gel/commit/386dd97a1588ba4622954692f67cf94f1982fd48))
+- **navigation:** set up navigation release stream ([be1421f](https://github.com/aesop/aesop-gel/commit/be1421fe2042f7041b6af2677a6f12d765352436))
+- **test ids:** adding test IDs to navigation views ([596394e](https://github.com/aesop/aesop-gel/commit/596394e21c2a412642119170528efe0ca45719b7))
 
 # [1.27.0](https://github.com/aesop/aesop-gel/compare/v1.26.0...v1.27.0) (2021-10-21)
 

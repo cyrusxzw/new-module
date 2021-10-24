@@ -12,6 +12,7 @@ export const SelectWrapper: VFC<SelectWrapperProps> = ({
   dataTestRef,
   defaultValue,
   errorMessage,
+  onChange,
   isEnabled,
   label,
   name,
@@ -23,7 +24,7 @@ export const SelectWrapper: VFC<SelectWrapperProps> = ({
     control={control}
     defaultValue={defaultValue || ''}
     name={name}
-    render={({ onChange, value }) => (
+    render={({ onChange: reactHookFormOnChange, value }) => (
       <Select
         className={className}
         dataTestRef={dataTestRef}
@@ -31,7 +32,10 @@ export const SelectWrapper: VFC<SelectWrapperProps> = ({
         isEnabled={isEnabled}
         label={label}
         name={name}
-        onChange={onChange}
+        onChange={(e) => {
+          onChange?.(e);
+          reactHookFormOnChange(e);
+        }}
         options={options}
         theme={theme}
         value={value}

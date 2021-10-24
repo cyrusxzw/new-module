@@ -1,7 +1,11 @@
 import { useEffect, useState, useRef, MutableRefObject } from 'react';
 import { isViewport } from '~/utils/viewport';
 import { useWindowHasResized } from '~/customHooks';
-import type { ActiveViewTypes, StickyNavType, UseOpenMenuFromSearch } from './GlobalNavigation.types';
+import type {
+  ActiveViewTypes,
+  StickyNavType,
+  UseOpenMenuFromSearch,
+} from './GlobalNavigation.types';
 import { stickyScrollHandler } from './GlobalNavigation.utils';
 import throttle from 'lodash/throttle';
 
