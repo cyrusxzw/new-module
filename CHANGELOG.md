@@ -1,3 +1,15 @@
+# [1.30.0](https://github.com/aesop/aesop-gel/compare/v1.29.0...v1.30.0) (2021-10-24)
+
+
+### Bug Fixes
+
+* rename the variable ([dd4598e](https://github.com/aesop/aesop-gel/commit/dd4598ed19e40f7b170b22d572b1d0abea7bd63d))
+
+
+### Features
+
+* extra onChange handler for Dynamic Form ([3ba6e2b](https://github.com/aesop/aesop-gel/commit/3ba6e2b7679d18c4a312f3f9d7eda4a6fe9bfd11))
+
 # [1.29.0](https://github.com/aesop/aesop-gel/compare/v1.28.0...v1.29.0) (2021-10-22)
 
 ### Features
