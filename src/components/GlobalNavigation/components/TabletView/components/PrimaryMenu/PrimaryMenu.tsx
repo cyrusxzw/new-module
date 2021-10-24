@@ -17,7 +17,10 @@ import { SupportMenu } from '../SupportMenu';
 import { ReadMenu } from '../ReadMenu';
 import { ArticleLayout } from '../ArticleLayout';
 import { TopLevelCollectionLayout } from '../TopLevelCollectionLayout';
-import type { PrimaryMenuType } from './PrimaryMenu.types';
+import type {
+  PrimaryMenuType,
+  MenuItemNavBarTrackingWithActionType,
+} from './PrimaryMenu.types';
 import compositionStyles from '../../TabletView.module.css';
 import styles from './PrimaryMenu.module.css';
 
@@ -27,6 +30,7 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
     actions: { search, stores, menu, shop },
     read,
     onOpen,
+    trackingCallbacks,
   } = useGlobalNavigationContext();
 
   const {
@@ -34,6 +38,8 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
     isOpen,
     setActiveCollectionId,
     setIsOpen,
+    setMenuCategoryLabel,
+    setMenuType,
   } = useGlobalNavigationStateContext();
 
   const { isShopOpen, setIsShopOpen } = useTabletViewContext();
@@ -56,22 +62,42 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
     callback?.();
   };
 
-  const handleOnShopClick = () => {
+  const handleTracking = (
+    menuItemNavBarProps: MenuItemNavBarTrackingWithActionType,
+  ) => {
+    trackingCallbacks.tablet.tabletMenuItemClick(menuItemNavBarProps);
+    setMenuCategoryLabel(menuItemNavBarProps.menuLabel);
+    setMenuType(menuItemNavBarProps.menuType);
+  };
+
+  const handleOnShopClick = (
+    menuItemNavBarProps: MenuItemNavBarTrackingWithActionType,
+  ) => {
+    handleTracking(menuItemNavBarProps);
     setIsShopOpen(true);
     handleOnCollectionClick('top', shop.onClick);
   };
 
-  const handleOnReadClick = () => {
+  const handleOnReadClick = (
+    menuItemNavBarProps: MenuItemNavBarTrackingWithActionType,
+  ) => {
+    handleTracking(menuItemNavBarProps);
     setIsShopOpen(false);
     handleOnCollectionClick(read.id);
   };
 
-  const handleOnStoresClick = () => {
+  const handleOnStoresClick = (
+    menuItemNavBarProps: MenuItemNavBarTrackingWithActionType,
+  ) => {
+    handleTracking(menuItemNavBarProps);
     setIsShopOpen(false);
     handleOnCollectionClick(stores.id, stores.onClick);
   };
 
-  const handleOnSearchClick = () => {
+  const handleOnSearchClick = (
+    menuItemNavBarProps: MenuItemNavBarTrackingWithActionType,
+  ) => {
+    handleTracking(menuItemNavBarProps);
     setIsShopOpen(false);
     handleOnCollectionClick(search.id, search.onClick);
   };
@@ -96,7 +122,15 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
             dataTestRef={shop.dataTestRef}
             id={shop.id}
             isInline={true}
-            onClick={handleOnShopClick}
+            onClick={() =>
+              handleOnShopClick({
+                menuCategory: 'None',
+                menuLabel: shop.id,
+                menuSection: 'Navbar',
+                menuType: 'Shop',
+                action: isOpen ? 'Click' : 'Open',
+              })
+            }
             title={shop.title}
           >
             {shop.label}
@@ -125,7 +159,15 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
             dataTestRef={read.dataTestRef ?? 'NAV_READ'}
             id={read.id}
             isInline={true}
-            onClick={handleOnReadClick}
+            onClick={() =>
+              handleOnReadClick({
+                menuCategory: 'None',
+                menuLabel: read.id,
+                menuSection: 'Navbar',
+                menuType: 'Read',
+                action: isOpen ? 'Click' : 'Open',
+              })
+            }
             title={read.title}
           >
             {read.label}
@@ -151,7 +193,15 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
             dataTestRef={stores.dataTestRef ?? 'NAV_STORES'}
             id={stores.id}
             isInline={true}
-            onClick={handleOnStoresClick}
+            onClick={() =>
+              handleOnStoresClick({
+                menuCategory: 'None',
+                menuLabel: stores.id,
+                menuSection: 'Navbar',
+                menuType: 'Stores',
+                action: isOpen ? 'Click' : 'Open',
+              })
+            }
             title={stores.title}
           >
             {stores.label}
@@ -172,7 +222,15 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
             dataTestRef={search.dataTestRef ?? 'NAV_SEARCH'}
             id={search.id}
             isInline={true}
-            onClick={handleOnSearchClick}
+            onClick={() =>
+              handleOnSearchClick({
+                menuCategory: 'None',
+                menuLabel: search.id,
+                menuSection: 'Navbar',
+                menuType: 'Search',
+                action: isOpen ? 'Click' : 'Open',
+              })
+            }
             title={search.title}
           >
             <>

@@ -1,12 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useLoadMoreContext } from '~/contexts';
 import { Button } from '~/components/Button';
 import { Loading } from '~/components/Loading';
 import styles from './LoadMoreButton.module.css';
+import type { LoadMoreButtonType } from './LoadMoreButton.types';
 
-const LoadMoreButton = ({ className, copy, dataTestRef, isEnabled }) => {
+const LoadMoreButton: LoadMoreButtonType = ({
+  className,
+  copy = {
+    actionLabel: 'Load More',
+  },
+  dataTestRef,
+  isEnabled = true,
+}) => {
   const loadMore = useLoadMoreContext();
 
   const classSet = cx(styles.base, className);
@@ -48,24 +55,6 @@ const LoadMoreButton = ({ className, copy, dataTestRef, isEnabled }) => {
       </span>
     </Button>
   );
-};
-
-LoadMoreButton.propTypes = {
-  className: PropTypes.string,
-  copy: PropTypes.shape({
-    actionLabel: PropTypes.string,
-  }),
-  dataTestRef: PropTypes.string.isRequired,
-  isEnabled: PropTypes.bool,
-};
-
-LoadMoreButton.defaultProps = {
-  className: undefined,
-  copy: {
-    actionLabel: 'Load More',
-  },
-  dataTestRef: undefined,
-  isEnabled: true,
 };
 
 export { LoadMoreButton };

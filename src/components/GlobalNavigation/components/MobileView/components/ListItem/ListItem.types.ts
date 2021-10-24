@@ -19,6 +19,7 @@ type ListItemProps = {
     | Promotion
     | NotableNestedCollection
     | Read;
+  menuSubnav?: string;
 };
 
 type ListItemType = ComponentWithChildren<ListItemProps>;

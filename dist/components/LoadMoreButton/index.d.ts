@@ -1,32 +1,16 @@
-import PropTypes from 'prop-types';
+import { C as ComponentWithoutChildren } from '../../sharedChunks/Component.types';
+import 'react';
 
-declare function LoadMoreButton({ className, copy, dataTestRef, isEnabled }: {
-    className: any;
-    copy: any;
-    dataTestRef: any;
-    isEnabled: any;
-}): JSX.Element;
-declare namespace LoadMoreButton {
-    namespace propTypes {
-        const className: PropTypes.Requireable<string>;
-        const copy: PropTypes.Requireable<PropTypes.InferProps<{
-            actionLabel: PropTypes.Requireable<string>;
-        }>>;
-        const dataTestRef: PropTypes.Validator<string>;
-        const isEnabled: PropTypes.Requireable<boolean>;
-    }
-    namespace defaultProps {
-        const className_1: any;
-        export { className_1 as className };
-        export namespace copy_1 {
-            const actionLabel: string;
-        }
-        export { copy_1 as copy };
-        const dataTestRef_1: any;
-        export { dataTestRef_1 as dataTestRef };
-        const isEnabled_1: boolean;
-        export { isEnabled_1 as isEnabled };
-    }
-}
+declare type LoadMoreButtonProps = {
+    className?: string;
+    copy?: {
+        actionLabel?: string;
+    };
+    dataTestRef: string;
+    isEnabled?: boolean;
+};
+declare type LoadMoreButtonType = ComponentWithoutChildren<LoadMoreButtonProps>;
+
+declare const LoadMoreButton: LoadMoreButtonType;
 
 export { LoadMoreButton };

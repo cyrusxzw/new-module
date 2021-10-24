@@ -12,6 +12,7 @@ const ListItem: ListItemType = ({
   isTopItem = false,
   isVisible = false,
   itemProps,
+  menuSubnav,
 }) => {
   let returnElement = null;
 
@@ -27,7 +28,13 @@ const ListItem: ListItemType = ({
   } else if (itemProps.type === 'link') {
     returnElement = (
       <Link
-        {...{ ...itemProps, isVisible, isNested: isNestedItem, isTopItem }}
+        {...{
+          ...itemProps,
+          isVisible,
+          isNested: isNestedItem,
+          isTopItem,
+          menuSubnav,
+        }}
       />
     );
   } else {

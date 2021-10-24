@@ -1,4 +1,5 @@
 import type { ComponentWithoutChildren } from '~/types';
+import type { MenuItemTrackingWithMobileAction } from '~/components/GlobalNavigation/GlobalNavigation.types';
 
 type HeaderProps = {
   onClose: () => void;
@@ -6,4 +7,6 @@ type HeaderProps = {
 
 type HeaderType = ComponentWithoutChildren<HeaderProps>;
 
-export type { HeaderType, HeaderProps };
+type MenuItemTrackingWithMobileActionType = MenuItemTrackingWithMobileAction;
+
+export type { HeaderType, HeaderProps, MenuItemTrackingWithMobileActionType };

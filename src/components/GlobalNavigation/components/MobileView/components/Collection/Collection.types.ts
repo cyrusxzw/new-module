@@ -1,9 +1,11 @@
 import type { ComponentWithoutChildren } from '~/types';
 import type {
+  CategoryItemTrackingWithMobileAction,
   Clickable,
   Link,
   NestedCollection,
   NotableNestedCollection,
+  MenuItemTrackingWithMobileAction,
   Promotion,
 } from '~/components/GlobalNavigation/GlobalNavigation.types';
 
@@ -17,4 +19,13 @@ type CollectionProps = Clickable & {
 
 type CollectionType = ComponentWithoutChildren<CollectionProps>;
 
-export type { CollectionType, CollectionProps };
+type CategoryItemTrackingWithMobileActionType = CategoryItemTrackingWithMobileAction;
+
+type MenuItemTrackingWithMobileActionType = MenuItemTrackingWithMobileAction;
+
+export type {
+  CategoryItemTrackingWithMobileActionType,
+  CollectionType,
+  CollectionProps,
+  MenuItemTrackingWithMobileActionType,
+};

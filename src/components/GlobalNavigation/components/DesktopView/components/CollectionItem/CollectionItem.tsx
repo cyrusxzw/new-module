@@ -1,16 +1,23 @@
 import React from 'react';
 import cx from 'classnames';
 import { useThemeContext } from '~/contexts';
+import {
+  useGlobalNavigationContext,
+  useGlobalNavigationStateContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
+import { useMenuItemContext } from '~/components/GlobalNavigation/components/DesktopView/components/MenuItem/MenuItem.context';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
-import { useGlobalNavigationStateContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
-import { useMenuItemContext } from '~/components/GlobalNavigation/components/DesktopView/components/MenuItem/MenuItem.context';
-import type { CollectionItemType } from './CollectionItem.types';
+import type {
+  CollectionItemType,
+  CategoryItemTrackingType,
+  CategoryItemTrackingWithActionType,
+} from './CollectionItem.types';
 import compositionStyles from '../../DesktopView.module.css';
 import styles from './CollectionItem.module.css';
 
 const CollectionItem: CollectionItemType = (props) => {
-  const { isOpen } = useGlobalNavigationStateContext();
+  const { isOpen, menuCategoryLabel } = useGlobalNavigationStateContext();
   const { isActive } = useMenuItemContext();
   const currentTheme = useThemeContext(undefined, 'dark');
 
@@ -39,10 +46,46 @@ const CollectionItem: CollectionItemType = (props) => {
     compositionStyles.ornamentalHover,
   );
 
+  const { trackingCallbacks } = useGlobalNavigationContext();
+
+  const categoryItemTrackingProps: CategoryItemTrackingType = {
+    menuCategory: menuCategoryLabel,
+    menuLabel: props.id,
+    menuSection: props.panel,
+    menuSubnav: props.menuSubnav,
+    menuType: props.menuType,
+  };
+
+  const handleTracking = (
+    categoryItemTrackingProps: CategoryItemTrackingWithActionType,
+  ) => {
+    trackingCallbacks.desktop.desktopCategoryItemClickOrHover(
+      categoryItemTrackingProps,
+    );
+  };
+
+  const handleOnClick = () => {
+    handleTracking({
+      ...categoryItemTrackingProps,
+      action: 'Click',
+    });
+  };
+
+  const handleOnMouseEnter = () => {
+    handleTracking({
+      ...categoryItemTrackingProps,
+      action: 'Hover',
+    });
+  };
+
   return (
     <li className={classSet}>
       <Hyperlink
         className={linkClassSet}
+        dataTestId={props.id}
+        dataTestRef="CollectionItem"
+        onClick={handleOnClick}
+        onMouseEnter={handleOnMouseEnter}
         tabIndex={!isOpen || !isActive ? -1 : null}
         title={title}
         url={url}

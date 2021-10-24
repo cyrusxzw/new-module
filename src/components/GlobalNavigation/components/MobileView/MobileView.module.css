@@ -3,7 +3,7 @@
 :root {
   /* Represents final menu height of nav container 
   ** Mobile height set by Header component of Padding 20 20 20 20 & Height: 50px
-  */ 
+  */
   --menu-height: 90px;
 }
 
@@ -42,6 +42,7 @@
 
   &.isVisibleStickyNav {
     top: 0;
+    outline: 1px solid var(--color-grey-rgba-20);
   }
 
   &.isInvisibleStickyNav {
@@ -102,13 +103,11 @@
 }
 
 .listItem {
-  padding-top: 4px;
-  padding-bottom: 4px;
   margin-top: 0;
   margin-bottom: 0;
 
   .dark & {
-    border-top: 1px solid var(--color-grey-60);
+    border-top: 1px solid var(--color-grey-rgba-20);
   }
 
   .light & {
@@ -116,7 +115,7 @@
   }
 
   .dark &:last-child {
-    border-bottom: 1px solid var(--color-grey-60);
+    border-bottom: 1px solid var(--color-grey-rgba-20);
   }
 
   .light &:last-child {
@@ -160,14 +159,14 @@
   width: calc(100% - 10px);
   align-items: center;
   justify-content: space-between;
-  padding-top: 6px;
+  padding-top: 10px;
   padding-right: 15px;
-  padding-bottom: 6px;
+  padding-bottom: 10px;
   padding-left: 15px;
   margin-right: 5px;
   margin-left: 5px;
   font-family: var(--font-family-sans-serif-regular);
-  font-size: rem(20px);
+  font-size: rem(18px);
   line-height: 1.4;
   outline-offset: 0;
   text-align: left;
@@ -228,8 +227,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: var(--menu-height); 
+  height: var(--menu-height);
   pointer-events: none;
   visibility: hidden;
 }
-

@@ -4,16 +4,27 @@ import { Heading } from '~/components/Heading';
 import { useThemeContext } from '~/contexts';
 import { Hyperlink } from '~/components/Hyperlink';
 import { Icon } from '~/components/Icon';
-import type { CollectionListType } from './CollectionList.types';
+import type {
+  CategoryItemTrackingWithActionType,
+  CollectionListType,
+} from './CollectionList.types';
 import compositionStyles from '../../TabletView.module.css';
 import styles from './CollectionList.module.css';
+import {
+  useGlobalNavigationStateContext,
+  useGlobalNavigationContext,
+} from '~/components/GlobalNavigation/GlobalNavigation.context';
 
 const CollectionList: CollectionListType = ({
   heading,
   isVisible = true,
   items,
+  menuSection,
+  menuSubnav,
 }) => {
   const currentTheme = useThemeContext(undefined, 'dark');
+  const { menuType, menuCategoryLabel } = useGlobalNavigationStateContext();
+  const { trackingCallbacks } = useGlobalNavigationContext();
 
   const headingClassSet = cx(
     styles.collectionHeading,
@@ -29,6 +40,20 @@ const CollectionList: CollectionListType = ({
     compositionStyles.ornamentalWrapper,
   );
 
+  const handleTracking = (
+    categoryItemTrackingWithActionProps: CategoryItemTrackingWithActionType,
+  ) => {
+    trackingCallbacks.tablet.tabletCategoryItemClick(
+      categoryItemTrackingWithActionProps,
+    );
+  };
+
+  const handleOnClick = (
+    categoryItemTrackingWithActionProps: CategoryItemTrackingWithActionType,
+  ) => {
+    handleTracking(categoryItemTrackingWithActionProps);
+  };
+
   return (
     <>
       {heading && (
@@ -42,8 +67,19 @@ const CollectionList: CollectionListType = ({
           <li className={compositionStyles.collectionItem} key={item.id}>
             <Hyperlink
               className={elementClassSet}
-              dataTestRef={item.dataTestRef}
+              dataTestId={item.id}
+              dataTestRef={item.dataTestRef || 'CollectionItem'}
               id={item.id}
+              onClick={() =>
+                handleOnClick({
+                  menuCategory: menuCategoryLabel,
+                  menuLabel: item.id,
+                  menuSection: menuSection || 'Panel 2',
+                  menuSubnav: menuSubnav,
+                  menuType: menuType,
+                  action: 'Click',
+                })
+              }
               tabIndex={!isVisible ? -1 : null}
               title={item.title}
               url={item.url}

@@ -1,0 +1,1 @@
+"use strict";var e=require("./debounce.js"),i=require("./isSymbol.js");var r=function(r,n,t){var a=!0,o=!0;if("function"!=typeof r)throw new TypeError("Expected a function");return i.isObject_1(t)&&(a="leading"in t?!!t.leading:a,o="trailing"in t?!!t.trailing:o),e.debounce_1(r,n,{leading:a,maxWait:n,trailing:o})};exports.throttle_1=r;

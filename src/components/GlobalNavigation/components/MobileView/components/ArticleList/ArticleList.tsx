@@ -14,6 +14,8 @@ const ArticleList: ArticleListType = ({ className, theme, items }) => {
 
   const isVisible = isOpen && activeCollectionId === 'top';
 
+  const articleScrollSet = styles.articleScroll;
+
   const classSet = cx(
     styles.base,
     { [styles.hidden]: activeCollectionId !== 'top' },
@@ -23,7 +25,7 @@ const ArticleList: ArticleListType = ({ className, theme, items }) => {
 
   return (
     <div className={classSet}>
-      <aside aria-label="navigation read articles">
+      <aside aria-label="navigation read articles" className={articleScrollSet}>
         {items?.map((item) => (
           <ArticleCard {...item} isVisible={isVisible} key={item.id} />
         ))}

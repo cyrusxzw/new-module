@@ -1,7 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
 import { ThemeContextProvider, useThemeContext } from '~/contexts';
-import { useStickyNav } from '../../GlobalNavigation.hooks';
+import {
+  useStickyNav,
+  useOpenMenuFromSearch,
+} from '../../GlobalNavigation.hooks';
 import {
   useEscapeKeyListener,
   useOnScreen,
@@ -32,9 +35,11 @@ const MobileView: MobileViewType = ({ className }) => {
     actions,
     collections,
     isVisuallyObstructed,
+    isOpenSearchBackToMenu,
     onClose,
     read,
     theme,
+    trackingCallbacks,
   } = useGlobalNavigationContext();
 
   const {
@@ -52,7 +57,18 @@ const MobileView: MobileViewType = ({ className }) => {
 
   const { search } = actions;
 
+  const handleTracking = () => {
+    trackingCallbacks.mobile.mobileMenuItemClick({
+      menuCategory: 'None',
+      menuSection: 'Navbar',
+      menuType: 'Shop',
+      menuLabel: 'Menu',
+      action: 'Close',
+    });
+  };
+
   const handleOnClose = () => {
+    handleTracking();
     setActiveCollectionId('top');
     setActiveNestedCollectionIds([]);
     setIsOpen(false);
@@ -90,6 +106,8 @@ const MobileView: MobileViewType = ({ className }) => {
     actions.stores,
     actions.support,
   ];
+
+  useOpenMenuFromSearch(isOpenSearchBackToMenu, setActiveCollectionId);
 
   return (
     <ThemeContextProvider theme={currentTheme}>

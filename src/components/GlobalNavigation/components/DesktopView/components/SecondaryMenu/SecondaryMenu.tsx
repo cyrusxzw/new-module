@@ -10,10 +10,16 @@ const SecondaryMenu: SecondaryMenuType = () => {
   } = useGlobalNavigationContext();
 
   return (
-    <nav aria-label="supplementary" className={styles.base} role="navigation">
+    <nav
+      aria-label="supplementary"
+      className={styles.base}
+      data-test-ref="NAV_SECONDARY"
+      role="navigation"
+    >
       <ul className={styles.list}>
         <MenuItem
-          dataTestRef={account.dataTestRef}
+          dataTestId="NAV_ACCOUNT"
+          dataTestRef="NAV_SECONDARY_BUTTON"
           id={account.id}
           label={account.label}
           onClick={account.type === 'trigger' ? account.onClick : null}
@@ -23,7 +29,8 @@ const SecondaryMenu: SecondaryMenuType = () => {
         />
 
         <MenuItem
-          dataTestRef={cart.dataTestRef ?? 'NAV_CART'}
+          dataTestId="NAV_CART"
+          dataTestRef="NAV_SECONDARY_BUTTON"
           id={cart.id}
           label={cart.label}
           onClick={cart.onClick}
