@@ -48,7 +48,7 @@ const useStickyNav = (
           prevScrollY,
         });
       },
-      100,
+      16 /* To match 60fps systems */,
       { leading: true, trailing: true },
     );
 

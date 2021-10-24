@@ -38,6 +38,10 @@
     height: 100vh;
     background-color: var(--color-primary);
     transition: height 200ms var(--easing-ease-in-out-cubic);
+
+    &::before {
+      border-bottom: 1px solid var(--color-grey-rgba-20);
+    }
   }
 
   &.isLegacyMenu {

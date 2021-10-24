@@ -73,6 +73,8 @@
 }
 
 .label {
+  display: flex;
+  align-items: center;
   font-family: var(--font-family-sans-serif-regular);
   font-size: rem(16px);
 
@@ -84,6 +86,10 @@
   @media (--viewport-x3l) {
     font-size: 18px;
   }
+}
+
+.rightArrow {
+  margin-left: 5px;
 }
 
 .leftAligned {

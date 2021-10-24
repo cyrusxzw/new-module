@@ -230,3 +230,25 @@
 .promotion {
   margin-bottom: 35px;
 }
+
+/* Tablet Athenaeum link */
+
+.label {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family-sans-serif-regular);
+  font-size: rem(16px);
+
+  /* responsive menu font */
+  @media (--viewport-x2l) {
+    font-size: calc(16px + 0.111vw);
+  }
+
+  @media (--viewport-x3l) {
+    font-size: 18px;
+  }
+}
+
+.rightArrow {
+  margin-left: 5px;
+}

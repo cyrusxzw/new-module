@@ -4,6 +4,8 @@ import { useThemeContext } from '~/contexts';
 import { useGlobalNavigationContext } from '~/components/GlobalNavigation/GlobalNavigation.context';
 import { Hyperlink } from '~/components/Hyperlink';
 import { ArticleList } from '../ArticleList';
+import { Paragraph } from '~/components/Paragraph';
+import { Icon } from '~/components/Icon';
 import type { ArticleLayoutType } from './ArticleLayout.types';
 import compositionStyles from '../../TabletView.module.css';
 
@@ -20,9 +22,22 @@ const ArticleLayout: ArticleLayoutType = ({ isVisible = true }) => {
         )}
         url={read.items[0].url} /* see Clickable type for conditional url */
       >
-        <span className={compositionStyles.ornamentalHover}>
-          {read.topLevelCollectionLabel}
-        </span>
+        <Paragraph
+          className={compositionStyles.label}
+          isFlush={true}
+          theme={currentTheme}
+        >
+          <span className={compositionStyles.ornamentalHover}>
+            {read.topLevelCollectionLabel}
+          </span>
+          <Icon
+            className={compositionStyles.rightArrow}
+            height={14}
+            name="rightArrow"
+            theme={currentTheme}
+            width={14}
+          />
+        </Paragraph>
       </Hyperlink>
 
       <small className={compositionStyles.articlesListHeading}>
