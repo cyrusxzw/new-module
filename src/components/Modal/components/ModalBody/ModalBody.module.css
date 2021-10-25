@@ -6,7 +6,7 @@
   overflow: scroll;
   width: 100%;
   max-height: calc(100vh - var(--layout-sm-spacing) * 4);
-  padding: calc(var(--layout-sm-spacing) * 2);
+  padding: var(--layout-sm-margin);
   background-color: var(--color-white);
   color: var(--color-grey-10);
   font-family: var(--font-family-sans-serif-regular);
@@ -25,7 +25,7 @@
 
   @media (--viewport-md) {
     max-height: calc(100vh - var(--layout-md-spacing) * 4 - 50px);
-    padding: calc(var(--layout-md-spacing) * 2);
+    padding: 50px;
   }
 
   &.isVisible {
@@ -53,15 +53,17 @@
 
 .closeButton {
   position: absolute;
-  top: var(--layout-sm-spacing);
-  right: var(--layout-sm-spacing);
-  width: 14px;
-  height: 14px;
+  top: 28px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
   transition: outline-offset 300ms var(--easing-ease-out-cubic);
 
   @media (--viewport-md) {
-    top: 18px;
-    right: 20px;
+    top: 40px;
+    right: 42px;
+    width: 42px;
+    height: 42px;
   }
 
   .dark &:focus-visible {

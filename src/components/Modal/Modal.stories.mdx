@@ -26,7 +26,8 @@ import { ModalFixture } from './Modal.fixture';
               isVisible={state.isVisible}
               onClose={handleOnClose}
             >
-              {ModalFixture.children}
+              <h2>{ModalFixture.children.title}</h2>
+              <p>{ModalFixture.children.body}</p>
             </Modal>
             <Button onClick={handleOnClick}>Open Modal</Button>
           </React.Fragment>
