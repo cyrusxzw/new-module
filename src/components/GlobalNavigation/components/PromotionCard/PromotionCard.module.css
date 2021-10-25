@@ -6,6 +6,10 @@
   transition: outline-offset 200ms var(--easing-ease-out-cubic),
     color 200ms var(--easing-ease-out-cubic);
 
+  @media (--viewport-xs-sm-only) {
+    padding-bottom: 120px;
+  }
+
   &.dark {
     color: var(--color-dark-label);
 
