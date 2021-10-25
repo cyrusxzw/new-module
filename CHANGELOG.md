@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/aesop/aesop-gel/compare/v1.30.0...v2.0.0) (2021-10-25)
+
+
+### chore
+
+* delete unused Footer composition ([3465401](https://github.com/aesop/aesop-gel/commit/34654013a3145d916f5f8af457f8b0fc44c7a9f2))
+* delete unused NewsletterSignUp composition ([90f0d22](https://github.com/aesop/aesop-gel/commit/90f0d22654a6635796537303ac254f1fa1ac41ff))
+
+
+### BREAKING CHANGES
+
+* delete unused Footer composition
+* delete unused NewsletterSignUp composition
+
 # [1.30.0](https://github.com/aesop/aesop-gel/compare/v1.29.0...v1.30.0) (2021-10-24)
 
 
