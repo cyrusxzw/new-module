@@ -8,6 +8,8 @@ import * as nestedCollectionFile from '../NestedCollection/NestedCollection';
 import * as promotionCardFile from '../../../PromotionCard/PromotionCard';
 import * as linkFile from '../Link/Link';
 
+jest.mock('~/components/GlobalNavigation/GlobalNavigation.context');
+
 describe('<GlobalNavigation.MobileView.ListItem />', () => {
   afterEach(() => {
     jest.clearAllMocks();

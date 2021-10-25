@@ -121,6 +121,7 @@ type Clickable = {
   id: string;
   label: string;
   title: string;
+  url?: string /* Accomodate articleLayout component in tablet with Athenaeum url */;
 };
 
 type Trigger = Clickable & {

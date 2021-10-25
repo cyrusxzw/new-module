@@ -18,7 +18,7 @@ const ArticleLayout: ArticleLayoutType = ({ isVisible = true }) => {
           compositionStyles.collectionItemLabel,
           compositionStyles.ornamentalWrapper,
         )}
-        url={read.baseUrl}
+        url={read.items[0].url} /* see Clickable type for conditional url */
       >
         <span className={compositionStyles.ornamentalHover}>
           {read.topLevelCollectionLabel}
