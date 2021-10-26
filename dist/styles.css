@@ -15382,7 +15382,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 /* Light theme UI elements */
 .ModalBody-module_base__3I-jF {
   position: relative;
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
   max-height: calc(100vh - 16px * 4);
   padding: 20px;

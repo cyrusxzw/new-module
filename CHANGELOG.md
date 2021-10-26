@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/aesop/aesop-gel/compare/v2.2.0...v2.3.0) (2021-10-26)
+
+
+### Features
+
+* **modal-overflow:** modal overflow style auto ([e14cf74](https://github.com/aesop/aesop-gel/commit/e14cf744f15dd5a6d38052779e30265265e34112))
+
 # [2.2.0](https://github.com/aesop/aesop-gel/compare/v2.1.0...v2.2.0) (2021-10-26)
 
 
