@@ -1146,6 +1146,7 @@ declare type Clickable = {
     id: string;
     label: string;
     title: string;
+    url?: string;
 };
 declare type Trigger = Clickable & {
     onClick: () => void;

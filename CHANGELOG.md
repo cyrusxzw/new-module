@@ -1,3 +1,18 @@
+# [2.1.0](https://github.com/aesop/aesop-gel/compare/v2.0.0...v2.1.0) (2021-10-26)
+
+
+### Bug Fixes
+
+* make UI review changes to polish nav experience ([321f9e2](https://github.com/aesop/aesop-gel/commit/321f9e2f8f7cca4a5fbe3197d8ed397dcaab32a5))
+* **con-898:** correct mobile and desktop copy for athenaeum and add tablet url ([c203945](https://github.com/aesop/aesop-gel/commit/c20394516dc40f4b759d0f61a582307f8f1aa4aa))
+* **con-914:** remove nav gap b/w filter and add border fade transitions ([5c6d9df](https://github.com/aesop/aesop-gel/commit/5c6d9df0f4ab9d451d09483865efd19cc9f25e53))
+* **con-918:** add bottom padding to mobile promotion card to avoid cutoff ([9542d3c](https://github.com/aesop/aesop-gel/commit/9542d3c5f0b2ebc99a03cce5d5009c12c69c6635))
+
+
+### Features
+
+* **con-848:** Only detials panel scroll ([f0a0d78](https://github.com/aesop/aesop-gel/commit/f0a0d786079aa1ffa65b2499e8f5d5c866d13f34))
+
 # [2.0.0](https://github.com/aesop/aesop-gel/compare/v1.30.0...v2.0.0) (2021-10-25)
 
 
