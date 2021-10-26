@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/aesop/aesop-gel/compare/v2.1.0...v2.2.0) (2021-10-26)
+
+
+### Features
+
+* **con-687:** Rebuild store header for 3 column responsiveness and add StorePageCallout ([#610](https://github.com/aesop/aesop-gel/issues/610)) ([404defa](https://github.com/aesop/aesop-gel/commit/404defa56d2f3a25f9a4170aee848519c76f63a3))
+
 # [2.1.0](https://github.com/aesop/aesop-gel/compare/v2.0.0...v2.1.0) (2021-10-26)
 
 

@@ -10,6 +10,7 @@ declare type StoreDetailCopy = {
     facialAppointments?: string;
     facialAppointmentsLink?: string;
     openingHours?: string;
+    clickAndCollectSansSerif?: string;
 };
 declare type StoreDetailHeaderProps = {
     alternateHoursNote?: string;
@@ -23,6 +24,9 @@ declare type StoreDetailHeaderProps = {
     phone?: string;
     storeName: string;
     theme?: Themes;
+    hasCnC?: boolean;
+    storePageCallout?: string[];
+    cncAvailable?: string[];
 };
 declare type StoreDetailHeaderType = ComponentWithoutChildren<StoreDetailHeaderProps>;
 
