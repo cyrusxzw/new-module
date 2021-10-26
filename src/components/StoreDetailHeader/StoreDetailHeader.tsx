@@ -15,27 +15,24 @@ const DATA_TEST_REF_PHONE = 'STORE_DETAILS_DIRECTION_PHONE';
 const DATA_TEST_REF_FACIALAPPOINTMENTS =
   'STORE_DETAILS_DIRECTION_FACIALAPPOINTMENTS';
 
-const StoreDetailHeader: StoreDetailHeaderType = ({
-  alternateHoursNote,
-  className,
+const getContentBlocks = ({
   copy,
+  currentTheme,
+  location,
+  email,
+  phone,
   facialAppointments,
   facialAppointmentsLink,
-  email,
-  location,
+  alternateHoursNote,
   openingHours,
-  phone,
-  storeName,
-  theme,
-}) => {
-  const currentTheme = useThemeContext(theme, 'dark');
-  const classSet = cx(styles.base, styles[currentTheme], className);
-  const wrapperClass = cx(styles.wrapper, className);
-
-  const contentBlocks = [
+  hasCnC,
+  cncAvailable,
+  storePageCallout,
+}) => ({
+  col1: [
     {
       label: copy?.location,
-      content: location ? (
+      content: location && (
         <Hyperlink
           className={styles.hyperlink}
           dataTestRef={DATA_TEST_REF_LOCATION}
@@ -47,12 +44,12 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
         >
           {location}
         </Hyperlink>
-      ) : null,
+      ),
       id: 'location',
     },
     {
       label: copy?.email,
-      content: email ? (
+      content: email && (
         <Hyperlink
           className={styles.hyperlink}
           dataTestRef={DATA_TEST_REF_EMAIL}
@@ -64,12 +61,12 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
         >
           {email}
         </Hyperlink>
-      ) : null,
+      ),
       id: 'email',
     },
     {
       label: copy?.phone,
-      content: phone ? (
+      content: phone && (
         <Hyperlink
           className={styles.hyperlink}
           dataTestRef={DATA_TEST_REF_PHONE}
@@ -81,12 +78,12 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
         >
           {phone}
         </Hyperlink>
-      ) : null,
+      ),
       id: 'phone',
     },
     {
       label: copy?.facialAppointments,
-      content: facialAppointments ? (
+      content: facialAppointments && (
         <Hyperlink
           className={styles.hyperlink}
           dataTestRef={DATA_TEST_REF_FACIALAPPOINTMENTS}
@@ -98,9 +95,11 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
         >
           {copy?.facialAppointmentsLink}
         </Hyperlink>
-      ) : null,
+      ),
       id: 'facialAppointments',
     },
+  ],
+  col2: [
     {
       label: copy?.openingHours,
       content: (
@@ -112,7 +111,74 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
       ),
       id: 'openingHours',
     },
-  ];
+    {
+      content: hasCnC && <div className={styles.copy}>{cncAvailable}</div>,
+      id: 'hasCnC',
+    },
+  ],
+  col3: [
+    {
+      content: storePageCallout && (
+        <div className={styles.copy}>{storePageCallout}</div>
+      ),
+      id: 'storePageCallout',
+    },
+  ],
+});
+
+const MapContentBlocks = ({ blocks, theme }) =>
+  blocks
+    .filter(({ content }) => content)
+    .map(({ label, content, id }) => (
+      <div className={styles.detail} key={id}>
+        {label && (
+          <Heading
+            className={styles.detailHeading}
+            level="3"
+            size="xXSmall"
+            theme={theme}
+          >
+            {label}
+          </Heading>
+        )}
+        <div className={cx(styles.detailContent)}>{content}</div>
+      </div>
+    ));
+
+const StoreDetailHeader: StoreDetailHeaderType = ({
+  alternateHoursNote,
+  className,
+  cncAvailable,
+  copy,
+  email,
+  facialAppointments,
+  facialAppointmentsLink,
+  hasCnC,
+  location,
+  openingHours,
+  phone,
+  storeName,
+  storePageCallout,
+  theme,
+}) => {
+  const currentTheme = useThemeContext(theme, 'dark');
+  const classSet = cx(styles.base, styles[currentTheme], className);
+  const wrapperClass = cx(styles.wrapper, className);
+  const blocksData = {
+    copy,
+    currentTheme,
+    location,
+    email,
+    phone,
+    facialAppointments,
+    facialAppointmentsLink,
+    alternateHoursNote,
+    openingHours,
+    hasCnC,
+    cncAvailable,
+    storePageCallout,
+  };
+  const contentBlocks = getContentBlocks(blocksData);
 
   return (
     <TwoColumnLayout
@@ -123,21 +189,43 @@ const StoreDetailHeader: StoreDetailHeaderType = ({
             {storeName}
           </Heading>
           <div className={styles.detailBlock}>
-            {contentBlocks
-              .filter(({ label, content }) => label && content)
-              .map(({ label, content, id }) => (
-                <div className={styles.detail} key={id}>
-                  <Heading
-                    className={styles.detailHeading}
-                    level="3"
-                    size="xXSmall"
+            {storePageCallout ? (
+              <>
+                <div className={styles.col3x}>
+                  <MapContentBlocks
+                    blocks={contentBlocks.col1}
                     theme={currentTheme}
-                  >
-                    {label}
-                  </Heading>
-                  <div className={cx(styles.detailContent)}>{content}</div>
+                  />
                 </div>
-              ))}
+                <div className={styles.col3x}>
+                  <MapContentBlocks
+                    blocks={contentBlocks.col2}
+                    theme={currentTheme}
+                  />
+                </div>
+                <div className={styles.colExtra}>
+                  <MapContentBlocks
+                    blocks={contentBlocks.col3}
+                    theme={currentTheme}
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className={styles.col}>
+                  <MapContentBlocks
+                    blocks={contentBlocks.col1}
+                    theme={currentTheme}
+                  />
+                </div>
+                <div className={styles.col}>
+                  <MapContentBlocks
+                    blocks={contentBlocks.col2}
+                    theme={currentTheme}
+                  />
+                </div>
+              </>
+            )}
           </div>
         </div>
       }
