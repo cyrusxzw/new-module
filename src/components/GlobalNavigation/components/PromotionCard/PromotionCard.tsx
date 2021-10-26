@@ -104,7 +104,13 @@ const PromotionCard: PromotionCardType = ({
 
       <Paragraph className={styles.label} isFlush={true} theme={currentTheme}>
         <span className={styles.ornamentalHover}>{label}</span>{' '}
-        <Icon height={14} name="rightArrow" theme={currentTheme} width={14} />
+        <Icon
+          className={styles.rightArrow}
+          height={14}
+          name="rightArrow"
+          theme={currentTheme}
+          width={14}
+        />
       </Paragraph>
 
       <Image {...image} className={styles.image} />

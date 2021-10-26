@@ -14,6 +14,11 @@ const actions = {
   cart: 'trigger',
   menu: 'onclick trigger',
 }; // Refer to GlobalNavigation type
+
+const read = {
+  id: 'read',
+};
+
 const onOpen = jest.fn();
 
 const menuType = 'Shop';
@@ -55,6 +60,7 @@ const GlobalNavigationContextProvider = ({ children }) => <>{children}</>;
 
 const useGlobalNavigationContext = jest.fn().mockReturnValue({
   actions,
+  read,
   onOpen,
   activeView,
   trackingCallbacks,

@@ -2,7 +2,8 @@
 
 :root {
   --container-margin: 40px;
-  --menu-height: 74px;
+  --menu-height: 80px;
+  --border-bottom-offset: 1px;
 }
 
 .base {
@@ -37,6 +38,10 @@
     height: 100vh;
     background-color: var(--color-primary);
     transition: height 200ms var(--easing-ease-in-out-cubic);
+
+    &::before {
+      border-bottom: 1px solid var(--color-grey-rgba-20);
+    }
   }
 
   &.isLegacyMenu {
@@ -53,22 +58,26 @@
     left: 0;
     display: block;
     width: 100%;
-    height: var(--menu-height);
+    height: calc(var(--menu-height) - var(--border-bottom-offset));
+    border-bottom: 1px solid transparent;
     background-color: var(--color-primary);
     content: '';
-    transition: background-color 200ms var(--easing-ease-in-out-cubic);
+    transition: background-color 200ms var(--easing-ease-in-out-cubic),
+      border-bottom 300ms var(--easing-ease-in-cubic);
   }
 
   &.isVisibleStickyNav,
   &.isInvisibleStickyNav {
     position: fixed;
     height: var(--menu-height);
-    transition: top 300ms var(--easing-ease-in-out-cubic);
+    transition: top 300ms var(--easing-ease-out-cubic);
   }
 
   &.isVisibleStickyNav {
     top: 0;
-    outline: 1px solid var(--color-grey-rgba-20);
+    &::before {
+      border-bottom: 1px solid var(--color-grey-rgba-20);
+    }
   }
 
   &.isInvisibleStickyNav {

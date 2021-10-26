@@ -2,7 +2,7 @@
 
 .base {
   display: flex;
-  height: 74px;
+  height: 80px;
   align-items: center;
   border-bottom: 2px solid transparent;
   margin-right: 20px;

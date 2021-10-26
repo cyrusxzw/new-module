@@ -1,7 +1,7 @@
 @import 'styles/index';
 
 :root {
-  --menu-height: 74px;
+  --menu-height: 80px;
 }
 
 .base {

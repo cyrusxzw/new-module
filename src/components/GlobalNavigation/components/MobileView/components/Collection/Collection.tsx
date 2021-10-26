@@ -174,9 +174,10 @@ const Collection: CollectionType = ({
             </Button>
           </li>
 
-          {items.map((props) => (
+          {items.map((props, index) => (
             <ListItem
               isVisible={isActive}
+              itemIndex={index}
               itemProps={props}
               key={props.label}
             />

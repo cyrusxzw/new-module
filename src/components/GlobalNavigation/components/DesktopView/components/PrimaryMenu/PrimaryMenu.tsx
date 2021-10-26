@@ -277,7 +277,7 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
           </Panel>
         </MenuItem>
 
-        <li className={styles.closeMenueItem}>
+        <li className={styles.closeMenuItem}>
           <CloseButton onClose={onClose} />
         </li>
       </ul>

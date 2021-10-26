@@ -12,6 +12,7 @@ type ListItemProps = {
   isNestedItem?: boolean;
   isTopItem?: boolean;
   isVisible?: boolean;
+  itemIndex?: number;
   itemProps:
     | NestedCollection
     | Collection
