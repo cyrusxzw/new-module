@@ -3,7 +3,7 @@
 
 .base {
   position: relative;
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
   max-height: calc(100vh - var(--layout-sm-spacing) * 4);
   padding: var(--layout-sm-margin);
