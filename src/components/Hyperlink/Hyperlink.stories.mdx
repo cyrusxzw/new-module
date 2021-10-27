@@ -9,6 +9,7 @@ import { Hyperlink } from './Hyperlink';
 <Canvas>
   <Story name="Base component">
     <Hyperlink
+      isAlternate={knobs.boolean('isAlternate', false, 'Presentation')}
       kind={knobs.select(
         'kind',
         [
@@ -24,11 +25,17 @@ import { Hyperlink } from './Hyperlink';
         'Internal Text Link',
         'Presentation',
       )}
+      textAlign={knobs.select(
+        'textAlign',
+        ['left', 'center', 'right'],
+        'center',
+        'Presentation',
+      )}
       theme={knobs.select('theme', ['dark', 'light'], 'dark', 'Presentation')}
       title="Hyperlink Title"
       url={knobs.text('url', '/', 'Copy')}
     >
-      {knobs.text('children', 'Lorem ipsum dolor sit amet', 'Copy')}
+      {knobs.text('children', 'Lorem ipsum', 'Copy')}
     </Hyperlink>
   </Story>
 </Canvas>
