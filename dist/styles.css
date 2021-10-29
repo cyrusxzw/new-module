@@ -7919,6 +7919,11 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 .FullWidthHeroScroll-module_topOffset__xlgvV {
   margin-top: -75px;
 }
+@media (max-width: 639px) {
+.FullWidthHeroScroll-module_topOffset__xlgvV {
+    margin-top: -80px
+}
+  }
 .FullWidthHeroScroll-module_scrollLockMedia__39CtU {
   position: sticky;
   top: 0;
@@ -7968,6 +7973,19 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     max-width: 590px;
     padding: 120px 0 0;
     margin-left: 15%
+}
+  }
+@media (min-width: 640px) {
+.FullWidthHeroScroll-module_newNavLoaded__2fOOh .FullWidthHeroScroll-module_innerWrapper__J2DKq {
+    padding-top: 85px
+}
+    .FullWidthHeroScroll-module_newNavLoaded__2fOOh .FullWidthHeroScroll-module_innerWrapper__J2DKq h1 {
+      margin-top: -3px;
+    }
+  }
+@media (min-width: 1025px) {
+.FullWidthHeroScroll-module_newNavLoaded__2fOOh .FullWidthHeroScroll-module_innerWrapper__J2DKq {
+    padding-top: 105px
 }
   }
 .FullWidthHeroScroll-module_scrollIndicator__3URDX {
@@ -9010,6 +9028,17 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
       padding-right: 34px
   }
     }
+@media (min-width: 640px) {
+.HeroBannerContent-module_newNavLoaded__8Jz8q .HeroBannerContent-module_innerWrapper__1Ct-Z {
+    padding-top: 110px
+}
+  }
+@media (min-width: 1025px) {
+.HeroBannerContent-module_newNavLoaded__8Jz8q .HeroBannerContent-module_innerWrapper__1Ct-Z {
+    padding-top: 110px;
+    padding-bottom: 180px !important  /* overwrite other existing !important for tablet */
+}
+  }
 @media (min-width: 640px) and (max-width: 1024px) {
 .HeroBannerContent-module_header__ewicl {
     width: 100%;
@@ -9148,6 +9177,16 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 .HeroBanner-module_topOffest__1ldh4 {
     padding-top: 75px;
     margin-top: -155px
+}
+  }
+@media (min-width: 640px) {
+.HeroBanner-module_newNavLoaded__2hrsx {
+    margin-top: -75px
+}
+  }
+@media (min-width: 1025px) {
+.HeroBanner-module_newNavLoaded__2hrsx {
+    margin-top: -75px
 }
   }
 

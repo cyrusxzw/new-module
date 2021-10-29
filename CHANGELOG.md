@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/aesop/aesop-gel/compare/v2.3.0...v2.4.0) (2021-10-29)
+
+
+### Features
+
+* **con-846:** fix padding on hero slices ([22c87e8](https://github.com/aesop/aesop-gel/commit/22c87e876f8f23c57c857321862d802b348744f4))
+
 # [2.3.0](https://github.com/aesop/aesop-gel/compare/v2.2.0...v2.3.0) (2021-10-26)
 
 
