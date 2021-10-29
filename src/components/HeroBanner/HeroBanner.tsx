@@ -18,6 +18,7 @@ const HeroBanner = forwardRef<HTMLDivElement, HeroBannerProps>(
       foregroundImageLink,
       hasSerifFontHeading = true,
       hasTopOffset = false,
+      hasNewNav = false,
       media,
       theme = 'dark',
       variation = 'default',
@@ -27,6 +28,7 @@ const HeroBanner = forwardRef<HTMLDivElement, HeroBannerProps>(
     const classSet = cx(
       styles.base,
       { [styles.topOffest]: hasTopOffset },
+      { [styles.newNavLoaded]: hasNewNav },
       className,
     );
 
@@ -45,6 +47,7 @@ const HeroBanner = forwardRef<HTMLDivElement, HeroBannerProps>(
           <HeroBannerContent
             content={content}
             copy={copy}
+            hasNewNav={hasNewNav}
             hasNoMedia={!media}
             hasSerifFontHeading={hasSerifFontHeading}
             hasTopOffset={hasTopOffset}

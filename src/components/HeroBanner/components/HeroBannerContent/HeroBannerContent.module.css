@@ -156,6 +156,16 @@
   }
 }
 
+.newNavLoaded .innerWrapper {
+  @media (--viewport-md) {
+    padding-top: 110px;
+  }
+  @media (--viewport-lg) {
+    padding-top: 110px;
+    padding-bottom: 180px !important;  /* overwrite other existing !important for tablet */
+  }
+}
+
 .header {
   @media (--viewport-md-only) {
     width: 100%;

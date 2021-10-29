@@ -7,6 +7,9 @@
 
 .topOffset {
   margin-top: -75px;
+  @media (--viewport-xs-sm-only) {
+    margin-top: -80px;
+  }
 }
 
 .scrollLockMedia {
@@ -52,6 +55,19 @@
     max-width: 590px;
     padding: 120px 0 0;
     margin-left: 15%;
+  }
+}
+
+.newNavLoaded .innerWrapper {
+  @media (--viewport-md) {
+    padding-top: 85px;
+    & h1 {
+      margin-top: -3px;
+    }
+  }
+
+  @media (--viewport-lg) {
+    padding-top: 105px;
   }
 }
 

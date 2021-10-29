@@ -12,6 +12,7 @@ type HeroBannerContentProps = {
   hasNoMedia?: boolean;
   hasSerifFontHeading?: boolean;
   hasTopOffset?: boolean;
+  hasNewNav?: boolean;
   theme?: Themes;
   variation?: HeroBannerVariations;
 };

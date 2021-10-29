@@ -23,3 +23,13 @@
     margin-top: -155px;
   }
 }
+
+.newNavLoaded {
+  @media (--viewport-md) {
+    margin-top: -75px;
+  }
+
+  @media (--viewport-lg) {
+    margin-top: -75px;
+  }
+}
