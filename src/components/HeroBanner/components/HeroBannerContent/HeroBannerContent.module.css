@@ -162,7 +162,7 @@
   }
   @media (--viewport-lg) {
     padding-top: 110px;
-    padding-bottom: 180px !important;  /* overwrite other existing !important for tablet */
+    padding-bottom: 180px;
   }
 }
 
