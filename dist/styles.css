@@ -9036,7 +9036,7 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 @media (min-width: 1025px) {
 .HeroBannerContent-module_newNavLoaded__8Jz8q .HeroBannerContent-module_innerWrapper__1Ct-Z {
     padding-top: 110px;
-    padding-bottom: 180px !important  /* overwrite other existing !important for tablet */
+    padding-bottom: 180px
 }
   }
 @media (min-width: 640px) and (max-width: 1024px) {

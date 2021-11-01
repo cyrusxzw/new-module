@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/aesop/aesop-gel/compare/v2.4.0...v2.4.1) (2021-11-01)
+
+
+### Bug Fixes
+
+* **con-846:** remove !important and comment in hero banner ([75b5989](https://github.com/aesop/aesop-gel/commit/75b5989e21b497848b62441cd1433d4f051e641b))
+
 # [2.4.0](https://github.com/aesop/aesop-gel/compare/v2.3.0...v2.4.0) (2021-10-29)
 
 
