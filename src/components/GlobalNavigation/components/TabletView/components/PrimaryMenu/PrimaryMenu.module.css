@@ -4,6 +4,18 @@
   transform: translateY(2px);
 }
 
+.iconDark {
+  path {
+    fill: var(--color-dark-label);
+  }
+}
+
+.iconLight {
+  path {
+    fill: var(--color-light-label);
+  }
+}
+
 .icon {
   margin-left: 4px;
 }
