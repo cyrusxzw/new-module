@@ -1,3 +1,10 @@
+## [2.4.2](https://github.com/aesop/aesop-gel/compare/v2.4.1...v2.4.2) (2021-11-02)
+
+
+### Bug Fixes
+
+* **con-961:** fix search icon color in light theme ([697c6db](https://github.com/aesop/aesop-gel/commit/697c6dbbf37dab9c9f36a3508cf488349455b792))
+
 ## [2.4.1](https://github.com/aesop/aesop-gel/compare/v2.4.0...v2.4.1) (2021-11-01)
 
 

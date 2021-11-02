@@ -14781,6 +14781,12 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
+.PrimaryMenu-module_iconDark__13fyL path {
+    fill: #666;
+  }
+.PrimaryMenu-module_iconLight__1MQwP path {
+    fill: #e0dfd6;
+  }
 .PrimaryMenu-module_icon__1Nm1S {
   margin-left: 4px;
 }
