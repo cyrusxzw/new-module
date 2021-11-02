@@ -51,6 +51,11 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
     [compositionStyles.menuClosed]: !isOpen,
   });
 
+  const searchIconSet = cx(styles.searchIcon, {
+    [styles.iconDark]: currentTheme === 'dark',
+    [styles.iconLight]: currentTheme === 'light',
+  });
+
   const handleOnCollectionClick = (id: string, callback?: () => void) => {
     setActiveCollectionId(id);
 
@@ -235,7 +240,7 @@ const PrimaryMenu: PrimaryMenuType = ({ onClose }) => {
           >
             <>
               <Icon
-                className={styles.searchIcon}
+                className={searchIconSet}
                 height={18}
                 name="search"
                 tabIndex={-1}
