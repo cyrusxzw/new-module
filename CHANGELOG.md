@@ -1,3 +1,10 @@
+## [2.4.3](https://github.com/aesop/aesop-gel/compare/v2.4.2...v2.4.3) (2021-11-03)
+
+
+### Bug Fixes
+
+* **con-957:** fix category heading not bold on some asian site ([a3b6c83](https://github.com/aesop/aesop-gel/commit/a3b6c83232dcc633b57c0d79ac87781507bd22ed))
+
 ## [2.4.2](https://github.com/aesop/aesop-gel/compare/v2.4.1...v2.4.2) (2021-11-02)
 
 
