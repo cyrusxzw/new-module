@@ -1,3 +1,11 @@
+## [2.4.4](https://github.com/aesop/aesop-gel/compare/v2.4.3...v2.4.4) (2021-11-04)
+
+
+### Bug Fixes
+
+* add data-count ([c9a3621](https://github.com/aesop/aesop-gel/commit/c9a36210b6c65b565369b1e17ebfffdea04db103))
+* **con-948:** optimize hero banner padding ([02ee05d](https://github.com/aesop/aesop-gel/commit/02ee05deb2a0b96d2a7e4b7fd446860c84c76ecb))
+
 ## [2.4.3](https://github.com/aesop/aesop-gel/compare/v2.4.2...v2.4.3) (2021-11-03)
 
 

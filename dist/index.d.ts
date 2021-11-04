@@ -803,7 +803,6 @@ declare type HeroBannerProps = {
     };
     hasSerifFontHeading?: boolean;
     hasTopOffset?: boolean;
-    hasNewNav?: boolean;
     media: ReactElement;
     theme?: Themes;
     variation?: HeroBannerVariations;
@@ -1152,6 +1151,7 @@ declare type Clickable = {
 declare type Trigger = Clickable & {
     onClick: () => void;
     type: 'trigger';
+    count?: number;
     component?: () => ReactElement;
     isLegacyMenu?: boolean;
 };

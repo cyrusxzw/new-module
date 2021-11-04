@@ -23,7 +23,6 @@ declare type HeroBannerProps = {
     };
     hasSerifFontHeading?: boolean;
     hasTopOffset?: boolean;
-    hasNewNav?: boolean;
     media: ReactElement;
     theme?: Themes;
     variation?: HeroBannerVariations;
