@@ -11,6 +11,7 @@ import styles from './MenuItem.module.css';
 
 const MenuItem: MenuItemType = ({
   children,
+  dataCount,
   dataTestRef,
   dataTestId,
   id,
@@ -25,7 +26,6 @@ const MenuItem: MenuItemType = ({
   const currentTheme = useThemeContext(undefined, 'dark');
 
   const isActive = activeCollectionId === id;
-
   const sharedProps = {
     className: cx(styles.element, styles[currentTheme]),
     dataTestRef,
@@ -53,6 +53,7 @@ const MenuItem: MenuItemType = ({
               expanded: isActive,
               haspopup: true,
             }}
+            data-count={dataCount}
             isInline={true}
             onClick={onClick}
             onMouseEnter={onMouseEnter}

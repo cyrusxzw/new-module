@@ -127,6 +127,7 @@ type Clickable = {
 type Trigger = Clickable & {
   onClick: () => void;
   type: 'trigger';
+  count?: number;
   component?: () => ReactElement;
   isLegacyMenu?: boolean;
 };
