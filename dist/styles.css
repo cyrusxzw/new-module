@@ -4508,16 +4508,10 @@ a:hover .Slide-module_heading__2KIs0,
   }
 .Checkbox-module_errorMessage__38Idq {
   display: inline-block;
-  margin-left: 23px; /* box width + left margin */
   color: #ea6956;
   font-family: 'Suisse Regular', sans-serif;
   font-size: 14px;
 }
-@media (max-width: 639px) {
-.Checkbox-module_errorMessage__38Idq {
-    font-size: 12px
-}
-  }
 
 :root {
   /* Base colours */
