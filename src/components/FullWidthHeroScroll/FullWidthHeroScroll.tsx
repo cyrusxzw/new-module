@@ -21,7 +21,6 @@ const FullWidthHeroScroll = forwardRef<any, any>(
       eyebrow,
       hasSerifFontHeading,
       hasTopOffset,
-      hasNewNav = false,
       heading,
       id,
       textBlocks,
@@ -64,7 +63,6 @@ const FullWidthHeroScroll = forwardRef<any, any>(
 
     const classSet = cx(styles.base, styles[theme], {
       [styles.topOffset]: hasTopOffset,
-      [styles.newNavLoaded]: hasNewNav,
     });
 
     return (

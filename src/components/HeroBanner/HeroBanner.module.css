@@ -24,12 +24,14 @@
   }
 }
 
-.newNavLoaded {
-  @media (--viewport-md) {
-    margin-top: -75px;
-  }
+:global(.new-navigation) {
+  :local(.base) {
+    @media (--viewport-md) {
+      margin-top: -75px;
+    }
 
-  @media (--viewport-lg) {
-    margin-top: -75px;
+    @media (--viewport-lg) {
+      margin-top: -75px;
+    }
   }
 }

@@ -129,6 +129,7 @@ const Header: HeaderType = ({ onClose }) => {
                 styles.actionCart,
                 compositionStyles.ornamentalWrapper,
               )}
+              data-count={cart.count}
               data-testid={'NAV_CART_BTN'}
               dataTestRef={cart.dataTestRef ?? 'NAV_CART_BTN'}
               isInline={true}

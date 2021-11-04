@@ -13,7 +13,6 @@ const HeroBannerContent: HeroBannerContentType = ({
   hasNoMedia,
   hasSerifFontHeading = true,
   hasTopOffset = false,
-  hasNewNav = false,
   theme,
   variation = 'default',
 }) => {
@@ -36,7 +35,6 @@ const HeroBannerContent: HeroBannerContentType = ({
       [styles.offsetX]: isOffsetX,
       [styles.offsetXFullWidthMedia]: isOffsetXFullWidthMedia,
       [styles.topOffest]: hasTopOffset,
-      [styles.newNavLoaded]: hasNewNav,
       [styles.noMedia]: hasNoMedia && variation !== 'full-display',
     },
     styles[currentTheme],

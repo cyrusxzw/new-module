@@ -29,6 +29,7 @@ const SecondaryMenu: SecondaryMenuType = () => {
         />
 
         <MenuItem
+          dataCount={cart.count}
           dataTestId="NAV_CART"
           dataTestRef="NAV_SECONDARY_BUTTON"
           id={cart.id}
