@@ -36,8 +36,8 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Lint
-        run: npm run lint
+      - name: Check code standard
+        run: npm run code-standard-check
 
       - name: Fetch Quality test reporter
         run: |

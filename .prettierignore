@@ -10,5 +10,7 @@
 /public
 /static
 /dist
+/dts
 /stories
 /storybook-static
+CHANGELOG.md
