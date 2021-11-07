@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/aesop/aesop-gel/compare/v2.4.4...v2.5.0) (2021-11-07)
+
+
+### Features
+
+* **CON-454:** migrate TextOverFullWidthAsset to TS ([#626](https://github.com/aesop/aesop-gel/issues/626)) ([4ceee48](https://github.com/aesop/aesop-gel/commit/4ceee486bf18ffee45d6e3dc8ddfee0dd2ee9a95))
+
 ## [2.4.4](https://github.com/aesop/aesop-gel/compare/v2.4.3...v2.4.4) (2021-11-04)
 
 
