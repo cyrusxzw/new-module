@@ -1,21 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Image } from '~/components/Image';
 import { Video } from '~/components/Video';
 import styles from './TextOverFullWidthAsset.module.css';
+import type {
+  TextOverFullWidthAssetType,
+  TextOverFullWidthAssetProps,
+} from './TextOverFullWidthAsset.types';
 
-const TextOverFullWidthAsset = ({
+const TextOverFullWidthAsset: TextOverFullWidthAssetType = ({
   backgroundImage,
   backgroundVideo,
   className,
   content,
-  copyHeight,
-  copySide,
+  copyHeight = 'Top',
+  copySide = 'Left',
   mediaType,
 }) => {
-  let Media = undefined;
-  let mediaProps = {};
+  let Media: typeof Image | typeof Video = undefined;
+  let mediaProps:
+    | TextOverFullWidthAssetProps['backgroundImage']
+    | TextOverFullWidthAssetProps['backgroundVideo'] = {};
 
   if (!content && !['Image', 'Video'].includes(mediaType)) {
     return null;
@@ -53,26 +58,6 @@ const TextOverFullWidthAsset = ({
       </div>
     </div>
   );
-};
-
-TextOverFullWidthAsset.propTypes = {
-  backgroundImage: PropTypes.any,
-  backgroundVideo: PropTypes.any,
-  className: PropTypes.string,
-  content: PropTypes.node.isRequired,
-  copyHeight: PropTypes.oneOf(['Top', 'Bottom']),
-  copySide: PropTypes.oneOf(['Left', 'Right']),
-  mediaType: PropTypes.oneOf(['Image', 'Video']).isRequired,
-};
-
-TextOverFullWidthAsset.defaultProps = {
-  backgroundImage: undefined,
-  backgroundVideo: undefined,
-  className: undefined,
-  content: undefined,
-  copyHeight: 'Top',
-  copySide: 'Left',
-  mediaType: undefined,
 };
 
 export { TextOverFullWidthAsset };

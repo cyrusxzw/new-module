@@ -55,20 +55,11 @@ describe('<TextOverFullWidthAsset />', () => {
 });
 
 describe('<TextOverFullWidthAsset /> required props', () => {
-  beforeAll(() => {
-    jest.spyOn(global.console, 'error').mockImplementation(() => undefined);
-  });
-
-  afterAll(() => {
-    global.console.error.mockRestore();
-  });
-
-  it('should not render anything and throw console error if content and mediaType are not valid', () => {
-    render(<TextOverFullWidthAsset content="" mediaType="Audio" />);
+  it('should not render anything if content and mediaType are not valid', () => {
+    render(<TextOverFullWidthAsset content="" mediaType={'Audio' as any} />);
 
     const child = screen.queryByTestId(/data-testid-TextOverFullWidthAsset/i);
 
     expect(child).not.toBeInTheDocument();
-    expect(console.error).toHaveBeenCalledTimes(1); // eslint-disable-line no-console
   });
 });

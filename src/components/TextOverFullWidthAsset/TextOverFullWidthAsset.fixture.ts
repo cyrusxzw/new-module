@@ -1,4 +1,6 @@
-const TextOverFullWidthAssetFixture = {
+import type { TextOverFullWidthAssetProps } from './TextOverFullWidthAsset.types';
+
+const TextOverFullWidthAssetFixture: TextOverFullWidthAssetProps = {
   className: 'TextOverFullWidthAsset-className',
   copyHeight: 'Top',
   copySide: 'Left',
@@ -6,7 +8,6 @@ const TextOverFullWidthAssetFixture = {
   content: 'content',
   backgroundImage: {
     altText: 'TextOverFullWidthAsset-backgroundImage-altText',
-    caption: null,
     sizes: {
       large:
         '//images.ctfassets.net/u1nb1km7t5q7/1Sw3Q1024SHFqrriGvx6y1/4c7e5243ac23747ab5f8e262af599624/Aesop_Book_Hybris_PDP_Secondary_Full_Bleed_4_Desktop_2880x1660px.jpg',
@@ -17,9 +18,8 @@ const TextOverFullWidthAssetFixture = {
     },
   },
   backgroundVideo: {
-    fallBackImage: {
-      altText: 'Test alt text',
-      id: 'test-full-width-image-1',
+    fallbackImage: {
+      copy: { altText: 'Test alt text' },
       sizes: {
         large:
           '//images.ctfassets.net/u1nb1km7t5q7/7t8pG93AfQQALXQrvPHly2/6cd21de52a4c45675e77a6910175c76c/Aesop_Book_Hybris_PDP_Secondary_Full_Bleed_3_Desktop_2880x1660px.jpg',
