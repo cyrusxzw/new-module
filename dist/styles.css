@@ -15450,13 +15450,13 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     pointer-events: auto;
   }
 .ModalBody-module_dark__33bzC .ModalBody-module_closeIcon__3aJW5 {
-    fill: #666;
+    fill: #252525;
   }
 .ModalBody-module_light__3qr4o .ModalBody-module_closeIcon__3aJW5 {
     fill: #e0dfd6;
   }
 .ModalBody-module_dark__33bzC .ModalBody-module_closeButton__2UtNd:hover .ModalBody-module_closeIcon__3aJW5 {
-    fill: #333;
+    fill: #000;
   }
 .ModalBody-module_light__3qr4o .ModalBody-module_closeButton__2UtNd:hover .ModalBody-module_closeIcon__3aJW5 {
     fill: #fffef0;
