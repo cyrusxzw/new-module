@@ -31,6 +31,7 @@ const MediaBlock: MediaBlockType = ({
         hasLoop={true}
         hasPlayInFullScreen={false}
         isFullWidth={true}
+        isInMediaBlock={true}
         isScrollBasedVideo={isScrollBasedVideo}
         poster={poster}
         sizes={sizes}
