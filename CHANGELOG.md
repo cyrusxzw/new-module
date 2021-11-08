@@ -1,3 +1,11 @@
+## [2.5.1](https://github.com/aesop/aesop-gel/compare/v2.5.0...v2.5.1) (2021-11-08)
+
+
+### Bug Fixes
+
+* update the mobile modal transition style ([257908f](https://github.com/aesop/aesop-gel/commit/257908fea7e29acfed8464deba34d5e1839efeb2))
+* update the style of checkbox error msg ([3ea92da](https://github.com/aesop/aesop-gel/commit/3ea92da74c2e8900b6a798a2d3cb8b9519ca631c))
+
 # [2.5.0](https://github.com/aesop/aesop-gel/compare/v2.4.4...v2.5.0) (2021-11-07)
 
 
