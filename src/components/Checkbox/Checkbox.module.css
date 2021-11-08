@@ -82,7 +82,6 @@
 
 .errorMessage {
   display: inline-block;
-  margin-left: 23px; /* box width + left margin */
   color: var(--color-error);
   font-family: var(--font-family-sans-serif-regular);
   font-size: rem(14px);

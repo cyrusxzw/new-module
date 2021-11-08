@@ -35,7 +35,7 @@
 
 .closeIcon {
   .dark & {
-    fill: var(--color-dark-label);
+    fill: var(--color-grey-10);
   }
 
   .light & {
@@ -43,7 +43,7 @@
   }
 
   .dark .closeButton:hover & {
-    fill: var(--color-secondary);
+    fill: var(--color-black);
   }
 
   .light .closeButton:hover & {

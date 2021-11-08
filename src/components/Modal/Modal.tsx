@@ -13,6 +13,7 @@ import { getPortalRoot } from '~/utils/portal';
 import { ModalBody } from './components/ModalBody';
 import { Overlay } from '~/components/Overlay';
 import { Transition } from '~/components/Transition';
+import { isViewport } from '~/utils/viewport';
 import type { ModalType } from './Modal.types';
 import styles from './Modal.module.css';
 
@@ -37,6 +38,8 @@ const Modal: ModalType = ({
   const ref = mergeRefs(modalRef, focusTrapRef);
   const classSet = cx(styles.base, styles[currentTheme], className);
 
+  const isMobile = isViewport('xs to sm only');
+
   return (
     <>
       {createPortal(
@@ -46,7 +49,7 @@ const Modal: ModalType = ({
             isActive={isVisible}
             shouldMountOnEnter={true}
             shouldUnmountOnExit={true}
-            type="zoom"
+            type={isMobile ? 'slideDown' : 'zoom'}
           >
             <aside
               aria-hidden={!isVisible}
