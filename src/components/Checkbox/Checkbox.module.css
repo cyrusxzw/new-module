@@ -85,4 +85,8 @@
   color: var(--color-error);
   font-family: var(--font-family-sans-serif-regular);
   font-size: rem(14px);
+
+  @media (--viewport-xs-sm-only) {
+    font-size: rem(12px);
+  }
 }
