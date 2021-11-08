@@ -266,35 +266,33 @@ function add(a, b) {
 }
 ```
 
-### Linting
+### Linting & Formatting
 
-The [.eslintrc](.eslintrc) and [.stylelintrc](.stylelintrc) files govern the code style and syntax rules for JavaScript/TypeScript and CSS files respectively.
+The repo uses the following libraries to enforce code quality:
 
-The ESLint configuration for this project extends upon the [Airbnb JavaScript style guide](https://github.com/airbnb/javascript).
+- [Eslint](https://eslint.org/)
+- [Stylelint](https://stylelint.io/)
+- [Prettier](https://prettier.io/)
 
-To run the ESLint task, use:
+To run the ESLint/Stylelint/Prettier task, use either:
 
+```bash
+# to check the code matches the set rules without fixing issues
+npm run tool-check # where "tool" is one of eslint, stylelint, prettier, e.g. npm run eslint-check
+
+# to fix fixable issues
+npm run tool-fix
 ```
-npm run eslint
-```
 
-To run the StyleLint task, use:
+To run all of them with one script, use either:
 
-```
-npm run stylelint
-```
+```bash
+npm run code-standard-check
 
-`npm run lint` is an alias for both.
+npm run code-standard-fix
+```
 
 In regards to typing React components, use [React+TypeScript Cheatsheets](https://github.com/sw-yx/react-typescript-cheatsheet) as a reference. (Thank you @kevin-ho87)
-
-### Prettier
-
-[Prettier](https://github.com/prettier/prettier) is used to maintain code style within the application. The changes to the base Prettier config for this application are configured in the [`.prettierrc`](.prettierrc) file. Use the following task to format CSS and JavaScript files.
-
-```
-npm run format
-```
 
 ### Pre Commit Hook
 
@@ -303,13 +301,12 @@ source files follow the same formatting. The configurations of Husky is found in
 
 `.huskyrc`
 
-```
+```json
 {
   "hooks": {
-    "pre-commit": "npm run pretty",
+    "pre-commit": "npm run pretty"
   }
 }
-
 ```
 
 ### Issues

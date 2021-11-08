@@ -7975,18 +7975,18 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 }
   }
 @media (min-width: 640px) {
-.FullWidthHeroScroll-module_newNavLoaded__2fOOh .FullWidthHeroScroll-module_innerWrapper__J2DKq {
-    padding-top: 85px
-}
-    .FullWidthHeroScroll-module_newNavLoaded__2fOOh .FullWidthHeroScroll-module_innerWrapper__J2DKq h1 {
-      margin-top: -3px;
+.new-navigation .FullWidthHeroScroll-module_innerWrapper__J2DKq {
+      padding-top: 85px
+  }
+      .new-navigation .FullWidthHeroScroll-module_innerWrapper__J2DKq h1 {
+        margin-top: -3px;
+      }
     }
-  }
 @media (min-width: 1025px) {
-.FullWidthHeroScroll-module_newNavLoaded__2fOOh .FullWidthHeroScroll-module_innerWrapper__J2DKq {
-    padding-top: 105px
-}
+.new-navigation .FullWidthHeroScroll-module_innerWrapper__J2DKq {
+      padding-top: 105px
   }
+    }
 .FullWidthHeroScroll-module_scrollIndicator__3URDX {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9028,16 +9028,16 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
   }
     }
 @media (min-width: 640px) {
-.HeroBannerContent-module_newNavLoaded__8Jz8q .HeroBannerContent-module_innerWrapper__1Ct-Z {
-    padding-top: 110px
-}
+.new-navigation .HeroBannerContent-module_innerWrapper__1Ct-Z {
+      padding-top: 110px
   }
+    }
 @media (min-width: 1025px) {
-.HeroBannerContent-module_newNavLoaded__8Jz8q .HeroBannerContent-module_innerWrapper__1Ct-Z {
-    padding-top: 110px;
-    padding-bottom: 180px
-}
+.new-navigation .HeroBannerContent-module_innerWrapper__1Ct-Z {
+      padding-top: 110px;
+      padding-bottom: 180px
   }
+    }
 @media (min-width: 640px) and (max-width: 1024px) {
 .HeroBannerContent-module_header__ewicl {
     width: 100%;
@@ -9179,15 +9179,15 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
 }
   }
 @media (min-width: 640px) {
-.HeroBanner-module_newNavLoaded__2hrsx {
-    margin-top: -75px
-}
+.new-navigation .HeroBanner-module_base__3tCWJ {
+      margin-top: -75px
   }
+    }
 @media (min-width: 1025px) {
-.HeroBanner-module_newNavLoaded__2hrsx {
-    margin-top: -75px
-}
+.new-navigation .HeroBanner-module_base__3tCWJ {
+      margin-top: -75px
   }
+    }
 
 :root {
   /* Base colours */

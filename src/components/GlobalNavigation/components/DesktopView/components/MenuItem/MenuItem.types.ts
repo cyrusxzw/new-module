@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import type { ComponentWithChildren } from '~/types';
 
 type MenuItemProps = {
+  dataCount?: number;
   dataTestRef?: string;
   dataTestId?: string;
   id: string;

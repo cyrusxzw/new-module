@@ -52,6 +52,7 @@ const SecondaryMenu: SecondaryMenuType = () => {
         <MenuItem>
           <Button
             className={cx(styles.element, compositionStyles.ornamentalWrapper)}
+            data-count={cart.count}
             dataTestRef={cart.dataTestRef ?? 'NAV_CART'}
             id={cart.id}
             isInline={true}

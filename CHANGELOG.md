@@ -1,3 +1,18 @@
+# [2.5.0](https://github.com/aesop/aesop-gel/compare/v2.4.4...v2.5.0) (2021-11-07)
+
+
+### Features
+
+* **CON-454:** migrate TextOverFullWidthAsset to TS ([#626](https://github.com/aesop/aesop-gel/issues/626)) ([4ceee48](https://github.com/aesop/aesop-gel/commit/4ceee486bf18ffee45d6e3dc8ddfee0dd2ee9a95))
+
+## [2.4.4](https://github.com/aesop/aesop-gel/compare/v2.4.3...v2.4.4) (2021-11-04)
+
+
+### Bug Fixes
+
+* add data-count ([c9a3621](https://github.com/aesop/aesop-gel/commit/c9a36210b6c65b565369b1e17ebfffdea04db103))
+* **con-948:** optimize hero banner padding ([02ee05d](https://github.com/aesop/aesop-gel/commit/02ee05deb2a0b96d2a7e4b7fd446860c84c76ecb))
+
 ## [2.4.3](https://github.com/aesop/aesop-gel/compare/v2.4.2...v2.4.3) (2021-11-03)
 
 

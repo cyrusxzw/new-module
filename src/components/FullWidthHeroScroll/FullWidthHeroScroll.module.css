@@ -58,16 +58,18 @@
   }
 }
 
-.newNavLoaded .innerWrapper {
-  @media (--viewport-md) {
-    padding-top: 85px;
-    & h1 {
-      margin-top: -3px;
+:global(.new-navigation) {
+  :local(.innerWrapper) {
+    @media (--viewport-md) {
+      padding-top: 85px;
+      & h1 {
+        margin-top: -3px;
+      }
     }
-  }
 
-  @media (--viewport-lg) {
-    padding-top: 105px;
+    @media (--viewport-lg) {
+      padding-top: 105px;
+    }
   }
 }
 
