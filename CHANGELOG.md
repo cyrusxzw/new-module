@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/aesop/aesop-gel/compare/v2.5.1...v2.6.0) (2021-11-09)
+
+
+### Features
+
+* **CON-461:** migrate GoogleMap to TS ([#630](https://github.com/aesop/aesop-gel/issues/630)) ([74a8482](https://github.com/aesop/aesop-gel/commit/74a8482b3b1ec81333312c6d94dfdcbd7a5ea146))
+
 ## [2.5.1](https://github.com/aesop/aesop-gel/compare/v2.5.0...v2.5.1) (2021-11-08)
 
 
