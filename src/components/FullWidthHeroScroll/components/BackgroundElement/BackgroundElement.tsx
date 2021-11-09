@@ -1,11 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Image } from '~/components/Image';
 import { Video } from '~/components/Video';
 import styles from './BackgroundElement.module.css';
+import type { BackgroundElementType } from './BackgroundElement.types';
 
-const BackgroundElement = ({ image, mediaType, video, className }) => {
+const BackgroundElement: BackgroundElementType = ({
+  image,
+  mediaType,
+  video,
+  className,
+}) => {
   if (!mediaType) return null;
 
   const classSet = cx(styles.base, className);
@@ -22,26 +27,11 @@ const BackgroundElement = ({ image, mediaType, video, className }) => {
         hasControls={false}
         hasLoop={true}
         isBackground={true}
-        isMuted={true}
       />
     );
   }
 
   return null;
-};
-
-BackgroundElement.propTypes = {
-  className: PropTypes.string,
-  image: PropTypes.object,
-  mediaType: PropTypes.oneOf(['image', 'video']),
-  video: PropTypes.object,
-};
-
-BackgroundElement.defaultProps = {
-  className: undefined,
-  image: undefined,
-  mediaType: undefined,
-  video: undefined,
 };
 
 export { BackgroundElement };

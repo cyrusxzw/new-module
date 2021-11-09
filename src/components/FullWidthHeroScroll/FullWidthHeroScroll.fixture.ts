@@ -1,4 +1,6 @@
-const FullWidthHeroScrollFixture = {
+import type { FullWidthHeroScrollProps } from './FullWidthHeroScroll.types';
+
+const FullWidthHeroScrollFixture: FullWidthHeroScrollProps = {
   backgroundMediaType: 'video',
   backgroundImage: {
     altText: 'alt image',
@@ -52,17 +54,14 @@ const FullWidthHeroScrollFixture = {
     {
       text:
         'Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.',
-      hasSerifFont: false,
     },
     {
       text:
         'Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.',
-      hasSerifFont: false,
     },
     {
       text:
         'Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.',
-      hasSerifFont: false,
     },
   ],
   theme: 'light',

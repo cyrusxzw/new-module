@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, forwardRef } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { HYPERLINK_STYLE_TYPES } from '~/constants';
 import { isInBrowser } from '~/utils/environment';
@@ -9,8 +8,9 @@ import { Icon } from '~/components/Icon';
 import { BackgroundElement } from './components/BackgroundElement';
 import { FullscreenSection } from './components/FullscreenSection';
 import styles from './FullWidthHeroScroll.module.css';
+import type { FullWidthHeroScrollProps } from './FullWidthHeroScroll.types';
 
-const FullWidthHeroScroll = forwardRef<any, any>(
+const FullWidthHeroScroll = forwardRef<any, FullWidthHeroScrollProps>(
   (
     {
       backgroundImage,
@@ -19,12 +19,12 @@ const FullWidthHeroScroll = forwardRef<any, any>(
       copy,
       cta,
       eyebrow,
-      hasSerifFontHeading,
-      hasTopOffset,
+      hasSerifFontHeading = false,
+      hasTopOffset = false,
       heading,
       id,
-      textBlocks,
-      theme,
+      textBlocks = [],
+      theme = 'light',
     },
     ref,
   ) => {
@@ -38,7 +38,7 @@ const FullWidthHeroScroll = forwardRef<any, any>(
       const fadeScrollButton = () => {
         if (window.scrollY > scrollThreshold) return;
 
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment -- @TODO Address in typescript migration
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment -- @TODO Address in refactor
         // @ts-ignore
         scrollButtonCurrent.style.opacity =
           (scrollThreshold - window.scrollY) / scrollThreshold;
@@ -115,45 +115,5 @@ const FullWidthHeroScroll = forwardRef<any, any>(
     );
   },
 );
-
-FullWidthHeroScroll.propTypes = {
-  backgroundImage: PropTypes.object,
-  backgroundMediaType: PropTypes.oneOf(['image', 'video']),
-  backgroundVideo: PropTypes.object,
-  copy: PropTypes.node,
-  cta: PropTypes.shape({
-    englishLabel: PropTypes.string,
-    onClick: PropTypes.func,
-    text: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  eyebrow: PropTypes.string,
-  hasSerifFontHeading: PropTypes.bool,
-  hasTopOffset: PropTypes.bool,
-  heading: PropTypes.string,
-  id: PropTypes.string,
-  textBlocks: PropTypes.arrayOf(
-    PropTypes.shape({
-      text: PropTypes.node,
-      hasSerifFont: PropTypes.bool,
-    }),
-  ),
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-FullWidthHeroScroll.defaultProps = {
-  backgroundImage: undefined,
-  backgroundMediaType: undefined,
-  backgroundVideo: undefined,
-  copy: undefined,
-  cta: undefined,
-  eyebrow: undefined,
-  hasSerifFontHeading: false,
-  hasTopOffset: false,
-  heading: undefined,
-  id: undefined,
-  textBlocks: [],
-  theme: 'light',
-};
 
 export { FullWidthHeroScroll };

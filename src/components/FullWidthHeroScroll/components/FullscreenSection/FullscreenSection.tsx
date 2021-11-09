@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useOnScreen } from '~/customHooks';
 import { Transition } from '~/components/Transition';
 import styles from './FullscreenSection.module.css';
+import type { FullscreenSectionType } from './FullscreenSection.types';
 
-const FullscreenSection = ({ text, theme }) => {
+const FullscreenSection: FullscreenSectionType = ({ text, theme = 'dark' }) => {
   const ref = useRef(null);
   const isOnScreen = useOnScreen(ref, 1, '0% 0% -10% 0%');
 
@@ -16,18 +16,6 @@ const FullscreenSection = ({ text, theme }) => {
       </Transition>
     </div>
   );
-};
-
-FullscreenSection.propTypes = {
-  hasSerifFont: PropTypes.bool,
-  text: PropTypes.node,
-  theme: PropTypes.oneOf(['dark', 'light']),
-};
-
-FullscreenSection.defaultProps = {
-  hasSerifFont: false,
-  text: undefined,
-  theme: 'dark',
 };
 
 export { FullscreenSection };
