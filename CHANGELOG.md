@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/aesop/aesop-gel/compare/v2.6.0...v2.7.0) (2021-11-09)
+
+
+### Features
+
+* **CON-462:** migrate FullWidthHeroScroll to TS ([#631](https://github.com/aesop/aesop-gel/issues/631)) ([c34ffcf](https://github.com/aesop/aesop-gel/commit/c34ffcfa723988d331db21deafe0b61d4823a9a2))
+
 # [2.6.0](https://github.com/aesop/aesop-gel/compare/v2.5.1...v2.6.0) (2021-11-09)
 
 
