@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import isFunction from 'lodash/isFunction';
 import { renderToStaticMarkup } from 'react-dom/server.browser';
@@ -15,16 +14,31 @@ import { Transition } from '~/components/Transition';
 import { GoogleMapOptions } from './GoogleMap.options';
 import { InfoCard } from './components/InfoCard';
 import styles from './GoogleMap.module.css';
+import type { GoogleMapType } from './GoogleMap.types';
 
-const GoogleMap = ({
+const defaultCopy = {
+  directions: 'Directions to',
+  storeLocator: {
+    label: 'Store locator',
+    message: 'Visit our nearby stores.',
+    title: 'Open store locator link',
+    url: '/',
+  },
+  openingHours: {
+    alternateHoursNote: 'Special opening hours',
+    heading: 'Opening hours',
+  },
+};
+
+const GoogleMap: GoogleMapType = ({
   center,
-  className = undefined,
-  copy = {},
+  className,
+  copy = defaultCopy,
   customMarker,
-  hasMarkerIndexes,
+  hasMarkerIndexes = true,
   id,
-  initialZoom,
-  places,
+  initialZoom = GoogleMapOptions.MAP_INITIAL_ZOOM,
+  places = [],
   theme,
 }) => {
   const { googleMap, isLoading } = useGoogleMapsContext();
@@ -36,7 +50,7 @@ const GoogleMap = ({
   const isMediumViewport = useRef(isViewport('md'));
   const [activeInfoBlockData, setActiveInfoBlockData] = useState(null);
   const [markers, setMarkers] = useState([]);
-  const [markerCluster, setMarkerCluster] = useState([]);
+  const [markerCluster, setMarkerCluster] = useState<any>([]); // TODO: remove any in refactor
   const currentTheme = useThemeContext(theme, 'dark');
 
   useWindowHasResized(() => {
@@ -208,7 +222,7 @@ const GoogleMap = ({
         [customMarker, ...places]
           .filter((item) => item?.lat !== undefined && item?.lng !== undefined)
           .map((marker, index) =>
-            marker.type === GOOGLE_MAPS.MARKER_TYPE.PIN
+            (marker as any).type === GOOGLE_MAPS.MARKER_TYPE.PIN // TODO: remove any in refactor
               ? createPinMarker(marker, index)
               : createPlaceMarker(marker, index, index === 0),
           ),
@@ -297,72 +311,6 @@ const GoogleMap = ({
       </footer>
     </div>
   );
-};
-
-GoogleMap.propTypes = {
-  center: PropTypes.shape({
-    lat: PropTypes.number,
-    lng: PropTypes.number,
-  }).isRequired,
-  className: PropTypes.string,
-  copy: PropTypes.shape({
-    directions: PropTypes.string,
-    storeLocator: PropTypes.shape({
-      label: PropTypes.string,
-      message: PropTypes.string,
-      title: PropTypes.string,
-      url: PropTypes.string,
-    }),
-    openingHours: PropTypes.shape({
-      alternateHoursNote: PropTypes.string,
-      heading: PropTypes.string,
-    }),
-  }),
-  customMarker: PropTypes.shape({
-    lat: PropTypes.number,
-    lng: PropTypes.number,
-    type: PropTypes.oneOf(['PIN', 'PLACE']),
-  }),
-  hasMarkerIndexes: PropTypes.bool,
-  id: PropTypes.string,
-  initialZoom: PropTypes.number,
-  places: PropTypes.arrayOf(
-    PropTypes.shape({
-      lat: PropTypes.number,
-      lng: PropTypes.number,
-      id: PropTypes.string,
-      storeName: PropTypes.string,
-      storeType: PropTypes.string,
-      address: PropTypes.string,
-      phoneNumber: PropTypes.string,
-      openingHours: PropTypes.array,
-    }),
-  ),
-  theme: PropTypes.string,
-};
-
-GoogleMap.defaultProps = {
-  center: {},
-  className: undefined,
-  copy: {
-    directions: 'Directions to',
-    storeLocator: {
-      label: 'Store locator',
-      message: 'Visit our nearby stores.',
-      title: 'Open store locator link',
-      url: '/',
-    },
-    openingHours: {
-      alternateHoursNote: 'Special opening hours',
-      heading: 'Opening hours',
-    },
-  },
-  customMarker: undefined,
-  hasMarkerIndexes: true,
-  id: undefined,
-  initialZoom: GoogleMapOptions.MAP_INITIAL_ZOOM,
-  places: [],
-  theme: 'dark' | 'light',
 };
 
 export { GoogleMap };
