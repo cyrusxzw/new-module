@@ -676,7 +676,41 @@ declare type TextInputV2Props = {
 
 declare const TextInputV2: React$1.ForwardRefExoticComponent<TextInputV2Props & React$1.RefAttributes<HTMLInputElement>>;
 
-declare const FullWidthHeroScroll: React$1.ForwardRefExoticComponent<Pick<any, string | number | symbol> & React$1.RefAttributes<any>>;
+declare type BackgroundElementProps = {
+    className?: string;
+    image?: ImageProps;
+    mediaType?: 'image' | 'video';
+    video?: VideoProps;
+};
+
+declare type FullscreenSectionProps = {
+    text?: ReactNode;
+    theme?: Themes;
+};
+
+declare type FullWidthHeroScrollProps = {
+    backgroundImage?: BackgroundElementProps['image'];
+    backgroundMediaType?: BackgroundElementProps['mediaType'];
+    backgroundVideo?: BackgroundElementProps['video'];
+    copy?: BodyCopyProps['copy'];
+    cta?: {
+        englishLabel?: string;
+        onClick?: () => void;
+        text?: string;
+        url?: string;
+    };
+    eyebrow?: string;
+    hasSerifFontHeading?: boolean;
+    hasTopOffset?: boolean;
+    heading?: string;
+    id?: string;
+    textBlocks?: {
+        text?: FullscreenSectionProps['text'];
+    }[];
+    theme?: Themes;
+};
+
+declare const FullWidthHeroScroll: React$1.ForwardRefExoticComponent<FullWidthHeroScrollProps & React$1.RefAttributes<any>>;
 
 declare type GoogleMapProps = {
     center: {
