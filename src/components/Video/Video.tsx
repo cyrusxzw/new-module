@@ -36,6 +36,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
     isHeroFullWidth = false,
     isHeroFullWidthMobile = false,
     isScrollBasedVideo = false,
+    isInMediaBlock = false,
     sizes,
     poster,
   },
@@ -110,6 +111,7 @@ const Video = forwardRef<HTMLDivElement, VideoProps>(function VideoRef(
     [styles.heroFullWidthMobile]: isHeroFullWidthMobile,
     [styles.fullWidth]: isFullWidth,
     [styles.chrome]: isChrome,
+    [styles.mediaBlock]: isInMediaBlock,
   });
 
   return (
