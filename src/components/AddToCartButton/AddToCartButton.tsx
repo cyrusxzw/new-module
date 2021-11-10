@@ -125,7 +125,11 @@ const AddToCartButton: AddToCartButtonType = ({
         ) : (
           <span> </span>
         )}
-        <span>{isInStock ? cartActionLabel : copy?.outOfStock?.label}</span>
+        <span>
+          {isInStock
+            ? cartActionLabel
+            : `${copy?.outOfStock?.label} - ${price}`}
+        </span>
       </span>
     </Button>
   );
