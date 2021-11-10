@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/aesop/aesop-gel/compare/v2.7.1...v2.8.0) (2021-11-10)
+
+
+### Features
+
+* **pur-680:** add price into out of stock cta ([d18772e](https://github.com/aesop/aesop-gel/commit/d18772efe50b0f36f74b1ef7b31b9b7543ad856b))
+
 ## [2.7.1](https://github.com/aesop/aesop-gel/compare/v2.7.0...v2.7.1) (2021-11-10)
 
 
