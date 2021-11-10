@@ -6915,6 +6915,9 @@ video.VideoPlayer-module_background__P8E0h::-webkit-media-controls-start-playbac
     -o-object-fit: cover;
        object-fit: cover;
   }
+.Video-module_mediaBlock__1iRTG.Video-module_mediaBlock__1iRTG {
+  padding-top: 0;
+}
 
 :root {
   /* Base colours */

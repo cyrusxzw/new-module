@@ -30,9 +30,10 @@ declare type VideoProps = Pick<ControlsProps, 'copy'> & {
     hasSpanContent?: boolean;
     id?: string;
     isBackground?: boolean;
+    isInMediaBlock?: boolean;
     /**
       `isFullWidth` is set true by default and this will allow videos to display at the correct aspect ratio.
-      In the event that a different, more fluid ratio is required, set this prop to false, this will collapse the hight of the Video,
+      In the event that a different, more fluid ratio is required, set this prop to false, this will collapse the height of the Video,
       but it will react to the height of the surrounding element.
     */
     isFullWidth?: boolean;

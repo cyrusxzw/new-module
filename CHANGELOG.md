@@ -1,3 +1,10 @@
+## [2.7.1](https://github.com/aesop/aesop-gel/compare/v2.7.0...v2.7.1) (2021-11-10)
+
+
+### Bug Fixes
+
+* **CON-943:** fix video height in media block ([d57ff61](https://github.com/aesop/aesop-gel/commit/d57ff61aed5f57e2f00b4032789a0d14996f0254))
+
 # [2.7.0](https://github.com/aesop/aesop-gel/compare/v2.6.0...v2.7.0) (2021-11-09)
 
 

@@ -34,6 +34,7 @@ declare const Video: React.ForwardRefExoticComponent<Pick<ControlsProps, "copy">
     hasSpanContent?: boolean;
     id?: string;
     isBackground?: boolean;
+    isInMediaBlock?: boolean;
     isFullWidth?: boolean;
     isHeroFullWidth?: boolean;
     isHeroFullWidthMobile?: boolean;
