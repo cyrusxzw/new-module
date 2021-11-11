@@ -19,7 +19,6 @@
     "eslint-check": "eslint 'src/**/*.{js,ts,tsx}' --ignore-path .eslintignore",
     "eslint-fix": "eslint 'src/**/*.{js,ts,tsx}' --ignore-path .eslintignore --fix",
     "generate-component": "./scripts/componentBoilerplate/create.sh $element",
-    "list-js-files": "node ./list-js-files.js",
     "prepublishOnly": "npm run release",
     "prettier-check": "prettier --check \"**/*.{js,ts,tsx,json,md,mdx}\"",
     "prettier-fix": "prettier --write \"**/*.{js,ts,tsx,json,md,mdx}\" --loglevel \"error\"",
