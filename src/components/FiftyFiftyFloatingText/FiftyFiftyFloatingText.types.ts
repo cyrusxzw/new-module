@@ -1,12 +1,14 @@
 import type { Themes } from '~/types';
-import type { BackgroundElementProps } from './components/BackgroundElement/BackgroundElement.types';
-import type { FullscreenSectionProps } from './components/FullscreenSection/FullscreenSection.types';
+import type { ImageSectionProps } from './components/ImageSection/ImageSection.types';
+import type { TextSectionProps } from './components/TextSection/TextSection.types';
 
 type FiftyFiftyFloatingTextProps = {
-  backgroundImage?: BackgroundElementProps['image'];
+  backgroundImages?: {
+    image?: ImageSectionProps['image'];
+  }[];
   id?: string;
   textBlocks?: {
-    text?: FullscreenSectionProps['text'];
+    text?: TextSectionProps['text'];
   }[];
   theme?: Themes;
 };

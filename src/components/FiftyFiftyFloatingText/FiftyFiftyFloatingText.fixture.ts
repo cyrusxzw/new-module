@@ -1,14 +1,41 @@
 import type { FiftyFiftyFloatingTextProps } from './FiftyFiftyFloatingText.types';
 
 const FiftyFiftyFloatingTextFixture: FiftyFiftyFloatingTextProps = {
-  backgroundImage: {
-    altText: 'alt image',
-    sizes: {
-      large: './assets/images/MediaWithContent/background-large.jpg',
-      medium: './assets/images/MediaWithContent/background-large.jpg',
-      small: './assets/images/MediaWithContent/background-large.jpg',
+  backgroundImages: [
+    {
+      image:
+      {
+        altText: 'alt image',
+        sizes: {
+          large: './assets/images/MediaWithContent/background-large.jpg',
+          medium: './assets/images/MediaWithContent/background-large.jpg',
+          small: './assets/images/MediaWithContent/background-large.jpg',
+        },
+      }
     },
-  },
+    {
+      image:
+      {
+        altText: 'alt image',
+        sizes: {
+          large: './assets/images/MediaWithContent/hero-large.jpg',
+          medium: './assets/images/MediaWithContent/hero-large.jpg',
+          small: './assets/images/MediaWithContent/hero-large.jpg',
+        },
+      }
+    },
+    {
+      image:
+      {
+        altText: 'alt image',
+        sizes: {
+          large: './assets/images/MediaWithContent/background-large.jpg',
+          medium: './assets/images/MediaWithContent/background-large.jpg',
+          small: './assets/images/MediaWithContent/background-large.jpg',
+        },
+      }
+    },
+  ],
   id: 'fifty-fifty-floating-text',
   textBlocks: [
     {
