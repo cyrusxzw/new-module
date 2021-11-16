@@ -1,0 +1,73 @@
+import { Fragment } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as knobs from '@storybook/addon-knobs';
+import {
+  StorybookGridOverlay,
+  StorybookNavHeader,
+} from '~.storybook/components';
+import { FiftyFiftyFloatingText } from './FiftyFiftyFloatingText';
+import { FiftyFiftyFloatingTextFixture } from './FiftyFiftyFloatingText.fixture';
+
+<Meta
+  title="Components/FiftyFiftyFloatingText"
+  component={FiftyFiftyFloatingText}
+/>
+
+### Fifty Fifty Floating Text
+
+<Canvas>
+  <Story name="Fifty Fifty Floating Text">
+    {(() => {
+      const implementation = {
+        gridOverlay: {
+          isActive: knobs.boolean('Show grid overlay', false, 'Implementation'),
+          hasInvertedColours: knobs.boolean(
+            'Invert grid overlay colours',
+            false,
+            'Implementation',
+          ),
+        },
+        navHeader: {
+          isActive: knobs.boolean(
+            'Show navigation header',
+            false,
+            'Implementation',
+          ),
+          theme: knobs.select(
+            'Navigation header theme',
+            ['dark', 'light'],
+            'dark',
+            'Implementation',
+          ),
+        },
+      };
+      return (
+        <>
+          <StorybookNavHeader
+            theme={implementation.navHeader.theme}
+            isActive={implementation.navHeader.isActive}
+          />
+          <FiftyFiftyFloatingText
+            backgroundImage={FiftyFiftyFloatingTextFixture.backgroundImage}
+            id={FiftyFiftyFloatingTextFixture.id}
+            textBlocks={FiftyFiftyFloatingTextFixture.textBlocks}
+            theme={knobs.select(
+              'theme',
+              ['dark', 'light'],
+              'light',
+              'Presentation',
+            )}
+          />
+          <StorybookGridOverlay
+            isActive={implementation.gridOverlay.isActive}
+            hasInvertedColours={implementation.gridOverlay.hasInvertedColours}
+          />
+        </>
+      );
+    })()}
+  </Story>
+</Canvas>
+
+# API
+
+<ArgsTable of={FiftyFiftyFloatingText} />
