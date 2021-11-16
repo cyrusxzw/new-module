@@ -8,38 +8,13 @@ import type { FiftyFiftyFloatingTextProps } from './FiftyFiftyFloatingText.types
 
 const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
   ({ backgroundImage, id, textBlocks = [], theme = 'light' }, ref) => {
-    const scrollButton = useRef();
-    const offset = 120;
-
-    useEffect(() => {
-      const scrollButtonCurrent = scrollButton.current;
-      const scrollThreshold = 100;
-
-      const fadeScrollButton = () => {
-        if (window.scrollY > scrollThreshold) return;
-
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment -- @TODO Address in refactor
-        // @ts-ignore
-        scrollButtonCurrent.style.opacity =
-          (scrollThreshold - window.scrollY) / scrollThreshold;
-      };
-
-      window.addEventListener('scroll', fadeScrollButton);
-
-      return function cleanup() {
-        window.removeEventListener('scroll', fadeScrollButton);
-      };
-    });
-
-    const handleScrollDown = () => {
-      if (isInBrowser()) {
-        window.scroll({
-          top: window.innerHeight - offset,
-          left: 0,
-          behavior: 'smooth',
-        });
-      }
-    };
+    // if (isInBrowser()) {
+    //   window.scroll({
+    //     top: window.innerHeight - offset,
+    //     left: 0,
+    //     behavior: 'smooth',
+    //   });
+    // }
 
     const classSet = cx(styles.base, styles[theme]);
 
