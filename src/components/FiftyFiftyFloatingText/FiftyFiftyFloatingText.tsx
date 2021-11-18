@@ -35,11 +35,11 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
         );
 
         let opacity = null;
-        revealRefs.current.forEach((ele, index) => {
-          const eleToTop = ele.getBoundingClientRect().top; // the distance of each element to top
+        revealRefs.current.forEach((element, index) => {
+          const elementToTop = element.getBoundingClientRect().top; // the distance of each element to top
 
           // offset = 0 (element become in viewport) offset > textHeight (element hidden on top) offset < 0 (element hidden on bottom)
-          const offset = textHeight - eleToTop;
+          const offset = textHeight - elementToTop;
           if (offset > 0 && offset < textHeight) {
             // text reach percentageOfViewport (default is 40%) of viewport, image opacity: 100%
             const opacityTemp = offset / (percentageOfViewport * textHeight);
