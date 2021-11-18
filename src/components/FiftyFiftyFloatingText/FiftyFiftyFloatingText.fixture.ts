@@ -7,9 +7,9 @@ const FiftyFiftyFloatingTextFixture: FiftyFiftyFloatingTextProps = {
       {
         altText: 'alt image',
         sizes: {
-          large: './assets/images/MediaWithContent/background-large.jpg',
-          medium: './assets/images/MediaWithContent/background-large.jpg',
-          small: './assets/images/MediaWithContent/background-large.jpg',
+          large: './assets/images/MediaWithContent/fifty-fifty-img1.png',
+          medium: './assets/images/MediaWithContent/fifty-fifty-img1.png',
+          small: './assets/images/MediaWithContent/fifty-fifty-img1.png',
         },
       }
     },
@@ -18,9 +18,9 @@ const FiftyFiftyFloatingTextFixture: FiftyFiftyFloatingTextProps = {
       {
         altText: 'alt image',
         sizes: {
-          large: './assets/images/MediaWithContent/hero-large.jpg',
-          medium: './assets/images/MediaWithContent/hero-large.jpg',
-          small: './assets/images/MediaWithContent/hero-large.jpg',
+          large: './assets/images/MediaWithContent/fifty-fifty-img2.png',
+          medium: './assets/images/MediaWithContent/fifty-fifty-img2.png',
+          small: './assets/images/MediaWithContent/fifty-fifty-img2.png',
         },
       }
     },
@@ -29,9 +29,9 @@ const FiftyFiftyFloatingTextFixture: FiftyFiftyFloatingTextProps = {
       {
         altText: 'alt image',
         sizes: {
-          large: './assets/images/MediaWithContent/background-large.jpg',
-          medium: './assets/images/MediaWithContent/background-large.jpg',
-          small: './assets/images/MediaWithContent/background-large.jpg',
+          large: './assets/images/MediaWithContent/fifty-fifty-img3.png',
+          medium: './assets/images/MediaWithContent/fifty-fifty-img3.png',
+          small: './assets/images/MediaWithContent/fifty-fifty-img3.png',
         },
       }
     },
@@ -40,15 +40,15 @@ const FiftyFiftyFloatingTextFixture: FiftyFiftyFloatingTextProps = {
   textBlocks: [
     {
       text:
-        'Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.',
+        '1. Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.',
     },
     {
       text:
-        'Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.',
+        '2. Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.',
     },
     {
       text:
-        'Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.',
+        '3. Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.',
     },
   ],
   theme: 'light',

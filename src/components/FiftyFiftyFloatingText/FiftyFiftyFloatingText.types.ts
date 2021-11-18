@@ -7,6 +7,7 @@ type FiftyFiftyFloatingTextProps = {
     image?: ImageSectionProps['image'];
   }[];
   id?: string;
+  percentageOfViewport?: number;
   textBlocks?: {
     text?: TextSectionProps['text'];
   }[];

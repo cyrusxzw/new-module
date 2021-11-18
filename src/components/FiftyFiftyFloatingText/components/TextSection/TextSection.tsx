@@ -1,21 +1,39 @@
-import React, { useRef } from 'react';
+import React, { forwardRef, useRef, useState, useEffect } from 'react';
 import cx from 'classnames';
-import { useOnScreen } from '~/customHooks';
 import { Transition } from '~/components/Transition';
 import styles from './TextSection.module.css';
-import type { TextSectionType } from './TextSection.types';
+import type { TextSectionProps } from './TextSection.types';
 
-const TextSection: TextSectionType = ({ text, theme = 'dark' }) => {
-  const ref = useRef(null);
-  const isOnScreen = useOnScreen(ref, 1, '0% 0% -10% 0%');
+const TextSection = forwardRef<HTMLDivElement, TextSectionProps>(
+  function TextSectionRef({ text, theme = 'dark', setTextHeight }, ref) {
+    const myRef = useRef(null);
+    const [elementHeight, setElementHeight] = useState();
 
-  return (
-    <div className={cx(styles.base, styles[theme])}>
-      <Transition isActive={isOnScreen} type="slowFade">
-        <div ref={ref}>{text}</div>
-      </Transition>
-    </div>
-  );
-};
+    // const handleResize = () => {
+    //   setElementHeight(textHeight);
+    // };
+    useEffect(() => {
+      const textHeight = myRef?.current?.clientHeight;
+      if (textHeight) {
+        setElementHeight(textHeight);
+        setTextHeight(elementHeight);
+      }
+      // window.addEventListener('resize', handleResize);
+      // return function cleanup() {
+      //   window.removeEventListener('resize', handleResize);
+      // };
+    });
+
+    return (
+      <div className={cx(styles.base, styles[theme])} ref={myRef}>
+        <Transition isActive={true} type="slowFade">
+          <div ref={ref}>
+            {text} {elementHeight}
+          </div>
+        </Transition>
+      </div>
+    );
+  },
+);
 
 export { TextSection };
