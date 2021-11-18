@@ -36,13 +36,14 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
 
         let opacity = null;
         revealRefs.current.forEach((ele, index) => {
-          const eleToTop = ele.getBoundingClientRect().top;
-          const offset = textHeight - eleToTop;
+          const eleToTop = ele.getBoundingClientRect().top; // the distance of each element to top
 
+          // offset = 0 (element become in viewport) offset > textHeight (element hidden on top) offset < 0 (element hidden on bottom)
+          const offset = textHeight - eleToTop;
           if (offset > 0 && offset < textHeight) {
             // text reach percentageOfViewport (default is 40%) of viewport, image opacity: 100%
             const opacityTemp = offset / (percentageOfViewport * textHeight);
-            opacity = opacityTemp >= 1 ? 1 : opacityTemp;
+            opacity = opacityTemp >= 1 ? 1 : opacityTemp; // control max opacity is 100%
             images[index].style.opacity = opacity;
           }
         });
@@ -75,7 +76,7 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
             <TextSection
               key={index}
               ref={addToRefs}
-              setTextHeight={setTextHeight}
+              setTextHeight={setTextHeight} // get the height of text block wrapper from TextSection
               text={text}
               theme={theme}
             />
