@@ -4,7 +4,7 @@ import type { ComponentWithoutChildren, Themes } from '~/types';
 type TextSectionProps = {
   id?: string;
   text?: ReactNode;
-  setTextHeight?: any;
+  setTextSectionHeight?: any;
   theme?: Themes;
 };
 

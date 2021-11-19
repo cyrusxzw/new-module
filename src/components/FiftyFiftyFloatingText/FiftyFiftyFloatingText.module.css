@@ -4,6 +4,7 @@
   position: relative;
   display: grid;
   margin-top: 0;
+  background-color: #d9d8cf;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -11,14 +12,16 @@
   position: sticky;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100vh;
+
+  @media (--viewport-md-only) {
+    margin-right: 20px;
+  }
 }
 
 .scrollingContent {
   position: relative;
   padding-top: 0;
-  background-color: #d9d8cf;
 }
 
 @media all and (-ms-high-contrast: none) {

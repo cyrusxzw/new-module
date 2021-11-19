@@ -6,18 +6,18 @@ import styles from './TextSection.module.css';
 import type { TextSectionProps } from './TextSection.types';
 
 const TextSection = forwardRef<HTMLDivElement, TextSectionProps>(
-  function TextSectionRef({ text, theme = 'dark', setTextHeight }, ref) {
+  function TextSectionRef({ text, theme = 'dark', setTextSectionHeight }, ref) {
     const myRef = useRef(null);
     const { height } = useWindowHasResized();
 
     useEffect(() => {
-      const textHeight = myRef?.current?.clientHeight;
-      if (textHeight && height === 0) {
-        setTextHeight(textHeight);
+      const textSectionHeight = myRef?.current?.clientHeight;
+      if (textSectionHeight && height === 0) {
+        setTextSectionHeight(textSectionHeight);
       } else {
-        setTextHeight(height);
+        setTextSectionHeight(height);
       }
-    }, [height, setTextHeight]);
+    }, [height, setTextSectionHeight]);
 
     return (
       <div className={cx(styles.base, styles[theme])} ref={myRef}>
