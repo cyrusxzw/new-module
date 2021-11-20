@@ -1,7 +1,8 @@
-import React, { useEffect, forwardRef, useRef, useState } from 'react';
+import React, { useEffect, forwardRef, useRef } from 'react';
 import cx from 'classnames';
 import { isInBrowser } from '~/utils/environment';
 import { isViewport } from '~/utils/viewport';
+import { MobileView } from './MobileView';
 import { ImageSection } from './components/ImageSection';
 import { TextSection } from './components/TextSection';
 import styles from './FiftyFiftyFloatingText.module.css';
@@ -25,10 +26,8 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
       }
     };
 
-    const [textSectionHeight, setTextSectionHeight] = useState();
-
     const handleScroll = () => {
-      if (isInBrowser() && textSectionHeight) {
+      if (isInBrowser()) {
         const images = Array.from(
           document.getElementsByClassName(
             'fiftyScrollImage',
@@ -36,20 +35,18 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
         );
 
         let opacity = null;
+        const frameHeight = window.innerHeight;
         revealRefs.current.forEach((element, index) => {
           const elementToTop = element.getBoundingClientRect().top; // the distance of each element to top
 
           // offset = 0 (element become in viewport) offset > textHeight (element hidden on top) offset < 0 (element hidden on bottom)
-          const offset = textSectionHeight - elementToTop;
-          if (offset > 0 && offset < textSectionHeight && index > 0) {
+          const offset = frameHeight - elementToTop;
+          if (offset >= 0 && offset < frameHeight && index > 0) {
             // text reach percentageOfViewport (default is 40%) of viewport, image opacity: 100%
             const opacityTemp =
-              (1 - elementToTop / textSectionHeight) / percentageOfViewport;
+              (1 - elementToTop / frameHeight) / percentageOfViewport;
             opacity = opacityTemp >= 1 ? 1 : opacityTemp; // control max opacity is 100%
             images[index].style.opacity = opacity;
-            console.log(index);
-
-            console.log(elementToTop);
           }
         });
       }
@@ -69,27 +66,35 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
 
     return (
       <section className={classSet} id={id} ref={ref}>
-        <div className={cx(styles.scrollLockMedia)}>
-          {backgroundImages.map(({ image }, index) => (
-            <ImageSection
-              className={classImageSection}
-              image={image}
-              key={index}
-            />
-          ))}
-        </div>
-        <div className={styles.scrollingContent}>
-          {textBlocks.map(({ text }, index) => (
-            <TextSection
-              key={index}
-              ref={addToRefs}
-              setTextSectionHeight={setTextSectionHeight} // get the height of text block wrapper from TextSection
-              text={text}
-              theme={theme}
-            />
-          ))}
-        </div>
-        {isMobile && <div>hello</div>}
+        {!isMobile && (
+          <>
+            <div className={cx(styles.scrollLockMedia)}>
+              {backgroundImages.map(({ image }, index) => (
+                <ImageSection
+                  className={classImageSection}
+                  image={image}
+                  key={index}
+                />
+              ))}
+            </div>
+            <div className={styles.scrollingContent}>
+              {textBlocks.map(({ text }, index) => (
+                <TextSection
+                  key={index}
+                  ref={addToRefs}
+                  text={text}
+                  theme={theme}
+                />
+              ))}
+            </div>
+          </>
+        )}
+        {isMobile && (
+          <MobileView
+            backgroundImages={backgroundImages}
+            textBlocks={textBlocks}
+          />
+        )}
       </section>
     );
   },
