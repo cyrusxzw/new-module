@@ -1,72 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FiftyFiftyFloatingText /> should render base component correctly 1`] = `
+exports[`<FullWidthHeroScroll /> should render base component correctly 1`] = `
 <div>
   <section
     class="base light"
   >
     <div
       class="scrollLockMedia"
-    >
-      <div
-        class="base base backgroundElement fullWidth"
-        role="group"
-      >
-        <figure
-          class="fallbackImageFigure"
-        >
-          <picture
-            class="base picture dark fallbackImage"
-          >
-            <source
-              media="(min-width: 1025px)"
-              srcset="./assets/images/MediaWithContent/video-poster.png"
-            />
-            <source
-              media="(min-width: 640px)"
-              srcset="./assets/images/MediaWithContent/video-poster.png"
-            />
-            <source
-              media="(min-width: 0px)"
-              srcset="./assets/images/MediaWithContent/video-poster.png"
-            />
-            <img
-              alt="How to Use Video for Tea Tree Leaf Facial Exfoliant"
-              loading="lazy"
-              src="./assets/images/MediaWithContent/video-poster.png"
-            />
-          </picture>
-        </figure>
-      </div>
-    </div>
+    />
     <div
       class="scrollingContent"
     >
       <div
         class="base light"
       >
-        <div
-          class="slowFadeEnter slowFadeEnterActive"
-        >
-          Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.
+        <div>
+          1. Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.
         </div>
       </div>
       <div
         class="base light"
       >
-        <div
-          class="slowFadeEnter slowFadeEnterActive"
-        >
-          Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.
+        <div>
+          2. Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.
         </div>
       </div>
       <div
         class="base light"
       >
-        <div
-          class="slowFadeEnter slowFadeEnterActive"
-        >
-          Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.
+        <div>
+          3. Aliquam turpis libero, posuere sed nisl in, porta facilisis lorem. Phasellus eu turpis in quam efficitur hendrerit.
         </div>
       </div>
     </div>
