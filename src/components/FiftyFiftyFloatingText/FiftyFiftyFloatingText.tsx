@@ -1,12 +1,12 @@
 import React, { useEffect, forwardRef, useRef } from 'react';
 import cx from 'classnames';
 import { isInBrowser } from '~/utils/environment';
-import { isViewport } from '~/utils/viewport';
 import { MobileView } from './MobileView';
 import { ImageSection } from './components/ImageSection';
 import { TextSection } from './components/TextSection';
 import styles from './FiftyFiftyFloatingText.module.css';
 import type { FiftyFiftyFloatingTextProps } from './FiftyFiftyFloatingText.types';
+import { useActiveView } from './FifityFiftyFloatingText.hooks';
 
 const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
   (
@@ -20,6 +20,7 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
     ref,
   ) => {
     const revealRefs = useRef([]);
+    const { activeView } = useActiveView();
     const addToRefs = (element) => {
       if (element && !revealRefs.current.includes(element)) {
         revealRefs.current.push(element);
@@ -36,15 +37,15 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
 
         let opacity = null;
         const frameHeight = window.innerHeight;
+
         revealRefs.current.forEach((element, index) => {
           const elementToTop = element.getBoundingClientRect().top; // the distance of each element to top
-
-          // offset = 0 (element become in viewport) offset > textHeight (element hidden on top) offset < 0 (element hidden on bottom)
+          // check element if in the viewport
           const offset = frameHeight - elementToTop;
           if (offset >= 0 && offset < frameHeight && index > 0) {
+            const scrollRate = elementToTop / frameHeight;
             // text reach percentageOfViewport (default is 40%) of viewport, image opacity: 100%
-            const opacityTemp =
-              (1 - elementToTop / frameHeight) / percentageOfViewport;
+            const opacityTemp = (1 - scrollRate) / percentageOfViewport;
             opacity = opacityTemp >= 1 ? 1 : opacityTemp; // control max opacity is 100%
             images[index].style.opacity = opacity;
           }
@@ -54,6 +55,7 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
 
     useEffect(() => {
       window.addEventListener('scroll', handleScroll);
+
       return function cleanup() {
         window.removeEventListener('scroll', handleScroll);
       };
@@ -62,11 +64,9 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
     const classSet = cx(styles.base, styles[theme]);
     const classImageSection = cx(styles.backgroundElement, 'fiftyScrollImage');
 
-    const isMobile = isViewport('xs to sm only');
-
     return (
       <section className={classSet} id={id} ref={ref}>
-        {!isMobile && (
+        {activeView === 'tabletanddesktop' && (
           <>
             <div className={cx(styles.scrollLockMedia)}>
               {backgroundImages.map(({ image }, index) => (
@@ -89,10 +89,11 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
             </div>
           </>
         )}
-        {isMobile && (
+        {activeView === 'mobile' && (
           <MobileView
             backgroundImages={backgroundImages}
             textBlocks={textBlocks}
+            theme={theme}
           />
         )}
       </section>

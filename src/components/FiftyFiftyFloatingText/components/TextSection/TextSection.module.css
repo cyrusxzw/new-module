@@ -12,6 +12,13 @@
   line-height: 1.33;
   transform: translate3d(0, 0, 0);
 
+  @media (--viewport-xs-sm-only) {
+    height: auto;
+    padding: 0;
+    margin: 30px 0 100px 0;
+    font-size: rem(19px);
+  }
+
   @media (--viewport-md-only) {
     padding-left: 20px;
     margin-right: 34px;

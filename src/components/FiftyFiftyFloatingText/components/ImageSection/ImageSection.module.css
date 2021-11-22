@@ -1,9 +1,15 @@
+@import 'styles/index';
+
 .base.base {
   position: absolute;
   height: 100%;
   padding-top: 0;
   padding-bottom: 0;
   opacity: 0;
+
+  @media (--viewport-xs-sm-only) {
+    position: relative;
+  }
 
   &:first-child {
     opacity: 1;
@@ -12,5 +18,9 @@
   img {
     height: 100%;
     object-fit: cover;
+
+    @media (--viewport-xs-sm-only) {
+      height: 25vh;
+    }
   }
 }

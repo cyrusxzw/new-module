@@ -8,7 +8,6 @@ describe('<FullWidthHeroScroll />', () => {
     const { container } = render(
       <FiftyFiftyFloatingText
         textBlocks={FiftyFiftyFloatingTextFixture.textBlocks}
-        theme={FiftyFiftyFloatingText.theme}
       />,
     );
 

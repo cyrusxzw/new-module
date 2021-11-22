@@ -6,6 +6,10 @@
   margin-top: 0;
   background-color: #d9d8cf;
   grid-template-columns: 1fr 1fr;
+
+  @media (--viewport-xs-sm-only) {
+    display: block;
+  }
 }
 
 .scrollLockMedia {
@@ -21,7 +25,6 @@
 
 .scrollingContent {
   position: relative;
-  padding-top: 0;
 }
 
 @media all and (-ms-high-contrast: none) {
