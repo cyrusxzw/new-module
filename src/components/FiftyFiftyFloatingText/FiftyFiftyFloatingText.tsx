@@ -1,6 +1,7 @@
 import React, { useEffect, forwardRef, useRef } from 'react';
 import cx from 'classnames';
 import { isInBrowser } from '~/utils/environment';
+import throttle from 'lodash/throttle';
 import { MobileView } from './MobileView';
 import { ImageSection } from './components/ImageSection';
 import { TextSection } from './components/TextSection';
@@ -27,8 +28,8 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
       }
     };
 
-    const handleScroll = () => {
-      if (isInBrowser()) {
+    const handleScroll = throttle(() => {
+      if (isInBrowser() && activeView === 'tabletanddesktop') {
         const images = Array.from(
           document.getElementsByClassName(
             'fiftyScrollImage',
@@ -37,7 +38,6 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
 
         let opacity = null;
         const frameHeight = window.innerHeight;
-
         revealRefs.current.forEach((element, index) => {
           const elementToTop = element.getBoundingClientRect().top; // the distance of each element to top
           // check element if in the viewport
@@ -51,7 +51,7 @@ const FiftyFiftyFloatingText = forwardRef<any, FiftyFiftyFloatingTextProps>(
           }
         });
       }
-    };
+    }, 16 /* To match 60fps systems */);
 
     useEffect(() => {
       window.addEventListener('scroll', handleScroll);

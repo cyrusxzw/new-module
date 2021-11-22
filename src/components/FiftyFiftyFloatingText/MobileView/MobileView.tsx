@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import styles from './MobileView.module.css';
 import { MobileViewType } from './MobileView.types';

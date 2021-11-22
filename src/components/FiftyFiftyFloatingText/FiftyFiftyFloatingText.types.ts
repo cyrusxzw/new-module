@@ -17,6 +17,3 @@ type FiftyFiftyFloatingTextProps = {
 type ActiveViewTypes = 'none' | 'mobile' | 'tabletanddesktop';
 
 export type { FiftyFiftyFloatingTextProps, ActiveViewTypes };
-
-
-

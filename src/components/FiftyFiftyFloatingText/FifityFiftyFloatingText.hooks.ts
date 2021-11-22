@@ -10,7 +10,7 @@ const useActiveView = (): { activeView: ActiveViewTypes } => {
 
   const isMobile = isViewport('xs to sm only');
   const isTabletAndDesktop = isViewport('md');
-  
+
   useEffect(() => {
     if (isMobile) {
       setActiveView('mobile');
